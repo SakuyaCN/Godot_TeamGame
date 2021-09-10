@@ -105,9 +105,11 @@ func _on_Button_pressed():
 		"lv":1,
 		"gold":1000,
 		"max_map":0,
-		"now_map":0
+		"now_map":0,
+		"team_position":["0",null,null]
 	}
 	var main_role = {
+		"rid":"0",
 		"job":base_role[check_index].name,
 		"exp":0,
 		"lv":1,
@@ -121,8 +123,8 @@ func _on_Button_pressed():
 			"mdef":base_role[check_index].mdef
 		}
 	}
-	StorageData.storage_data["team"]["main"] = main_role
-	StorageData.storage_data["player_team"]["position1"] = main_role
+	StorageData.storage_data["team"][main_role.rid] = main_role
+	StorageData.reloadData()
 	StorageData._save_storage()
 	hide()
 	parent.uiLayer.get_parent().start_game()

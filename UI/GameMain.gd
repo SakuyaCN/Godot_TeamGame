@@ -13,6 +13,12 @@ var map_name
 onready var message_ui = get_parent().find_node("UILayer")
 onready var moster_pos = $PositionMoster
 
+onready var role_position = [
+	$Position/PositionP1,
+	$Position/PositionP2,
+	$Position/PositionP3
+]
+
 var player_array = {
 	"positionP1":null,
 	"positionP2":null,
@@ -50,27 +56,14 @@ func start_fight():
 	get_tree().call_group("moster_role","start_fight")
 
 func go_position():
-	for pos in StorageData.storage_data["player_team"]:
-		if StorageData.storage_data["player_team"][pos] != null:
+	for pos in StorageData.player_state["team_position"].size():
+		if StorageData.player_state["team_position"][pos] != null:
 			hero_size += 1
-			var temp_pos
 			var new_hero = role.instance()
-			match pos:
-				"position1":
-					temp_pos = $Position/PositionP1
-					player_array["positionP1"] = new_hero
-					new_hero.setIndex(0)
-				"position2":
-					temp_pos = $Position/PositionP2
-					player_array["positionP2"] = new_hero
-					new_hero.setIndex(1)
-				"position3":
-					temp_pos = $Position/PositionP3
-					player_array["positionP3"] = new_hero
-					new_hero.setIndex(2)
-			temp_pos.add_child(new_hero)
-			new_hero.set_role(StorageData.storage_data["player_team"][pos])
-			new_hero.run2position(temp_pos)
+			new_hero.setIndex(pos)
+			role_position[pos].add_child(new_hero)
+			new_hero.set_role(StorageData.team_data.get(StorageData.player_state["team_position"][pos]))
+			new_hero.run2position(role_position[pos])
 			yield(get_tree().create_timer(0.7),"timeout")
 
 func _on_Timer_timeout():

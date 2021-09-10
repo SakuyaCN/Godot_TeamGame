@@ -1,6 +1,6 @@
 extends Node2D
 
-var role_data
+var role_data:Dictionary
 var index = 0
 var is_position = false
 var is_moster = false
@@ -17,8 +17,8 @@ func set_role(_role_data):
 	role_data = _role_data
 	load_asset()
 
-func setIndex(index):
-	self.index = index
+func setIndex(_index):
+	self.index = _index
 	
 func changeAnim(anim):
 	animatedSprite.animation = anim
