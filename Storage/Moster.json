@@ -1,0 +1,14 @@
+{
+    "骷髅战士":{
+        "frames":"res://Texture/Moster/SkeletonWarrior.tres",
+        "scale":4,
+        "pos_y":-80,
+        "flip_h":true
+    },
+    "骷髅法师":{
+        "frames":"res://Texture/Moster/SkeletonMage.tres",
+        "scale":4,
+        "pos_y":-100,
+        "flip_h":true
+    }
+}

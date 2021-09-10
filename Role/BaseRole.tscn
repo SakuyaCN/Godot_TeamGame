@@ -1,0 +1,215 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Texture/Pre-made characters/BlackHero.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Role/BaseRole.gd" type="Script" id=2]
+[ext_resource path="res://Role/FightScript/FightScript.gd" type="Script" id=3]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Texture/pc1.png" type="Texture" id=5]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_03.png" type="Texture" id=6]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_09.png" type="Texture" id=7]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_12.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "show_bar"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("hpbar:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mpbar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("hpbar:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("mpbar:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("hpbar:rect_position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 12, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("mpbar:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 60, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+
+[node name="BaseRole" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -48 )
+scale = Vector2( 4, 4 )
+frames = ExtResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="FightScript" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="hpbar" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -82.0
+margin_right = 87.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp2" type="Label" parent="hpbar"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 37.5
+margin_top = 4.0
+margin_right = 71.5
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "HP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_hp" type="TextureProgress" parent="hpbar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -13.0
+margin_right = 37.0
+margin_bottom = 11.0
+value = 100.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="hpbar/progress_hp"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_right = 44.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "100%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mpbar" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -82.0
+margin_right = 87.0
+margin_bottom = 40.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp2" type="Label" parent="mpbar"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 37.5
+margin_top = 4.0
+margin_right = 71.5
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
+text = "MP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_hp" type="TextureProgress" parent="mpbar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -13.0
+margin_right = 37.0
+margin_bottom = 11.0
+value = 100.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 8 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="mpbar/progress_hp"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_right = 44.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 1 )
+text = "100%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show_bar = SubResource( 2 )

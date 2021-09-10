@@ -1,0 +1,1170 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
+[ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=3]
+[ext_resource path="res://UI/LoginUI.gd" type="Script" id=4]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_11.png" type="Texture" id=5]
+[ext_resource path="res://Texture/Pre-made characters/Minister.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=7]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_18.png" type="Texture" id=8]
+[ext_resource path="res://Texture/arrowSilver_left.png" type="Texture" id=9]
+[ext_resource path="res://Texture/arrowSilver_right.png" type="Texture" id=10]
+[ext_resource path="res://Texture/arrowBlue_left.png" type="Texture" id=11]
+[ext_resource path="res://Texture/arrowBlue_right.png" type="Texture" id=12]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=13]
+[ext_resource path="res://UI/GameUI.gd" type="Script" id=14]
+[ext_resource path="res://UI/CreateUI.gd" type="Script" id=15]
+[ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=16]
+[ext_resource path="res://Texture/top_bg.png" type="Texture" id=17]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_38.png" type="Texture" id=18]
+[ext_resource path="res://Texture/pg_bg_03.png" type="Texture" id=19]
+[ext_resource path="res://UI/MainUi.gd" type="Script" id=20]
+[ext_resource path="res://Texture/top_title.png" type="Texture" id=21]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03.png" type="Texture" id=23]
+[ext_resource path="res://Map/Map1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_12.png" type="Texture" id=25]
+[ext_resource path="res://UI/MapUi.gd" type="Script" id=26]
+[ext_resource path="res://Texture/close.png" type="Texture" id=27]
+
+[sub_resource type="DynamicFont" id=1]
+size = 56
+outline_size = 6
+outline_color = Color( 0.713726, 0.768627, 0.619608, 1 )
+extra_spacing_char = 12
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 133, 34 )
+margin_bottom = 2.45886
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="DynamicFont" id=8]
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 17
+outline_size = 2
+outline_color = Color( 0.505882, 0.47451, 0.47451, 1 )
+extra_spacing_top = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 18
+outline_size = 3
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 6
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 18
+outline_size = 3
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 3
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 14
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=15]
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("map:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -107, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("top:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -200, -0.25, 0, 0.25, 0, 38, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("top2:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -200, -0.25, 0, 0.25, 0, 260, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("top3:rect_position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -200, -0.25, 0, 0.25, 0, 480, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+
+[sub_resource type="DynamicFont" id=16]
+size = 42
+outline_size = 6
+outline_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+extra_spacing_char = 6
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=17]
+resource_name = "show"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("bg:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("bg:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("TextureButton:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[node name="GameUi" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginUI" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LoginUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 104.0
+margin_right = 200.0
+margin_bottom = 161.0
+custom_fonts/font = SubResource( 1 )
+text = "幻境中的冒险队"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="LoginUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.0
+margin_top = -24.0
+margin_right = 93.0
+margin_bottom = 44.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "开始游戏"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="LoginUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.0
+margin_top = 72.0397
+margin_right = 93.0
+margin_bottom = 140.04
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "结束游戏"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateUI" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CreateUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.33484
+margin_bottom = -1.33484
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="role" type="Sprite" parent="CreateUI"]
+position = Vector2( 434.515, 444.141 )
+texture = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CreateUI/role"]
+position = Vector2( 3.99997, -72 )
+scale = Vector2( 5, 5 )
+frames = ExtResource( 6 )
+animation = "Idle"
+playing = true
+
+[node name="attr" type="Sprite" parent="CreateUI"]
+position = Vector2( 434.349, 179.955 )
+texture = ExtResource( 7 )
+
+[node name="Label2" type="Label" parent="CreateUI/attr"]
+margin_left = -213.0
+margin_top = -40.0
+margin_right = -106.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 8 )
+text = "攻击"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="CreateUI/attr"]
+margin_left = -144.396
+margin_top = -106.963
+margin_right = -38.3962
+margin_bottom = -80.963
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 16 )
+text = "100"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_atk" type="Label" parent="CreateUI/attr"]
+margin_left = -96.0
+margin_top = -40.0
+margin_right = -29.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 8 )
+text = "100"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_mtk" type="Label" parent="CreateUI/attr"]
+margin_left = -96.0
+margin_top = 4.0
+margin_right = -29.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 8 )
+text = "100"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_def" type="Label" parent="CreateUI/attr"]
+margin_left = -96.0
+margin_top = 48.0
+margin_right = -29.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 8 )
+text = "100"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_speed" type="Label" parent="CreateUI/attr"]
+margin_left = 108.0
+margin_top = -40.0
+margin_right = 175.0
+margin_bottom = -4.0
+custom_fonts/font = SubResource( 8 )
+text = "100"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_crit" type="Label" parent="CreateUI/attr"]
+margin_left = 108.0
+margin_top = 4.0
+margin_right = 175.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 8 )
+text = "100"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_mdef" type="Label" parent="CreateUI/attr"]
+margin_left = 108.0
+margin_top = 48.0
+margin_right = 175.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 8 )
+text = "100"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_lv" type="Label" parent="CreateUI/attr"]
+margin_left = 149.291
+margin_top = -106.963
+margin_right = 190.291
+margin_bottom = -75.963
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = ExtResource( 16 )
+text = "900"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CreateUI/attr"]
+margin_left = -213.0
+margin_top = 2.67584
+margin_right = -106.0
+margin_bottom = 38.6758
+custom_fonts/font = SubResource( 8 )
+text = "魔力"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="CreateUI/attr"]
+margin_left = -213.0
+margin_top = 47.0453
+margin_right = -106.0
+margin_bottom = 83.0453
+custom_fonts/font = SubResource( 8 )
+text = "物免"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="CreateUI/attr"]
+margin_left = -9.58948
+margin_top = -41.0
+margin_right = 97.4105
+margin_bottom = -5.0
+custom_fonts/font = SubResource( 8 )
+text = "速度"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="CreateUI/attr"]
+margin_left = -9.58948
+margin_top = 2.67584
+margin_right = 97.4105
+margin_bottom = 38.6758
+custom_fonts/font = SubResource( 8 )
+text = "暴击"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="CreateUI/attr"]
+margin_left = -9.58948
+margin_top = 47.0453
+margin_right = 97.4105
+margin_bottom = 83.0453
+custom_fonts/font = SubResource( 8 )
+text = "魔免"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="TextureButton" parent="CreateUI"]
+margin_left = 289.953
+margin_top = 383.203
+margin_right = 329.953
+margin_bottom = 423.203
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="TextureButton" parent="CreateUI"]
+margin_left = 544.515
+margin_top = 383.203
+margin_right = 584.515
+margin_bottom = 423.203
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="Sprite" parent="CreateUI"]
+position = Vector2( 439, 533 )
+texture = ExtResource( 8 )
+
+[node name="Label8" type="Label" parent="CreateUI/name"]
+margin_left = -50.0
+margin_top = -18.0
+margin_right = 57.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 8 )
+text = "黑袍法师"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="content" type="NinePatchRect" parent="CreateUI"]
+margin_left = 813.0
+margin_top = 60.0
+margin_right = 1123.0
+margin_bottom = 437.0
+texture = ExtResource( 13 )
+patch_margin_left = 21
+patch_margin_top = 31
+patch_margin_right = 26
+patch_margin_bottom = 26
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="CreateUI/content"]
+margin_left = 26.3303
+margin_top = 21.6719
+margin_right = 265.33
+margin_bottom = 68.6719
+custom_fonts/font = SubResource( 9 )
+text = "职业介绍："
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreateUI/content"]
+margin_left = 26.0
+margin_top = 77.0
+margin_right = 284.0
+margin_bottom = 348.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 10 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="CreateUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 202.334
+margin_top = 183.141
+margin_right = 394.334
+margin_bottom = 251.141
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+text = "创建角色"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainUi" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.68182
+margin_bottom = -1.68182
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top" type="NinePatchRect" parent="MainUi"]
+margin_left = -200.0
+margin_top = 32.0
+margin_right = 2.0
+margin_bottom = 242.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="NinePatchRect" parent="MainUi/top"]
+margin_left = 12.0
+margin_top = -26.0
+margin_right = 189.0
+margin_bottom = 21.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_job" type="Label" parent="MainUi/top/title"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -16.5
+margin_right = 74.0
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 12 )
+text = "无畏勇者"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="MainUi/top"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 37.9401
+margin_right = -39.2378
+margin_bottom = 60.9401
+custom_fonts/font = SubResource( 13 )
+text = "Lv."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_lv" type="Label" parent="MainUi/top"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -30.1648
+margin_top = 29.6368
+margin_right = 26.8352
+margin_bottom = 48.6368
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 16 )
+text = "1"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="MainUi/top"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 73.6818
+margin_right = -39.2378
+margin_bottom = 96.6818
+custom_fonts/font = SubResource( 13 )
+text = "血量"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_hp" type="TextureProgress" parent="MainUi/top"]
+margin_left = 71.0
+margin_top = 79.0
+margin_right = 167.0
+margin_bottom = 99.0
+texture_under = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="MainUi/top"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -18.0
+margin_top = 78.0
+margin_right = 66.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 14 )
+text = "0%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label3" type="Label" parent="MainUi/top"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 105.682
+margin_right = -35.2378
+margin_bottom = 128.682
+custom_fonts/font = SubResource( 13 )
+text = "经验"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_exp" type="TextureProgress" parent="MainUi/top"]
+margin_left = 71.0
+margin_top = 111.0
+margin_right = 167.0
+margin_bottom = 131.0
+texture_under = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_exp" type="Label" parent="MainUi/top"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -18.0
+margin_top = 110.0
+margin_right = 66.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 14 )
+text = "0%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top2" type="NinePatchRect" parent="MainUi"]
+margin_left = -200.0
+margin_top = 32.0
+margin_right = 1.99997
+margin_bottom = 242.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="NinePatchRect" parent="MainUi/top2"]
+margin_left = 12.0
+margin_top = -26.0
+margin_right = 189.0
+margin_bottom = 21.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_job" type="Label" parent="MainUi/top2/title"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -16.5
+margin_right = 74.0
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 12 )
+text = "无畏勇者"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="MainUi/top2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 37.9401
+margin_right = -39.2378
+margin_bottom = 60.9401
+custom_fonts/font = SubResource( 13 )
+text = "Lv."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_lv" type="Label" parent="MainUi/top2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -30.1648
+margin_top = 29.6368
+margin_right = 26.8352
+margin_bottom = 48.6368
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 16 )
+text = "1"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="MainUi/top2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 73.6818
+margin_right = -39.2378
+margin_bottom = 96.6818
+custom_fonts/font = SubResource( 13 )
+text = "血量"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_hp" type="TextureProgress" parent="MainUi/top2"]
+margin_left = 71.0
+margin_top = 79.0
+margin_right = 167.0
+margin_bottom = 99.0
+texture_under = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="MainUi/top2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -18.0
+margin_top = 78.0
+margin_right = 66.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 14 )
+text = "0%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label3" type="Label" parent="MainUi/top2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 105.682
+margin_right = -35.2378
+margin_bottom = 128.682
+custom_fonts/font = SubResource( 13 )
+text = "经验"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_exp" type="TextureProgress" parent="MainUi/top2"]
+margin_left = 71.0
+margin_top = 111.0
+margin_right = 167.0
+margin_bottom = 131.0
+texture_under = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_exp" type="Label" parent="MainUi/top2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -18.0
+margin_top = 110.0
+margin_right = 66.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 14 )
+text = "0%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top3" type="NinePatchRect" parent="MainUi"]
+margin_left = -200.0
+margin_top = 32.0
+margin_right = 2.0
+margin_bottom = 242.0
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="NinePatchRect" parent="MainUi/top3"]
+margin_left = 12.0
+margin_top = -26.0
+margin_right = 189.0
+margin_bottom = 21.0
+texture = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_job" type="Label" parent="MainUi/top3/title"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -16.5
+margin_right = 74.0
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 12 )
+text = "无畏勇者"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="MainUi/top3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 37.9401
+margin_right = -39.2378
+margin_bottom = 60.9401
+custom_fonts/font = SubResource( 13 )
+text = "Lv."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_lv" type="Label" parent="MainUi/top3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -30.1648
+margin_top = 29.6368
+margin_right = 26.8352
+margin_bottom = 48.6368
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 16 )
+text = "1"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="MainUi/top3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 73.6818
+margin_right = -39.2378
+margin_bottom = 96.6818
+custom_fonts/font = SubResource( 13 )
+text = "血量"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_hp" type="TextureProgress" parent="MainUi/top3"]
+margin_left = 71.0
+margin_top = 79.0
+margin_right = 167.0
+margin_bottom = 99.0
+texture_under = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="MainUi/top3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -18.0
+margin_top = 78.0
+margin_right = 66.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 14 )
+text = "0%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label3" type="Label" parent="MainUi/top3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.2378
+margin_top = 105.682
+margin_right = -35.2378
+margin_bottom = 128.682
+custom_fonts/font = SubResource( 13 )
+text = "经验"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_exp" type="TextureProgress" parent="MainUi/top3"]
+margin_left = 71.0
+margin_top = 111.0
+margin_right = 167.0
+margin_bottom = 131.0
+texture_under = ExtResource( 18 )
+texture_progress = ExtResource( 19 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_exp" type="Label" parent="MainUi/top3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -18.0
+margin_top = 110.0
+margin_right = 66.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 14 )
+text = "0%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainUi"]
+anims/show = SubResource( 15 )
+
+[node name="map" type="TextureButton" parent="MainUi"]
+margin_left = -107.0
+margin_top = 532.682
+margin_right = -9.0
+margin_bottom = 605.682
+texture_normal = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="MainUi/map"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -46.5
+margin_top = -23.0
+margin_right = 52.5
+custom_fonts/font = SubResource( 12 )
+text = "密林地图"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapUi" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="NinePatchRect" parent="MapUi"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -644.5
+margin_top = -288.0
+margin_right = 644.5
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 648.995, 299.699 )
+texture = ExtResource( 13 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 20
+patch_margin_bottom = 21
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" parent="MapUi/bg" instance=ExtResource( 24 )]
+position = Vector2( -23, -23 )
+scale = Vector2( 0.99, 0.99 )
+
+[node name="title" type="TextureRect" parent="MapUi/bg"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.5
+margin_top = -16.0
+margin_right = 192.5
+margin_bottom = 52.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MapUi/bg/title"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.5
+margin_top = -21.5
+margin_right = 102.5
+margin_bottom = 21.5
+custom_fonts/font = SubResource( 16 )
+text = "密林大陆"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MapUi"]
+anims/show = SubResource( 17 )
+
+[node name="TextureButton" type="TextureButton" parent="MapUi"]
+margin_left = 1237.52
+margin_top = 11.3716
+margin_right = 1326.52
+margin_bottom = 93.3716
+texture_normal = ExtResource( 27 )
+texture_focused = ExtResource( 27 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="LoginUI/Button" to="LoginUI" method="_on_Button_pressed"]
+[connection signal="pressed" from="LoginUI/Button2" to="LoginUI" method="_on_Button2_pressed"]
+[connection signal="pressed" from="CreateUI/left" to="CreateUI" method="_on_left_pressed"]
+[connection signal="pressed" from="CreateUI/right" to="CreateUI" method="_on_right_pressed"]
+[connection signal="pressed" from="CreateUI/Button" to="CreateUI" method="_on_Button_pressed"]
+[connection signal="pressed" from="MainUi/map" to="MainUi" method="_on_map_pressed"]
+[connection signal="pressed" from="MapUi/TextureButton" to="MapUi" method="_on_TextureButton_pressed"]
