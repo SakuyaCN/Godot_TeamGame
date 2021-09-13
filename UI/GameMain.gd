@@ -39,6 +39,7 @@ func _ready():
 func load_map():
 	var player_map = StorageData.storage_data["player_state"]["now_map"]
 	map_name = LocalData.map_data.keys()[player_map/10]
+	print(LocalData.map_data)
 
 func plus_size():
 	load_hero_size +=1
@@ -56,6 +57,7 @@ func start_fight():
 	get_tree().call_group("moster_role","start_fight")
 
 func go_position():
+	ConstantsValue.ui_layer.showMessage("点击人物可以展示属性面板",5)
 	for pos in StorageData.player_state["team_position"].size():
 		if StorageData.player_state["team_position"][pos] != null:
 			hero_size += 1

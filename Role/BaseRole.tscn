@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Texture/Pre-made characters/BlackHero.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Role/BaseRole.gd" type="Script" id=2]
@@ -13,6 +13,50 @@
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=11]
 
 [sub_resource type="Animation" id=5]
+resource_name = "choose"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("AnimatedSprite:self_modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("AnimatedSprite:self_modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("AnimatedSprite:self_modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.3 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("AnimatedSprite:self_modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.3 )
+}
+
+[sub_resource type="Animation" id=1]
 resource_name = "show_bar"
 length = 0.4
 tracks/0/type = "value"
@@ -111,7 +155,8 @@ playing = true
 script = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/show_bar = SubResource( 5 )
+anims/choose = SubResource( 5 )
+anims/show_bar = SubResource( 1 )
 
 [node name="RoleUI" type="Control" parent="."]
 margin_left = -72.0
@@ -124,12 +169,11 @@ __meta__ = {
 }
 
 [node name="hpbar" type="TextureRect" parent="RoleUI"]
-visible = false
-modulate = Color( 1, 1, 1, 0.924228 )
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -6.0
-margin_top = 146.211
+margin_top = 100.0
 margin_right = 163.0
-margin_bottom = 186.211
+margin_bottom = 140.0
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -183,12 +227,11 @@ __meta__ = {
 }
 
 [node name="mpbar" type="TextureRect" parent="RoleUI"]
-visible = false
-modulate = Color( 1, 1, 1, 0.924228 )
+modulate = Color( 1, 1, 1, 0 )
 margin_left = -6.0
-margin_top = 192.423
+margin_top = 100.0
 margin_right = 163.0
-margin_bottom = 232.423
+margin_bottom = 140.0
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
@@ -243,8 +286,8 @@ __meta__ = {
 
 [node name="name" type="Label" parent="RoleUI"]
 anchor_right = 1.0
-margin_top = 45.0
-margin_bottom = 65.0
+margin_top = 37.0
+margin_bottom = 57.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_outline_modulate = Color( 0.890196, 0.72549, 0.501961, 1 )
 align = 1
@@ -254,6 +297,7 @@ __meta__ = {
 }
 
 [node name="attr" type="Sprite" parent="RoleUI"]
+visible = false
 position = Vector2( 73.257, -82.2487 )
 z_index = 1
 texture = ExtResource( 11 )
@@ -456,3 +500,4 @@ __meta__ = {
 }
 
 [connection signal="gui_input" from="RoleUI" to="RoleUI" method="_on_RoleUI_gui_input"]
+[connection signal="visibility_changed" from="RoleUI/attr" to="RoleUI" method="_on_attr_visibility_changed"]

@@ -77,4 +77,6 @@ func _process(delta):
 				get_tree().call_group("game_main","moster_plus_size")
 
 func start_fight():
+	if am_player.is_playing():
+		yield(am_player,"animation_finished")
 	am_player.play("show_bar")

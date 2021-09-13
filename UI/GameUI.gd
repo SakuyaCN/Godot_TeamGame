@@ -9,4 +9,3 @@ onready var uiLayer = get_parent()
 
 func _ready():
 	pass # Replace with function body.
-
