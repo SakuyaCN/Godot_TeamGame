@@ -6,6 +6,8 @@ var is_position = false
 var is_moster = false
 var run_position = Vector2.ZERO
 
+onready var ui = $RoleUI
+
 onready var am_player = $AnimationPlayer
 onready var fight_script = $FightScript
 onready var animatedSprite = $AnimatedSprite
@@ -15,6 +17,7 @@ func _ready():
 
 func set_role(_role_data):
 	role_data = _role_data
+	ui.initRole()
 	load_asset()
 
 func setIndex(_index):
@@ -30,12 +33,15 @@ func load_asset():
 		"无畏勇者":animatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
 		"不屈骑士":animatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres")
 		"战地牧师":animatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
-		_:
+		"moster":
 			is_moster = true
 			animatedSprite.frames = load(role_data["node"].frames)
 			animatedSprite.flip_h = role_data["node"].flip_h
 			animatedSprite.position.y = role_data["node"].pos_y
 			animatedSprite.scale = Vector2(role_data["node"].scale,role_data["node"].scale)
+			$RoleUI/name.rect_position.y = role_data["node"].pos_y / 4
+			$RoleUI/attr.position.y += role_data["node"].pos_y
+			$RoleUI/name.set("custom_colors/font_outline_modulate",Color.palevioletred)
 	animatedSprite.animation = "Idle"
 	if is_moster:
 		add_to_group("moster_role")

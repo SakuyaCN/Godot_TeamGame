@@ -75,7 +75,7 @@ font_data = ExtResource( 1 )
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 133, 34 )
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=12]
 length = 0.4
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("map:rect_position:x")
@@ -88,21 +88,21 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 )
 }
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 size = 18
 outline_size = 3
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 6
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=14]
 size = 42
 outline_size = 6
 outline_color = Color( 0.470588, 0.470588, 0.470588, 1 )
 extra_spacing_char = 6
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=15]
 resource_name = "show"
 length = 0.3
 tracks/0/type = "bezier"
@@ -151,6 +151,7 @@ tracks/3/keys = {
 [node name="GameUi" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -160,6 +161,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -168,12 +170,12 @@ __meta__ = {
 [node name="Label" type="Label" parent="LoginUI"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -200.0
-margin_top = 104.0
-margin_right = 200.0
-margin_bottom = 161.0
+margin_left = -219.0
+margin_top = 112.0
+margin_right = 219.0
+margin_bottom = 169.0
 custom_fonts/font = SubResource( 1 )
-text = "幻境中的冒险队"
+text = "冒险队模拟器"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -220,6 +222,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -552,13 +555,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -1.68182
 margin_bottom = -1.68182
+mouse_filter = 2
 script = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainUi"]
-anims/show = SubResource( 15 )
+anims/show = SubResource( 12 )
 
 [node name="map" type="TextureButton" parent="MainUi"]
 margin_left = 35.0
@@ -578,7 +582,7 @@ anchor_bottom = 1.0
 margin_left = -46.5
 margin_top = -23.0
 margin_right = 52.5
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
 text = "密林地图"
 align = 1
 valign = 1
@@ -590,6 +594,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 script = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -639,14 +644,14 @@ margin_left = -102.5
 margin_top = -21.5
 margin_right = 102.5
 margin_bottom = 21.5
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 14 )
 text = "密林大陆"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MapUi"]
-anims/show = SubResource( 17 )
+anims/show = SubResource( 15 )
 
 [node name="TextureButton" type="TextureButton" parent="MapUi"]
 margin_left = 1237.52

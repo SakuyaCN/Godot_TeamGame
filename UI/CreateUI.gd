@@ -110,6 +110,7 @@ func _on_Button_pressed():
 	}
 	var main_role = {
 		"rid":"0",
+		"nickname":base_role[check_index].name,
 		"job":base_role[check_index].name,
 		"exp":0,
 		"lv":1,

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Texture/3.png" type="Texture" id=1]
 [ext_resource path="res://UI/UILayer.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://icon.png" type="Texture" id=15]
 [ext_resource path="res://UI/GameMain.gd" type="Script" id=16]
+[ext_resource path="res://Shaders/RimLight.tres" type="Material" id=17]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 9 )
@@ -304,29 +305,41 @@ font_data = ExtResource( 14 )
 [sub_resource type="Shader" id=39]
 code = "shader_type canvas_item;
 
-// Ranges from 0 to 1 over the course of the transition.
-// We use this to actually animate the shader.
-uniform float progress : hint_range(0, 1);
-uniform vec4 color :hint_color;
-// Size of each diamond, in pixels.
-uniform float diamondPixelSize = 10f;
+uniform vec4 in_color:hint_color;
+uniform vec4 out_color:hint_color;
 
-void fragment() {
-	COLOR = color;
-	float xFraction = fract(FRAGCOORD.x / diamondPixelSize);
-	float yFraction = fract(FRAGCOORD.y / diamondPixelSize);
-	float xDistance = abs(xFraction - 0.5);
-	float yDistance = abs(yFraction - 0.5);
-	if (xDistance + yDistance + UV.x + UV.y > progress * 4f) {
-		discard;
-	}
+uniform float in_out:hint_range(0.,1.)=0.;
+
+uniform float position:hint_range(-1.5,1.) = 0.856;
+uniform vec2 size = vec2(16., 16.);
+
+void fragment(){
+    vec2 a = (1./SCREEN_PIXEL_SIZE) / size;
+    
+    vec2 uv=UV;
+    uv *= a;
+    
+    vec2 i_uv = floor(uv);
+    vec2 f_uv = fract(uv);
+    
+    float wave = max(0.,i_uv.x/(a.x) - position);
+    
+    vec2 center = f_uv*2.-1.;
+    float circle = length(center);
+    circle = 1. - step(wave,circle);
+    
+    vec4 color = mix(in_color, out_color, step(0.5, in_out));
+    
+    COLOR=vec4(circle) * color;
 }"
 
 [sub_resource type="ShaderMaterial" id=40]
 shader = SubResource( 39 )
-shader_param/progress = 0.0
-shader_param/color = Color( 0, 0, 0, 1 )
-shader_param/diamondPixelSize = 15.0
+shader_param/in_color = Color( 0.25098, 0.47451, 0.517647, 1 )
+shader_param/out_color = null
+shader_param/in_out = 0.0
+shader_param/position = 1.0
+shader_param/size = Vector2( 16, 16 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 6 )
@@ -341,30 +354,30 @@ scale = Vector2( 5, 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
 frames = SubResource( 7 )
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 25.6, 0 )
 frames = SubResource( 14 )
-frame = 2
+frame = 4
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 54.4, 0 )
 frames = SubResource( 21 )
-frame = 4
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 118.4, 0 )
 frames = SubResource( 28 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 144, 0 )
 frames = SubResource( 35 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="pb1" type="ParallaxBackground" parent="PxBg"]
@@ -420,10 +433,10 @@ script = ExtResource( 16 )
 [node name="Position" type="Node2D" parent="GameMain"]
 
 [node name="PositionP1" type="Position2D" parent="GameMain/Position"]
-position = Vector2( 574, 498 )
+position = Vector2( 550, 498 )
 
 [node name="PositionP2" type="Position2D" parent="GameMain/Position"]
-position = Vector2( 361, 498 )
+position = Vector2( 345, 498 )
 
 [node name="PositionP3" type="Position2D" parent="GameMain/Position"]
 position = Vector2( 138, 498 )
@@ -431,10 +444,13 @@ position = Vector2( 138, 498 )
 [node name="PositionMoster" type="Node2D" parent="GameMain"]
 
 [node name="PositionM1" type="Position2D" parent="GameMain/PositionMoster"]
-position = Vector2( 840, 498 )
+position = Vector2( 793, 498 )
 
 [node name="PositionM2" type="Position2D" parent="GameMain/PositionMoster"]
-position = Vector2( 1028, 498 )
+position = Vector2( 995, 498 )
+
+[node name="PositionM3" type="Position2D" parent="GameMain/PositionMoster"]
+position = Vector2( 1180, 498 )
 
 [node name="Timer" type="Timer" parent="GameMain"]
 
@@ -444,6 +460,7 @@ script = ExtResource( 2 )
 [node name="Control" parent="UILayer" instance=ExtResource( 8 )]
 
 [node name="msg" type="Label" parent="UILayer"]
+visible = false
 anchor_right = 1.0
 margin_top = 32.0
 margin_bottom = 112.0
@@ -462,8 +479,15 @@ one_shot = true
 [node name="Trans" type="Sprite" parent="UILayer"]
 visible = false
 material = SubResource( 40 )
-position = Vector2( 672.125, 312.659 )
-scale = Vector2( 20.9961, 9.63565 )
+position = Vector2( 672.125, 309.659 )
+scale = Vector2( 20.9961, 9.7294 )
+texture = ExtResource( 15 )
+
+[node name="Sprite" type="Sprite" parent="UILayer"]
+visible = false
+material = ExtResource( 17 )
+position = Vector2( 672.125, 311.659 )
+scale = Vector2( 20.9961, 9.7919 )
 texture = ExtResource( 15 )
 
 [connection signal="timeout" from="GameMain/Timer" to="GameMain" method="_on_Timer_timeout"]
