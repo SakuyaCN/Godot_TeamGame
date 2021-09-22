@@ -82,6 +82,7 @@ func moster_join():
 	var moster_data = {
 		"nickname":moster_name,
 		"job":"moster",
+		"lv":5,
 		"attr":LocalData.map_data["all_attr"][StorageData.storage_data["player_state"]["now_map"]],
 		"node":moster_info
 	}
