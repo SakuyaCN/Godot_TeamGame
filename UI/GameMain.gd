@@ -46,13 +46,16 @@ func plus_size():
 	if load_hero_size == hero_size:
 		$Timer.start()
 
+#敌人进入
 func moster_plus_size():
 	load_moster_size +=1
 	if load_moster_size == moster_size:
 		is_flighting = true
 		start_fight()
 
+#战斗开始信号
 func start_fight():
+	ConstantsValue.game_layer.fight_ui.UIchange(true)
 	get_tree().call_group("player_role","start_fight")
 	get_tree().call_group("moster_role","start_fight")
 

@@ -20,6 +20,7 @@ ConstantsValue="*res://AutoLoad/ConstantsValue.gd"
 StorageData="*res://Storage/StorageData.gd"
 Utils="*res://AutoLoad/Utils.gd"
 LocalData="*res://Storage/LocalData.gd"
+ConfigScript="*res://Storage/ConfigScript.gd"
 
 [display]
 

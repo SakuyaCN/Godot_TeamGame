@@ -12,7 +12,7 @@
 [ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=10]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=11]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "choose"
 length = 0.3
 tracks/0/type = "bezier"
@@ -56,8 +56,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.3 )
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "show_bar"
+[sub_resource type="Animation" id=2]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("RoleUI/hpbar:visible")
@@ -124,18 +123,18 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 0.4 )
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 12
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 outline_size = 2
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 4 )
@@ -143,20 +142,20 @@ font_data = ExtResource( 4 )
 [node name="BaseRole" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="FightScript" type="Node" parent="."]
+script = ExtResource( 3 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -48 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
-[node name="FightScript" type="Node" parent="."]
-script = ExtResource( 3 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/choose = SubResource( 5 )
-anims/show_bar = SubResource( 1 )
+anims/choose = SubResource( 1 )
+anims/show_bar = SubResource( 2 )
 
 [node name="RoleUI" type="Control" parent="."]
 margin_left = -72.0
@@ -187,7 +186,7 @@ margin_left = 37.5
 margin_top = 4.0
 margin_right = 71.5
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "HP"
 align = 1
 valign = 1
@@ -218,7 +217,7 @@ anchor_right = 0.5
 margin_left = -40.0
 margin_right = 44.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "100%"
 align = 1
 valign = 1
@@ -245,7 +244,7 @@ margin_left = 37.5
 margin_top = 4.0
 margin_right = 71.5
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "MP"
 align = 1
 valign = 1
@@ -276,7 +275,7 @@ anchor_right = 0.5
 margin_left = -40.0
 margin_right = 44.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "100%"
 align = 1
 valign = 1
@@ -288,7 +287,7 @@ __meta__ = {
 anchor_right = 1.0
 margin_top = 37.0
 margin_bottom = 57.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_outline_modulate = Color( 0.890196, 0.72549, 0.501961, 1 )
 align = 1
 valign = 1
@@ -298,8 +297,10 @@ __meta__ = {
 
 [node name="attr" type="Sprite" parent="RoleUI"]
 visible = false
+light_mask = 2
 position = Vector2( 73.257, -82.2487 )
-z_index = 1
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 11 )
 
 [node name="Label2" type="Label" parent="RoleUI/attr"]
@@ -307,7 +308,7 @@ margin_left = -213.0
 margin_top = -40.0
 margin_right = -106.0
 margin_bottom = -4.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "攻击"
 align = 1
 valign = 1
@@ -335,7 +336,7 @@ margin_left = -96.0
 margin_top = -40.0
 margin_right = -29.0
 margin_bottom = -4.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "100"
 align = 1
 valign = 1
@@ -349,7 +350,7 @@ margin_left = -96.0
 margin_top = 4.0
 margin_right = -29.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "100"
 align = 1
 valign = 1
@@ -363,7 +364,7 @@ margin_left = -96.0
 margin_top = 48.0
 margin_right = -29.0
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "100"
 align = 1
 valign = 1
@@ -377,7 +378,7 @@ margin_left = 108.0
 margin_top = -40.0
 margin_right = 175.0
 margin_bottom = -4.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "100"
 align = 1
 valign = 1
@@ -391,7 +392,7 @@ margin_left = 108.0
 margin_top = 4.0
 margin_right = 175.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "100"
 align = 1
 valign = 1
@@ -405,7 +406,7 @@ margin_left = 108.0
 margin_top = 48.0
 margin_right = 175.0
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "100"
 align = 1
 valign = 1
@@ -434,7 +435,7 @@ margin_left = -213.0
 margin_top = 2.67584
 margin_right = -106.0
 margin_bottom = 38.6758
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "魔力"
 align = 1
 valign = 1
@@ -448,7 +449,7 @@ margin_left = -213.0
 margin_top = 47.0453
 margin_right = -106.0
 margin_bottom = 83.0453
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "物免"
 align = 1
 valign = 1
@@ -462,7 +463,7 @@ margin_left = -9.58948
 margin_top = -41.0
 margin_right = 97.4105
 margin_bottom = -5.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "速度"
 align = 1
 valign = 1
@@ -476,7 +477,7 @@ margin_left = -9.58948
 margin_top = 2.67584
 margin_right = 97.4105
 margin_bottom = 38.6758
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "暴击"
 align = 1
 valign = 1
@@ -490,7 +491,7 @@ margin_left = -9.58948
 margin_top = 47.0453
 margin_right = 97.4105
 margin_bottom = 83.0453
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "魔免"
 align = 1
 valign = 1

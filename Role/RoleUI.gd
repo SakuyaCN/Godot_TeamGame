@@ -27,6 +27,8 @@ func load_attr():
 
 func _on_RoleUI_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
+		if get_parent().is_position:
+			return
 		if ConstantsValue.const_choose_role_arrt != null && ConstantsValue.const_choose_role_arrt.visible:
 			if ConstantsValue.const_choose_role_arrt != attr_paint:
 				ConstantsValue.const_choose_role_arrt.visible = false
@@ -40,5 +42,7 @@ func _on_RoleUI_gui_input(event):
 
 func _on_attr_visibility_changed():
 	if attr_paint.visible:
+		if attr_paint.global_position.x < 200:
+			attr_paint.position.x += 40
 		if !get_parent().am_player.is_playing():
 			get_parent().am_player.play("choose")

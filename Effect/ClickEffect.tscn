@@ -1,3 +1,23 @@
-[gd_scene format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Texture/Effect/smoke/FX001_02.png" type="Texture" id=1]
+[ext_resource path="res://Texture/Effect/smoke/FX001_04.png" type="Texture" id=2]
+[ext_resource path="res://Texture/Effect/smoke/FX001_01.png" type="Texture" id=3]
+[ext_resource path="res://Texture/Effect/smoke/FX001_03.png" type="Texture" id=4]
+[ext_resource path="res://Texture/Effect/smoke/FX001_05.png" type="Texture" id=5]
+[ext_resource path="res://Effect/ClickEffect.gd" type="Script" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )

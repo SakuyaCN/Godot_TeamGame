@@ -109,12 +109,13 @@ func _on_Button_pressed():
 		"team_position":["0",null,null]
 	}
 	var main_role = {
-		"rid":"0",
+		"rid":"0",#编号
 		"nickname":base_role[check_index].name,
-		"job":base_role[check_index].name,
-		"exp":0,
-		"lv":1,
-		"attr":{
+		"job":base_role[check_index].name,#职业
+		"exp":0,#经验
+		"lv":1,#等级
+		"atk_count":1,#攻击数量
+		"attr":{#属性
 			"hp":base_role[check_index].hp,
 			"atk":base_role[check_index].atk,
 			"mtk":base_role[check_index].mtk,

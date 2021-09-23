@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://UI/GameUI.gd" type="Script" id=14]
 [ext_resource path="res://UI/CreateUI.gd" type="Script" id=15]
 [ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=16]
+[ext_resource path="res://Texture/hud/Chest3.png" type="Texture" id=17]
+[ext_resource path="res://UI/BagUI.gd" type="Script" id=18]
 [ext_resource path="res://UI/MainUi.gd" type="Script" id=20]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03.png" type="Texture" id=23]
 [ext_resource path="res://Map/Map1.tscn" type="PackedScene" id=24]
@@ -87,12 +89,22 @@ tracks/0/keys = {
 "points": PoolRealArray( -107, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.4 )
 }
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("chest:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -203, -0.25, 0, 0.25, 0, 126, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
 
 [sub_resource type="DynamicFont" id=13]
-size = 18
+size = 22
 outline_size = 3
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
-extra_spacing_char = 6
+extra_spacing_char = 4
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=14]
@@ -247,6 +259,7 @@ position = Vector2( 3.99997, -72 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 6 )
 animation = "Idle"
+frame = 2
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -566,9 +579,10 @@ anims/show = SubResource( 12 )
 
 [node name="map" type="TextureButton" parent="MainUi"]
 margin_left = 35.0
-margin_top = 532.682
+margin_top = 32.0
 margin_right = 133.0
-margin_bottom = 605.682
+margin_bottom = 105.0
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -579,11 +593,39 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -46.5
+margin_left = -55.0
 margin_top = -23.0
-margin_right = 52.5
+margin_right = 55.0
 custom_fonts/font = SubResource( 13 )
 text = "密林地图"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chest" type="TextureButton" parent="MainUi"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 218.0
+margin_bottom = 110.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="MainUi/chest"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 13 )
+text = "储物宝箱"
 align = 1
 valign = 1
 __meta__ = {
@@ -594,7 +636,6 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
 script = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -665,10 +706,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BagUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 18 )
+
+[node name="ColorRect" type="ColorRect" parent="BagUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.215686 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="BagUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -231.032
+margin_top = -181.059
+margin_right = 363.968
+margin_bottom = 248.941
+mouse_filter = 0
+texture = ExtResource( 13 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 20
+patch_margin_bottom = 21
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="BagUI/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -278.5
+margin_top = -201.5
+margin_right = 278.5
+margin_bottom = 195.5
+
 [connection signal="pressed" from="LoginUI/Button" to="LoginUI" method="_on_Button_pressed"]
 [connection signal="pressed" from="LoginUI/Button2" to="LoginUI" method="_on_Button2_pressed"]
 [connection signal="pressed" from="CreateUI/left" to="CreateUI" method="_on_left_pressed"]
 [connection signal="pressed" from="CreateUI/right" to="CreateUI" method="_on_right_pressed"]
 [connection signal="pressed" from="CreateUI/Button" to="CreateUI" method="_on_Button_pressed"]
 [connection signal="pressed" from="MainUi/map" to="MainUi" method="_on_map_pressed"]
+[connection signal="pressed" from="MainUi/chest" to="MainUi" method="_on_chest_pressed"]
 [connection signal="pressed" from="MapUi/TextureButton" to="MapUi" method="_on_TextureButton_pressed"]
+[connection signal="gui_input" from="BagUI/ColorRect" to="BagUI" method="_on_ColorRect_gui_input"]
