@@ -300,41 +300,41 @@ shader_param/color = Color( 0.666667, 0.815686, 0.654902, 0.8 )
 shader_param/hdr = true
 shader_param/seed = 8.821
 
+[sub_resource type="StyleBoxTexture" id=38]
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 172, 42 )
+
+[sub_resource type="StyleBoxTexture" id=39]
+texture = ExtResource( 18 )
+region_rect = Rect2( 0, 0, 172, 42 )
+
+[sub_resource type="StyleBoxEmpty" id=40]
+
 [sub_resource type="StyleBoxTexture" id=41]
 texture = ExtResource( 18 )
 region_rect = Rect2( 0, 0, 172, 42 )
 
-[sub_resource type="StyleBoxTexture" id=42]
-texture = ExtResource( 18 )
-region_rect = Rect2( 0, 0, 172, 42 )
-
-[sub_resource type="StyleBoxEmpty" id=43]
-
-[sub_resource type="StyleBoxTexture" id=44]
-texture = ExtResource( 18 )
-region_rect = Rect2( 0, 0, 172, 42 )
-
-[sub_resource type="DynamicFont" id=45]
+[sub_resource type="DynamicFont" id=42]
 size = 24
 outline_size = 4
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 14 )
 
-[sub_resource type="StyleBoxEmpty" id=46]
+[sub_resource type="StyleBoxEmpty" id=43]
 
-[sub_resource type="DynamicFont" id=47]
+[sub_resource type="DynamicFont" id=44]
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=38]
+[sub_resource type="DynamicFont" id=45]
 size = 25
 outline_size = 2
 outline_color = Color( 0.643137, 0.619608, 0.619608, 1 )
 extra_spacing_top = 2
 font_data = ExtResource( 14 )
 
-[sub_resource type="Shader" id=39]
+[sub_resource type="Shader" id=46]
 code = "shader_type canvas_item;
 
 uniform vec4 in_color:hint_color;
@@ -365,8 +365,8 @@ void fragment(){
     COLOR=vec4(circle) * color;
 }"
 
-[sub_resource type="ShaderMaterial" id=40]
-shader = SubResource( 39 )
+[sub_resource type="ShaderMaterial" id=47]
+shader = SubResource( 46 )
 shader_param/in_color = Color( 0.25098, 0.47451, 0.517647, 1 )
 shader_param/out_color = null
 shader_param/in_out = 0.0
@@ -386,30 +386,30 @@ scale = Vector2( 5, 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 25.6, 0 )
 frames = SubResource( 14 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 54.4, 0 )
 frames = SubResource( 21 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 118.4, 0 )
 frames = SubResource( 28 )
-frame = 4
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 144, 0 )
 frames = SubResource( 35 )
+frame = 2
 playing = true
 
 [node name="pb1" type="ParallaxBackground" parent="PxBg"]
@@ -481,11 +481,11 @@ margin_left = -132.5
 margin_top = -181.5
 margin_right = 132.5
 margin_bottom = -106.5
-custom_styles/hover = SubResource( 41 )
-custom_styles/pressed = SubResource( 42 )
-custom_styles/focus = SubResource( 43 )
-custom_styles/normal = SubResource( 44 )
-custom_fonts/font = SubResource( 45 )
+custom_styles/hover = SubResource( 38 )
+custom_styles/pressed = SubResource( 39 )
+custom_styles/focus = SubResource( 40 )
+custom_styles/normal = SubResource( 41 )
+custom_fonts/font = SubResource( 42 )
 text = "开始战斗"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -498,8 +498,8 @@ margin_right = 760.376
 margin_bottom = 249.42
 custom_icons/checked = ExtResource( 19 )
 custom_icons/unchecked = ExtResource( 20 )
-custom_styles/focus = SubResource( 46 )
-custom_fonts/font = SubResource( 47 )
+custom_styles/focus = SubResource( 43 )
+custom_fonts/font = SubResource( 44 )
 custom_constants/check_vadjust = 1
 custom_constants/hseparation = 24
 text = "是否自动战斗"
@@ -543,7 +543,7 @@ visible = false
 anchor_right = 1.0
 margin_top = 32.0
 margin_bottom = 112.0
-custom_fonts/font = SubResource( 38 )
+custom_fonts/font = SubResource( 45 )
 align = 1
 valign = 1
 autowrap = true
@@ -557,7 +557,7 @@ one_shot = true
 
 [node name="Trans" type="Sprite" parent="UILayer"]
 visible = false
-material = SubResource( 40 )
+material = SubResource( 47 )
 position = Vector2( 672.125, 309.659 )
 scale = Vector2( 20.9961, 9.7294 )
 texture = ExtResource( 15 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -18,12 +18,17 @@
 [ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=16]
 [ext_resource path="res://Texture/hud/Chest3.png" type="Texture" id=17]
 [ext_resource path="res://UI/BagUI.gd" type="Script" id=18]
+[ext_resource path="res://Texture/hud/Assets-2(Scale-x2).png" type="Texture" id=19]
 [ext_resource path="res://UI/MainUi.gd" type="Script" id=20]
+[ext_resource path="res://Texture/hud/Assets-2(Scale-x2)-No-BG-恢复的_03.png" type="Texture" id=21]
+[ext_resource path="res://UI/ItemUI/HeroItem.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03.png" type="Texture" id=23]
 [ext_resource path="res://Map/Map1.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_12.png" type="Texture" id=25]
 [ext_resource path="res://UI/MapUi.gd" type="Script" id=26]
 [ext_resource path="res://Texture/close.png" type="Texture" id=27]
+[ext_resource path="res://UI/PartyUI.gd" type="Script" id=28]
+[ext_resource path="res://UI/ScrollContainer.gd" type="Script" id=29]
 
 [sub_resource type="DynamicFont" id=1]
 size = 56
@@ -99,6 +104,16 @@ tracks/1/keys = {
 "points": PoolRealArray( -203, -0.25, 0, 0.25, 0, 126, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.4 )
 }
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("party:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -291, -0.25, 0, 0.25, 0, 222, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
 
 [sub_resource type="DynamicFont" id=13]
 size = 22
@@ -157,6 +172,34 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[sub_resource type="DynamicFont" id=16]
+size = 14
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 14
+extra_spacing_bottom = 6
+extra_spacing_char = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 14
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=19]
+resource_name = "item_show"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Item:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 393, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.3 )
 }
 
@@ -259,7 +302,7 @@ position = Vector2( 3.99997, -72 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -605,9 +648,9 @@ __meta__ = {
 }
 
 [node name="chest" type="TextureButton" parent="MainUi"]
-margin_left = 120.0
+margin_left = 126.0
 margin_top = 24.0
-margin_right = 218.0
+margin_right = 224.0
 margin_bottom = 110.0
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 17 )
@@ -626,6 +669,34 @@ margin_top = -23.0
 margin_right = 55.0
 custom_fonts/font = SubResource( 13 )
 text = "储物宝箱"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="party" type="TextureButton" parent="MainUi"]
+margin_left = 222.0
+margin_top = 24.0
+margin_right = 303.0
+margin_bottom = 110.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 21 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="MainUi/party"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 13 )
+text = "冒险小队"
 align = 1
 valign = 1
 __meta__ = {
@@ -707,14 +778,71 @@ __meta__ = {
 }
 
 [node name="BagUI" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ColorRect" type="ColorRect" parent="BagUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.215686 )
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="NinePatchRect" parent="BagUI"]
+visible = false
+margin_left = 393.0
+margin_top = 148.0
+margin_right = 680.0
+margin_bottom = 467.0
+texture = ExtResource( 19 )
+patch_margin_top = 169
+patch_margin_right = 63
+patch_margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="BagUI/Item"]
+margin_left = 10.0
+margin_top = 4.0
+margin_right = 156.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+text = "一个道具"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="BagUI/Item"]
+margin_left = 15.0
+margin_top = 59.0
+margin_right = 257.0
+margin_bottom = 194.0
+custom_fonts/font = SubResource( 18 )
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+text = "一个道具"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lv" type="Label" parent="BagUI/Item"]
+margin_left = 23.0
+margin_top = 204.0
+margin_right = 257.0
+margin_bottom = 227.0
+custom_fonts/font = SubResource( 17 )
+custom_colors/font_color = Color( 0.607843, 0.258824, 0.921569, 1 )
+text = "等级：1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -724,10 +852,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -231.032
-margin_top = -181.059
-margin_right = 363.968
-margin_bottom = 248.941
+margin_left = -297.5
+margin_top = -202.5
+margin_right = 297.5
+margin_bottom = 202.5
 mouse_filter = 0
 texture = ExtResource( 13 )
 patch_margin_left = 16
@@ -744,9 +872,96 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -278.5
-margin_top = -201.5
+margin_top = -178.5
 margin_right = 278.5
-margin_bottom = 195.5
+margin_bottom = 178.5
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BagUI"]
+anims/item_show = SubResource( 19 )
+
+[node name="PartyUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="PartyUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.615686 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PartyUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -290.0
+margin_top = 134.0
+margin_right = 290.0
+margin_bottom = 266.0
+scroll_vertical_enabled = false
+script = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HBoxContainer" parent="PartyUI/ScrollContainer"]
+margin_right = 2240.0
+margin_bottom = 120.0
+alignment = 1
+
+[node name="Node2D" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+
+[node name="Node2D2" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 204.0
+margin_right = 404.0
+
+[node name="Node2D3" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 408.0
+margin_right = 608.0
+
+[node name="Node2D4" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 612.0
+margin_right = 812.0
+
+[node name="Node2D5" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 816.0
+margin_right = 1016.0
+
+[node name="Node2D6" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 1020.0
+margin_right = 1220.0
+
+[node name="Node2D7" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 1224.0
+margin_right = 1424.0
+
+[node name="Node2D8" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 1428.0
+margin_right = 1628.0
+
+[node name="Node2D9" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 1632.0
+margin_right = 1832.0
+
+[node name="Node2D10" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 1836.0
+margin_right = 2036.0
+
+[node name="Node2D11" parent="PartyUI/ScrollContainer/HSlider" instance=ExtResource( 22 )]
+margin_left = 2040.0
+margin_right = 2240.0
 
 [connection signal="pressed" from="LoginUI/Button" to="LoginUI" method="_on_Button_pressed"]
 [connection signal="pressed" from="LoginUI/Button2" to="LoginUI" method="_on_Button2_pressed"]
@@ -755,5 +970,11 @@ margin_bottom = 195.5
 [connection signal="pressed" from="CreateUI/Button" to="CreateUI" method="_on_Button_pressed"]
 [connection signal="pressed" from="MainUi/map" to="MainUi" method="_on_map_pressed"]
 [connection signal="pressed" from="MainUi/chest" to="MainUi" method="_on_chest_pressed"]
+[connection signal="pressed" from="MainUi/party" to="MainUi" method="_on_party_pressed"]
 [connection signal="pressed" from="MapUi/TextureButton" to="MapUi" method="_on_TextureButton_pressed"]
+[connection signal="visibility_changed" from="BagUI" to="BagUI" method="_on_BagUI_visibility_changed"]
 [connection signal="gui_input" from="BagUI/ColorRect" to="BagUI" method="_on_ColorRect_gui_input"]
+[connection signal="gui_input" from="PartyUI/ColorRect" to="PartyUI" method="_on_ColorRect_gui_input"]
+[connection signal="gui_input" from="PartyUI/ScrollContainer" to="PartyUI/ScrollContainer" method="_on_ScrollContainer_gui_input"]
+[connection signal="scroll_ended" from="PartyUI/ScrollContainer" to="PartyUI" method="_on_ScrollContainer_scroll_ended"]
+[connection signal="scroll_started" from="PartyUI/ScrollContainer" to="PartyUI" method="_on_ScrollContainer_scroll_started"]

@@ -1,0 +1,22 @@
+{
+    "goods":{
+        "红色岩石":{
+            "image":"res://Texture/Data/d1/Icon1.png",
+            "info":"基础升级材料，适用于冒险队成员1-30级升级，增加30点基础经验值！",
+            "lv":1,
+            "type":"exp"
+        },
+        "黑色岩石":{
+            "image":"res://Texture/Data/d1/Icon2.png",
+            "info":"中级升级材料，适用于冒险队成员30-60级升级，增加150点基础经验值！",
+            "lv":30,
+            "type":"exp"
+        },
+        "紫色岩石":{
+            "image":"res://Texture/Data/d1/Icon5.png",
+            "info":"高级升级材料，适用于冒险队成员60-90级升级，增加550点基础经验值！",
+            "lv":60,
+            "type":"exp"
+        }
+    }
+}

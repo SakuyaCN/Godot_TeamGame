@@ -65,6 +65,7 @@ var base_role = [
 var check_index = 0
 
 func _ready():
+	visible = false
 	load_info()
 
 func load_info():

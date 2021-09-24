@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Texture/Pre-made characters/BlackHero.tres" type="SpriteFrames" id=2]
+
+[node name="Node2D" type="Control"]
+margin_right = 200.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 200, 120 )
+rect_pivot_offset = Vector2( -726.134, -309.983 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 93.4864, 53.5137 )
+scale = Vector2( 5, 5 )
+frames = ExtResource( 2 )
+animation = "Idle"
+playing = true

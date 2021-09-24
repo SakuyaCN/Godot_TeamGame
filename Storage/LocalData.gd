@@ -1,9 +1,10 @@
 extends Node
 
-var moster_data
-var map_data
-#tags position 0 物品类型
-#	quick ->可放入快捷栏类型 equ ->可放入装备栏类型 -> all 可放入任意位置
+var moster_data#怪物数据
+var map_data#地图数据
+
+var all_data:Dictionary#所以物品存放的字典
+
 
 func _ready():
 	var item_data_file = File.new()
@@ -11,9 +12,16 @@ func _ready():
 	moster_data = JSON.parse(item_data_file.get_as_text()).result
 	item_data_file.close()
 	load_map()
+	load_data()
 
 func load_map():
 	var item_data_file = File.new()
 	item_data_file.open("res://Storage/Map.json",File.READ)
 	map_data = JSON.parse(item_data_file.get_as_text()).result
+	item_data_file.close()
+	
+func load_data():
+	var item_data_file = File.new()
+	item_data_file.open("res://Storage/Data.json",File.READ)
+	all_data = JSON.parse(item_data_file.get_as_text()).result
 	item_data_file.close()
