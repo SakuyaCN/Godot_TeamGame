@@ -18,5 +18,61 @@
             "lv":60,
             "type":"exp"
         }
+    },
+    "skill":{
+        "力量++":{
+            "name":"力量++",
+            "info":"增加携带者力量【等级*%s】点",
+            "num":3,
+            "image":"res://Texture/skill/buff/40.png"
+        },
+        "格挡++":{
+            "name":"格挡++",
+            "info":"携带者可以格挡【等级*%s】点伤害",
+            "num":15,
+            "image":"res://Texture/skill/buff/33.png"
+        },
+        "生命++":{
+            "name":"生命++",
+            "info":"增加携带者体质【等级*%s】点",
+            "num":5,
+            "image":"res://Texture/skill/buff/38.png"
+        },
+        "回复++":{
+            "name":"回复++",
+            "info":"携带者每秒回复【等级*%s】点生命值",
+            "num":7,
+            "image":"res://Texture/skill/buff/39.png"
+        },
+        "嘲讽":{
+            "name":"嘲讽",
+            "info":"攻击时有概率嘲讽敌方单位并获得20%减伤。持续三秒。冷却十秒",
+            "num":0,
+            "image":"res://Texture/skill/barbarian/2.png"
+        },
+        "三重打击":{
+            "name":"三重打击",
+            "info":"每第三次攻击造成三倍伤害",
+            "num":0,
+            "image":"res://Texture/skill/cross/4.png"
+        },
+        "冰天雪地":{
+            "name":"冰天雪地",
+            "info":"造成伤害并概率冰冻敌方全体回合",
+            "num":0,
+            "image":"res://Texture/skill/cry/13.png"
+        },
+        "满天火雨":{
+            "name":"满天火雨",
+            "info":"造成伤害，并附加灼烧效果",
+            "num":0,
+            "image":"res://Texture/skill/pyr/21.png"
+        },
+        "毒云":{
+            "name":"毒云",
+            "info":"制作一个持续5秒的毒云，造成伤害，并使敌方附加中毒效果",
+            "num":0,
+            "image":"res://Texture/skill/warlock/14.png"
+        }
     }
 }

@@ -5,13 +5,14 @@ var is_read_storage = false
 
 var team_data :Dictionary
 var player_state:Dictionary
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	_read_storage()
 	get_player_inventory()
 	get_player_equipment()
 	get_player_state()
 	get_all_team()
+	get_all_skill()
 	reloadData()
 
 func reloadData():
@@ -67,3 +68,12 @@ func get_all_team():
 		storage_data["team"] = {}
 		_save_storage()
 	return storage_data["team"]
+	
+#获取已获取技能
+func get_all_skill():
+	if not is_read_storage:
+		_read_storage()
+	if not storage_data.has("skill"):
+		storage_data["skill"] = []
+		_save_storage()
+	return storage_data["skill"]
