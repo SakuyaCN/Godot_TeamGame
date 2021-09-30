@@ -7,7 +7,10 @@ onready var map_ui = $MapUi
 onready var bag_ui = $BagUI
 onready var party_ui = $PartyUI
 
+onready var tempSKillIcon = $temp_skill_icon
+
 onready var uiLayer = get_parent()
 
 func _ready():
-	pass # Replace with function body.
+	tempSKillIcon.visible = false
+	

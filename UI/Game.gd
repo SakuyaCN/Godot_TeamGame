@@ -8,9 +8,8 @@ onready var light = $Light
 
 onready var game_main = $GameMain
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func start_game():
 	$PxBg.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -32,6 +32,8 @@
 [ext_resource path="res://Texture/hud/p_s_n.png" type="Texture" id=30]
 [ext_resource path="res://Texture/hud/p_s_s.png" type="Texture" id=31]
 [ext_resource path="res://Texture/hud/atbg.png" type="Texture" id=32]
+[ext_resource path="res://Texture/none_bg.png" type="Texture" id=33]
+[ext_resource path="res://UI/ItemUI/RoleSkillItem.tscn" type="PackedScene" id=34]
 
 [sub_resource type="DynamicFont" id=1]
 size = 56
@@ -207,10 +209,21 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=20]
+size = 20
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=21]
 size = 24
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 4
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 14
+outline_size = 2
 font_data = ExtResource( 1 )
 
 [node name="GameUi" type="Control"]
@@ -240,7 +253,7 @@ margin_top = 112.0
 margin_right = 219.0
 margin_bottom = 169.0
 custom_fonts/font = SubResource( 1 )
-text = "冒险队模拟器"
+text = "秘境森林冒险队"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -312,7 +325,7 @@ position = Vector2( 3.99997, -72 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -903,6 +916,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ClickTimer" type="Timer" parent="PartyUI"]
+wait_time = 0.2
+one_shot = true
+
 [node name="ColorRect" type="ColorRect" parent="PartyUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1185,6 +1202,76 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="skill_main" type="TextureRect" parent="PartyUI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -224.5
+margin_top = -208.0
+margin_right = 224.5
+margin_bottom = 32.0
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="PartyUI/skill_main"]
+margin_left = 13.0
+margin_top = 9.0
+margin_right = 222.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 20 )
+text = "已装备技能"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="PartyUI/skill_main"]
+margin_left = 13.0
+margin_top = 76.0
+margin_right = 433.0
+margin_bottom = 210.0
+custom_constants/vseparation = 12
+custom_constants/hseparation = 12
+columns = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 60.0
+
+[node name="Control2" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 60.0
+
+[node name="Control3" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 60.0
+
+[node name="Control4" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 60.0
+
+[node name="Control5" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 60.0
+
 [node name="status" type="TextureRect" parent="PartyUI"]
 margin_left = 607.974
 margin_top = 358.753
@@ -1271,6 +1358,7 @@ __meta__ = {
 }
 
 [node name="Skill_bg" type="NinePatchRect" parent="PartyUI"]
+visible = false
 margin_left = 61.0
 margin_top = 103.0
 margin_right = 403.0
@@ -1285,10 +1373,24 @@ __meta__ = {
 [node name="Label2" type="Label" parent="PartyUI/Skill_bg"]
 margin_left = 26.0
 margin_top = 18.0
-margin_right = 276.0
+margin_right = 115.0
 margin_bottom = 54.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
 text = "技能栏"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="PartyUI/Skill_bg"]
+margin_left = 124.071
+margin_top = 32.0
+margin_right = 323.071
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+text = "长按拖动左侧替换技能"
 valign = 1
 autowrap = true
 __meta__ = {
@@ -1309,6 +1411,12 @@ custom_constants/vseparation = 12
 custom_constants/hseparation = 12
 columns = 4
 
+[node name="temp_skill_icon" type="TextureRect" parent="."]
+visible = false
+margin_right = 60.0
+margin_bottom = 60.0
+expand = true
+
 [connection signal="pressed" from="LoginUI/Button" to="LoginUI" method="_on_Button_pressed"]
 [connection signal="pressed" from="LoginUI/Button2" to="LoginUI" method="_on_Button2_pressed"]
 [connection signal="pressed" from="CreateUI/left" to="CreateUI" method="_on_left_pressed"]
@@ -1320,6 +1428,7 @@ columns = 4
 [connection signal="pressed" from="MapUi/TextureButton" to="MapUi" method="_on_TextureButton_pressed"]
 [connection signal="visibility_changed" from="BagUI" to="BagUI" method="_on_BagUI_visibility_changed"]
 [connection signal="gui_input" from="BagUI/ColorRect" to="BagUI" method="_on_ColorRect_gui_input"]
+[connection signal="timeout" from="PartyUI/ClickTimer" to="PartyUI" method="_on_ClickTimer_timeout"]
 [connection signal="gui_input" from="PartyUI/ColorRect" to="PartyUI" method="_on_ColorRect_gui_input"]
 [connection signal="gui_input" from="PartyUI/ScrollContainer" to="PartyUI/ScrollContainer" method="_on_ScrollContainer_gui_input"]
 [connection signal="gui_input" from="PartyUI/status" to="PartyUI" method="_on_status_gui_input"]
