@@ -47,7 +47,7 @@ func get_player_equipment():
 	if not is_read_storage:
 		_read_storage()
 	if not storage_data.has("player_equipment"):
-		storage_data["player_equipment"] = []
+		storage_data["player_equipment"] = {}
 		_save_storage()
 	return storage_data["player_equipment"]
 

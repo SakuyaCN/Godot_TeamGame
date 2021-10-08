@@ -124,7 +124,9 @@ func _on_Button_pressed():
 			"speed":base_role[check_index].speed,
 			"crit":base_role[check_index].crit,
 			"mdef":base_role[check_index].mdef
-		}
+		},
+		"skill":{},#技能
+		"equ":{},#装备
 	}
 	StorageData.storage_data["team"][main_role.rid] = main_role
 	StorageData.reloadData()

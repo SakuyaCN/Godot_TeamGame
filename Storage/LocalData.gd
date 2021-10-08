@@ -1,10 +1,10 @@
 extends Node
 
+#游戏静态数据合集
 var moster_data#怪物数据
 var map_data#地图数据
 
 var all_data:Dictionary#所以物品存放的字典
-
 
 func _ready():
 	var item_data_file = File.new()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -34,6 +34,8 @@
 [ext_resource path="res://Texture/hud/atbg.png" type="Texture" id=32]
 [ext_resource path="res://Texture/none_bg.png" type="Texture" id=33]
 [ext_resource path="res://UI/ItemUI/RoleSkillItem.tscn" type="PackedScene" id=34]
+[ext_resource path="res://UI/ItemUI/RoleEquItem.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=36]
 
 [sub_resource type="DynamicFont" id=1]
 size = 56
@@ -226,6 +228,31 @@ size = 14
 outline_size = 2
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=23]
+size = 20
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=24]
+texture = ExtResource( 30 )
+region_rect = Rect2( 0, 0, 145, 52 )
+
+[sub_resource type="StyleBoxTexture" id=25]
+texture = ExtResource( 30 )
+region_rect = Rect2( 0, 0, 145, 52 )
+
+[sub_resource type="StyleBoxEmpty" id=26]
+
+[sub_resource type="StyleBoxTexture" id=27]
+texture = ExtResource( 30 )
+region_rect = Rect2( 0, 0, 145, 52 )
+
+[sub_resource type="DynamicFont" id=28]
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
 [node name="GameUi" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -307,6 +334,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CreateUI"]
+material = ExtResource( 36 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -1.33484
@@ -325,7 +353,7 @@ position = Vector2( 3.99997, -72 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -810,6 +838,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="BagUI"]
+material = ExtResource( 36 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
@@ -921,6 +950,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="ColorRect" type="ColorRect" parent="PartyUI"]
+material = ExtResource( 36 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.615686 )
@@ -1202,6 +1232,112 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="equ_main" type="TextureRect" parent="PartyUI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -224.5
+margin_top = -208.0
+margin_right = 224.5
+margin_bottom = 32.0
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="PartyUI/equ_main"]
+margin_left = 13.0
+margin_top = 9.0
+margin_right = 222.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 20 )
+text = "人物装备"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="PartyUI/equ_main"]
+margin_left = 13.0
+margin_top = 76.0
+margin_right = 217.0
+margin_bottom = 208.0
+custom_constants/vseparation = 12
+custom_constants/hseparation = 12
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" parent="PartyUI/equ_main/GridContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 60.0
+type = "武器"
+
+[node name="Control2" parent="PartyUI/equ_main/GridContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_right = 132.0
+margin_bottom = 60.0
+type = "头盔"
+
+[node name="Control3" parent="PartyUI/equ_main/GridContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_right = 204.0
+margin_bottom = 60.0
+type = "衣服"
+
+[node name="Control4" parent="PartyUI/equ_main/GridContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 216.0
+margin_right = 276.0
+margin_bottom = 60.0
+type = "裤子"
+
+[node name="Control5" parent="PartyUI/equ_main/GridContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 72.0
+margin_right = 60.0
+margin_bottom = 132.0
+type = "护手"
+
+[node name="Control6" parent="PartyUI/equ_main/GridContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 132.0
+margin_bottom = 132.0
+type = "护腿"
+
+[node name="Control7" parent="PartyUI/equ_main/GridContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_top = 72.0
+margin_right = 204.0
+margin_bottom = 132.0
+type = "戒指"
+
+[node name="Control8" parent="PartyUI/equ_main/GridContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 216.0
+margin_top = 72.0
+margin_right = 276.0
+margin_bottom = 132.0
+type = "饰品"
+
 [node name="skill_main" type="TextureRect" parent="PartyUI"]
 visible = false
 anchor_left = 0.5
@@ -1251,25 +1387,29 @@ margin_bottom = 60.0
 [node name="Control2" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 60.0
+margin_left = 72.0
+margin_right = 132.0
 margin_bottom = 60.0
 
 [node name="Control3" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 60.0
+margin_left = 144.0
+margin_right = 204.0
 margin_bottom = 60.0
 
 [node name="Control4" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 60.0
+margin_left = 216.0
+margin_right = 276.0
 margin_bottom = 60.0
 
 [node name="Control5" parent="PartyUI/skill_main/GridContainer" instance=ExtResource( 34 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 60.0
+margin_left = 288.0
+margin_right = 348.0
 margin_bottom = 60.0
 
 [node name="status" type="TextureRect" parent="PartyUI"]
@@ -1364,6 +1504,7 @@ margin_top = 103.0
 margin_right = 403.0
 margin_bottom = 582.0
 rect_pivot_offset = Vector2( -99.2693, 132.973 )
+mouse_filter = 0
 texture = ExtResource( 32 )
 patch_margin_top = 96
 __meta__ = {
@@ -1390,7 +1531,7 @@ margin_right = 323.071
 margin_bottom = 47.0
 custom_fonts/font = SubResource( 22 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
-text = "长按拖动左侧替换技能"
+text = "长按拖动到右侧替换技能"
 valign = 1
 autowrap = true
 __meta__ = {
@@ -1410,6 +1551,110 @@ __meta__ = {
 custom_constants/vseparation = 12
 custom_constants/hseparation = 12
 columns = 4
+
+[node name="Equ_bg" type="NinePatchRect" parent="PartyUI"]
+visible = false
+margin_left = 61.0
+margin_top = 103.0
+margin_right = 403.0
+margin_bottom = 582.0
+rect_pivot_offset = Vector2( -99.2693, 132.973 )
+mouse_filter = 0
+texture = ExtResource( 32 )
+patch_margin_top = 96
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="PartyUI/Equ_bg"]
+margin_left = 26.0
+margin_top = 10.0
+margin_right = 121.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 21 )
+text = "装备库"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="PartyUI/Equ_bg"]
+margin_left = 124.071
+margin_top = 32.0
+margin_right = 323.071
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+text = "长按拖动到右侧替换装备"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PartyUI/Equ_bg"]
+margin_left = 26.0
+margin_top = 74.0
+margin_right = 304.0
+margin_bottom = 448.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="PartyUI/Equ_bg/ScrollContainer"]
+custom_constants/vseparation = 12
+custom_constants/hseparation = 12
+columns = 4
+
+[node name="Equ_info" type="NinePatchRect" parent="PartyUI"]
+visible = false
+margin_left = 973.0
+margin_top = 103.0
+margin_right = 1315.0
+margin_bottom = 582.0
+rect_pivot_offset = Vector2( -99.2693, 132.973 )
+mouse_filter = 0
+texture = ExtResource( 32 )
+patch_margin_top = 96
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_name" type="Label" parent="PartyUI/Equ_info"]
+margin_left = 26.0
+margin_top = 10.0
+margin_right = 304.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 23 )
+text = "豪华武器"
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PartyUI/Equ_info"]
+margin_left = 30.0
+margin_top = 78.0
+margin_right = 304.0
+margin_bottom = 356.0
+custom_constants/separation = 6
+
+[node name="btn_down" type="Button" parent="PartyUI/Equ_info"]
+margin_left = 212.0
+margin_top = 412.0
+margin_right = 315.0
+margin_bottom = 453.0
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = SubResource( 28 )
+text = "卸下"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="temp_skill_icon" type="TextureRect" parent="."]
 visible = false
@@ -1434,3 +1679,4 @@ expand = true
 [connection signal="gui_input" from="PartyUI/status" to="PartyUI" method="_on_status_gui_input"]
 [connection signal="gui_input" from="PartyUI/skill" to="PartyUI" method="_on_skill_gui_input"]
 [connection signal="gui_input" from="PartyUI/equ" to="PartyUI" method="_on_equ_gui_input"]
+[connection signal="pressed" from="PartyUI/Equ_info/btn_down" to="PartyUI" method="_on_btn_down_pressed"]
