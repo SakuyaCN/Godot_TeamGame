@@ -19,6 +19,14 @@ func get_ys_color(ys):
 		"wind": return Color("#50cc52")
 		"posion": return Color("#d14fb1")
 
+func get_quality_color(ys):
+	match ys:
+		"S++": return Color("#e19c5f")
+		"S级": return Color("#b06ee1")
+		"A级": return Color("#7ac6ce")
+		"B级": return Color("#7fc995")
+		"C级": return Color("#706050")
+
 func get_ys_string(attr):
 	match attr:
 		"fire": return "火属性"

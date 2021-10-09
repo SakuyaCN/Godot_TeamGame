@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Texture/Pre-made characters/BlackHero.tres" type="SpriteFrames" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float blur_amount : hint_range(-2.0, 10.0);
+uniform float mix_amount : hint_range(0.0, 1.0);
+uniform vec4 color_over : hint_color;
+
+void fragment() {
+	vec4 blurred = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur_amount);
+	vec4 fin = mix(blurred, color_over, mix_amount);
+	COLOR = fin;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/blur_amount = 1.316
+shader_param/mix_amount = 1.0
+shader_param/color_over = Color( 0.482353, 0.631373, 0.592157, 1 )
 
 [node name="Node2D" type="Control"]
 margin_right = 200.0
@@ -13,9 +32,21 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 93.4864, 53.5137 )
+position = Vector2( 57.4864, 42.5137 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 2 )
 animation = "Idle"
 frame = 1
 playing = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 2 )
+margin_left = 4.0
+margin_top = 108.0
+margin_right = 104.0
+margin_bottom = 117.0
+color = Color( 0.635294, 0.968627, 0.945098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

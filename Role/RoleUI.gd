@@ -1,6 +1,7 @@
 extends Control
 
 onready var role_data #角色属性
+onready var hero_attr :HeroAttrBean
 onready var ui_name = $name
 onready var attr_paint = $attr
 
@@ -8,6 +9,7 @@ func _ready():
 	pass
 
 func initRole():
+	hero_attr = get_parent().hero_attr
 	role_data = get_parent().role_data
 	loadData()
 
@@ -16,13 +18,13 @@ func loadData():
 	load_attr()
 
 func load_attr():
-	$attr/label_hp.text = str(role_data.attr.hp)
-	$attr/label_atk.text = str(role_data.attr.atk)
-	$attr/label_mtk.text = str(role_data.attr.mtk)
-	$attr/label_def.text = str(role_data.attr.def)
-	$attr/label_speed.text = str(role_data.attr.speed)
-	$attr/label_crit.text = str(role_data.attr.crit)
-	$attr/label_mdef.text = str(role_data.attr.mdef)
+	$attr/label_hp.text = str(hero_attr.hp)
+	$attr/label_atk.text = str(hero_attr.atk)
+	$attr/label_mtk.text = str(hero_attr.mtk)
+	$attr/label_def.text = str(hero_attr.def)
+	$attr/label_speed.text = str(hero_attr.speed)
+	$attr/label_crit.text = str(hero_attr.crit)
+	$attr/label_mdef.text = str(hero_attr.mdef)
 	$attr/label_lv.text = str(role_data.lv)
 
 func _on_RoleUI_gui_input(event):

@@ -87,6 +87,8 @@ func moster_join():
 		"job":"moster",
 		"lv":5,
 		"attr":LocalData.map_data["all_attr"][StorageData.storage_data["player_state"]["now_map"]],
+		"equ":{},
+		"skill":{},
 		"node":moster_info
 	}
 	moster_size = map_info.moster_num

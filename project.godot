@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "HeroAttrBean",
+"language": "GDScript",
+"path": "res://Bean/HeroAttrBean.gd"
+} ]
+_global_script_class_icons={
+"HeroAttrBean": ""
+}
+
 [application]
 
 config/name="wh"
@@ -22,6 +32,7 @@ Utils="*res://AutoLoad/Utils.gd"
 LocalData="*res://Storage/LocalData.gd"
 ConfigScript="*res://Storage/ConfigScript.gd"
 EquUtils="*res://AutoLoad/EquUtils.gd"
+HeroAttrUtils="*res://Storage/HeroAttrUtils.gd"
 
 [display]
 

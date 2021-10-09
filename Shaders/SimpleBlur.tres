@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[sub_resource type="Shader" id=24]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 
 uniform float blur_amount : hint_range(-2.0, 10.0);
@@ -14,7 +14,7 @@ void fragment() {
 }"
 
 [resource]
-shader = SubResource( 24 )
+shader = SubResource( 1 )
 shader_param/blur_amount = 2.368
 shader_param/mix_amount = 0.461
 shader_param/color_over = Color( 0.27451, 0.294118, 0.298039, 1 )

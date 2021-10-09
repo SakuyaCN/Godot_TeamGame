@@ -6,6 +6,8 @@ var is_position = false
 var is_moster = false
 var run_position = Vector2.ZERO
 
+var hero_attr:HeroAttrBean
+
 onready var ui = $RoleUI
 
 onready var am_player = $AnimationPlayer
@@ -17,8 +19,9 @@ func _ready():
 
 func set_role(_role_data):
 	role_data = _role_data
-	ui.initRole()
+	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
 	load_asset()
+	ui.initRole()
 
 func setIndex(_index):
 	self.index = _index
