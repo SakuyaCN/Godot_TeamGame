@@ -11,7 +11,8 @@ func UIchange(change):
 
 #战斗开始点击
 func _on_startFight_pressed():
-	pass # Replace with function body.
+	get_tree().call_group("player_role","start_fight")
+	get_tree().call_group("moster_role","start_fight")
 
 func _on_autoFight_toggled(button_pressed):
 	ConfigScript.setBoolSetting("fight","auto_fight",button_pressed)

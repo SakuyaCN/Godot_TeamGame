@@ -4,13 +4,15 @@ onready var skill_item = preload("res://UI/ItemUI/SkillItem.tscn")
 onready var skill_tips = preload("res://UI/TipsUi/SkillTips.tscn")
 onready var equ_item = preload("res://UI/ItemUI/RoleEquItem.tscn")
 onready var label_ui = preload("res://UI/ControlUI/LabelItemUI.tscn")
+onready var hero_item = preload("res://UI/ItemUI/HeroItem.tscn")
 onready var srcoll = $ScrollContainer
 onready var click_timer = $ClickTimer
 var role_data #当前选中英雄属性
 var hero_attr :HeroAttrBean #当前选择英雄战斗属性
+var check_equ_data #选择时的装备数据
 var skill_tips_ins = null#提示实例化
-var select_index = 0
-var tab_index = 0
+var select_index = 0 #当前选中的英雄下表
+var tab_index = 0 
 var check_temp_ins = null #长按时的对象
 onready var tab = [$attr,$skill_main,$equ_main]
 onready var skill_item_position_array = []
@@ -19,15 +21,19 @@ onready var skill_item_position_array = []
 onready var temp_skill = get_parent()
 
 func _ready():
-	role_data = StorageData.get_all_team()[str(select_index)]
-	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
 	visible = false
 	var line = StyleBoxTexture.new()
 	srcoll.get_h_scrollbar().set("custom_styles/scroll",line)
-	loadHeroData()
-	loadAllSkill()
-	loadAllEqu()
-	loadHeroEqu()
+	checkHeroData()
+	loadAllHero()
+
+func checkHeroData():
+	if  StorageData.get_all_team().has(str(select_index)):
+		role_data = StorageData.get_all_team()[str(select_index)]
+		loadHeroData()
+		loadAllSkill()
+		loadAllEqu()
+		reLoadHeroEqu()
 
 func _process(delta):
 	if check_temp_ins != null && get_parent().tempSKillIcon.visible:
@@ -84,7 +90,27 @@ func select(tab):
 
 #载入部分
 #=========================
+#载入小队成员
+func loadAllHero():
+	for item_key in StorageData.get_all_team():
+		var ins = hero_item.instance()
+		ins.setData(item_key)
+		ins.connect("pressed",self,"all_hero_item_click",[item_key])
+		$ScrollContainer/HSlider.add_child(ins)
+	get_tree().call_group("all_hero_list","reload",str(select_index))
+
+#小队成员点击
+func all_hero_item_click(item_key):
+	select_index = item_key
+	checkHeroData()
+	#tab_select(0)
+	$Equ_info.visible = false
+	get_tree().call_group("all_hero_list","reload",str(item_key))
+	
+#载入当前英雄属性
 func loadHeroData():
+	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+	$TextureRect/name.text = role_data.nickname
 	$attr/label_hp.text = str(hero_attr.hp)
 	$attr/label_atk.text = str(hero_attr.atk)
 	$attr/label_mtk.text = str(hero_attr.mtk)
@@ -96,6 +122,7 @@ func loadHeroData():
 
 #载入人物所有技能
 func loadAllSkill():
+	free_item($Skill_bg/ScrollContainer/GridContainer.get_children())
 	for skill_data in StorageData.get_all_skill():
 		var ins = skill_item.instance()
 		ins.setData(LocalData.all_data["skill"][skill_data])
@@ -106,6 +133,7 @@ func loadAllSkill():
 
 #载入人物所有装备
 func loadAllEqu():
+	free_item($Equ_bg/ScrollContainer/GridContainer.get_children())
 	for equ_data in StorageData.get_player_equipment(): 
 		if !StorageData.get_player_equipment()[equ_data].is_on:
 			var ins = equ_item.instance()
@@ -118,9 +146,21 @@ func loadAllEqu():
 #载入人物穿戴装备
 func loadHeroEqu():
 	for child in $equ_main/GridContainer.get_children():
+		child.connect("pressed",self,"hero_equ_click",[child])
 		if role_data["equ"].has(child.type):
 			if StorageData.get_player_equipment().has(role_data["equ"][child.type]):
 				child.setData(StorageData.get_player_equipment()[role_data["equ"][child.type]])
+		else:
+			child.setData(null)
+
+#载入人物穿戴装备
+func reLoadHeroEqu():
+	for child in $equ_main/GridContainer.get_children():
+		if role_data["equ"].has(child.type):
+			if StorageData.get_player_equipment().has(role_data["equ"][child.type]):
+				child.setData(StorageData.get_player_equipment()[role_data["equ"][child.type]])
+		else:
+			child.setData(null)
 
 #技能列表 点击绑定
 #技能部分----------------
@@ -152,6 +192,8 @@ func item_up(ins,type):
 					if check_temp_ins.local_data["type"] != child.type:
 						get_parent().uiLayer.showMessage("此装备只能放入【"+ check_temp_ins.local_data["type"] +"】部位")
 					else:
+						if child.local_data != null:
+							child.local_data.is_on = false
 						setEqu2Role(child.type,check_temp_ins.local_data)
 	check_temp_ins = null
 	get_parent().tempSKillIcon.texture = null
@@ -163,6 +205,9 @@ func equ_item_click(equ_data):
 	loadEquInfo(equ_data)
 	#skill_tips_ins.showTips(skill_data["name"],skill_data["info"])
 
+#人物穿戴装备点击绑定
+func hero_equ_click(child):
+	loadEquInfo(child.local_data)
 #===================================
 func _on_ClickTimer_timeout():
 	if check_temp_ins != null:
@@ -173,17 +218,21 @@ func _on_ClickTimer_timeout():
 
 #穿戴装备
 func setEqu2Role(type,equ_data):
+	$Equ_info.visible = false
 	equ_data.is_on = true
 	role_data["equ"][type] = equ_data["id"]
 	StorageData._save_storage()
-	loadHeroEqu()
+	loadAllEqu()
+	reLoadHeroEqu()
+	loadHeroData()
 
 #装备信息展示
 func loadEquInfo(equ_data):
+	if equ_data == null:
+		return
+	check_equ_data = equ_data
 	$Equ_info.visible = true
-	for item in$Equ_info/VBoxContainer.get_children():
-		item.free()
-	$Equ_info/VBoxContainer.get_children().clear()
+	free_item($Equ_info/VBoxContainer.get_children())
 	$Equ_info/equ_lv.text = "等级:%s" %equ_data["lv"]
 	$Equ_info/equ_name.set('custom_colors/font_outline_modulate', EquUtils.get_quality_color(equ_data["quality"]))
 	$Equ_info/equ_type.text = "类型:%s" %equ_data["type"]
@@ -197,9 +246,29 @@ func loadEquInfo(equ_data):
 		label.text = EquUtils.get_ys_string(attr_item.keys()[0]) + " + %s" %attr_item.values()[0]
 		label.set('custom_colors/font_outline_modulate', EquUtils.get_ys_color(attr_item.keys()[0]))
 		$Equ_info/VBoxContainer.add_child(label)
+	if equ_data["is_on"]:
+		$Equ_info/btn_down.visible = true
+	else:
+		$Equ_info/btn_down.visible = false
 
 #装备按钮区域
 #=========================
+#卸下装备
 func _on_btn_down_pressed():
-	pass # Replace with function body.
+	if check_equ_data == null:
+		return
+	check_equ_data.is_on = false
+	role_data["equ"].erase(check_equ_data["type"])
+	StorageData._save_storage()
+	$Equ_info.visible = false
+	check_equ_data = null
+	loadAllEqu()
+	reLoadHeroEqu()
+	loadHeroData()
 #=========================
+
+#公共方法
+func free_item(array):
+	for item in array:
+		item.queue_free()
+	array.clear()

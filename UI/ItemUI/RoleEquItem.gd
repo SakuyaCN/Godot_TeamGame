@@ -2,7 +2,7 @@ extends Control
 
 export(String) var type
 
-var local_data:Dictionary
+var local_data
 
 var is_emp = true
 var is_vis = true
@@ -22,7 +22,7 @@ func setNameVis(is_vis):
 	self.is_vis = is_vis
 	
 func reLoad():
-	if !local_data.empty():
+	if local_data != null && !local_data.empty():
 		is_emp = false
 		$Image.texture = load(local_data["image"])
 		$Name.text = local_data["name"]

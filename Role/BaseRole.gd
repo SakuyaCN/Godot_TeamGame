@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var float_number = preload("res://Effect/FloatNumber.tscn")
+
 var role_data:Dictionary
 var index = 0
 var is_position = false
@@ -32,9 +34,26 @@ func changeAnim(anim):
 func load_asset():
 	animatedSprite.position.y = -48
 	match role_data.job:
-		"黑袍法师":animatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres")
-		"无畏勇者":animatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
-		"不屈骑士":animatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres")
+		"黑袍法师":
+			animatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres")
+			animatedSprite.position.y = -120
+			$RoleUI/name.rect_position.y = -15
+			animatedSprite.scale = Vector2(4,4)
+		"无畏勇者":
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
+			animatedSprite.position.y = -64
+			$RoleUI/name.rect_position.y = -15
+			animatedSprite.scale = Vector2(4,4)
+		"不屈骑士":
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres")
+			animatedSprite.position.y = -86
+			animatedSprite.scale = Vector2(5,5)
+			$RoleUI/name.rect_position.y = -15
+		"绝地武士":
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Warrior.tres")
+			animatedSprite.position.y = -86
+			animatedSprite.scale = Vector2(5,5)
+			$RoleUI/name.rect_position.y = -15
 		"战地牧师":animatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
 		"moster":
 			is_moster = true
@@ -43,13 +62,13 @@ func load_asset():
 			animatedSprite.position.y = role_data["node"].pos_y
 			animatedSprite.scale = Vector2(role_data["node"].scale,role_data["node"].scale)
 			$RoleUI/name.rect_position.y = role_data["node"].pos_y / 4
-			$RoleUI/attr.position.y += role_data["node"].pos_y
 			$RoleUI/name.set("custom_colors/font_outline_modulate",Color.palevioletred)
 	animatedSprite.animation = "Idle"
 	if is_moster:
 		add_to_group("moster_role")
 	else:
 		add_to_group("player_role")
+	fight_script.load_script(is_moster)
 
 func run2position(_position):
 	animatedSprite.animation = "Run"
@@ -79,7 +98,30 @@ func _process(delta):
 				animatedSprite.animation = "Idle"
 				get_tree().call_group("game_main","moster_plus_size")
 
-func start_fight():
+#展示血条
+func show_bar(role_array):
 	if am_player.is_playing():
 		yield(am_player,"animation_finished")
 	am_player.play("show_bar")
+	fight_script.setFightRole(role_array)
+	
+#开始战斗
+func start_fight():
+	fight_script.do_atk()
+
+#刷新血条信息
+func reloadHpBar():
+	$RoleUI/hpbar/progress_hp.max_value = hero_attr.max_hp as int
+	$RoleUI/hpbar/progress_hp.value = hero_attr.hp as int
+	$RoleUI/hpbar/progress_hp/label_hp.text = str(hero_attr.hp / hero_attr.max_hp) + "%"
+
+func _show_damage_label(damage,type):
+	var float_number_ins = float_number.instance()
+	var vec = animatedSprite.position
+	vec.y -= 30
+	float_number_ins.position = vec
+	float_number_ins.velocity = Vector2(rand_range(-40,40),-130)
+	add_child(float_number_ins)
+	float_number_ins.set_number("-%s" %damage as int,type)
+	hero_attr.hp -= damage
+	reloadHpBar()

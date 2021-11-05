@@ -1,6 +1,7 @@
 class_name HeroAttrBean
 
 #基础属性
+var max_hp :int#生命
 var hp :int#生命
 var atk:int#攻击
 var mtk:int#魔力
@@ -47,4 +48,5 @@ func setEquAttrBean(role_data):
 				"wind": wind += base_attr_item.values()[0]
 				"ice": ice += base_attr_item.values()[0]
 				"posion": posion += base_attr_item.values()[0]
+	max_hp = hp
 

@@ -18,7 +18,7 @@ var base_role = [
 		"lv":1,
 		"hp":50,
 		"atk":10,
-		"def":5,
+		"def":2,
 		"mtk":25,
 		"speed":10,
 		"crit":16,
@@ -30,7 +30,7 @@ var base_role = [
 		"lv":1,
 		"hp":70,
 		"atk":15,
-		"def":7,
+		"def":2,
 		"mtk":5,
 		"speed":15,
 		"crit":16,
@@ -42,27 +42,40 @@ var base_role = [
 		"lv":1,
 		"hp":100,
 		"atk":12,
-		"def":10,
+		"def":3,
 		"mtk":5,
 		"speed":10,
 		"crit":15,
-		"mdef":0,
+		"mdef":3,
 		"info":"骑士为防御型职业，拥有高超的防御技巧，越是往后期越是能体现出高防御的优点。"
+	},
+	{
+		"name":"绝地武士",
+		"lv":1,
+		"hp":55,
+		"atk":18,
+		"def":3,
+		"mtk":15,
+		"speed":17,
+		"crit":22,
+		"mdef":0,
+		"info":"武士为强攻型职业，注重速度与暴击，但是防御较为薄弱。"
 	},
 	{
 		"name":"战地牧师",
 		"lv":1,
 		"hp":55,
 		"atk":8,
-		"def":15,
+		"def":2,
 		"mtk":15,
 		"speed":8,
 		"crit":15,
-		"mdef":5,
+		"mdef":2,
 		"info":"牧师为支援型职业，会打架的牧师，后期拥有各种团队BUFF加成，全体治疗等辅助技能。"
 	}
 ]
 var check_index = 0
+var count_max = 4
 
 func _ready():
 	visible = false
@@ -80,20 +93,36 @@ func load_info():
 	label_lv.text = str(base_role[check_index].lv)
 	info.bbcode_text = base_role[check_index].info
 	match check_index as int:
-		0:$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres")
-		1:$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
-		2:$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres")
-		3:$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
+		0:
+			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres")
+			$role/AnimatedSprite.position = Vector2(12,-99)
+			$role/AnimatedSprite.scale = Vector2(3,3)
+		1:
+			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
+			$role/AnimatedSprite.position = Vector2(5,-58)
+			$role/AnimatedSprite.scale = Vector2(3,3)
+		2:
+			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres")
+			$role/AnimatedSprite.position = Vector2(5,-95)
+			$role/AnimatedSprite.scale = Vector2(5,5)
+		3:
+			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Warrior.tres")
+			$role/AnimatedSprite.position = Vector2(5,-95)
+			$role/AnimatedSprite.scale = Vector2(5,5)
+		4:
+			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
+			$role/AnimatedSprite.position = Vector2(5,-65)
+			$role/AnimatedSprite.scale = Vector2(4,4)
 
 func _on_left_pressed():
 	if check_index == 0:
-		check_index = 3
+		check_index = count_max
 	else:
 		check_index -=1
 	load_info()
 
 func _on_right_pressed():
-	if check_index == 3:
+	if check_index == count_max:
 		check_index = 0
 	else:
 		check_index +=1

@@ -5,7 +5,7 @@
 [ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=3]
 [ext_resource path="res://UI/LoginUI.gd" type="Script" id=4]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_11.png" type="Texture" id=5]
-[ext_resource path="res://Texture/Pre-made characters/Minister.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://Texture/Pre-made characters/Warrior.tres" type="SpriteFrames" id=6]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=7]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_18.png" type="Texture" id=8]
 [ext_resource path="res://Texture/arrowSilver_left.png" type="Texture" id=9]
@@ -29,37 +29,37 @@
 [ext_resource path="res://Texture/close.png" type="Texture" id=27]
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=36]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 56
 outline_size = 6
 outline_color = Color( 0.713726, 0.768627, 0.619608, 1 )
 extra_spacing_char = 12
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
 [sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 133, 34 )
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 133, 34 )
+[sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="StyleBoxEmpty" id=5]
-
-[sub_resource type="StyleBoxTexture" id=6]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 133, 34 )
 margin_bottom = 2.45886
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 24
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=8]
+[sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 133, 34 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=8]
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 1 )
@@ -228,7 +228,7 @@ margin_left = -219.0
 margin_top = 112.0
 margin_right = 219.0
 margin_bottom = 169.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "秘境森林冒险队"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -243,11 +243,11 @@ margin_left = -99.0
 margin_top = -24.0
 margin_right = 93.0
 margin_bottom = 44.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "开始游戏"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -262,18 +262,17 @@ margin_left = -99.0
 margin_top = 72.0397
 margin_right = 93.0
 margin_bottom = 140.04
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 8 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "结束游戏"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CreateUI" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -298,11 +297,11 @@ position = Vector2( 434.515, 444.141 )
 texture = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CreateUI/role"]
-position = Vector2( 3.99997, -72 )
+position = Vector2( 5.99997, -95 )
 scale = Vector2( 5, 5 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 1
+frame = 7
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -314,7 +313,7 @@ margin_left = -213.0
 margin_top = -40.0
 margin_right = -106.0
 margin_bottom = -4.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "攻击"
 align = 1
 valign = 1
@@ -342,7 +341,7 @@ margin_left = -96.0
 margin_top = -40.0
 margin_right = -29.0
 margin_bottom = -4.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "100"
 align = 1
 valign = 1
@@ -356,7 +355,7 @@ margin_left = -96.0
 margin_top = 4.0
 margin_right = -29.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "100"
 align = 1
 valign = 1
@@ -370,7 +369,7 @@ margin_left = -96.0
 margin_top = 48.0
 margin_right = -29.0
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "100"
 align = 1
 valign = 1
@@ -384,7 +383,7 @@ margin_left = 108.0
 margin_top = -40.0
 margin_right = 175.0
 margin_bottom = -4.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "100"
 align = 1
 valign = 1
@@ -398,7 +397,7 @@ margin_left = 108.0
 margin_top = 4.0
 margin_right = 175.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "100"
 align = 1
 valign = 1
@@ -412,7 +411,7 @@ margin_left = 108.0
 margin_top = 48.0
 margin_right = 175.0
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "100"
 align = 1
 valign = 1
@@ -441,7 +440,7 @@ margin_left = -213.0
 margin_top = 2.67584
 margin_right = -106.0
 margin_bottom = 38.6758
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "魔力"
 align = 1
 valign = 1
@@ -455,7 +454,7 @@ margin_left = -213.0
 margin_top = 47.0453
 margin_right = -106.0
 margin_bottom = 83.0453
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "物免"
 align = 1
 valign = 1
@@ -469,7 +468,7 @@ margin_left = -9.58948
 margin_top = -41.0
 margin_right = 97.4105
 margin_bottom = -5.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "速度"
 align = 1
 valign = 1
@@ -483,7 +482,7 @@ margin_left = -9.58948
 margin_top = 2.67584
 margin_right = 97.4105
 margin_bottom = 38.6758
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "暴击"
 align = 1
 valign = 1
@@ -497,7 +496,7 @@ margin_left = -9.58948
 margin_top = 47.0453
 margin_right = 97.4105
 margin_bottom = 83.0453
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "魔免"
 align = 1
 valign = 1
@@ -539,7 +538,7 @@ margin_left = -50.0
 margin_top = -18.0
 margin_right = 57.0
 margin_bottom = 18.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
 text = "黑袍法师"
 align = 1
 valign = 1
@@ -596,11 +595,11 @@ margin_left = 202.334
 margin_top = 183.141
 margin_right = 394.334
 margin_bottom = 251.141
-custom_styles/hover = SubResource( 3 )
+custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 11 )
-custom_styles/focus = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "创建角色"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -887,6 +886,7 @@ __meta__ = {
 anims/item_show = SubResource( 19 )
 
 [node name="PartyUI" parent="." instance=ExtResource( 22 )]
+visible = false
 
 [node name="temp_skill_icon" type="TextureRect" parent="."]
 visible = false

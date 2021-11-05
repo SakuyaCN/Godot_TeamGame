@@ -19,16 +19,9 @@ onready var role_position = [
 	$Position/PositionP3
 ]
 
-var player_array = {
-	"positionP1":null,
-	"positionP2":null,
-	"positionP3":null,
-}
+var player_array = []
 
-var moster_array = {
-	"positionM1":null,
-	"positionM2":null
-}
+var moster_array = []
 
 var is_flight = false#是否可以准备战斗
 var is_flighting = false#是否正在战斗
@@ -56,15 +49,17 @@ func moster_plus_size():
 #战斗开始信号
 func start_fight():
 	ConstantsValue.game_layer.fight_ui.UIchange(true)
-	get_tree().call_group("player_role","start_fight")
-	get_tree().call_group("moster_role","start_fight")
+	get_tree().call_group("player_role","show_bar",moster_array)
+	get_tree().call_group("moster_role","show_bar",player_array)
 
 func go_position():
 	ConstantsValue.ui_layer.showMessage("点击人物可以展示属性面板",5)
+	player_array.clear()
 	for pos in StorageData.player_state["team_position"].size():
 		if StorageData.player_state["team_position"][pos] != null:
 			hero_size += 1
 			var new_hero = role.instance()
+			player_array.append(new_hero)
 			new_hero.setIndex(pos)
 			role_position[pos].add_child(new_hero)
 			new_hero.set_role(StorageData.team_data.get(StorageData.player_state["team_position"][pos]))
@@ -86,15 +81,17 @@ func moster_join():
 		"nickname":moster_name,
 		"job":"moster",
 		"lv":5,
+		"atk_count":moster_info.atk_count,
 		"attr":LocalData.map_data["all_attr"][StorageData.storage_data["player_state"]["now_map"]],
 		"equ":{},
 		"skill":{},
 		"node":moster_info
 	}
 	moster_size = map_info.moster_num
+	moster_array.clear()
 	for index in map_info.moster_num:
 		var new_hero = role.instance()
-		moster_array["positionM%s"%(index+1)] = new_hero
+		moster_array.append(new_hero)
 		moster_pos.get_children()[index].add_child(new_hero)
 		new_hero.set_role(moster_data)
 		new_hero.setIndex(index)
