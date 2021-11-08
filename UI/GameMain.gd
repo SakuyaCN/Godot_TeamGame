@@ -96,10 +96,12 @@ func moster_join():
 		new_hero.set_role(moster_data)
 		new_hero.setIndex(index)
 		new_hero.run2position(moster_pos.get_children()[index])
+		yield(get_tree().create_timer(0.7),"timeout")
 
 func moster_clear():
 	for ms in moster_array:
-		ms.free()
+		if ms != null && ms:
+			ms.free()
 	if $PositionMoster/PositionM1.get_children().size() > 0:
 		$PositionMoster/PositionM1.get_children().clear()
 	if $PositionMoster/PositionM2.get_children().size() > 0:
