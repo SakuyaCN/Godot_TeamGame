@@ -1,15 +1,15 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/ItemUI/HeroItem.gd" type="Script" id=1]
-[ext_resource path="res://Texture/Pre-made characters/Knight.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Texture/Pre-made characters/Boxer.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="StyleBoxEmpty" id=7]
+[sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="StyleBoxEmpty" id=8]
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -38,8 +38,8 @@ rect_pivot_offset = Vector2( -726.134, -309.983 )
 mouse_filter = 1
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/normal = SubResource( 8 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,7 +47,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 55, 16 )
-scale = Vector2( 4, 4 )
+scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Idle"
 playing = true

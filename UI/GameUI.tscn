@@ -5,7 +5,7 @@
 [ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=3]
 [ext_resource path="res://UI/LoginUI.gd" type="Script" id=4]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_11.png" type="Texture" id=5]
-[ext_resource path="res://Texture/Pre-made characters/Warrior.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://Texture/Pre-made characters/Boxer.tres" type="SpriteFrames" id=6]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=7]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_18.png" type="Texture" id=8]
 [ext_resource path="res://Texture/arrowSilver_left.png" type="Texture" id=9]
@@ -74,7 +74,8 @@ font_data = ExtResource( 1 )
 size = 17
 outline_size = 2
 outline_color = Color( 0.505882, 0.47451, 0.47451, 1 )
-extra_spacing_top = 2
+extra_spacing_top = 4
+extra_spacing_char = 1
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=11]
@@ -297,11 +298,11 @@ position = Vector2( 434.515, 444.141 )
 texture = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CreateUI/role"]
-position = Vector2( 5.99997, -95 )
-scale = Vector2( 5, 5 )
+position = Vector2( 2.99997, -83 )
+scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 7
+frame = 1
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]

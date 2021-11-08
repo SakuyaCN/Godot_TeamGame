@@ -15,6 +15,7 @@ onready var ui = $RoleUI
 onready var am_player = $AnimationPlayer
 onready var fight_script = $FightScript
 onready var animatedSprite = $AnimatedSprite
+onready var effect_anim = $Effects
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -54,9 +55,15 @@ func load_asset():
 			animatedSprite.position.y = -86
 			animatedSprite.scale = Vector2(5,5)
 			$RoleUI/name.rect_position.y = -15
+		"致命拳手":
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Boxer.tres")
+			animatedSprite.position.y = -70
+			animatedSprite.scale = Vector2(3,3)
+			$RoleUI/name.rect_position.y = -15
 		"战地牧师":animatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
 		"moster":
 			is_moster = true
+			effect_anim.flip_h = role_data["node"].flip_h
 			animatedSprite.frames = load(role_data["node"].frames)
 			animatedSprite.flip_h = role_data["node"].flip_h
 			animatedSprite.position.y = role_data["node"].pos_y
@@ -64,6 +71,8 @@ func load_asset():
 			$RoleUI/name.rect_position.y = role_data["node"].pos_y / 4
 			$RoleUI/name.set("custom_colors/font_outline_modulate",Color.palevioletred)
 	animatedSprite.animation = "Idle"
+	effect_anim.position.y = animatedSprite.position.y / 2
+	effect_anim.visible = false
 	if is_moster:
 		add_to_group("moster_role")
 	else:
@@ -113,7 +122,7 @@ func start_fight():
 func reloadHpBar():
 	$RoleUI/hpbar/progress_hp.max_value = hero_attr.max_hp as int
 	$RoleUI/hpbar/progress_hp.value = hero_attr.hp as int
-	$RoleUI/hpbar/progress_hp/label_hp.text = str(hero_attr.hp / hero_attr.max_hp) + "%"
+	$RoleUI/hpbar/progress_hp/label_hp.text = str((hero_attr.hp as float/ hero_attr.max_hp as float * 100 )as int) + "%"
 
 func _show_damage_label(damage,type):
 	var float_number_ins = float_number.instance()
@@ -122,6 +131,9 @@ func _show_damage_label(damage,type):
 	float_number_ins.position = vec
 	float_number_ins.velocity = Vector2(rand_range(-40,40),-130)
 	add_child(float_number_ins)
-	float_number_ins.set_number("-%s" %damage as int,type)
-	hero_attr.hp -= damage
+	float_number_ins.set_number("-%s" %damage,type)
 	reloadHpBar()
+
+
+func _on_Effects_animation_finished():
+	effect_anim.visible = false

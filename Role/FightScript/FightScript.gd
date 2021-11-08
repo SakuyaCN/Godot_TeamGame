@@ -3,20 +3,33 @@ extends Node
 var fight_role_array = [] setget setFightRole#战斗对象
 var do_atk_array = []#攻击对象数据
 onready var hero_sprite:AnimatedSprite
+onready var effect_sprite:AnimatedSprite
 onready var role_data#当前人物数据
 onready var hero_attr:HeroAttrBean#当前人物属性
-onready var is_in_atk = false
+onready var is_in_atk = false #是否处于攻击动作
 
+var is_alive = true
 var is_moster = false
-var atk_count #单词攻击数量
+var atk_count #攻击数量
 
 #初始化战斗脚本
 func load_script(_is_moster):
 	is_moster = _is_moster
+	effect_sprite = get_parent().effect_anim
 	hero_sprite = get_parent().animatedSprite
 	role_data = get_parent().role_data
 	hero_attr = get_parent().hero_attr
 	atk_count = role_data.atk_count
+
+func checkFightRole():
+	do_atk_array.clear()
+	for fight_role in fight_role_array:
+		if do_atk_array.size() < atk_count && fight_role.fight_script.is_alive:
+			do_atk_array.append(fight_role)
+	if do_atk_array.size() == 0:
+		win()
+		is_in_atk = false
+		hero_sprite.play("Idle")
 
 func setFightRole(f_r):
 	do_atk_array.clear()
@@ -39,11 +52,26 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type):
 		0:hurt_num = _atk_attr.atk * (1 - (hero_attr.def/100.0))#物理伤害
 		1:hurt_num = _atk_attr.mtk * (1 - (hero_attr.mdef/100.0))#魔力伤害
 		2:hurt_num = _atk_attr.atk#真实伤害
+	hero_attr.hp -= hurt_num
 	get_parent()._show_damage_label(hurt_num,atk_type)
-	print("收到伤害:%s" %hurt_num)
+	effect_sprite.visible = true
+	effect_sprite.play("hit")
+	if hero_attr.hp <= 0:
+		die()
+
+#人物死亡
+func die():
+	is_alive = false
+	hero_sprite.play("Die")
+	is_in_atk = false
+
+#战斗胜利
+func win():
+	get_tree().call_group("game_main","moster_clear")
 
 #战斗信号
 func _on_AnimatedSprite_animation_finished():
 	if is_in_atk:
+		checkFightRole()
 		for role in do_atk_array:
 			role.fight_script.do_hurt(role_data,hero_attr,0)

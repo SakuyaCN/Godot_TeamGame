@@ -27,6 +27,10 @@ func setData(key):
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Warrior.tres")
 			$AnimatedSprite.position = Vector2(50,16)
 			$AnimatedSprite.scale = Vector2(5,5)
+		"致命拳手":
+			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Boxer.tres")
+			$AnimatedSprite.position = Vector2(50,25)
+			$AnimatedSprite.scale = Vector2(3,3)
 		"战地牧师":$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
 
 func reload(key):

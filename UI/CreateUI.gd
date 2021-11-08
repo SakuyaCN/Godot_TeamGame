@@ -23,7 +23,7 @@ var base_role = [
 		"speed":10,
 		"crit":16,
 		"mdef":0,
-		"info":"黑袍为魔力型职业，可以打出高额魔力伤害，在前期怪物没用魔免的时期可以非常轻松的度过。"
+		"info":"黑袍为魔力型职业，可以打出高额魔力伤害，在前期怪物没用魔免的时期可以非常轻松的度过。\n职业特性：造成的魔力伤害无视5%的魔免，每100点法力值提高10点生命值与5点魔力值"
 	},
 	{
 		"name":"无畏勇者",
@@ -34,32 +34,44 @@ var base_role = [
 		"mtk":5,
 		"speed":15,
 		"crit":16,
-		"mdef":0,
-		"info":"勇者为平衡型职业，拥有出色的伤害的同时还能有一定的坦度，不管是在前中后期都能发挥出不错的实力。"
+		"mdef":2,
+		"info":"勇者为平衡型职业，拥有出色的伤害的同时还能有一定的防御，不管是在前中后期都能发挥出不错的实力。\n职业特性：每次升级额外获得25点生命值与15点攻击力，每次攻击回复血量（伤害值的1%）"
 	},
 	{
 		"name":"不屈骑士",
 		"lv":1,
 		"hp":100,
 		"atk":12,
-		"def":3,
+		"def":7,
 		"mtk":5,
 		"speed":10,
 		"crit":15,
-		"mdef":3,
-		"info":"骑士为防御型职业，拥有高超的防御技巧，越是往后期越是能体现出高防御的优点。"
+		"mdef":7,
+		"info":"骑士为防御型职业，拥有高超的防御技巧，越是往后期越是能体现出高防御的优点。\n职业特性：自带5%的额外物免与魔免，每次升级额外获得50点生命值"
 	},
 	{
 		"name":"绝地武士",
 		"lv":1,
 		"hp":55,
 		"atk":18,
-		"def":3,
-		"mtk":15,
+		"def":2,
+		"mtk":5,
 		"speed":17,
 		"crit":22,
 		"mdef":0,
-		"info":"武士为强攻型职业，注重速度与暴击，但是防御较为薄弱。"
+		"info":"武士为强攻型职业，注重速度与暴击，但是防御较为薄弱。\n职业特性：暴击伤害提高35%，速度收益提高6%，受到的伤害增加10%，每次升级额外额外获得10点速度与暴击"
+	},
+	{
+		"name":"致命拳手",
+		"lv":1,
+		"hp":85,
+		"atk":13,
+		"def":4,
+		"mtk":5,
+		"speed":15,
+		"crit":10,
+		"mdef":2,
+		"info":"拳手为攻防一体型职业，速度力量防御三维全面发展。\n职业特性：自带2%的额外物免与魔免，每次升级提高15点生命值、5点攻击力、5点速度"
 	},
 	{
 		"name":"战地牧师",
@@ -110,6 +122,10 @@ func load_info():
 			$role/AnimatedSprite.position = Vector2(5,-95)
 			$role/AnimatedSprite.scale = Vector2(5,5)
 		4:
+			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Boxer.tres")
+			$role/AnimatedSprite.position = Vector2(3,-83)
+			$role/AnimatedSprite.scale = Vector2(3,3)
+		5:
 			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
 			$role/AnimatedSprite.position = Vector2(5,-65)
 			$role/AnimatedSprite.scale = Vector2(4,4)
