@@ -13,6 +13,9 @@ var map_name
 onready var message_ui = get_parent().find_node("UILayer")
 onready var moster_pos = $PositionMoster
 
+onready var game_progress:ProgressBar
+onready var game_progress_tv
+
 onready var role_position = [
 	$Position/PositionP1,
 	$Position/PositionP2,
@@ -26,6 +29,8 @@ var moster_array = []
 var is_flight = false#是否可以准备战斗
 
 func _ready():
+	game_progress = find_node("Control").find_node("MainUi").find_node("progress_hp")
+	game_progress_tv = find_node("Control").find_node("MainUi").find_node("progress_hp").find_node("label_hp")
 	add_to_group("game_main")
 
 func load_map():

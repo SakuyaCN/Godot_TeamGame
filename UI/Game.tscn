@@ -330,20 +330,20 @@ outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=51]
+[sub_resource type="DynamicFont" id=45]
 size = 24
 outline_size = 2
 outline_color = Color( 0.603922, 0.6, 0.6, 1 )
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=45]
+[sub_resource type="DynamicFont" id=46]
 size = 25
 outline_size = 2
 outline_color = Color( 0.643137, 0.619608, 0.619608, 1 )
 extra_spacing_top = 2
 font_data = ExtResource( 14 )
 
-[sub_resource type="Shader" id=46]
+[sub_resource type="Shader" id=47]
 code = "shader_type canvas_item;
 
 uniform vec4 in_color:hint_color;
@@ -374,26 +374,26 @@ void fragment(){
     COLOR=vec4(circle) * color;
 }"
 
-[sub_resource type="ShaderMaterial" id=47]
-shader = SubResource( 46 )
+[sub_resource type="ShaderMaterial" id=48]
+shader = SubResource( 47 )
 shader_param/in_color = Color( 0.25098, 0.47451, 0.517647, 1 )
 shader_param/out_color = null
 shader_param/in_out = 0.0
 shader_param/position = 1.0
 shader_param/size = Vector2( 16, 16 )
 
-[sub_resource type="DynamicFont" id=48]
+[sub_resource type="DynamicFont" id=49]
 size = 24
 outline_size = 2
 outline_color = Color( 0.603922, 0.6, 0.6, 1 )
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=49]
+[sub_resource type="DynamicFont" id=50]
 outline_size = 2
 outline_color = Color( 0.603922, 0.6, 0.6, 1 )
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=50]
+[sub_resource type="DynamicFont" id=51]
 outline_color = Color( 0.603922, 0.6, 0.6, 1 )
 font_data = ExtResource( 14 )
 
@@ -410,30 +410,30 @@ scale = Vector2( 5, 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
 frames = SubResource( 7 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 25.6, 0 )
 frames = SubResource( 14 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 54.4, 0 )
 frames = SubResource( 21 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 118.4, 0 )
 frames = SubResource( 28 )
+frame = 4
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 144, 0 )
 frames = SubResource( 35 )
-frame = 2
 playing = true
 
 [node name="pb1" type="ParallaxBackground" parent="PxBg"]
@@ -545,7 +545,7 @@ margin_left = -195.0
 margin_top = 160.0
 margin_right = 195.0
 margin_bottom = 196.0
-custom_fonts/font = SubResource( 51 )
+custom_fonts/font = SubResource( 45 )
 text = "正在寻找敌人中。。。"
 align = 1
 valign = 1
@@ -591,7 +591,7 @@ visible = false
 anchor_right = 1.0
 margin_top = 32.0
 margin_bottom = 112.0
-custom_fonts/font = SubResource( 45 )
+custom_fonts/font = SubResource( 46 )
 align = 1
 valign = 1
 autowrap = true
@@ -604,8 +604,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Trans" type="Sprite" parent="UILayer"]
-visible = false
-material = SubResource( 47 )
+material = SubResource( 48 )
 position = Vector2( 672.125, 309.659 )
 scale = Vector2( 20.9961, 9.7294 )
 texture = ExtResource( 15 )
@@ -660,7 +659,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="UILayer/GameResult/fail"]
 margin_right = 390.0
 margin_bottom = 72.0
-custom_fonts/font = SubResource( 48 )
+custom_fonts/font = SubResource( 49 )
 text = "战斗失败！"
 align = 1
 valign = 1
@@ -691,7 +690,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="UILayer/GameResult/win"]
 margin_right = 390.0
 margin_bottom = 72.0
-custom_fonts/font = SubResource( 48 )
+custom_fonts/font = SubResource( 49 )
 text = "战斗胜利！"
 align = 1
 valign = 1
@@ -708,7 +707,7 @@ margin_left = -195.0
 margin_top = -83.0
 margin_right = 195.0
 margin_bottom = -47.0
-custom_fonts/font = SubResource( 49 )
+custom_fonts/font = SubResource( 50 )
 text = "获得奖励："
 align = 1
 valign = 1
@@ -738,7 +737,7 @@ margin_left = -195.0
 margin_top = 229.0
 margin_right = 195.0
 margin_bottom = 265.0
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 51 )
 text = "点击任意空白处关闭"
 align = 1
 valign = 1

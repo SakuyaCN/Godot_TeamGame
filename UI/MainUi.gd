@@ -1,5 +1,7 @@
 extends Control
 
+onready var progress = $progress_hp
+onready var progress_tv = $progress_hp/label_hp 
 
 func _ready():
 	visible = false
@@ -15,7 +17,6 @@ func _on_map_pressed():
 func _on_chest_pressed():
 	if !get_parent().bag_ui.visible:
 		get_parent().bag_ui.bagChange(true)
-
 
 func _on_party_pressed():
 	if !get_parent().party_ui.visible:

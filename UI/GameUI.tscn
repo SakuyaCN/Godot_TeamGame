@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -81,6 +81,19 @@ font_data = ExtResource( 1 )
 [sub_resource type="StyleBoxTexture" id=11]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StreamTexture" id=22]
+load_path = "res://.import/Assets-2(Scale-x2)-No-BG_03_03.png-00203a1282831532b31a702f2e1582fd.stex"
+
+[sub_resource type="StreamTexture" id=23]
+load_path = "res://.import/Assets-2(Scale-x2)-No-BG_03_09.png-a1cea283819115634c8b31ae5f62cce9.stex"
+
+[sub_resource type="DynamicFont" id=21]
+size = 12
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=12]
 length = 0.4
@@ -307,7 +320,6 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 7
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -622,13 +634,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="progress_hp" type="TextureProgress" parent="MainUi"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -672.0
+margin_top = -16.0
+margin_right = 672.0
+margin_bottom = 8.0
+value = 5.0
+texture_under = SubResource( 22 )
+texture_progress = SubResource( 23 )
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_right = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="MainUi/progress_hp"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_right = 44.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 21 )
+text = "100%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainUi"]
 anims/show = SubResource( 12 )
 
 [node name="map" type="TextureButton" parent="MainUi"]
-margin_left = 35.0
+margin_left = -107.0
 margin_top = 32.0
-margin_right = 133.0
+margin_right = -9.0
 margin_bottom = 105.0
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 23 )
@@ -653,9 +698,9 @@ __meta__ = {
 }
 
 [node name="chest" type="TextureButton" parent="MainUi"]
-margin_left = 126.0
+margin_left = -203.0
 margin_top = 24.0
-margin_right = 224.0
+margin_right = -105.0
 margin_bottom = 110.0
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 17 )
@@ -681,9 +726,9 @@ __meta__ = {
 }
 
 [node name="party" type="TextureButton" parent="MainUi"]
-margin_left = 222.0
+margin_left = -291.0
 margin_top = 24.0
-margin_right = 303.0
+margin_right = -210.0
 margin_bottom = 110.0
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 21 )
