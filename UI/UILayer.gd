@@ -26,3 +26,21 @@ func showMessage(text:String,time = 2):
 
 func _on_Timer_timeout():
 	msg.hide()
+
+func fight_fail():
+	$GameResult.visible = true
+	$GameResult/fail.visible = true
+	$GameResult/Timer.start()
+	
+func fight_win():
+	$GameResult.visible = true
+	$GameResult/win.visible = true
+
+func _on_ColorRect_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		$GameResult/Timer.stop()
+		$GameResult.visible = false
+		$GameResult/win.visible = false
+		$GameResult/fail.visible = false
+		get_tree().call_group("game_main","game_reset")
+

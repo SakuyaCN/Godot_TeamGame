@@ -5,7 +5,6 @@ var is_run = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$pre.visible = true
-	pass # Replace with function body.
 
 func _process(delta):
 	if is_run:

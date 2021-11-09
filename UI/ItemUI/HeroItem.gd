@@ -17,7 +17,7 @@ func setData(key):
 			$AnimatedSprite.scale = Vector2(3,3)
 		"无畏勇者":
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
-			$AnimatedSprite.position = Vector2(50,40)
+			$AnimatedSprite.position = Vector2(50,45)
 			$AnimatedSprite.scale = Vector2(3,3)
 		"不屈骑士":
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres")

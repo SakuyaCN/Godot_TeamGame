@@ -4,13 +4,23 @@
         "scale":4,
         "pos_y":-80,
         "flip_h":true,
-        "atk_count":1
+        "atk_count":1,
+        "win_data":{
+            "other":{
+                "exp":5,
+                "gold":5
+            },
+            "goods":[
+                ["红色岩石",1]
+            ]
+        }
     },
     "骷髅法师":{
         "frames":"res://Texture/Moster/SkeletonMage.tres",
         "scale":4,
         "pos_y":-100,
         "flip_h":true,
-        "atk_count":2
+        "atk_count":2,
+        "goods":[]
     }
 }

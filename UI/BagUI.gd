@@ -5,6 +5,8 @@ onready var invItem = preload("res://UI/ItemUI/invItem.tscn")
 onready var grid = $NinePatchRect/GridContainer
 onready var player = $AnimationPlayer
 
+onready var glod = $gold
+
 func _ready():
 	for data in 40:
 		var ins = invItem.instance()
@@ -13,6 +15,7 @@ func _ready():
 	bagInit()
 
 func bagInit():
+	glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] 
 	var index = 0
 	for data in StorageData.get_player_inventory():
 		grid.get_children()[index].setData(data,StorageData.get_player_inventory()[data])

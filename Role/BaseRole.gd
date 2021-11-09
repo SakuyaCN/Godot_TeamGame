@@ -107,6 +107,15 @@ func _process(delta):
 				animatedSprite.animation = "Idle"
 				get_tree().call_group("game_main","moster_plus_size")
 
+#玩家状态重置
+func role_reset():
+	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+	ui.initRole()
+	reloadHpBar()
+	fight_script.load_script(is_moster)
+	am_player.play_backwards("show_bar")
+	animatedSprite.play("Run")
+
 #展示血条
 func show_bar(role_array):
 	if am_player.is_playing():
@@ -117,6 +126,10 @@ func show_bar(role_array):
 #开始战斗
 func start_fight():
 	fight_script.do_atk()
+
+func fight_win():
+	fight_script.is_in_atk = false
+	animatedSprite.play("Idle")
 
 #刷新血条信息
 func reloadHpBar():
@@ -133,7 +146,6 @@ func _show_damage_label(damage,type):
 	add_child(float_number_ins)
 	float_number_ins.set_number("-%s" %damage,type)
 	reloadHpBar()
-
 
 func _on_Effects_animation_finished():
 	effect_anim.visible = false

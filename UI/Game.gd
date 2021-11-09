@@ -16,3 +16,4 @@ func start_game():
 	game_main.load_map()
 	UiCotrol.main_ui.showui()
 	game_main.go_position()
+	ConstantsValue.ui_layer.showMessage("点击人物可以展示属性面板",5)

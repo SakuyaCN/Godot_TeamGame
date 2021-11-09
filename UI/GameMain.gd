@@ -24,7 +24,6 @@ var player_array = []
 var moster_array = []
 
 var is_flight = false#是否可以准备战斗
-var is_flighting = false#是否正在战斗
 
 func _ready():
 	add_to_group("game_main")
@@ -32,7 +31,6 @@ func _ready():
 func load_map():
 	var player_map = StorageData.storage_data["player_state"]["now_map"]
 	map_name = LocalData.map_data.keys()[player_map/10]
-	print(LocalData.map_data)
 
 func plus_size():
 	load_hero_size +=1
@@ -43,7 +41,6 @@ func plus_size():
 func moster_plus_size():
 	load_moster_size +=1
 	if load_moster_size == moster_size:
-		is_flighting = true
 		start_fight()
 
 #战斗开始信号
@@ -53,8 +50,10 @@ func start_fight():
 	get_tree().call_group("moster_role","show_bar",player_array)
 
 func go_position():
-	ConstantsValue.ui_layer.showMessage("点击人物可以展示属性面板",5)
+	ConstantsValue.game_layer.findTvShow(true)
 	player_array.clear()
+	hero_size = 0
+	load_hero_size = 0
 	for pos in StorageData.player_state["team_position"].size():
 		if StorageData.player_state["team_position"][pos] != null:
 			hero_size += 1
@@ -67,15 +66,16 @@ func go_position():
 			yield(get_tree().create_timer(0.7),"timeout")
 
 func _on_Timer_timeout():
-	if not is_flight and randi()%100 < 90:
+	if not is_flight and randi()%100 < 10:
 		is_flight = true
 		get_parent().px_bg.is_run = false
 		get_tree().call_group("player_role","changeAnim","Idle")
 		moster_join()
+		ConstantsValue.game_layer.findTvShow(false)
 
 func moster_join():
-	var moster_name = LocalData.map_data[map_name].moster
 	var map_info = LocalData.map_data[map_name]
+	var moster_name = map_info.moster
 	var moster_info = LocalData.moster_data[moster_name]
 	var moster_data = {
 		"nickname":moster_name,
@@ -98,6 +98,31 @@ func moster_join():
 		new_hero.run2position(moster_pos.get_children()[index])
 		yield(get_tree().create_timer(0.7),"timeout")
 
+#检查胜利方
+func checkWin():
+	var is_moster_win = true
+	var is_player_win = true
+	for moster in moster_array:
+		if moster.fight_script.is_alive:
+			is_player_win = false
+	for player in player_array:
+		if player.fight_script.is_alive:
+			is_moster_win = false
+	if is_player_win:
+		get_tree().call_group("player_role","fight_win")
+		ConstantsValue.ui_layer.fight_win()
+	if is_moster_win:
+		get_tree().call_group("moster_role","fight_win")
+		ConstantsValue.ui_layer.fight_fail()
+
+func game_reset():
+	moster_clear()
+	get_tree().call_group("player_role","role_reset")
+	get_parent().px_bg.is_run = true
+	is_flight = false
+	load_moster_size = 0
+	ConstantsValue.game_layer.findTvShow(true)
+
 func moster_clear():
 	for ms in moster_array:
 		if ms != null && ms:
@@ -108,4 +133,5 @@ func moster_clear():
 		$PositionMoster/PositionM2.get_children().clear()
 	if $PositionMoster/PositionM3.get_children().size() > 0:
 		$PositionMoster/PositionM3.get_children().clear()
+	moster_array.clear()
 		

@@ -14,6 +14,10 @@ var atk_count #攻击数量
 
 #初始化战斗脚本
 func load_script(_is_moster):
+	is_alive = true
+	fight_role_array.clear()
+	do_atk_array.clear()
+	is_in_atk = false
 	is_moster = _is_moster
 	effect_sprite = get_parent().effect_anim
 	hero_sprite = get_parent().animatedSprite
@@ -26,10 +30,6 @@ func checkFightRole():
 	for fight_role in fight_role_array:
 		if do_atk_array.size() < atk_count && fight_role.fight_script.is_alive:
 			do_atk_array.append(fight_role)
-	if do_atk_array.size() == 0:
-		win()
-		is_in_atk = false
-		hero_sprite.play("Idle")
 
 func setFightRole(f_r):
 	do_atk_array.clear()
@@ -62,12 +62,9 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type):
 #人物死亡
 func die():
 	is_alive = false
+	get_tree().call_group("game_main","checkWin")
 	hero_sprite.play("Die")
 	is_in_atk = false
-
-#战斗胜利
-func win():
-	get_tree().call_group("game_main","moster_clear")
 
 #战斗信号
 func _on_AnimatedSprite_animation_finished():

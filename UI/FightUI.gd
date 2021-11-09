@@ -18,3 +18,4 @@ func _on_startFight_pressed():
 
 func _on_autoFight_toggled(button_pressed):
 	ConfigScript.setBoolSetting("fight","auto_fight",button_pressed)
+
