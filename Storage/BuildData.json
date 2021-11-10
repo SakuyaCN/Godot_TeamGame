@@ -1,9 +1,7 @@
 {
     "build_type":{
         "基础装备":{
-            "武器":{
-
-            },
+            "武器":[101,102,103,104,105,106,107,108,109,1010],
             "副手":{
                 
             }
@@ -37,6 +35,108 @@
         },
         "神话套装9":{
 
+        }
+    },
+    "build_data":{
+        "101":{
+            "lv":5,
+            "name":"黑石长剑",
+            "attr":{
+                "atk":[5,10],
+                "hole_pass":[5,10],
+                "true_hurt":[2,4]
+            },
+            "img":"res://Texture/equ/Sword/Icon1.png"
+        },
+        "102":{
+            "lv":10,
+            "name":"红石长剑",
+            "attr":{
+                "atk":[11,15],
+                "hole_pass":[11,15],
+                "true_hurt":[6,8]
+            },
+            "img":"res://Texture/equ/Sword/Icon2_no_effect.png"
+        },
+        "103":{
+            "lv":15,
+            "name":"青铜长剑",
+            "attr":{
+                "atk":[20,30],
+                "hole_pass":[16,22],
+                "true_hurt":[9,12]
+            },
+            "img":"res://Texture/equ/Sword/Icon3_no_effect.png"
+        },
+        "104":{
+            "lv":20,
+            "name":"鲜血长剑",
+            "attr":{
+                "atk":[40,55],
+                "hole_pass":[26,32],
+                "true_hurt":[13,15]
+            },
+            "img":"res://Texture/equ/Sword/Icon4_no_effect.png"
+        },
+        "105":{
+            "lv":25,
+            "name":"银铁长剑",
+            "attr":{
+                "atk":[60,85],
+                "hole_pass":[34,40],
+                "true_hurt":[16,19]
+            },
+            "img":"res://Texture/equ/Sword/Icon5.png"
+        },
+        "106":{
+            "lv":30,
+            "name":"怨气之剑",
+            "attr":{
+                "atk":[100,120],
+                "hole_pass":[41,48],
+                "true_hurt":[20,25]
+            },
+            "img":"res://Texture/equ/Sword/Icon6.png"
+        },
+        "107":{
+            "lv":35,
+            "name":"冰霜之剑",
+            "attr":{
+                "atk":[130,170],
+                "hole_pass":[50,62],
+                "true_hurt":[26,30]
+            },
+            "img":"res://Texture/equ/Sword/Icon7.png"
+        },
+        "108":{
+            "lv":40,
+            "name":"灵气之剑",
+            "attr":{
+                "atk":[200,250],
+                "hole_pass":[65,75],
+                "true_hurt":[31,35]
+            },
+            "img":"res://Texture/equ/Sword/Icon8.png"
+        },
+        "109":{
+            "lv":45,
+            "name":"剧毒长剑",
+            "attr":{
+                "atk":[275,330],
+                "hole_pass":[76,85],
+                "true_hurt":[36,40]
+            },
+            "img":"res://Texture/equ/Sword/Icon9.png"
+        },
+        "1010":{
+            "lv":50,
+            "name":"热能巨剑",
+            "attr":{
+                "atk":[355,400],
+                "hole_pass":[86,95],
+                "true_hurt":[41,45]
+            },
+            "img":"res://Texture/equ/Sword/Icon10.png"
         }
     }
 }

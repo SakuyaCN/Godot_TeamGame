@@ -18,9 +18,10 @@ var posion:int
 
 #其他属性
 var mp:int#法力值
-var hold:int #招架
-var hole_num:int#招架数值
+var hold:int #格挡率
+var hole_num:int#格挡数值
 var dodge:int #闪避
+var hole_pass:int #格挡穿透
 var mtk_pass:int #魔力穿透
 var atk_pass:int #物理穿透
 var atk_blood:int #物理吸血
@@ -66,6 +67,19 @@ func setEquAttrBean(role_data):
 				"mtk": mtk += base_attr_item.values()[0]
 				"speed": speed += base_attr_item.values()[0]
 				"crit": crit += base_attr_item.values()[0]
+				"mp": mp += base_attr_item.values()[0]
+				"hold": hold += base_attr_item.values()[0]
+				"hole_num": hole_num += base_attr_item.values()[0]
+				"dodge": dodge += base_attr_item.values()[0]
+				"hole_pass": hole_pass += base_attr_item.values()[0]
+				"mtk_pass": mtk_pass += base_attr_item.values()[0]
+				"atk_pass": atk_pass += base_attr_item.values()[0]
+				"atk_blood": atk_blood += base_attr_item.values()[0]
+				"mtk_blood": mtk_blood += base_attr_item.values()[0]
+				"atk_buff": atk_buff += base_attr_item.values()[0]
+				"mtk_buff": mtk_buff += base_attr_item.values()[0]
+				"hp_buff": hp_buff += base_attr_item.values()[0]
+				"true_hurt": true_hurt += base_attr_item.values()[0]
 		#元素属性
 		for base_attr_item in equ_data["ys_attr"]:
 			match base_attr_item.keys()[0]:

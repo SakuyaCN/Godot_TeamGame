@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://UI/BuildUI.gd" type="Script" id=2]
 [ext_resource path="res://Texture/hud/atbg.png" type="Texture" id=3]
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=5]
+[ext_resource path="res://Texture/hud/p_s_n.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -12,6 +13,20 @@ outline_size = 2
 outline_color = Color( 0.462745, 0.435294, 0.435294, 1 )
 extra_spacing_char = 4
 font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 145, 52 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 145, 52 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 145, 52 )
 
 [node name="BuildUI" type="Control"]
 anchor_right = 1.0
@@ -74,9 +89,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -229.5
-margin_top = -222.5
-margin_right = 229.5
+margin_left = -229.0
+margin_top = -168.5
+margin_right = 230.0
 margin_bottom = 222.5
 texture = ExtResource( 5 )
 patch_margin_left = 25
@@ -86,5 +101,27 @@ patch_margin_bottom = 34
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 443.0
+margin_top = 88.0
+margin_right = 902.0
+margin_bottom = 138.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+margin_right = 100.0
+margin_bottom = 50.0
+
+[node name="BuildGridTypeItem" type="Button" parent="ScrollContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 100, 50 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
