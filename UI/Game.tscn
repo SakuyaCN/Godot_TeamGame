@@ -581,6 +581,7 @@ position = Vector2( 1180, 498 )
 [node name="Timer" type="Timer" parent="GameMain"]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+pause_mode = 2
 layer = 0
 script = ExtResource( 2 )
 

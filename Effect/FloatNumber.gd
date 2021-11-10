@@ -28,12 +28,9 @@ func _process(delta):
 	velocity += graavity * mass * delta
 	position += velocity * delta
 
-func set_number(number,type):
+func set_number(number,color):
 	$Label.text = str(number)
-	match type:
-		0:$Label.set("custom_colors/font_outline_modulate",Color.brown)
-		1:$Label.set("custom_colors/font_outline_modulate",Color.darkturquoise)
-		2:$Label.set("custom_colors/font_outline_modulate",Color.black)
+	$Label.set("custom_colors/font_outline_modulate",color)
 
 func _on_Tween_tween_all_completed():
 	get_tree().queue_delete(self)

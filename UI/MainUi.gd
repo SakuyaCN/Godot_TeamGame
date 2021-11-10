@@ -21,3 +21,8 @@ func _on_chest_pressed():
 func _on_party_pressed():
 	if !get_parent().party_ui.visible:
 		get_parent().party_ui.partyChange(true)
+
+
+func _on_build_pressed():
+	if !get_parent().build_ui.visible:
+		get_parent().build_ui.buildChange(true)

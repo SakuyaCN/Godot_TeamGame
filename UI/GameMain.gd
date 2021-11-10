@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var role = preload("res://Role/BaseRole.tscn")
 var hero_size = 0
 var load_hero_size = 0
@@ -8,12 +7,12 @@ var load_hero_size = 0
 var moster_size = 0
 var load_moster_size = 0
 
-var map_name
+var map_name #当前地图关卡名称
 
 onready var message_ui = get_parent().find_node("UILayer")
 onready var moster_pos = $PositionMoster
 
-onready var game_progress:ProgressBar
+onready var game_progress:TextureProgress
 onready var game_progress_tv
 
 onready var role_position = [
@@ -29,18 +28,39 @@ var moster_array = []
 var is_flight = false#是否可以准备战斗
 
 func _ready():
-	game_progress = find_node("Control").find_node("MainUi").find_node("progress_hp")
-	game_progress_tv = find_node("Control").find_node("MainUi").find_node("progress_hp").find_node("label_hp")
+	game_progress = get_parent().find_node("UILayer").find_node("Control").find_node("MainUi").find_node("progress_hp")
+	game_progress_tv =  get_parent().find_node("UILayer").find_node("Control").find_node("MainUi").find_node("progress_hp").find_node("label_hp")
 	add_to_group("game_main")
 
+#加载地图
 func load_map():
 	var player_map = StorageData.storage_data["player_state"]["now_map"]
 	map_name = LocalData.map_data.keys()[player_map/10]
+	var map_info = LocalData.map_data[map_name]
+	game_progress.max_value = map_info["max_progress"]
+	game_progress.value = 0
+	game_progress_tv.text = "当前地图探索进度：%s "%game_progress.value +" / 总进度：%s" %game_progress.max_value
+
+#探索进度条更新
+func mapProgress():
+	if !is_flight && game_progress.value != 100:
+		game_progress.value += 1
+		game_progress_tv.text = "当前地图探索进度：%s "%game_progress.value +" / 总进度：%s" %game_progress.max_value
+		if game_progress.value as int % 5 == 0:
+			moster_met()
 
 func plus_size():
 	load_hero_size +=1
 	if load_hero_size == hero_size:
 		$Timer.start()
+
+#搜索遇到敌人
+func moster_met():
+	is_flight = true
+	get_parent().px_bg.is_run = false
+	get_tree().call_group("player_role","changeAnim","Idle")
+	moster_join()
+	ConstantsValue.game_layer.findTvShow(false)
 
 #敌人进入
 func moster_plus_size():
@@ -71,12 +91,7 @@ func go_position():
 			yield(get_tree().create_timer(0.7),"timeout")
 
 func _on_Timer_timeout():
-	if not is_flight and randi()%100 < 10:
-		is_flight = true
-		get_parent().px_bg.is_run = false
-		get_tree().call_group("player_role","changeAnim","Idle")
-		moster_join()
-		ConstantsValue.game_layer.findTvShow(false)
+	mapProgress()
 
 func moster_join():
 	var map_info = LocalData.map_data[map_name]
@@ -131,7 +146,7 @@ func game_reset():
 func moster_clear():
 	for ms in moster_array:
 		if ms != null && ms:
-			ms.free()
+			ms.queue_free()
 	if $PositionMoster/PositionM1.get_children().size() > 0:
 		$PositionMoster/PositionM1.get_children().clear()
 	if $PositionMoster/PositionM2.get_children().size() > 0:

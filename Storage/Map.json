@@ -1,7 +1,8 @@
 {
     "密林之森": {
         "moster": "骷髅战士",
-        "moster_num":2
+        "moster_num":2,
+        "max_progress":100
     },
     "古老荒漠": {
         "moster": "骷髅法师"

@@ -1,5 +1,12 @@
 extends Node2D
 
+enum HurtType{
+	ATK = 0#伤害颜色 物理伤害
+	MTK = 1#伤害颜色 魔力伤害
+	TRUE = 2#伤害颜色 真实伤害
+	BLOOD = 3#增益颜色 吸血
+}
+
 const DOT = "▪"
 const K1 = 3600
 const K2 = 10

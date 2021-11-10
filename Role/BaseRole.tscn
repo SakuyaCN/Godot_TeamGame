@@ -203,7 +203,7 @@ position = Vector2( 0, -70 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 4
+frame = 5
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
@@ -211,6 +211,7 @@ position = Vector2( 16, -79 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "hit"
+frame = 2
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -561,6 +562,7 @@ __meta__ = {
 }
 
 [connection signal="animation_finished" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_frame_changed"]
 [connection signal="animation_finished" from="Effects" to="." method="_on_Effects_animation_finished"]
 [connection signal="gui_input" from="RoleUI" to="RoleUI" method="_on_RoleUI_gui_input"]
 [connection signal="visibility_changed" from="RoleUI/attr" to="RoleUI" method="_on_attr_visibility_changed"]

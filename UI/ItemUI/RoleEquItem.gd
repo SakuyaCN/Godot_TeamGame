@@ -29,7 +29,7 @@ func reLoad():
 	else:
 		is_emp = true
 		$Image.texture = load("res://Texture/Assets-2(Scale-x2)-No-BG_15.png")
-		$Name.text = "无装备"
+		$Name.text = type
 	if !is_vis:
 		$Name.visible = false
 		

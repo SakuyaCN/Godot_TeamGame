@@ -45,12 +45,16 @@ func do_atk():
 	hero_sprite.frames.set_animation_speed("Atk",(hero_sprite.frames.get_animation_speed("Atk") + (hero_attr.speed / 100)))
 	hero_sprite.play("Atk")
 
-#_atk_data攻击者信息 _atk_attr攻击者属性 atk_type 攻击伤害类型
-func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type):
+#_atk_data攻击者信息 _atk_attr攻击者属性 atk_type 攻击伤害类型 fight_script 攻击者脚本
+func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 	var hurt_num = 0
 	match atk_type:
-		0:hurt_num = _atk_attr.atk * (1 - (hero_attr.def/100.0))#物理伤害
-		1:hurt_num = _atk_attr.mtk * (1 - (hero_attr.mdef/100.0))#魔力伤害
+		0:
+			hurt_num = _atk_attr.atk * (1 - (hero_attr.def/100.0))#物理伤害
+			fight_script.atk_blood(hurt_num)
+		1:
+			hurt_num = _atk_attr.mtk * (1 - (hero_attr.mdef/100.0))#魔力伤害
+			fight_script.mtk_blood(hurt_num)
 		2:hurt_num = _atk_attr.atk#真实伤害
 	hero_attr.hp -= hurt_num
 	get_parent()._show_damage_label(hurt_num,atk_type)
@@ -66,9 +70,27 @@ func die():
 	hero_sprite.play("Die")
 	is_in_atk = false
 
+#物理攻击吸血
+func atk_blood(num):
+	if hero_attr.atk_blood > 0:
+		var blood = num * (hero_attr.atk_blood / 100.0)
+		if hero_attr.hp + blood < hero_attr.max_hp:
+			hero_attr.hp += blood
+		else:
+			hero_attr.hp = hero_attr.max_hp
+		get_parent()._show_damage_label(blood,Utils.HurtType.BLOOD)
+
+#魔力攻击吸血
+func mtk_blood():
+	pass
+
 #战斗信号
 func _on_AnimatedSprite_animation_finished():
 	if is_in_atk:
 		checkFightRole()
+
+#战斗时每帧
+func _on_AnimatedSprite_frame_changed():
+	if is_in_atk && hero_sprite.animation == "Atk" && hero_sprite.frame == (hero_sprite.frames.get_frame_count("Atk") * 0.7) as int:
 		for role in do_atk_array:
-			role.fight_script.do_hurt(role_data,hero_attr,0)
+			role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)

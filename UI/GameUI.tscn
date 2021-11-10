@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_12.png" type="Texture" id=25]
 [ext_resource path="res://UI/MapUi.gd" type="Script" id=26]
 [ext_resource path="res://Texture/close.png" type="Texture" id=27]
+[ext_resource path="res://Texture/hud/Icons_34.png" type="Texture" id=28]
+[ext_resource path="res://UI/ControlUI/BuildUI.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=36]
 
 [sub_resource type="DynamicFont" id=1]
@@ -82,20 +84,20 @@ font_data = ExtResource( 1 )
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 133, 34 )
 
-[sub_resource type="StreamTexture" id=22]
+[sub_resource type="StreamTexture" id=12]
 load_path = "res://.import/Assets-2(Scale-x2)-No-BG_03_03.png-00203a1282831532b31a702f2e1582fd.stex"
 
-[sub_resource type="StreamTexture" id=23]
+[sub_resource type="StreamTexture" id=13]
 load_path = "res://.import/Assets-2(Scale-x2)-No-BG_03_09.png-a1cea283819115634c8b31ae5f62cce9.stex"
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=14]
 size = 12
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=15]
 length = 0.4
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("map:rect_position:x")
@@ -127,23 +129,32 @@ tracks/2/keys = {
 "points": PoolRealArray( -291, -0.25, 0, 0.25, 0, 222, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.4 )
 }
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("build:rect_position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -379, -0.25, 0, 0.25, 0, 306, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=16]
 size = 22
 outline_size = 3
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 4
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=17]
 size = 42
 outline_size = 6
 outline_color = Color( 0.470588, 0.470588, 0.470588, 1 )
 extra_spacing_char = 6
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=15]
-resource_name = "show"
+[sub_resource type="Animation" id=18]
 length = 0.3
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("bg:rect_scale:x")
@@ -188,22 +199,21 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.3 )
 }
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=19]
 size = 14
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=20]
 size = 14
 extra_spacing_bottom = 6
 extra_spacing_char = 2
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=21]
 size = 14
 font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=19]
-resource_name = "item_show"
+[sub_resource type="Animation" id=22]
 length = 0.3
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Item:rect_position:x")
@@ -216,7 +226,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 )
 }
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=23]
 size = 20
 font_data = ExtResource( 1 )
 
@@ -320,6 +330,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
+frame = 4
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -644,8 +655,8 @@ margin_top = -16.0
 margin_right = 672.0
 margin_bottom = 8.0
 value = 5.0
-texture_under = SubResource( 22 )
-texture_progress = SubResource( 23 )
+texture_under = SubResource( 12 )
+texture_progress = SubResource( 13 )
 nine_patch_stretch = true
 stretch_margin_left = 8
 stretch_margin_right = 8
@@ -654,12 +665,10 @@ __meta__ = {
 }
 
 [node name="label_hp" type="Label" parent="MainUi/progress_hp"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -40.0
-margin_right = 44.0
-margin_bottom = 20.0
-custom_fonts/font = SubResource( 21 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 14 )
 text = "100%"
 align = 1
 valign = 1
@@ -668,7 +677,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainUi"]
-anims/show = SubResource( 12 )
+anims/show = SubResource( 15 )
 
 [node name="map" type="TextureButton" parent="MainUi"]
 margin_left = -107.0
@@ -689,7 +698,7 @@ anchor_bottom = 1.0
 margin_left = -55.0
 margin_top = -23.0
 margin_right = 55.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 16 )
 text = "密林地图"
 align = 1
 valign = 1
@@ -717,7 +726,7 @@ anchor_bottom = 1.0
 margin_left = -55.0
 margin_top = -23.0
 margin_right = 55.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 16 )
 text = "储物宝箱"
 align = 1
 valign = 1
@@ -745,8 +754,36 @@ anchor_bottom = 1.0
 margin_left = -55.0
 margin_top = -23.0
 margin_right = 55.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 16 )
 text = "冒险小队"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="build" type="TextureButton" parent="MainUi"]
+margin_left = -379.0
+margin_top = 24.0
+margin_right = -298.0
+margin_bottom = 110.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 28 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="MainUi/build"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 16 )
+text = "炼金台"
 align = 1
 valign = 1
 __meta__ = {
@@ -806,14 +843,14 @@ margin_left = -102.5
 margin_top = -21.5
 margin_right = 102.5
 margin_bottom = 21.5
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "密林大陆"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MapUi"]
-anims/show = SubResource( 15 )
+anims/show = SubResource( 18 )
 
 [node name="TextureButton" type="TextureButton" parent="MapUi"]
 margin_left = 1237.52
@@ -864,7 +901,7 @@ margin_left = 10.0
 margin_top = 4.0
 margin_right = 156.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 19 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 text = "一个道具"
 align = 1
@@ -878,7 +915,7 @@ margin_left = 15.0
 margin_top = 59.0
 margin_right = 257.0
 margin_bottom = 194.0
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 text = "一个道具"
 autowrap = true
@@ -891,7 +928,7 @@ margin_left = 23.0
 margin_top = 204.0
 margin_right = 257.0
 margin_bottom = 227.0
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 0.607843, 0.258824, 0.921569, 1 )
 text = "等级：1"
 __meta__ = {
@@ -934,14 +971,14 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BagUI"]
-anims/item_show = SubResource( 19 )
+anims/item_show = SubResource( 22 )
 
 [node name="gold" type="Label" parent="BagUI"]
 margin_left = 381.0
 margin_top = 524.0
 margin_right = 961.0
 margin_bottom = 560.0
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 23 )
 text = "金币：100"
 align = 2
 valign = 1
@@ -951,6 +988,8 @@ __meta__ = {
 
 [node name="PartyUI" parent="." instance=ExtResource( 22 )]
 visible = false
+
+[node name="BuildUI" parent="." instance=ExtResource( 29 )]
 
 [node name="temp_skill_icon" type="TextureRect" parent="."]
 visible = false
@@ -966,6 +1005,7 @@ expand = true
 [connection signal="pressed" from="MainUi/map" to="MainUi" method="_on_map_pressed"]
 [connection signal="pressed" from="MainUi/chest" to="MainUi" method="_on_chest_pressed"]
 [connection signal="pressed" from="MainUi/party" to="MainUi" method="_on_party_pressed"]
+[connection signal="pressed" from="MainUi/build" to="MainUi" method="_on_build_pressed"]
 [connection signal="pressed" from="MapUi/TextureButton" to="MapUi" method="_on_TextureButton_pressed"]
 [connection signal="visibility_changed" from="BagUI" to="BagUI" method="_on_BagUI_visibility_changed"]
 [connection signal="gui_input" from="BagUI/ColorRect" to="BagUI" method="_on_ColorRect_gui_input"]

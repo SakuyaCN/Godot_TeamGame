@@ -138,13 +138,26 @@ func reloadHpBar():
 	$RoleUI/hpbar/progress_hp/label_hp.text = str((hero_attr.hp as float/ hero_attr.max_hp as float * 100 )as int) + "%"
 
 func _show_damage_label(damage,type):
+	var color = Color.brown#基础物理伤害颜色
+	var text = "-"
 	var float_number_ins = float_number.instance()
 	var vec = animatedSprite.position
 	vec.y -= 30
+	vec.x = rand_range(vec.x - 30, vec.x + 30)
 	float_number_ins.position = vec
 	float_number_ins.velocity = Vector2(rand_range(-40,40),-130)
 	add_child(float_number_ins)
-	float_number_ins.set_number("-%s" %damage,type)
+	match type:
+		Utils.HurtType.MTK:
+			color = Color.cornflower
+			text = "-"
+		Utils.HurtType.TRUE:
+			color = Color.lightgray
+			text = "-"
+		Utils.HurtType.BLOOD:
+			color = Color.yellowgreen
+			text = "+"
+	float_number_ins.set_number(text + "%s" %damage,color)
 	reloadHpBar()
 
 func _on_Effects_animation_finished():

@@ -8,9 +8,9 @@ func _ready():
 
 func _process(delta):
 	if is_run:
-		$pb1.scroll_offset.x -= delta * 50
-		$pb2.scroll_offset.x -= delta * 40
-		$pb3.scroll_offset.x -= delta * 30
-		$pb4.scroll_offset.x -= delta * 20
+		$pb1.scroll_offset.x -= delta * 70
+		$pb2.scroll_offset.x -= delta * 55
+		$pb3.scroll_offset.x -= delta * 37
+		$pb4.scroll_offset.x -= delta * 35
 	#get_parent().light.material.set_shader_param("seed",light_seed)
 	#print(light_seed)
