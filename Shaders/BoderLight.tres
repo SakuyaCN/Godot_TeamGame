@@ -1,16 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
 [sub_resource type="Shader" id=1]
-code = "/* 
-Rainbow outline by @Farfalk and @ThePadDev, July 2021
-
-Apply to canvas items with transparent backgrounds.
-Check that there is sufficient transparent background space for the outline!
-
-CC0 License (but citation is welcome <3)
-*/
-
-shader_type canvas_item;
+code = "shader_type canvas_item;
 
 uniform float line_thickness : hint_range(0, 20) = 1.0;    // thickness of the line
 uniform float sin_frequency : hint_range(0.1, 2.0) = 0.5;  // frequency of the rainbow

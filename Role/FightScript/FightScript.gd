@@ -42,7 +42,7 @@ func setFightRole(f_r):
 func do_atk():
 	is_in_atk = true
 	#设定人物攻击频率
-	hero_sprite.frames.set_animation_speed("Atk",(hero_sprite.frames.get_animation_speed("Atk") + (hero_attr.speed / 100)))
+	hero_sprite.frames.set_animation_speed("Atk",(hero_sprite.frames.get_animation_speed("Atk") + (hero_attr.speed / 100.0)))
 	hero_sprite.play("Atk")
 
 #_atk_data攻击者信息 _atk_attr攻击者属性 atk_type 攻击伤害类型 fight_script 攻击者脚本

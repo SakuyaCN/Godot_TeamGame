@@ -10,16 +10,12 @@ var is_vis = true
 func _ready():
 	$Name.text = type
 
-func _process(delta):
-	pass
-	#print("mouse",get_global_mouse_position())
-
 func setData(_local_data):
 	local_data = _local_data
 	reLoad()
 
-func setNameVis(is_vis):
-	self.is_vis = is_vis
+func setNameVis(_is_vis):
+	self.is_vis = _is_vis
 	
 func reLoad():
 	if local_data != null && !local_data.empty():

@@ -6,9 +6,9 @@ var role_data
 func _ready():
 	add_to_group("all_hero_list")
 
-func setData(key):
-	self.role_data = StorageData.get_all_team()[key]
-	self.key = key
+func setData(_key):
+	self.role_data = StorageData.get_all_team()[_key]
+	self.key = _key
 	$AnimatedSprite.material = load("res://Shaders/BoderLight.tres")
 	match role_data.job:
 		"黑袍法师":
@@ -33,5 +33,5 @@ func setData(key):
 			$AnimatedSprite.scale = Vector2(3,3)
 		"战地牧师":$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
 
-func reload(key):
-	$ColorRect.visible = self.key == key
+func reload(_key):
+	$ColorRect.visible = self.key == _key

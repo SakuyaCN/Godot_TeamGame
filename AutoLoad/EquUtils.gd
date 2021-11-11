@@ -46,3 +46,25 @@ func get_ys_string(attr):
 		"ice": return "冰属性"
 		"wind": return "风属性"
 		"posion": return "毒属性"
+
+#生成一件新装备
+func createNewEqu(data,type):
+	var id = OS.get_system_time_msecs() + randi()%1000+1
+	var base_attr = []
+	for base in data.attr:
+		base_attr.append({
+			base:rand_range(data.attr[base][0],data.attr[base][1]) as int
+		})
+	var equData = {
+		"id":id,
+		"name":data.name,
+		"lv":data.lv,
+		"image":data.img,
+		"quality":"A级",
+		"type":type,
+		"is_on":false,
+		"base_attr":base_attr,
+		"ys_attr":[]
+	}
+	StorageData.addEqutoBag(equData)
+	return equData

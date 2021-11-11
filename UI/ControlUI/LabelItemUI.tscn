@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -604.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_outline_modulate = Color( 0.407843, 0.427451, 0.862745, 1 )
+custom_colors/font_outline_modulate = Color( 0.529412, 0.545098, 0.545098, 1 )
 text = "属性+100"
 __meta__ = {
 "_edit_use_anchors_": false

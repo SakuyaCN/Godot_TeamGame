@@ -20,7 +20,7 @@
 [ext_resource path="res://UI/BagUI.gd" type="Script" id=18]
 [ext_resource path="res://Texture/hud/Assets-2(Scale-x2).png" type="Texture" id=19]
 [ext_resource path="res://UI/MainUi.gd" type="Script" id=20]
-[ext_resource path="res://Texture/hud/Assets-2(Scale-x2)-No-BG-恢复的_03.png" type="Texture" id=21]
+[ext_resource path="res://Texture/hud/Assets-2(Scale-x2)-No.png" type="Texture" id=21]
 [ext_resource path="res://UI/ControlUI/PartyUI.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03.png" type="Texture" id=23]
 [ext_resource path="res://Map/Map1.tscn" type="PackedScene" id=24]
@@ -330,7 +330,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -990,6 +990,7 @@ __meta__ = {
 visible = false
 
 [node name="BuildUI" parent="." instance=ExtResource( 29 )]
+visible = false
 
 [node name="temp_skill_icon" type="TextureRect" parent="."]
 visible = false

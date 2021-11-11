@@ -7,7 +7,7 @@ var just_stop_under = 1
 var multi = -2 #speed of one input
 var is_grabbed = false
 
-func _process(delta):
+func _process(_delta):
 	v *= 0.3
 	$HSlider.rect_position += v
 

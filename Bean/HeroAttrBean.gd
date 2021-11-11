@@ -94,8 +94,8 @@ func setEquAttrBean(role_data):
 func loadJobAttr(role_data):
 	match role_data.job:
 		"黑袍法师":
-			hp += (mtk / 10) as int
-			mp += (mtk / 10) as int
+			hp += (mtk / 10.0) as int
+			mp += (mtk / 10.0) as int
 		"无畏勇者":
 			hp += 20 * role_data.lv
 			atk += 5 * role_data.lv
@@ -119,8 +119,8 @@ func loadJobAttr(role_data):
 
 func loadOhterAttr():
 	if hp_buff>0:
-		hp += (hp_buff/100 * hp) as int
+		hp += (hp_buff/100.0 * hp) as int
 	if atk_buff>0:
-		atk += (atk_buff/100 * atk) as int
+		atk += (atk_buff/100.0 * atk) as int
 	if mtk_buff>0:
-		mtk += (mtk_buff/100 * mtk) as int
+		mtk += (mtk_buff/100.0 * mtk) as int

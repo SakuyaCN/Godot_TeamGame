@@ -68,7 +68,7 @@ func get_all_team():
 		storage_data["team"] = {}
 		_save_storage()
 	return storage_data["team"]
-	
+
 #获取已获取技能
 func get_all_skill():
 	if not is_read_storage:
@@ -77,3 +77,13 @@ func get_all_skill():
 		storage_data["skill"] = []
 		_save_storage()
 	return storage_data["skill"]
+
+#刷新人物装备背包
+func reloadEquUI():
+	get_tree().call_group("PartyUI","loadAllEqu")
+
+#添加装备至人物背包
+func addEqutoBag(equData):
+	get_player_equipment()[equData.id] = equData
+	StorageData._save_storage()
+	reloadEquUI()

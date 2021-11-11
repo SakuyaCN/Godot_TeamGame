@@ -9,10 +9,6 @@ var is_emp = true
 func _ready():
 	pass
 
-func _process(delta):
-	pass
-	#print("mouse",get_global_mouse_position())
-
 func setData(_local_data):
 	local_data = _local_data
 	reLoad()

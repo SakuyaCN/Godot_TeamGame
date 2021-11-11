@@ -52,6 +52,5 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
 quality/depth/hdr.mobile=true
 environment/default_environment="res://default_env.tres"

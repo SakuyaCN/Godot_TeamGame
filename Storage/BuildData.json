@@ -46,7 +46,10 @@
                 "hole_pass":[5,10],
                 "true_hurt":[2,4]
             },
-            "img":"res://Texture/equ/Sword/Icon1.png"
+            "img":"res://Texture/equ/Sword/Icon1.png",
+            "need":[
+                ["红色陨铁",10]
+            ]
         },
         "102":{
             "lv":10,
@@ -56,7 +59,10 @@
                 "hole_pass":[11,15],
                 "true_hurt":[6,8]
             },
-            "img":"res://Texture/equ/Sword/Icon2_no_effect.png"
+            "img":"res://Texture/equ/Sword/Icon2_no_effect.png",
+            "need":[
+                ["红色陨铁",20]
+            ]
         },
         "103":{
             "lv":15,
@@ -66,7 +72,10 @@
                 "hole_pass":[16,22],
                 "true_hurt":[9,12]
             },
-            "img":"res://Texture/equ/Sword/Icon3_no_effect.png"
+            "img":"res://Texture/equ/Sword/Icon3_no_effect.png",
+            "need":[
+                ["红色陨铁",30]
+            ]
         },
         "104":{
             "lv":20,
@@ -76,7 +85,11 @@
                 "hole_pass":[26,32],
                 "true_hurt":[13,15]
             },
-            "img":"res://Texture/equ/Sword/Icon4_no_effect.png"
+            "img":"res://Texture/equ/Sword/Icon4_no_effect.png",
+            "need":[
+                ["红色陨铁",20],
+                ["绿色陨铁",20]
+            ]
         },
         "105":{
             "lv":25,
@@ -86,7 +99,11 @@
                 "hole_pass":[34,40],
                 "true_hurt":[16,19]
             },
-            "img":"res://Texture/equ/Sword/Icon5.png"
+            "img":"res://Texture/equ/Sword/Icon5.png",
+            "need":[
+                ["红色陨铁",30],
+                ["绿色陨铁",30]
+            ]
         },
         "106":{
             "lv":30,
@@ -96,7 +113,11 @@
                 "hole_pass":[41,48],
                 "true_hurt":[20,25]
             },
-            "img":"res://Texture/equ/Sword/Icon6.png"
+            "img":"res://Texture/equ/Sword/Icon6.png",
+            "need":[
+                ["红色陨铁",40],
+                ["绿色陨铁",40]
+            ]
         },
         "107":{
             "lv":35,
@@ -106,7 +127,11 @@
                 "hole_pass":[50,62],
                 "true_hurt":[26,30]
             },
-            "img":"res://Texture/equ/Sword/Icon7.png"
+            "img":"res://Texture/equ/Sword/Icon7.png",
+            "need":[
+                ["红色陨铁",60],
+                ["绿色陨铁",60]
+            ]
         },
         "108":{
             "lv":40,
@@ -116,7 +141,11 @@
                 "hole_pass":[65,75],
                 "true_hurt":[31,35]
             },
-            "img":"res://Texture/equ/Sword/Icon8.png"
+            "img":"res://Texture/equ/Sword/Icon8.png",
+            "need":[
+                ["红色陨铁",70],
+                ["绿色陨铁",70]
+            ]
         },
         "109":{
             "lv":45,
@@ -126,7 +155,11 @@
                 "hole_pass":[76,85],
                 "true_hurt":[36,40]
             },
-            "img":"res://Texture/equ/Sword/Icon9.png"
+            "img":"res://Texture/equ/Sword/Icon9.png",
+            "need":[
+                ["红色陨铁",80],
+                ["绿色陨铁",80]
+            ]
         },
         "1010":{
             "lv":50,
@@ -136,7 +169,11 @@
                 "hole_pass":[86,95],
                 "true_hurt":[41,45]
             },
-            "img":"res://Texture/equ/Sword/Icon10.png"
+            "img":"res://Texture/equ/Sword/Icon10.png",
+            "need":[
+                ["红色陨铁",100],
+                ["绿色陨铁",100]
+            ]
         }
     }
 }

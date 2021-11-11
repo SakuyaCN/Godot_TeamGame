@@ -21,6 +21,7 @@ onready var skill_item_position_array = []
 onready var temp_skill = get_parent()
 
 func _ready():
+	add_to_group("PartyUI")
 	visible = false
 	var line = StyleBoxTexture.new()
 	srcoll.get_h_scrollbar().set("custom_styles/scroll",line)
@@ -35,7 +36,7 @@ func checkHeroData():
 		loadAllEqu()
 		reLoadHeroEqu()
 
-func _process(delta):
+func _process(_delta):
 	if check_temp_ins != null && get_parent().tempSKillIcon.visible:
 		get_parent().tempSKillIcon.set_global_position(get_global_mouse_position())
 
@@ -85,9 +86,6 @@ func closeEquInfo():
 		item.free()
 	$Equ_info/VBoxContainer.get_children().clear()
 
-func select(tab):
-	pass
-
 #载入部分
 #=========================
 #载入小队成员
@@ -128,7 +126,7 @@ func loadAllSkill():
 		ins.setData(LocalData.all_data["skill"][skill_data])
 		ins.connect("pressed",self,"skill_item_click",[ins.local_data])
 		ins.connect("button_down",self,"item_down",[ins])
-		ins.connect("button_up",self,"item_up",[ins,"skill"])
+		ins.connect("button_up",self,"item_up",["skill"])
 		$Skill_bg/ScrollContainer/GridContainer.add_child(ins)
 
 #载入人物所有装备
@@ -140,7 +138,7 @@ func loadAllEqu():
 			ins.setData(StorageData.get_player_equipment()[equ_data])
 			ins.connect("pressed",self,"equ_item_click",[ins.local_data])
 			ins.connect("button_down",self,"item_down",[ins])
-			ins.connect("button_up",self,"item_up",[ins,"equ"])
+			ins.connect("button_up",self,"item_up",["equ"])
 			$Equ_bg/ScrollContainer/GridContainer.add_child(ins)
 
 #载入人物穿戴装备
@@ -153,7 +151,7 @@ func loadHeroEqu():
 		else:
 			child.setData(null)
 
-#载入人物穿戴装备
+#刷新人物穿戴装备
 func reLoadHeroEqu():
 	for child in $equ_main/GridContainer.get_children():
 		if role_data["equ"].has(child.type):
@@ -177,11 +175,11 @@ func item_down(ins):
 	check_temp_ins = ins
 	
 #技能列表 抬起绑定
-func item_up(ins,type):
+func item_up(_type):
 	set_process(false)
 	click_timer.stop()
-	var parant_grid = null
-	match type:
+	var parant_grid
+	match _type:
 		"skill": 
 			parant_grid = $skill_main/GridContainer.get_children()
 		"equ": 

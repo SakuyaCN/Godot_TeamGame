@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Texture/hud/p_s_n.png" type="Texture" id=2]
+[ext_resource path="res://UI/ItemUI/GetNewItem.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 6
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "show"
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -300, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+
+[node name="GetNewItem" type="NinePatchRect"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+texture = ExtResource( 2 )
+patch_margin_left = 29
+patch_margin_top = 22
+patch_margin_right = 26
+patch_margin_bottom = 19
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 135.0
+margin_top = 10.0
+margin_right = 280.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 1 )
+text = "获得新道具！"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -196.0
+margin_top = -5.0
+margin_right = -24.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.388235, 0.372549, 0.34902, 1 )
+text = "一把小小武器"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = -30.0
+margin_right = 84.0
+margin_bottom = 30.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
