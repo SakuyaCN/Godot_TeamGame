@@ -26,9 +26,9 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = SubResource( 5 )
-shader_param/blur_amount = 1.316
+shader_param/blur_amount = 4.338
 shader_param/mix_amount = 1.0
-shader_param/color_over = Color( 0.482353, 0.631373, 0.592157, 1 )
+shader_param/color_over = Color( 0.909804, 0.4, 0.4, 1 )
 
 [node name="Node2D" type="Button"]
 margin_right = 150.0
@@ -50,16 +50,16 @@ position = Vector2( 55, 16 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Idle"
+frame = 2
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 material = SubResource( 6 )
 margin_left = 4.0
 margin_top = 108.0
 margin_right = 104.0
 margin_bottom = 117.0
-color = Color( 0.635294, 0.968627, 0.945098, 1 )
+color = Color( 0.952941, 0.905882, 0.207843, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

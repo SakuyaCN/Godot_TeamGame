@@ -203,7 +203,7 @@ position = Vector2( 0, -70 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 5
+frame = 7
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
@@ -348,8 +348,8 @@ __meta__ = {
 anchor_right = 1.0
 margin_top = -27.0
 margin_bottom = -7.0
-custom_fonts/font = SubResource( 11 )
 custom_colors/font_outline_modulate = Color( 0.890196, 0.72549, 0.501961, 1 )
+custom_fonts/font = SubResource( 11 )
 align = 1
 valign = 1
 __meta__ = {
@@ -561,6 +561,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="tree_exited" from="." to="." method="_on_BaseRole_tree_exited"]
 [connection signal="animation_finished" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_frame_changed"]
 [connection signal="animation_finished" from="Effects" to="." method="_on_Effects_animation_finished"]

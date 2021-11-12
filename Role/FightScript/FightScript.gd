@@ -47,15 +47,25 @@ func do_atk():
 
 #_atk_data攻击者信息 _atk_attr攻击者属性 atk_type 攻击伤害类型 fight_script 攻击者脚本
 func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
+	#闪避触发
+	if hero_attr.dodge > 0 && randf() < hero_attr.dodge / 100.0:
+		get_parent()._show_damage_label("MISS",Utils.HurtType.MISS)
+		return
 	var hurt_num = 0
 	match atk_type:
 		0:
-			hurt_num = _atk_attr.atk * (1 - (hero_attr.def/100.0))#物理伤害
+			hurt_num = _atk_attr.atk * (1 - ((hero_attr.def - _atk_attr.atk_pass)/100.0))#物理伤害
 			fight_script.atk_blood(hurt_num)
 		1:
-			hurt_num = _atk_attr.mtk * (1 - (hero_attr.mdef/100.0))#魔力伤害
+			hurt_num = _atk_attr.mtk * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
 			fight_script.mtk_blood(hurt_num)
-		2:hurt_num = _atk_attr.atk#真实伤害
+	if _atk_attr.true_hurt > 0:
+		hurt_num += _atk_attr.true_hurt
+	#格挡
+	hurt_num = hold_hurt(_atk_attr,hurt_num)
+	if crit_hurt(_atk_attr):
+		hurt_num *= 1.5 + (_atk_attr.crit_buff / 100.0)
+		atk_type = Utils.HurtType.CRIT
 	hero_attr.hp -= hurt_num
 	get_parent()._show_damage_label(hurt_num,atk_type)
 	effect_sprite.visible = true
@@ -63,6 +73,29 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 	if hero_attr.hp <= 0:
 		die()
 
+#格挡触发
+func hold_hurt(_atk_attr:HeroAttrBean,num):
+	if hero_attr.hold > 0 && randf() < hero_attr.hold / 100.0:
+		var hold_num = hero_attr.hole_num - _atk_attr.hole_pass
+		if hold_num > 0:
+			get_parent()._show_damage_label(hold_num,Utils.HurtType.HOLD)
+			if num - hold_num > 0:
+				return (num - hold_num) as int
+			else:
+				return 0 
+		else:
+			return num
+	else:
+		return num
+
+#暴击触发
+func crit_hurt(_atk_attr:HeroAttrBean):
+	if _atk_attr.crit > 0 && randf() <  _atk_attr.crit / 7000.0:
+		if hero_attr.uncrit > 0 && randf() <  hero_attr.uncrit / 7000.0:
+			print("暴击抵抗")
+			return false
+		print("触发暴击")
+		return true
 #人物死亡
 func die():
 	is_alive = false

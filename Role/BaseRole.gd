@@ -2,7 +2,7 @@ extends Node2D
 
 onready var float_number = preload("res://Effect/FloatNumber.tscn")
 
-var role_data:Dictionary
+var role_data:Dictionary#角色信息
 var index = 0
 var is_position = false
 var is_moster = false
@@ -16,15 +16,21 @@ onready var am_player = $AnimationPlayer
 onready var fight_script = $FightScript
 onready var animatedSprite = $AnimatedSprite
 onready var effect_anim = $Effects
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func set_role(_role_data):
 	role_data = _role_data
 	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
 	load_asset()
 	ui.initRole()
+
+func reloadRoleAttr(_rid,_attr:HeroAttrBean):
+	if !fight_script.is_in_atk && role_data.rid == _rid:
+		hero_attr.copy(_attr)
+		print("穿戴刷新 %s" %hero_attr.hp)
+		ui.load_attr()
 
 func setIndex(_index):
 	self.index = _index
@@ -142,8 +148,8 @@ func _show_damage_label(damage,type):
 	var text = "-"
 	var float_number_ins = float_number.instance()
 	var vec = animatedSprite.position
-	vec.y -= 30
-	vec.x = rand_range(vec.x - 30, vec.x + 30)
+	vec.y -= rand_range(-20,20)
+	vec.x -= rand_range(-50,50)
 	float_number_ins.position = vec
 	float_number_ins.velocity = Vector2(rand_range(-40,40),-130)
 	add_child(float_number_ins)
@@ -157,8 +163,19 @@ func _show_damage_label(damage,type):
 		Utils.HurtType.BLOOD:
 			color = Color.yellowgreen
 			text = "+"
+		Utils.HurtType.MISS:
+			color = Color.slategray
+			text = ""
+		Utils.HurtType.HOLD:
+			color = Color.silver
+			text = "格挡 -"
+		Utils.HurtType.CRIT:
+			color = Color.tomato
 	float_number_ins.set_number(text + "%s" %damage,color)
 	reloadHpBar()
 
 func _on_Effects_animation_finished():
 	effect_anim.visible = false
+
+func _on_BaseRole_tree_exited():
+	ConstantsValue.const_choose_role_arrt = null

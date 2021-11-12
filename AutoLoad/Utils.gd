@@ -5,6 +5,9 @@ enum HurtType{
 	MTK = 1#伤害颜色 魔力伤害
 	TRUE = 2#伤害颜色 真实伤害
 	BLOOD = 3#增益颜色 吸血
+	MISS = 4#闪避
+	HOLD = 5#格挡
+	CRIT = 6#暴击
 }
 
 const DOT = "▪"

@@ -102,10 +102,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.001, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, true ]
+"values": [ false, true, true ]
 }
 
 [node name="BuildUI" type="Control"]
@@ -128,9 +128,9 @@ __meta__ = {
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 282.0
+margin_left = 282.431
 margin_top = -216.964
-margin_right = 454.0
+margin_right = 454.431
 margin_bottom = 228.036
 mouse_filter = 0
 texture = ExtResource( 3 )
@@ -216,6 +216,8 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 1000.0

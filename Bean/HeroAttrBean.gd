@@ -31,6 +31,8 @@ var atk_buff:int #攻击力提升比例
 var mtk_buff:int #魔力提升比例
 var hp_buff:int #生命提升比例
 var true_hurt:int #真实伤害
+var hurt_buff:int #伤害加成率
+var crit_buff:int #暴伤加成率
 
 #重载基础属性
 func resetAttr(role_data):
@@ -46,11 +48,11 @@ func resetAttr(role_data):
 	levelAttr(role_data.lv)
 
 func levelAttr(lv):
-	hp += lv * 10                                                                                                                                                                                          
-	atk += lv * 5
-	mtk += lv * 5
-	speed += lv * 5
-	crit += lv * 5
+	hp += lv * 15                                                                                                                                                                                         
+	atk += lv * 2
+	mtk += lv * 2
+	speed += lv * 2
+	crit += lv * 2
 	
 #重载装备属性
 func setEquAttrBean(role_data):
@@ -82,6 +84,8 @@ func setEquAttrBean(role_data):
 				"hp_buff": hp_buff += base_attr_item.values()[0]
 				"true_hurt": true_hurt += base_attr_item.values()[0]
 				"uncrit": uncrit += base_attr_item.values()[0]
+				"hurt_buff": uncrit += base_attr_item.values()[0]
+				"crit_buff" :crit_buff += base_attr_item.values()[0]
 		#元素属性
 		for base_attr_item in equ_data["ys_attr"]:
 			match base_attr_item.keys()[0]:
@@ -126,3 +130,57 @@ func loadOhterAttr():
 		atk += (atk_buff/100.0 * atk) as int
 	if mtk_buff>0:
 		mtk += (mtk_buff/100.0 * mtk) as int
+
+func copy(_attr:HeroAttrBean):
+	max_hp = _attr.max_hp
+	hp = _attr.hp
+	atk = _attr.atk
+	mtk = _attr.mtk
+	def = _attr.def
+	mdef = _attr.mdef
+	speed = _attr.speed
+	crit = _attr.crit
+	fire = _attr.fire
+	wind = _attr.wind
+	ice = _attr.ice
+	posion = _attr.posion
+	uncrit = _attr.uncrit
+	mp = _attr.mp
+	hold = _attr.hold
+	hole_num = _attr.hole_num
+	dodge = _attr.dodge
+	hole_pass = _attr.hole_pass
+	mtk_pass = _attr.mtk_pass
+	atk_pass = _attr.atk_pass
+	atk_blood = _attr.atk_blood
+	mtk_blood = _attr.mtk_blood
+	atk_buff = _attr.atk_buff
+	mtk_buff = _attr.mtk_buff
+	hp_buff = _attr.hp_buff
+	true_hurt = _attr.true_hurt
+	hurt_buff = _attr.hurt_buff
+	crit_buff = _attr.crit_buff
+
+func toDict():
+	return {
+		"fire" : fire,
+		"wind" : wind,
+		"ice" : ice,
+		"posion" : posion,
+		"uncrit" : uncrit,
+		"mp" : mp,
+		"hold" : hold,
+		"hole_num" : hole_num,
+		"dodge" : dodge,
+		"hole_pass" : hole_pass,
+		"mtk_pass" : mtk_pass,
+		"atk_pass" : atk_pass,
+		"atk_blood" : atk_blood,
+		"mtk_blood" : mtk_blood,
+		"atk_buff" : atk_buff,
+		"mtk_buff" : mtk_buff,
+		"hp_buff" : hp_buff,
+		"true_hurt" : true_hurt,
+		"hurt_buff" : hurt_buff,
+		"crit_buff" : crit_buff
+	}

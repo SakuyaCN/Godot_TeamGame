@@ -8,6 +8,7 @@ var moster_size = 0
 var load_moster_size = 0
 
 var map_name #当前地图关卡名称
+var player_map #当前地图下标
 
 onready var message_ui = get_parent().find_node("UILayer")
 onready var moster_pos = $PositionMoster
@@ -34,7 +35,7 @@ func _ready():
 
 #加载地图
 func load_map():
-	var player_map = StorageData.storage_data["player_state"]["now_map"]
+	player_map = StorageData.storage_data["player_state"]["now_map"]
 	map_name = LocalData.map_data.keys()[player_map/10]
 	var map_info = LocalData.map_data[map_name]
 	game_progress.max_value = map_info["max_progress"]
@@ -43,10 +44,10 @@ func load_map():
 
 #探索进度条更新
 func mapProgress():
-	if !is_flight && game_progress.value != 100:
+	if !is_flight && game_progress.value != game_progress.max_value:
 		game_progress.value += 1
 		game_progress_tv.text = "当前地图探索进度：%s "%game_progress.value +" / 总进度：%s" %game_progress.max_value
-		if game_progress.value as int % 5 == 0:
+		if game_progress.value as int % 10 == 0:
 			moster_met()
 
 func plus_size():
@@ -100,7 +101,8 @@ func moster_join():
 	var moster_data = {
 		"nickname":moster_name,
 		"job":"moster",
-		"lv":5,
+		#"lv":1+player_map,
+		"lv":50,
 		"atk_count":moster_info.atk_count,
 		"attr":LocalData.map_data["all_attr"][StorageData.storage_data["player_state"]["now_map"]],
 		"equ":{},

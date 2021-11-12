@@ -14,4 +14,3 @@ onready var uiLayer = get_parent()
 
 func _ready():
 	tempSKillIcon.visible = false
-	

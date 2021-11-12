@@ -114,6 +114,7 @@ func all_hero_item_click(item_key):
 #载入当前英雄属性
 func loadHeroData():
 	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+	get_tree().call_group("player_role","reloadRoleAttr",role_data.rid,hero_attr)
 	$TextureRect/name.text = role_data.nickname
 	$attr/label_hp.text = str(hero_attr.hp)
 	$attr/label_atk.text = str(hero_attr.atk)
@@ -277,3 +278,7 @@ func free_item(array):
 	for item in array:
 		item.queue_free()
 	array.clear()
+
+func _on_PartyUI_visibility_changed():
+	if ConstantsValue.const_choose_role_arrt != null:
+		ConstantsValue.const_choose_role_arrt.visible = false

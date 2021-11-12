@@ -330,7 +330,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 6
+frame = 2
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -998,6 +998,7 @@ margin_right = 60.0
 margin_bottom = 60.0
 expand = true
 
+[connection signal="gui_input" from="." to="." method="_on_GameUi_gui_input"]
 [connection signal="pressed" from="LoginUI/Button" to="LoginUI" method="_on_Button_pressed"]
 [connection signal="pressed" from="LoginUI/Button2" to="LoginUI" method="_on_Button2_pressed"]
 [connection signal="pressed" from="CreateUI/left" to="CreateUI" method="_on_left_pressed"]
@@ -1010,3 +1011,4 @@ expand = true
 [connection signal="pressed" from="MapUi/TextureButton" to="MapUi" method="_on_TextureButton_pressed"]
 [connection signal="visibility_changed" from="BagUI" to="BagUI" method="_on_BagUI_visibility_changed"]
 [connection signal="gui_input" from="BagUI/ColorRect" to="BagUI" method="_on_ColorRect_gui_input"]
+[connection signal="visibility_changed" from="PartyUI" to="PartyUI" method="_on_PartyUI_visibility_changed"]

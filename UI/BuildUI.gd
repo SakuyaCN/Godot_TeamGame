@@ -29,6 +29,8 @@ func loadBuildType(type):
 	for item in $ScrollContainer/HBoxContainer.get_children():
 		if item:
 			item.queue_free()
+	if buildData["build_type"][type].size() == 0:
+		ConstantsValue.ui_layer.showMessage("暂无内容，敬请期待！",2)
 	$ScrollContainer/HBoxContainer.get_children().clear()
 	for item in buildData["build_type"][type]:
 		var type_item = build_type_item.instance()
@@ -42,12 +44,14 @@ func loadBuildType(type):
 
 #顶部类型点击
 func loadBuildTypeData(type,array,top_type):
+	if $NinePatchRect3.visible && !$AnimationPlayer.is_playing():
+		$AnimationPlayer.play_backwards("show")
 	for item in $NinePatchRect2/ScrollContainer/GridContainer.get_children():
 		item.queue_free()
 	$NinePatchRect2/ScrollContainer/GridContainer.get_children().clear()
 	for id in array:
 		var item_ins = build_grid_item.instance()
-		var data = LocalData.build_data["build_data"][str(id)]
+		var data = LocalData.build_data["build_data"][type][str(id)]
 		item_ins.setData(data)
 		item_ins.connect("pressed",self,"build_item_click",[type,data])
 		$NinePatchRect2/ScrollContainer/GridContainer.add_child(item_ins)
@@ -56,11 +60,15 @@ func loadBuildTypeData(type,array,top_type):
 
 #左侧制作类型点击
 func build_first_click(type):
+	if $NinePatchRect3.visible && !$AnimationPlayer.is_playing():
+		$AnimationPlayer.play_backwards("show")
 	loadBuildType(type)
 
 #中间物品点击
 func build_item_click(type,data):
 	choose_data = data
+	if $AnimationPlayer.is_playing():
+		yield($AnimationPlayer,"animation_finished")
 	if !$NinePatchRect3.visible:
 		$AnimationPlayer.play("show")
 	$NinePatchRect3/title.text = data.name + " lv.%s" %data.lv

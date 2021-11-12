@@ -25,6 +25,7 @@ margin_right = 100.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
 mouse_filter = 1
+custom_colors/font_color_focus = Color( 0.27451, 0.717647, 0.898039, 1 )
 custom_colors/font_color = Color( 0.415686, 0.415686, 0.415686, 1 )
 custom_colors/font_color_hover = Color( 0.27451, 0.717647, 0.898039, 1 )
 custom_colors/font_color_pressed = Color( 0.27451, 0.717647, 0.898039, 1 )
