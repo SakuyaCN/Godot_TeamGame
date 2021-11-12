@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://UI/BuildUI.gd" type="Script" id=2]
@@ -15,8 +15,16 @@ outline_color = Color( 0.462745, 0.435294, 0.435294, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=9]
+size = 14
+extra_spacing_top = 2
+font_data = ExtResource( 4 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 14
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxTexture" id=3]
@@ -33,9 +41,6 @@ region_rect = Rect2( 0, 0, 133, 34 )
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 133, 34 )
 margin_bottom = 2.45886
-
-[sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=8]
 resource_name = "show"
@@ -239,14 +244,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="context" type="Label" parent="NinePatchRect3"]
+[node name="context" type="RichTextLabel" parent="NinePatchRect3"]
 margin_left = 21.0
 margin_top = 76.0
 margin_right = 286.0
 margin_bottom = 225.0
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.45098, 0.443137, 0.443137, 1 )
-text = "物品名称"
+custom_colors/default_color = Color( 0.458824, 0.454902, 0.454902, 1 )
+custom_fonts/normal_font = SubResource( 9 )
+bbcode_enabled = true
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -256,8 +262,8 @@ margin_left = 21.0
 margin_top = 233.0
 margin_right = 286.0
 margin_bottom = 248.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.45098, 0.443137, 0.443137, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "炼制需要以下材料："
 __meta__ = {
 "_edit_use_anchors_": false
@@ -282,11 +288,11 @@ margin_left = -70.0
 margin_top = -72.0
 margin_right = 70.0
 margin_bottom = -19.0
+custom_fonts/font = SubResource( 7 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
 custom_styles/focus = SubResource( 5 )
 custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
 text = "开始制作"
 __meta__ = {
 "_edit_use_anchors_": false

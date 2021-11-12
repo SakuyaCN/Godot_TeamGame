@@ -24,6 +24,7 @@ func get_attr_string(attr):
 		"mtk_buff": return "魔力提升百分比"
 		"hp_buff": return "生命提升百分比"
 		"true_hurt": return "真实伤害"
+		"uncrit": return "抗暴击"
 
 func get_ys_color(ys):
 	match ys:
@@ -31,6 +32,13 @@ func get_ys_color(ys):
 		"ice": return Color("#4bdad0")
 		"wind": return Color("#50cc52")
 		"posion": return Color("#d14fb1")
+
+func get_ys_color_string(ys):
+	match ys:
+		"fire": return "#ee7064"
+		"ice": return "#4bdad0"
+		"wind": return "#50cc52"
+		"posion": return "#d14fb1"
 
 func get_quality_color(ys):
 	match ys:
@@ -49,12 +57,19 @@ func get_ys_string(attr):
 
 #生成一件新装备
 func createNewEqu(data,type):
-	var id = OS.get_system_time_msecs() + randi()%1000+1
+	var id = str(OS.get_system_time_msecs() + randi()%1000+1)
 	var base_attr = []
-	for base in data.attr:
-		base_attr.append({
-			base:rand_range(data.attr[base][0],data.attr[base][1]) as int
-		})
+	var ys_attr = []
+	if data.keys().has("attr"):
+		for base in data.attr:
+			base_attr.append({
+				base:rand_range(data.attr[base][0],data.attr[base][1]) as int
+			})
+	if data.keys().has("ys_attr"):
+		for base in data.ys_attr:
+			ys_attr.append({
+				base:rand_range(data.ys_attr[base][0],data.ys_attr[base][1]) as int
+			})
 	var equData = {
 		"id":id,
 		"name":data.name,
@@ -64,7 +79,7 @@ func createNewEqu(data,type):
 		"type":type,
 		"is_on":false,
 		"base_attr":base_attr,
-		"ys_attr":[]
+		"ys_attr":ys_attr
 	}
 	StorageData.addEqutoBag(equData)
 	return equData

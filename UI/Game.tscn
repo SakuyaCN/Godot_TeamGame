@@ -304,6 +304,12 @@ shader_param/color = Color( 0.666667, 0.815686, 0.654902, 0.8 )
 shader_param/hdr = true
 shader_param/seed = 8.821
 
+[sub_resource type="DynamicFont" id=42]
+size = 24
+outline_size = 4
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 14 )
+
 [sub_resource type="StyleBoxTexture" id=38]
 texture = ExtResource( 18 )
 region_rect = Rect2( 0, 0, 172, 42 )
@@ -318,18 +324,12 @@ region_rect = Rect2( 0, 0, 172, 42 )
 texture = ExtResource( 18 )
 region_rect = Rect2( 0, 0, 172, 42 )
 
-[sub_resource type="DynamicFont" id=42]
-size = 24
-outline_size = 4
-outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
-font_data = ExtResource( 14 )
-
-[sub_resource type="StyleBoxEmpty" id=43]
-
 [sub_resource type="DynamicFont" id=44]
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 14 )
+
+[sub_resource type="StyleBoxEmpty" id=43]
 
 [sub_resource type="DynamicFont" id=45]
 size = 24
@@ -398,14 +398,6 @@ font_data = ExtResource( 14 )
 outline_color = Color( 0.603922, 0.6, 0.6, 1 )
 font_data = ExtResource( 14 )
 
-[sub_resource type="StyleBoxTexture" id=52]
-texture = ExtResource( 26 )
-region_rect = Rect2( 0, 0, 144, 64 )
-margin_left = 13.0
-margin_right = 16.0
-margin_top = 12.0
-margin_bottom = 28.0
-
 [sub_resource type="DynamicFont" id=53]
 size = 13
 outline_size = 2
@@ -413,6 +405,14 @@ outline_color = Color( 0.411765, 0.4, 0.4, 1 )
 extra_spacing_top = 1
 extra_spacing_char = 1
 font_data = ExtResource( 14 )
+
+[sub_resource type="StyleBoxTexture" id=52]
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 144, 64 )
+margin_left = 13.0
+margin_right = 16.0
+margin_top = 12.0
+margin_bottom = 28.0
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 6 )
@@ -530,11 +530,11 @@ margin_left = 519.5
 margin_top = 109.0
 margin_right = 784.5
 margin_bottom = 184.0
+custom_fonts/font = SubResource( 42 )
 custom_styles/hover = SubResource( 38 )
 custom_styles/pressed = SubResource( 39 )
 custom_styles/focus = SubResource( 40 )
 custom_styles/normal = SubResource( 41 )
-custom_fonts/font = SubResource( 42 )
 text = "开始战斗"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -545,12 +545,12 @@ margin_left = 606.376
 margin_top = 224.42
 margin_right = 760.376
 margin_bottom = 249.42
+custom_constants/check_vadjust = 1
+custom_constants/hseparation = 24
+custom_fonts/font = SubResource( 44 )
 custom_icons/checked = ExtResource( 19 )
 custom_icons/unchecked = ExtResource( 20 )
 custom_styles/focus = SubResource( 43 )
-custom_fonts/font = SubResource( 44 )
-custom_constants/check_vadjust = 1
-custom_constants/hseparation = 24
 text = "是否自动战斗"
 align = 1
 
@@ -773,8 +773,8 @@ margin_left = 711.0
 margin_top = 433.0
 margin_right = 902.0
 margin_bottom = 493.0
-custom_styles/normal = SubResource( 52 )
 custom_fonts/font = SubResource( 53 )
+custom_styles/normal = SubResource( 52 )
 text = "打算大阿松大是"
 __meta__ = {
 "_edit_use_anchors_": false

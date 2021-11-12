@@ -2,7 +2,7 @@ class_name HeroAttrBean
 
 #基础属性
 var max_hp :int#生命
-var hp :int#生命
+var hp:int#生命
 var atk:int#攻击
 var mtk:int#魔力
 var def:int#物免
@@ -17,6 +17,7 @@ var ice:int
 var posion:int
 
 #其他属性
+var uncrit:int #抗暴击率
 var mp:int#法力值
 var hold:int #格挡率
 var hole_num:int#格挡数值
@@ -56,7 +57,7 @@ func setEquAttrBean(role_data):
 	resetAttr(role_data)
 	#加载武器基础数据
 	for equ in role_data["equ"]:
-		var equ_data = StorageData.get_player_equipment()[role_data["equ"][equ]]
+		var equ_data = StorageData.get_player_equipment()[str(role_data["equ"][equ])]
 		#基础属性
 		for base_attr_item in equ_data["base_attr"]:
 			match base_attr_item.keys()[0]:
@@ -80,6 +81,7 @@ func setEquAttrBean(role_data):
 				"mtk_buff": mtk_buff += base_attr_item.values()[0]
 				"hp_buff": hp_buff += base_attr_item.values()[0]
 				"true_hurt": true_hurt += base_attr_item.values()[0]
+				"uncrit": uncrit += base_attr_item.values()[0]
 		#元素属性
 		for base_attr_item in equ_data["ys_attr"]:
 			match base_attr_item.keys()[0]:

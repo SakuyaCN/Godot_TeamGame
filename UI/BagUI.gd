@@ -15,7 +15,6 @@ func _ready():
 	bagInit()
 
 func bagInit():
-	glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] 
 	var index = 0
 	for data in StorageData.get_player_inventory():
 		grid.get_children()[index].setData(data,StorageData.get_player_inventory()[data])
@@ -24,6 +23,8 @@ func bagInit():
 
 func bagChange(change):
 	visible = change
+	if visible:
+		glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] 
 
 func grid_child_pressed(data):
 	loadItem(data)

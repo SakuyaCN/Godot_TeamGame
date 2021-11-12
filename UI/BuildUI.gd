@@ -33,13 +33,15 @@ func loadBuildType(type):
 	for item in buildData["build_type"][type]:
 		var type_item = build_type_item.instance()
 		type_item.text = item
+		type_item.connect("pressed",self,"loadBuildTypeData",[type,buildData["build_type"][type][item],item])
 		$ScrollContainer/HBoxContainer.add_child(type_item)
 	if buildData["build_type"][type].values().size() > 0:
-		loadBuildTypeData(type,buildData["build_type"][type].values()[0])
+		loadBuildTypeData(type,buildData["build_type"][type].values()[0],"武器")
 	else:
-		loadBuildTypeData(type,[])
+		loadBuildTypeData(type,[],"武器")
 
-func loadBuildTypeData(type,array):
+#顶部类型点击
+func loadBuildTypeData(type,array,top_type):
 	for item in $NinePatchRect2/ScrollContainer/GridContainer.get_children():
 		item.queue_free()
 	$NinePatchRect2/ScrollContainer/GridContainer.get_children().clear()
@@ -49,10 +51,11 @@ func loadBuildTypeData(type,array):
 		item_ins.setData(data)
 		item_ins.connect("pressed",self,"build_item_click",[type,data])
 		$NinePatchRect2/ScrollContainer/GridContainer.add_child(item_ins)
+	if array.size() > 0:
+		choose_type = top_type
 
-#顶部制作类型点击
+#左侧制作类型点击
 func build_first_click(type):
-	choose_type = type
 	loadBuildType(type)
 
 #中间物品点击
@@ -61,7 +64,7 @@ func build_item_click(type,data):
 	if !$NinePatchRect3.visible:
 		$AnimationPlayer.play("show")
 	$NinePatchRect3/title.text = data.name + " lv.%s" %data.lv
-	$NinePatchRect3/context.text = get_context_label(type,data)
+	get_context_label(type,data)
 	for item in $NinePatchRect3/GridContainer.get_children():
 		item.queue_free()
 	$NinePatchRect3/GridContainer.get_children().clear()
@@ -81,14 +84,21 @@ func _on_ColorRect_gui_input(event):
 		buildChange(false)
 
 func get_context_label(type,data):
-	var text = "炼制出的装备属性浮动：\n"
+	$NinePatchRect3/context.clear()
+	$NinePatchRect3/context.append_bbcode("炼制出的装备属性浮动：\n")
 	match type:
 		"基础装备":
-			for attr in data.attr:
-				text += EquUtils.get_attr_string(attr)
-				text += " %s - %s" %[data.attr[attr][0],data.attr[attr][1]]
-				text +="\n"
-	return text
+			if data.keys().has("attr"):
+				for attr in data.attr:
+					$NinePatchRect3/context.append_bbcode(EquUtils.get_attr_string(attr))
+					$NinePatchRect3/context.append_bbcode(" %s - %s" %[data.attr[attr][0],data.attr[attr][1]])
+					$NinePatchRect3/context.append_bbcode("\n")
+			if data.keys().has("ys_attr"):
+				for attr in data.ys_attr:
+					$NinePatchRect3/context.append_bbcode("[color=%s]" %EquUtils.get_ys_color_string(attr))
+					$NinePatchRect3/context.append_bbcode(EquUtils.get_ys_string(attr))
+					$NinePatchRect3/context.append_bbcode(" %s - %s" %[data.ys_attr[attr][0],data.ys_attr[attr][1]])
+					$NinePatchRect3/context.append_bbcode("\n")
 
 func _on_Button_pressed():
 	EquUtils.createNewEqu(choose_data,choose_type)

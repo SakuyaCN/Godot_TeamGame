@@ -12,7 +12,7 @@ var hero_attr :HeroAttrBean #当前选择英雄战斗属性
 var check_equ_data #选择时的装备数据
 var skill_tips_ins = null#提示实例化
 var select_index = 0 #当前选中的英雄下表
-var tab_index = 0 
+var tab_index = 0
 var check_temp_ins = null #长按时的对象
 onready var tab = [$attr,$skill_main,$equ_main]
 onready var skill_item_position_array = []
@@ -23,9 +23,14 @@ onready var temp_skill = get_parent()
 func _ready():
 	add_to_group("PartyUI")
 	visible = false
+	set_process(false)
 	var line = StyleBoxTexture.new()
 	srcoll.get_h_scrollbar().set("custom_styles/scroll",line)
+	loadFirst()
+
+func loadFirst():
 	checkHeroData()
+	loadHeroEqu()
 	loadAllHero()
 
 func checkHeroData():
@@ -44,6 +49,7 @@ func partyChange(change):
 	visible = change
 	if !change && skill_tips_ins != null:
 		skill_tips_ins.close()
+		set_process(false)
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed():
@@ -143,20 +149,21 @@ func loadAllEqu():
 
 #载入人物穿戴装备
 func loadHeroEqu():
-	for child in $equ_main/GridContainer.get_children():
-		child.connect("pressed",self,"hero_equ_click",[child])
-		if role_data["equ"].has(child.type):
-			if StorageData.get_player_equipment().has(role_data["equ"][child.type]):
-				child.setData(StorageData.get_player_equipment()[role_data["equ"][child.type]])
-		else:
-			child.setData(null)
+	if role_data != null:
+		for child in $equ_main/GridContainer.get_children():
+			child.connect("pressed",self,"hero_equ_click",[child])
+			if role_data["equ"].has(child.type):
+				if StorageData.get_player_equipment().has(str(role_data["equ"][child.type])):
+					child.setData(StorageData.get_player_equipment()[str(role_data["equ"][child.type])])
+			else:
+				child.setData(null)
 
 #刷新人物穿戴装备
 func reLoadHeroEqu():
 	for child in $equ_main/GridContainer.get_children():
 		if role_data["equ"].has(child.type):
-			if StorageData.get_player_equipment().has(role_data["equ"][child.type]):
-				child.setData(StorageData.get_player_equipment()[role_data["equ"][child.type]])
+			if StorageData.get_player_equipment().has(str(role_data["equ"][child.type])):
+				child.setData(StorageData.get_player_equipment()[str(role_data["equ"][child.type])])
 		else:
 			child.setData(null)
 

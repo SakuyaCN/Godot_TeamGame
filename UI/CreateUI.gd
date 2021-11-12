@@ -179,3 +179,4 @@ func _on_Button_pressed():
 	hide()
 	parent.uiLayer.get_parent().start_game()
 	parent.uiLayer.showMessage("创建成功！")
+	get_tree().call_group("PartyUI","loadFirst")

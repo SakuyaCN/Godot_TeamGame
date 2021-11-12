@@ -60,6 +60,11 @@ font_data = ExtResource( 1 )
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=16]
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
 [sub_resource type="StyleBoxTexture" id=12]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 145, 52 )
@@ -73,11 +78,6 @@ region_rect = Rect2( 0, 0, 145, 52 )
 [sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 145, 52 )
-
-[sub_resource type="DynamicFont" id=16]
-outline_size = 2
-outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
-font_data = ExtResource( 1 )
 
 [node name="PartyUI" type="Control"]
 anchor_right = 1.0
@@ -405,7 +405,7 @@ margin_right = 132.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-type = "头盔"
+type = "副手"
 
 [node name="Control3" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 margin_left = 144.0
@@ -413,7 +413,7 @@ margin_right = 204.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-type = "衣服"
+type = "护甲"
 
 [node name="Control4" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 margin_left = 216.0
@@ -421,7 +421,7 @@ margin_right = 276.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-type = "裤子"
+type = "护腿"
 
 [node name="Control5" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 margin_top = 72.0
@@ -429,7 +429,7 @@ margin_right = 60.0
 margin_bottom = 132.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-type = "护手"
+type = "戒指"
 
 [node name="Control6" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 margin_left = 72.0
@@ -438,7 +438,7 @@ margin_right = 132.0
 margin_bottom = 132.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-type = "护腿"
+type = "饰品"
 
 [node name="Control7" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 margin_left = 144.0
@@ -447,7 +447,7 @@ margin_right = 204.0
 margin_bottom = 132.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-type = "戒指"
+type = "头盔"
 
 [node name="Control8" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 margin_left = 216.0
@@ -456,7 +456,7 @@ margin_right = 276.0
 margin_bottom = 132.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-type = "饰品"
+type = "护手"
 
 [node name="skill_main" type="TextureRect" parent="."]
 visible = false
@@ -649,8 +649,8 @@ margin_left = 124.071
 margin_top = 32.0
 margin_right = 323.071
 margin_bottom = 47.0
-custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 9 )
 text = "长按拖动到右侧替换技能"
 valign = 1
 autowrap = true
@@ -704,8 +704,8 @@ margin_left = 124.071
 margin_top = 32.0
 margin_right = 323.071
 margin_bottom = 47.0
-custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 9 )
 text = "长按拖动到右侧替换装备"
 valign = 1
 autowrap = true
@@ -746,8 +746,8 @@ margin_left = 26.0
 margin_top = 10.0
 margin_right = 304.0
 margin_bottom = 61.0
-custom_fonts/font = SubResource( 10 )
 custom_colors/font_outline_modulate = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 10 )
 text = "豪华武器"
 valign = 1
 autowrap = true
@@ -760,8 +760,8 @@ margin_left = 40.0
 margin_top = 386.0
 margin_right = 155.0
 margin_bottom = 407.0
-custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 11 )
 text = "等级：1"
 valign = 1
 autowrap = true
@@ -774,8 +774,8 @@ margin_left = 155.0
 margin_top = 386.0
 margin_right = 304.0
 margin_bottom = 407.0
-custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 11 )
 text = "类型：护手"
 align = 2
 valign = 1
@@ -796,11 +796,11 @@ margin_left = 212.0
 margin_top = 412.0
 margin_right = 315.0
 margin_bottom = 453.0
+custom_fonts/font = SubResource( 16 )
 custom_styles/hover = SubResource( 12 )
 custom_styles/pressed = SubResource( 13 )
 custom_styles/focus = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
-custom_fonts/font = SubResource( 16 )
 text = "卸下"
 __meta__ = {
 "_edit_use_anchors_": false

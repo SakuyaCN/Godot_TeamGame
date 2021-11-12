@@ -38,6 +38,10 @@ outline_color = Color( 0.713726, 0.768627, 0.619608, 1 )
 extra_spacing_char = 12
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 1 )
+
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 133, 34 )
@@ -52,10 +56,6 @@ region_rect = Rect2( 0, 0, 133, 34 )
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 133, 34 )
 margin_bottom = 2.45886
-
-[sub_resource type="DynamicFont" id=6]
-size = 24
-font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 3 )
@@ -271,11 +271,11 @@ margin_left = -99.0
 margin_top = -24.0
 margin_right = 93.0
 margin_bottom = 44.0
+custom_fonts/font = SubResource( 6 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
 text = "开始游戏"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -290,11 +290,11 @@ margin_left = -99.0
 margin_top = 72.0397
 margin_right = 93.0
 margin_bottom = 140.04
+custom_fonts/font = SubResource( 6 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 7 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
 text = "结束游戏"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -330,7 +330,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 1
+frame = 6
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -624,11 +624,11 @@ margin_left = 202.334
 margin_top = 183.141
 margin_right = 394.334
 margin_bottom = 251.141
+custom_fonts/font = SubResource( 6 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 11 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
 text = "创建角色"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -901,8 +901,8 @@ margin_left = 10.0
 margin_top = 4.0
 margin_right = 156.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 19 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 19 )
 text = "一个道具"
 align = 1
 valign = 1
@@ -915,8 +915,8 @@ margin_left = 15.0
 margin_top = 59.0
 margin_right = 257.0
 margin_bottom = 194.0
-custom_fonts/font = SubResource( 20 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 20 )
 text = "一个道具"
 autowrap = true
 __meta__ = {
@@ -928,8 +928,8 @@ margin_left = 23.0
 margin_top = 204.0
 margin_right = 257.0
 margin_bottom = 227.0
-custom_fonts/font = SubResource( 21 )
 custom_colors/font_color = Color( 0.607843, 0.258824, 0.921569, 1 )
+custom_fonts/font = SubResource( 21 )
 text = "等级：1"
 __meta__ = {
 "_edit_use_anchors_": false

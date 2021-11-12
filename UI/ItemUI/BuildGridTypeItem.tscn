@@ -3,6 +3,9 @@
 [ext_resource path="res://Texture/hud/p_s_n.png" type="Texture" id=1]
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
 
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 145, 52 )
@@ -17,21 +20,19 @@ region_rect = Rect2( 0, 0, 145, 52 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 145, 52 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 2 )
-
 [node name="BuildGridTypeItem" type="Button"]
 margin_right = 100.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 100, 50 )
+mouse_filter = 1
+custom_colors/font_color = Color( 0.415686, 0.415686, 0.415686, 1 )
+custom_colors/font_color_hover = Color( 0.27451, 0.717647, 0.898039, 1 )
+custom_colors/font_color_pressed = Color( 0.27451, 0.717647, 0.898039, 1 )
+custom_fonts/font = SubResource( 5 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.415686, 0.415686, 0.415686, 1 )
-custom_colors/font_color_hover = Color( 0.27451, 0.717647, 0.898039, 1 )
-custom_colors/font_color_pressed = Color( 0.27451, 0.717647, 0.898039, 1 )
 text = "类型"
 __meta__ = {
 "_edit_use_anchors_": false

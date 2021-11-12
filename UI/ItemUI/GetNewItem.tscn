@@ -63,8 +63,8 @@ margin_left = -196.0
 margin_top = -5.0
 margin_right = -24.0
 margin_bottom = 16.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.388235, 0.372549, 0.34902, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "一把小小武器"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -86,7 +86,7 @@ __meta__ = {
 anims/show = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 
