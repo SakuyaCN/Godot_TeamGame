@@ -1,55 +1,64 @@
 {
     "goods":{
         "红色岩石":{
+            "name":"红色岩石",
             "image":"res://Texture/Data/d1/Icon1.png",
             "info":"基础升级材料，适用于冒险队成员1-30级升级，增加100点基础经验值！",
             "lv":1,
             "type":"exp"
         },
         "黑色岩石":{
+            "name":"黑色岩石",
             "image":"res://Texture/Data/d1/Icon2.png",
             "info":"中级升级材料，适用于冒险队成员30-60级升级，增加550点基础经验值！",
             "lv":30,
             "type":"exp"
         },
         "紫色岩石":{
+            "name":"紫色岩石",
             "image":"res://Texture/Data/d1/Icon5.png",
             "info":"高级升级材料，适用于冒险队成员60-90级升级，增加2550点基础经验值！",
             "lv":60,
             "type":"exp"
         },
         "红色陨铁":{
+            "name":"红色陨铁",
             "image":"res://Texture/Data/d1/Icon6.png",
             "info":"基础材料，适用于炼金台制作各种道具！",
             "lv":1,
             "type":"material"
         },
         "绿色陨铁":{
+            "name":"绿色陨铁",
             "image":"res://Texture/Data/d1/Icon7.png",
             "info":"基础材料，适用于炼金台制作各种道具！",
             "lv":1,
             "type":"material"
         },
         "秘银矿石":{
+            "name":"秘银矿石",
             "image":"res://Texture/Data/d1/Icon8.png",
             "info":"C级材料，适用于炼金台制作各种道具！",
             "lv":1,
             "type":"material"
         },
         "青岚铁矿":{
+            "name":"青岚铁矿",
             "image":"res://Texture/Data/d1/Icon9.png",
             "info":"B级材料，适用于炼金台制作各种道具！",
             "lv":1,
             "type":"material"
         },
         "暗蓝星矿":{
+            "name":"暗蓝星矿",
             "image":"res://Texture/Data/d1/Icon10.png",
             "info":"A级材料，适用于炼金台制作各种道具！",
             "lv":1,
             "type":"material"
         },
         "神秘之石":{
-            "image":"res://Texture/Data/d1/Icon10.png",
+            "name":"神秘之石",
+            "image":"res://Texture/Data/d1/Icon11.png",
             "info":"S级材料，适用于炼金台制作各种道具！",
             "lv":1,
             "type":"material"
@@ -58,25 +67,25 @@
     "skill":{
         "力量++":{
             "name":"力量++",
-            "info":"增加携带者力量【等级*%s】点",
+            "info":"增加携带者攻击力【人物等级*%s】点",
             "num":3,
             "image":"res://Texture/skill/buff/40.png"
         },
         "格挡++":{
             "name":"格挡++",
-            "info":"携带者可以格挡【等级*%s】点伤害",
+            "info":"增加携带者格挡值【人物等级*%s】点",
             "num":15,
             "image":"res://Texture/skill/buff/33.png"
         },
         "生命++":{
             "name":"生命++",
-            "info":"增加携带者体质【等级*%s】点",
+            "info":"增加携带者生命值【人物等级*%s】点",
             "num":5,
             "image":"res://Texture/skill/buff/38.png"
         },
         "回复++":{
             "name":"回复++",
-            "info":"携带者每秒回复【等级*%s】点生命值",
+            "info":"携带者每秒回复【人物等级*%s】点生命值",
             "num":7,
             "image":"res://Texture/skill/buff/39.png"
         },

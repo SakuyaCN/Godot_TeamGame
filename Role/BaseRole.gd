@@ -18,7 +18,15 @@ onready var animatedSprite = $AnimatedSprite
 onready var effect_anim = $Effects
 
 func _ready():
-	pass
+	Console.add_command('addBuff', self, 'print_hello')\
+		.set_description('Prints "Hello %name%!"')\
+		.add_argument('name', TYPE_STRING)\
+		.register()
+ 
+func print_hello():
+	var buff = load("res://Role/Skill/BaseState/Buff.gd").new()
+	$SkillScript.add_child(buff)
+	buff._create(StateEnum.BuffEnum.BUFF_ATK,30,5,hero_attr)
 
 func set_role(_role_data):
 	role_data = _role_data

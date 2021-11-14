@@ -46,6 +46,7 @@ func _on_ColorRect_gui_input(event):
 		$GameResult/fail.visible = false
 		get_tree().call_group("game_main","game_reset")
 
+#展示物品简介
 func showTips(node:Node,tv):
 	$Tips.text = tv
 	$Tips.visible = true
@@ -54,6 +55,7 @@ func showTips(node:Node,tv):
 func closeTips():
 	$Tips.visible = false
 	
+#获取新物品时提示
 func getNewItem(_name,img):
 	var ins = get_new_item.instance()
 	ins.setData(_name,img)

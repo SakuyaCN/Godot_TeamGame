@@ -9,6 +9,8 @@ onready var light = $Light
 onready var game_main = $GameMain
 
 func _ready():
+	#var buff = load("res://Role/Skill/BaseState/Buff.gd").new()
+	#buff._create(StateEnum.BuffEnum.BUFF_ATK,30,5)
 	pass
 
 func start_game():
@@ -16,4 +18,5 @@ func start_game():
 	game_main.load_map()
 	UiCotrol.main_ui.showui()
 	game_main.go_position()
-	ConstantsValue.ui_layer.showMessage("点击人物可以展示属性面板",5)
+	ConstantsValue.showMessage("点击人物可以展示属性面板",3)
+

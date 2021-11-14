@@ -6,7 +6,7 @@ onready var ui_name = $name
 onready var attr_paint = $attr
 
 func _ready():
-	pass
+	add_to_group("RoleUI")
 
 func initRole():
 	hero_attr = get_parent().hero_attr
@@ -34,11 +34,13 @@ func _on_RoleUI_gui_input(event):
 		if ConstantsValue.const_choose_role_arrt != null && ConstantsValue.const_choose_role_arrt.visible:
 			if ConstantsValue.const_choose_role_arrt != attr_paint:
 				ConstantsValue.const_choose_role_arrt.visible = false
+				load_attr()
 				attr_paint.visible = true
 				ConstantsValue.const_choose_role_arrt = attr_paint
 			else:
 				ConstantsValue.const_choose_role_arrt.visible = false
 		else:
+			load_attr()
 			attr_paint.visible = true
 			ConstantsValue.const_choose_role_arrt = attr_paint
 

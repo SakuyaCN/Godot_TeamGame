@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://Texture/close.png" type="Texture" id=27]
 [ext_resource path="res://Texture/hud/Icons_34.png" type="Texture" id=28]
 [ext_resource path="res://UI/ControlUI/BuildUI.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=30]
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=36]
 
 [sub_resource type="DynamicFont" id=1]
@@ -60,6 +61,12 @@ margin_bottom = 2.45886
 [sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 20
+outline_color = Color( 0.396078, 0.388235, 0.388235, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 30 )
 
 [sub_resource type="DynamicFont" id=8]
 outline_size = 2
@@ -240,7 +247,6 @@ __meta__ = {
 }
 
 [node name="LoginUI" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -253,11 +259,11 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -219.0
-margin_top = 112.0
+margin_top = 104.0
 margin_right = 219.0
-margin_bottom = 169.0
+margin_bottom = 161.0
 custom_fonts/font = SubResource( 1 )
-text = "秘境森林冒险队"
+text = "冒险队模拟器"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -281,15 +287,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button3" type="Button" parent="LoginUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.0
+margin_top = 72.0
+margin_right = 93.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "创意关卡"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button2" type="Button" parent="LoginUI"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -99.0
-margin_top = 72.0397
+margin_top = 176.04
 margin_right = 93.0
-margin_bottom = 140.04
+margin_bottom = 244.04
 custom_fonts/font = SubResource( 6 )
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 7 )
@@ -299,6 +324,43 @@ text = "结束游戏"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NinePatchRect" type="NinePatchRect" parent="LoginUI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -110.5
+margin_right = 195.0
+margin_bottom = 247.5
+mouse_filter = 0
+texture = ExtResource( 13 )
+patch_margin_left = 31
+patch_margin_top = 32
+patch_margin_right = 26
+patch_margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LoginUI/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -171.0
+margin_top = -145.0
+margin_right = 171.0
+margin_bottom = 145.0
+custom_colors/font_color = Color( 0.396078, 0.388235, 0.388235, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "正在开发中，敬请期待！
+玩家可以自行设计：
+地图关卡、怪物数据、装备数据、游戏道具、游戏技能，游戏情节对话等等功能！
+让游戏变成正真的模拟器！"
+autowrap = true
 
 [node name="CreateUI" type="Control" parent="."]
 visible = false
@@ -330,7 +392,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -669,7 +731,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -3.0
 custom_fonts/font = SubResource( 14 )
-text = "100%"
 align = 1
 valign = 1
 __meta__ = {
@@ -1000,7 +1061,9 @@ expand = true
 
 [connection signal="gui_input" from="." to="." method="_on_GameUi_gui_input"]
 [connection signal="pressed" from="LoginUI/Button" to="LoginUI" method="_on_Button_pressed"]
+[connection signal="pressed" from="LoginUI/Button3" to="LoginUI" method="_on_Button3_pressed"]
 [connection signal="pressed" from="LoginUI/Button2" to="LoginUI" method="_on_Button2_pressed"]
+[connection signal="gui_input" from="LoginUI/NinePatchRect" to="LoginUI" method="_on_NinePatchRect_gui_input"]
 [connection signal="pressed" from="CreateUI/left" to="CreateUI" method="_on_left_pressed"]
 [connection signal="pressed" from="CreateUI/right" to="CreateUI" method="_on_right_pressed"]
 [connection signal="pressed" from="CreateUI/Button" to="CreateUI" method="_on_Button_pressed"]

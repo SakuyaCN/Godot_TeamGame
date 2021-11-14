@@ -87,3 +87,32 @@ func addEqutoBag(equData):
 	get_player_equipment()[equData.id] = equData
 	StorageData._save_storage()
 	reloadEquUI()
+
+#检测背包道具是充足
+func checkGoodsNum(array):
+	var is_true = true #是否充足
+	for item in array:
+		if !get_player_inventory().has(item[0]):
+			return false
+		elif get_player_inventory()[item[0]][0] < item[1]:
+			is_true = false
+	return is_true
+
+#为背包添加道具
+func AddGoodsNum(array):
+	for item in array:
+		if get_player_inventory().has(item[0]) && item[1] > 0:
+			get_player_inventory()[item[0]][0] += item[1]
+	_save_storage()
+
+#使用背包道具
+func UseGoodsNum(array):
+	if checkGoodsNum(array):
+		for item in array:
+			if get_player_inventory().has(item[0]) && item[1] > 0:
+				get_player_inventory()[item[0]][0] -= item[1]
+				if get_player_inventory()[item[0]][0] == 0:
+					get_player_inventory().erase(item[0])
+		_save_storage()
+	else:
+		ConstantsValue.ui_layer.showMessage("背包道具不足！",1)

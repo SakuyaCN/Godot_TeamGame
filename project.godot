@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "BaseState",
+"language": "GDScript",
+"path": "res://Role/Skill/BaseState.gd"
+}, {
 "base": "Reference",
 "class": "HeroAttrBean",
 "language": "GDScript",
 "path": "res://Bean/HeroAttrBean.gd"
+}, {
+"base": "Node",
+"class": "StateEnum",
+"language": "GDScript",
+"path": "res://Role/Skill/StateEnum.gd"
 } ]
 _global_script_class_icons={
-"HeroAttrBean": ""
+"BaseState": "",
+"HeroAttrBean": "",
+"StateEnum": ""
 }
 
 [application]
@@ -33,6 +45,7 @@ LocalData="*res://Storage/LocalData.gd"
 ConfigScript="*res://Storage/ConfigScript.gd"
 EquUtils="*res://AutoLoad/EquUtils.gd"
 HeroAttrUtils="*res://Storage/HeroAttrUtils.gd"
+Console="*res://addons/quentincaffeino/console/src/Console.tscn"
 
 [display]
 
@@ -40,6 +53,33 @@ window/size/width=1344
 window/size/height=621
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/quentincaffeino/console/plugin.cfg" )
+
+[input]
+
+quentincaffeino_console_toggle={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":96,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_autocomplete={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_history_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+quentincaffeino_console_history_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [input_devices]
 
