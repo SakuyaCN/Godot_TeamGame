@@ -31,8 +31,8 @@ var atk_buff:int #攻击力提升比例
 var mtk_buff:int #魔力提升比例
 var hp_buff:int #生命提升比例
 var true_hurt:int #真实伤害
-var hurt_buff:int #伤害加成率
-var crit_buff:int #暴伤加成率
+var hurt_buff:int #伤害加成比
+var crit_buff:int #暴伤加成比
 
 #重载基础属性
 func resetAttr(role_data):
@@ -165,6 +165,14 @@ func copy(_attr:HeroAttrBean):
 
 func toDict():
 	return {
+		"max_hp" : max_hp,
+		"hp" : hp,
+		"atk" : atk,
+		"mtk" : mtk,
+		"def" : def,
+		"mdef" : mdef,
+		"speed" : speed,
+		"crit" : crit,
 		"fire" : fire,
 		"wind" : wind,
 		"ice" : ice,
@@ -186,3 +194,34 @@ func toDict():
 		"hurt_buff" : hurt_buff,
 		"crit_buff" : crit_buff
 	}
+
+func updateNum(attr,num):
+	match attr:
+		"max_hp" : max_hp += num
+		"hp" : hp += num
+		"atk" : atk += num
+		"mtk" : mtk += num
+		"def" : def += num
+		"mdef" : mdef += num
+		"speed" : speed += num
+		"crit" : crit += num
+		"fire" : fire += num
+		"wind" : wind += num
+		"ice" : ice += num
+		"posion" : posion += num
+		"uncrit" : uncrit += num
+		"mp" : mp += num
+		"hold" : hold += num
+		"hole_num" : hole_num += num
+		"dodge" : dodge += num
+		"hole_pass" : hole_pass += num
+		"mtk_pass" : mtk_pass += num
+		"atk_pass" : atk_pass += num
+		"atk_blood" : atk_blood += num
+		"mtk_blood" : mtk_blood += num
+		"atk_buff" : atk_buff += num
+		"mtk_buff" : mtk_buff += num
+		"hp_buff" : hp_buff += num
+		"true_hurt" : true_hurt += num
+		"hurt_buff" : hurt_buff += num
+		"crit_buff" : crit_buff += num

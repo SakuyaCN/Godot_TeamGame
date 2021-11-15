@@ -25,8 +25,8 @@ func get_attr_string(attr):
 		"hp_buff": return "生命提升百分比"
 		"true_hurt": return "真实伤害"
 		"uncrit": return "抗暴击"
-		"hurt_buff":return "普攻加成率"
-		"crit_buff":return "暴伤加成率"
+		"hurt_buff":return "普攻加成比"
+		"crit_buff":return "暴伤加成比"
 
 func get_ys_color(ys):
 	match ys:

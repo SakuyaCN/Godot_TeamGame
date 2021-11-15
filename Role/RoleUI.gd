@@ -1,5 +1,8 @@
 extends Control
 
+onready var item_skill_img = preload("res://Role/Skill/StateImageItem.tscn")
+onready var array_item_skill = {}
+
 onready var role_data #角色属性
 onready var hero_attr :HeroAttrBean
 onready var ui_name = $name
@@ -50,3 +53,18 @@ func _on_attr_visibility_changed():
 			attr_paint.position.x += 40
 		if !get_parent().am_player.is_playing():
 			get_parent().am_player.play("choose")
+
+func addBuffImage(res,id,time):
+	if array_item_skill.has(id):
+		array_item_skill[id].updateTime(time)
+	else:
+		var img = item_skill_img.instance()
+		$BuffList.add_child(img)
+		img.setData(res,id,time)
+		array_item_skill[id] = img
+		img.connect("item_delete",self,"removeBuffImage")
+
+func removeBuffImage(id):
+	if array_item_skill.has(id):
+		get_tree().queue_delete(array_item_skill[id])
+		array_item_skill.erase(id)

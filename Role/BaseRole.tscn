@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Texture/Pre-made characters/Boxer.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Role/BaseRole.gd" type="Script" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=10]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=11]
 [ext_resource path="res://Texture/Effect/hit/Effect 3 - Sprite Sheet.png" type="Texture" id=12]
-[ext_resource path="res://Texture/skill/barbarian/1.png" type="Texture" id=13]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -206,7 +205,7 @@ position = Vector2( 0, -70 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 7
+frame = 4
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
@@ -214,7 +213,7 @@ position = Vector2( 16, -79 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "hit"
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -574,89 +573,6 @@ columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="TextureRect" type="TextureRect" parent="RoleUI/BuffList"]
-margin_right = 30.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect2" type="TextureRect" parent="RoleUI/BuffList"]
-margin_left = 34.0
-margin_right = 64.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect3" type="TextureRect" parent="RoleUI/BuffList"]
-margin_left = 68.0
-margin_right = 98.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect4" type="TextureRect" parent="RoleUI/BuffList"]
-margin_left = 102.0
-margin_right = 132.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect5" type="TextureRect" parent="RoleUI/BuffList"]
-margin_left = 136.0
-margin_right = 166.0
-margin_bottom = 30.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect6" type="TextureRect" parent="RoleUI/BuffList"]
-margin_top = 34.0
-margin_right = 30.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect7" type="TextureRect" parent="RoleUI/BuffList"]
-margin_left = 34.0
-margin_top = 34.0
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect8" type="TextureRect" parent="RoleUI/BuffList"]
-margin_left = 68.0
-margin_top = 34.0
-margin_right = 98.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect9" type="TextureRect" parent="RoleUI/BuffList"]
-margin_left = 102.0
-margin_top = 34.0
-margin_right = 132.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
-
-[node name="TextureRect10" type="TextureRect" parent="RoleUI/BuffList"]
-margin_left = 136.0
-margin_top = 34.0
-margin_right = 166.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 30, 30 )
-texture = ExtResource( 13 )
-expand = true
 
 [connection signal="tree_exited" from="." to="." method="_on_BaseRole_tree_exited"]
 [connection signal="animation_finished" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_animation_finished"]

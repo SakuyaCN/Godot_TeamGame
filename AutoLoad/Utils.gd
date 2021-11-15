@@ -10,6 +10,11 @@ enum HurtType{
 	CRIT = 6#暴击
 }
 
+enum BuffModeEnum{
+	BUFF = 0
+	DEBUFF = 1
+}
+
 enum BuffEnum{
 	NOR = -1
 	BUFF_ATK = 0

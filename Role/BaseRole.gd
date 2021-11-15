@@ -28,13 +28,16 @@ func print_hello():
 	$SkillScript.add_child(buff)
 	var bean = SkillStateBean.new()
 	bean._create({
+		"state_id":1001,
 		"state_name":"攻击力提升",
 		"state_lv":1,
 		"state_time":5,
-		"state_type":Utils.BuffEnum.BUFF_ATK,
-		"state_num":1000
+		"state_type":"atk",
+		"state_mold":Utils.BuffModeEnum.BUFF,
+		"state_num":1000,
+		"state_img":"res://Texture/skill/buff/1.png"
 	})
-	buff._create(bean,hero_attr)
+	buff._create(self,bean,hero_attr)
 
 func set_role(_role_data):
 	role_data = _role_data
@@ -143,6 +146,11 @@ func resetSkill():
 	for item in $SkillScript.get_children():
 		item.queue_free()
 		get_tree().queue_delete(item)
+	$SkillScript.get_children().clear()
+	for img in $RoleUI/BuffList.get_children():
+		if is_instance_valid(img):
+			get_tree().queue_delete(img)
+	$RoleUI/BuffList.get_children().clear()
 
 #展示血条
 func show_bar(role_array):
