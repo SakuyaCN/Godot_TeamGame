@@ -10,6 +10,12 @@ enum HurtType{
 	CRIT = 6#暴击
 }
 
+enum BuffEnum{
+	NOR = -1
+	BUFF_ATK = 0
+}
+
+
 const DOT = "▪"
 const K1 = 3600
 const K2 = 10

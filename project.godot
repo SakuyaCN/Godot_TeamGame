@@ -19,15 +19,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Bean/HeroAttrBean.gd"
 }, {
-"base": "Node",
-"class": "StateEnum",
+"base": "Reference",
+"class": "SkillStateBean",
 "language": "GDScript",
-"path": "res://Role/Skill/StateEnum.gd"
+"path": "res://Bean/SkillStateBean.gd"
 } ]
 _global_script_class_icons={
 "BaseState": "",
 "HeroAttrBean": "",
-"StateEnum": ""
+"SkillStateBean": ""
 }
 
 [application]

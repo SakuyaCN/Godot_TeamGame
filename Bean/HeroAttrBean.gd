@@ -97,6 +97,7 @@ func setEquAttrBean(role_data):
 	loadOhterAttr()
 	max_hp = hp
 
+#装载职业特性
 func loadJobAttr(role_data):
 	match role_data.job:
 		"黑袍法师":
@@ -111,6 +112,7 @@ func loadJobAttr(role_data):
 		"绝地武士":
 			speed += 15 * role_data.lv
 			crit += 15 * role_data.lv
+			crit_buff += 35
 			speed += (speed * 0.06) as int
 		"致命拳手":
 			hp += 16 * role_data.lv

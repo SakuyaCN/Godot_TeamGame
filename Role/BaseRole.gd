@@ -26,7 +26,15 @@ func _ready():
 func print_hello():
 	var buff = load("res://Role/Skill/BaseState/Buff.gd").new()
 	$SkillScript.add_child(buff)
-	buff._create(StateEnum.BuffEnum.BUFF_ATK,30,5,hero_attr)
+	var bean = SkillStateBean.new()
+	bean._create({
+		"state_name":"攻击力提升",
+		"state_lv":1,
+		"state_time":5,
+		"state_type":Utils.BuffEnum.BUFF_ATK,
+		"state_num":1000
+	})
+	buff._create(bean,hero_attr)
 
 func set_role(_role_data):
 	role_data = _role_data
@@ -37,7 +45,6 @@ func set_role(_role_data):
 func reloadRoleAttr(_rid,_attr:HeroAttrBean):
 	if !fight_script.is_in_atk && role_data.rid == _rid:
 		hero_attr.copy(_attr)
-		print("穿戴刷新 %s" %hero_attr.hp)
 		ui.load_attr()
 
 func setIndex(_index):
@@ -123,12 +130,19 @@ func _process(delta):
 
 #玩家状态重置
 func role_reset():
+	resetSkill()
 	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
 	ui.initRole()
 	reloadHpBar()
 	fight_script.load_script(is_moster)
 	am_player.play_backwards("show_bar")
 	animatedSprite.play("Run")
+
+#重置技能状态列表
+func resetSkill():
+	for item in $SkillScript.get_children():
+		item.queue_free()
+		get_tree().queue_delete(item)
 
 #展示血条
 func show_bar(role_array):
@@ -141,6 +155,7 @@ func show_bar(role_array):
 func start_fight():
 	fight_script.do_atk()
 
+#战斗胜利
 func fight_win():
 	fight_script.is_in_atk = false
 	animatedSprite.play("Idle")
@@ -151,6 +166,7 @@ func reloadHpBar():
 	$RoleUI/hpbar/progress_hp.value = hero_attr.hp as int
 	$RoleUI/hpbar/progress_hp/label_hp.text = str((hero_attr.hp as float/ hero_attr.max_hp as float * 100 )as int) + "%"
 
+#战斗数字显示
 func _show_damage_label(damage,type):
 	var color = Color.brown#基础物理伤害颜色
 	var text = "-"

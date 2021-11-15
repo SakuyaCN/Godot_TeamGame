@@ -92,10 +92,9 @@ func hold_hurt(_atk_attr:HeroAttrBean,num):
 func crit_hurt(_atk_attr:HeroAttrBean):
 	if _atk_attr.crit > 0 && randf() <  _atk_attr.crit / 7000.0:
 		if hero_attr.uncrit > 0 && randf() <  hero_attr.uncrit / 7000.0:
-			print("暴击抵抗")
 			return false
-		print("触发暴击")
 		return true
+
 #人物死亡
 func die():
 	is_alive = false
