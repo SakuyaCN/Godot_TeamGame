@@ -8,9 +8,20 @@ onready var role_data#当前人物数据
 onready var hero_attr:HeroAttrBean#当前人物属性
 onready var is_in_atk = false #是否处于攻击动作
 
-var is_alive = true
-var is_moster = false
+var is_alive = true#是否存活
+var is_moster = false#是否为怪物
+var is_blinding = false #是否为致盲状态
 var atk_count #攻击数量
+var state_array = {} #状态列表
+
+func _process(delta):
+	if is_alive && is_in_atk:
+		if is_VERTIGO():
+			hero_sprite.play("Idle")
+		else:
+			hero_sprite.play("Atk")
+		is_blinding = is_BLINDING()
+		
 
 #初始化战斗脚本
 func load_script(_is_moster):
@@ -25,12 +36,14 @@ func load_script(_is_moster):
 	hero_attr = get_parent().hero_attr
 	atk_count = role_data.atk_count
 
+#检查输出目标列表
 func checkFightRole():
 	do_atk_array.clear()
 	for fight_role in fight_role_array:
 		if do_atk_array.size() < atk_count && fight_role.fight_script.is_alive:
 			do_atk_array.append(fight_role)
 
+#设置战斗对象列表
 func setFightRole(f_r):
 	do_atk_array.clear()
 	fight_role_array = f_r
@@ -38,12 +51,22 @@ func setFightRole(f_r):
 		if fight_role_array.size() > i:
 			do_atk_array.append(fight_role_array[i])
 
+#检查当前状态列表
+func checkState():
+	if state_array.has(Utils.BuffStateEnum.VERTIGO):
+		hero_sprite.play("Idle")
+
 #普攻触发
 func do_atk():
-	is_in_atk = true
 	#设定人物攻击频率
 	hero_sprite.frames.set_animation_speed("Atk",(hero_sprite.frames.get_animation_speed("Atk") + (hero_attr.speed / 100.0)))
-	hero_sprite.play("Atk")
+	#hero_sprite.play("Atk")
+	is_in_atk = true
+	set_process(true)
+
+func do_stop():
+	load_script(is_moster)
+	set_process(false)
 
 #_atk_data攻击者信息 _atk_attr攻击者属性 atk_type 攻击伤害类型 fight_script 攻击者脚本
 func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
@@ -124,5 +147,20 @@ func _on_AnimatedSprite_animation_finished():
 #战斗时每帧
 func _on_AnimatedSprite_frame_changed():
 	if is_in_atk && hero_sprite.animation == "Atk" && hero_sprite.frame == (hero_sprite.frames.get_frame_count("Atk") * 0.7) as int:
+		if is_blinding && randf() <= 0.5:
+			get_parent()._show_damage_label("被致盲",Utils.HurtType.OTHER)
+			return
 		for role in do_atk_array:
-			role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)
+				role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)
+
+func is_VERTIGO():
+	for item in state_array.values():
+		if item is SkillStateBean && item.state_type == Utils.BuffStateEnum.VERTIGO:
+			return true
+	return false
+
+func is_BLINDING():
+	for item in state_array.values():
+		if item is SkillStateBean && item.state_type == Utils.BuffStateEnum.BLINDING:
+			return true
+	return false

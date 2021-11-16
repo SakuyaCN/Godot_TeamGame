@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Texture/Pre-made characters/Boxer.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Role/BaseRole.gd" type="Script" id=2]
@@ -11,7 +11,7 @@
 [ext_resource path="res://Role/RoleUI.gd" type="Script" id=9]
 [ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=10]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=11]
-[ext_resource path="res://Texture/Effect/hit/Effect 3 - Sprite Sheet.png" type="Texture" id=12]
+[ext_resource path="res://Role/Test.gd" type="Script" id=13]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -41,25 +41,9 @@ shader = SubResource( 1 )
 shader_param/line_color = Color( 0.643137, 0.6, 0.6, 0.45098 )
 shader_param/line_thickness = 0.5
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 12 )
-region = Rect2( 0, 96, 32, 32 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [  ],
 "loop": true,
 "name": "hit",
 "speed": 8.0
@@ -205,15 +189,14 @@ position = Vector2( 0, -70 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 4
+frame = 7
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
-position = Vector2( 16, -79 )
+position = Vector2( 24, -39 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "hit"
-frame = 3
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -573,6 +556,9 @@ columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Test" type="Node" parent="."]
+script = ExtResource( 13 )
 
 [connection signal="tree_exited" from="." to="." method="_on_BaseRole_tree_exited"]
 [connection signal="animation_finished" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_animation_finished"]

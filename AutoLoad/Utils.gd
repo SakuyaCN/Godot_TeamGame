@@ -1,6 +1,7 @@
 extends Node2D
 
 enum HurtType{
+	OTHER = -1#自定义
 	ATK = 0#伤害颜色 物理伤害
 	MTK = 1#伤害颜色 魔力伤害
 	TRUE = 2#伤害颜色 真实伤害
@@ -11,13 +12,18 @@ enum HurtType{
 }
 
 enum BuffModeEnum{
-	BUFF = 0
-	DEBUFF = 1
+	BUFF = 0#正面状态
+	DEBUFF = 1#负面状态
+	STATE = 2#人物状态
 }
 
-enum BuffEnum{
-	NOR = -1
-	BUFF_ATK = 0
+enum BuffStateEnum{
+	OTHER = -1#自定义
+	VERTIGO = 0#眩晕
+	BLINDING = 1#致盲
+	POISONING = 2#中毒
+	BURNING = 3#燃烧
+	WEAK = 4#虚弱
 }
 
 

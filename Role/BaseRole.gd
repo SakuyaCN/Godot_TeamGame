@@ -14,30 +14,9 @@ onready var ui = $RoleUI
 
 onready var am_player = $AnimationPlayer
 onready var fight_script = $FightScript
+onready var skill_script = $SkillScript
 onready var animatedSprite = $AnimatedSprite
 onready var effect_anim = $Effects
-
-func _ready():
-	Console.add_command('addBuff', self, 'print_hello')\
-		.set_description('Prints "Hello %name%!"')\
-		.add_argument('name', TYPE_STRING)\
-		.register()
- 
-func print_hello():
-	var buff = load("res://Role/Skill/BaseState/Buff.gd").new()
-	$SkillScript.add_child(buff)
-	var bean = SkillStateBean.new()
-	bean._create({
-		"state_id":1001,
-		"state_name":"攻击力提升",
-		"state_lv":1,
-		"state_time":5,
-		"state_type":"atk",
-		"state_mold":Utils.BuffModeEnum.BUFF,
-		"state_num":1000,
-		"state_img":"res://Texture/skill/buff/1.png"
-	})
-	buff._create(self,bean,hero_attr)
 
 func set_role(_role_data):
 	role_data = _role_data
@@ -137,7 +116,7 @@ func role_reset():
 	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
 	ui.initRole()
 	reloadHpBar()
-	fight_script.load_script(is_moster)
+	fight_script.do_stop()
 	am_player.play_backwards("show_bar")
 	animatedSprite.play("Run")
 
@@ -151,6 +130,15 @@ func resetSkill():
 		if is_instance_valid(img):
 			get_tree().queue_delete(img)
 	$RoleUI/BuffList.get_children().clear()
+	fight_script.state_array.clear()
+
+#添加状态
+func addState(state:SkillStateBean):
+	fight_script.state_array[state.state_id] = state
+
+#移除状态
+func removeState(id):
+	fight_script.state_array.erase(id)
 
 #展示血条
 func show_bar(role_array):
@@ -203,6 +191,9 @@ func _show_damage_label(damage,type):
 			text = "格挡 -"
 		Utils.HurtType.CRIT:
 			color = Color.tomato
+		Utils.HurtType.OTHER:
+			color = Color.peru
+			text = ""
 	float_number_ins.set_number(text + "%s" %damage,color)
 	reloadHpBar()
 
