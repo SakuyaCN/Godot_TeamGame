@@ -11,8 +11,12 @@ onready var is_in_atk = false #是否处于攻击动作
 var is_alive = true#是否存活
 var is_moster = false#是否为怪物
 var is_blinding = false #是否为致盲状态
+var is_weak = false #是否为虚弱状态
 var atk_count #攻击数量
 var state_array = {} #状态列表
+
+func _ready():
+	set_process(false)
 
 func _process(delta):
 	if is_alive && is_in_atk:
@@ -21,6 +25,7 @@ func _process(delta):
 		else:
 			hero_sprite.play("Atk")
 		is_blinding = is_BLINDING()
+		is_weak = is_WEAK()
 		
 
 #初始化战斗脚本
@@ -89,6 +94,8 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 	if crit_hurt(_atk_attr):
 		hurt_num *= 1.5 + (_atk_attr.crit_buff / 100.0)
 		atk_type = Utils.HurtType.CRIT
+	if fight_script.is_weak:
+		hurt_num *= 0.6
 	hero_attr.hp -= hurt_num
 	get_parent()._show_damage_label(hurt_num,atk_type)
 	effect_sprite.visible = true
@@ -148,7 +155,7 @@ func _on_AnimatedSprite_animation_finished():
 func _on_AnimatedSprite_frame_changed():
 	if is_in_atk && hero_sprite.animation == "Atk" && hero_sprite.frame == (hero_sprite.frames.get_frame_count("Atk") * 0.7) as int:
 		if is_blinding && randf() <= 0.5:
-			get_parent()._show_damage_label("被致盲",Utils.HurtType.OTHER)
+			get_parent()._show_damage_label("丢失目标",Utils.HurtType.OTHER)
 			return
 		for role in do_atk_array:
 				role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)
@@ -162,5 +169,11 @@ func is_VERTIGO():
 func is_BLINDING():
 	for item in state_array.values():
 		if item is SkillStateBean && item.state_type == Utils.BuffStateEnum.BLINDING:
+			return true
+	return false
+	
+func is_WEAK():
+	for item in state_array.values():
+		if item is SkillStateBean && item.state_type == Utils.BuffStateEnum.WEAK:
 			return true
 	return false

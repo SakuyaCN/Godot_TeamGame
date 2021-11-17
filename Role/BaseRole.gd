@@ -134,7 +134,12 @@ func resetSkill():
 
 #添加状态
 func addState(state:SkillStateBean):
-	fight_script.state_array[state.state_id] = state
+	if fight_script.state_array.has(state.state_id):
+		fight_script.state_array.erase(state.state_id)
+		
+		fight_script.state_array[state.state_id] = state
+	else:
+		fight_script.state_array[state.state_id] = state
 
 #移除状态
 func removeState(id):
@@ -172,7 +177,6 @@ func _show_damage_label(damage,type):
 	vec.x -= rand_range(-50,50)
 	float_number_ins.position = vec
 	float_number_ins.velocity = Vector2(rand_range(-40,40),-130)
-	add_child(float_number_ins)
 	match type:
 		Utils.HurtType.MTK:
 			color = Color.cornflower
@@ -194,6 +198,8 @@ func _show_damage_label(damage,type):
 		Utils.HurtType.OTHER:
 			color = Color.peru
 			text = ""
+			float_number_ins.mass = 400
+	add_child(float_number_ins)
 	float_number_ins.set_number(text + "%s" %damage,color)
 	reloadHpBar()
 

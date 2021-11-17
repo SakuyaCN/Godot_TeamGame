@@ -8,6 +8,7 @@ var state_type#状态属性类型
 var state_mold = Utils.BuffModeEnum.BUFF#状态增益减益
 var state_img:String#状态图片
 var state_time :int#状态持续时间
+var state_over :bool#状态持续时间是否叠加
 
 func _create(dict:Dictionary):
 	if dict.has("state_id"):
@@ -26,3 +27,5 @@ func _create(dict:Dictionary):
 		state_time = dict["state_time"]
 	if dict.has("state_mold"):
 		state_mold = dict["state_mold"]
+	if dict.has("state_over"):
+		state_mold = dict["state_over"]

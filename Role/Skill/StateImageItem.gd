@@ -4,14 +4,17 @@ signal item_delete()
 
 var time_out
 
-func setData(res,id,time):
-	set_meta("id",id)
-	texture = load(res)
-	time_out = time
+func setData(state:SkillStateBean):
+	set_meta("id",state.state_id)
+	texture = load(state.state_img)
+	time_out = state.state_time
 	$Timer.start()
 	
-func updateTime(time):
-	time_out += time
+func updateTime(state:SkillStateBean):
+	if state.state_over:
+		time_out += state.state_time
+	else:
+		time_out = state.state_time
 	$Timer.stop()
 	$Timer.start()
 

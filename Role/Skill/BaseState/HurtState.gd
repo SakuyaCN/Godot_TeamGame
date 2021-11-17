@@ -1,8 +1,6 @@
-extends Node
+extends BaseState
 
-var state_bean:SkillStateBean
 var hero_attr:HeroAttrBean
-var timer:Timer
 var role:Node
 
 func _ready():
@@ -12,11 +10,11 @@ func _ready():
 	timer.connect("timeout",self,"_destroy")
 
 func _create(_role:Node,_bean,_hero_attr:HeroAttrBean):
-	state_bean = _bean
+	._create(role,_bean,_hero_attr)
 	hero_attr = _hero_attr
 	role = _role
 	addBuff()
-	role.ui.addBuffImage(state_bean.state_img,state_bean.state_id,state_bean.state_time)
+	role.ui.addBuffImage(state_bean)
 	timer.start(state_bean.state_time)
 
 #BUFF移除

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "BaseState",
+"language": "GDScript",
+"path": "res://Role/Skill/BaseState.gd"
+}, {
 "base": "Reference",
 "class": "HeroAttrBean",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://Bean/SkillStateBean.gd"
 } ]
 _global_script_class_icons={
+"BaseState": "",
 "HeroAttrBean": "",
 "SkillStateBean": ""
 }

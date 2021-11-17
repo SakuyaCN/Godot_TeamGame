@@ -54,14 +54,14 @@ func _on_attr_visibility_changed():
 		if !get_parent().am_player.is_playing():
 			get_parent().am_player.play("choose")
 
-func addBuffImage(res,id,time):
-	if array_item_skill.has(id):
-		array_item_skill[id].updateTime(time)
+func addBuffImage(state:SkillStateBean):
+	if array_item_skill.has(state.state_id):
+		array_item_skill[state.state_id].updateTime(state)
 	else:
 		var img = item_skill_img.instance()
 		$BuffList.add_child(img)
-		img.setData(res,id,time)
-		array_item_skill[id] = img
+		img.setData(state)
+		array_item_skill[state.state_id] = img
 		img.connect("item_delete",self,"removeBuffImage")
 
 func removeBuffImage(id):

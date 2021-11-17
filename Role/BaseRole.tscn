@@ -189,7 +189,7 @@ position = Vector2( 0, -70 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 7
+frame = 6
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
