@@ -5,8 +5,11 @@ var text = ""
 var velocity = Vector2.ZERO
 var graavity = Vector2.ZERO
 var mass = 20
+var is_skill = false
 
 func _ready():
+	if is_skill:
+		$Label.rect_scale = Vector2(1.7,1.7)
 	graavity = Vector2(0,rand_range(1.0,1.5))
 	$Tween.interpolate_property(self,"modulate",
 	Color(self.modulate.r,self.modulate.g,self.modulate.b,self.modulate.a),
@@ -27,6 +30,9 @@ func _ready():
 func _process(delta):
 	velocity += graavity * mass * delta
 	position += velocity * delta
+
+func setSkill(_is_skill):
+	is_skill = _is_skill
 
 func set_number(number,color):
 	$Label.text = str(number)

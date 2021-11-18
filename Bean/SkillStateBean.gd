@@ -1,6 +1,6 @@
 class_name SkillStateBean
 
-var state_id:int#状态类型id
+var state_id:String#状态类型id
 var state_name:String#状态名称
 var state_num:float#状态数值
 var state_lv:int#状态等级
@@ -9,10 +9,11 @@ var state_mold = Utils.BuffModeEnum.BUFF#状态增益减益
 var state_img:String#状态图片
 var state_time :int#状态持续时间
 var state_over :bool#状态持续时间是否叠加
+var state_other = {}#状态其他信息
 
 func _create(dict:Dictionary):
 	if dict.has("state_id"):
-		state_id = dict["state_id"]
+		state_id = str(dict["state_id"])
 	if dict.has("state_name"):
 		state_name = dict["state_name"]
 	if dict.has("state_num"):
@@ -28,4 +29,6 @@ func _create(dict:Dictionary):
 	if dict.has("state_mold"):
 		state_mold = dict["state_mold"]
 	if dict.has("state_over"):
-		state_mold = dict["state_over"]
+		state_over = dict["state_over"]
+	if dict.has("state_other"):
+		state_other = dict["state_other"]

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "BaseRole",
+"language": "GDScript",
+"path": "res://Role/BaseRole.gd"
+}, {
 "base": "Node",
 "class": "BaseState",
 "language": "GDScript",
@@ -20,13 +25,20 @@ _global_script_classes=[ {
 "path": "res://Bean/HeroAttrBean.gd"
 }, {
 "base": "Reference",
+"class": "SkillHurtBean",
+"language": "GDScript",
+"path": "res://Bean/SkillHurtBean.gd"
+}, {
+"base": "Reference",
 "class": "SkillStateBean",
 "language": "GDScript",
 "path": "res://Bean/SkillStateBean.gd"
 } ]
 _global_script_class_icons={
+"BaseRole": "",
 "BaseState": "",
 "HeroAttrBean": "",
+"SkillHurtBean": "",
 "SkillStateBean": ""
 }
 

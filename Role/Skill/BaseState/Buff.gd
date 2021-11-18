@@ -1,31 +1,15 @@
 extends BaseState
 
-var hero_attr:HeroAttrBean
-
-func _ready():
-	timer = Timer.new()
-	timer.one_shot = true
-	add_child(timer)
-	timer.connect("timeout",self,"_destroy")
-
-func _create(role:Node,_bean,_hero_attr:HeroAttrBean):
-	._create(role,_bean,_hero_attr)
-	hero_attr = _hero_attr
-	addBuff()
-	role.ui.addBuffImage(state_bean)
-	timer.start(state_bean.state_time)
-
 func _destroy():
 	updateAttr(true)
 	get_tree().call_group("RoleUI","load_attr")
-	if is_instance_valid(state_bean):
-		get_tree().queue_delete(state_bean)
+	role.call_deferred("removeState",state_bean.state_id)
 
 #触发BUFF效果
 func addBuff():
 	updateAttr(false)
 	get_tree().call_group("RoleUI","load_attr")
-
+	role.call_deferred("_show_damage_label",state_bean.state_name,Utils.HurtType.OTHER)
 
 func updateAttr(is_over):
 	var num = state_bean.state_num

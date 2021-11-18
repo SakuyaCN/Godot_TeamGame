@@ -9,23 +9,28 @@ enum HurtType{
 	MISS = 4#闪避
 	HOLD = 5#格挡
 	CRIT = 6#暴击
+	COUTINUED = 7#持续伤害
 }
 
 enum BuffModeEnum{
 	BUFF = 0#正面状态
 	DEBUFF = 1#负面状态
-	STATE = 2#人物状态
+	STATE = 2#其他状态
 }
 
 enum BuffStateEnum{
 	OTHER = -1#自定义
 	VERTIGO = 0#眩晕
 	BLINDING = 1#致盲
-	POISONING = 2#中毒
-	BURNING = 3#燃烧
-	WEAK = 4#虚弱
+	COUTINUED = 2#持续类
+	WEAK = 3#虚弱
 }
 
+enum SkillHurtEnum{
+	NUMBER = 0#直接数字伤害
+	PT_ATTR_ON = 1#根据自身属性计算的百分比伤害
+	PT_ATTR_OT = 2#根据敌人属性计算的百分比伤害
+}
 
 const DOT = "▪"
 const K1 = 3600

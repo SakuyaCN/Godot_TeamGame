@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name BaseRole
+
 onready var float_number = preload("res://Effect/FloatNumber.tscn")
 
 var role_data:Dictionary#角色信息
@@ -88,7 +90,7 @@ func run2position(_position):
 		global_position = Vector2(-100,_position.position.y)
 	else:
 		global_position = Vector2(1337,_position.position.y)
-	animatedSprite.speed_scale = 5.0
+	animatedSprite.speed_scale = 3.0
 	run_position = _position
 	is_position = true
 
@@ -102,7 +104,7 @@ func _process(delta):
 				set_process(false)
 				get_tree().call_group("game_main","plus_size")
 		else:
-			global_position.x -= delta * 250
+			global_position.x -= delta * 350
 			if global_position.x <= run_position.position.x:
 				animatedSprite.speed_scale = 1.0
 				is_position = false
@@ -133,12 +135,15 @@ func resetSkill():
 	fight_script.state_array.clear()
 
 #添加状态
-func addState(state:SkillStateBean):
+func addState(state:SkillStateBean,state_node:BaseState):
 	if fight_script.state_array.has(state.state_id):
-		fight_script.state_array.erase(state.state_id)
-		
-		fight_script.state_array[state.state_id] = state
+		var node = skill_script.get_node(state.state_id)
+		if !state.state_over:
+			node.reset()
+		else:
+			node.addTime()
 	else:
+		skill_script.add_child(state_node)
 		fight_script.state_array[state.state_id] = state
 
 #移除状态
@@ -198,7 +203,26 @@ func _show_damage_label(damage,type):
 		Utils.HurtType.OTHER:
 			color = Color.peru
 			text = ""
-			float_number_ins.mass = 400
+			float_number_ins.mass = 500
+		Utils.HurtType.COUTINUED:
+			color = Color.webpurple
+			text = "-"
+			float_number_ins.mass = 500
+	add_child(float_number_ins)
+	float_number_ins.set_number(text + "%s" %damage,color)
+	reloadHpBar()
+
+#技能数值展示
+func _show_skill_label(damage):
+	var color = Color.steelblue#基础物理伤害颜色
+	var text = "-"
+	var float_number_ins = float_number.instance()
+	float_number_ins.setSkill(true)
+	var vec = animatedSprite.position
+	vec.y -= rand_range(-20,20)
+	vec.x -= rand_range(-50,50)
+	float_number_ins.position = vec
+	float_number_ins.velocity = Vector2(rand_range(-40,40),-130)
 	add_child(float_number_ins)
 	float_number_ins.set_number(text + "%s" %damage,color)
 	reloadHpBar()

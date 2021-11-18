@@ -18,7 +18,7 @@ var state_array = {} #状态列表
 func _ready():
 	set_process(false)
 
-func _process(delta):
+func _process(_delta):
 	if is_alive && is_in_atk:
 		if is_VERTIGO():
 			hero_sprite.play("Idle")
@@ -81,10 +81,10 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 		return
 	var hurt_num = 0
 	match atk_type:
-		0:
+		Utils.HurtType.ATK:
 			hurt_num = _atk_attr.atk * (1 - ((hero_attr.def - _atk_attr.atk_pass)/100.0))#物理伤害
 			fight_script.atk_blood(hurt_num)
-		1:
+		Utils.HurtType.MTK:
 			hurt_num = _atk_attr.mtk * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
 			fight_script.mtk_blood(hurt_num)
 	if _atk_attr.true_hurt > 0:
@@ -97,11 +97,28 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 	if fight_script.is_weak:
 		hurt_num *= 0.6
 	hero_attr.hp -= hurt_num
+	if hero_attr.hp <= 0:
+		die()
 	get_parent()._show_damage_label(hurt_num,atk_type)
 	effect_sprite.visible = true
 	effect_sprite.play("hit")
+
+#直接数字伤害 number 伤害字 atk_type 攻击类型 _atk_attr 攻击者属性 is_COUTINUED是否连续
+func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
+	var hurt_num = 0
+	match atk_type:
+		Utils.HurtType.ATK:
+			hurt_num = number * (1 - ((hero_attr.def - _atk_attr.atk_pass)/100.0))#物理伤害
+		Utils.HurtType.MTK:
+			hurt_num = number * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
+		_:hurt_num = number
+	hero_attr.hp -= hurt_num
 	if hero_attr.hp <= 0:
 		die()
+	if is_COUTINUED:
+		get_parent()._show_damage_label(hurt_num,Utils.HurtType.COUTINUED)
+	else:
+		get_parent()._show_skill_label(hurt_num)
 
 #格挡触发
 func hold_hurt(_atk_attr:HeroAttrBean,num):
@@ -162,18 +179,18 @@ func _on_AnimatedSprite_frame_changed():
 
 func is_VERTIGO():
 	for item in state_array.values():
-		if item is SkillStateBean && item.state_type == Utils.BuffStateEnum.VERTIGO:
+		if item is SkillStateBean && item.state_mold == Utils.BuffModeEnum.STATE && item.state_type == Utils.BuffStateEnum.VERTIGO:
 			return true
 	return false
 
 func is_BLINDING():
 	for item in state_array.values():
-		if item is SkillStateBean && item.state_type == Utils.BuffStateEnum.BLINDING:
+		if item is SkillStateBean && item.state_mold == Utils.BuffModeEnum.STATE && item.state_type == Utils.BuffStateEnum.BLINDING:
 			return true
 	return false
 	
 func is_WEAK():
 	for item in state_array.values():
-		if item is SkillStateBean && item.state_type == Utils.BuffStateEnum.WEAK:
+		if item is SkillStateBean && item.state_mold == Utils.BuffModeEnum.STATE && item.state_type == Utils.BuffStateEnum.WEAK:
 			return true
 	return false
