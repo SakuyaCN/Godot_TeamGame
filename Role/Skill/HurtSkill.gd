@@ -20,6 +20,7 @@ func _create(_role:BaseRole,_who:BaseRole,_skillbean):
 			var hurt_num = role.hero_attr.toDict()[skillbean.hurt_attr] * (skillbean.hurt_num / 100.0)
 			call_hurt(hurt_num)
 
+#设置伤害
 func call_hurt(hurt):
 	if skillbean.hurt_count <= 1:
 		role.fight_script.do_number_hurt(hurt,skillbean.hurt_type,who.hero_attr,false)
