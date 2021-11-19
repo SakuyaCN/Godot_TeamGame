@@ -1,3 +1,28 @@
 {
-    
+    "测试技能":{
+        "skill_id":1,
+        "skill_name":"全体强化术",
+        "skill_lv":1,
+        "skill_img":"",
+        "skill_info":"开始战斗前提高自身攻击50点，生命值200点,持续10秒",
+        "skill_start":[
+            {
+                "item_script":"res://Role/Skill/BaseState/Buff.gd",
+                "item_odds_type":0,
+                "item_odds":100,
+                "item_role":[1,2],
+                "scrpit_info":{
+                    "state_id":1000,
+                    "state_name":"全体强化术",
+                    "state_lv":1,
+                    "state_time":10,
+                    "state_type":"atk",
+                    "state_mold":0,
+                    "state_num":1000,
+                    "state_img":"res://Texture/skill/buff/1.png",
+                    "sate_over":false
+                }
+            }
+        ]
+    }
 }

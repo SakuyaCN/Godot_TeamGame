@@ -222,6 +222,10 @@ window_title = "添加技能"
 [node name="Panel" type="Panel" parent="AddSkillDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
 custom_styles/panel = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false

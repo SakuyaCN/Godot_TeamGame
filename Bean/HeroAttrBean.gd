@@ -1,5 +1,7 @@
 class_name HeroAttrBean
 
+signal onAttrChange(attr,num)
+
 #基础属性
 var max_hp :int#生命
 var hp:int#生命
@@ -225,3 +227,4 @@ func updateNum(attr,num):
 		"true_hurt" : true_hurt += num
 		"hurt_buff" : hurt_buff += num
 		"crit_buff" : crit_buff += num
+	emit_signal("onAttrChange",attr,num)

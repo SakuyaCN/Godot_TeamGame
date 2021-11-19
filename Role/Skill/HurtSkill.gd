@@ -1,10 +1,12 @@
 extends Node
 
-var skillbean:SkillHurtBean
-var role:BaseRole#技能接收者
-var who:BaseRole#技能施加者
+class_name HurtSkill
 
-func _create(_role:BaseRole,_who:BaseRole,_skillbean):
+var skillbean:SkillHurtBean
+var role#技能接收者
+var who#技能施加者
+
+func _create(_role,_who,_skillbean):
 	skillbean = _skillbean
 	role = _role
 	who = _who

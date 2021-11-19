@@ -96,7 +96,7 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 		atk_type = Utils.HurtType.CRIT
 	if fight_script.is_weak:
 		hurt_num *= 0.6
-	hero_attr.hp -= hurt_num
+	hero_attr.updateNum("hp",-hurt_num)
 	if hero_attr.hp <= 0:
 		die()
 	get_parent()._show_damage_label(hurt_num,atk_type)
@@ -112,7 +112,7 @@ func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 		Utils.HurtType.MTK:
 			hurt_num = number * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
 		_:hurt_num = number
-	hero_attr.hp -= hurt_num
+	hero_attr.updateNum("hp",-hurt_num)
 	if hero_attr.hp <= 0:
 		die()
 	if is_COUTINUED:

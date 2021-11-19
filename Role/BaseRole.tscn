@@ -183,13 +183,14 @@ script = ExtResource( 3 )
 
 [node name="SkillScript" type="Node" parent="."]
 
+[node name="SkillNode" type="Node" parent="."]
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 2 )
 position = Vector2( 0, -70 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 4
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]

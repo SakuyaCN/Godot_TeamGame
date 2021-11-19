@@ -24,10 +24,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Bean/HeroAttrBean.gd"
 }, {
+"base": "Node",
+"class": "HurtSkill",
+"language": "GDScript",
+"path": "res://Role/Skill/HurtSkill.gd"
+}, {
+"base": "Node",
+"class": "SkillEntity",
+"language": "GDScript",
+"path": "res://Bean/SkillBean.gd"
+}, {
 "base": "Reference",
 "class": "SkillHurtBean",
 "language": "GDScript",
 "path": "res://Bean/SkillHurtBean.gd"
+}, {
+"base": "Node",
+"class": "SkillItemBean",
+"language": "GDScript",
+"path": "res://Bean/SkillItemBean.gd"
 }, {
 "base": "Reference",
 "class": "SkillStateBean",
@@ -38,7 +53,10 @@ _global_script_class_icons={
 "BaseRole": "",
 "BaseState": "",
 "HeroAttrBean": "",
+"HurtSkill": "",
+"SkillEntity": "",
 "SkillHurtBean": "",
+"SkillItemBean": "",
 "SkillStateBean": ""
 }
 

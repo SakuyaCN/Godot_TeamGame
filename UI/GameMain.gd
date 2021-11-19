@@ -72,8 +72,8 @@ func moster_plus_size():
 #战斗开始信号
 func start_fight():
 	ConstantsValue.game_layer.fight_ui.UIchange(true)
-	get_tree().call_group("player_role","show_bar",moster_array)
-	get_tree().call_group("moster_role","show_bar",player_array)
+	get_tree().call_group("player_role","show_bar",moster_array,player_array)
+	get_tree().call_group("moster_role","show_bar",player_array,moster_array)
 
 func go_position():
 	ConstantsValue.game_layer.findTvShow(true)

@@ -11,18 +11,24 @@ var is_moster = false
 var run_position = Vector2.ZERO
 
 var hero_attr:HeroAttrBean
+var hero_skill = {}
 
 onready var ui = $RoleUI
 
 onready var am_player = $AnimationPlayer
 onready var fight_script = $FightScript
 onready var skill_script = $SkillScript
+onready var skill_node = $SkillNode
 onready var animatedSprite = $AnimatedSprite
 onready var effect_anim = $Effects
+
+func _ready():
+	name = str(OS.get_system_time_msecs() + randi()%10000)
 
 func set_role(_role_data):
 	role_data = _role_data
 	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+	loadRoleSkill()
 	load_asset()
 	ui.initRole()
 
@@ -112,6 +118,14 @@ func _process(delta):
 				animatedSprite.animation = "Idle"
 				get_tree().call_group("game_main","moster_plus_size")
 
+#初始化装载技能
+func loadRoleSkill():
+	hero_skill.clear()
+	for skill in role_data["skill"]:
+		var skill_bean = SkillEntity.new()
+		skill_bean.loadSkill(LocalData.skill_data[skill])
+		hero_skill[skill] = skill_bean
+
 #玩家状态重置
 func role_reset():
 	resetSkill()
@@ -125,14 +139,17 @@ func role_reset():
 #重置技能状态列表
 func resetSkill():
 	for item in $SkillScript.get_children():
+		item._destroy()
 		item.queue_free()
-		get_tree().queue_delete(item)
 	$SkillScript.get_children().clear()
 	for img in $RoleUI/BuffList.get_children():
 		if is_instance_valid(img):
 			get_tree().queue_delete(img)
 	$RoleUI/BuffList.get_children().clear()
 	fight_script.state_array.clear()
+	for item in skill_node.get_children():
+		item.queue_free()
+	skill_node.get_children().clear()
 
 #添加状态
 func addState(state:SkillStateBean,state_node:BaseState):
@@ -150,12 +167,16 @@ func addState(state:SkillStateBean,state_node:BaseState):
 func removeState(id):
 	fight_script.state_array.erase(id)
 
-#展示血条
-func show_bar(role_array):
+#展示血条 双方全部进场
+func show_bar(_enemy_array,myself_array):
 	if am_player.is_playing():
 		yield(am_player,"animation_finished")
 	am_player.play("show_bar")
-	fight_script.setFightRole(role_array)
+	fight_script.setFightRole(_enemy_array)
+	for skill in hero_skill:
+		skill_node.add_child(hero_skill[skill])
+		hero_skill[skill].loadRoleArray(_enemy_array,myself_array,self,skill_script)
+		hero_skill[skill].skillStart()
 	
 #开始战斗
 func start_fight():

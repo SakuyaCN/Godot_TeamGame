@@ -16,6 +16,7 @@ func _ready():
 	load_map()
 	load_data()
 	load_build()
+	load_skill()
 
 func load_map():
 	var item_data_file = File.new()
