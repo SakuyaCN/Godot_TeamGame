@@ -181,6 +181,8 @@ func show_bar(_enemy_array,myself_array):
 #开始战斗
 func start_fight():
 	fight_script.do_atk()
+	for skill in hero_skill:
+		hero_skill[skill].skillIng()
 
 #战斗胜利
 func fight_win():

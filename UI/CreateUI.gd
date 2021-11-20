@@ -170,7 +170,7 @@ func _on_Button_pressed():
 			"crit":base_role[check_index].crit,
 			"mdef":base_role[check_index].mdef
 		},
-		"skill":{},#技能
+		"skill":[],#技能
 		"equ":{},#装备
 	}
 	StorageData.storage_data["team"][main_role.rid] = main_role

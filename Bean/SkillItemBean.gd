@@ -7,7 +7,7 @@ var item_odds_type:int#触发类型
 var item_odds:int #触发概率
 var item_odds_attr #触发阈值的属性 
 var item_odds_num:int #触发阈值百分比
-var item_loop:bool #是否循环触发
+var item_count = 1 #触发次数 -1为无限循环
 var item_itme:int #是否延迟触发
 var item_role = []#触发脚本的角色
 
@@ -22,8 +22,8 @@ func _create(dict:Dictionary):
 		item_odds_attr = dict["item_odds_attr"]
 	if dict.has("item_odds_num"):
 		item_odds_num = dict["item_odds_num"]
-	if dict.has("item_loop"):
-		item_loop = dict["item_loop"]
+	if dict.has("item_count"):
+		item_count = dict["item_count"]
 	if dict.has("item_itme"):
 		item_itme = dict["item_itme"]
 	if dict.has("item_role"):

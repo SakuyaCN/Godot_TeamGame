@@ -19,6 +19,13 @@ var local_attr = {}#玩家战斗开始时属性拷贝
 var myself_array = [] #自家队伍
 var enemy_array = [] #敌人队伍
 
+var timer = Timer.new()
+
+
+func _ready():
+	timer.one_shot = false
+	timer.connect("timeout",self,"_onTimeOut")
+
 #装载技能
 func loadSkill(skill_data):
 	skill_id = skill_data["skill_id"]
@@ -34,13 +41,24 @@ func loadRoleArray(_enemy_array,_myself_array,_myself,_ss_array):
 	ss_array = _ss_array
 	hero_attr = _myself.hero_attr
 	local_attr = hero_attr.toDict().duplicate()
-	hero_attr.connect("onAttrChange",self,"on_attr_change")
 
 #当属性发生变化是触发
 func on_attr_change(attr,num):
-	for skill in skill_start:
-		if skill is SkillItemBean:
+	for skill in skill_ing:
+		if skill is SkillItemBean && skill.item_odds_type == Utils.SkillTypeEnum.ATTR:
 			attrChange_dec(skill)
+
+#每次普攻结束触发
+func _onAtkOver():
+	for skill in skill_ing:
+		if skill is SkillItemBean && skill.item_odds_type == Utils.SkillTypeEnum.ATK_ING:
+			decisionSkill(skill)
+
+#每次读秒结束后触发
+func _onTimeOut():
+	for skill in skill_ing:
+		if skill is SkillItemBean && skill.item_odds_type == Utils.SkillTypeEnum.ATK_TIME:
+			decisionSkill(skill)
 
 #战前准备技能释放
 func skillStart():
@@ -48,11 +66,11 @@ func skillStart():
 		if skill is SkillItemBean:
 			decisionSkill(skill)
 				
-#战斗技能释放
+#战斗开始后可触发的技能
 func skillIng():
-	for skill in skill_ing:
-		if skill is SkillItemBean:
-			decisionSkill(skill)
+	myself.fight_script.connect("onAtkOver",self,"_onAtkOver")
+	hero_attr.connect("onAttrChange",self,"on_attr_change")
+	timer.start(1.0)
 
 #死亡技能释放
 func skillEnd():
@@ -62,11 +80,7 @@ func skillEnd():
 
 #判定释放技能
 func decisionSkill(skill:SkillItemBean):
-	match skill.item_odds_type:
-		0:#百分比概率触发
-			pos_dec(skill)
-		1:#属性发生变化时触发
-			attrChange_dec(skill)
+	pos_dec(skill)
 
 #百分比判定
 func pos_dec(skill):
@@ -91,8 +105,11 @@ func chooseRole(skill:SkillItemBean):
 
 #运行技能附带脚本
 func doSkillItemScript(role:Node,skill:SkillItemBean):
+	if skill.item_count == 0:
+		return
 	var script = load(skill.item_script).new()
 	script._create(role,myself,skill.scrpit_info)
+	skill.item_count-=1
 #	if script is BaseState:
 #	elif script is HurtSkill:
 

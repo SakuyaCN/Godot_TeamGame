@@ -15,6 +15,8 @@ var is_weak = false #是否为虚弱状态
 var atk_count #攻击数量
 var state_array = {} #状态列表
 
+signal onAtkOver()#普攻结束信号
+
 func _ready():
 	set_process(false)
 
@@ -175,7 +177,8 @@ func _on_AnimatedSprite_frame_changed():
 			get_parent()._show_damage_label("丢失目标",Utils.HurtType.OTHER)
 			return
 		for role in do_atk_array:
-				role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)
+			role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)
+		emit_signal("onAtkOver")
 
 func is_VERTIGO():
 	for item in state_array.values():

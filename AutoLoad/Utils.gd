@@ -32,6 +32,13 @@ enum SkillHurtEnum{
 	PT_ATTR_OT = 2#根据敌人属性计算的百分比伤害
 }
 
+enum SkillTypeEnum{
+	ODDS = 0# 概率触发
+	ATTR = 1#属性低于阈值触发
+	ATK_ING = 2#战斗时普攻触发
+	ATK_TIME = 3#战斗时每秒触发
+}
+
 const DOT = "▪"
 const K1 = 3600
 const K2 = 10
