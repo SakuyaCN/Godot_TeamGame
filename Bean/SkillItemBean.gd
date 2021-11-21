@@ -18,6 +18,8 @@ func _create(dict:Dictionary):
 		item_script = dict["item_script"]
 	if dict.has("item_odds"):
 		item_odds = dict["item_odds"]
+	if dict.has("item_odds_type"):
+		item_odds_type = dict["item_odds_type"]
 	if dict.has("item_odds_attr"):
 		item_odds_attr = dict["item_odds_attr"]
 	if dict.has("item_odds_num"):

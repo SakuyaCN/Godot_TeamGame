@@ -19,7 +19,7 @@ func _create(_role,_who,_bean):
 	state_bean = _bean
 	role = _role
 	hero_attr = _role.hero_attr
-	name = state_bean.state_id + _role.name
+	name = state_bean.state_id
 	last_time = state_bean.state_time
 	role.call_deferred("addState",state_bean,self)
 	role.ui.addBuffImage(state_bean)

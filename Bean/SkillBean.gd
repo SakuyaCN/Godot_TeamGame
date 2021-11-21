@@ -25,6 +25,7 @@ var timer = Timer.new()
 func _ready():
 	timer.one_shot = false
 	timer.connect("timeout",self,"_onTimeOut")
+	add_child(timer)
 
 #装载技能
 func loadSkill(skill_data):

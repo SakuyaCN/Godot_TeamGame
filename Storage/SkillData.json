@@ -33,7 +33,7 @@
                 "item_count":-1,
                 "item_role":[1,2],
                 "scrpit_info":{
-                    "state_id":1000,
+                    "state_id":1001,
                     "state_name":"全体强化术",
                     "state_lv":1,
                     "state_time":10,
