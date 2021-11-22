@@ -10,34 +10,31 @@ onready var glod = $gold
 func _ready():
 	for data in 40:
 		var ins = invItem.instance()
+		ins.connect("pressed",self,"grid_child_pressed",[ins])
 		grid.add_child(ins)
 	visible = false
 	bagInit()
 
 func bagInit():
 	var index = 0
-	for data in StorageData.get_player_inventory():
-		grid.get_children()[index].setData(data,StorageData.get_player_inventory()[data])
-		grid.get_children()[index].connect("pressed",self,"grid_child_pressed",[data])
-		index+=1
-
-func bagReload():
-	var index = 0
-	for data in StorageData.get_player_inventory():
-		grid.get_children()[index].setData(data,StorageData.get_player_inventory()[data])
+	for data in 40:
+		if StorageData.get_player_inventory().size() > index:
+			grid.get_children()[index].setData(StorageData.get_player_inventory().keys()[index]
+			,StorageData.get_player_inventory().values()[index])
 		index+=1
 
 func bagChange(change):
 	visible = change
 	if visible:
 		glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] 
-		bagReload()
+		bagInit()
 
 func grid_child_pressed(data):
-	loadItem(data)
-	if !$Item.visible:
-		$Item.visible = true
-		player.play("item_show")
+	if data.inv_name != null:
+		loadItem(data.inv_name)
+		if !$Item.visible:
+			$Item.visible = true
+			player.play("item_show")
 
 func loadItem(_name):
 	var dataInfo = LocalData.all_data["goods"][_name]
