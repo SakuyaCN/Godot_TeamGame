@@ -33,6 +33,7 @@ func _process(_delta):
 #初始化战斗脚本
 func load_script(_is_moster):
 	is_alive = true
+	state_array.clear()
 	fight_role_array.clear()
 	do_atk_array.clear()
 	is_in_atk = false
@@ -42,6 +43,8 @@ func load_script(_is_moster):
 	role_data = get_parent().role_data
 	hero_attr = get_parent().hero_attr
 	atk_count = role_data.atk_count
+	is_blinding = false
+	is_weak = false
 
 #检查输出目标列表
 func checkFightRole():
@@ -146,10 +149,12 @@ func crit_hurt(_atk_attr:HeroAttrBean):
 
 #人物死亡
 func die():
+	is_in_atk = false
 	is_alive = false
+	get_parent().shape_2d.set_deferred("disabled",true)
+	get_parent().resetSkill()
 	get_tree().call_group("game_main","checkWin")
 	hero_sprite.play("Die")
-	is_in_atk = false
 
 #物理攻击吸血
 func atk_blood(num):
@@ -173,12 +178,18 @@ func _on_AnimatedSprite_animation_finished():
 #战斗时每帧
 func _on_AnimatedSprite_frame_changed():
 	if is_in_atk && hero_sprite.animation == "Atk" && hero_sprite.frame == (hero_sprite.frames.get_frame_count("Atk") * 0.7) as int:
-		if is_blinding && randf() <= 0.5:
-			get_parent()._show_damage_label("丢失目标",Utils.HurtType.OTHER)
-			return
-		for role in do_atk_array:
-			role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)
-		emit_signal("onAtkOver")
+		if get_parent().is_shoot:
+			get_parent().shotFireBall()
+		else:
+			doAtk()
+
+func doAtk():
+	if is_blinding && randf() <= 0.5:
+		get_parent()._show_damage_label("丢失目标",Utils.HurtType.OTHER)
+		return
+	for role in do_atk_array:
+		role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)
+	emit_signal("onAtkOver")
 
 func is_VERTIGO():
 	for item in state_array.values():

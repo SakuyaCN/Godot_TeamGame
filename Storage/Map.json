@@ -1,35 +1,142 @@
 {
     "密林之森": {
         "moster": "骷髅战士",
-        "moster_num":2,
+        "moster_num":1,
         "lv":1,
-        "max_progress":1000
+        "max_progress":300
     },
     "古老荒漠": {
-        "moster": "骷髅法师"
+        "moster": "阿努比斯",
+        "moster_num":2,
+        "lv":5,
+        "max_progress":1000
+        
     },
     "死寂之地": {
-        "moster": "骷髅法师"
+        "moster": "绿色僵尸",
+        "moster_num":3,
+        "lv":15,
+        "max_progress":2000
     },
     "荒凉戈壁": {
-        "moster": "骷髅法师"
+        "moster": "地狱犬",
+        "moster_num":3,
+        "lv":30,
+        "max_progress":3000
     },
     "自然边界": {
-        "moster": "骷髅法师"
+        "moster": "蝎尾怪",
+        "moster_num":3,
+        "lv":40,
+        "max_progress":4000
     },
     "风暴雪域": {
-        "moster": "骷髅法师"
+        "moster": "骷髅法师",
+        "moster_num":3,
+        "lv":50,
+        "max_progress":5000
     },
-    "all_attr": [
-        {
-            "hp": 1000000,
-            "atk": 5,
+    "all_attr": {
+        "骷髅战士":{
+            "hp": 100,
+            "atk": 15,
             "mtk": 5,
             "def": 5,
+            "speed": 300,
+            "crit": 50,
+            "mdef": 5
+        },
+        "阿努比斯":{
+            "hp": 350,
+            "atk": 35,
+            "mtk": 5,
+            "def": 8,
+            "speed": 500,
+            "crit": 50,
+            "mdef": 5
+        },
+        "绿色僵尸":{
+            "hp": 1050,
+            "atk": 155,
+            "mtk": 5,
+            "def": 8,
+            "speed": 800,
+            "crit": 5,
+            "mdef": 0
+        },
+        "地狱犬":{
+            "hp": 3500,
+            "atk": 420,
+            "mtk": 5,
+            "def": 10,
+            "speed": 1000,
+            "crit": 800,
+            "mdef": 0
+        },
+        "蝎尾怪":{
+            "hp": 11000,
+            "atk": 1500,
+            "mtk": 5,
+            "def": 8,
+            "speed": 1500,
+            "crit": 2500,
+            "mdef": 0
+        },
+        "骷髅法师":{
+            "hp": 50000,
+            "atk": 6000,
+            "mtk": 5,
+            "def": 8,
+            "speed": 2000,
+            "crit": 3600,
+            "mdef": 0
+        },
+        "地狱使者":{
+            "hp": 150,
+            "atk": 15,
+            "mtk": 5,
+            "def": 8,
             "speed": 5,
             "crit": 5,
             "mdef": 0
-        },{
+        },
+        "独眼触手":{
+            "hp": 150,
+            "atk": 15,
+            "mtk": 5,
+            "def": 8,
+            "speed": 5,
+            "crit": 5,
+            "mdef": 0
+        },
+        "元素铁拳":{
+            "hp": 150,
+            "atk": 15,
+            "mtk": 5,
+            "def": 8,
+            "speed": 5,
+            "crit": 5,
+            "mdef": 0
+        },
+        "哥布林之王":{
+            "hp": 150,
+            "atk": 15,
+            "mtk": 5,
+            "def": 8,
+            "speed": 5,
+            "crit": 5,
+            "mdef": 0
+        },
+        "恶魔蝙蝠":{
+            "hp": 150,
+            "atk": 15,
+            "mtk": 5,
+            "def": 8,
+            "speed": 5,
+            "crit": 5,
+            "mdef": 0
+        },
+        "恶魔领主":{
             "hp": 150,
             "atk": 15,
             "mtk": 5,
@@ -38,5 +145,5 @@
             "crit": 5,
             "mdef": 0
         }
-    ]
+    }
 }

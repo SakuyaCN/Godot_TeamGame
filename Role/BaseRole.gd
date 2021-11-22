@@ -3,15 +3,21 @@ extends Node2D
 class_name BaseRole
 
 onready var float_number = preload("res://Effect/FloatNumber.tscn")
+onready var fire_ball = preload("res://Effect/Projectile.tscn")
 
+onready var shape_2d = $StaticBody2D/CollisionShape2D
 var role_data:Dictionary#角色信息
 var index = 0
 var is_position = false
 var is_moster = false
 var run_position = Vector2.ZERO
 
+var enemy_array # 敌人数组
+var myself_array #自己人数组
+
 var hero_attr:HeroAttrBean
 var hero_skill = {}
+var is_shoot = false
 
 onready var ui = $RoleUI
 
@@ -79,6 +85,8 @@ func load_asset():
 			animatedSprite.flip_h = role_data["node"].flip_h
 			animatedSprite.position.y = role_data["node"].pos_y
 			animatedSprite.scale = Vector2(role_data["node"].scale,role_data["node"].scale)
+			if role_data["node"].has("shoot"):
+				is_shoot = true
 			$RoleUI/name.rect_position.y = role_data["node"].pos_y / 4
 			$RoleUI/name.set("custom_colors/font_outline_modulate",Color.palevioletred)
 	animatedSprite.animation = "Idle"
@@ -128,11 +136,13 @@ func loadRoleSkill():
 
 #玩家状态重置
 func role_reset():
+	shape_2d.set_deferred("disabled",false)
 	resetSkill()
+	ui.removeAll()
+	fight_script.do_stop()
 	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
 	ui.initRole()
 	reloadHpBar()
-	fight_script.do_stop()
 	am_player.play_backwards("show_bar")
 	animatedSprite.play("Run")
 
@@ -151,6 +161,18 @@ func resetSkill():
 		item.queue_free()
 	skill_node.get_children().clear()
 
+func shotFireBall():
+	var is_left = Vector2.LEFT
+	if !is_moster:
+		is_left = Vector2.RIGHT
+	var projectile_vector: Vector2 = (is_left * 500).rotated($ShotLine.global_rotation)
+	var ins = fire_ball.instance()
+	$ShotLine.add_child(ins)
+	var is_line 
+	if is_moster && role_data["node"].has("line"):
+		is_line = role_data["node"]["line"]
+	ins.shoot(self,$ShotLine.global_position,projectile_vector,1500,100,100,is_line)
+
 #添加状态
 func addState(state:SkillStateBean,state_node:BaseState):
 	if fight_script.state_array.has(state.state_id):
@@ -168,26 +190,34 @@ func removeState(id):
 	fight_script.state_array.erase(id)
 
 #展示血条 双方全部进场
-func show_bar(_enemy_array,myself_array):
+func show_bar(_enemy_array,_myself_array):
 	if am_player.is_playing():
 		yield(am_player,"animation_finished")
+	loadRoleSkill()
 	am_player.play("show_bar")
 	fight_script.setFightRole(_enemy_array)
+	enemy_array = _enemy_array
+	myself_array = _myself_array
+
+#战斗开始触发技能
+func skillStart():
 	for skill in hero_skill:
 		skill_node.add_child(hero_skill[skill])
-		hero_skill[skill].loadRoleArray(_enemy_array,myself_array,self,skill_script)
+		hero_skill[skill].loadRoleArray(enemy_array,myself_array,self,skill_script)
 		hero_skill[skill].skillStart()
 	
 #开始战斗
 func start_fight():
+	skillStart()
 	fight_script.do_atk()
 	for skill in hero_skill:
 		hero_skill[skill].skillIng()
 
-#战斗胜利
-func fight_win():
+#战斗结束
+func fight_over():
 	fight_script.is_in_atk = false
 	animatedSprite.play("Idle")
+	#role_reset()
 
 #刷新血条信息
 func reloadHpBar():

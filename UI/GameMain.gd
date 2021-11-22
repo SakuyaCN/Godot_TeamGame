@@ -94,6 +94,7 @@ func go_position():
 func _on_Timer_timeout():
 	mapProgress()
 
+#怪物进入
 func moster_join():
 	var map_info = LocalData.map_data[map_name]
 	var moster_name = map_info.moster
@@ -101,10 +102,9 @@ func moster_join():
 	var moster_data = {
 		"nickname":moster_name,
 		"job":"moster",
-		#"lv":1+player_map,
-		"lv":50,
+		"lv":map_info.lv,
 		"atk_count":moster_info.atk_count,
-		"attr":LocalData.map_data["all_attr"][StorageData.storage_data["player_state"]["now_map"]],
+		"attr":mosterAttr(moster_name),
 		"equ":{},
 		"skill":{},
 		"node":moster_info
@@ -115,10 +115,20 @@ func moster_join():
 		var new_hero = role.instance()
 		moster_array.append(new_hero)
 		moster_pos.get_children()[index].add_child(new_hero)
-		new_hero.set_role(moster_data)
+		new_hero.set_role(moster_data.duplicate())
 		new_hero.setIndex(index)
 		new_hero.run2position(moster_pos.get_children()[index])
 		yield(get_tree().create_timer(0.7),"timeout")
+
+func mosterAttr(_name):
+	var attr = LocalData.map_data["all_attr"][_name]
+	var new_attr = {}
+	for item in attr:
+		if item != "def" || item != "mdef":
+			new_attr[item] = attr[item]
+		else:
+			new_attr[item] = attr[item]+ (attr[item] * game_progress.value / 1000.0) as int
+	return new_attr
 
 #检查胜利方
 func checkWin():
@@ -131,10 +141,10 @@ func checkWin():
 		if player.fight_script.is_alive:
 			is_moster_win = false
 	if is_player_win:
-		get_tree().call_group("player_role","fight_win")
+		get_tree().call_group("player_role","fight_over")
 		ConstantsValue.ui_layer.fight_win()
 	if is_moster_win:
-		get_tree().call_group("moster_role","fight_win")
+		get_tree().call_group("moster_role","fight_over")
 		ConstantsValue.ui_layer.fight_fail()
 
 func game_reset():

@@ -62,7 +62,3 @@ func time_out():
 
 func time_tick():
 	pass
-
-func _exit_tree():
-	if is_instance_valid(state_bean):
-		get_tree().queue_delete(state_bean)

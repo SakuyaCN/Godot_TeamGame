@@ -94,7 +94,7 @@ func checkGoodsNum(array):
 	for item in array:
 		if !get_player_inventory().has(item[0]):
 			return false
-		elif get_player_inventory()[item[0]][0] < item[1]:
+		elif get_player_inventory()[item[0]] < item[1]:
 			is_true = false
 	return is_true
 
@@ -102,7 +102,9 @@ func checkGoodsNum(array):
 func AddGoodsNum(array):
 	for item in array:
 		if get_player_inventory().has(item[0]) && item[1] > 0:
-			get_player_inventory()[item[0]][0] += item[1]
+			get_player_inventory()[item[0]] += item[1]
+		else:
+			get_player_inventory()[item[0]] = item[1]
 	_save_storage()
 
 #使用背包道具
@@ -110,9 +112,11 @@ func UseGoodsNum(array):
 	if checkGoodsNum(array):
 		for item in array:
 			if get_player_inventory().has(item[0]) && item[1] > 0:
-				get_player_inventory()[item[0]][0] -= item[1]
-				if get_player_inventory()[item[0]][0] == 0:
+				get_player_inventory()[item[0]] -= item[1]
+				if get_player_inventory()[item[0]] == 0:
 					get_player_inventory().erase(item[0])
 		_save_storage()
+		return true
 	else:
 		ConstantsValue.ui_layer.showMessage("背包道具不足！",1)
+		return false

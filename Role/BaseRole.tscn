@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Texture/Pre-made characters/Boxer.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Texture/Moster/Zombie.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Role/BaseRole.gd" type="Script" id=2]
 [ext_resource path="res://Role/FightScript/FightScript.gd" type="Script" id=3]
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Role/RoleUI.gd" type="Script" id=9]
 [ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=10]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=11]
-[ext_resource path="res://Role/Test.gd" type="Script" id=13]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -175,6 +174,9 @@ outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 4 )
 
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 16.5, 86.4365 )
+
 [node name="BaseRole" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -187,11 +189,10 @@ script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( 0, -70 )
+position = Vector2( -16, -62 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 2
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
@@ -200,6 +201,9 @@ scale = Vector2( 2, 2 )
 frames = SubResource( 7 )
 animation = "hit"
 playing = true
+
+[node name="ShotLine" type="Position2D" parent="."]
+position = Vector2( -48, -80 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/choose = SubResource( 8 )
@@ -560,7 +564,12 @@ __meta__ = {
 }
 
 [node name="Test" type="Node" parent="."]
-script = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.5, -89.0357 )
+shape = SubResource( 13 )
 
 [connection signal="tree_exited" from="." to="." method="_on_BaseRole_tree_exited"]
 [connection signal="animation_finished" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_animation_finished"]

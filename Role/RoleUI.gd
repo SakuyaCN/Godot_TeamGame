@@ -68,3 +68,9 @@ func removeBuffImage(id):
 	if array_item_skill.has(id):
 		get_tree().queue_delete(array_item_skill[id])
 		array_item_skill.erase(id)
+
+func removeAll():
+	for item in $BuffList.get_children():
+		item.queue_free()
+	$BuffList.get_children().clear()
+	array_item_skill.clear()

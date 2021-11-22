@@ -21,10 +21,17 @@ func bagInit():
 		grid.get_children()[index].connect("pressed",self,"grid_child_pressed",[data])
 		index+=1
 
+func bagReload():
+	var index = 0
+	for data in StorageData.get_player_inventory():
+		grid.get_children()[index].setData(data,StorageData.get_player_inventory()[data])
+		index+=1
+
 func bagChange(change):
 	visible = change
 	if visible:
 		glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] 
+		bagReload()
 
 func grid_child_pressed(data):
 	loadItem(data)

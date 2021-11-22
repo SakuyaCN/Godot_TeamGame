@@ -116,6 +116,6 @@ func get_context_label(type,data):
 			$NinePatchRect3/context.append_bbcode(LocalData.all_data["goods"][data.name].info)
 
 func _on_Button_pressed():
-	print(StorageData.UseGoodsNum(choose_data.need))
-	#EquUtils.createNewEqu(choose_data,choose_type)
-	#ConstantsValue.ui_layer.getNewItem(choose_data.name,choose_data.img)
+	#print(StorageData.UseGoodsNum(choose_data.need))
+	EquUtils.createNewEqu(choose_data,choose_type)
+	ConstantsValue.ui_layer.getNewItem(choose_data.name,choose_data.img)
