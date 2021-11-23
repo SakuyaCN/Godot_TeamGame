@@ -3,46 +3,52 @@
         "moster": "骷髅战士",
         "moster_num":1,
         "lv":1,
-        "max_progress":300
+        "max_progress":200,
+        "boss":"哥布林之王"
     },
     "古老荒漠": {
         "moster": "阿努比斯",
         "moster_num":2,
         "lv":5,
-        "max_progress":1000
+        "max_progress":300,
+        "boss":"元素铁拳"
         
     },
     "死寂之地": {
         "moster": "绿色僵尸",
         "moster_num":3,
         "lv":15,
-        "max_progress":2000
+        "max_progress":600,
+        "boss":"地狱使者"
     },
     "荒凉戈壁": {
         "moster": "地狱犬",
         "moster_num":3,
         "lv":30,
-        "max_progress":3000
+        "max_progress":1000,
+        "boss":"独眼触手"
     },
     "自然边界": {
         "moster": "蝎尾怪",
         "moster_num":3,
         "lv":40,
-        "max_progress":4000
+        "max_progress":2000,
+        "boss":"恶魔蝙蝠"
     },
     "风暴雪域": {
         "moster": "骷髅法师",
         "moster_num":3,
         "lv":50,
-        "max_progress":5000
+        "max_progress":4000,
+        "boss":"恶魔领主"
     },
     "all_attr": {
         "骷髅战士":{
-            "hp": 100,
-            "atk": 15,
+            "hp": 80,
+            "atk": 10,
             "mtk": 5,
             "def": 5,
-            "speed": 300,
+            "speed": 100,
             "crit": 50,
             "mdef": 5
         },
@@ -51,7 +57,7 @@
             "atk": 35,
             "mtk": 5,
             "def": 8,
-            "speed": 500,
+            "speed": 200,
             "crit": 50,
             "mdef": 5
         },
@@ -60,7 +66,7 @@
             "atk": 155,
             "mtk": 5,
             "def": 8,
-            "speed": 800,
+            "speed": 400,
             "crit": 5,
             "mdef": 0
         },
@@ -69,7 +75,7 @@
             "atk": 420,
             "mtk": 5,
             "def": 10,
-            "speed": 1000,
+            "speed": 600,
             "crit": 800,
             "mdef": 0
         },
@@ -78,7 +84,7 @@
             "atk": 1500,
             "mtk": 5,
             "def": 8,
-            "speed": 1500,
+            "speed": 1000,
             "crit": 2500,
             "mdef": 0
         },
@@ -87,63 +93,63 @@
             "atk": 6000,
             "mtk": 5,
             "def": 8,
-            "speed": 2000,
+            "speed": 2500,
             "crit": 3600,
             "mdef": 0
         },
-        "地狱使者":{
-            "hp": 150,
-            "atk": 15,
+        "哥布林之王":{
+            "hp": 350,
+            "atk": 55,
             "mtk": 5,
-            "def": 8,
-            "speed": 5,
-            "crit": 5,
-            "mdef": 0
-        },
-        "独眼触手":{
-            "hp": 150,
-            "atk": 15,
-            "mtk": 5,
-            "def": 8,
-            "speed": 5,
-            "crit": 5,
-            "mdef": 0
+            "def": 30,
+            "speed": 300,
+            "crit": 200,
+            "mdef": 30
         },
         "元素铁拳":{
-            "hp": 150,
-            "atk": 15,
+            "hp": 1550,
+            "atk": 115,
             "mtk": 5,
-            "def": 8,
-            "speed": 5,
-            "crit": 5,
-            "mdef": 0
+            "def": 60,
+            "speed": 300,
+            "crit": 500,
+            "mdef": 60
         },
-        "哥布林之王":{
-            "hp": 150,
-            "atk": 15,
+        "地狱使者":{
+            "hp": 5550,
+            "atk": 645,
             "mtk": 5,
-            "def": 8,
-            "speed": 5,
-            "crit": 5,
-            "mdef": 0
+            "def": 60,
+            "speed": 500,
+            "crit": 500,
+            "mdef": 60
+        },
+        "独眼触手":{
+            "hp": 21000,
+            "atk": 1500,
+            "mtk": 5,
+            "def": 60,
+            "speed": 800,
+            "crit": 1000,
+            "mdef": 60
         },
         "恶魔蝙蝠":{
-            "hp": 150,
-            "atk": 15,
+            "hp": 60000,
+            "atk": 3000,
             "mtk": 5,
-            "def": 8,
-            "speed": 5,
-            "crit": 5,
-            "mdef": 0
+            "def": 65,
+            "speed": 1500,
+            "crit": 2000,
+            "mdef": 65
         },
         "恶魔领主":{
-            "hp": 150,
-            "atk": 15,
+            "hp": 350000,
+            "atk": 15000,
             "mtk": 5,
-            "def": 8,
-            "speed": 5,
-            "crit": 5,
-            "mdef": 0
+            "def": 70,
+            "speed": 5000,
+            "crit": 3500,
+            "mdef": 70
         }
     }
 }

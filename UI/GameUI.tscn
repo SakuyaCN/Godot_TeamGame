@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://Texture/hud/Icons_34.png" type="Texture" id=28]
 [ext_resource path="res://UI/ControlUI/BuildUI.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=30]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_09.png" type="Texture" id=31]
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=36]
 
 [sub_resource type="DynamicFont" id=1]
@@ -154,6 +155,11 @@ outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 4
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=25]
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=17]
 size = 42
 outline_size = 6
@@ -247,6 +253,7 @@ __meta__ = {
 }
 
 [node name="LoginUI" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -257,13 +264,15 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="LoginUI"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-margin_left = -219.0
-margin_top = 104.0
-margin_right = 219.0
-margin_bottom = 161.0
+anchor_bottom = 0.5
+margin_left = -180.5
+margin_top = -172.5
+margin_right = 180.5
+margin_bottom = -115.5
 custom_fonts/font = SubResource( 1 )
-text = "冒险队模拟器"
+text = "冒险模拟器"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -851,6 +860,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="title" type="NinePatchRect" parent="MainUi"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -88.0
+margin_right = 88.0
+margin_bottom = 40.0
+texture = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MainUi/title"]
+margin_right = 176.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 25 )
+text = "当前关卡：5"
+align = 1
+valign = 1
+
 [node name="MapUi" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -869,7 +897,9 @@ margin_left = -644.5
 margin_top = -288.0
 margin_right = 644.5
 margin_bottom = 288.0
+rect_scale = Vector2( 1e-05, 1 )
 rect_pivot_offset = Vector2( 648.995, 299.699 )
+mouse_filter = 0
 texture = ExtResource( 13 )
 patch_margin_left = 16
 patch_margin_top = 16
@@ -914,6 +944,7 @@ __meta__ = {
 anims/show = SubResource( 18 )
 
 [node name="TextureButton" type="TextureButton" parent="MapUi"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 1237.52
 margin_top = 11.3716
 margin_right = 1326.52

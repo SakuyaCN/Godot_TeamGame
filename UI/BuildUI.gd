@@ -47,7 +47,6 @@ func loadBuildType(type):
 
 #顶部类型点击
 func loadBuildTypeData(type,array,top_type):
-	print(top_type)
 	if $NinePatchRect3.visible && !$AnimationPlayer.is_playing():
 		$AnimationPlayer.play_backwards("show")
 	for item in $NinePatchRect2/ScrollContainer/GridContainer.get_children():
@@ -98,18 +97,18 @@ func _on_ColorRect_gui_input(event):
 func get_context_label(type,data):
 	$NinePatchRect3/context.clear()
 	match type:
-		"基础装备":
+		"基础装备", "神话套装":
 			$NinePatchRect3/context.append_bbcode("炼制出的装备属性浮动：\n")
 			if data.keys().has("attr"):
 				for attr in data.attr:
 					$NinePatchRect3/context.append_bbcode(EquUtils.get_attr_string(attr))
-					$NinePatchRect3/context.append_bbcode(" %s - %s" %[data.attr[attr][0],data.attr[attr][1]])
+					$NinePatchRect3/context.append_bbcode(" %s - %s" %[data.attr[attr][0],(data.attr[attr][1] * EquUtils.getQualityBs("S++") )as int])
 					$NinePatchRect3/context.append_bbcode("\n")
 			if data.keys().has("ys_attr"):
 				for attr in data.ys_attr:
 					$NinePatchRect3/context.append_bbcode("[color=%s]" %EquUtils.get_ys_color_string(attr))
 					$NinePatchRect3/context.append_bbcode(EquUtils.get_ys_string(attr))
-					$NinePatchRect3/context.append_bbcode(" %s - %s" %[data.ys_attr[attr][0],data.ys_attr[attr][1]])
+					$NinePatchRect3/context.append_bbcode(" %s - %s" %[data.ys_attr[attr][0],(data.ys_attr[attr][1] * EquUtils.getQualityBs("S++") )as int])
 					$NinePatchRect3/context.append_bbcode("\n")
 		"材料":
 			$NinePatchRect3/context.append_bbcode("道具简介：\n")
@@ -117,5 +116,6 @@ func get_context_label(type,data):
 
 func _on_Button_pressed():
 	#print(StorageData.UseGoodsNum(choose_data.need))
-	EquUtils.createNewEqu(choose_data,choose_type)
-	ConstantsValue.ui_layer.getNewItem(choose_data.name,choose_data.img)
+	if StorageData.UseGoodsNum(choose_data.need):
+		var equ = EquUtils.createNewEqu(choose_data,choose_type)
+		ConstantsValue.ui_layer.getNewItem(choose_data.name,choose_data.img,equ.quality)

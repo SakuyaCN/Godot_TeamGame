@@ -57,31 +57,56 @@ func get_ys_string(attr):
 		"wind": return "风属性"
 		"posion": return "毒属性"
 
+func createQuality():
+	var rand = randf()
+	if rand >= 0.6:
+		 return "C级"
+	elif rand >= 0.35 && rand<0.6:
+		 return "B级"
+	elif rand >= 0.2 && rand<0.35:
+		 return "A级"
+	elif rand >= 0.1 && rand<0.2:
+		 return "S级"
+	elif rand >= 0.01 && rand<0.1:
+		 return "S++"
+	else:
+		return "C级"
+
+func getQualityBs(ys):
+	match ys:
+		"S++": return 1.3
+		"S级": return 1.2
+		"A级": return 1.1
+		"B级": return 1.05
+		"C级": return 1
+
 #生成一件新装备
 func createNewEqu(data,type):
 	var id = str(OS.get_system_time_msecs() + randi()%1000+1)
+	var qualityBs = createQuality()
 	var base_attr = []
 	var ys_attr = []
 	if data.keys().has("attr"):
 		for base in data.attr:
 			base_attr.append({
-				base:rand_range(data.attr[base][0],data.attr[base][1]) as int
+				base:(rand_range(data.attr[base][0],data.attr[base][1]) * getQualityBs(qualityBs)) as int
 			})
 	if data.keys().has("ys_attr"):
 		for base in data.ys_attr:
 			ys_attr.append({
-				base:rand_range(data.ys_attr[base][0],data.ys_attr[base][1]) as int
+				base:(rand_range(data.ys_attr[base][0],data.ys_attr[base][1]) * getQualityBs(qualityBs))as int 
 			})
 	var equData = {
 		"id":id,
 		"name":data.name,
 		"lv":data.lv,
 		"image":data.img,
-		"quality":"A级",
+		"quality":qualityBs,
 		"type":type,
 		"is_on":false,
 		"base_attr":base_attr,
-		"ys_attr":ys_attr
+		"ys_attr":ys_attr,
+		"qh":0
 	}
 	StorageData.addEqutoBag(equData)
 	return equData

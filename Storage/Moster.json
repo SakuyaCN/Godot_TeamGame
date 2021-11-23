@@ -11,49 +11,7 @@
                 "gold":5
             },
             "goods":[
-                ["红色岩石",1]
-            ]
-        }
-    },
-    "骷髅法师":{
-        "line":"default",
-        "shoot":true,
-        "frames":"res://Texture/Moster/SkeletonMage.tres",
-        "scale":4,
-        "pos_y":-80,
-        "flip_h":true,
-        "atk_count":2,
-        "goods":[]
-    },
-    "绿色僵尸":{
-        "frames":"res://Texture/Moster/Zombie.tres",
-        "scale":3,
-        "pos_y":-62,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":5,
-                "gold":5
-            },
-            "goods":[
-                ["红色岩石",1]
-            ]
-        }
-    },
-    "地狱犬":{
-        "frames":"res://Texture/Moster/Hellhound.tres",
-        "scale":3,
-        "pos_y":-62,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":5,
-                "gold":5
-            },
-            "goods":[
-                ["红色岩石",1]
+                ["红色陨铁",1,2]
             ]
         }
     },
@@ -65,11 +23,46 @@
         "atk_count":1,
         "win_data":{
             "other":{
-                "exp":5,
-                "gold":5
+                "exp":15,
+                "gold":15
             },
             "goods":[
-                ["红色岩石",1]
+                ["红色陨铁",2,4],
+                ["绿色陨铁",1,2]
+            ]
+        }
+    },
+    "绿色僵尸":{
+        "frames":"res://Texture/Moster/Zombie.tres",
+        "scale":3,
+        "pos_y":-62,
+        "flip_h":false,
+        "atk_count":1,
+        "win_data":{
+            "other":{
+                "exp":25,
+                "gold":25
+            },
+            "goods":[
+                ["红色陨铁",4,6],
+                ["绿色陨铁",2,3]
+            ]
+        }
+    },
+    "地狱犬":{
+        "frames":"res://Texture/Moster/Hellhound.tres",
+        "scale":3,
+        "pos_y":-62,
+        "flip_h":false,
+        "atk_count":1,
+        "win_data":{
+            "other":{
+                "exp":35,
+                "gold":35
+            },
+            "goods":[
+                ["红色陨铁",6,8],
+                ["绿色陨铁",4,6]
             ]
         }
     },
@@ -83,11 +76,31 @@
         "atk_count":1,
         "win_data":{
             "other":{
-                "exp":5,
-                "gold":5
+                "exp":45,
+                "gold":45
             },
             "goods":[
-                ["红色岩石",1]
+                ["红色陨铁",8,12],
+                ["绿色陨铁",6,8]
+            ]
+        }
+    },
+    "骷髅法师":{
+        "line":"default",
+        "shoot":true,
+        "frames":"res://Texture/Moster/SkeletonMage.tres",
+        "scale":4,
+        "pos_y":-80,
+        "flip_h":true,
+        "atk_count":2,
+        "win_data":{
+            "other":{
+                "exp":60,
+                "gold":60
+            },
+            "goods":[
+                ["红色陨铁",12,15],
+                ["绿色陨铁",9,12]
             ]
         }
     },
@@ -101,11 +114,12 @@
         "atk_count":1,
         "win_data":{
             "other":{
-                "exp":5,
-                "gold":5
+                "exp":100,
+                "gold":100
             },
             "goods":[
-                ["红色岩石",1]
+                ["红色陨铁",15,25],
+                ["绿色陨铁",5,15]
             ]
         }
     },
@@ -119,11 +133,12 @@
         "atk_count":1,
         "win_data":{
             "other":{
-                "exp":5,
-                "gold":5
+                "exp":100,
+                "gold":100
             },
             "goods":[
-                ["红色岩石",1]
+                ["红色陨铁",20,30],
+                ["绿色陨铁",10,20]
             ]
         }
     },
@@ -137,11 +152,12 @@
         "atk_count":1,
         "win_data":{
             "other":{
-                "exp":5,
-                "gold":5
+                "exp":100,
+                "gold":100
             },
             "goods":[
-                ["红色岩石",1]
+                ["红色陨铁",10,15],
+                ["绿色陨铁",10,15]
             ]
         }
     },
@@ -153,11 +169,11 @@
         "atk_count":1,
         "win_data":{
             "other":{
-                "exp":5,
-                "gold":5
+                "exp":100,
+                "gold":100
             },
             "goods":[
-                ["红色岩石",1]
+                ["红色岩石",5,15]
             ]
         }
     },
@@ -171,11 +187,12 @@
         "atk_count":1,
         "win_data":{
             "other":{
-                "exp":5,
-                "gold":5
+                "exp":100,
+                "gold":100
             },
             "goods":[
-                ["红色岩石",1]
+                ["秘银矿石",10,12],
+                ["绿色陨铁",25,50]
             ]
         }
     },
@@ -187,11 +204,12 @@
         "atk_count":1,
         "win_data":{
             "other":{
-                "exp":5,
-                "gold":5
+                "exp":100,
+                "gold":100
             },
             "goods":[
-                ["红色岩石",1]
+                ["秘银矿石",10,15],
+                ["青岚铁矿",5,15]
             ]
         }
     }

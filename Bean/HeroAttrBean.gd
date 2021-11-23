@@ -62,8 +62,7 @@ func setEquAttrBean(role_data):
 	#加载武器基础数据
 	for equ in role_data["equ"]:
 		var equ_data = StorageData.get_player_equipment()[str(role_data["equ"][equ])]
-		#基础属性
-		for base_attr_item in equ_data["base_attr"]:
+		for base_attr_item in equ_data["base_attr"]:#基础属性
 			match base_attr_item.keys()[0]:
 				"hp": hp += base_attr_item.values()[0]
 				"atk": atk += base_attr_item.values()[0]
@@ -88,8 +87,7 @@ func setEquAttrBean(role_data):
 				"uncrit": uncrit += base_attr_item.values()[0]
 				"hurt_buff": uncrit += base_attr_item.values()[0]
 				"crit_buff" :crit_buff += base_attr_item.values()[0]
-		#元素属性
-		for base_attr_item in equ_data["ys_attr"]:
+		for base_attr_item in equ_data["ys_attr"]:#元素属性
 			match base_attr_item.keys()[0]:
 				"fire": fire += base_attr_item.values()[0]
 				"wind": wind += base_attr_item.values()[0]

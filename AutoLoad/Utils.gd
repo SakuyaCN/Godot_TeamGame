@@ -10,6 +10,7 @@ enum HurtType{
 	HOLD = 5#格挡
 	CRIT = 6#暴击
 	COUTINUED = 7#持续伤害
+	EXP = 8#经验
 }
 
 enum BuffModeEnum{
@@ -215,4 +216,4 @@ func get_time_string(s):
 		return str(stepify(s as float/3600, 0.1)) +"小时"
 
 func get_up_lv_exp(role_lv:int):
-	return role_lv  * (role_lv * (role_lv * 2))+ 10
+	return role_lv * (role_lv * (role_lv * 2))+ 10

@@ -62,6 +62,13 @@
             "info":"S级材料，适用于炼金台制作各种道具！",
             "lv":1,
             "type":"material"
+        },
+        "基础强化石":{
+            "name":"基础强化石",
+            "image":"res://Texture/Data/d1/Icon25.png",
+            "info":"可用于装备基础属性强化，每次强化需要1枚强化石，每次强化提高1%的属性，每件总计可以强化10次",
+            "lv":1,
+            "type":"material"
         }
     },
     "skill":{

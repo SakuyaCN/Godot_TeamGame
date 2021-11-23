@@ -9,6 +9,8 @@ func _ready():
 func UIchange(change):
 	visible = change
 	$Fight_btn.visible = change
+	if visible && check_auto.pressed:
+		_on_startFight_pressed()
 
 #战斗开始点击
 func _on_startFight_pressed():

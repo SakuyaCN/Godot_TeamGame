@@ -21,7 +21,7 @@ func reloadData():
 	
 func _read_storage():
 	var storage_data_file = File.new()
-	var err = storage_data_file.open("user://Storages.json",File.READ)
+	var err = storage_data_file.open("user://Storages_test.json",File.READ)
 	if err == OK:
 		storage_data = JSON.parse(storage_data_file.get_as_text()).result
 		is_read_storage = true
@@ -29,7 +29,7 @@ func _read_storage():
 
 func _save_storage():
 	var storage_data_file = File.new()
-	var _err = storage_data_file.open("user://Storages.json",File.WRITE)
+	var _err = storage_data_file.open("user://Storages_test.json",File.WRITE)
 	storage_data_file.store_string(to_json(storage_data))
 	storage_data_file.close()
 
@@ -105,6 +105,8 @@ func AddGoodsNum(array):
 			get_player_inventory()[item[0]] += item[1]
 		else:
 			get_player_inventory()[item[0]] = item[1]
+		ConstantsValue.ui_layer.getNewItem(item[0],LocalData.all_data["goods"][item[0]].image)
+	get_tree().call_group("bag_ui","bagInit")
 	_save_storage()
 
 #使用背包道具
@@ -116,6 +118,7 @@ func UseGoodsNum(array):
 				if get_player_inventory()[item[0]] == 0:
 					get_player_inventory().erase(item[0])
 		_save_storage()
+		get_tree().call_group("bag_ui","bagInit")
 		return true
 	else:
 		ConstantsValue.ui_layer.showMessage("背包道具不足！",1)

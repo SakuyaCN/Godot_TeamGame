@@ -12,8 +12,7 @@ var state_over :bool#状态持续时间是否叠加
 var state_other = {}#状态其他信息
 
 func _create(dict:Dictionary):
-	if dict.has("state_id"):
-		state_id = str(dict["state_id"])
+	state_id = str(OS.get_system_time_msecs()+ randi()%10000)
 	if dict.has("state_name"):
 		state_name = dict["state_name"]
 	if dict.has("state_num"):

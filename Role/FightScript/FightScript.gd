@@ -8,6 +8,7 @@ onready var role_data#当前人物数据
 onready var hero_attr:HeroAttrBean#当前人物属性
 onready var is_in_atk = false #是否处于攻击动作
 
+var speed_temp = 0
 var is_alive = true#是否存活
 var is_moster = false#是否为怪物
 var is_blinding = false #是否为致盲状态
@@ -45,6 +46,8 @@ func load_script(_is_moster):
 	atk_count = role_data.atk_count
 	is_blinding = false
 	is_weak = false
+	if speed_temp == 0:
+		speed_temp = hero_sprite.frames.get_animation_speed("Atk") 
 
 #检查输出目标列表
 func checkFightRole():
@@ -69,7 +72,7 @@ func checkState():
 #普攻触发
 func do_atk():
 	#设定人物攻击频率
-	hero_sprite.frames.set_animation_speed("Atk",(hero_sprite.frames.get_animation_speed("Atk") + (hero_attr.speed / 100.0)))
+	hero_sprite.frames.set_animation_speed("Atk",(speed_temp+ (hero_attr.speed / 100.0)))
 	#hero_sprite.play("Atk")
 	is_in_atk = true
 	set_process(true)
@@ -149,12 +152,13 @@ func crit_hurt(_atk_attr:HeroAttrBean):
 
 #人物死亡
 func die():
-	is_in_atk = false
-	is_alive = false
-	get_parent().shape_2d.set_deferred("disabled",true)
-	get_parent().resetSkill()
-	get_tree().call_group("game_main","checkWin")
-	hero_sprite.play("Die")
+	if is_alive:
+		is_in_atk = false
+		is_alive = false
+		hero_sprite.play("Die")
+		get_parent().shape_2d.set_deferred("disabled",true)
+		get_parent().resetSkill()
+		get_tree().call_group("game_main","checkWin")
 
 #物理攻击吸血
 func atk_blood(num):

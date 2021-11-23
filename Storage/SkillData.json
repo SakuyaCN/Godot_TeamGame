@@ -1,46 +1,68 @@
 {
-    "测试技能":{
+    "初级强身术":{
         "skill_id":1,
-        "skill_name":"全体强化术",
+        "skill_name":"初级强身术",
         "skill_lv":1,
-        "skill_img":"",
-        "skill_info":"开始战斗前提高自身攻击50点，生命值200点,持续10秒",
+        "skill_img":"res://Texture/skill/buff/1.png",
+        "skill_info":"开始战斗立刻自身攻击20点，生命值100点,持续5秒",
         "skill_start":[
             {
                 "item_script":"res://Role/Skill/BaseState/Buff.gd",
                 "item_odds_type":1,
                 "item_odds":100,
-                "item_count":-1,
-                "item_role":[1,2],
+                "item_count":1,
+                "item_role":[0],
                 "scrpit_info":{
-                    "state_id":1000,
-                    "state_name":"全体强化术",
+                    "state_name":"攻击提升",
                     "state_lv":1,
-                    "state_time":10,
+                    "state_time":5,
                     "state_type":"atk",
                     "state_mold":0,
-                    "state_num":1000,
+                    "state_num":20,
                     "state_img":"res://Texture/skill/buff/1.png",
                     "sate_over":false
                 }
-            }
-        ],
-        "skill_ing":[
+            },
             {
                 "item_script":"res://Role/Skill/BaseState/Buff.gd",
-                "item_odds_type":2,
+                "item_odds_type":1,
                 "item_odds":100,
-                "item_count":-1,
-                "item_role":[1,2],
+                "item_count":1,
+                "item_role":[0],
                 "scrpit_info":{
-                    "state_id":1001,
-                    "state_name":"全体强化术",
+                    "state_name":"血量提升",
+                    "state_lv":1,
+                    "state_time":5,
+                    "state_type":"hp",
+                    "state_mold":0,
+                    "state_num":100,
+                    "state_img":"res://Texture/skill/buff/2.png",
+                    "sate_over":false
+                }
+            }
+        ]
+    },
+    "初级体魄术":{
+        "skill_id":2,
+        "skill_name":"初级体魄术",
+        "skill_lv":1,
+        "skill_img":"",
+        "skill_info":"开始战斗立刻自身生命值200点,持续7秒",
+        "skill_start":[
+            {
+                "item_script":"res://Role/Skill/BaseState/Buff.gd",
+                "item_odds_type":1,
+                "item_odds":100,
+                "item_count":1,
+                "item_role":[0],
+                "scrpit_info":{
+                    "state_name":"血量提升",
                     "state_lv":1,
                     "state_time":10,
-                    "state_type":"atk",
+                    "state_type":"hp",
                     "state_mold":0,
-                    "state_num":1000,
-                    "state_img":"res://Texture/skill/buff/1.png",
+                    "state_num":200,
+                    "state_img":"res://Texture/skill/buff/2.png",
                     "sate_over":false
                 }
             }

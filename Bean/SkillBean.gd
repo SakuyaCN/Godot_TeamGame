@@ -21,7 +21,6 @@ var enemy_array = [] #敌人队伍
 
 var timer = Timer.new()
 
-
 func _ready():
 	timer.one_shot = false
 	timer.connect("timeout",self,"_onTimeOut")
@@ -100,9 +99,11 @@ func chooseRole(skill:SkillItemBean):
 		if index > 0:
 			if myself_array.size() > (index-1):
 				doSkillItemScript(myself_array[index-1],skill)
-		else:
+		elif index < 0:
 			if enemy_array.size() > (index-1):
 				doSkillItemScript(enemy_array[abs(index)-1],skill)
+		else:
+			doSkillItemScript(myself,skill)
 
 #运行技能附带脚本
 func doSkillItemScript(role:Node,skill:SkillItemBean):
@@ -131,3 +132,8 @@ func loadItemSkill(skill_data):
 			var item_bean = SkillItemBean.new()
 			item_bean._create(data)
 			skill_end.append(item_bean)
+
+func _exit():
+	print("exit")
+	myself.fight_script.disconnect("onAtkOver",self,"_onAtkOver")
+	hero_attr.disconnect("onAttrChange",self,"on_attr_change")

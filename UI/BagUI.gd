@@ -8,6 +8,7 @@ onready var player = $AnimationPlayer
 onready var glod = $gold
 
 func _ready():
+	add_to_group("bag_ui")
 	for data in 40:
 		var ins = invItem.instance()
 		ins.connect("pressed",self,"grid_child_pressed",[ins])
@@ -27,7 +28,6 @@ func bagChange(change):
 	visible = change
 	if visible:
 		glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] 
-		bagInit()
 
 func grid_child_pressed(data):
 	if data.inv_name != null:

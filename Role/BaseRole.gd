@@ -31,6 +31,28 @@ onready var effect_anim = $Effects
 func _ready():
 	name = str(OS.get_system_time_msecs() + randi()%10000)
 
+#添加经验
+func addExp(_exp):
+	is_LvUp(_exp)
+	_show_damage_label("EXP+%d"%_exp,Utils.HurtType.EXP)
+
+#人物升级
+func is_LvUp(_exp):
+	var last_lv = role_data["lv"]
+	if role_data.lv < 50:
+		var minExp = (role_data["exp"] + _exp) - Utils.get_up_lv_exp(role_data["lv"])
+		if minExp >= 0:
+			role_data["lv"] += 1
+			role_data["exp"] = 0
+			is_LvUp(minExp)
+			_show_damage_label("升级！",Utils.HurtType.EXP)
+		else:
+			role_data["exp"] += _exp
+		if last_lv != role_data["lv"] && !fight_script.is_in_atk:
+			hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+			ui.load_attr()
+
+#初始化角色
 func set_role(_role_data):
 	role_data = _role_data
 	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
@@ -38,6 +60,7 @@ func set_role(_role_data):
 	load_asset()
 	ui.initRole()
 
+#重载角色属性
 func reloadRoleAttr(_rid,_attr:HeroAttrBean):
 	if !fight_script.is_in_atk && role_data.rid == _rid:
 		hero_attr.copy(_attr)
@@ -45,10 +68,11 @@ func reloadRoleAttr(_rid,_attr:HeroAttrBean):
 
 func setIndex(_index):
 	self.index = _index
-	
+
 func changeAnim(anim):
 	animatedSprite.animation = anim
 
+#资源载入
 func load_asset():
 	animatedSprite.position.y = -48
 	match role_data.job:
@@ -139,10 +163,11 @@ func role_reset():
 	shape_2d.set_deferred("disabled",false)
 	resetSkill()
 	ui.removeAll()
-	fight_script.do_stop()
 	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+	fight_script.do_stop()
 	ui.initRole()
 	reloadHpBar()
+	loadRoleSkill()
 	am_player.play_backwards("show_bar")
 	animatedSprite.play("Run")
 
@@ -193,7 +218,6 @@ func removeState(id):
 func show_bar(_enemy_array,_myself_array):
 	if am_player.is_playing():
 		yield(am_player,"animation_finished")
-	loadRoleSkill()
 	am_player.play("show_bar")
 	fight_script.setFightRole(_enemy_array)
 	enemy_array = _enemy_array
@@ -261,6 +285,9 @@ func _show_damage_label(damage,type):
 			color = Color.webpurple
 			text = "-"
 			float_number_ins.mass = 500
+		Utils.HurtType.EXP:
+			color = Color.cornflower
+			text = ""
 	add_child(float_number_ins)
 	float_number_ins.set_number(text + "%s" %damage,color)
 	reloadHpBar()

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Beep.wav-8a40c87ada5a0fb3b17e7da786a6259a.sample"
+
+[deps]
+
+source_file="res://addons/dialogic/Example Assets/Sound Effects/Beep.wav"
+dest_files=[ "res://.import/Beep.wav-8a40c87ada5a0fb3b17e7da786a6259a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

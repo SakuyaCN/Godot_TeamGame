@@ -37,6 +37,7 @@ func fight_fail():
 func fight_win():
 	$GameResult.visible = true
 	$GameResult/win.visible = true
+	$GameResult/Timer.start()
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
@@ -56,7 +57,7 @@ func closeTips():
 	$Tips.visible = false
 	
 #获取新物品时提示
-func getNewItem(_name,img):
+func getNewItem(_name,img,q = ""):
 	var ins = get_new_item.instance()
-	ins.setData(_name,img)
+	ins.setData(_name,img,q)
 	$ItemShow/VBoxContainer.add_child_below_node($ItemShow/VBoxContainer/Label,ins)
