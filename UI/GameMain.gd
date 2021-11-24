@@ -7,10 +7,14 @@ var load_hero_size = 0
 var moster_size = 0
 var load_moster_size = 0
 
+var is_join_over = false
+
 var map_name #当前地图关卡名称
 var player_map #当前地图下标
 var is_map_boss #当前是否为地图boss
 var moster_name #当前地图怪物名称
+
+var is_need_reload = false #是否需要重新占位
 
 onready var message_ui = get_parent().find_node("UILayer")
 onready var moster_pos = $PositionMoster
@@ -45,6 +49,13 @@ func load_map():
 	game_progress.value = 0
 	game_progress_tv.text = "当前地图探索进度：%s "%game_progress.value +" / 总进度：%s" %game_progress.max_value
 
+func changeRolePosition(_is_need_reload):
+	$Timer.stop()
+	if !is_flight:
+		newRoleJoin()
+	else:
+		is_need_reload = _is_need_reload
+
 #探索进度条更新
 func mapProgress():
 	if !is_flight && game_progress.value != game_progress.max_value:
@@ -60,12 +71,31 @@ func mapProgress():
 func plus_size():
 	load_hero_size +=1
 	if load_hero_size == hero_size:
-		$Timer.start()
+		if ConfigScript.getBoolSetting("store","first_join"):
+			$Timer.start()
+		else:
+			var new_dialog = Dialogic.start('first')
+			new_dialog.connect("dialogic_signal",self,"dialogic_single")
+			add_child(new_dialog)
+
+#首次进入开始游戏
+func dialogic_single(string):
+	match string:
+		"next_start":
+			ConfigScript.setBoolSetting("store","first_join",true)
+			$Timer.start()
+		"moster_met_first":
+			pass
 
 #搜索遇到敌人
 func moster_met(_is_boss):
-	is_map_boss = _is_boss
 	is_flight = true
+	if !ConfigScript.getBoolSetting("store","moster_met_first"):#首次遇到敌人提示
+		var new_dialog = Dialogic.start('moster_met_first')
+		new_dialog.connect("dialogic_signal",self,"dialogic_single")
+		add_child(new_dialog)
+		ConfigScript.setBoolSetting("store","moster_met_first",true)
+	is_map_boss = _is_boss
 	get_parent().px_bg.is_run = false
 	get_tree().call_group("player_role","changeAnim","Idle")
 	moster_join(_is_boss)
@@ -176,11 +206,13 @@ func winGoods():
 			goods_array.append([item[0],item[1] as int+randi() % item[2] as int])
 		StorageData.AddGoodsNum(goods_array)
 	if win_goods.other.has("exp"):
-		for role in player_array:
-			role.addExp(win_goods.other.exp)
+		for _role in player_array:
+			_role.addExp(win_goods.other.exp)
 
 func game_reset():
 	yield(get_tree().create_timer(1),"timeout")
+	if is_need_reload:
+		newRoleJoin()
 	ConstantsValue.game_layer.fight_ui.UIchange(false)
 	moster_clear()
 	get_tree().call_group("player_role","role_reset")
@@ -188,6 +220,12 @@ func game_reset():
 	is_flight = false
 	load_moster_size = 0
 	ConstantsValue.game_layer.findTvShow(true)
+
+func newRoleJoin():
+	ConstantsValue.showMessage("新冒险者登场！",1)
+	player_clear()
+	go_position()
+	is_need_reload = false
 
 #更换地图
 func changeMap(_id):
@@ -213,3 +251,14 @@ func moster_clear():
 		$PositionMoster/PositionM3.get_children().clear()
 	moster_array.clear()
 		
+func player_clear():
+	for ms in player_array:
+		if ms != null && ms:
+			ms.queue_free()
+	if $Position/PositionP1.get_children().size() > 0:
+		$Position/PositionP1.get_children().clear()
+	if $Position/PositionP2.get_children().size() > 0:
+		$Position/PositionP2.get_children().clear()
+	if $Position/PositionP3.get_children().size() > 0:
+		$Position/PositionP3.get_children().clear()
+	player_array.clear()

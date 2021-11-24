@@ -13,7 +13,7 @@ func setData(_key):
 	match role_data.job:
 		"黑袍法师":
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres")
-			$AnimatedSprite.position = Vector2(70,0)
+			$AnimatedSprite.position = Vector2(52,50)
 			$AnimatedSprite.scale = Vector2(3,3)
 		"无畏勇者":
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
@@ -21,7 +21,7 @@ func setData(_key):
 			$AnimatedSprite.scale = Vector2(3,3)
 		"不屈骑士":
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres")
-			$AnimatedSprite.position = Vector2(50,16)
+			$AnimatedSprite.position = Vector2(60,16)
 			$AnimatedSprite.scale = Vector2(5,5)
 		"绝地武士":
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Warrior.tres")
@@ -29,7 +29,7 @@ func setData(_key):
 			$AnimatedSprite.scale = Vector2(5,5)
 		"致命拳手":
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Boxer.tres")
-			$AnimatedSprite.position = Vector2(50,25)
+			$AnimatedSprite.position = Vector2(50,30)
 			$AnimatedSprite.scale = Vector2(3,3)
 		"战地牧师":$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
 

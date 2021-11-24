@@ -77,10 +77,12 @@ func load_asset():
 	animatedSprite.position.y = -48
 	match role_data.job:
 		"黑袍法师":
+			fight_script.atk_mode = Utils.HurtType.MTK
 			animatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres")
-			animatedSprite.position.y = -120
-			$RoleUI/name.rect_position.y = -15
-			animatedSprite.scale = Vector2(4,4)
+			animatedSprite.position.y = -60
+			animatedSprite.position.x = -5
+			$RoleUI/name.rect_position.y = -20
+			animatedSprite.scale = Vector2(3.5,3.5)
 		"无畏勇者":
 			animatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
 			animatedSprite.position.y = -64

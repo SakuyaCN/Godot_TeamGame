@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/typing1.wav-9ff6b271ce4f3eefe1bc32564dd3460c.sample"
+
+[deps]
+
+source_file="res://addons/dialogic/Example Assets/Sound Effects/Keyboard Noises/typing1.wav"
+dest_files=[ "res://.import/typing1.wav-9ff6b271ce4f3eefe1bc32564dd3460c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

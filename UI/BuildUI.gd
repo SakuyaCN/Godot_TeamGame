@@ -47,7 +47,9 @@ func loadBuildType(type):
 
 #顶部类型点击
 func loadBuildTypeData(type,array,top_type):
-	if $NinePatchRect3.visible && !$AnimationPlayer.is_playing():
+	if $AnimationPlayer.is_playing():
+		return
+	if $NinePatchRect3.visible:
 		$AnimationPlayer.play_backwards("show")
 	for item in $NinePatchRect2/ScrollContainer/GridContainer.get_children():
 		item.queue_free()
@@ -63,7 +65,9 @@ func loadBuildTypeData(type,array,top_type):
 
 #左侧制作类型点击
 func build_first_click(type):
-	if $NinePatchRect3.visible && !$AnimationPlayer.is_playing():
+	if $AnimationPlayer.is_playing():
+		return
+	if $NinePatchRect3.visible:
 		$AnimationPlayer.play_backwards("show")
 	loadBuildType(type)
 
@@ -89,6 +93,10 @@ func buildChange(change):
 	if !visible:
 		$AnimationPlayer.play_backwards("show")
 	$NinePatchRect3.visible = false
+	if visible && !ConfigScript.getBoolSetting("store","first_open_build"):#首次打开炼金台
+		var new_dialog = Dialogic.start('first_open_build')
+		add_child(new_dialog)
+		ConfigScript.setBoolSetting("store","first_open_build",true)
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:

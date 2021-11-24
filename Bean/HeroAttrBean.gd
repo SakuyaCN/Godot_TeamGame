@@ -50,11 +50,11 @@ func resetAttr(role_data):
 	levelAttr(role_data.lv)
 
 func levelAttr(lv):
-	hp += lv * 15                                                                                                                                                                                         
-	atk += lv * 2
-	mtk += lv * 2
-	speed += lv * 2
-	crit += lv * 2
+	hp += lv * 30                                                                                                                                                                                      
+	atk += lv * 10
+	mtk += lv * 10
+	speed += lv * 10
+	crit += lv * 10
 	
 #重载装备属性
 func setEquAttrBean(role_data):
@@ -101,7 +101,7 @@ func setEquAttrBean(role_data):
 func loadJobAttr(role_data):
 	match role_data.job:
 		"黑袍法师":
-			hp += (mtk / 10.0) as int
+			hp += ((mtk / 10.0) * 3) as int
 			mp += (mtk / 10.0) as int
 		"无畏勇者":
 			hp += 20 * role_data.lv

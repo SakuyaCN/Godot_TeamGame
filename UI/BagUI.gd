@@ -7,6 +7,8 @@ onready var player = $AnimationPlayer
 
 onready var glod = $gold
 
+var dataInfo
+
 func _ready():
 	add_to_group("bag_ui")
 	for data in 40:
@@ -37,16 +39,23 @@ func grid_child_pressed(data):
 			player.play("item_show")
 
 func loadItem(_name):
-	var dataInfo = LocalData.all_data["goods"][_name]
+	dataInfo = LocalData.all_data["goods"][_name]
 	$Item/Name.text = _name
 	$Item/Info.text = dataInfo["info"]
 	$Item/Lv.text = "等级：%s" %dataInfo["lv"]
+	if dataInfo["useable"]:
+		$Item/useable.visible = true
+	else:
+		$Item/useable.visible = false
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed():
 		bagChange(false)
 
-
 func _on_BagUI_visibility_changed():
 	if !visible:
 		$Item.visible = false
+
+#使用道具
+func _on_Button_pressed():
+	GoodsUtils.useGoods(self,dataInfo["name"],1)

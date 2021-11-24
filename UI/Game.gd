@@ -9,8 +9,6 @@ onready var light = $Light
 onready var game_main = $GameMain
 
 func _ready():
-	#var buff = load("res://Role/Skill/BaseState/Buff.gd").new()
-	#buff._create(StateEnum.BuffEnum.BUFF_ATK,30,5)
 	pass
 
 func start_game():

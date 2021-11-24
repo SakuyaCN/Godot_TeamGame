@@ -43,7 +43,7 @@ func loadRoleArray(_enemy_array,_myself_array,_myself,_ss_array):
 	local_attr = hero_attr.toDict().duplicate()
 
 #当属性发生变化是触发
-func on_attr_change(attr,num):
+func on_attr_change(_attr,_num):
 	for skill in skill_ing:
 		if skill is SkillItemBean && skill.item_odds_type == Utils.SkillTypeEnum.ATTR:
 			attrChange_dec(skill)

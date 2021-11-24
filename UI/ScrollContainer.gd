@@ -1,7 +1,5 @@
 extends ScrollContainer
 
-
-
 var v = Vector2(0,0) #current velocity
 var just_stop_under = 1
 var multi = -2 #speed of one input

@@ -1,0 +1,32 @@
+{
+	"events": [
+		{
+			"character": "character-1637632589.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "在这里你可以为你的小队成员添加各种技能与装备！\n查看你的小队成员属性！\n更换你的小队战斗成员！"
+		},
+		{
+			"choice": "我知道了",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.3
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1637745693.json",
+		"name": "first_open_party"
+	}
+}

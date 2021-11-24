@@ -124,6 +124,7 @@ ConfigScript="*res://Storage/ConfigScript.gd"
 EquUtils="*res://AutoLoad/EquUtils.gd"
 HeroAttrUtils="*res://Storage/HeroAttrUtils.gd"
 Console="*res://addons/quentincaffeino/console/src/Console.tscn"
+GoodsUtils="*res://AutoLoad/GoodsUtils.gd"
 
 [display]
 

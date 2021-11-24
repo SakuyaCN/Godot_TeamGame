@@ -7,15 +7,20 @@ onready var label_ui = preload("res://UI/ControlUI/LabelItemUI.tscn")
 onready var hero_item = preload("res://UI/ItemUI/HeroItem.tscn")
 onready var srcoll = $ScrollContainer
 onready var click_timer = $ClickTimer
+onready var position_img = $TextureRect2
+onready var position_label = $TextureRect2/position
+var role_position = -1 #选中英雄的位置
 var role_data #当前选中英雄属性
 var hero_attr :HeroAttrBean #当前选择英雄战斗属性
 var check_equ_data #选择时的装备数据
 var skill_tips_ins = null#提示实例化
-var select_index = 0 #当前选中的英雄下表
+var select_index = "" #当前选中的英雄下表
 var tab_index = 0
 var check_temp_ins = null #长按时的对象
 onready var tab = [$attr,$skill_main,$equ_main]
 onready var skill_item_position_array = []
+
+var is_first_load = false
 
 #父节点拖拽图片
 onready var temp_skill = get_parent()
@@ -26,20 +31,39 @@ func _ready():
 	set_process(false)
 	var line = StyleBoxTexture.new()
 	srcoll.get_h_scrollbar().set("custom_styles/scroll",line)
-	loadFirst()
+	is_first_load = loadFirst()
 
 func loadFirst():
-	checkHeroData()
-	loadHeroEqu()
-	loadAllHero()
+	if StorageData.get_all_team().keys().size() > 0:
+		select_index = StorageData.get_all_team().keys()[0]
+		checkHeroData()
+		loadHeroEqu()
+		loadAllHero()
+	return true
 
+func showPosition():
+	if role_data != null:
+		role_position = StorageData.get_player_state().team_position.find(role_data.rid)
+		match role_position:
+			0:
+				position_label.text = "前排"
+			1:
+				position_label.text = "中卫"
+			2:
+				position_label.text = "后排"
+			_:
+				position_label.text = "点这出战"
+
+#点击英雄刷新
 func checkHeroData():
-	if  StorageData.get_all_team().has(str(select_index)):
-		role_data = StorageData.get_all_team()[str(select_index)]
-		loadHeroData()
-		loadAllSkill()
-		loadAllEqu()
-		reLoadHeroEqu()
+	if StorageData.get_all_team().has(str(select_index)):
+		if role_data != StorageData.get_all_team()[select_index]:
+			role_data = StorageData.get_all_team()[select_index]
+			showPosition()
+			loadHeroData()
+			loadAllSkill()
+			loadAllEqu()
+			reLoadHeroEqu()
 
 func _process(_delta):
 	if check_temp_ins != null && get_parent().tempSKillIcon.visible:
@@ -50,6 +74,12 @@ func partyChange(change):
 	if !change && skill_tips_ins != null:
 		skill_tips_ins.close()
 		set_process(false)
+	if visible && is_first_load:
+		checkHeroData()
+	if visible && !ConfigScript.getBoolSetting("store","first_open_party"):#首次打开炼金台
+		var new_dialog = Dialogic.start('first_open_party')
+		add_child(new_dialog)
+		ConfigScript.setBoolSetting("store","first_open_party",true)
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed():
@@ -96,20 +126,25 @@ func closeEquInfo():
 #=========================
 #载入小队成员
 func loadAllHero():
+	for ins in $ScrollContainer/HSlider.get_children():
+		ins.queue_free()
+	$ScrollContainer/HSlider.get_children().clear()
 	for item_key in StorageData.get_all_team():
 		var ins = hero_item.instance()
 		ins.setData(item_key)
 		ins.connect("pressed",self,"all_hero_item_click",[item_key])
 		$ScrollContainer/HSlider.add_child(ins)
-	get_tree().call_group("all_hero_list","reload",str(select_index))
+	get_tree().call_group("all_hero_list","reload",select_index)
 
 #小队成员点击
 func all_hero_item_click(item_key):
+	if $PostionBox.visible:
+		$PostionBox/AnimationPlayer.play_backwards("show")
 	select_index = item_key
 	checkHeroData()
 	#tab_select(0)
 	$Equ_info.visible = false
-	get_tree().call_group("all_hero_list","reload",str(item_key))
+	get_tree().call_group("all_hero_list","reload",item_key)
 	
 #载入当前英雄属性
 func loadHeroData():
@@ -282,3 +317,67 @@ func free_item(array):
 func _on_PartyUI_visibility_changed():
 	if ConstantsValue.const_choose_role_arrt != null:
 		ConstantsValue.const_choose_role_arrt.visible = false
+	if !visible:
+		$PostionBox.visible = false
+
+#位置点击更换===============================================
+func _on_TextureRect2_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if !$PostionBox.visible:
+			$PostionBox/AnimationPlayer.play("show")
+		match role_position:
+			0:
+				$PostionBox/postion_0/position.text = Utils.getPositionWithIndex(1)
+				$PostionBox/postion_1/position.text = Utils.getPositionWithIndex(2)
+				$PostionBox/postion_2/position.text = Utils.getPositionWithIndex(-1)
+			1:
+				$PostionBox/postion_0/position.text = Utils.getPositionWithIndex(0)
+				$PostionBox/postion_1/position.text = Utils.getPositionWithIndex(2)
+				$PostionBox/postion_2/position.text = Utils.getPositionWithIndex(-1)
+			2:
+				$PostionBox/postion_0/position.text = Utils.getPositionWithIndex(0)
+				$PostionBox/postion_1/position.text = Utils.getPositionWithIndex(1)
+				$PostionBox/postion_2/position.text = Utils.getPositionWithIndex(-1)
+			_:
+				$PostionBox/postion_0/position.text = Utils.getPositionWithIndex(0)
+				$PostionBox/postion_1/position.text = Utils.getPositionWithIndex(1)
+				$PostionBox/postion_2/position.text = Utils.getPositionWithIndex(2)
+
+#位置点击
+func _on_postion_0_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		var index = Utils.getPositionWithName($PostionBox/postion_0/position.text)
+		setRole2Position(index)
+
+func _on_postion_1_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		var index = Utils.getPositionWithName($PostionBox/postion_1/position.text)
+		setRole2Position(index)
+
+func _on_postion_2_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		var index = Utils.getPositionWithName($PostionBox/postion_2/position.text)
+		setRole2Position(index)
+
+func setRole2Position(_index):
+	if _index != -1:
+		if StorageData.get_player_state()["team_position"].has(role_data.rid):
+			 StorageData.get_player_state()["team_position"][role_position] = null
+		StorageData.get_player_state()["team_position"][_index] = role_data.rid
+		ConstantsValue.showMessage("已切换到%s" %Utils.getPositionWithIndex(_index),1)
+		get_tree().call_group("game_main","changeRolePosition",true)
+	else:
+		var size = 0
+		for rid in StorageData.get_player_state()["team_position"]:
+			if rid != null:
+				size += 1
+		if size > 1:
+			StorageData.get_player_state()["team_position"][role_position] = null
+			ConstantsValue.showMessage("冒险者已休战",1)
+			get_tree().call_group("game_main","changeRolePosition",true)
+		else:
+			ConstantsValue.showMessage("至少需要一名冒险者在队伍中！",2)
+	StorageData._save_storage()
+	showPosition()
+	$PostionBox/AnimationPlayer.play_backwards("show")
+#=====================================================

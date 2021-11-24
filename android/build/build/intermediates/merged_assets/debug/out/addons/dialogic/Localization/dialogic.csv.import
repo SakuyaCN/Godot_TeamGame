@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://addons/dialogic/Localization/dialogic.zh_CN.translation", "res://addons/dialogic/Localization/dialogic.en.translation", "res://addons/dialogic/Localization/dialogic.es.translation", "res://addons/dialogic/Localization/dialogic.fr.translation" ]
+
+source_file="res://addons/dialogic/Localization/dialogic.csv"
+dest_files=[ "res://addons/dialogic/Localization/dialogic.zh_CN.translation", "res://addons/dialogic/Localization/dialogic.en.translation", "res://addons/dialogic/Localization/dialogic.es.translation", "res://addons/dialogic/Localization/dialogic.fr.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

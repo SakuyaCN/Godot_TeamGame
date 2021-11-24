@@ -1,0 +1,282 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://addons/dialogic/Editor/EditorView.gd" type="Script" id=1]
+[ext_resource path="res://addons/dialogic/Editor/TimelineEditor/TimelineEditor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/dialogic/Images/Toolbar/add-character.svg" type="Texture" id=3]
+[ext_resource path="res://addons/dialogic/Images/Toolbar/add-timeline.svg" type="Texture" id=4]
+[ext_resource path="res://addons/dialogic/Images/Toolbar/add-definition.svg" type="Texture" id=5]
+[ext_resource path="res://addons/dialogic/Editor/SettingsEditor/SettingsEditor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/dialogic/Editor/CharacterEditor/CharacterEditor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/dialogic/Editor/ThemeEditor/ThemeEditor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/dialogic/Editor/GlossaryEntryEditor/GlossaryEntryEditor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/dialogic/Images/Toolbar/add-glossary.svg" type="Texture" id=10]
+[ext_resource path="res://addons/dialogic/Editor/DocumentationViewer/DocumentationViewer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://addons/dialogic/Editor/ValueEditor/ValueEditor.tscn" type="PackedScene" id=12]
+[ext_resource path="res://addons/dialogic/Images/Toolbar/add-theme.svg" type="Texture" id=13]
+[ext_resource path="res://addons/dialogic/Editor/MasterTree/MasterTree.tscn" type="PackedScene" id=35]
+
+[sub_resource type="Image" id=6]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "LumAlpha8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id=2]
+flags = 4
+flags = 4
+image = SubResource( 6 )
+size = Vector2( 16, 16 )
+
+[sub_resource type="Image" id=7]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "LumAlpha8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id=4]
+flags = 4
+flags = 4
+image = SubResource( 7 )
+size = Vector2( 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = SubResource( 4 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 2.0
+margin_right = 2.0
+margin_top = 2.0
+margin_bottom = 2.0
+
+[node name="EditorView" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolBar" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 32.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewTimelineButton" type="Button" parent="ToolBar"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 28.0
+margin_bottom = 32.0
+hint_tooltip = "New Timeline"
+icon = ExtResource( 4 )
+flat = true
+
+[node name="NewCharactersButton" type="ToolButton" parent="ToolBar"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 32.0
+hint_tooltip = "New Character"
+icon = ExtResource( 3 )
+
+[node name="NewValueButton" type="Button" parent="ToolBar"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 56.0
+margin_right = 84.0
+margin_bottom = 32.0
+hint_tooltip = "New Value"
+icon = ExtResource( 5 )
+flat = true
+
+[node name="NewGlossaryEntryButton" type="Button" parent="ToolBar"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 84.0
+margin_right = 112.0
+margin_bottom = 32.0
+hint_tooltip = "New Definition"
+icon = ExtResource( 10 )
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NewThemeButton" type="Button" parent="ToolBar"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 112.0
+margin_right = 140.0
+margin_bottom = 32.0
+hint_tooltip = "New Theme"
+icon = ExtResource( 13 )
+flat = true
+
+[node name="FoldTools" type="HBoxContainer" parent="ToolBar"]
+visible = false
+margin_left = 112.0
+margin_right = 203.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="ToolBar/FoldTools"]
+margin_top = 9.0
+margin_right = 59.0
+margin_bottom = 23.0
+text = "      Fold  "
+
+[node name="ButtonFold" type="ToolButton" parent="ToolBar/FoldTools"]
+margin_left = 63.0
+margin_right = 75.0
+margin_bottom = 32.0
+icon = SubResource( 2 )
+align = 0
+
+[node name="ButtonUnfold" type="ToolButton" parent="ToolBar/FoldTools"]
+margin_left = 79.0
+margin_right = 91.0
+margin_bottom = 32.0
+icon = SubResource( 2 )
+align = 0
+
+[node name="Spacer" type="Control" parent="ToolBar"]
+margin_left = 140.0
+margin_right = 759.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="Web" type="ToolButton" parent="ToolBar"]
+self_modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
+margin_left = 759.0
+margin_right = 843.0
+margin_bottom = 32.0
+hint_tooltip = "Theme Editor"
+mouse_default_cursor_shape = 2
+text = "Website"
+icon = SubResource( 2 )
+
+[node name="Docs" type="ToolButton" parent="ToolBar"]
+self_modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
+margin_left = 843.0
+margin_right = 904.0
+margin_bottom = 32.0
+hint_tooltip = "Theme Editor"
+mouse_default_cursor_shape = 2
+text = "Help"
+icon = SubResource( 2 )
+
+[node name="Version" type="Label" parent="ToolBar"]
+self_modulate = Color( 1, 1, 1, 0.631373 )
+margin_left = 904.0
+margin_top = 9.0
+margin_right = 1024.0
+margin_bottom = 23.0
+text = "Dialogic v1.4 - DEV"
+
+[node name="MainPanel" type="HSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MasterTreeContainer" type="VBoxContainer" parent="MainPanel"]
+margin_right = 150.0
+margin_bottom = 562.0
+
+[node name="FilterMasterTreeEdit" type="LineEdit" parent="MainPanel/MasterTreeContainer"]
+margin_right = 150.0
+margin_bottom = 26.0
+clear_button_enabled = true
+right_icon = SubResource( 2 )
+placeholder_text = "Filter"
+
+[node name="MasterTree" parent="MainPanel/MasterTreeContainer" instance=ExtResource( 35 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 30.0
+margin_right = 150.0
+margin_bottom = 562.0
+size_flags_vertical = 3
+
+[node name="TimelineEditor" parent="MainPanel" instance=ExtResource( 2 )]
+visible = false
+
+[node name="CharacterEditor" parent="MainPanel" instance=ExtResource( 7 )]
+visible = false
+
+[node name="GlossaryEntryEditor" parent="MainPanel" instance=ExtResource( 9 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 162.0
+margin_right = 1024.0
+margin_bottom = 562.0
+
+[node name="ValueEditor" parent="MainPanel" instance=ExtResource( 12 )]
+visible = false
+
+[node name="ThemeEditor" parent="MainPanel" instance=ExtResource( 8 )]
+visible = false
+
+[node name="SettingsEditor" parent="MainPanel" instance=ExtResource( 6 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_right = 1253.0
+margin_bottom = 661.0
+
+[node name="DocumentationViewer" parent="MainPanel" instance=ExtResource( 11 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 162.0
+margin_right = 1024.0
+margin_bottom = 562.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="Empty" type="CenterContainer" parent="MainPanel"]
+margin_left = 162.0
+margin_right = 1024.0
+margin_bottom = 562.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/Empty"]
+margin_left = 291.0
+margin_top = 274.0
+margin_right = 571.0
+margin_bottom = 288.0
+
+[node name="Label" type="Label" parent="MainPanel/Empty/VBoxContainer"]
+margin_right = 280.0
+margin_bottom = 14.0
+text = "Select or create an element to start working"
+
+[node name="RemoveConfirmation" type="ConfirmationDialog" parent="."]
+margin_right = 325.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 250, 87.5 )
+window_title = "Por favor, Confirma..."
+dialog_text = "Are you sure you want to remove this [resource]?
+(Can't be restored)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RemoveFolderConfirmation" type="ConfirmationDialog" parent="."]
+margin_right = 325.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 250, 87.5 )
+window_title = "Por favor, Confirma..."
+dialog_text = "Are you sure you want to remove this folder and all the items contained in it?
+(Can't be restored)"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -194,6 +194,20 @@ func get_adv_name(id):
 		7:
 			return "传说级冒险者"
 
+func getPositionWithIndex(index):
+	match index:
+		0:return "前排"
+		1:return "中卫"
+		2:return "后排"
+		-1:return "休战"
+
+func getPositionWithName(_name):
+	match _name:
+		"前排":return 0
+		"中卫":return 1
+		"后排":return 2
+		"休战":return -1
+
 func get_gold_string(gold):
 	if gold < 10000:
 		return String(gold)

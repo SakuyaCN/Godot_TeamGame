@@ -12,6 +12,8 @@ onready var label_mdef = $attr/label_mdef
 onready var label_lv = $attr/label_lv
 onready var info = $content/RichTextLabel
 
+var is_create = false
+
 var base_role = [
 	{
 		"name":"黑袍法师",
@@ -20,10 +22,10 @@ var base_role = [
 		"atk":15,
 		"def":2,
 		"mtk":25,
-		"speed":15,
-		"crit":16,
+		"speed":100,
+		"crit":50,
 		"mdef":0,
-		"info":"黑袍为魔力型职业，可以打出高额魔力伤害，在前期怪物没用魔免的时期可以非常轻松的度过。\n职业特性：造成的魔力伤害无视5%的魔免，每10点魔力提高1点生命值与1点法力值"
+		"info":"黑袍为魔力型职业，可以打出高额魔力伤害，在前期怪物没用魔免的时期可以非常轻松的度过。\n职业特性：普攻伤害为魔力伤害，造成的魔力伤害无视5%的魔免，每10点魔力提高3点生命值与1点法力值"
 	},
 	{
 		"name":"无畏勇者",
@@ -32,8 +34,8 @@ var base_role = [
 		"atk":25,
 		"def":2,
 		"mtk":5,
-		"speed":15,
-		"crit":16,
+		"speed":100,
+		"crit":50,
 		"mdef":2,
 		"info":"勇者为平衡型职业，拥有出色的伤害的同时还能有一定的防御，不管是在前中后期都能发挥出不错的实力。\n职业特性：每次升级额外获得20点生命值与5点攻击力，自带3%的伤害吸血"
 	},
@@ -44,8 +46,8 @@ var base_role = [
 		"atk":15,
 		"def":8,
 		"mtk":5,
-		"speed":10,
-		"crit":15,
+		"speed":100,
+		"crit":50,
 		"mdef":6,
 		"info":"骑士为防御型职业，拥有高超的防御技巧，越是往后期越是能体现出高防御的优点。\n职业特性：自带6%的额外物免与魔免，每次升级额外获得35点生命值"
 	},
@@ -56,8 +58,8 @@ var base_role = [
 		"atk":25,
 		"def":0,
 		"mtk":5,
-		"speed":27,
-		"crit":22,
+		"speed":150,
+		"crit":100,
 		"mdef":0,
 		"info":"武士为强攻型职业，注重速度与暴击，但是防御较为薄弱。\n职业特性：暴击伤害提高35%，速度收益提高6%，无自带防御力，每次升级额外额外获得15点速度与暴击"
 	},
@@ -68,8 +70,8 @@ var base_role = [
 		"atk":18,
 		"def":5,
 		"mtk":5,
-		"speed":25,
-		"crit":12,
+		"speed":100,
+		"crit":50,
 		"mdef":3,
 		"info":"拳手为攻防一体型职业，速度力量防御三维全面发展。\n职业特性：自带3%的额外物免与魔免，每次升级额外提高16点生命值、6点攻击力、6点速度"
 	},
@@ -93,6 +95,10 @@ func _ready():
 	visible = false
 	load_info()
 
+func showCreate(_is_create = false):
+	is_create = _is_create
+	visible = true
+
 func load_info():
 	label_name.text = base_role[check_index].name
 	label_hp.text = str(base_role[check_index].hp)
@@ -107,7 +113,7 @@ func load_info():
 	match check_index as int:
 		0:
 			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres")
-			$role/AnimatedSprite.position = Vector2(12,-99)
+			$role/AnimatedSprite.position = Vector2(5,-59)
 			$role/AnimatedSprite.scale = Vector2(3,3)
 		1:
 			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
@@ -145,17 +151,40 @@ func _on_right_pressed():
 	load_info()
 
 func _on_Button_pressed():
-	StorageData.storage_data["player_state"] = {
-		"job":base_role[check_index].name,
-		"exp":0,
-		"lv":1,
-		"gold":1000,
-		"max_map":0,
-		"now_map":0,
-		"team_position":["0",null,null]
-	}
+	if !is_create:
+		var id = str(OS.get_system_time_msecs())
+		createNewRole(id)
+		StorageData.storage_data["player_state"] = {
+			"job":base_role[check_index].name,
+			"exp":0,
+			"lv":1,
+			"gold":1000,
+			"max_map":0,
+			"now_map":0,
+			"team_position":[id,null,null]
+		}
+		StorageData.reloadData()
+		StorageData._save_storage()
+		hide()
+		parent.uiLayer.get_parent().start_game()
+		get_tree().call_group("PartyUI","loadFirst")
+		parent.uiLayer.showMessage("创建成功！")
+	else:
+		if StorageData.UseGoodsNum([["小队招募令",1]]):
+			var id = str(OS.get_system_time_msecs())
+			createNewRole(id)
+			addNewRole()
+
+func addNewRole():
+	StorageData.reloadData()
+	StorageData._save_storage()
+	parent.uiLayer.showMessage("招募成功！")
+	get_tree().call_group("PartyUI","loadFirst")
+	hide()
+
+func createNewRole(_id):
 	var main_role = {
-		"rid":"0",#编号
+		"rid":_id,#编号
 		"nickname":base_role[check_index].name,
 		"job":base_role[check_index].name,#职业
 		"exp":0,#经验
@@ -174,9 +203,5 @@ func _on_Button_pressed():
 		"equ":{},#装备
 	}
 	StorageData.storage_data["team"][main_role.rid] = main_role
-	StorageData.reloadData()
-	StorageData._save_storage()
-	hide()
-	parent.uiLayer.get_parent().start_game()
-	parent.uiLayer.showMessage("创建成功！")
-	get_tree().call_group("PartyUI","loadFirst")
+	get_tree().call_group("PartyUI","loadAllHero")
+	ConstantsValue.ui_layer.getNewItem("新冒险者加入！","res://Texture/hud/Assets-2(Scale-x2)-No.png")

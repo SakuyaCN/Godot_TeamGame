@@ -16,6 +16,8 @@ var is_weak = false #是否为虚弱状态
 var atk_count #攻击数量
 var state_array = {} #状态列表
 
+var atk_mode = Utils.HurtType.ATK #普攻攻击类型
+
 signal onAtkOver()#普攻结束信号
 
 func _ready():
@@ -171,8 +173,14 @@ func atk_blood(num):
 		get_parent()._show_damage_label(blood,Utils.HurtType.BLOOD)
 
 #魔力攻击吸血
-func mtk_blood():
-	pass
+func mtk_blood(num):
+	if hero_attr.mtk_blood > 0:
+		var blood = num * (hero_attr.mtk_blood / 100.0)
+		if hero_attr.hp + blood < hero_attr.max_hp:
+			hero_attr.hp += blood
+		else:
+			hero_attr.hp = hero_attr.max_hp
+		get_parent()._show_damage_label(blood,Utils.HurtType.BLOOD)
 
 #战斗信号
 func _on_AnimatedSprite_animation_finished():
@@ -192,7 +200,7 @@ func doAtk():
 		get_parent()._show_damage_label("丢失目标",Utils.HurtType.OTHER)
 		return
 	for role in do_atk_array:
-		role.fight_script.do_hurt(role_data,hero_attr,Utils.HurtType.ATK,self)
+		role.fight_script.do_hurt(role_data,hero_attr,atk_mode,self)
 	emit_signal("onAtkOver")
 
 func is_VERTIGO():
