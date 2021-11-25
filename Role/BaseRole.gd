@@ -78,28 +78,28 @@ func load_asset():
 	match role_data.job:
 		"黑袍法师":
 			fight_script.atk_mode = Utils.HurtType.MTK
-			animatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres")
+			animatedSprite.frames = load("res://Texture/Pre-made characters/BlackHero.tres").duplicate()
 			animatedSprite.position.y = -60
 			animatedSprite.position.x = -5
 			$RoleUI/name.rect_position.y = -20
 			animatedSprite.scale = Vector2(3.5,3.5)
 		"无畏勇者":
-			animatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres")
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Brave.tres").duplicate()
 			animatedSprite.position.y = -64
 			$RoleUI/name.rect_position.y = -15
 			animatedSprite.scale = Vector2(4,4)
 		"不屈骑士":
-			animatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres")
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Knight.tres").duplicate()
 			animatedSprite.position.y = -86
 			animatedSprite.scale = Vector2(5,5)
 			$RoleUI/name.rect_position.y = -15
 		"绝地武士":
-			animatedSprite.frames = load("res://Texture/Pre-made characters/Warrior.tres")
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Warrior.tres").duplicate()
 			animatedSprite.position.y = -86
 			animatedSprite.scale = Vector2(5,5)
 			$RoleUI/name.rect_position.y = -15
 		"致命拳手":
-			animatedSprite.frames = load("res://Texture/Pre-made characters/Boxer.tres")
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Boxer.tres").duplicate()
 			animatedSprite.position.y = -70
 			animatedSprite.scale = Vector2(3,3)
 			$RoleUI/name.rect_position.y = -15
@@ -107,7 +107,7 @@ func load_asset():
 		"moster":
 			is_moster = true
 			effect_anim.flip_h = role_data["node"].flip_h
-			animatedSprite.frames = load(role_data["node"].frames)
+			animatedSprite.frames = load(role_data["node"].frames).duplicate()
 			animatedSprite.flip_h = role_data["node"].flip_h
 			animatedSprite.position.y = role_data["node"].pos_y
 			animatedSprite.scale = Vector2(role_data["node"].scale,role_data["node"].scale)

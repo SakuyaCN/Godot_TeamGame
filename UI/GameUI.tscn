@@ -404,7 +404,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 6
+frame = 1
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]

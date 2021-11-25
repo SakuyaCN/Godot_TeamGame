@@ -2,7 +2,7 @@ extends Node
 
 class_name SkillEntity
 
-var skill_id:int#技能id
+var skill_id:String#技能id
 var skill_name :String#技能名称
 var skill_img:String#技能图片
 var skill_lv:int#技能等级
@@ -30,7 +30,7 @@ func _ready():
 func loadSkill(skill_data):
 	skill_id = skill_data["skill_id"]
 	skill_name = skill_data["skill_name"]
-	skill_img = skill_data["skill_img"]
+	skill_img = skill_data["image"]
 	skill_lv = skill_data["skill_lv"]
 	loadItemSkill(skill_data)
 

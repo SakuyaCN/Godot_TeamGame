@@ -1,10 +1,10 @@
 {
-    "初级强身术":{
-        "skill_id":1,
+    "1":{
+        "skill_id":"1",
         "skill_name":"初级强身术",
         "skill_lv":1,
-        "skill_img":"res://Texture/skill/buff/1.png",
-        "skill_info":"开始战斗立刻自身攻击20点，生命值100点,持续5秒",
+        "image":"res://Texture/skill/buff/1.png",
+        "skill_info":"开始战斗立刻提高自身攻击20点，生命值100点,持续5秒",
         "skill_start":[
             {
                 "item_script":"res://Role/Skill/BaseState/Buff.gd",
@@ -42,12 +42,12 @@
             }
         ]
     },
-    "初级体魄术":{
-        "skill_id":2,
+    "2":{
+        "skill_id":"2",
         "skill_name":"初级体魄术",
         "skill_lv":1,
-        "skill_img":"",
-        "skill_info":"开始战斗立刻自身生命值200点,持续7秒",
+        "image":"res://Texture/skill/buff/2.png",
+        "skill_info":"开始战斗立刻自身生命值250点,持续7秒",
         "skill_start":[
             {
                 "item_script":"res://Role/Skill/BaseState/Buff.gd",
@@ -61,7 +61,7 @@
                     "state_time":10,
                     "state_type":"hp",
                     "state_mold":0,
-                    "state_num":200,
+                    "state_num":250,
                     "state_img":"res://Texture/skill/buff/2.png",
                     "sate_over":false
                 }

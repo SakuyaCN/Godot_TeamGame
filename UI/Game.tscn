@@ -430,30 +430,30 @@ scale = Vector2( 5, 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
 frames = SubResource( 7 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 25.6, 0 )
 frames = SubResource( 14 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 54.4, 0 )
 frames = SubResource( 21 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 118.4, 0 )
 frames = SubResource( 28 )
+frame = 4
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 144, 0 )
 frames = SubResource( 35 )
-frame = 2
 playing = true
 
 [node name="pb1" type="ParallaxBackground" parent="PxBg"]
@@ -607,6 +607,28 @@ wait_time = 0.1
 pause_mode = 2
 layer = 0
 script = ExtResource( 2 )
+
+[node name="ItemShow" type="ScrollContainer" parent="UILayer"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -200.5
+margin_right = 300.0
+margin_bottom = 276.5
+mouse_filter = 2
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/ItemShow"]
+margin_bottom = 14.0
+alignment = 2
+
+[node name="Label" type="Label" parent="UILayer/ItemShow/VBoxContainer"]
+margin_bottom = 14.0
+
+[node name="Timer" type="Timer" parent="UILayer/ItemShow"]
+wait_time = 3.0
 
 [node name="Control" parent="UILayer" instance=ExtResource( 8 )]
 
@@ -794,28 +816,6 @@ text = "打算大阿松大是"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ItemShow" type="ScrollContainer" parent="UILayer"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -200.5
-margin_right = 300.0
-margin_bottom = 276.5
-mouse_filter = 2
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/ItemShow"]
-margin_bottom = 14.0
-alignment = 2
-
-[node name="Label" type="Label" parent="UILayer/ItemShow/VBoxContainer"]
-margin_bottom = 14.0
-
-[node name="Timer" type="Timer" parent="UILayer/ItemShow"]
-wait_time = 3.0
 
 [connection signal="pressed" from="GameLayer/FightUI/Fight_btn/startFight" to="GameLayer/FightUI" method="_on_startFight_pressed"]
 [connection signal="toggled" from="GameLayer/FightUI/Fight_btn/autoFight" to="GameLayer/FightUI" method="_on_autoFight_toggled"]

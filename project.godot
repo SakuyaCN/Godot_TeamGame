@@ -112,7 +112,8 @@ _global_script_class_icons={
 
 config/name="wh"
 run/main_scene="res://UI/Game.tscn"
-config/icon="res://icon.png"
+config/icon="res://logo.png"
+config/windows_native_icon="res://bitbug_favicon.ico"
 
 [autoload]
 
@@ -123,19 +124,23 @@ LocalData="*res://Storage/LocalData.gd"
 ConfigScript="*res://Storage/ConfigScript.gd"
 EquUtils="*res://AutoLoad/EquUtils.gd"
 HeroAttrUtils="*res://Storage/HeroAttrUtils.gd"
-Console="*res://addons/quentincaffeino/console/src/Console.tscn"
 GoodsUtils="*res://AutoLoad/GoodsUtils.gd"
+
+[debug]
+
+settings/fps/force_fps=90
 
 [display]
 
 window/size/width=1344
 window/size/height=621
-window/stretch/mode="2d"
+window/vsync/use_vsync=false
+window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
 
 [input]
 
@@ -171,5 +176,6 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 vram_compression/import_etc=true
+quality/voxel_cone_tracing/high_quality=true
 quality/depth/hdr.mobile=true
 environment/default_environment="res://default_env.tres"

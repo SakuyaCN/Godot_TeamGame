@@ -39,6 +39,7 @@ func loadFirst():
 		select_index = StorageData.get_all_team().keys()[0]
 		checkHeroData()
 		loadHeroEqu()
+		loadHeroSkill()
 		loadAllHero()
 	return true
 
@@ -163,13 +164,15 @@ func loadHeroData():
 #载入人物所有技能
 func loadAllSkill():
 	free_item($Skill_bg/ScrollContainer/GridContainer.get_children())
-	for skill_data in StorageData.get_all_skill():
-		var ins = skill_item.instance()
-		ins.setData(LocalData.all_data["skill"][skill_data])
-		ins.connect("pressed",self,"skill_item_click",[ins.local_data])
-		ins.connect("button_down",self,"item_down",[ins])
-		ins.connect("button_up",self,"item_up",["skill"])
-		$Skill_bg/ScrollContainer/GridContainer.add_child(ins)
+	for skill in StorageData.get_all_skill():
+		if skill.values()[0] == null:
+			var ins = skill_item.instance()
+			ins.skill_data = skill
+			ins.setData(LocalData.skill_data[skill.keys()[0]])
+			ins.connect("pressed",self,"skill_item_click",[ins.local_data])
+			ins.connect("button_down",self,"item_down",[ins])
+			ins.connect("button_up",self,"item_up",["skill"])
+			$Skill_bg/ScrollContainer/GridContainer.add_child(ins)
 
 #载入人物所有装备
 func loadAllEqu():
@@ -203,13 +206,28 @@ func reLoadHeroEqu():
 		else:
 			child.setData(null)
 
+#载入人物穿戴技能
+func loadHeroSkill():
+	if role_data != null:
+		for index in range($skill_main/GridContainer.get_child_count()):
+			if role_data["skill"].size() > index:
+				$skill_main/GridContainer.get_child(index).setData(LocalData.skill_data[role_data["skill"][index]])
+			
+#刷新人物穿戴技能
+func reLoadHeroSkill():
+	if role_data != null:
+		for index in range($skill_main/GridContainer.get_child_count()):
+			if role_data["skill"].size() > index:
+				$skill_main/GridContainer.get_child(index).setData(LocalData.skill_data[role_data["skill"][index]])
+			else:
+				$skill_main/GridContainer.get_child(index).setData(null)
 #技能列表 点击绑定
 #技能部分----------------
 func skill_item_click(skill_data):
 	if skill_tips_ins == null:
 		skill_tips_ins = skill_tips.instance()
 		add_child(skill_tips_ins)
-	skill_tips_ins.showTips(skill_data["name"],skill_data["info"])
+	skill_tips_ins.showTips(skill_data["skill_name"],skill_data["skill_info"])
 
 #技能列表 按下绑定
 func item_down(ins):
@@ -225,11 +243,22 @@ func item_up(_type):
 	match _type:
 		"skill": 
 			parant_grid = $skill_main/GridContainer.get_children()
+			for child in parant_grid:
+				if child.get_global_rect().has_point(get_global_mouse_position()):
+					if !child.is_emp:
+						role_data.skill.remove(child.local_data.skill_id)
+						for skill in StorageData.get_all_skill():
+							if skill.keys()[0] == child.local_data.skill_id:
+								skill[skill.keys()[0]] = null
+					else:
+						role_data.skill.append(check_temp_ins.skill_data.keys()[0])
+						check_temp_ins.skill_data[check_temp_ins.skill_data.keys()[0]] = role_data.rid
+			reLoadHeroSkill()
+			StorageData._save_storage()
 		"equ": 
 			parant_grid = $equ_main/GridContainer.get_children()
 			for child in parant_grid:
 				if child.get_global_rect().has_point(get_global_mouse_position()):
-					print(child.type)
 					if check_temp_ins.local_data["type"] != child.type:
 						get_parent().uiLayer.showMessage("此装备只能放入【"+ check_temp_ins.local_data["type"] +"】部位")
 					else:

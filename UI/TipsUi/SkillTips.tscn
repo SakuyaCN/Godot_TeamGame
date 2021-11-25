@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_01_38.png" type="Texture" id=1]
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://UI/TipsUi/SkillTips.gd" type="Script" id=4]
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=5]
 
 [sub_resource type="DynamicFont" id=2]
 size = 18
@@ -24,10 +25,11 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 406.0
-color = Color( 0, 0, 0, 0.588235 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,8 +55,8 @@ margin_left = 27.0
 margin_top = 48.0
 margin_right = 237.0
 margin_bottom = 282.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "阿松大"
 autowrap = true
 __meta__ = {

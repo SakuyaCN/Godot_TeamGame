@@ -164,7 +164,7 @@ one_shot = true
 material = ExtResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.615686 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -651,6 +651,7 @@ margin_right = 60.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
+type = "技能一"
 
 [node name="Control2" parent="skill_main/GridContainer" instance=ExtResource( 3 )]
 margin_left = 72.0
@@ -658,6 +659,7 @@ margin_right = 132.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
+type = "技能二"
 
 [node name="Control3" parent="skill_main/GridContainer" instance=ExtResource( 3 )]
 margin_left = 144.0
@@ -665,6 +667,7 @@ margin_right = 204.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
+type = "技能三"
 
 [node name="Control4" parent="skill_main/GridContainer" instance=ExtResource( 3 )]
 margin_left = 216.0
@@ -672,6 +675,7 @@ margin_right = 276.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
+type = "技能四"
 
 [node name="Control5" parent="skill_main/GridContainer" instance=ExtResource( 3 )]
 margin_left = 288.0
@@ -679,6 +683,7 @@ margin_right = 348.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
+type = "技能五"
 
 [node name="status" type="TextureRect" parent="."]
 margin_left = 607.974

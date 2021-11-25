@@ -2,23 +2,23 @@ extends Control
 
 export(String) var type
 
-var local_data:Dictionary
+var local_data = null
 
 var is_emp = true
 
 func _ready():
-	pass
+	$Name.text = type
 
 func setData(_local_data):
 	local_data = _local_data
 	reLoad()
 	
 func reLoad():
-	if !local_data.empty():
+	if local_data != null:
 		is_emp = false
 		$Image.texture = load(local_data["image"])
-		$Name.text = local_data["name"]
+		$Name.text = local_data["skill_name"]
 	else:
 		is_emp = true
 		$Image.texture = load("res://Texture/Assets-2(Scale-x2)-No-BG_15.png")
-		$Name.text = "空技能"
+		$Name.text = type

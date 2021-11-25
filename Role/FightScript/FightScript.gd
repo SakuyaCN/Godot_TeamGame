@@ -28,7 +28,7 @@ func _process(_delta):
 		if is_VERTIGO():
 			hero_sprite.play("Idle")
 		else:
-			hero_sprite.play("Atk")
+			hero_sprite.animation = "Atk"
 		is_blinding = is_BLINDING()
 		is_weak = is_WEAK()
 		
@@ -74,8 +74,7 @@ func checkState():
 #普攻触发
 func do_atk():
 	#设定人物攻击频率
-	hero_sprite.frames.set_animation_speed("Atk",(speed_temp+ (hero_attr.speed / 100.0)))
-	#hero_sprite.play("Atk")
+	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 100.0))
 	is_in_atk = true
 	set_process(true)
 
