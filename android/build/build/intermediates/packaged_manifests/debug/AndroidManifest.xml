@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sakuya.wh"
+    package="com.sakuya.mx"
     android:installLocation="auto"
     android:versionCode="2"
-    android:versionName="1.0.0" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+    android:versionName="1.0.0_test" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="30" />
@@ -22,7 +22,7 @@
         android:name=".GodotInstrumentation"
         android:icon="@mipmap/icon"
         android:label="@string/godot_project_name_string"
-        android:targetPackage="com.sakuya.wh" />
+        android:targetPackage="com.sakuya.mx" />
 
     <application
         android:allowBackup="false"

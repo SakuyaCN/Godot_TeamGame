@@ -50,6 +50,7 @@ position = Vector2( 55, 16 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Idle"
+frame = 7
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -29,6 +29,13 @@ func load_attr():
 	$attr/label_crit.text = str(hero_attr.crit)
 	$attr/label_mdef.text = str(hero_attr.mdef)
 	$attr/label_lv.text = str(role_data.lv)
+	if role_data.has("exp"):
+		$attr/ProgressBar.visible = true
+		$attr/ProgressBar.max_value = Utils.get_up_lv_exp(role_data.lv)
+		$attr/ProgressBar.value = role_data.exp
+		$attr/ProgressBar/Label8.text = "经验值：%s "%[($attr/ProgressBar.value/$attr/ProgressBar.max_value) * 100] + "%"
+	else:
+		$attr/ProgressBar.visible = false
 
 func _on_RoleUI_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:

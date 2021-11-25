@@ -61,9 +61,9 @@ func set_role(_role_data):
 	ui.initRole()
 
 #重载角色属性
-func reloadRoleAttr(_rid,_attr:HeroAttrBean):
+func reloadRoleAttr(_rid):
 	if !fight_script.is_in_atk && role_data.rid == _rid:
-		hero_attr.copy(_attr)
+		hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
 		ui.load_attr()
 
 func setIndex(_index):

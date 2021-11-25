@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.sakuya.wh",
+  "applicationId": "com.sakuya.mx",
   "variantName": "debug",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "attributes": [],
       "versionCode": 2,
-      "versionName": "1.0.0",
+      "versionName": "1.0.0_test",
       "outputFile": "android_debug.apk"
     }
   ],

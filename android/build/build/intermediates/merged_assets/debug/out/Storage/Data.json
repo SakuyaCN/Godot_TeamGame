@@ -5,6 +5,7 @@
             "image":"res://Texture/Data/d1/Icon1.png",
             "info":"基础升级材料，适用于冒险队成员1-30级升级，增加100点基础经验值！",
             "lv":1,
+            "useable":false,
             "type":"exp"
         },
         "黑色岩石":{
@@ -12,6 +13,7 @@
             "image":"res://Texture/Data/d1/Icon2.png",
             "info":"中级升级材料，适用于冒险队成员30-60级升级，增加550点基础经验值！",
             "lv":30,
+            "useable":false,
             "type":"exp"
         },
         "紫色岩石":{
@@ -19,6 +21,7 @@
             "image":"res://Texture/Data/d1/Icon5.png",
             "info":"高级升级材料，适用于冒险队成员60-90级升级，增加2550点基础经验值！",
             "lv":60,
+            "useable":false,
             "type":"exp"
         },
         "红色陨铁":{
@@ -26,6 +29,7 @@
             "image":"res://Texture/Data/d1/Icon6.png",
             "info":"基础材料，适用于炼金台制作各种道具！",
             "lv":1,
+            "useable":false,
             "type":"material"
         },
         "绿色陨铁":{
@@ -33,6 +37,7 @@
             "image":"res://Texture/Data/d1/Icon7.png",
             "info":"基础材料，适用于炼金台制作各种道具！",
             "lv":1,
+            "useable":false,
             "type":"material"
         },
         "秘银矿石":{
@@ -40,6 +45,7 @@
             "image":"res://Texture/Data/d1/Icon8.png",
             "info":"C级材料，适用于炼金台制作各种道具！",
             "lv":1,
+            "useable":false,
             "type":"material"
         },
         "青岚铁矿":{
@@ -47,6 +53,7 @@
             "image":"res://Texture/Data/d1/Icon9.png",
             "info":"B级材料，适用于炼金台制作各种道具！",
             "lv":1,
+            "useable":false,
             "type":"material"
         },
         "暗蓝星矿":{
@@ -54,6 +61,7 @@
             "image":"res://Texture/Data/d1/Icon10.png",
             "info":"A级材料，适用于炼金台制作各种道具！",
             "lv":1,
+            "useable":false,
             "type":"material"
         },
         "神秘之石":{
@@ -61,6 +69,7 @@
             "image":"res://Texture/Data/d1/Icon11.png",
             "info":"S级材料，适用于炼金台制作各种道具！",
             "lv":1,
+            "useable":false,
             "type":"material"
         },
         "基础强化石":{
@@ -68,6 +77,31 @@
             "image":"res://Texture/Data/d1/Icon25.png",
             "info":"可用于装备基础属性强化，每次强化需要1枚强化石，每次强化提高1%的属性，每件总计可以强化10次",
             "lv":1,
+            "useable":false,
+            "type":"material"
+        },
+        "小队招募令":{
+            "name":"小队招募令",
+            "image":"res://Texture/Data/other/Icon_23.png",
+            "info":"可用于招募一名小队成员，确认招募后消耗此物品！",
+            "lv":10,
+            "useable":true,
+            "type":"book"
+        },
+        "刻印收纳箱":{
+            "name":"刻印收纳箱",
+            "image":"res://Texture/Data/boxs/Icon1.png",
+            "info":"收集到的刻印都会存放在箱子里",
+            "lv":1,
+            "useable":true,
+            "type":"box"
+        },
+        "刻印碎片":{
+            "name":"刻印碎片",
+            "image":"res://Texture/Data/runes/bricks/Icon1.png",
+            "info":"刻印碎片刻印在炼金台制作不同种类的刻印，刻印可以提升装备属性",
+            "lv":1,
+            "useable":false,
             "type":"material"
         }
     },

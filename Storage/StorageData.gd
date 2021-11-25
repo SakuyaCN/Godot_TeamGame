@@ -6,13 +6,23 @@ var is_read_storage = false
 var team_data :Dictionary
 var player_state:Dictionary
 
+var thread
+var semaphore
+var is_saving = false
+var mutex
+
 func _ready():
+	thread = Thread.new()
+	semaphore = Semaphore.new()
+	mutex = Mutex.new()
+	thread.start(self, "save_ansyc", "")
 	_read_storage()
 	get_player_inventory()
 	get_player_equipment()
 	get_player_state()
 	get_all_team()
 	get_all_skill()
+	get_player_seal()
 	reloadData()
 
 func reloadData():
@@ -28,17 +38,33 @@ func _read_storage():
 	storage_data_file.close()
 
 func _save_storage():
-	var storage_data_file = File.new()
-	var _err = storage_data_file.open("user://Storages_test.json",File.WRITE)
-	storage_data_file.store_string(to_json(storage_data))
-	storage_data_file.close()
+	semaphore.post()
+
+func save_ansyc(_data):
+	while true:
+		semaphore.wait()
+		mutex.lock()
+		var storage_data_file = File.new()
+		var _err = storage_data_file.open("user://Storages_test.json",File.WRITE)
+		storage_data_file.store_string(to_json(storage_data))
+		storage_data_file.close()
+		mutex.unlock()
+
+#读取人物刻印列表
+func get_player_seal():
+	if not is_read_storage:
+		_read_storage()
+	if not storage_data.has("player_seal"):
+		storage_data["player_seal"] = {}
+		_save_storage()
+	return storage_data["player_seal"]
 
 #获取人物背包
 func get_player_inventory():
 	if not is_read_storage:
 		_read_storage()
 	if not storage_data.has("player_inventory"):
-		storage_data["player_inventory"] = {}
+		storage_data["player_inventory"] = {"刻印收纳箱":1}
 		_save_storage()
 	return storage_data["player_inventory"]
 
@@ -123,3 +149,10 @@ func UseGoodsNum(array):
 	else:
 		ConstantsValue.ui_layer.showMessage("背包道具不足！",1)
 		return false
+
+#添加一个刻印
+func AddSeal(_data):
+	var id = str(OS.get_system_time_msecs())
+	get_player_seal()[id] = _data
+	ConstantsValue.ui_layer.getNewItem(_data.name,_data.img)
+	_save_storage()

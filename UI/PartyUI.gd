@@ -27,6 +27,7 @@ onready var temp_skill = get_parent()
 
 func _ready():
 	add_to_group("PartyUI")
+	$Equ_info.visible = false
 	visible = false
 	set_process(false)
 	var line = StyleBoxTexture.new()
@@ -57,13 +58,12 @@ func showPosition():
 #点击英雄刷新
 func checkHeroData():
 	if StorageData.get_all_team().has(str(select_index)):
-		if role_data != StorageData.get_all_team()[select_index]:
-			role_data = StorageData.get_all_team()[select_index]
-			showPosition()
-			loadHeroData()
-			loadAllSkill()
-			loadAllEqu()
-			reLoadHeroEqu()
+		role_data = StorageData.get_all_team()[select_index]
+		showPosition()
+		loadHeroData()
+		loadAllSkill()
+		loadAllEqu()
+		reLoadHeroEqu()
 
 func _process(_delta):
 	if check_temp_ins != null && get_parent().tempSKillIcon.visible:
@@ -259,6 +259,9 @@ func _on_ClickTimer_timeout():
 
 #穿戴装备
 func setEqu2Role(type,equ_data):
+	if equ_data.lv > role_data["lv"]:
+		ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
+		return
 	$Equ_info.visible = false
 	equ_data.is_on = true
 	role_data["equ"][type] = equ_data["id"]
@@ -287,10 +290,18 @@ func loadEquInfo(equ_data):
 		label.text = EquUtils.get_ys_string(attr_item.keys()[0]) + " + %s" %attr_item.values()[0]
 		label.set('custom_colors/font_outline_modulate', EquUtils.get_ys_color(attr_item.keys()[0]))
 		$Equ_info/VBoxContainer.add_child(label)
+	if equ_data["seal"].size()>0:
+		var label = label_ui.instance()
+		label.text = "\n刻印属性："
+		$Equ_info/VBoxContainer.add_child(label)
+	for attr_item in equ_data["seal"]:
+		var label = label_ui.instance()
+		label.text = EquUtils.get_attr_string(attr_item.keys()[0]) + " + %s" %attr_item.values()[0]
+		$Equ_info/VBoxContainer.add_child(label)
 	if equ_data["is_on"]:
-		$Equ_info/btn_down.visible = true
+		$Equ_info/btn_down.text = "卸下"
 	else:
-		$Equ_info/btn_down.visible = false
+		$Equ_info/btn_down.text = "丢弃"
 
 #装备按钮区域
 #=========================
@@ -298,14 +309,31 @@ func loadEquInfo(equ_data):
 func _on_btn_down_pressed():
 	if check_equ_data == null:
 		return
-	check_equ_data.is_on = false
-	role_data["equ"].erase(check_equ_data["type"])
-	StorageData._save_storage()
-	$Equ_info.visible = false
-	check_equ_data = null
-	loadAllEqu()
-	reLoadHeroEqu()
+	if check_equ_data["is_on"]:
+		check_equ_data.is_on = false
+		role_data["equ"].erase(check_equ_data["type"])
+		StorageData._save_storage()
+		$Equ_info.visible = false
+		check_equ_data = null
+		loadAllEqu()
+		reLoadHeroEqu()
+		loadHeroData()
+	else:
+		ConstantsValue.showMessage("已丢弃%s"%check_equ_data.name,1)
+		$Equ_info.visible = false
+		StorageData.get_player_equipment().erase(check_equ_data.id)
+		loadAllEqu()
+
+#刻印点击
+func _on_btn_seal_pressed():
+	if check_equ_data != null:
+		ConstantsValue.showSealBox(check_equ_data,self)
+
+#刻印属性更新
+func seal_choose():
+	loadEquInfo(check_equ_data)
 	loadHeroData()
+	get_tree().call_group("player_role","reloadRoleAttr",role_data.rid)
 #=========================
 
 #公共方法
@@ -381,3 +409,9 @@ func setRole2Position(_index):
 	showPosition()
 	$PostionBox/AnimationPlayer.play_backwards("show")
 #=====================================================
+
+#其他属性面板
+func _on_other_attr_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		if role_data != null:
+			ConstantsValue.showAttrBox(self,hero_attr)

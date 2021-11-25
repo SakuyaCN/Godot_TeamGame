@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=2]
@@ -16,6 +16,18 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 20
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 18
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 1 )
@@ -79,6 +91,63 @@ region_rect = Rect2( 0, 0, 145, 52 )
 texture = ExtResource( 9 )
 region_rect = Rect2( 0, 0, 145, 52 )
 
+[sub_resource type="Animation" id=18]
+resource_name = "show"
+length = 0.3
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("postion_0:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("postion_1:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 104, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("postion_2:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 208, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.01, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
 [node name="PartyUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -123,10 +192,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -111.0
-margin_top = -271.5
-margin_right = 111.0
-margin_bottom = -214.5
+margin_left = -223.0
+margin_top = -267.5
+margin_right = -27.0
+margin_bottom = -210.5
 texture = ExtResource( 4 )
 expand = true
 __meta__ = {
@@ -140,6 +209,69 @@ custom_fonts/font = SubResource( 1 )
 text = "NickName"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 110.0
+margin_top = -267.5
+margin_right = 224.0
+margin_bottom = -210.5
+mouse_filter = 0
+texture = ExtResource( 9 )
+patch_margin_left = 43
+patch_margin_top = 8
+patch_margin_right = 49
+patch_margin_bottom = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="TextureRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 17 )
+text = "前排"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="other_attr" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.0
+margin_top = -267.5
+margin_right = 96.0
+margin_bottom = -210.5
+mouse_filter = 0
+texture = ExtResource( 9 )
+patch_margin_left = 43
+patch_margin_top = 8
+patch_margin_right = 49
+patch_margin_bottom = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="other_attr"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 19 )
+text = "其他属性"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="attr" type="TextureRect" parent="."]
 anchor_left = 0.5
@@ -385,14 +517,16 @@ margin_left = 13.0
 margin_top = 76.0
 margin_right = 217.0
 margin_bottom = 208.0
-custom_constants/vseparation = 12
-custom_constants/hseparation = 12
+custom_constants/vseparation = 16
+custom_constants/hseparation = 16
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Control" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 60.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 4 )
@@ -400,6 +534,8 @@ custom_styles/normal = SubResource( 5 )
 type = "武器"
 
 [node name="Control2" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 72.0
 margin_right = 132.0
 margin_bottom = 60.0
@@ -408,6 +544,8 @@ custom_styles/normal = SubResource( 5 )
 type = "副手"
 
 [node name="Control3" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 144.0
 margin_right = 204.0
 margin_bottom = 60.0
@@ -416,44 +554,54 @@ custom_styles/normal = SubResource( 5 )
 type = "护甲"
 
 [node name="Control4" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 216.0
-margin_right = 276.0
+margin_right = 266.0
 margin_bottom = 60.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "护腿"
 
 [node name="Control5" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = 72.0
 margin_right = 60.0
-margin_bottom = 132.0
+margin_bottom = 122.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "戒指"
 
 [node name="Control6" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 72.0
 margin_top = 72.0
 margin_right = 132.0
-margin_bottom = 132.0
+margin_bottom = 122.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "饰品"
 
 [node name="Control7" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 144.0
 margin_top = 72.0
 margin_right = 204.0
-margin_bottom = 132.0
+margin_bottom = 122.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "头盔"
 
 [node name="Control8" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 216.0
 margin_top = 72.0
-margin_right = 276.0
-margin_bottom = 132.0
+margin_right = 266.0
+margin_bottom = 122.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "护手"
@@ -718,14 +866,15 @@ margin_left = 26.0
 margin_top = 74.0
 margin_right = 304.0
 margin_bottom = 448.0
+scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GridContainer" type="GridContainer" parent="Equ_bg/ScrollContainer"]
 custom_constants/vseparation = 12
-custom_constants/hseparation = 12
-columns = 4
+custom_constants/hseparation = 6
+columns = 5
 
 [node name="Equ_info" type="NinePatchRect" parent="."]
 visible = false
@@ -806,10 +955,114 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="btn_seal" type="Button" parent="Equ_info"]
+margin_left = 36.0
+margin_top = 412.0
+margin_right = 139.0
+margin_bottom = 453.0
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "刻印"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PostionBox" type="HBoxContainer" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 911.0
+margin_top = 43.0
+margin_right = 1219.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="postion_0" type="NinePatchRect" parent="PostionBox"]
+margin_right = 100.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 100, 57 )
+mouse_filter = 0
+texture = ExtResource( 9 )
+patch_margin_left = 24
+patch_margin_right = 29
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="PostionBox/postion_0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 17 )
+text = "前排"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="postion_1" type="NinePatchRect" parent="PostionBox"]
+margin_right = 100.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 100, 57 )
+mouse_filter = 0
+texture = ExtResource( 9 )
+patch_margin_left = 24
+patch_margin_right = 29
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="PostionBox/postion_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 17 )
+text = "中卫"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="postion_2" type="NinePatchRect" parent="PostionBox"]
+margin_right = 100.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 100, 57 )
+mouse_filter = 0
+texture = ExtResource( 9 )
+patch_margin_left = 24
+patch_margin_right = 29
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="PostionBox/postion_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 17 )
+text = "后排"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PostionBox"]
+anims/show = SubResource( 18 )
+
 [connection signal="timeout" from="ClickTimer" to="." method="_on_ClickTimer_timeout"]
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
 [connection signal="gui_input" from="ScrollContainer" to="ScrollContainer" method="_on_ScrollContainer_gui_input"]
+[connection signal="gui_input" from="TextureRect2" to="." method="_on_TextureRect2_gui_input"]
+[connection signal="gui_input" from="other_attr" to="." method="_on_other_attr_gui_input"]
 [connection signal="gui_input" from="status" to="." method="_on_status_gui_input"]
 [connection signal="gui_input" from="skill" to="." method="_on_skill_gui_input"]
 [connection signal="gui_input" from="equ" to="." method="_on_equ_gui_input"]
 [connection signal="pressed" from="Equ_info/btn_down" to="." method="_on_btn_down_pressed"]
+[connection signal="pressed" from="Equ_info/btn_seal" to="." method="_on_btn_seal_pressed"]
+[connection signal="gui_input" from="PostionBox/postion_0" to="." method="_on_postion_0_gui_input"]
+[connection signal="gui_input" from="PostionBox/postion_1" to="." method="_on_postion_1_gui_input"]
+[connection signal="gui_input" from="PostionBox/postion_2" to="." method="_on_postion_2_gui_input"]

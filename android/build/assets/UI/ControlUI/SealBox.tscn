@@ -1,0 +1,302 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
+[ext_resource path="res://Texture/bg_2.png" type="Texture" id=2]
+[ext_resource path="res://UI/SealBox.gd" type="Script" id=3]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=5]
+[ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 14
+extra_spacing_top = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 133, 34 )
+margin_bottom = 2.45886
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "show"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Item:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 541.659, -0.25, 0, 0.25, 0, 280, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Item:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Item:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[node name="SealBox" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 88.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 8 )
+text = "请选中一个刻印为装备提升属性！"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -392.0
+margin_top = -158.5
+margin_right = -132.0
+margin_bottom = 84.5
+rect_pivot_offset = Vector2( -357.919, -71.9322 )
+mouse_filter = 0
+texture = ExtResource( 2 )
+patch_margin_left = 30
+patch_margin_top = 29
+patch_margin_right = 24
+patch_margin_bottom = 26
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Item"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.5
+margin_top = -103.0
+margin_right = 105.5
+margin_bottom = 99.0
+custom_colors/default_color = Color( 0.278431, 0.505882, 0.509804, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Item"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 3.0
+margin_top = 128.5
+margin_right = 130.0
+margin_bottom = 196.5
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "使用"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Item"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = 128.5
+margin_right = -3.0
+margin_bottom = 196.5
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "丢弃"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item2" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 133.0
+margin_top = -112.5
+margin_right = 370.0
+margin_bottom = 36.5
+rect_pivot_offset = Vector2( -357.919, -71.9322 )
+mouse_filter = 0
+texture = ExtResource( 2 )
+patch_margin_left = 30
+patch_margin_top = 29
+patch_margin_right = 24
+patch_margin_bottom = 26
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Item2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.0
+margin_top = -54.0
+margin_right = 99.0
+margin_bottom = 54.0
+custom_colors/default_color = Color( 0.278431, 0.505882, 0.509804, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Item2"]
+anchor_right = 1.0
+margin_top = -40.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 8 )
+text = "当前装备刻印："
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Item2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.5
+margin_top = 7.0
+margin_right = 63.5
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "擦除"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Item2"]
+anchor_right = 1.0
+margin_top = 232.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 9 )
+text = "双击擦除后会将装备
+所有刻印属性移除！"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -159.0
+margin_right = 130.0
+margin_bottom = 159.0
+mouse_filter = 0
+texture = ExtResource( 2 )
+patch_margin_left = 30
+patch_margin_top = 29
+patch_margin_right = 24
+patch_margin_bottom = 26
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -116.5
+margin_top = -147.0
+margin_right = 116.5
+margin_bottom = 147.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer"]
+columns = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show = SubResource( 1 )
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="pressed" from="Item/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Item/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Item2/Button3" to="." method="_on_Button3_pressed"]

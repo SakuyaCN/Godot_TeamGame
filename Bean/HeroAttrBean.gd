@@ -45,7 +45,9 @@ func resetAttr(role_data):
 	mtk = role_data.attr.mtk
 	speed = role_data.attr.speed
 	crit = role_data.attr.crit
-	
+	if role_data.attr.has("other"):
+		for item in role_data.attr.other:
+			updateNum(item,role_data.attr.other[item],false)
 	mp = 100
 	levelAttr(role_data.lv)
 
@@ -63,30 +65,9 @@ func setEquAttrBean(role_data):
 	for equ in role_data["equ"]:
 		var equ_data = StorageData.get_player_equipment()[str(role_data["equ"][equ])]
 		for base_attr_item in equ_data["base_attr"]:#基础属性
-			match base_attr_item.keys()[0]:
-				"hp": hp += base_attr_item.values()[0]
-				"atk": atk += base_attr_item.values()[0]
-				"def": def += base_attr_item.values()[0]
-				"mdef": mdef += base_attr_item.values()[0]
-				"mtk": mtk += base_attr_item.values()[0]
-				"speed": speed += base_attr_item.values()[0]
-				"crit": crit += base_attr_item.values()[0]
-				"mp": mp += base_attr_item.values()[0]
-				"hold": hold += base_attr_item.values()[0]
-				"hole_num": hole_num += base_attr_item.values()[0]
-				"dodge": dodge += base_attr_item.values()[0]
-				"hole_pass": hole_pass += base_attr_item.values()[0]
-				"mtk_pass": mtk_pass += base_attr_item.values()[0]
-				"atk_pass": atk_pass += base_attr_item.values()[0]
-				"atk_blood": atk_blood += base_attr_item.values()[0]
-				"mtk_blood": mtk_blood += base_attr_item.values()[0]
-				"atk_buff": atk_buff += base_attr_item.values()[0]
-				"mtk_buff": mtk_buff += base_attr_item.values()[0]
-				"hp_buff": hp_buff += base_attr_item.values()[0]
-				"true_hurt": true_hurt += base_attr_item.values()[0]
-				"uncrit": uncrit += base_attr_item.values()[0]
-				"hurt_buff": uncrit += base_attr_item.values()[0]
-				"crit_buff" :crit_buff += base_attr_item.values()[0]
+			updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
+		for base_attr_item in equ_data["seal"]:#基础属性
+			updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
 		for base_attr_item in equ_data["ys_attr"]:#元素属性
 			match base_attr_item.keys()[0]:
 				"fire": fire += base_attr_item.values()[0]
@@ -110,8 +91,8 @@ func loadJobAttr(role_data):
 		"不屈骑士":
 			hp += 35 * role_data.lv
 		"绝地武士":
-			speed += 15 * role_data.lv
-			crit += 15 * role_data.lv
+			speed += 25 * role_data.lv
+			crit += 25 * role_data.lv
 			crit_buff += 35
 			speed += (speed * 0.06) as int
 		"致命拳手":
@@ -195,7 +176,7 @@ func toDict():
 		"crit_buff" : crit_buff
 	}
 
-func updateNum(attr,num):
+func updateNum(attr,num,is_emit = true):
 	match attr:
 		"max_hp" : max_hp += num
 		"hp" : hp += num
@@ -225,4 +206,5 @@ func updateNum(attr,num):
 		"true_hurt" : true_hurt += num
 		"hurt_buff" : hurt_buff += num
 		"crit_buff" : crit_buff += num
-	emit_signal("onAttrChange",attr,num)
+	if is_emit:
+		emit_signal("onAttrChange",attr,num)

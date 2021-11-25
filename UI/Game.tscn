@@ -430,30 +430,30 @@ scale = Vector2( 5, 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
 frames = SubResource( 7 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 25.6, 0 )
 frames = SubResource( 14 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 54.4, 0 )
 frames = SubResource( 21 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 118.4, 0 )
 frames = SubResource( 28 )
-frame = 5
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 144, 0 )
 frames = SubResource( 35 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="pb1" type="ParallaxBackground" parent="PxBg"]
@@ -601,12 +601,22 @@ position = Vector2( 1180, 498 )
 [node name="Timer" type="Timer" parent="GameMain"]
 wait_time = 0.1
 
+[node name="BossTimer" type="Timer" parent="GameMain"]
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 pause_mode = 2
 layer = 0
 script = ExtResource( 2 )
 
 [node name="Control" parent="UILayer" instance=ExtResource( 8 )]
+
+[node name="addBox" type="Control" parent="UILayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="msg" type="Label" parent="UILayer"]
 visible = false
@@ -810,6 +820,7 @@ wait_time = 3.0
 [connection signal="pressed" from="GameLayer/FightUI/Fight_btn/startFight" to="GameLayer/FightUI" method="_on_startFight_pressed"]
 [connection signal="toggled" from="GameLayer/FightUI/Fight_btn/autoFight" to="GameLayer/FightUI" method="_on_autoFight_toggled"]
 [connection signal="timeout" from="GameMain/Timer" to="GameMain" method="_on_Timer_timeout"]
+[connection signal="timeout" from="GameMain/BossTimer" to="GameMain" method="_on_BossTimer_timeout"]
 [connection signal="timeout" from="UILayer/msg/Timer" to="UILayer" method="_on_Timer_timeout"]
 [connection signal="gui_input" from="UILayer/GameResult/ColorRect" to="UILayer" method="_on_ColorRect_gui_input"]
 [connection signal="timeout" from="UILayer/GameResult/Timer" to="UILayer/GameResult" method="_on_Timer_timeout"]

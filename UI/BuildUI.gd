@@ -7,7 +7,8 @@ onready var build_grid_item = preload("res://UI/ItemUI/BuildGridItem.tscn")
 onready var build_info_need = preload("res://UI/ItemUI/BuildInfoNeedItem.tscn")
 
 var choose_data
-var choose_type
+var choose_type #顶部二级选中类别
+var left_type #左侧选中类别
 
 func _ready():
 	$NinePatchRect/ScrollContainer.get_v_scrollbar().set("custom_styles/scroll",StyleBoxTexture.new())
@@ -24,7 +25,7 @@ func loadBuildData():
 		label_ins.text = item
 		$NinePatchRect/ScrollContainer/VBoxContainer.add_child(label_ins)
 		label_ins.connect("pressed",self,"build_first_click",[item])
-	loadBuildType(buildData["build_type"].keys()[0])
+	#loadBuildType(buildData["build_type"].keys()[0])
 
 #加载一级分类下首个数据
 func loadBuildType(type):
@@ -47,10 +48,8 @@ func loadBuildType(type):
 
 #顶部类型点击
 func loadBuildTypeData(type,array,top_type):
-	if $AnimationPlayer.is_playing():
-		return
 	if $NinePatchRect3.visible:
-		$AnimationPlayer.play_backwards("show")
+		$NinePatchRect3.visible = false
 	for item in $NinePatchRect2/ScrollContainer/GridContainer.get_children():
 		item.queue_free()
 	$NinePatchRect2/ScrollContainer/GridContainer.get_children().clear()
@@ -65,19 +64,15 @@ func loadBuildTypeData(type,array,top_type):
 
 #左侧制作类型点击
 func build_first_click(type):
-	if $AnimationPlayer.is_playing():
-		return
-	if $NinePatchRect3.visible:
-		$AnimationPlayer.play_backwards("show")
 	loadBuildType(type)
+	if $NinePatchRect3.visible:
+		$NinePatchRect3.visible = false
 
 #中间物品点击
 func build_item_click(type,data):
 	choose_data = data
-	if $AnimationPlayer.is_playing():
-		yield($AnimationPlayer,"animation_finished")
 	if !$NinePatchRect3.visible:
-		$AnimationPlayer.play("show")
+		$NinePatchRect3.visible = true
 	$NinePatchRect3/title.text = data.name + " lv.%s" %data.lv
 	get_context_label(type,data)
 	for item in $NinePatchRect3/GridContainer.get_children():
@@ -90,19 +85,20 @@ func build_item_click(type,data):
 
 func buildChange(change):
 	visible = change
-	if !visible:
-		$AnimationPlayer.play_backwards("show")
 	$NinePatchRect3.visible = false
 	if visible && !ConfigScript.getBoolSetting("store","first_open_build"):#首次打开炼金台
 		var new_dialog = Dialogic.start('first_open_build')
 		add_child(new_dialog)
 		ConfigScript.setBoolSetting("store","first_open_build",true)
+	if visible:
+		loadBuildType(buildData["build_type"].keys()[0])
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		buildChange(false)
 
 func get_context_label(type,data):
+	left_type = type
 	$NinePatchRect3/context.clear()
 	match type:
 		"基础装备", "神话套装":
@@ -121,9 +117,25 @@ func get_context_label(type,data):
 		"材料":
 			$NinePatchRect3/context.append_bbcode("道具简介：\n")
 			$NinePatchRect3/context.append_bbcode(LocalData.all_data["goods"][data.name].info)
+		"刻印":
+			$NinePatchRect3/context.append_bbcode(data.info+"\n")
+			if data.keys().has("attr"):
+				for attr in data.attr:
+					$NinePatchRect3/context.append_bbcode(EquUtils.get_attr_string(attr))
+					$NinePatchRect3/context.append_bbcode(" %s - %s" %[data.attr[attr][0],(data.attr[attr][1])as int])
+					$NinePatchRect3/context.append_bbcode("\n")
 
 func _on_Button_pressed():
+	if !Utils.is_lv_ok(choose_data.lv):
+		ConstantsValue.showMessage("至少需要一名冒险者达到%s级才可以制作"%choose_data.lv,2)
+		return
 	#print(StorageData.UseGoodsNum(choose_data.need))
 	if StorageData.UseGoodsNum(choose_data.need):
-		var equ = EquUtils.createNewEqu(choose_data,choose_type)
-		ConstantsValue.ui_layer.getNewItem(choose_data.name,choose_data.img,equ.quality)
+		match left_type:
+			"基础装备", "神话套装":
+				var equ = EquUtils.createNewEqu(choose_data,choose_type)
+				ConstantsValue.ui_layer.getNewItem(choose_data.name,choose_data.img,equ.quality)
+			"材料":
+				StorageData.AddGoodsNum([[choose_data.name,1]])
+			"刻印":
+				StorageData.AddSeal(choose_data)

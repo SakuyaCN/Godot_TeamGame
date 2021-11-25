@@ -230,4 +230,12 @@ func get_time_string(s):
 		return str(stepify(s as float/3600, 0.1)) +"小时"
 
 func get_up_lv_exp(role_lv:int):
-	return role_lv * (role_lv * (role_lv * 2))+ 10
+	return (role_lv * (role_lv * (role_lv * 1.7))+ 5) as int
+
+#是否有队员达到等级要求
+func is_lv_ok(_lv):
+	var team = StorageData.get_all_team()
+	for item in team:
+		if team[item].lv >= _lv:
+			return true
+	return false

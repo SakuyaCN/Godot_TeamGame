@@ -23,8 +23,10 @@
         "材料":{
             "锻造材料":["绿色陨铁","秘银矿石","青岚铁矿","暗蓝星矿","神秘之石"]
         },
-        "技能书":{
-           
+        "刻印":{
+            "C级刻印":[101,102,103,104,105,106],
+            "B级刻印":[201,202,203,204,205,206],
+            "A级刻印":[301,302,303,304,305,306]
         }
     },
     "build_data":{
@@ -439,7 +441,7 @@
                 },
                 "img":"res://Texture/equ/Sigil/Icon1.png",
                 "need":[
-                    ["秘银矿石",5]
+                    ["绿色陨铁",10]
                 ]
             },"402":{
                 "lv":10,
@@ -452,7 +454,7 @@
                 },
                 "img":"res://Texture/equ/Sigil/Icon2.png",
                 "need":[
-                    ["秘银矿石",10]
+                    ["绿色陨铁",15]
                 ]
             },"403":{
                 "lv":15,
@@ -465,7 +467,7 @@
                 },
                 "img":"res://Texture/equ/Sigil/Icon3.png",
                 "need":[
-                    ["秘银矿石",15]
+                    ["绿色陨铁",25]
                 ]
             },"404":{
                 "lv":20,
@@ -478,7 +480,7 @@
                 },
                 "img":"res://Texture/equ/Sigil/Icon4.png",
                 "need":[
-                    ["秘银矿石",20]
+                    ["绿色陨铁",50]
                 ]
             },"405":{
                 "lv":25,
@@ -491,7 +493,7 @@
                 },
                 "img":"res://Texture/equ/Sigil/Icon5.png",
                 "need":[
-                    ["秘银矿石",30]
+                    ["绿色陨铁",70]
                 ]
             },"406":{
                 "lv":30,
@@ -504,7 +506,7 @@
                 },
                 "img":"res://Texture/equ/Sigil/Icon6.png",
                 "need":[
-                    ["秘银矿石",40]
+                    ["秘银矿石",20]
                 ]
             },"407":{
                 "lv":35,
@@ -517,7 +519,7 @@
                 },
                 "img":"res://Texture/equ/Sigil/Icon7.png",
                 "need":[
-                    ["秘银矿石",55]
+                    ["秘银矿石",35]
                 ]
             },"408":{
                 "lv":40,
@@ -530,7 +532,7 @@
                 },
                 "img":"res://Texture/equ/Sigil/Icon8.png",
                 "need":[
-                    ["秘银矿石",75]
+                    ["秘银矿石",55]
                 ]
             },"409":{
                 "lv":45,
@@ -1200,6 +1202,257 @@
                     ["秘银矿石",20],
                     ["青岚铁矿",10],
                     ["暗蓝星矿",5]
+                ]
+            }
+        },
+        "刻印":{
+            "101":{
+                "lv":5,
+                "name":"C级基础印",
+                "info":"装备达到5级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "hp":[155,200],
+                    "atk":[35,50],
+                    "mtk":[35,50]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon1.png",
+                "need":[
+                    ["刻印碎片",10]
+                ]
+            },
+            "102":{
+                "lv":5,
+                "name":"C级强攻印",
+                "info":"装备达到5级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "speed":[55,70],
+                    "crit":[35,50],
+                    "true_hurt":[15,30]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon7.png",
+                "need":[
+                    ["刻印碎片",10]
+                ]
+            },
+            "103":{
+                "lv":5,
+                "name":"C级穿透印",
+                "info":"装备达到5级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "atk_pass":[1,2],
+                    "mtk_pass":[1,2],
+                    "hole_pass":[1,2]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon13.png",
+                "need":[
+                    ["刻印碎片",10]
+                ]
+            },
+            "104":{
+                "lv":5,
+                "name":"C级吸血印",
+                "info":"装备达到5级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "atk_blood":[1,3],
+                    "mtk_blood":[1,3]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon19.png",
+                "need":[
+                    ["刻印碎片",10]
+                ]
+            },
+            "105":{
+                "lv":5,
+                "name":"C级加持印",
+                "info":"装备达到5级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "hurt_buff":[1,3],
+                    "crit_buff":[1,3]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon31.png",
+                "need":[
+                    ["刻印碎片",10]
+                ]
+            },
+            "106":{
+                "lv":5,
+                "name":"C级防御印",
+                "info":"装备达到5级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "uncrit":[25,35],
+                    "hold":[1,2],
+                    "dodge":[1,2],
+                    "hole_num":[20,35]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon25.png",
+                "need":[
+                    ["刻印碎片",10]
+                ]
+            },
+            "201":{
+                "lv":25,
+                "name":"B级基础印",
+                "info":"装备达到25级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "hp":[355,500],
+                    "atk":[105,150],
+                    "mtk":[105,150]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon2.png",
+                "need":[
+                    ["刻印碎片",30]
+                ]
+            },
+            "202":{
+                "lv":25,
+                "name":"B级强攻印",
+                "info":"装备达到25级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "speed":[205,270],
+                    "crit":[205,250],
+                    "true_hurt":[35,60]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon8.png",
+                "need":[
+                    ["刻印碎片",30]
+                ]
+            },
+            "203":{
+                "lv":25,
+                "name":"B级穿透印",
+                "info":"装备达到25级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "atk_pass":[3,4],
+                    "mtk_pass":[3,4],
+                    "hole_pass":[3,4]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon14.png",
+                "need":[
+                    ["刻印碎片",30]
+                ]
+            },
+            "204":{
+                "lv":25,
+                "name":"B级吸血印",
+                "info":"装备达到25级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "atk_blood":[4,6],
+                    "mtk_blood":[4,6]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon20.png",
+                "need":[
+                    ["刻印碎片",30]
+                ]
+            },
+            "205":{
+                "lv":25,
+                "name":"B级加持印",
+                "info":"装备达到25级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "hurt_buff":[4,6],
+                    "crit_buff":[4,6]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon32.png",
+                "need":[
+                    ["刻印碎片",30]
+                ]
+            },
+            "206":{
+                "lv":25,
+                "name":"B级防御印",
+                "info":"装备达到25级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "uncrit":[105,135],
+                    "hold":[3,4],
+                    "dodge":[3,4],
+                    "hole_num":[100,135]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon26.png",
+                "need":[
+                    ["刻印碎片",30]
+                ]
+            },
+            "301":{
+                "lv":50,
+                "name":"A级基础印",
+                "info":"装备达到50级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "hp":[755,1000],
+                    "atk":[300,450],
+                    "mtk":[300,450]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon3.png",
+                "need":[
+                    ["刻印碎片",60]
+                ]
+            },
+            "302":{
+                "lv":50,
+                "name":"A级强攻印",
+                "info":"装备达到50级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "speed":[300,450],
+                    "crit":[400,550],
+                    "true_hurt":[105,160]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon9.png",
+                "need":[
+                    ["刻印碎片",60]
+                ]
+            },
+            "303":{
+                "lv":50,
+                "name":"A级穿透印",
+                "info":"装备达到50级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "atk_pass":[5,8],
+                    "mtk_pass":[5,8],
+                    "hole_pass":[5,8]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon15.png",
+                "need":[
+                    ["刻印碎片",60]
+                ]
+            },
+            "304":{
+                "lv":50,
+                "name":"A级吸血印",
+                "info":"装备达到50级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "atk_blood":[7,10],
+                    "mtk_blood":[7,10]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon21.png",
+                "need":[
+                    ["刻印碎片",60]
+                ]
+            },
+            "305":{
+                "lv":50,
+                "name":"A级加持印",
+                "info":"装备达到50级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "hurt_buff":[7,10],
+                    "crit_buff":[7,10]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon33.png",
+                "need":[
+                    ["刻印碎片",60]
+                ]
+            },
+            "306":{
+                "lv":50,
+                "name":"A级防御印",
+                "info":"装备达到50级使用，刻印会增加以下一条随机属性",
+                "attr":{
+                    "uncrit":[305,435],
+                    "hold":[5,7],
+                    "dodge":[5,7],
+                    "hole_num":[300,435]
+                },
+                "img":"res://Texture/Data/runes/runes+bricks+effects/Icon27.png",
+                "need":[
+                    ["刻印碎片",60]
                 ]
             }
         }

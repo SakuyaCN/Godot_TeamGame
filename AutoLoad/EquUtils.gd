@@ -2,6 +2,11 @@ extends Node
 
 func get_attr_string(attr):
 	match attr:
+		"fire": return "火属性"
+		"ice": return "冰属性"
+		"wind": return "风属性"
+		"posion": return "毒属性"
+		"max_hp": return "最大血量"
 		"atk": return "攻击"
 		"hp": return "血量"
 		"mtk": return "魔力"
@@ -16,10 +21,10 @@ func get_attr_string(attr):
 		"hole_num": return "格挡伤害"
 		"dodge": return "闪避率"
 		"hole_pass": return "格挡穿透"
-		"mtk_pass": return "魔免穿透"
-		"atk_pass": return "物免穿透"
-		"atk_blood": return "物理吸血"
-		"mtk_blood": return "魔力吸血"
+		"mtk_pass": return "魔免穿透率"
+		"atk_pass": return "物免穿透率"
+		"atk_blood": return "物理吸血率"
+		"mtk_blood": return "魔力吸血率"
 		"atk_buff": return "攻击提升百分比"
 		"mtk_buff": return "魔力提升百分比"
 		"hp_buff": return "生命提升百分比"
@@ -106,7 +111,8 @@ func createNewEqu(data,type):
 		"is_on":false,
 		"base_attr":base_attr,
 		"ys_attr":ys_attr,
-		"qh":0
+		"qh":0,
+		"seal":[]
 	}
 	StorageData.addEqutoBag(equData)
 	return equData

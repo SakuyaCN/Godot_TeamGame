@@ -10,6 +10,7 @@ onready var glod = $gold
 var dataInfo
 
 func _ready():
+	$Item.visible = false
 	add_to_group("bag_ui")
 	for data in 40:
 		var ins = invItem.instance()
@@ -30,6 +31,7 @@ func bagChange(change):
 	visible = change
 	if visible:
 		glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] 
+		bagInit()
 
 func grid_child_pressed(data):
 	if data.inv_name != null:
@@ -58,4 +60,7 @@ func _on_BagUI_visibility_changed():
 
 #使用道具
 func _on_Button_pressed():
-	GoodsUtils.useGoods(self,dataInfo["name"],1)
+	if Utils.is_lv_ok(dataInfo["lv"]):
+		GoodsUtils.useGoods(self,dataInfo["name"],1)
+	else:
+		ConstantsValue.showMessage("至少需要一名队员达到%s级方可使用道具"%dataInfo["lv"],2)

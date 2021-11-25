@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://UI/BuildUI.gd" type="Script" id=2]
@@ -41,72 +41,6 @@ region_rect = Rect2( 0, 0, 133, 34 )
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 133, 34 )
 margin_bottom = 2.45886
-
-[sub_resource type="Animation" id=8]
-resource_name = "show"
-length = 0.3
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("NinePatchRect:rect_position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 282.431, -0.25, 0, 0.25, 0, 162.431, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("NinePatchRect2:rect_position:x")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 482.5, -0.25, 0, 0.25, 0, 362.5, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("ScrollContainer:rect_position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 482.5, -0.25, 0, 0.25, 0, 362.5, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("NinePatchRect3:rect_position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 1000, -0.25, 0, 0.25, 0, 850, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
-tracks/4/type = "bezier"
-tracks/4/path = NodePath("NinePatchRect3:modulate:a")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("NinePatchRect3:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.001, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, true ]
-}
 
 [node name="BuildUI" type="Control"]
 anchor_right = 1.0
@@ -217,13 +151,12 @@ __meta__ = {
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="."]
 visible = false
-modulate = Color( 1, 1, 1, 0 )
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 1000.0
-margin_top = -216.5
-margin_right = 1313.01
-margin_bottom = 232.5
+margin_left = 968.0
+margin_top = -216.964
+margin_right = 1281.01
+margin_bottom = 232.036
 mouse_filter = 0
 texture = ExtResource( 3 )
 patch_margin_left = 40
@@ -299,9 +232,6 @@ text = "开始制作"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/show = SubResource( 8 )
 
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
 [connection signal="pressed" from="NinePatchRect3/Button" to="." method="_on_Button_pressed"]

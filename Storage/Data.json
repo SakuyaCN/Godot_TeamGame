@@ -84,9 +84,25 @@
             "name":"小队招募令",
             "image":"res://Texture/Data/other/Icon_23.png",
             "info":"可用于招募一名小队成员，确认招募后消耗此物品！",
-            "lv":1,
+            "lv":10,
             "useable":true,
             "type":"book"
+        },
+        "刻印收纳箱":{
+            "name":"刻印收纳箱",
+            "image":"res://Texture/Data/boxs/Icon1.png",
+            "info":"收集到的刻印都会存放在箱子里",
+            "lv":1,
+            "useable":true,
+            "type":"box"
+        },
+        "刻印碎片":{
+            "name":"刻印碎片",
+            "image":"res://Texture/Data/runes/bricks/Icon1.png",
+            "info":"刻印碎片刻印在炼金台制作不同种类的刻印，刻印可以提升装备属性",
+            "lv":1,
+            "useable":false,
+            "type":"material"
         }
     },
     "skill":{

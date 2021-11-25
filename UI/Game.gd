@@ -9,7 +9,7 @@ onready var light = $Light
 onready var game_main = $GameMain
 
 func _ready():
-	pass
+	randomize()
 
 func start_game():
 	$PxBg.hide()

@@ -8,3 +8,6 @@ func setData(_name,info):
 	if info > 0:
 		$Sprite/Label.visible = true
 		$Sprite/Label.text = str(info as int)
+
+func setSeal(img):
+	$Sprite/TextureRect.texture = load(img)

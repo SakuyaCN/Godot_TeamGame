@@ -7,6 +7,8 @@ var load_hero_size = 0
 var moster_size = 0
 var load_moster_size = 0
 
+var boss_time_out = 100#BOSS战倒计时
+var locao_boss_time = 0
 var is_join_over = false
 
 var map_name #当前地图关卡名称
@@ -14,6 +16,8 @@ var player_map #当前地图下标
 var is_map_boss #当前是否为地图boss
 var moster_name #当前地图怪物名称
 
+var is_next_change_map = false #是否需要切换地图
+var chang_map_id #切换地图的ID
 var is_need_reload = false #是否需要重新占位
 
 onready var message_ui = get_parent().find_node("UILayer")
@@ -35,6 +39,7 @@ var moster_array = []
 var is_flight = false#是否可以准备战斗
 
 func _ready():
+	locao_boss_time = boss_time_out
 	game_progress = get_parent().find_node("UILayer").find_node("Control").find_node("MainUi").find_node("progress_hp")
 	game_progress_tv =  get_parent().find_node("UILayer").find_node("Control").find_node("MainUi").find_node("progress_hp").find_node("label_hp")
 	add_to_group("game_main")
@@ -65,7 +70,7 @@ func mapProgress():
 			moster_met(true)
 			ConstantsValue.showMessage("BOSS来袭！",3)
 			return
-		if game_progress.value as int % 20 == 0:
+		if game_progress.value as int % (5+randi()%20) == 0:
 			moster_met(false)
 
 func plus_size():
@@ -112,6 +117,8 @@ func start_fight():
 	ConstantsValue.game_layer.fight_ui.UIchange(true)
 	get_tree().call_group("player_role","show_bar",moster_array,player_array)
 	get_tree().call_group("moster_role","show_bar",player_array,moster_array)
+	if is_map_boss:
+		$BossTimer.start()
 
 func go_position():
 	ConstantsValue.game_layer.findTvShow(true)
@@ -164,7 +171,7 @@ func mosterAttr(_name):
 	var attr = LocalData.map_data["all_attr"][_name]
 	var new_attr = {}
 	for item in attr:
-		if item == "def" || item == "mdef":
+		if item == "def" || item == "mdef" || item == "other":
 			new_attr[item] = attr[item]
 		else:
 			new_attr[item] = attr[item]+ (attr[item] * (game_progress.value / game_progress.max_value) * (1+(player_map / 10.0))) as int
@@ -181,36 +188,63 @@ func checkWin():
 		if player.fight_script.is_alive:
 			is_moster_win = false
 	if is_player_win:
+		isBossFIght()
 		get_tree().call_group("player_role","fight_over")
-		#ConstantsValue.ui_layer.fight_win()
 		winGoods()#胜利奖励
-		if is_map_boss:#地图boss战斗胜利解锁下一关
-			game_progress.value = 0
-			if StorageData.storage_data["player_state"]["now_map"] == StorageData.storage_data["player_state"]["max_map"]:
-				StorageData.storage_data["player_state"]["max_map"] += 1
-				StorageData._save_storage()
-				ConstantsValue.showMessage("解锁新的关卡！",2)
+		isBossMapWin()
 		game_reset()
 	if is_moster_win:
+		isBossFIght()
 		get_tree().call_group("moster_role","fight_over")
 		ConstantsValue.ui_layer.fight_fail()
+		game_progress.value = 0
 		if is_map_boss:#地图boss战斗胜利解锁下一关
 			game_progress.value = 0
+
+#boss战胜利解锁新关卡
+func isBossMapWin():
+	if is_map_boss:#地图boss战斗胜利解锁下一关
+		game_progress.value = 0
+		if StorageData.storage_data["player_state"]["now_map"] == StorageData.storage_data["player_state"]["max_map"]:
+			StorageData.storage_data["player_state"]["max_map"] += 1
+			if StorageData.storage_data["player_state"]["max_map"] == 10 && !ConfigScript.getBoolSetting("store","first_new_hero"):#首次遇到敌人提示
+				var new_dialog = Dialogic.start('first_new_hero')
+				ConfigScript.setBoolSetting("store","first_new_hero",true)
+				StorageData.AddGoodsNum([["小队招募令",1]])
+				add_child(new_dialog)
+			StorageData._save_storage()
+			ConstantsValue.showMessage("解锁新的关卡！",2)
+
+#是否为boss战斗
+func isBossFIght():
+	if !$BossTimer.is_stopped():
+		$BossTimer.stop()
+		locao_boss_time = boss_time_out
 
 #战斗胜利获得奖励
 func winGoods():
 	var win_goods = LocalData.moster_data[moster_name].win_data
 	var goods_array = []
-	if randf() < 0.5:
-		for item in win_goods.goods:
+	for item in win_goods.goods:
+		if randf() <= item[3] / 100.0:
 			goods_array.append([item[0],item[1] as int+randi() % item[2] as int])
-		StorageData.AddGoodsNum(goods_array)
+	StorageData.AddGoodsNum(goods_array)
 	if win_goods.other.has("exp"):
 		for _role in player_array:
-			_role.addExp(win_goods.other.exp)
+			var _exp = (1 + (player_map / 10.0)) * win_goods.other.exp
+			_role.addExp(_exp as int)
+
+func obsChangeMap(_id):
+	chang_map_id = _id
+	if is_flight:
+		is_next_change_map = true
+		ConstantsValue.showMessage("战斗结束后将切换地图！",2)
+	else:
+		changeMap(chang_map_id)
+	
 
 func game_reset():
-	yield(get_tree().create_timer(1),"timeout")
+	yield(get_tree().create_timer(0.6),"timeout")
 	if is_need_reload:
 		newRoleJoin()
 	ConstantsValue.game_layer.fight_ui.UIchange(false)
@@ -220,6 +254,9 @@ func game_reset():
 	is_flight = false
 	load_moster_size = 0
 	ConstantsValue.game_layer.findTvShow(true)
+	if is_next_change_map:
+		is_next_change_map = false
+		changeMap(chang_map_id)
 
 func newRoleJoin():
 	ConstantsValue.showMessage("新冒险者登场！",1)
@@ -229,14 +266,11 @@ func newRoleJoin():
 
 #更换地图
 func changeMap(_id):
-	if is_flight:
-		ConstantsValue.showMessage("战斗中无法切换地图！",2)
-		return
 	StorageData.storage_data["player_state"]["now_map"] = _id
 	#ConstantsValue.ui_layer.ui.main_ui.setTitle(StorageData.storage_data["player_state"]["now_map"]+1)
 	StorageData._save_storage()
-	game_reset()
 	load_map()
+	game_reset()
 	
 
 func moster_clear():
@@ -262,3 +296,16 @@ func player_clear():
 	if $Position/PositionP3.get_children().size() > 0:
 		$Position/PositionP3.get_children().clear()
 	player_array.clear()
+
+#boss战倒计时
+func _on_BossTimer_timeout():
+	locao_boss_time -= 1
+	ConstantsValue.showMessage("BOSS战倒计时：%s" %locao_boss_time,2)
+	if locao_boss_time == 0:
+		$BossTimer.stop()
+		locao_boss_time = boss_time_out
+		get_tree().call_group("moster_role","fight_over")
+		get_tree().call_group("player_role","fight_over")
+		ConstantsValue.ui_layer.fight_fail()
+		if is_map_boss:
+			game_progress.value = 0

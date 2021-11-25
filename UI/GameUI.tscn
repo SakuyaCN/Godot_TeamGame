@@ -221,7 +221,6 @@ __meta__ = {
 }
 
 [node name="LoginUI" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -339,6 +338,42 @@ text = "正在开发中，敬请期待！
 让游戏变成正真的模拟器！"
 autowrap = true
 
+[node name="NinePatchRect2" type="NinePatchRect" parent="LoginUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -110.5
+margin_right = 195.0
+margin_bottom = 247.5
+mouse_filter = 0
+texture = ExtResource( 13 )
+patch_margin_left = 31
+patch_margin_top = 32
+patch_margin_right = 26
+patch_margin_bottom = 32
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LoginUI/NinePatchRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -171.0
+margin_top = -145.0
+margin_right = 171.0
+margin_bottom = 145.0
+custom_colors/font_color = Color( 0.396078, 0.388235, 0.388235, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "切勿外传此版本！
+此版本只用于测试BUG，测试基础数值是否平衡，并未正式发布。
+如果有任何BUG或者疑问请在群内讨论！
+点击次出闭弹窗！"
+autowrap = true
+
 [node name="CreateUI" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -369,6 +404,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
+frame = 6
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -673,6 +709,7 @@ __meta__ = {
 }
 
 [node name="MainUi" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -1.68182
@@ -924,6 +961,7 @@ __meta__ = {
 }
 
 [node name="BagUI" parent="." instance=ExtResource( 18 )]
+visible = false
 
 [node name="PartyUI" parent="." instance=ExtResource( 22 )]
 visible = false
@@ -942,6 +980,7 @@ expand = true
 [connection signal="pressed" from="LoginUI/Button3" to="LoginUI" method="_on_Button3_pressed"]
 [connection signal="pressed" from="LoginUI/Button2" to="LoginUI" method="_on_Button2_pressed"]
 [connection signal="gui_input" from="LoginUI/NinePatchRect" to="LoginUI" method="_on_NinePatchRect_gui_input"]
+[connection signal="gui_input" from="LoginUI/NinePatchRect2" to="LoginUI" method="_on_NinePatchRect2_gui_input"]
 [connection signal="pressed" from="CreateUI/left" to="CreateUI" method="_on_left_pressed"]
 [connection signal="pressed" from="CreateUI/right" to="CreateUI" method="_on_right_pressed"]
 [connection signal="pressed" from="CreateUI/Button" to="CreateUI" method="_on_Button_pressed"]
