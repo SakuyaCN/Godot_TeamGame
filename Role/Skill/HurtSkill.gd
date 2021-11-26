@@ -12,8 +12,9 @@ func _create(_role,_who,_skillbean):
 	who = _who
 	_role.skill_script.add_child(self)
 	_who.call_deferred("_show_damage_label",skillbean.hurt_name,Utils.HurtType.OTHER)
-	match skillbean.hurt_mode:
+	match skillbean.hurt_mode as int:
 		Utils.SkillHurtEnum.NUMBER:
+			print("mode 1")
 			call_hurt(skillbean.hurt_num)
 		Utils.SkillHurtEnum.PT_ATTR_ON:
 			var hurt_num = who.hero_attr.toDict()[skillbean.hurt_attr] * (skillbean.hurt_num / 100.0)
@@ -21,6 +22,7 @@ func _create(_role,_who,_skillbean):
 		Utils.SkillHurtEnum.PT_ATTR_OT:
 			var hurt_num = role.hero_attr.toDict()[skillbean.hurt_attr] * (skillbean.hurt_num / 100.0)
 			call_hurt(hurt_num)
+			
 
 #设置伤害
 func call_hurt(hurt):
@@ -31,3 +33,6 @@ func call_hurt(hurt):
 			role.fight_script.do_number_hurt(hurt,skillbean.hurt_type,who.hero_attr,false)
 			yield(get_tree().create_timer(skillbean.hurt_count_time),"timeout")
 	queue_free()
+
+func _destroy():
+	pass

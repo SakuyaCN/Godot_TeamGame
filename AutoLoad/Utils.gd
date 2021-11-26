@@ -230,7 +230,7 @@ func get_time_string(s):
 		return str(stepify(s as float/3600, 0.1)) +"小时"
 
 func get_up_lv_exp(role_lv:int):
-	return (role_lv * (role_lv * (role_lv * 1.7))+ 5) as int
+	return ((role_lv * role_lv * (role_lv * 1.5)) * (0.2+ role_lv / 5.0) + 5) as int
 
 #是否有队员达到等级要求
 func is_lv_ok(_lv):
@@ -239,3 +239,34 @@ func is_lv_ok(_lv):
 		if team[item].lv >= _lv:
 			return true
 	return false
+
+#找到技能
+func findSkillFromAll(_id):
+	return LocalData.skill_data[_id]
+
+func setSkillFormAll(_id,_rid):
+	for skill in StorageData.get_all_skill():
+		if skill.id == _id:
+			skill.role = _rid
+			return
+#找到技能
+func findSkillFromPlayer(_id):
+	pass
+
+#为角色添加一个技能
+func addSkillFormRole(_role_data,_skill_data):
+	_role_data["skill"].append(_skill_data)
+	_skill_data.role = _role_data.rid
+
+#移除角色栏内的技能
+func removeSkillFormRole(_role_data,_id):
+	for skill in _role_data["skill"]:
+		if skill.id == _id:
+			_role_data["skill"].erase(skill)
+			return
+#移除所有技能中的指定id
+func removeSkillFormAll(_id):
+	for skill in StorageData.get_all_skill():
+		if skill.id == _id:
+			StorageData.get_all_skill().erase(skill)
+			return

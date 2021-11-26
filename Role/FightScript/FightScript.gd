@@ -31,7 +31,6 @@ func _process(_delta):
 			hero_sprite.animation = "Atk"
 		is_blinding = is_BLINDING()
 		is_weak = is_WEAK()
-		
 
 #初始化战斗脚本
 func load_script(_is_moster):
@@ -53,6 +52,7 @@ func load_script(_is_moster):
 
 #检查输出目标列表
 func checkFightRole():
+	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 100.0))
 	do_atk_array.clear()
 	for fight_role in fight_role_array:
 		if do_atk_array.size() < atk_count && fight_role.fight_script.is_alive:

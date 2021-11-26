@@ -157,7 +157,7 @@ func loadRoleSkill():
 	hero_skill.clear()
 	for skill in role_data["skill"]:
 		var skill_bean = SkillEntity.new()
-		skill_bean.loadSkill(LocalData.skill_data[skill])
+		skill_bean.loadSkill(LocalData.skill_data[skill.form])
 		hero_skill[skill] = skill_bean
 
 #玩家状态重置
@@ -216,21 +216,24 @@ func addState(state:SkillStateBean,state_node:BaseState):
 func removeState(id):
 	fight_script.state_array.erase(id)
 
+func setRoleScript(_enemy_array,_myself_array):
+	enemy_array = _enemy_array
+	myself_array = _myself_array
+	fight_script.setFightRole(_enemy_array)
+
 #展示血条 双方全部进场
-func show_bar(_enemy_array,_myself_array):
+func show_bar():
 	if am_player.is_playing():
 		yield(am_player,"animation_finished")
 	am_player.play("show_bar")
-	fight_script.setFightRole(_enemy_array)
-	enemy_array = _enemy_array
-	myself_array = _myself_array
 
 #战斗开始触发技能
 func skillStart():
 	for skill in hero_skill:
-		skill_node.add_child(hero_skill[skill])
-		hero_skill[skill].loadRoleArray(enemy_array,myself_array,self,skill_script)
-		hero_skill[skill].skillStart()
+		if skill != null:
+			skill_node.add_child(hero_skill[skill])
+			hero_skill[skill].loadRoleArray(enemy_array,myself_array,self,skill_script)
+			hero_skill[skill].skillStart()
 	
 #开始战斗
 func start_fight():

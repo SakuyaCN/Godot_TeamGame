@@ -115,8 +115,8 @@ func moster_plus_size():
 #战斗开始信号
 func start_fight():
 	ConstantsValue.game_layer.fight_ui.UIchange(true)
-	get_tree().call_group("player_role","show_bar",moster_array,player_array)
-	get_tree().call_group("moster_role","show_bar",player_array,moster_array)
+	get_tree().call_group("player_role","show_bar")
+	get_tree().call_group("moster_role","show_bar")
 	if is_map_boss:
 		$BossTimer.start()
 
@@ -166,6 +166,8 @@ func moster_join(_is_boss):
 		new_hero.setIndex(index)
 		new_hero.run2position(moster_pos.get_children()[index])
 		yield(get_tree().create_timer(0.7),"timeout")
+	get_tree().call_group("player_role","setRoleScript",moster_array,player_array)
+	get_tree().call_group("moster_role","setRoleScript",player_array,moster_array)
 
 func mosterAttr(_name):
 	var attr = LocalData.map_data["all_attr"][_name]
@@ -233,6 +235,12 @@ func winGoods():
 		for _role in player_array:
 			var _exp = (1 + (player_map / 10.0)) * win_goods.other.exp
 			_role.addExp(_exp as int)
+	if win_goods.has("more"):
+		if win_goods.more.has("equ"):
+			if randf() <= win_goods.more.equ.dl / 100.0:
+				var key_index = win_goods.more.equ["equ"][randi()%win_goods.more.equ.values().size()]
+				var choose_data = LocalData.build_data["build_data"][win_goods.more.equ["type"]][str(key_index)]
+				EquUtils.createNewEqu(choose_data,choose_data.type)
 
 func obsChangeMap(_id):
 	chang_map_id = _id

@@ -3,7 +3,6 @@ extends Control
 export(String) var type
 
 var local_data
-
 var is_emp = true
 var is_vis = true
 

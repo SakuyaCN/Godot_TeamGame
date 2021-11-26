@@ -100,7 +100,7 @@ func chooseRole(skill:SkillItemBean):
 			if myself_array.size() > (index-1):
 				doSkillItemScript(myself_array[index-1],skill)
 		elif index < 0:
-			if enemy_array.size() > (index-1):
+			if enemy_array.size() > (abs(index)-1):
 				doSkillItemScript(enemy_array[abs(index)-1],skill)
 		else:
 			doSkillItemScript(myself,skill)

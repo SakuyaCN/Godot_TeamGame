@@ -102,7 +102,7 @@ func get_context_label(type,data):
 	$NinePatchRect3/context.clear()
 	match type:
 		"基础装备", "神话套装":
-			$NinePatchRect3/context.append_bbcode("炼制出的装备属性浮动：\n")
+			$NinePatchRect3/context.append_bbcode("炼制出的%s属性浮动：\n" %data.type)
 			if data.keys().has("attr"):
 				for attr in data.attr:
 					$NinePatchRect3/context.append_bbcode(EquUtils.get_attr_string(attr))
@@ -133,8 +133,7 @@ func _on_Button_pressed():
 	if StorageData.UseGoodsNum(choose_data.need):
 		match left_type:
 			"基础装备", "神话套装":
-				var equ = EquUtils.createNewEqu(choose_data,choose_type)
-				ConstantsValue.ui_layer.getNewItem(choose_data.name,choose_data.img,equ.quality)
+				EquUtils.createNewEqu(choose_data,choose_data.type)
 			"材料":
 				StorageData.AddGoodsNum([[choose_data.name,1]])
 			"刻印":

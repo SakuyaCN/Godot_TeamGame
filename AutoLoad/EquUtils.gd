@@ -114,5 +114,6 @@ func createNewEqu(data,type):
 		"qh":0,
 		"seal":[]
 	}
+	ConstantsValue.ui_layer.getNewItem(equData.name,equData.image,equData.quality)
 	StorageData.addEqutoBag(equData)
 	return equData

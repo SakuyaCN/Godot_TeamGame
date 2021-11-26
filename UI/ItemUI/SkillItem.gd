@@ -1,7 +1,7 @@
 extends Control
 
 var local_data:Dictionary
-var skill_data
+var skill_role = null
 
 
 func setData(_local_data):

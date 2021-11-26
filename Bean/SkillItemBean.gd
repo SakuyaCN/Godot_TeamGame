@@ -3,7 +3,7 @@ extends Node
 class_name SkillItemBean
 
 var item_script:String #触发脚本
-var item_odds_type:int#触发类型
+var item_odds_type:int#触发类型 0概率 1低于阈值 2 普攻概率 3 战斗每秒
 var item_odds:int #触发概率
 var item_odds_attr #触发阈值的属性 
 var item_odds_num:int #触发阈值百分比
@@ -31,6 +31,11 @@ func _create(dict:Dictionary):
 	if dict.has("item_role"):
 		item_role = dict["item_role"]
 	if dict.has("scrpit_info"):
-		var info = SkillStateBean.new()
+		var info = null
+		match item_script:
+			"res://Role/Skill/BaseState.gd":
+				info = SkillStateBean.new()
+			"res://Role/Skill/HurtSkill.gd":
+				info = SkillHurtBean.new()
 		info._create(dict["scrpit_info"])
 		scrpit_info = info

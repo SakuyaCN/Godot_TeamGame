@@ -39,7 +39,7 @@ func loadFirst():
 		select_index = StorageData.get_all_team().keys()[0]
 		checkHeroData()
 		loadHeroEqu()
-		loadHeroSkill()
+		loadHeroSkill(true)
 		loadAllHero()
 	return true
 
@@ -64,6 +64,7 @@ func checkHeroData():
 		loadHeroData()
 		loadAllSkill()
 		loadAllEqu()
+		loadHeroSkill()
 		reLoadHeroEqu()
 
 func _process(_delta):
@@ -165,11 +166,11 @@ func loadHeroData():
 func loadAllSkill():
 	free_item($Skill_bg/ScrollContainer/GridContainer.get_children())
 	for skill in StorageData.get_all_skill():
-		if skill.values()[0] == null:
+		if skill.role == null:
 			var ins = skill_item.instance()
-			ins.skill_data = skill
-			ins.setData(LocalData.skill_data[skill.keys()[0]])
-			ins.connect("pressed",self,"skill_item_click",[ins.local_data])
+			ins.skill_role = skill
+			ins.setData(Utils.findSkillFromAll(skill.form))
+			ins.connect("pressed",self,"skill_item_click",[ins])
 			ins.connect("button_down",self,"item_down",[ins])
 			ins.connect("button_up",self,"item_up",["skill"])
 			$Skill_bg/ScrollContainer/GridContainer.add_child(ins)
@@ -207,27 +208,31 @@ func reLoadHeroEqu():
 			child.setData(null)
 
 #载入人物穿戴技能
-func loadHeroSkill():
+func loadHeroSkill(_is_reload = false):
 	if role_data != null:
 		for index in range($skill_main/GridContainer.get_child_count()):
+			if _is_reload:
+				$skill_main/GridContainer.get_child(index).connect("pressed",self,"skill_role_click",[$skill_main/GridContainer.get_child(index)])
 			if role_data["skill"].size() > index:
-				$skill_main/GridContainer.get_child(index).setData(LocalData.skill_data[role_data["skill"][index]])
-			
-#刷新人物穿戴技能
-func reLoadHeroSkill():
-	if role_data != null:
-		for index in range($skill_main/GridContainer.get_child_count()):
-			if role_data["skill"].size() > index:
-				$skill_main/GridContainer.get_child(index).setData(LocalData.skill_data[role_data["skill"][index]])
+				$skill_main/GridContainer.get_child(index).setSkill(Utils.findSkillFromAll(role_data["skill"][index].form),role_data["skill"][index])
 			else:
-				$skill_main/GridContainer.get_child(index).setData(null)
+				$skill_main/GridContainer.get_child(index).setSkill(null,null)
+
 #技能列表 点击绑定
 #技能部分----------------
-func skill_item_click(skill_data):
+func skill_role_click(_skill_ins):
+	if _skill_ins.skill_role == null:
+		return
 	if skill_tips_ins == null:
 		skill_tips_ins = skill_tips.instance()
 		add_child(skill_tips_ins)
-	skill_tips_ins.showTips(skill_data["skill_name"],skill_data["skill_info"])
+	skill_tips_ins.showTips(_skill_ins.skill_role,_skill_ins.local_data["skill_name"],_skill_ins.local_data["skill_info"],role_data)
+
+func skill_item_click(_skill_ins):
+	if skill_tips_ins == null:
+		skill_tips_ins = skill_tips.instance()
+		add_child(skill_tips_ins)
+	skill_tips_ins.showTips(_skill_ins.skill_role,_skill_ins.local_data["skill_name"],_skill_ins.local_data["skill_info"])
 
 #技能列表 按下绑定
 func item_down(ins):
@@ -245,15 +250,11 @@ func item_up(_type):
 			parant_grid = $skill_main/GridContainer.get_children()
 			for child in parant_grid:
 				if child.get_global_rect().has_point(get_global_mouse_position()):
-					if !child.is_emp:
-						role_data.skill.remove(child.local_data.skill_id)
-						for skill in StorageData.get_all_skill():
-							if skill.keys()[0] == child.local_data.skill_id:
-								skill[skill.keys()[0]] = null
-					else:
-						role_data.skill.append(check_temp_ins.skill_data.keys()[0])
-						check_temp_ins.skill_data[check_temp_ins.skill_data.keys()[0]] = role_data.rid
-			reLoadHeroSkill()
+					if !child.local_data == null && !child.skill_role != null:
+						Utils.removeSkillFormId(role_data,child.skill_role.id)#删除角色已装备的技能为空
+						Utils.setSkillFormAll(child.skill_role.id,null)#设置背包中已经装备的技能为空
+					Utils.addSkillFormRole(role_data,check_temp_ins.skill_role)
+			reloadPratySKill()
 			StorageData._save_storage()
 		"equ": 
 			parant_grid = $equ_main/GridContainer.get_children()
@@ -262,9 +263,12 @@ func item_up(_type):
 					if check_temp_ins.local_data["type"] != child.type:
 						get_parent().uiLayer.showMessage("此装备只能放入【"+ check_temp_ins.local_data["type"] +"】部位")
 					else:
-						if child.local_data != null:
-							child.local_data.is_on = false
-						setEqu2Role(child.type,check_temp_ins.local_data)
+						if check_temp_ins.local_data.lv > role_data["lv"]:
+							ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
+						else:
+							if child.local_data != null:
+								child.local_data.is_on = false
+							setEqu2Role(child.type,check_temp_ins.local_data)
 	check_temp_ins = null
 	get_parent().tempSKillIcon.texture = null
 	get_parent().tempSKillIcon.visible = false
@@ -288,9 +292,6 @@ func _on_ClickTimer_timeout():
 
 #穿戴装备
 func setEqu2Role(type,equ_data):
-	if equ_data.lv > role_data["lv"]:
-		ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
-		return
 	$Equ_info.visible = false
 	equ_data.is_on = true
 	role_data["equ"][type] = equ_data["id"]
@@ -366,6 +367,11 @@ func seal_choose():
 #=========================
 
 #公共方法
+func reloadPratySKill():
+	get_tree().call_group("player_role","loadRoleSkill")
+	loadAllSkill()
+	loadHeroSkill()
+
 func free_item(array):
 	for item in array:
 		item.queue_free()

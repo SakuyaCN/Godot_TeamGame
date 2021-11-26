@@ -10,6 +10,7 @@ func UIchange(change):
 	visible = change
 	$Fight_btn.visible = change
 	if visible && check_auto.pressed:
+		#yield(get_tree().create_timer(0.1),"timeout")
 		_on_startFight_pressed()
 
 #战斗开始点击
