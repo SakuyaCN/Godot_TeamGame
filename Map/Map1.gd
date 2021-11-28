@@ -25,12 +25,14 @@ func dialog_listener(string):
 			new_dialog = null
 
 func change_map():
-	if StorageData.storage_data["player_state"]["now_map"] == select_map:
+	var map_index = str(StorageData.storage_data["player_state"]["map_index"])
+	if StorageData.storage_data["player_state"]["map"][map_index]["now_map"] == select_map:
 		ConstantsValue.showMessage("已经在这张地图了！",2)
-	elif StorageData.storage_data["player_state"]["max_map"] < select_map:
+	elif StorageData.storage_data["player_state"]["map"][map_index]["max_map"] < select_map:
 		ConstantsValue.showMessage("未解锁当前地图！",2)
 	else:
-		get_tree().call_group("game_main","obsChangeMap",select_map)
+		StorageData.storage_data["player_state"]["map"][map_index]["now_map"] = select_map
+		get_tree().call_group("game_main","obsChangeMap")
 		get_parent().get_parent().close_map()
 	new_dialog.queue_free()
 	new_dialog = null

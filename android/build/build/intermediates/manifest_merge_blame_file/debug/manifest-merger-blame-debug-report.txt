@@ -9,84 +9,84 @@
 9        android:targetSdkVersion="30" />
 10
 11    <supports-screens
-11-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:12:5-16:40
+11-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:12:5-16:40
 12        android:largeScreens="true"
-12-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:15:9-36
+12-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:15:9-36
 13        android:normalScreens="true"
-13-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:14:9-37
+13-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:14:9-37
 14        android:smallScreens="true"
-14-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:13:9-36
+14-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:13:9-36
 15        android:xlargeScreens="true" />
-15-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:16:9-37
+15-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:16:9-37
 16
 17    <uses-feature
-17-->D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:5-78
+17-->F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:10:5-78
 18        android:glEsVersion="0x00030000"
-18-->D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:19-51
+18-->F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:10:19-51
 19        android:required="true" />
-19-->D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:52-75
+19-->F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:10:52-75
 20
 21    <instrumentation
-21-->D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:11:5-16:49
+21-->F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:11:5-16:49
 22        android:name=".GodotInstrumentation"
-22-->D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:13:9-45
+22-->F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:13:9-45
 23        android:icon="@mipmap/icon"
-23-->D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:14:9-36
+23-->F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:14:9-36
 24        android:label="@string/godot_project_name_string"
-24-->D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:15:9-58
+24-->F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:15:9-58
 25        android:targetPackage="com.sakuya.mx" />
-25-->D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:16:9-46
+25-->F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:16:9-46
 26
 27    <application
-27-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:5-73:19
+27-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:5-73:19
 28        android:allowBackup="false"
-28-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:68-95
+28-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:68-95
 29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->[androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+29-->[androidx.core:core:1.2.0] C:\Users\Sakuya\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
 30        android:debuggable="true"
 31        android:hasFragileUserData="false"
-31-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:118-152
+31-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:118-152
 32        android:icon="@mipmap/icon"
-32-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:238-265
+32-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:238-265
 33        android:isGame="true"
-33-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:96-117
+33-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:96-117
 34        android:label="@string/godot_project_name_string"
-34-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:18-67
+34-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:18-67
 35        android:requestLegacyExternalStorage="false" >
-35-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:153-197
+35-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:153-197
 36        <activity
-36-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:46:9-67:20
+36-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:46:9-67:20
 37            android:name="com.godot.game.GodotApp"
-37-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:47:13-37
+37-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:47:13-37
 38            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-38-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:52:13-141
+38-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:52:13-141
 39            android:label="@string/godot_project_name_string"
-39-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:48:13-62
+39-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:48:13-62
 40            android:launchMode="singleTask"
-40-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:50:13-44
+40-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:50:13-44
 41            android:resizeableActivity="false"
-41-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:53:13-47
+41-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:53:13-47
 42            android:screenOrientation="landscape"
-42-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:51:13-50
+42-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:51:13-50
 43            android:theme="@style/GodotAppSplashTheme" >
-43-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:49:13-55
+43-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:49:13-55
 44            <intent-filter>
-44-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:59:13-66:29
+44-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:59:13-66:29
 45                <action android:name="android.intent.action.MAIN" />
-45-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:60:17-69
-45-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:60:25-66
+45-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:60:17-69
+45-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:60:25-66
 46
 47                <category android:name="android.intent.category.LAUNCHER" />
-47-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:61:17-77
-47-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:61:27-74
+47-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:61:17-77
+47-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:61:27-74
 48
 49                <!--
 50                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
 51                platforms.
 52                -->
 53                <category android:name="com.oculus.intent.category.VR" />
-53-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:65:17-74
-53-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:65:27-71
+53-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:65:17-74
+53-->F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:65:27-71
 54            </intent-filter>
 55        </activity>
 56        <!-- Records the version of the Godot editor used for building -->
@@ -94,15 +94,15 @@
 58            android:name="org.godotengine.editor.version"
 59            android:value="3.4.stable" /> <!-- Records the version of the Godot library -->
 60        <meta-data
-60-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
+60-->[godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
 61            android:name="org.godotengine.library.version"
-61-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-59
+61-->[godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-59
 62            android:value="3.4.0.stable" />
-62-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-41
+62-->[godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-41
 63
 64        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-64-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:9-80
-64-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:18-77
+64-->[godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:9-80
+64-->[godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:18-77
 65    </application>
 66
 67</manifest>

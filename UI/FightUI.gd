@@ -9,7 +9,7 @@ func _ready():
 func UIchange(change):
 	visible = change
 	$Fight_btn.visible = change
-	if visible && check_auto.pressed:
+	if visible && ConfigScript.getBoolSetting("fight","auto_fight"):
 		#yield(get_tree().create_timer(0.1),"timeout")
 		_on_startFight_pressed()
 

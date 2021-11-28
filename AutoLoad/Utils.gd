@@ -25,6 +25,7 @@ enum BuffStateEnum{
 	BLINDING = 1#致盲
 	COUTINUED = 2#持续类
 	WEAK = 3#虚弱
+	SJ = 4#重伤
 }
 
 enum SkillHurtEnum{
@@ -208,6 +209,13 @@ func getPositionWithName(_name):
 		"后排":return 2
 		"休战":return -1
 
+func getMapNameFormIndex(_index):
+	match _index as int:
+		0:return "普通地图"
+		1:return "困难地图"
+		2:return "地狱地图"
+		3:return "神话地图"
+
 func get_gold_string(gold):
 	if gold < 10000:
 		return String(gold)
@@ -249,9 +257,16 @@ func setSkillFormAll(_id,_rid):
 		if skill.id == _id:
 			skill.role = _rid
 			return
-#找到技能
-func findSkillFromPlayer(_id):
-	pass
+
+#人物是否穿戴相同技能
+func findSkillFromPlayer(_role_data,_form_id):
+	var count = 0
+	for skill in _role_data["skill"]:
+		if skill.form == _form_id:
+			count += 1
+	if count >= 1:
+		return true
+	return false
 
 #为角色添加一个技能
 func addSkillFormRole(_role_data,_skill_data):
@@ -264,9 +279,26 @@ func removeSkillFormRole(_role_data,_id):
 		if skill.id == _id:
 			_role_data["skill"].erase(skill)
 			return
+
 #移除所有技能中的指定id
 func removeSkillFormAll(_id):
 	for skill in StorageData.get_all_skill():
 		if skill.id == _id:
 			StorageData.get_all_skill().erase(skill)
 			return
+
+func removeEquWithQy(_qy):
+	var equ_data = StorageData.get_player_equipment()
+	var i = 0
+	var num = 0
+	var qh = 0
+	while i < equ_data.size():
+		if equ_data.values()[i].is_on == false && equ_data.values()[i].quality == _qy:
+			equ_data.erase(equ_data.keys()[i])
+			num +=1
+		else:
+			i += 1
+	if num > 0:
+		ConstantsValue.showMessage("已丢弃%d件%s装备"%[num,_qy],2)
+	return num
+	

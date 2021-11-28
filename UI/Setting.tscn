@@ -1,0 +1,213 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
+[ext_resource path="res://UI/Setting.gd" type="Script" id=2]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=3]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Texture/hud/Check element.png" type="Texture" id=5]
+[ext_resource path="res://Texture/hud/Check box.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 2
+outline_color = Color( 0.447059, 0.419608, 0.419608, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=5]
+size = 18
+outline_size = 2
+outline_color = Color( 0.560784, 0.533333, 0.533333, 1 )
+font_data = ExtResource( 4 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -43, 97 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 64.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 1 )
+text = "游戏设置"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -453.0
+margin_top = -183.0
+margin_right = 453.0
+margin_bottom = 183.0
+texture = ExtResource( 3 )
+patch_margin_left = 43
+patch_margin_top = 25
+patch_margin_right = 30
+patch_margin_bottom = 31
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bgm" type="CheckBox" parent="NinePatchRect"]
+margin_left = 24.0
+margin_top = 40.5
+margin_right = 138.0
+margin_bottom = 65.5
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 4 )
+custom_icons/checked = ExtResource( 5 )
+custom_icons/unchecked = ExtResource( 6 )
+custom_styles/focus = SubResource( 3 )
+text = "背景音乐"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="auto_fight" type="CheckBox" parent="NinePatchRect"]
+margin_left = 170.0
+margin_top = 40.5
+margin_right = 284.0
+margin_bottom = 65.5
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 4 )
+custom_icons/checked = ExtResource( 5 )
+custom_icons/unchecked = ExtResource( 6 )
+custom_styles/focus = SubResource( 3 )
+text = "自动战斗"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fight_num" type="CheckBox" parent="NinePatchRect"]
+margin_left = 322.0
+margin_top = 40.5
+margin_right = 473.0
+margin_bottom = 65.5
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 4 )
+custom_icons/checked = ExtResource( 5 )
+custom_icons/unchecked = ExtResource( 6 )
+custom_styles/focus = SubResource( 3 )
+text = "战斗伤害数字"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="NinePatchRect"]
+anchor_right = 1.0
+margin_left = 32.0
+margin_top = 87.5
+margin_right = -670.0
+margin_bottom = 106.5
+custom_fonts/font = SubResource( 5 )
+text = "勾选后自动丢弃装备："
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_c" type="CheckBox" parent="NinePatchRect"]
+margin_left = 32.0
+margin_top = 119.0
+margin_right = 129.0
+margin_bottom = 144.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 4 )
+custom_icons/checked = ExtResource( 5 )
+custom_icons/unchecked = ExtResource( 6 )
+custom_styles/focus = SubResource( 3 )
+text = "C级装备"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_b" type="CheckBox" parent="NinePatchRect"]
+margin_left = 130.0
+margin_top = 119.0
+margin_right = 227.0
+margin_bottom = 144.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 4 )
+custom_icons/checked = ExtResource( 5 )
+custom_icons/unchecked = ExtResource( 6 )
+custom_styles/focus = SubResource( 3 )
+text = "B级装备"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_a" type="CheckBox" parent="NinePatchRect"]
+margin_left = 229.0
+margin_top = 119.0
+margin_right = 326.0
+margin_bottom = 144.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 4 )
+custom_icons/checked = ExtResource( 5 )
+custom_icons/unchecked = ExtResource( 6 )
+custom_styles/focus = SubResource( 3 )
+text = "A级装备"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_s" type="CheckBox" parent="NinePatchRect"]
+margin_left = 331.0
+margin_top = 119.0
+margin_right = 428.0
+margin_bottom = 144.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 4 )
+custom_icons/checked = ExtResource( 5 )
+custom_icons/unchecked = ExtResource( 6 )
+custom_styles/focus = SubResource( 3 )
+text = "S级装备"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="toggled" from="NinePatchRect/bgm" to="." method="_on_bgm_toggled"]
+[connection signal="toggled" from="NinePatchRect/auto_fight" to="." method="_on_auto_fight_toggled"]
+[connection signal="toggled" from="NinePatchRect/fight_num" to="." method="_on_fight_num_toggled"]
+[connection signal="toggled" from="NinePatchRect/equ_c" to="." method="_on_equ_toggled" binds= [ "C级" ]]
+[connection signal="toggled" from="NinePatchRect/equ_b" to="." method="_on_equ_toggled" binds= [ "B级" ]]
+[connection signal="toggled" from="NinePatchRect/equ_a" to="." method="_on_equ_toggled" binds= [ "A级" ]]
+[connection signal="toggled" from="NinePatchRect/equ_s" to="." method="_on_equ_toggled" binds= [ "S级" ]]

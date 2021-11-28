@@ -95,6 +95,8 @@ func attrChange_dec(skill):
 
 #选择释放角色
 func chooseRole(skill:SkillItemBean):
+	if skill.item_count == 0:
+		return
 	for index in skill.item_role:
 		if index > 0:
 			if myself_array.size() > (index-1):
@@ -104,14 +106,18 @@ func chooseRole(skill:SkillItemBean):
 				doSkillItemScript(enemy_array[abs(index)-1],skill)
 		else:
 			doSkillItemScript(myself,skill)
+	skill.item_count-=1
 
 #运行技能附带脚本
 func doSkillItemScript(role:Node,skill:SkillItemBean):
-	if skill.item_count == 0:
-		return
+	if skill.item_itme > 0:
+		var timer = Timer.new()
+		timer.one_shot = true
+		add_child(timer)
+		timer.start(skill.item_itme)
+		yield(timer, "timeout")
 	var script = load(skill.item_script).new()
 	script._create(role,myself,skill.scrpit_info)
-	skill.item_count-=1
 #	if script is BaseState:
 #	elif script is HurtSkill:
 
@@ -134,6 +140,5 @@ func loadItemSkill(skill_data):
 			skill_end.append(item_bean)
 
 func _exit():
-	print("exit")
 	myself.fight_script.disconnect("onAtkOver",self,"_onAtkOver")
 	hero_attr.disconnect("onAttrChange",self,"on_attr_change")

@@ -38,12 +38,12 @@
         "moster": "骷髅法师",
         "moster_num":3,
         "lv":50,
-        "max_progress":4000,
+        "max_progress":3000,
         "boss":"恶魔领主"
     },
-    "all_attr": {
+    "0": {
         "骷髅战士":{
-            "hp": 60,
+            "hp": 80,
             "atk": 5,
             "mtk": 5,
             "def": 5,
@@ -52,53 +52,53 @@
             "mdef": 0
         },
         "阿努比斯":{
-            "hp": 250,
+            "hp": 550,
             "atk": 25,
             "mtk": 5,
-            "def": 8,
+            "def": 15,
             "speed": 100,
             "crit": 50,
             "mdef": 3
         },
         "绿色僵尸":{
-            "hp": 550,
-            "atk": 75,
+            "hp": 1200,
+            "atk": 85,
             "mtk": 5,
-            "def": 12,
-            "speed": 300,
+            "def": 15,
+            "speed": 250,
             "crit": 5,
             "mdef": 5
         },
         "地狱犬":{
-            "hp": 3500,
+            "hp": 4500,
             "atk": 420,
             "mtk": 5,
-            "def": 12,
+            "def": 15,
             "speed": 600,
             "crit": 800,
             "mdef": 12
         },
         "蝎尾怪":{
-            "hp": 11000,
+            "hp": 15000,
             "atk": 1500,
             "mtk": 5,
             "def": 15,
             "speed": 1000,
-            "crit": 2500,
+            "crit": 2000,
             "mdef": 15
         },
         "骷髅法师":{
             "hp": 50000,
-            "atk": 6000,
+            "atk": 4000,
             "mtk": 5,
-            "def": 25,
-            "speed": 2500,
-            "crit": 3600,
-            "mdef": 25
+            "def": 15,
+            "speed": 2000,
+            "crit": 3000,
+            "mdef": 15
         },
         "哥布林之王":{
-            "hp": 300,
-            "atk": 15,
+            "hp": 550,
+            "atk": 30,
             "mtk": 5,
             "def": 5,
             "speed": 50,
@@ -109,42 +109,43 @@
             }
         },
         "元素铁拳":{
-            "hp": 1550,
-            "atk": 95,
+            "hp": 1350,
+            "atk": 125,
             "mtk": 5,
-            "def": 45,
+            "def": 20,
             "speed": 150,
             "crit": 300,
-            "mdef": 45,
+            "mdef": 20,
             "other":{
                 "hold": 12,
                 "hole_num":80,
-                "uncrit":300
+                "uncrit":300,
+                "atk_pass":10
             }
         },
         "地狱使者":{
-            "hp": 5550,
+            "hp": 6550,
             "atk": 200,
             "mtk": 5,
-            "def": 50,
+            "def": 20,
             "speed": 300,
             "crit": 500,
-            "mdef": 50,
+            "mdef": 20,
             "other":{
-                "hold": 15,
-                "hole_num":100,
+                "hold": 20,
+                "hole_num":300,
                 "hole_pass":300,
-                "atk_pass":5
+                "atk_pass":10
             }
         },
         "独眼触手":{
-            "hp": 20000,
+            "hp": 25000,
             "atk": 750,
             "mtk": 5,
-            "def": 60,
+            "def": 20,
             "speed": 400,
             "crit": 1000,
-            "mdef": 60,
+            "mdef": 20,
             "other":{
                 "hold": 15,
                 "hole_num":300,
@@ -154,39 +155,492 @@
             }
         },
         "恶魔蝙蝠":{
-            "hp": 160000,
+            "hp": 60000,
             "atk": 2000,
             "mtk": 5,
-            "def": 65,
+            "def": 20,
             "speed":2000,
             "crit": 2000,
-            "mdef": 65,
+            "mdef": 20,
             "other":{
                 "hold": 25,
                 "hole_num":500,
                 "hole_pass":700,
                 "atk_blood":25,
                 "hp_buff":50,
+                "atk_pass":10
+            }
+        },
+        "恶魔领主":{
+            "hp": 150000,
+            "atk": 10000,
+            "mtk": 5,
+            "def": 20,
+            "speed": 3000,
+            "crit": 3500,
+            "mdef": 20,
+            "other":{
+                "hold": 55,
+                "hole_num":150,
+                "hole_pass":2000,
+                "atk_blood":25,
+                "crit_buff":50,
+                "true_hurt":100,
+                "hp_buff":20,
+                "atk_pass":10
+            }
+        }
+    },
+    "1": {
+        "骷髅战士":{
+            "hp": 50000,
+            "atk": 2000,
+            "mtk": 5,
+            "def": 30,
+            "speed": 3000,
+            "crit": 30,
+            "mdef": 30
+        },
+        "阿努比斯":{
+            "hp": 75000,
+            "atk": 5500,
+            "mtk": 5,
+            "def": 30,
+            "speed": 3000,
+            "crit": 50,
+            "mdef": 30
+        },
+        "绿色僵尸":{
+            "hp": 15000,
+            "atk": 12085,
+            "mtk": 5,
+            "def": 30,
+            "speed": 3000,
+            "crit": 5,
+            "mdef": 30
+        },
+        "地狱犬":{
+            "hp": 224500,
+            "atk": 18420,
+            "mtk": 5,
+            "def": 30,
+            "speed": 3200,
+            "crit": 800,
+            "mdef": 30
+        },
+        "蝎尾怪":{
+            "hp": 380000,
+            "atk": 21500,
+            "mtk": 5,
+            "def": 30,
+            "speed": 3000,
+            "crit": 2000,
+            "mdef": 30
+        },
+        "骷髅法师":{
+            "hp": 500000,
+            "atk": 26000,
+            "mtk": 5,
+            "def": 30,
+            "speed": 3000,
+            "crit": 3000,
+            "mdef": 30
+        },
+        "哥布林之王":{
+            "hp": 172500,
+            "atk": 5500,
+            "mtk": 5,
+            "def": 45,
+            "speed": 3500,
+            "crit": 200,
+            "mdef": 45,
+            "other":{
+                "dodge": 15,
+                "atk_pass":20
+            }
+        },
+        "元素铁拳":{
+            "hp": 223000,
+            "atk": 6500,
+            "mtk": 5,
+            "def": 45,
+            "speed": 3500,
+            "crit": 700,
+            "mdef": 45,
+            "other":{
+                "hold": 15,
+                "hole_num":1500,
+                "uncrit":3000,
+                "atk_pass":20
+            }
+        },
+        "地狱使者":{
+            "hp": 295500,
+            "atk": 12000,
+            "mtk": 5,
+            "def": 45,
+            "speed": 3500,
+            "crit": 500,
+            "mdef": 45,
+            "other":{
+                "hold": 20,
+                "hole_num":3000,
+                "hole_pass":1300,
+                "atk_pass":20
+            }
+        },
+        "独眼触手":{
+            "hp": 355000,
+            "atk": 17500,
+            "mtk": 5,
+            "def": 45,
+            "speed": 3500,
+            "crit": 1000,
+            "mdef": 45,
+            "other":{
+                "hold": 15,
+                "hole_num":4500,
+                "hole_pass":1500,
+                "atk_blood":20,
+                "atk_pass":20
+            }
+        },
+        "恶魔蝙蝠":{
+            "hp": 450000,
+            "atk": 22000,
+            "mtk": 5,
+            "def": 45,
+            "speed":4000,
+            "crit": 2000,
+            "mdef": 45,
+            "other":{
+                "hold": 35,
+                "hole_num":5000,
+                "hole_pass":1700,
+                "atk_blood":25,
+                "hp_buff":20,
                 "atk_pass":20
             }
         },
         "恶魔领主":{
             "hp": 550000,
-            "atk": 10000,
+            "atk": 29000,
+            "mtk": 5,
+            "def": 55,
+            "speed": 5000,
+            "crit": 3500,
+            "mdef": 55,
+            "other":{
+                "hold": 55,
+                "hole_num":6500,
+                "hole_pass":2000,
+                "atk_blood":25,
+                "crit_buff":50,
+                "true_hurt":1000,
+                "hp_buff":20,
+                "atk_pass":20
+            }
+        }
+    },
+    "2": {
+        "骷髅战士":{
+            "hp": 500000,
+            "atk": 20000,
+            "mtk": 5,
+            "def": 40,
+            "speed": 1500,
+            "crit": 1300,
+            "mdef": 40
+        },
+        "阿努比斯":{
+            "hp": 550000,
+            "atk": 22500,
+            "mtk": 5,
+            "def": 40,
+            "speed": 5500,
+            "crit": 500,
+            "mdef": 40
+        },
+        "绿色僵尸":{
+            "hp": 650000,
+            "atk": 25085,
+            "mtk": 5,
+            "def": 40,
+            "speed": 5500,
+            "crit": 1500,
+            "mdef": 40
+        },
+        "地狱犬":{
+            "hp": 724500,
+            "atk": 28420,
+            "mtk": 5,
+            "def": 40,
+            "speed": 5500,
+            "crit": 1800,
+            "mdef": 40
+        },
+        "蝎尾怪":{
+            "hp": 780000,
+            "atk": 31500,
+            "mtk": 5,
+            "def": 40,
+            "speed": 5500,
+            "crit": 2000,
+            "mdef": 40
+        },
+        "骷髅法师":{
+            "hp": 850000,
+            "atk": 35000,
+            "mtk": 5,
+            "def": 40,
+            "speed": 6000,
+            "crit": 3000,
+            "mdef": 40
+        },
+        "哥布林之王":{
+            "hp": 772500,
+            "atk": 35500,
+            "mtk": 5,
+            "def": 65,
+            "speed": 6500,
+            "crit": 2000,
+            "mdef": 65,
+            "other":{
+                "dodge": 25,
+                "atk_pass":35
+            }
+        },
+        "元素铁拳":{
+            "hp": 853000,
+            "atk": 39500,
+            "mtk": 5,
+            "def": 65,
+            "speed": 6000,
+            "crit": 5000,
+            "mdef": 65,
+            "other":{
+                "hold": 55,
+                "hole_num":5000,
+                "uncrit":30000,
+                "atk_pass":35
+            }
+        },
+        "地狱使者":{
+            "hp": 995500,
+            "atk": 42000,
+            "mtk": 5,
+            "def": 65,
+            "speed": 6500,
+            "crit": 5500,
+            "mdef": 65,
+            "other":{
+                "hold": 55,
+                "hole_num":7000,
+                "hole_pass":1300,
+                "atk_pass":35
+            }
+        },
+        "独眼触手":{
+            "hp": 1155000,
+            "atk": 57500,
+            "mtk": 5,
+            "def": 65,
+            "speed": 6500,
+            "crit": 1000,
+            "mdef": 65,
+            "other":{
+                "hold": 55,
+                "hole_num":4500,
+                "hole_pass":1500,
+                "atk_blood":20,
+                "atk_pass":35
+            }
+        },
+        "恶魔蝙蝠":{
+            "hp": 1350000,
+            "atk": 62000,
+            "mtk": 5,
+            "def": 65,
+            "speed":6000,
+            "crit": 2000,
+            "mdef": 65,
+            "other":{
+                "hold": 55,
+                "hole_num":5500,
+                "hole_pass":1700,
+                "atk_blood":25,
+                "hp_buff":20,
+                "atk_pass":35
+            }
+        },
+        "恶魔领主":{
+            "hp": 1550000,
+            "atk": 69000,
             "mtk": 5,
             "def": 75,
-            "speed": 3000,
+            "speed": 7000,
             "crit": 3500,
             "mdef": 75,
             "other":{
-                "hold": 55,
-                "hole_num":1500,
+                "hold": 65,
+                "hole_num":6500,
                 "hole_pass":2000,
-                "atk_blood":35,
+                "atk_blood":25,
                 "crit_buff":50,
-                "true_hurt":100,
-                "hp_buff":50,
-                "atk_pass":30
+                "true_hurt":1000,
+                "hp_buff":20,
+                "atk_pass":35
+            }
+        }
+    },
+    "3": {
+        "骷髅战士":{
+            "hp": 850000,
+            "atk": 50000,
+            "mtk": 5,
+            "def": 60,
+            "speed": 7500,
+            "crit": 2300,
+            "mdef": 60
+        },
+        "阿努比斯":{
+            "hp": 950000,
+            "atk": 52500,
+            "mtk": 5,
+            "def": 60,
+            "speed": 7500,
+            "crit": 3500,
+            "mdef": 60
+        },
+        "绿色僵尸":{
+            "hp": 1150000,
+            "atk": 55085,
+            "mtk": 5,
+            "def": 60,
+            "speed": 7500,
+            "crit": 2500,
+            "mdef": 60
+        },
+        "地狱犬":{
+            "hp": 1524500,
+            "atk": 60420,
+            "mtk": 5,
+            "def": 60,
+            "speed": 7500,
+            "crit": 1800,
+            "mdef": 60
+        },
+        "蝎尾怪":{
+            "hp": 1700000,
+            "atk": 71500,
+            "mtk": 5,
+            "def": 60,
+            "speed": 3500,
+            "crit": 2000,
+            "mdef": 60
+        },
+        "骷髅法师":{
+            "hp": 1850000,
+            "atk": 75000,
+            "mtk": 5,
+            "def": 60,
+            "speed": 7500,
+            "crit": 3000,
+            "mdef": 640
+        },
+        "哥布林之王":{
+            "hp": 2272500,
+            "atk": 105500,
+            "mtk": 5,
+            "def": 85,
+            "speed": 7500,
+            "crit": 3000,
+            "mdef": 85,
+            "other":{
+                "dodge": 30,
+                "atk_pass":55
+            }
+        },
+        "元素铁拳":{
+            "hp": 2853000,
+            "atk": 139500,
+            "mtk": 5,
+            "def": 65,
+            "speed": 7500,
+            "crit": 5000,
+            "mdef": 65,
+            "other":{
+                "hold": 55,
+                "hole_num":15000,
+                "uncrit":30000,
+                "atk_pass":55
+            }
+        },
+        "地狱使者":{
+            "hp": 3595500,
+            "atk": 142000,
+            "mtk": 5,
+            "def": 85,
+            "speed": 7500,
+            "crit": 5500,
+            "mdef": 85,
+            "other":{
+                "hold": 55,
+                "hole_num":27000,
+                "hole_pass":1300,
+                "atk_pass":55
+            }
+        },
+        "独眼触手":{
+            "hp": 4555000,
+            "atk": 157500,
+            "mtk": 5,
+            "def": 85,
+            "speed": 7500,
+            "crit": 7000,
+            "mdef": 85,
+            "other":{
+                "hold": 65,
+                "hole_num":24500,
+                "hole_pass":10500,
+                "atk_blood":30,
+                "atk_pass":55
+            }
+        },
+        "恶魔蝙蝠":{
+            "hp": 6350000,
+            "atk": 162000,
+            "mtk": 5,
+            "def": 85,
+            "speed":8500,
+            "crit": 7000,
+            "mdef": 85,
+            "other":{
+                "hold": 65,
+                "hole_num":35500,
+                "hole_pass":1700,
+                "atk_blood":35,
+                "hp_buff":20,
+                "atk_pass":55
+            }
+        },
+        "恶魔领主":{
+            "hp": 8055000,
+            "atk": 209000,
+            "mtk": 5,
+            "def": 85,
+            "speed": 8500,
+            "crit": 7500,
+            "mdef": 85,
+            "other":{
+                "hold": 65,
+                "hole_num":36500,
+                "hole_pass":20000,
+                "atk_blood":55,
+                "crit_buff":50,
+                "true_hurt":3000,
+                "hp_buff":20,
+                "atk_pass":55
             }
         }
     }

@@ -140,7 +140,7 @@ extra_spacing_char = 2
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=11]
-outline_size = 2
+outline_size = 1
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=12]
@@ -167,7 +167,7 @@ position = Vector2( -16, -62 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
@@ -346,10 +346,10 @@ __meta__ = {
 }
 
 [node name="label_hp" type="Label" parent="RoleUI/attr"]
-margin_left = -144.396
-margin_top = -106.963
-margin_right = -38.3962
-margin_bottom = -80.963
+margin_left = -150.0
+margin_top = -107.0
+margin_right = -26.0
+margin_bottom = -81.0
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = ExtResource( 10 )
 text = "100"

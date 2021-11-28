@@ -1,0 +1,199 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=2]
+[ext_resource path="res://Texture/hud/p_s_n.png" type="Texture" id=3]
+[ext_resource path="res://UI/MapUi.gd" type="Script" id=4]
+[ext_resource path="res://Texture/close.png" type="Texture" id=5]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_12.png" type="Texture" id=6]
+[ext_resource path="res://Map/Map1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Texture/arrowSilver_left.png" type="Texture" id=8]
+[ext_resource path="res://Texture/arrowBlue_left.png" type="Texture" id=9]
+[ext_resource path="res://Texture/arrowSilver_right.png" type="Texture" id=10]
+[ext_resource path="res://Texture/arrowBlue_right.png" type="Texture" id=11]
+
+[sub_resource type="DynamicFont" id=17]
+size = 42
+outline_size = 6
+outline_color = Color( 0.470588, 0.470588, 0.470588, 1 )
+extra_spacing_char = 6
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=19]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 145, 52 )
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 145, 52 )
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxTexture" id=22]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 145, 52 )
+
+[sub_resource type="Animation" id=18]
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("bg:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("bg:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("TextureButton:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+
+[node name="MapUi" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -644.5
+margin_top = -288.0
+margin_right = 644.5
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 941.5, 117.5 )
+mouse_filter = 0
+texture = ExtResource( 2 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 20
+patch_margin_bottom = 21
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" parent="bg" instance=ExtResource( 7 )]
+position = Vector2( -23, -23 )
+scale = Vector2( 0.99, 0.99 )
+
+[node name="title" type="TextureRect" parent="bg"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.5
+margin_top = -16.0
+margin_right = 192.5
+margin_bottom = 52.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="bg/title"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.5
+margin_top = -21.5
+margin_right = 102.5
+margin_bottom = 21.5
+custom_fonts/font = SubResource( 17 )
+text = "普通难度"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="bg/title"]
+visible = false
+margin_left = 768.5
+margin_top = 251.5
+margin_right = 868.5
+margin_bottom = 436.5
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
+custom_styles/normal = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="left" type="TextureButton" parent="bg"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -40.0
+margin_right = 80.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="TextureButton" parent="bg"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show = SubResource( 18 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 1237.52
+margin_top = 11.3716
+margin_right = 1326.52
+margin_bottom = 93.3716
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="bg/left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="bg/right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

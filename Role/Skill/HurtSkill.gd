@@ -14,7 +14,6 @@ func _create(_role,_who,_skillbean):
 	_who.call_deferred("_show_damage_label",skillbean.hurt_name,Utils.HurtType.OTHER)
 	match skillbean.hurt_mode as int:
 		Utils.SkillHurtEnum.NUMBER:
-			print("mode 1")
 			call_hurt(skillbean.hurt_num)
 		Utils.SkillHurtEnum.PT_ATTR_ON:
 			var hurt_num = who.hero_attr.toDict()[skillbean.hurt_attr] * (skillbean.hurt_num / 100.0)

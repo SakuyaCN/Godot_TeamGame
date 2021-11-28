@@ -9,8 +9,9 @@ var is_skill = false
 
 func _ready():
 	if is_skill:
-		$Label.rect_scale = Vector2(1.7,1.7)
-	graavity = Vector2(0,rand_range(1.0,1.5))
+		$Label.rect_scale = Vector2(1.8,1.8)
+		z_index = 1
+	graavity = Vector2(0,rand_range(1.0,1.3))
 	$Tween.interpolate_property(self,"modulate",
 	Color(self.modulate.r,self.modulate.g,self.modulate.b,self.modulate.a),
 	Color(self.modulate.r,self.modulate.g,self.modulate.b,0),

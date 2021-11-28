@@ -13,6 +13,7 @@ var is_alive = true#是否存活
 var is_moster = false#是否为怪物
 var is_blinding = false #是否为致盲状态
 var is_weak = false #是否为虚弱状态
+var is_sj = false #是否为重伤
 var atk_count #攻击数量
 var state_array = {} #状态列表
 
@@ -31,6 +32,7 @@ func _process(_delta):
 			hero_sprite.animation = "Atk"
 		is_blinding = is_BLINDING()
 		is_weak = is_WEAK()
+		is_sj = is_SJ()
 
 #初始化战斗脚本
 func load_script(_is_moster):
@@ -52,7 +54,7 @@ func load_script(_is_moster):
 
 #检查输出目标列表
 func checkFightRole():
-	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 100.0))
+	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 120.0))
 	do_atk_array.clear()
 	for fight_role in fight_role_array:
 		if do_atk_array.size() < atk_count && fight_role.fight_script.is_alive:
@@ -74,7 +76,7 @@ func checkState():
 #普攻触发
 func do_atk():
 	#设定人物攻击频率
-	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 100.0))
+	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 120.0))
 	is_in_atk = true
 	set_process(true)
 
@@ -96,6 +98,10 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 		Utils.HurtType.MTK:
 			hurt_num = _atk_attr.mtk * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
 			fight_script.mtk_blood(hurt_num)
+	#伤害提升
+	if _atk_attr.hurt_buff > 0:
+		hurt_num += hurt_num * (_atk_attr.hurt_buff / 100.0)
+	#真伤
 	if _atk_attr.true_hurt > 0:
 		hurt_num += _atk_attr.true_hurt
 	#格挡
@@ -161,10 +167,22 @@ func die():
 		get_parent().resetSkill()
 		get_tree().call_group("game_main","checkWin")
 
+#直接数字回血
+func hp_blood(blood):
+	if is_sj:
+		blood *= 0.4
+	if hero_attr.hp + blood < hero_attr.max_hp:
+		hero_attr.hp += blood
+	else:
+		hero_attr.hp = hero_attr.max_hp
+	get_parent()._show_damage_label(blood,Utils.HurtType.BLOOD,true)
+
 #物理攻击吸血
 func atk_blood(num):
 	if hero_attr.atk_blood > 0:
 		var blood = num * (hero_attr.atk_blood / 100.0)
+		if is_sj:
+			blood *= 0.4
 		if hero_attr.hp + blood < hero_attr.max_hp:
 			hero_attr.hp += blood
 		else:
@@ -175,6 +193,8 @@ func atk_blood(num):
 func mtk_blood(num):
 	if hero_attr.mtk_blood > 0:
 		var blood = num * (hero_attr.mtk_blood / 100.0)
+		if is_sj:
+			blood *= 0.4
 		if hero_attr.hp + blood < hero_attr.max_hp:
 			hero_attr.hp += blood
 		else:
@@ -217,5 +237,11 @@ func is_BLINDING():
 func is_WEAK():
 	for item in state_array.values():
 		if item is SkillStateBean && item.state_mold == Utils.BuffModeEnum.STATE && item.state_type == Utils.BuffStateEnum.WEAK:
+			return true
+	return false
+
+func is_SJ():
+	for item in state_array.values():
+		if item is SkillStateBean && item.state_mold == Utils.BuffModeEnum.STATE && item.state_type == Utils.BuffStateEnum.SJ:
 			return true
 	return false

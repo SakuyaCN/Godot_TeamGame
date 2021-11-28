@@ -35,6 +35,7 @@ var hp_buff:int #生命提升比例
 var true_hurt:int #真实伤害
 var hurt_buff:int #伤害加成比
 var crit_buff:int #暴伤加成比
+var shield:int #护盾
 
 #重载基础属性
 func resetAttr(role_data):
@@ -48,11 +49,12 @@ func resetAttr(role_data):
 	if role_data.attr.has("other"):
 		for item in role_data.attr.other:
 			updateNum(item,role_data.attr.other[item],false)
+	else:
+		levelAttr(role_data.lv)
 	mp = 100
-	levelAttr(role_data.lv)
 
 func levelAttr(lv):
-	hp += lv * 30                                                                                                                                                                                      
+	hp += lv * 35                                                                                                                                                                                    
 	atk += lv * 10
 	mtk += lv * 10
 	speed += lv * 10
@@ -82,27 +84,35 @@ func setEquAttrBean(role_data):
 func loadJobAttr(role_data):
 	match role_data.job:
 		"黑袍法师":
-			hp += ((mtk / 10.0) * 3) as int
-			mp += (mtk / 10.0) as int
+			hp += ((mtk / 10.0) * 5) as int
+			speed += (mtk / 10.0) as int
+			mtk_pass += 5
 		"无畏勇者":
 			hp += 20 * role_data.lv
 			atk += 5 * role_data.lv
-			atk_blood += 3
+			atk_blood += 5
 		"不屈骑士":
 			hp += 35 * role_data.lv
+			hp += (hp * 0.08) as int
 		"绝地武士":
 			speed += 25 * role_data.lv
 			crit += 25 * role_data.lv
-			crit_buff += 35
-			speed += (speed * 0.06) as int
+			crit_buff += 25
+			speed += (speed * 0.05) as int
 		"致命拳手":
-			hp += 16 * role_data.lv
-			atk += 6 * role_data.lv
-			speed += 6 * role_data.lv
-		_:
-			hp += 10 * role_data.lv
+			hp += 25 * role_data.lv
 			atk += 10 * role_data.lv
-			mtk += 10 * role_data.lv
+			speed += 10 * role_data.lv
+			atk += (atk * 0.03) as int
+		"战地女神":
+			hp += 15 * role_data.lv
+			atk += 10 * role_data.lv
+			mtk += 5 * role_data.lv
+			mtk += (atk * 0.05) as int
+		_:
+			hp += 20 * role_data.lv
+			atk += 5 * role_data.lv
+			mtk += 5 * role_data.lv
 			speed += 5 * role_data.lv
 			crit += 5 * role_data.lv
 
@@ -113,36 +123,6 @@ func loadOhterAttr():
 		atk += (atk_buff/100.0 * atk) as int
 	if mtk_buff>0:
 		mtk += (mtk_buff/100.0 * mtk) as int
-
-func copy(_attr:HeroAttrBean):
-	max_hp = _attr.max_hp
-	hp = _attr.hp
-	atk = _attr.atk
-	mtk = _attr.mtk
-	def = _attr.def
-	mdef = _attr.mdef
-	speed = _attr.speed
-	crit = _attr.crit
-	fire = _attr.fire
-	wind = _attr.wind
-	ice = _attr.ice
-	posion = _attr.posion
-	uncrit = _attr.uncrit
-	mp = _attr.mp
-	hold = _attr.hold
-	hole_num = _attr.hole_num
-	dodge = _attr.dodge
-	hole_pass = _attr.hole_pass
-	mtk_pass = _attr.mtk_pass
-	atk_pass = _attr.atk_pass
-	atk_blood = _attr.atk_blood
-	mtk_blood = _attr.mtk_blood
-	atk_buff = _attr.atk_buff
-	mtk_buff = _attr.mtk_buff
-	hp_buff = _attr.hp_buff
-	true_hurt = _attr.true_hurt
-	hurt_buff = _attr.hurt_buff
-	crit_buff = _attr.crit_buff
 
 func toDict():
 	return {
@@ -173,10 +153,11 @@ func toDict():
 		"hp_buff" : hp_buff,
 		"true_hurt" : true_hurt,
 		"hurt_buff" : hurt_buff,
-		"crit_buff" : crit_buff
+		"crit_buff" : crit_buff,
+		"shield" : shield
 	}
 
-func updateNum(attr,num,is_emit = true):
+func updateNum(attr,num,is_emit = true,is_buff = false):
 	match attr:
 		"max_hp" : max_hp += num
 		"hp" : hp += num
@@ -206,5 +187,9 @@ func updateNum(attr,num,is_emit = true):
 		"true_hurt" : true_hurt += num
 		"hurt_buff" : hurt_buff += num
 		"crit_buff" : crit_buff += num
+		"shield" : shield += num
+	if is_buff && attr == "hp":
+		max_hp += num
+		ConstantsValue.tree.call_group("player_role","reloadHpBar")
 	if is_emit:
 		emit_signal("onAttrChange",attr,num)

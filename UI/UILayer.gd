@@ -35,9 +35,10 @@ func fight_fail():
 	$GameResult/fail.visible = true
 	$GameResult/Timer.start()
 	
-func fight_win():
+func fight_win(_label):
 	$GameResult.visible = true
 	$GameResult/win.visible = true
+	$GameResult/win/Label2.text = _label
 	$GameResult/Timer.start()
 
 func _on_ColorRect_gui_input(event):

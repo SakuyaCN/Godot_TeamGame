@@ -55,7 +55,18 @@ func loadBuildTypeData(type,array,top_type):
 	$NinePatchRect2/ScrollContainer/GridContainer.get_children().clear()
 	for id in array:
 		var item_ins = build_grid_item.instance()
-		var data = LocalData.build_data["build_data"][type][str(id)]
+		var data = {}
+		match type:
+			"技能书":
+				var temp = LocalData.skill_data[str(id)].duplicate()
+				data.id = temp.skill_id
+				data.name = temp.skill_name
+				data.lv = temp.skill_lv
+				data.img = temp.image
+				data.info = temp.skill_info
+				data.need = LocalData.build_data["build_data"][type][str(id)].need
+			_:
+				data = LocalData.build_data["build_data"][type][str(id)]
 		item_ins.setData(data)
 		item_ins.connect("pressed",self,"build_item_click",[type,data])
 		$NinePatchRect2/ScrollContainer/GridContainer.add_child(item_ins)
@@ -101,7 +112,7 @@ func get_context_label(type,data):
 	left_type = type
 	$NinePatchRect3/context.clear()
 	match type:
-		"基础装备", "神话套装":
+		"基础装备", "神话装备":
 			$NinePatchRect3/context.append_bbcode("炼制出的%s属性浮动：\n" %data.type)
 			if data.keys().has("attr"):
 				for attr in data.attr:
@@ -124,6 +135,9 @@ func get_context_label(type,data):
 					$NinePatchRect3/context.append_bbcode(EquUtils.get_attr_string(attr))
 					$NinePatchRect3/context.append_bbcode(" %s - %s" %[data.attr[attr][0],(data.attr[attr][1])as int])
 					$NinePatchRect3/context.append_bbcode("\n")
+		"技能书":
+			$NinePatchRect3/context.append_bbcode("技能说明：\n")
+			$NinePatchRect3/context.append_bbcode(data.info)
 
 func _on_Button_pressed():
 	if !Utils.is_lv_ok(choose_data.lv):
@@ -132,9 +146,11 @@ func _on_Button_pressed():
 	#print(StorageData.UseGoodsNum(choose_data.need))
 	if StorageData.UseGoodsNum(choose_data.need):
 		match left_type:
-			"基础装备", "神话套装":
+			"基础装备", "神话装备":
 				EquUtils.createNewEqu(choose_data,choose_data.type)
 			"材料":
 				StorageData.AddGoodsNum([[choose_data.name,1]])
 			"刻印":
 				StorageData.AddSeal(choose_data)
+			"技能书":
+				StorageData.AddSkill(choose_data)

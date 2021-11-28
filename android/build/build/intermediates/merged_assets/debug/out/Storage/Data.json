@@ -99,7 +99,15 @@
         "刻印碎片":{
             "name":"刻印碎片",
             "image":"res://Texture/Data/runes/bricks/Icon1.png",
-            "info":"刻印碎片刻印在炼金台制作不同种类的刻印，刻印可以提升装备属性",
+            "info":"刻印碎片可以在炼金台制作不同种类的刻印，刻印可以提升装备属性",
+            "lv":1,
+            "useable":false,
+            "type":"material"
+        },
+        "技能手册":{
+            "name":"技能手册",
+            "image":"res://Texture/Data/other/Icon_21.png",
+            "info":"技能手册可以在炼金台制作不同种类的技能书",
             "lv":1,
             "useable":false,
             "type":"material"

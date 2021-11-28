@@ -34,18 +34,18 @@ func _ready():
 #添加经验
 func addExp(_exp):
 	is_LvUp(_exp)
-	_show_damage_label("EXP+%d"%_exp,Utils.HurtType.EXP)
+	_show_damage_label("EXP+%d"%_exp,Utils.HurtType.EXP,true)
 
 #人物升级
 func is_LvUp(_exp):
 	var last_lv = role_data["lv"]
-	if role_data.lv < 50:
+	if role_data.lv < 100:
 		var minExp = (role_data["exp"] + _exp) - Utils.get_up_lv_exp(role_data["lv"])
 		if minExp >= 0:
 			role_data["lv"] += 1
 			role_data["exp"] = 0
 			is_LvUp(minExp)
-			_show_damage_label("升级！",Utils.HurtType.EXP)
+			_show_damage_label("升级！",Utils.HurtType.EXP,true)
 		else:
 			role_data["exp"] += _exp
 		if last_lv != role_data["lv"] && !fight_script.is_in_atk:
@@ -103,7 +103,11 @@ func load_asset():
 			animatedSprite.position.y = -70
 			animatedSprite.scale = Vector2(3,3)
 			$RoleUI/name.rect_position.y = -15
-		"战地牧师":animatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
+		"战地女神":
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Goddess.tres")
+			animatedSprite.position.y = -95
+			animatedSprite.scale = Vector2(3,3)
+			$RoleUI/name.rect_position.y = -15
 		"moster":
 			is_moster = true
 			effect_anim.flip_h = role_data["node"].flip_h
@@ -217,6 +221,7 @@ func removeState(id):
 	fight_script.state_array.erase(id)
 
 func setRoleScript(_enemy_array,_myself_array):
+	print("setRoleScript")
 	enemy_array = _enemy_array
 	myself_array = _myself_array
 	fight_script.setFightRole(_enemy_array)
@@ -255,13 +260,17 @@ func reloadHpBar():
 	$RoleUI/hpbar/progress_hp/label_hp.text = str((hero_attr.hp as float/ hero_attr.max_hp as float * 100 )as int) + "%"
 
 #战斗数字显示
-func _show_damage_label(damage,type):
+func _show_damage_label(damage,type,is_max = false):
+	reloadHpBar()
+	if !ConstantsValue.is_fight_num:
+		return
 	var color = Color.brown#基础物理伤害颜色
 	var text = "-"
 	var float_number_ins = float_number.instance()
 	var vec = animatedSprite.position
-	vec.y -= rand_range(-20,20)
-	vec.x -= rand_range(-50,50)
+	vec.y -= rand_range(-10,10)
+	vec.x -= rand_range(-30,30)
+	float_number_ins.setSkill(is_max)
 	float_number_ins.position = vec
 	float_number_ins.velocity = Vector2(rand_range(-40,40),-130)
 	match type:
@@ -295,10 +304,12 @@ func _show_damage_label(damage,type):
 			text = ""
 	add_child(float_number_ins)
 	float_number_ins.set_number(text + "%s" %damage,color)
-	reloadHpBar()
 
 #技能数值展示
 func _show_skill_label(damage):
+	reloadHpBar()
+	if !ConstantsValue.is_fight_num:
+		return
 	var color = Color.steelblue#基础物理伤害颜色
 	var text = "-"
 	var float_number_ins = float_number.instance()
@@ -310,7 +321,6 @@ func _show_skill_label(damage):
 	float_number_ins.velocity = Vector2(rand_range(-40,40),-130)
 	add_child(float_number_ins)
 	float_number_ins.set_number(text + "%s" %damage,color)
-	reloadHpBar()
 
 func _on_Effects_animation_finished():
 	effect_anim.visible = false

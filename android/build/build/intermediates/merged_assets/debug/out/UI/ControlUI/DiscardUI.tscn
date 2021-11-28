@@ -1,0 +1,229 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
+[ext_resource path="res://UI/ControlUI/DiscardUI.gd" type="Script" id=2]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Texture/hud/p_s_n.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "show"
+length = 0.3
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("postion_0:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("postion_1:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 104, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("postion_2:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 208, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.01, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath(".:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("postion_3:rect_position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 312, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.29 )
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -1007, -294 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PostionBox" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -206.0
+margin_top = -28.5
+margin_right = 206.0
+margin_bottom = 28.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="postion_0" type="NinePatchRect" parent="PostionBox"]
+margin_right = 100.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 100, 57 )
+mouse_filter = 0
+texture = ExtResource( 4 )
+patch_margin_left = 24
+patch_margin_right = 29
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="PostionBox/postion_0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "C级"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="postion_1" type="NinePatchRect" parent="PostionBox"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 100, 57 )
+mouse_filter = 0
+texture = ExtResource( 4 )
+patch_margin_left = 24
+patch_margin_right = 29
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="PostionBox/postion_1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "B级"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="postion_2" type="NinePatchRect" parent="PostionBox"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 100, 57 )
+mouse_filter = 0
+texture = ExtResource( 4 )
+patch_margin_left = 24
+patch_margin_right = 29
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="PostionBox/postion_2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "A级"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="postion_3" type="NinePatchRect" parent="PostionBox"]
+margin_left = 312.0
+margin_right = 412.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 100, 57 )
+mouse_filter = 0
+texture = ExtResource( 4 )
+patch_margin_left = 24
+patch_margin_right = 29
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="PostionBox/postion_3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+text = "S级"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PostionBox"]
+anims/show = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 200.0
+margin_bottom = 233.0
+custom_fonts/font = SubResource( 3 )
+text = "点击以下选项批量丢弃"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="gui_input" from="PostionBox/postion_0" to="." method="_on_postion_0_gui_input" binds= [ "C级" ]]
+[connection signal="gui_input" from="PostionBox/postion_1" to="." method="_on_postion_0_gui_input" binds= [ "B级" ]]
+[connection signal="gui_input" from="PostionBox/postion_2" to="." method="_on_postion_0_gui_input" binds= [ "A级" ]]
+[connection signal="gui_input" from="PostionBox/postion_3" to="." method="_on_postion_0_gui_input" binds= [ "S级" ]]

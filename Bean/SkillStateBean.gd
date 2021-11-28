@@ -5,6 +5,7 @@ var state_name:String#状态名称
 var state_num:float#状态数值
 var state_lv:int#状态等级
 var state_type#状态属性类型
+var state_is_odd = false#是否为百分比
 var state_mold = 0#Utils.BuffModeEnum.BUFF#状态增益减益
 var state_img:String#状态图片
 var state_time :int#状态持续时间
@@ -31,3 +32,5 @@ func _create(dict:Dictionary):
 		state_over = dict["state_over"]
 	if dict.has("state_other"):
 		state_other = dict["state_other"]
+	if dict.has("state_is_odd"):
+		state_is_odd = dict["state_is_odd"]

@@ -8,7 +8,7 @@ var item_odds:int #触发概率
 var item_odds_attr #触发阈值的属性 
 var item_odds_num:int #触发阈值百分比
 var item_count = 1 #触发次数 -1为无限循环
-var item_itme:int #是否延迟触发
+var item_itme:int = 0 #是否延迟触发
 var item_role = []#触发脚本的角色
 
 var scrpit_info#脚本内容
@@ -33,7 +33,7 @@ func _create(dict:Dictionary):
 	if dict.has("scrpit_info"):
 		var info = null
 		match item_script:
-			"res://Role/Skill/BaseState.gd":
+			"res://Role/Skill/BaseState/Buff.gd","res://Role/Skill/BaseState/Countinued.gd","res://Role/Skill/BaseState/HurtState.gd":
 				info = SkillStateBean.new()
 			"res://Role/Skill/HurtSkill.gd":
 				info = SkillHurtBean.new()

@@ -75,7 +75,7 @@ __meta__ = {
 margin_left = 27.0
 margin_top = 48.0
 margin_right = 237.0
-margin_bottom = 282.0
+margin_bottom = 239.0
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "阿松大"
@@ -91,6 +91,20 @@ margin_bottom = 38.0
 custom_fonts/font = SubResource( 1 )
 text = "阿松大"
 align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lv" type="Label" parent="ColorRect/NinePatchRect"]
+margin_left = 27.0
+margin_top = 239.0
+margin_right = 237.0
+margin_bottom = 277.0
+custom_fonts/font = SubResource( 1 )
+text = "等级：1"
+align = 2
 valign = 1
 autowrap = true
 __meta__ = {

@@ -31,7 +31,10 @@ func setData(_key):
 			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Boxer.tres")
 			$AnimatedSprite.position = Vector2(50,30)
 			$AnimatedSprite.scale = Vector2(3,3)
-		"战地牧师":$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
+		"战地女神":
+			$AnimatedSprite.frames = load("res://Texture/Pre-made characters/Goddess.tres")
+			$AnimatedSprite.position = Vector2(45,10)
+			$AnimatedSprite.scale = Vector2(3,3)
 
 func reload(_key):
 	$ColorRect.visible = self.key == _key

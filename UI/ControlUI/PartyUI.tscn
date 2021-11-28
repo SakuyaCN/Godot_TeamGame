@@ -527,8 +527,8 @@ __meta__ = {
 [node name="Control" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 60.0
-margin_bottom = 60.0
+margin_right = 50.0
+margin_bottom = 50.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "武器"
@@ -536,9 +536,9 @@ type = "武器"
 [node name="Control2" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 72.0
-margin_right = 132.0
-margin_bottom = 60.0
+margin_left = 66.0
+margin_right = 116.0
+margin_bottom = 50.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "副手"
@@ -546,9 +546,9 @@ type = "副手"
 [node name="Control3" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 144.0
-margin_right = 204.0
-margin_bottom = 60.0
+margin_left = 132.0
+margin_right = 182.0
+margin_bottom = 50.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "护甲"
@@ -556,9 +556,9 @@ type = "护甲"
 [node name="Control4" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 216.0
-margin_right = 266.0
-margin_bottom = 60.0
+margin_left = 198.0
+margin_right = 248.0
+margin_bottom = 50.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "护腿"
@@ -566,9 +566,9 @@ type = "护腿"
 [node name="Control5" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 72.0
-margin_right = 60.0
-margin_bottom = 122.0
+margin_top = 66.0
+margin_right = 50.0
+margin_bottom = 116.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "戒指"
@@ -576,10 +576,10 @@ type = "戒指"
 [node name="Control6" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 72.0
-margin_top = 72.0
-margin_right = 132.0
-margin_bottom = 122.0
+margin_left = 66.0
+margin_top = 66.0
+margin_right = 116.0
+margin_bottom = 116.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "饰品"
@@ -587,10 +587,10 @@ type = "饰品"
 [node name="Control7" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 144.0
-margin_top = 72.0
-margin_right = 204.0
-margin_bottom = 122.0
+margin_left = 132.0
+margin_top = 66.0
+margin_right = 182.0
+margin_bottom = 116.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "头盔"
@@ -598,10 +598,10 @@ type = "头盔"
 [node name="Control8" parent="equ_main/GridContainer" instance=ExtResource( 8 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 216.0
-margin_top = 72.0
-margin_right = 266.0
-margin_bottom = 122.0
+margin_left = 198.0
+margin_top = 66.0
+margin_right = 248.0
+margin_bottom = 116.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "护手"
@@ -881,6 +881,31 @@ custom_constants/vseparation = 12
 custom_constants/hseparation = 6
 columns = 5
 
+[node name="other_attr2" type="NinePatchRect" parent="Equ_bg"]
+margin_top = -60.0
+margin_right = 114.0
+margin_bottom = -3.0
+mouse_filter = 0
+texture = ExtResource( 9 )
+patch_margin_left = 43
+patch_margin_top = 8
+patch_margin_right = 49
+patch_margin_bottom = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="Equ_bg/other_attr2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 19 )
+text = "批量丢弃"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Equ_info" type="NinePatchRect" parent="."]
 visible = false
 margin_left = 973.0
@@ -946,9 +971,9 @@ margin_bottom = 356.0
 custom_constants/separation = 6
 
 [node name="btn_down" type="Button" parent="Equ_info"]
-margin_left = 212.0
+margin_left = 208.0
 margin_top = 412.0
-margin_right = 315.0
+margin_right = 311.0
 margin_bottom = 453.0
 custom_fonts/font = SubResource( 16 )
 custom_styles/hover = SubResource( 12 )
@@ -956,6 +981,21 @@ custom_styles/pressed = SubResource( 13 )
 custom_styles/focus = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
 text = "卸下"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_des" type="Button" parent="Equ_info"]
+margin_left = 229.0
+margin_top = -43.0
+margin_right = 332.0
+margin_bottom = -2.0
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "丢弃"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1066,7 +1106,9 @@ anims/show = SubResource( 18 )
 [connection signal="gui_input" from="status" to="." method="_on_status_gui_input"]
 [connection signal="gui_input" from="skill" to="." method="_on_skill_gui_input"]
 [connection signal="gui_input" from="equ" to="." method="_on_equ_gui_input"]
+[connection signal="gui_input" from="Equ_bg/other_attr2" to="." method="_on_other_attr2_gui_input"]
 [connection signal="pressed" from="Equ_info/btn_down" to="." method="_on_btn_down_pressed"]
+[connection signal="pressed" from="Equ_info/btn_des" to="." method="_on_btn_des_pressed"]
 [connection signal="pressed" from="Equ_info/btn_seal" to="." method="_on_btn_seal_pressed"]
 [connection signal="gui_input" from="PostionBox/postion_0" to="." method="_on_postion_0_gui_input"]
 [connection signal="gui_input" from="PostionBox/postion_1" to="." method="_on_postion_1_gui_input"]

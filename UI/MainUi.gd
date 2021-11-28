@@ -3,6 +3,8 @@ extends Control
 onready var progress = $progress_hp
 onready var progress_tv = $progress_hp/label_hp 
 
+onready var setting_view = preload("res://UI/Setting.tscn")
+
 func _ready():
 	visible = false
 	#setTitle(StorageData.storage_data["player_state"]["now_map"]+1)
@@ -29,3 +31,8 @@ func _on_build_pressed():
 
 func setTitle(_lv):
 	$title/Label.text = "当前关卡：%s" %_lv
+	$NinePatchRect/Label2.text = Utils.getMapNameFormIndex(StorageData.storage_data["player_state"]["map_index"])
+
+#设置
+func _on_setting_pressed():
+	get_parent().add_child(setting_view.instance())

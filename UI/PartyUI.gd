@@ -1,5 +1,6 @@
 extends Control
 
+onready var discard_ui = preload("res://UI/ControlUI/DiscardUI.tscn")
 onready var skill_item = preload("res://UI/ItemUI/SkillItem.tscn")
 onready var skill_tips = preload("res://UI/TipsUi/SkillTips.tscn")
 onready var equ_item = preload("res://UI/ItemUI/RoleEquItem.tscn")
@@ -183,8 +184,6 @@ func loadAllEqu():
 			var ins = equ_item.instance()
 			ins.setData(StorageData.get_player_equipment()[equ_data])
 			ins.connect("pressed",self,"equ_item_click",[ins.local_data])
-			ins.connect("button_down",self,"item_down",[ins])
-			ins.connect("button_up",self,"item_up",["equ"])
 			$Equ_bg/ScrollContainer/GridContainer.add_child(ins)
 
 #载入人物穿戴装备
@@ -226,13 +225,13 @@ func skill_role_click(_skill_ins):
 	if skill_tips_ins == null:
 		skill_tips_ins = skill_tips.instance()
 		add_child(skill_tips_ins)
-	skill_tips_ins.showTips(_skill_ins.skill_role,_skill_ins.local_data["skill_name"],_skill_ins.local_data["skill_info"],role_data)
+	skill_tips_ins.showTips(_skill_ins.skill_role,_skill_ins.local_data["skill_name"],_skill_ins.local_data["skill_info"],_skill_ins.local_data["skill_lv"],role_data)
 
 func skill_item_click(_skill_ins):
 	if skill_tips_ins == null:
 		skill_tips_ins = skill_tips.instance()
 		add_child(skill_tips_ins)
-	skill_tips_ins.showTips(_skill_ins.skill_role,_skill_ins.local_data["skill_name"],_skill_ins.local_data["skill_info"])
+	skill_tips_ins.showTips(_skill_ins.skill_role,_skill_ins.local_data["skill_name"],_skill_ins.local_data["skill_info"],_skill_ins.local_data["skill_lv"])
 
 #技能列表 按下绑定
 func item_down(ins):
@@ -246,29 +245,34 @@ func item_up(_type):
 	click_timer.stop()
 	var parant_grid
 	match _type:
-		"skill": 
+		"skill":
 			parant_grid = $skill_main/GridContainer.get_children()
 			for child in parant_grid:
 				if child.get_global_rect().has_point(get_global_mouse_position()):
+					if check_temp_ins.local_data.has("skill_job") && check_temp_ins.local_data.skill_job != role_data.job:
+						ConstantsValue.showMessage("无法佩戴其他职业技能",2)
+						item_up_clear()
+						return
+					if role_data["skill"].size() >= 5:
+						ConstantsValue.showMessage("请先卸下一个技能后佩戴",2)
+						item_up_clear()
+						return
+					if Utils.findSkillFromPlayer(role_data,check_temp_ins.skill_role.form):
+						ConstantsValue.showMessage("相同技能最多佩戴1个",2)
+						item_up_clear()
+						return
+					if check_temp_ins.local_data.skill_lv > role_data["lv"]:
+						item_up_clear()
+						ConstantsValue.showMessage("冒险者等级不足！",2)
+						return
 					if !child.local_data == null && !child.skill_role != null:
 						Utils.removeSkillFormId(role_data,child.skill_role.id)#删除角色已装备的技能为空
 						Utils.setSkillFormAll(child.skill_role.id,null)#设置背包中已经装备的技能为空
 					Utils.addSkillFormRole(role_data,check_temp_ins.skill_role)
-			reloadPratySKill()
-			StorageData._save_storage()
-		"equ": 
-			parant_grid = $equ_main/GridContainer.get_children()
-			for child in parant_grid:
-				if child.get_global_rect().has_point(get_global_mouse_position()):
-					if check_temp_ins.local_data["type"] != child.type:
-						get_parent().uiLayer.showMessage("此装备只能放入【"+ check_temp_ins.local_data["type"] +"】部位")
-					else:
-						if check_temp_ins.local_data.lv > role_data["lv"]:
-							ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
-						else:
-							if child.local_data != null:
-								child.local_data.is_on = false
-							setEqu2Role(child.type,check_temp_ins.local_data)
+					reloadPratySKill()
+					StorageData._save_storage()
+	item_up_clear()
+func item_up_clear():
 	check_temp_ins = null
 	get_parent().tempSKillIcon.texture = null
 	get_parent().tempSKillIcon.visible = false
@@ -330,11 +334,19 @@ func loadEquInfo(equ_data):
 		$Equ_info/VBoxContainer.add_child(label)
 	if equ_data["is_on"]:
 		$Equ_info/btn_down.text = "卸下"
+		$Equ_info/btn_des.visible = false
 	else:
-		$Equ_info/btn_down.text = "丢弃"
+		$Equ_info/btn_down.text = "穿戴"
+		$Equ_info/btn_des.visible = true
 
 #装备按钮区域
 #=========================
+
+#批量丢弃装备
+func _on_other_attr2_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		add_child(discard_ui.instance())
+
 #卸下装备
 func _on_btn_down_pressed():
 	if check_equ_data == null:
@@ -345,15 +357,29 @@ func _on_btn_down_pressed():
 		StorageData._save_storage()
 		$Equ_info.visible = false
 		check_equ_data = null
-		loadAllEqu()
-		reLoadHeroEqu()
-		loadHeroData()
+		ConstantsValue.showMessage("已卸下%s"%check_equ_data.name,1)
 	else:
+		if check_equ_data.lv > role_data["lv"]:
+			ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
+		else:
+			var type = check_equ_data.type
+			for child in $equ_main/GridContainer.get_children():
+				if child.type == type && child.local_data != null:
+					child.local_data.is_on = false
+			setEqu2Role(type,check_equ_data)
+			ConstantsValue.showMessage("已穿戴%s"%check_equ_data.name,1)
+	loadAllEqu()
+	reLoadHeroEqu()
+	loadHeroData()
+
+#丢弃装备
+func _on_btn_des_pressed():
+	if check_equ_data != null:
 		ConstantsValue.showMessage("已丢弃%s"%check_equ_data.name,1)
 		$Equ_info.visible = false
 		StorageData.get_player_equipment().erase(check_equ_data.id)
 		loadAllEqu()
-
+#=====================================================
 #刻印点击
 func _on_btn_seal_pressed():
 	if check_equ_data != null:
@@ -371,6 +397,7 @@ func reloadPratySKill():
 	get_tree().call_group("player_role","loadRoleSkill")
 	loadAllSkill()
 	loadHeroSkill()
+	StorageData._save_storage()
 
 func free_item(array):
 	for item in array:
@@ -422,6 +449,7 @@ func _on_postion_2_gui_input(event):
 		var index = Utils.getPositionWithName($PostionBox/postion_2/position.text)
 		setRole2Position(index)
 
+#切换冒险者位置
 func setRole2Position(_index):
 	if _index != -1:
 		if StorageData.get_player_state()["team_position"].has(role_data.rid):
@@ -450,3 +478,4 @@ func _on_other_attr_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if role_data != null:
 			ConstantsValue.showAttrBox(self,hero_attr)
+

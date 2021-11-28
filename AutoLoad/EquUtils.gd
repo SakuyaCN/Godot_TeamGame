@@ -32,6 +32,7 @@ func get_attr_string(attr):
 		"uncrit": return "抗暴击"
 		"hurt_buff":return "普攻加成比"
 		"crit_buff":return "暴伤加成比"
+		"shield":return "护盾值"
 
 func get_ys_color(ys):
 	match ys:
@@ -79,16 +80,18 @@ func createQuality():
 
 func getQualityBs(ys):
 	match ys:
-		"S++": return 1.3
-		"S级": return 1.2
-		"A级": return 1.1
-		"B级": return 1.05
+		"S++": return 1.07
+		"S级": return 1.05
+		"A级": return 1.03
+		"B级": return 1.01
 		"C级": return 1
 
 #生成一件新装备
-func createNewEqu(data,type):
+func createNewEqu(data,type,is_build = true):
 	var id = str(OS.get_system_time_msecs() + randi()%1000+1)
 	var qualityBs = createQuality()
+	if ConstantsValue.fight_array.has(qualityBs) && !is_build:
+		return
 	var base_attr = []
 	var ys_attr = []
 	if data.keys().has("attr"):

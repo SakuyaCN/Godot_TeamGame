@@ -25,7 +25,7 @@ var base_role = [
 		"speed":100,
 		"crit":50,
 		"mdef":0,
-		"info":"黑袍为魔力型职业，可以打出高额魔力伤害，在前期怪物没用魔免的时期可以非常轻松的度过。\n职业特性：普攻伤害为魔力伤害，造成的魔力伤害无视5%的魔免，每10点魔力提高3点生命值与1点法力值"
+		"info":"黑袍为魔力型职业，可以打出高额魔力伤害，在前期怪物没用魔免的时期可以非常轻松的度过。\n职业特性：普攻伤害为魔力伤害，造成的魔力伤害无视5%的魔免，每10点魔力提高5点生命值与1点速度"
 	},
 	{
 		"name":"无畏勇者",
@@ -37,7 +37,7 @@ var base_role = [
 		"speed":100,
 		"crit":50,
 		"mdef":2,
-		"info":"勇者为平衡型职业，拥有出色的伤害的同时还能有一定的防御，不管是在前中后期都能发挥出不错的实力。\n职业特性：每次升级额外获得20点生命值与5点攻击力，自带3%的伤害吸血"
+		"info":"勇者为平衡型职业，拥有出色的伤害的同时还能有一定的防御，不管是在前中后期都能发挥出不错的实力。\n职业特性：每次升级额外获得20点生命值与5点攻击力，自带5%的伤害吸血"
 	},
 	{
 		"name":"不屈骑士",
@@ -49,7 +49,7 @@ var base_role = [
 		"speed":100,
 		"crit":50,
 		"mdef":6,
-		"info":"骑士为防御型职业，拥有高超的防御技巧，越是往后期越是能体现出高防御的优点。\n职业特性：自带6%的额外物免与魔免，每次升级额外获得35点生命值"
+		"info":"骑士为防御型职业，拥有高超的防御技巧，越是往后期越是能体现出高防御的优点。\n职业特性：血量收益提高8%，自带6%的额外物免与魔免，每次升级额外获得35点生命值"
 	},
 	{
 		"name":"绝地武士",
@@ -61,7 +61,7 @@ var base_role = [
 		"speed":150,
 		"crit":100,
 		"mdef":0,
-		"info":"武士为强攻型职业，注重速度与暴击，但是防御较为薄弱。\n职业特性：暴击伤害提高35%，速度收益提高6%，无自带防御力，每次升级额外额外获得25点速度与暴击"
+		"info":"武士为强攻型职业，注重速度与暴击，但是防御较为薄弱。\n职业特性：暴击伤害提高25%，速度收益提高5%，无自带防御力，每次升级额外额外获得25点速度与暴击"
 	},
 	{
 		"name":"致命拳手",
@@ -73,23 +73,23 @@ var base_role = [
 		"speed":100,
 		"crit":50,
 		"mdef":3,
-		"info":"拳手为攻防一体型职业，速度力量防御三维全面发展。\n职业特性：自带3%的额外物免与魔免，每次升级额外提高16点生命值、6点攻击力、6点速度"
+		"info":"拳手为攻防一体型职业，速度力量防御三维全面发展。\n职业特性：攻击收益提高3%，自带3%的额外物免与魔免，每次升级额外提高25点生命值、10点攻击力、10点速度"
 	},
 	{
-		"name":"战地牧师",
+		"name":"战地女神",
 		"lv":1,
-		"hp":155,
-		"atk":8,
-		"def":2,
+		"hp":165,
+		"atk":12,
+		"def":7,
 		"mtk":15,
-		"speed":8,
-		"crit":15,
-		"mdef":2,
-		"info":"牧师为支援型职业，会打架的牧师，后期拥有各种团队BUFF加成，全体治疗等辅助技能。"
+		"speed":100,
+		"crit":50,
+		"mdef":5,
+		"info":"战地女神支援型职业，后期拥有各种团队BUFF加成，全体治疗等辅助技能。\n职业特性：魔力收益提高5%，自带5%的额外物免与魔免，每次升级额外提高15点生命值、10点攻击力、5点魔力"
 	}
 ]
 var check_index = 0
-var count_max = 4
+var count_max = 5
 
 func _ready():
 	visible = false
@@ -132,9 +132,9 @@ func load_info():
 			$role/AnimatedSprite.position = Vector2(3,-83)
 			$role/AnimatedSprite.scale = Vector2(3,3)
 		5:
-			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Minister.tres")
-			$role/AnimatedSprite.position = Vector2(5,-65)
-			$role/AnimatedSprite.scale = Vector2(4,4)
+			$role/AnimatedSprite.frames = load("res://Texture/Pre-made characters/Goddess.tres")
+			$role/AnimatedSprite.position = Vector2(0,-100)
+			$role/AnimatedSprite.scale = Vector2(3,3)
 
 func _on_left_pressed():
 	if check_index == 0:
@@ -159,8 +159,14 @@ func _on_Button_pressed():
 			"exp":0,
 			"lv":1,
 			"gold":1000,
-			"max_map":0,
-			"now_map":0,
+			"map_index":0,
+			"map_index_max":0,
+			"map":{
+	            "0":{"max_map": 0,"now_map": 0},
+				"1":{"max_map": 0,"now_map": 0},
+				"2":{"max_map": 0,"now_map": 0},
+				"3":{"max_map": 0,"now_map": 0},
+			},
 			"team_position":[id,null,null]
 		}
 		StorageData.reloadData()

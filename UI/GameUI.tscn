@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -18,14 +18,13 @@
 [ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=16]
 [ext_resource path="res://Texture/hud/Chest3.png" type="Texture" id=17]
 [ext_resource path="res://UI/ControlUI/BagUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://UI/ControlUI/MapUi.tscn" type="PackedScene" id=19]
 [ext_resource path="res://UI/MainUi.gd" type="Script" id=20]
 [ext_resource path="res://Texture/hud/Assets-2(Scale-x2)-No.png" type="Texture" id=21]
 [ext_resource path="res://UI/ControlUI/PartyUI.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03.png" type="Texture" id=23]
-[ext_resource path="res://Map/Map1.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_12.png" type="Texture" id=25]
-[ext_resource path="res://UI/MapUi.gd" type="Script" id=26]
-[ext_resource path="res://Texture/close.png" type="Texture" id=27]
+[ext_resource path="res://Texture/hud/GUI_06.png" type="Texture" id=24]
+[ext_resource path="res://Texture/pc1.png" type="Texture" id=25]
 [ext_resource path="res://Texture/hud/Icons_34.png" type="Texture" id=28]
 [ext_resource path="res://UI/ControlUI/BuildUI.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=30]
@@ -146,6 +145,16 @@ tracks/3/keys = {
 "points": PoolRealArray( -379, -0.25, 0, 0.25, 0, 306, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.4 )
 }
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("setting:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1390, -0.25, 0, 0.25, 0, 1260, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
 
 [sub_resource type="DynamicFont" id=16]
 size = 22
@@ -154,62 +163,17 @@ outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 4
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=26]
+size = 22
+outline_size = 3
+outline_color = Color( 0.635294, 0.607843, 0.607843, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 1 )
+
 [sub_resource type="DynamicFont" id=25]
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=17]
-size = 42
-outline_size = 6
-outline_color = Color( 0.470588, 0.470588, 0.470588, 1 )
-extra_spacing_char = 6
-font_data = ExtResource( 1 )
-
-[sub_resource type="Animation" id=18]
-length = 0.3
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("bg:rect_scale:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("bg:rect_scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "bezier"
-tracks/3/path = NodePath("TextureButton:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
 
 [node name="GameUi" type="Control"]
 anchor_right = 1.0
@@ -221,6 +185,7 @@ __meta__ = {
 }
 
 [node name="LoginUI" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -231,15 +196,13 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="LoginUI"]
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -180.5
-margin_top = -172.5
-margin_right = 180.5
-margin_bottom = -115.5
+margin_left = -253.5
+margin_top = 112.0
+margin_right = 253.5
+margin_bottom = 169.0
 custom_fonts/font = SubResource( 1 )
-text = "冒险模拟器"
+text = "秘境森林冒险队"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -404,7 +367,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 3
+frame = 7
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -709,7 +672,6 @@ __meta__ = {
 }
 
 [node name="MainUi" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -1.68182
@@ -756,7 +718,7 @@ anims/show = SubResource( 15 )
 [node name="map" type="TextureButton" parent="MainUi"]
 margin_left = -107.0
 margin_top = 32.0
-margin_right = -9.0
+margin_right = -8.99997
 margin_bottom = 105.0
 rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 23 )
@@ -864,6 +826,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="setting" type="TextureButton" parent="MainUi"]
+margin_left = 1390.0
+margin_top = 25.0
+margin_right = 1471.0
+margin_bottom = 111.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 24 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="MainUi/setting"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 26 )
+text = "设置"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainUi"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -72.0
+margin_top = 32.0
+margin_right = 68.0
+margin_bottom = 72.0
+texture = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MainUi/NinePatchRect"]
+margin_left = 4.0
+margin_right = 134.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 25 )
+text = "普通模式"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="title" type="NinePatchRect" parent="MainUi"]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -876,89 +890,19 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="MainUi/title"]
-margin_right = 176.0
+margin_left = 7.0
+margin_right = 171.0
 margin_bottom = 40.0
 custom_fonts/font = SubResource( 25 )
 text = "当前关卡：5"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MapUi" type="Control" parent="."]
+[node name="MapUi" parent="." instance=ExtResource( 19 )]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 26 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="bg" type="NinePatchRect" parent="MapUi"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -644.5
-margin_top = -288.0
-margin_right = 644.5
-margin_bottom = 288.0
-rect_scale = Vector2( 1e-05, 1 )
-rect_pivot_offset = Vector2( 648.995, 299.699 )
-mouse_filter = 0
-texture = ExtResource( 13 )
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 20
-patch_margin_bottom = 21
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Map" parent="MapUi/bg" instance=ExtResource( 24 )]
-position = Vector2( -23, -23 )
-scale = Vector2( 0.99, 0.99 )
-
-[node name="title" type="TextureRect" parent="MapUi/bg"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -192.5
-margin_top = -16.0
-margin_right = 192.5
-margin_bottom = 52.0
-texture = ExtResource( 25 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="MapUi/bg/title"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -102.5
-margin_top = -21.5
-margin_right = 102.5
-margin_bottom = 21.5
-custom_fonts/font = SubResource( 17 )
-text = "密林大陆"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MapUi"]
-anims/show = SubResource( 18 )
-
-[node name="TextureButton" type="TextureButton" parent="MapUi"]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 1237.52
-margin_top = 11.3716
-margin_right = 1326.52
-margin_bottom = 93.3716
-texture_normal = ExtResource( 27 )
-texture_focused = ExtResource( 27 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BagUI" parent="." instance=ExtResource( 18 )]
 visible = false
@@ -988,5 +932,5 @@ expand = true
 [connection signal="pressed" from="MainUi/chest" to="MainUi" method="_on_chest_pressed"]
 [connection signal="pressed" from="MainUi/party" to="MainUi" method="_on_party_pressed"]
 [connection signal="pressed" from="MainUi/build" to="MainUi" method="_on_build_pressed"]
-[connection signal="pressed" from="MapUi/TextureButton" to="MapUi" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="MainUi/setting" to="MainUi" method="_on_setting_pressed"]
 [connection signal="visibility_changed" from="PartyUI" to="PartyUI" method="_on_PartyUI_visibility_changed"]

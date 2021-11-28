@@ -1,5 +1,7 @@
 extends Node
 
+var save_path = "user://Storages_test2.json"
+
 var storage_data :Dictionary
 var is_read_storage = false
 
@@ -31,7 +33,7 @@ func reloadData():
 	
 func _read_storage():
 	var storage_data_file = File.new()
-	var err = storage_data_file.open("user://Storages_test.json",File.READ)
+	var err = storage_data_file.open(save_path,File.READ)
 	if err == OK:
 		storage_data = JSON.parse(storage_data_file.get_as_text()).result
 		is_read_storage = true
@@ -45,7 +47,7 @@ func save_ansyc(_data):
 		semaphore.wait()
 		mutex.lock()
 		var storage_data_file = File.new()
-		var _err = storage_data_file.open("user://Storages_test.json",File.WRITE)
+		var _err = storage_data_file.open(save_path,File.WRITE)
 		storage_data_file.store_string(to_json(storage_data))
 		storage_data_file.close()
 		mutex.unlock()
@@ -156,3 +158,13 @@ func AddSeal(_data):
 	get_player_seal()[id] = _data
 	ConstantsValue.ui_layer.getNewItem(_data.name,_data.img)
 	_save_storage()
+
+#添加一个技能
+func AddSkill(_data):
+	var id = str(OS.get_system_time_msecs()+randi()%1000)
+	get_all_skill().append({
+		"id":id,
+		"form":_data.id,
+		"role":null
+	})
+	ConstantsValue.ui_layer.getNewItem(_data.name,_data.img)

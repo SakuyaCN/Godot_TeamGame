@@ -117,11 +117,11 @@ config/windows_native_icon="res://bitbug_favicon.ico"
 
 [autoload]
 
+ConfigScript="*res://Storage/ConfigScript.gd"
 ConstantsValue="*res://AutoLoad/ConstantsValue.gd"
 StorageData="*res://Storage/StorageData.gd"
 Utils="*res://AutoLoad/Utils.gd"
 LocalData="*res://Storage/LocalData.gd"
-ConfigScript="*res://Storage/ConfigScript.gd"
 EquUtils="*res://AutoLoad/EquUtils.gd"
 HeroAttrUtils="*res://Storage/HeroAttrUtils.gd"
 GoodsUtils="*res://AutoLoad/GoodsUtils.gd"

@@ -16,7 +16,6 @@ var player_map #当前地图下标
 var is_map_boss #当前是否为地图boss
 var moster_name #当前地图怪物名称
 
-var is_next_change_map = false #是否需要切换地图
 var chang_map_id #切换地图的ID
 var is_need_reload = false #是否需要重新占位
 
@@ -46,8 +45,9 @@ func _ready():
 
 #加载地图
 func load_map():
-	ConstantsValue.ui_layer.ui.main_ui.setTitle(StorageData.storage_data["player_state"]["now_map"]+1)
-	player_map = StorageData.storage_data["player_state"]["now_map"]
+	var map_index = str(StorageData.storage_data["player_state"]["map_index"])
+	ConstantsValue.ui_layer.ui.main_ui.setTitle(StorageData.storage_data["player_state"]["map"][map_index]["now_map"]+1)
+	player_map = StorageData.storage_data["player_state"]["map"][map_index]["now_map"]
 	map_name = LocalData.map_data.keys()[player_map/10]
 	var map_info = LocalData.map_data[map_name]
 	game_progress.max_value = map_info["max_progress"]
@@ -95,6 +95,7 @@ func dialogic_single(string):
 #搜索遇到敌人
 func moster_met(_is_boss):
 	is_flight = true
+	moster_clear()
 	if !ConfigScript.getBoolSetting("store","moster_met_first"):#首次遇到敌人提示
 		var new_dialog = Dialogic.start('moster_met_first')
 		new_dialog.connect("dialogic_signal",self,"dialogic_single")
@@ -114,6 +115,9 @@ func moster_plus_size():
 
 #战斗开始信号
 func start_fight():
+	get_tree().call_group("player_role","setRoleScript",moster_array,player_array)
+	get_tree().call_group("moster_role","setRoleScript",player_array,moster_array)
+	yield(get_tree().create_timer(0.1),"timeout")
 	ConstantsValue.game_layer.fight_ui.UIchange(true)
 	get_tree().call_group("player_role","show_bar")
 	get_tree().call_group("moster_role","show_bar")
@@ -146,14 +150,18 @@ func moster_join(_is_boss):
 	if _is_boss:
 		moster_name = map_info.boss
 	var moster_info = LocalData.moster_data[moster_name]
+	var attr = LocalData.map_data[str(StorageData.get_player_state()["map_index"])][moster_name]
+	var skill = []
+	if attr.has("skill"):
+		skill = attr.skill
 	var moster_data = {
 		"nickname":moster_name,
 		"job":"moster",
 		"lv":player_map+1,
 		"atk_count":moster_info.atk_count,
-		"attr":mosterAttr(moster_name),
+		"attr":mosterAttr(attr),
 		"equ":{},
-		"skill":{},
+		"skill":skill,
 		"node":moster_info
 	}
 	moster_size = map_info.moster_num
@@ -166,17 +174,15 @@ func moster_join(_is_boss):
 		new_hero.setIndex(index)
 		new_hero.run2position(moster_pos.get_children()[index])
 		yield(get_tree().create_timer(0.7),"timeout")
-	get_tree().call_group("player_role","setRoleScript",moster_array,player_array)
-	get_tree().call_group("moster_role","setRoleScript",player_array,moster_array)
 
-func mosterAttr(_name):
-	var attr = LocalData.map_data["all_attr"][_name]
+func mosterAttr(attr):
 	var new_attr = {}
 	for item in attr:
-		if item == "def" || item == "mdef" || item == "other":
+		if item == "def" || item == "mdef" || item == "other" || item == "skill":
 			new_attr[item] = attr[item]
 		else:
-			new_attr[item] = attr[item]+ (attr[item] * (game_progress.value / game_progress.max_value) * (1+(player_map / 10.0))) as int
+			var num = player_map
+			new_attr[item] = (attr[item] / 10 + attr[item] * (1 + (pow(player_map - ((player_map / 10) as int) * 10,2) / 55.0)) )as int
 	return new_attr
 
 #检查胜利方
@@ -207,15 +213,19 @@ func checkWin():
 func isBossMapWin():
 	if is_map_boss:#地图boss战斗胜利解锁下一关
 		game_progress.value = 0
-		if StorageData.storage_data["player_state"]["now_map"] == StorageData.storage_data["player_state"]["max_map"]:
-			StorageData.storage_data["player_state"]["max_map"] += 1
-			if StorageData.storage_data["player_state"]["max_map"] == 10 && !ConfigScript.getBoolSetting("store","first_new_hero"):#首次遇到敌人提示
+		var map_index = str(StorageData.storage_data["player_state"]["map_index"])
+		if map_index == str(StorageData.storage_data["player_state"]["map_index_max"]) && StorageData.storage_data["player_state"]["map"][map_index]["now_map"] == 59:
+			StorageData.storage_data["player_state"]["map_index_max"] += 1#解锁世界地图难度
+			ConstantsValue.ui_layer.fight_win("已解锁地图难度【%s】"%Utils.getMapNameFormIndex(StorageData.storage_data["player_state"]["map_index_max"]))
+		elif StorageData.storage_data["player_state"]["map"][map_index]["now_map"] != 59 && StorageData.storage_data["player_state"]["map"][map_index]["now_map"] == StorageData.storage_data["player_state"]["map"][map_index]["max_map"]:
+			StorageData.storage_data["player_state"]["map"][map_index]["max_map"] += 1
+			if StorageData.storage_data["player_state"]["map"][map_index]["max_map"] == 10 && !ConfigScript.getBoolSetting("store","first_new_hero"):#首次遇到敌人提示
 				var new_dialog = Dialogic.start('first_new_hero')
 				ConfigScript.setBoolSetting("store","first_new_hero",true)
 				StorageData.AddGoodsNum([["小队招募令",1]])
 				add_child(new_dialog)
 			StorageData._save_storage()
-			ConstantsValue.showMessage("解锁新的关卡！",2)
+			ConstantsValue.ui_layer.fight_win("已解锁第%s关"%[StorageData.storage_data["player_state"]["map"][map_index]["max_map"]+1])
 
 #是否为boss战斗
 func isBossFIght():
@@ -225,34 +235,34 @@ func isBossFIght():
 
 #战斗胜利获得奖励
 func winGoods():
+	var map_index = StorageData.storage_data["player_state"]["map_index"]
 	var win_goods = LocalData.moster_data[moster_name].win_data
 	var goods_array = []
 	for item in win_goods.goods:
 		if randf() <= item[3] / 100.0:
-			goods_array.append([item[0],item[1] as int+randi() % item[2] as int])
+			var gnum = item[1] as int+randi() % item[2] as int
+			gnum += gnum * (1 + map_index)
+			goods_array.append([item[0],gnum as int])
 	StorageData.AddGoodsNum(goods_array)
 	if win_goods.other.has("exp"):
 		for _role in player_array:
-			var _exp = (1 + (player_map / 10.0)) * win_goods.other.exp
+			var _exp = (1 + (player_map / 10.0)) * win_goods.other.exp * (1 + map_index)
 			_role.addExp(_exp as int)
 	if win_goods.has("more"):
-		if win_goods.more.has("equ"):
-			if randf() <= win_goods.more.equ.dl / 100.0:
-				var key_index = win_goods.more.equ["equ"][randi()%win_goods.more.equ.values().size()]
-				var choose_data = LocalData.build_data["build_data"][win_goods.more.equ["type"]][str(key_index)]
-				EquUtils.createNewEqu(choose_data,choose_data.type)
+		if win_goods.more.has(str(map_index)):
+			if randf() <= win_goods.more[str(map_index)].dl / 100.0:
+				var key_index = win_goods.more[str(map_index)].equ[randi()%win_goods.more[str(map_index)].equ.size()]
+				print(key_index)
+				var choose_data = LocalData.build_data["build_data"][win_goods.more[str(map_index)]["type"]][str(key_index)]
+				EquUtils.createNewEqu(choose_data,choose_data.type,false)
 
-func obsChangeMap(_id):
-	chang_map_id = _id
-	if is_flight:
-		is_next_change_map = true
-		ConstantsValue.showMessage("战斗结束后将切换地图！",2)
-	else:
-		changeMap(chang_map_id)
-	
+#监听切换地图
+func obsChangeMap():
+	changeMap()
 
-func game_reset():
-	yield(get_tree().create_timer(0.6),"timeout")
+func game_reset(_is_time = true):
+	if _is_time:
+		yield(get_tree().create_timer(0.6),"timeout")
 	if is_need_reload:
 		newRoleJoin()
 	ConstantsValue.game_layer.fight_ui.UIchange(false)
@@ -262,9 +272,6 @@ func game_reset():
 	is_flight = false
 	load_moster_size = 0
 	ConstantsValue.game_layer.findTvShow(true)
-	if is_next_change_map:
-		is_next_change_map = false
-		changeMap(chang_map_id)
 
 func newRoleJoin():
 	ConstantsValue.showMessage("新冒险者登场！",1)
@@ -273,12 +280,15 @@ func newRoleJoin():
 	is_need_reload = false
 
 #更换地图
-func changeMap(_id):
-	StorageData.storage_data["player_state"]["now_map"] = _id
-	#ConstantsValue.ui_layer.ui.main_ui.setTitle(StorageData.storage_data["player_state"]["now_map"]+1)
+func changeMap():
+	$Timer.stop()
+	isBossFIght()
+	var map_index = StorageData.storage_data["player_state"]["map_index"]
+	ConstantsValue.showMessage("切换至【%s】第%s关"%[Utils.getMapNameFormIndex(map_index),StorageData.storage_data["player_state"]["map"][str(map_index)]["now_map"]+1],2)
 	StorageData._save_storage()
 	load_map()
-	game_reset()
+	game_reset(false)
+	$Timer.start()
 	
 
 func moster_clear():

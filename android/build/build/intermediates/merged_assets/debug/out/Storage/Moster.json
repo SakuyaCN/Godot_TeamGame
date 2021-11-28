@@ -1,228 +1,603 @@
 {
-    "骷髅战士":{
-        "frames":"res://Texture/Moster/SkeletonWarrior.tres",
-        "scale":4,
-        "pos_y":-80,
-        "flip_h":true,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":6,
-                "gold":6
+    "骷髅战士": {
+        "frames": "res://Texture/Moster/SkeletonWarrior.tres",
+        "scale": 4,
+        "pos_y": -80,
+        "flip_h": true,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 6,
+                "gold": 6
             },
-            "goods":[
-                ["红色陨铁",1,2,50],
-                ["刻印碎片",1,1,5]
+            "goods": [
+                [
+                    "红色陨铁",
+                    1,
+                    1,
+                    20
+                ],
+                [
+                    "刻印碎片",
+                    1,
+                    1,
+                    5
+                ],
+                [
+                    "技能手册",
+                    1,
+                    1,
+                    3
+                ]
+            ],
+            "more": {
+                "0": {
+                    "type": "基础装备",
+                    "equ": [
+                        101,
+                        201,
+                        301,
+                        401,
+                        501,
+                        601,
+                        701,
+                        801
+                    ],
+                    "dl": 20
+                }
+            }
+        }
+    },
+    "阿努比斯": {
+        "frames": "res://Texture/Moster/Anubis.tres",
+        "scale": 2,
+        "pos_y": -75,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 15,
+                "gold": 15
+            },
+            "goods": [
+                [
+                    "红色陨铁",
+                    1,
+                    2,
+                    20
+                ],
+                [
+                    "绿色陨铁",
+                    1,
+                    1,
+                    10
+                ],
+                [
+                    "刻印碎片",
+                    1,
+                    1,
+                    7
+                ],
+                [
+                    "技能手册",
+                    1,
+                    1,
+                    3
+                ]
+            ],
+            "more": {
+                "0": {
+                    "type": "基础装备",
+                    "dl": 5,
+                    "equ": [
+                        102,
+                        103,
+                        202,
+                        203,
+                        302,
+                        303,
+                        402,
+                        403,
+                        502,
+                        503,
+                        602,
+                        603,
+                        702,
+                        703,
+                        802,
+                        803
+                    ]
+                }
+            }
+        }
+    },
+    "绿色僵尸": {
+        "frames": "res://Texture/Moster/Zombie.tres",
+        "scale": 3,
+        "pos_y": -62,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 25,
+                "gold": 25
+            },
+            "goods": [
+                [
+                    "红色陨铁",
+                    1,
+                    2,
+                    20
+                ],
+                [
+                    "绿色陨铁",
+                    1,
+                    2,
+                    10
+                ],
+                [
+                    "刻印碎片",
+                    1,
+                    1,
+                    7
+                ],
+                [
+                    "技能手册",
+                    1,
+                    1,
+                    3
+                ]
+            ],
+            "more": {
+                "0": {
+                    "type": "基础装备",
+                    "dl": 5,
+                    "equ": [
+                        104,
+                        105,
+                        204,
+                        205,
+                        304,
+                        305,
+                        404,
+                        405,
+                        504,
+                        505,
+                        604,
+                        605,
+                        704,
+                        705,
+                        804,
+                        805
+                    ]
+                }
+            }
+        }
+    },
+    "地狱犬": {
+        "frames": "res://Texture/Moster/Hellhound.tres",
+        "scale": 3,
+        "pos_y": -62,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 35,
+                "gold": 35
+            },
+            "goods": [
+                [
+                    "红色陨铁",
+                    1,
+                    2,
+                    20
+                ],
+                [
+                    "绿色陨铁",
+                    1,
+                    2,
+                    10
+                ],
+                [
+                    "刻印碎片",
+                    1,
+                    1,
+                    7
+                ],
+                [
+                    "技能手册",
+                    1,
+                    1,
+                    3
+                ]
+            ],
+            "more": {
+                "0": {
+                    "dl": 5,
+                    "type": "基础装备",
+                    "equ": [
+                        106,
+                        107,
+                        206,
+                        207,
+                        306,
+                        307,
+                        406,
+                        407,
+                        506,
+                        507,
+                        606,
+                        607,
+                        706,
+                        707,
+                        806,
+                        807
+                    ]
+                }
+            }
+        }
+    },
+    "蝎尾怪": {
+        "line": "default",
+        "shoot": true,
+        "frames": "res://Texture/Moster/Manticore.tres",
+        "scale": 2,
+        "pos_y": -75,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 45,
+                "gold": 45
+            },
+            "goods": [
+                [
+                    "红色陨铁",
+                    2,
+                    4,
+                    20
+                ],
+                [
+                    "绿色陨铁",
+                    1,
+                    2,
+                    10
+                ],
+                [
+                    "刻印碎片",
+                    1,
+                    1,
+                    8
+                ],
+                [
+                    "技能手册",
+                    1,
+                    1,
+                    3
+                ]
+            ],
+            "more": {
+                "0": {
+                    "type": "基础装备",
+                    "dl": 5,
+                    "equ": [
+                        107,
+                        108,
+                        207,
+                        208,
+                        307,
+                        308,
+                        407,
+                        408,
+                        507,
+                        508,
+                        607,
+                        608,
+                        707,
+                        708,
+                        807,
+                        808
+                    ]
+                }
+            }
+        }
+    },
+    "骷髅法师": {
+        "line": "default",
+        "shoot": true,
+        "frames": "res://Texture/Moster/SkeletonMage.tres",
+        "scale": 4,
+        "pos_y": -80,
+        "flip_h": true,
+        "atk_count": 2,
+        "win_data": {
+            "other": {
+                "exp": 60,
+                "gold": 60
+            },
+            "goods": [
+                [
+                    "红色陨铁",
+                    3,
+                    5,
+                    20
+                ],
+                [
+                    "绿色陨铁",
+                    1,
+                    2,
+                    10
+                ],
+                [
+                    "刻印碎片",
+                    1,
+                    2,
+                    9
+                ],
+                [
+                    "技能手册",
+                    1,
+                    1,
+                    3
+                ]
+            ],
+            "more": {
+                "0": {
+                    "type": "基础装备",
+                    "dl": 5,
+                    "equ": [
+                        108,
+                        208,
+                        308,
+                        408,
+                        508,
+                        608,
+                        708,
+                        808
+                    ]
+                }
+            }
+        }
+    },
+    "地狱使者": {
+        "line": "default",
+        "shoot": true,
+        "frames": "res://Texture/Moster/Necromancer.tres",
+        "scale": 2,
+        "pos_y": -75,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 100,
+                "gold": 100
+            },
+            "goods": [
+                [
+                    "红色陨铁",
+                    3,
+                    5,
+                    80
+                ],
+                [
+                    "绿色陨铁",
+                    3,
+                    5,
+                    50
+                ],
+                [
+                    "刻印碎片",
+                    2,
+                    4,
+                    15
+                ],
+                [
+                    "技能手册",
+                    1,
+                    2,
+                    10
+                ]
             ]
         }
     },
-    "阿努比斯":{
-        "frames":"res://Texture/Moster/Anubis.tres",
-        "scale":2,
-        "pos_y":-75,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":15,
-                "gold":15
+    "独眼触手": {
+        "line": "line",
+        "shoot": true,
+        "frames": "res://Texture/Moster/MegaBeholder.tres",
+        "scale": 2,
+        "pos_y": -75,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 100,
+                "gold": 100
             },
-            "goods":[
-                ["红色陨铁",2,4,50],
-                ["绿色陨铁",1,2,30],
-                ["刻印碎片",1,1,7]
+            "goods": [
+                [
+                    "红色陨铁",
+                    3,
+                    5,
+                    80
+                ],
+                [
+                    "绿色陨铁",
+                    3,
+                    5,
+                    50
+                ],
+                [
+                    "刻印碎片",
+                    2,
+                    4,
+                    15
+                ],
+                [
+                    "技能手册",
+                    1,
+                    2,
+                    10
+                ]
             ]
         }
     },
-    "绿色僵尸":{
-        "frames":"res://Texture/Moster/Zombie.tres",
-        "scale":3,
-        "pos_y":-62,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":25,
-                "gold":25
+    "元素铁拳": {
+        "line": "line",
+        "shoot": true,
+        "frames": "res://Texture/Moster/Elemental.tres",
+        "scale": 2,
+        "pos_y": -75,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 100,
+                "gold": 100
             },
-            "goods":[
-                ["红色陨铁",4,6,50],
-                ["绿色陨铁",2,3,50],
-                ["刻印碎片",1,1,7]
+            "goods": [
+                [
+                    "红色陨铁",
+                    3,
+                    5,
+                    100
+                ],
+                [
+                    "绿色陨铁",
+                    2,
+                    4,
+                    50
+                ],
+                [
+                    "刻印碎片",
+                    2,
+                    4,
+                    15
+                ],
+                [
+                    "技能手册",
+                    1,
+                    2,
+                    10
+                ]
             ]
         }
     },
-    "地狱犬":{
-        "frames":"res://Texture/Moster/Hellhound.tres",
-        "scale":3,
-        "pos_y":-62,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":35,
-                "gold":35
+    "哥布林之王": {
+        "frames": "res://Texture/Moster/GoblinKing.tres",
+        "scale": 2,
+        "pos_y": -75,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 100,
+                "gold": 100
             },
-            "goods":[
-                ["红色陨铁",6,8,50],
-                ["绿色陨铁",4,6,50],
-                ["刻印碎片",1,1,7]
+            "goods": [
+                [
+                    "红色陨铁",
+                    2,
+                    4,
+                    80
+                ],
+                [
+                    "刻印碎片",
+                    2,
+                    4,
+                    15
+                ],
+                [
+                    "技能手册",
+                    1,
+                    1,
+                    5
+                ]
             ]
         }
     },
-    "蝎尾怪":{
-        "line":"default",
-        "shoot":true,
-        "frames":"res://Texture/Moster/Manticore.tres",
-        "scale":2,
-        "pos_y":-75,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":45,
-                "gold":45
+    "恶魔蝙蝠": {
+        "line": "line2",
+        "shoot": true,
+        "frames": "res://Texture/Moster/VampireBat.tres",
+        "scale": 2,
+        "pos_y": -75,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 100,
+                "gold": 100
             },
-            "goods":[
-                ["红色陨铁",8,12,50],
-                ["绿色陨铁",6,8,50],
-                ["刻印碎片",1,1,8]
+            "goods": [
+                [
+                    "秘银矿石",
+                    1,
+                    3,
+                    50
+                ],
+                [
+                    "绿色陨铁",
+                    4,
+                    8,
+                    80
+                ],
+                [
+                    "刻印碎片",
+                    2,
+                    4,
+                    15
+                ],
+                [
+                    "技能手册",
+                    2,
+                    3,
+                    10
+                ]
             ]
         }
     },
-    "骷髅法师":{
-        "line":"default",
-        "shoot":true,
-        "frames":"res://Texture/Moster/SkeletonMage.tres",
-        "scale":4,
-        "pos_y":-80,
-        "flip_h":true,
-        "atk_count":2,
-        "win_data":{
-            "other":{
-                "exp":60,
-                "gold":60
+    "恶魔领主": {
+        "frames": "res://Texture/Moster/Demon.tres",
+        "scale": 2,
+        "pos_y": -95,
+        "flip_h": false,
+        "atk_count": 1,
+        "win_data": {
+            "other": {
+                "exp": 100,
+                "gold": 100
             },
-            "goods":[
-                ["红色陨铁",12,15,50],
-                ["绿色陨铁",9,12,50],
-                ["刻印碎片",1,1,9]
-            ]
-        }
-    },
-    "地狱使者":{
-        "line":"default",
-        "shoot":true,
-        "frames":"res://Texture/Moster/Necromancer.tres",
-        "scale":2,
-        "pos_y":-75,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":100,
-                "gold":100
-            },
-            "goods":[
-                ["红色陨铁",15,25,100],
-                ["绿色陨铁",5,15,100],
-                ["刻印碎片",2,4,20]
-            ]
-        }
-    },
-    "独眼触手":{
-        "line":"line",
-        "shoot":true,
-        "frames":"res://Texture/Moster/MegaBeholder.tres",
-        "scale":2,
-        "pos_y":-75,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":100,
-                "gold":100
-            },
-            "goods":[
-                ["红色陨铁",20,30,100],
-                ["绿色陨铁",10,20,100],
-                ["刻印碎片",2,4,20]
-            ]
-        }
-    },
-    "元素铁拳":{
-        "line":"line",
-        "shoot":true,
-        "frames":"res://Texture/Moster/Elemental.tres",
-        "scale":2,
-        "pos_y":-75,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":100,
-                "gold":100
-            },
-            "goods":[
-                ["红色陨铁",10,15,100],
-                ["绿色陨铁",10,15,100],
-                ["刻印碎片",2,4,20]
-            ]
-        }
-    },
-    "哥布林之王":{
-        "frames":"res://Texture/Moster/GoblinKing.tres",
-        "scale":2,
-        "pos_y":-75,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":100,
-                "gold":100
-            },
-            "goods":[
-                ["红色陨铁",10,15,100],
-                ["刻印碎片",2,4,10]
-            ]
-        }
-    },
-    "恶魔蝙蝠":{
-        "line":"line2",
-        "shoot":true,
-        "frames":"res://Texture/Moster/VampireBat.tres",
-        "scale":2,
-        "pos_y":-75,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":100,
-                "gold":100
-            },
-            "goods":[
-                ["秘银矿石",10,12,100],
-                ["绿色陨铁",25,50,100],
-                ["刻印碎片",2,4,20]
-            ]
-        }
-    },
-    "恶魔领主":{
-        "frames":"res://Texture/Moster/Demon.tres",
-        "scale":2,
-        "pos_y":-95,
-        "flip_h":false,
-        "atk_count":1,
-        "win_data":{
-            "other":{
-                "exp":100,
-                "gold":100
-            },
-            "goods":[
-                ["秘银矿石",10,15,100],
-                ["青岚铁矿",5,15,90],
-                ["暗蓝星矿",5,10,20],
-                ["刻印碎片",2,4,20]
+            "goods": [
+                [
+                    "秘银矿石",
+                    1,
+                    3,
+                    50
+                ],
+                [
+                    "青岚铁矿",
+                    1,
+                    2,
+                    40
+                ],
+                [
+                    "暗蓝星矿",
+                    1,
+                    1,
+                    20
+                ],
+                [
+                    "刻印碎片",
+                    2,
+                    4,
+                    15
+                ],
+                [
+                    "技能手册",
+                    2,
+                    3,
+                    10
+                ]
             ]
         }
     }

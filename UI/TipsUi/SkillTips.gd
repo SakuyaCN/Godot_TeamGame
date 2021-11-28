@@ -5,11 +5,12 @@ var role_skill = null
 func _ready():
 	pass # Replace with function body.
 
-func showTips(_role_skill,_name,_info,_role_data = null):
+func showTips(_role_skill,_name,_info,_skill_lv,_role_data = null):
 	role_skill = _role_skill
 	role_data = _role_data
 	$ColorRect/NinePatchRect/Name.text = _name
 	$ColorRect/NinePatchRect/Info.text = _info
+	$ColorRect/NinePatchRect/lv.text = "等级：%d" %_skill_lv
 	if role_data != null:
 		$Button.text = "卸下"
 	else:
