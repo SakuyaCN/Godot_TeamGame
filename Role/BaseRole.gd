@@ -221,7 +221,6 @@ func removeState(id):
 	fight_script.state_array.erase(id)
 
 func setRoleScript(_enemy_array,_myself_array):
-	print("setRoleScript")
 	enemy_array = _enemy_array
 	myself_array = _myself_array
 	fight_script.setFightRole(_enemy_array)

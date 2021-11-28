@@ -37,6 +37,8 @@ func _read_storage():
 	if err == OK:
 		storage_data = JSON.parse(storage_data_file.get_as_text()).result
 		is_read_storage = true
+	else:
+		_save_storage()
 	storage_data_file.close()
 
 func _save_storage():

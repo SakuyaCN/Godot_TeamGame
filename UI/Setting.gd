@@ -15,6 +15,7 @@ func _ready():
 	$NinePatchRect/equ_b.pressed = ConstantsValue.fight_array.has("B级")
 	$NinePatchRect/equ_a.pressed = ConstantsValue.fight_array.has("A级")
 	$NinePatchRect/equ_s.pressed = ConstantsValue.fight_array.has("S级")
+	$NinePatchRect/SpinBox.value = ConfigScript.getNumberSetting("fight","array_num")
 	is_first = true
 
 
@@ -32,7 +33,6 @@ func _on_bgm_toggled(button_pressed):
 func _on_auto_fight_toggled(button_pressed):
 	ConfigScript.setBoolSetting("fight","auto_fight",button_pressed)
 
-
 func _on_fight_num_toggled(button_pressed):
 	ConfigScript.setBoolSetting("fight","fight_num",button_pressed)
 	ConstantsValue.updateFightNum()
@@ -44,4 +44,10 @@ func _on_equ_toggled(button_pressed, extra_arg_0):
 			ConstantsValue.fight_array.erase(extra_arg_0)
 		else:
 			ConstantsValue.fight_array.append(extra_arg_0)
-		ConfigScript.setArraySetting("fight","fight_array",ConstantsValue.fight_array)
+		ConfigScript.setValueSetting("fight","fight_array",ConstantsValue.fight_array)
+		ConstantsValue.configSet()
+
+#丢弃等级
+func _on_SpinBox_value_changed(value):
+	ConfigScript.setValueSetting("fight","array_num",value)
+	ConstantsValue.array_num = value

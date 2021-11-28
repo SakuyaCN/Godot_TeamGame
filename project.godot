@@ -134,7 +134,6 @@ settings/fps/force_fps=90
 
 window/size/width=1344
 window/size/height=621
-window/vsync/use_vsync=false
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -176,6 +175,8 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 vram_compression/import_etc=true
+quality/filters/use_nearest_mipmap_filter=true
 quality/voxel_cone_tracing/high_quality=true
+quality/filters/use_fxaa=true
 quality/depth/hdr.mobile=true
 environment/default_environment="res://default_env.tres"

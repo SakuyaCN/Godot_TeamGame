@@ -9,6 +9,7 @@ onready var build_info_need = preload("res://UI/ItemUI/BuildInfoNeedItem.tscn")
 var choose_data
 var choose_type #顶部二级选中类别
 var left_type #左侧选中类别
+var build_num = 1
 
 func _ready():
 	$NinePatchRect/ScrollContainer.get_v_scrollbar().set("custom_styles/scroll",StyleBoxTexture.new())
@@ -82,6 +83,10 @@ func build_first_click(type):
 #中间物品点击
 func build_item_click(type,data):
 	choose_data = data
+	if type =="材料":
+		$NinePatchRect3/bs.visible = true
+	else:
+		$NinePatchRect3/bs.visible = false
 	if !$NinePatchRect3.visible:
 		$NinePatchRect3.visible = true
 	$NinePatchRect3/title.text = data.name + " lv.%s" %data.lv
@@ -144,13 +149,24 @@ func _on_Button_pressed():
 		ConstantsValue.showMessage("至少需要一名冒险者达到%s级才可以制作"%choose_data.lv,2)
 		return
 	#print(StorageData.UseGoodsNum(choose_data.need))
+	var need = choose_data.need.duplicate()
+	if left_type == "材料":
+		for item in need:
+			item[1] *= build_num
 	if StorageData.UseGoodsNum(choose_data.need):
 		match left_type:
 			"基础装备", "神话装备":
 				EquUtils.createNewEqu(choose_data,choose_data.type)
 			"材料":
-				StorageData.AddGoodsNum([[choose_data.name,1]])
+				StorageData.AddGoodsNum([[choose_data.name,1 * build_num]])
 			"刻印":
 				StorageData.AddSeal(choose_data)
 			"技能书":
 				StorageData.AddSkill(choose_data)
+
+#十倍打造
+func _on_bs_pressed():
+	if $NinePatchRect3/bs.pressed:
+		build_num = 10
+	else:
+		build_num = 1

@@ -19,7 +19,7 @@ func get_attr_string(attr):
 		"mp": return "法力"
 		"hold": return "格挡率"
 		"hole_num": return "格挡伤害"
-		"dodge": return "闪避率"
+		"dodge": return "闪避率(30%上限)"
 		"hole_pass": return "格挡穿透"
 		"mtk_pass": return "魔免穿透率"
 		"atk_pass": return "物免穿透率"
@@ -90,7 +90,9 @@ func getQualityBs(ys):
 func createNewEqu(data,type,is_build = true):
 	var id = str(OS.get_system_time_msecs() + randi()%1000+1)
 	var qualityBs = createQuality()
-	if ConstantsValue.fight_array.has(qualityBs) && !is_build:
+	if ConstantsValue.fight_array.has(qualityBs) and !is_build:
+		return
+	if ConstantsValue.array_num != 0 && ConstantsValue.array_num >= data.lv:
 		return
 	var base_attr = []
 	var ys_attr = []

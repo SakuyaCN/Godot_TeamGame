@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://UI/BuildUI.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=5]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=6]
 [ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=7]
+[ext_resource path="res://Texture/hud/Check box.png" type="Texture" id=8]
+[ext_resource path="res://Texture/hud/Check element.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -41,6 +43,13 @@ region_rect = Rect2( 0, 0, 133, 34 )
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 133, 34 )
 margin_bottom = 2.45886
+
+[sub_resource type="DynamicFont" id=10]
+outline_size = 2
+outline_color = Color( 0.447059, 0.419608, 0.419608, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
 
 [node name="BuildUI" type="Control"]
 anchor_right = 1.0
@@ -150,13 +159,12 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 
 [node name="NinePatchRect3" type="NinePatchRect" parent="."]
-visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 968.0
-margin_top = -216.964
+margin_top = -216.5
 margin_right = 1281.01
-margin_bottom = 232.036
+margin_bottom = 232.5
 mouse_filter = 0
 texture = ExtResource( 3 )
 patch_margin_left = 40
@@ -208,7 +216,7 @@ __meta__ = {
 margin_left = 21.0
 margin_top = 257.0
 margin_right = 286.0
-margin_bottom = 360.0
+margin_bottom = 337.0
 columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -233,5 +241,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="bs" type="CheckBox" parent="NinePatchRect3"]
+margin_left = 129.0
+margin_top = 343.0
+margin_right = 194.0
+margin_bottom = 368.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 10 )
+custom_icons/checked = ExtResource( 9 )
+custom_icons/unchecked = ExtResource( 8 )
+custom_styles/focus = SubResource( 11 )
+text = "* 10"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
 [connection signal="pressed" from="NinePatchRect3/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="NinePatchRect3/bs" to="." method="_on_bs_pressed"]

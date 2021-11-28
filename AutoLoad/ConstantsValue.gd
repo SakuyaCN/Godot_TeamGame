@@ -5,11 +5,17 @@ var game_layer = null #ui界面 与游戏交互
 var const_choose_role_arrt = null #点击人物展示数据面板
 var tree = null
 
-var is_fight_num = ConfigScript.getBoolSetting("fight","fight_num")#战斗信息是否展示
-var fight_array = ConfigScript.getArraySetting("fight","fight_array")
+var array_num = 0#拾取等级
+var is_fight_num#战斗信息是否展示
+var fight_array
 
 onready var seal_box = preload("res://UI/ControlUI/SealBox.tscn")
 onready var attr_box = preload("res://UI/ControlUI/OhterAttr.tscn")
+
+func configSet():
+	is_fight_num = ConfigScript.getBoolSetting("fight","fight_num")#战斗信息是否展示
+	fight_array = ConfigScript.getArraySetting("fight","fight_array")
+	array_num = ConfigScript.getNumberSetting("fight","array_num")
 
 func reloadAllEqu():
 	tree.call_group("PartyUI","loadAllEqu")
@@ -30,3 +36,6 @@ func showAttrBox(node,_data):
 
 func updateFightNum():
 	is_fight_num = ConfigScript.getBoolSetting("fight","fight_num")
+
+func updateFightArray():
+	fight_array = ConfigScript.getArraySetting("fight","fight_array")

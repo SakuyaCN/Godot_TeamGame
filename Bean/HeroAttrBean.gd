@@ -188,6 +188,8 @@ func updateNum(attr,num,is_emit = true,is_buff = false):
 		"hurt_buff" : hurt_buff += num
 		"crit_buff" : crit_buff += num
 		"shield" : shield += num
+	if dodge > 30:
+		dodge = 30
 	if is_buff && attr == "hp":
 		max_hp += num
 		ConstantsValue.tree.call_group("player_role","reloadHpBar")

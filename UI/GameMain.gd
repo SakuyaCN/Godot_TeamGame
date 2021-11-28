@@ -70,7 +70,7 @@ func mapProgress():
 			moster_met(true)
 			ConstantsValue.showMessage("BOSS来袭！",3)
 			return
-		if game_progress.value as int % (5+randi()%20) == 0:
+		if game_progress.value as int % 20 == 0:
 			moster_met(false)
 
 func plus_size():
@@ -187,6 +187,8 @@ func mosterAttr(attr):
 
 #检查胜利方
 func checkWin():
+	if is_flight == false:
+		return
 	var is_moster_win = true
 	var is_player_win = true
 	for moster in moster_array:
@@ -196,12 +198,14 @@ func checkWin():
 		if player.fight_script.is_alive:
 			is_moster_win = false
 	if is_player_win:
+		is_flight = false
 		isBossFIght()
 		get_tree().call_group("player_role","fight_over")
 		winGoods()#胜利奖励
 		isBossMapWin()
 		game_reset()
 	if is_moster_win:
+		is_flight = false
 		isBossFIght()
 		get_tree().call_group("moster_role","fight_over")
 		ConstantsValue.ui_layer.fight_fail()
@@ -252,7 +256,6 @@ func winGoods():
 		if win_goods.more.has(str(map_index)):
 			if randf() <= win_goods.more[str(map_index)].dl / 100.0:
 				var key_index = win_goods.more[str(map_index)].equ[randi()%win_goods.more[str(map_index)].equ.size()]
-				print(key_index)
 				var choose_data = LocalData.build_data["build_data"][win_goods.more[str(map_index)]["type"]][str(key_index)]
 				EquUtils.createNewEqu(choose_data,choose_data.type,false)
 

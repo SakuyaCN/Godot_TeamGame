@@ -135,6 +135,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label3" type="Label" parent="NinePatchRect"]
+anchor_right = 1.0
+margin_left = 441.0
+margin_top = 121.5
+margin_right = -128.0
+margin_bottom = 140.5
+custom_fonts/font = SubResource( 5 )
+text = "丢弃等级：(0为不丢弃任何等级装备)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="equ_c" type="CheckBox" parent="NinePatchRect"]
 margin_left = 32.0
 margin_top = 119.0
@@ -203,6 +216,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SpinBox" type="SpinBox" parent="NinePatchRect"]
+margin_left = 789.0
+margin_top = 120.5
+margin_right = 863.0
+margin_bottom = 144.5
+rounded = true
+
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
 [connection signal="toggled" from="NinePatchRect/bgm" to="." method="_on_bgm_toggled"]
 [connection signal="toggled" from="NinePatchRect/auto_fight" to="." method="_on_auto_fight_toggled"]
@@ -211,3 +231,4 @@ __meta__ = {
 [connection signal="toggled" from="NinePatchRect/equ_b" to="." method="_on_equ_toggled" binds= [ "B级" ]]
 [connection signal="toggled" from="NinePatchRect/equ_a" to="." method="_on_equ_toggled" binds= [ "A级" ]]
 [connection signal="toggled" from="NinePatchRect/equ_s" to="." method="_on_equ_toggled" binds= [ "S级" ]]
+[connection signal="value_changed" from="NinePatchRect/SpinBox" to="." method="_on_SpinBox_value_changed"]
