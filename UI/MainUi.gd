@@ -4,6 +4,7 @@ onready var progress = $progress_hp
 onready var progress_tv = $progress_hp/label_hp 
 
 onready var setting_view = preload("res://UI/Setting.tscn")
+onready var day_gif = preload("res://UI/GoodsDialog/DayGif.tscn")
 
 func _ready():
 	visible = false
@@ -36,3 +37,7 @@ func setTitle(_lv):
 #设置
 func _on_setting_pressed():
 	get_parent().add_child(setting_view.instance())
+
+#每日奖励
+func _on_sign_pressed():
+	get_parent().add_child(day_gif.instance())

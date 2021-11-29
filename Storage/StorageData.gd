@@ -1,6 +1,6 @@
 extends Node
 
-var save_path = "user://Storages_test2.json"
+var save_path = "user://Storages.json"
 
 var storage_data :Dictionary
 var is_read_storage = false
@@ -33,13 +33,14 @@ func reloadData():
 	
 func _read_storage():
 	var storage_data_file = File.new()
-	var err = storage_data_file.open(save_path,File.READ)
+	var err = storage_data_file.open_encrypted_with_pass(save_path,File.READ,"sakuya")
 	if err == OK:
-		storage_data = JSON.parse(storage_data_file.get_as_text()).result
-		is_read_storage = true
+		if storage_data_file.get_as_text() != "":
+			storage_data = JSON.parse(storage_data_file.get_as_text()).result
 	else:
 		_save_storage()
 	storage_data_file.close()
+	is_read_storage = true
 
 func _save_storage():
 	semaphore.post()
@@ -49,7 +50,7 @@ func save_ansyc(_data):
 		semaphore.wait()
 		mutex.lock()
 		var storage_data_file = File.new()
-		var _err = storage_data_file.open(save_path,File.WRITE)
+		var _err = storage_data_file.open_encrypted_with_pass(save_path,File.WRITE,"sakuya")
 		storage_data_file.store_string(to_json(storage_data))
 		storage_data_file.close()
 		mutex.unlock()
@@ -133,7 +134,7 @@ func AddGoodsNum(array):
 	for item in array:
 		if get_player_inventory().has(item[0]) && item[1] > 0:
 			get_player_inventory()[item[0]] += item[1]
-		else:
+		elif item[1] > 0:
 			get_player_inventory()[item[0]] = item[1]
 		ConstantsValue.ui_layer.getNewItem(item[0],LocalData.all_data["goods"][item[0]].image)
 	get_tree().call_group("bag_ui","bagInit")

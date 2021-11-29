@@ -53,6 +53,9 @@ func _on_RoleUI_gui_input(event):
 			load_attr()
 			attr_paint.visible = true
 			ConstantsValue.const_choose_role_arrt = attr_paint
+	else:
+		attr_paint.visible = false
+		ConstantsValue.const_choose_role_arrt = null
 
 func _on_attr_visibility_changed():
 	if attr_paint.visible:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://UI/Setting.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Texture/hud/Check element.png" type="Texture" id=5]
 [ext_resource path="res://Texture/hud/Check box.png" type="Texture" id=6]
+[ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=7]
+[ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -23,6 +25,25 @@ size = 18
 outline_size = 2
 outline_color = Color( 0.560784, 0.533333, 0.533333, 1 )
 font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 133, 34 )
+margin_bottom = 2.45886
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -62,6 +83,7 @@ margin_left = -453.0
 margin_top = -183.0
 margin_right = 453.0
 margin_bottom = 183.0
+rect_pivot_offset = Vector2( -1582.8, -170.354 )
 texture = ExtResource( 3 )
 patch_margin_left = 43
 patch_margin_top = 25
@@ -223,6 +245,25 @@ margin_right = 863.0
 margin_bottom = 144.5
 rounded = true
 
+[node name="Button" type="Button" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.0
+margin_top = 96.0
+margin_right = 93.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "退出游戏"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
 [connection signal="toggled" from="NinePatchRect/bgm" to="." method="_on_bgm_toggled"]
 [connection signal="toggled" from="NinePatchRect/auto_fight" to="." method="_on_auto_fight_toggled"]
@@ -232,3 +273,4 @@ rounded = true
 [connection signal="toggled" from="NinePatchRect/equ_a" to="." method="_on_equ_toggled" binds= [ "A级" ]]
 [connection signal="toggled" from="NinePatchRect/equ_s" to="." method="_on_equ_toggled" binds= [ "S级" ]]
 [connection signal="value_changed" from="NinePatchRect/SpinBox" to="." method="_on_SpinBox_value_changed"]
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_Button_pressed"]

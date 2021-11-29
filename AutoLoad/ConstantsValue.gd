@@ -9,6 +9,11 @@ var array_num = 0#拾取等级
 var is_fight_num#战斗信息是否展示
 var fight_array
 
+var static_goods = {} #获取签到物品
+
+var chat_array = []
+signal on_chat_message(data)
+
 onready var seal_box = preload("res://UI/ControlUI/SealBox.tscn")
 onready var attr_box = preload("res://UI/ControlUI/OhterAttr.tscn")
 

@@ -18,7 +18,6 @@ func _ready():
 	$NinePatchRect/SpinBox.value = ConfigScript.getNumberSetting("fight","array_num")
 	is_first = true
 
-
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		queue_free()
@@ -37,7 +36,6 @@ func _on_fight_num_toggled(button_pressed):
 	ConfigScript.setBoolSetting("fight","fight_num",button_pressed)
 	ConstantsValue.updateFightNum()
 
-
 func _on_equ_toggled(button_pressed, extra_arg_0):
 	if is_first:
 		if ConstantsValue.fight_array.has(extra_arg_0):
@@ -51,3 +49,7 @@ func _on_equ_toggled(button_pressed, extra_arg_0):
 func _on_SpinBox_value_changed(value):
 	ConfigScript.setValueSetting("fight","array_num",value)
 	ConstantsValue.array_num = value
+
+
+func _on_Button_pressed():
+	get_tree().quit(0)

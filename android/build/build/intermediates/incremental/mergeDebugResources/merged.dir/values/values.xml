@@ -82,7 +82,7 @@
     <id name="view_tree_view_model_store_owner"/>
     <item name="visible_removing_fragment_view_tag" type="id"/>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <string name="godot_project_name_string">冒险模拟器</string>
+    <string name="godot_project_name_string">秘境森林冒险队</string>
     <string name="kilobytes_per_second">%1$s KB/s</string>
     <string name="notification_download_complete">Download complete</string>
     <string name="notification_download_failed">Download unsuccessful</string>

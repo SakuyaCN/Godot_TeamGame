@@ -59,6 +59,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/dialogic/Other/DialogicUtil.gd"
 }, {
+"base": "Node",
+"class": "GodotHttp",
+"language": "GDScript",
+"path": "res://Http/HttpBase.gd"
+}, {
 "base": "Reference",
 "class": "HeroAttrBean",
 "language": "GDScript",
@@ -100,6 +105,7 @@ _global_script_class_icons={
 "DialogicParser": "",
 "DialogicResources": "",
 "DialogicUtil": "",
+"GodotHttp": "",
 "HeroAttrBean": "",
 "HurtSkill": "",
 "SkillEntity": "",
@@ -114,6 +120,7 @@ config/name="wh"
 run/main_scene="res://UI/Game.tscn"
 config/icon="res://logo.png"
 config/windows_native_icon="res://bitbug_favicon.ico"
+config/quit_on_go_back=false
 
 [autoload]
 

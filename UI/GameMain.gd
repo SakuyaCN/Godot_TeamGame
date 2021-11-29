@@ -1,6 +1,7 @@
 extends Node2D
 
 var role = preload("res://Role/BaseRole.tscn")
+var is_hangup = true #是否第一次登录展示离线奖励
 var hero_size = 0
 var load_hero_size = 0
 
@@ -9,7 +10,7 @@ var load_moster_size = 0
 
 var boss_time_out = 100#BOSS战倒计时
 var locao_boss_time = 0
-var is_join_over = false
+var is_join_over = false#是否加入完毕
 
 var map_name #当前地图关卡名称
 var player_map #当前地图下标
@@ -36,6 +37,7 @@ var player_array = []
 var moster_array = []
 
 var is_flight = false#是否可以准备战斗
+var is_progress = true#进度条是否走动
 
 func _ready():
 	locao_boss_time = boss_time_out
@@ -63,7 +65,7 @@ func changeRolePosition(_is_need_reload):
 
 #探索进度条更新
 func mapProgress():
-	if !is_flight && game_progress.value != game_progress.max_value:
+	if is_progress && game_progress.value != game_progress.max_value:
 		game_progress.value += 1
 		game_progress_tv.text = "当前地图探索进度：%s "%game_progress.value +" / 总进度：%s" %game_progress.max_value
 		if game_progress.value == game_progress.max_value:
@@ -76,12 +78,19 @@ func mapProgress():
 func plus_size():
 	load_hero_size +=1
 	if load_hero_size == hero_size:
+		hangup()
 		if ConfigScript.getBoolSetting("store","first_join"):
 			$Timer.start()
 		else:
 			var new_dialog = Dialogic.start('first')
 			new_dialog.connect("dialogic_signal",self,"dialogic_single")
 			add_child(new_dialog)
+
+func hangup():
+	if !is_hangup:
+		return
+	$GameHangUp.on_login()
+	is_hangup = false
 
 #首次进入开始游戏
 func dialogic_single(string):
@@ -95,6 +104,7 @@ func dialogic_single(string):
 #搜索遇到敌人
 func moster_met(_is_boss):
 	is_flight = true
+	is_progress = false
 	moster_clear()
 	if !ConfigScript.getBoolSetting("store","moster_met_first"):#首次遇到敌人提示
 		var new_dialog = Dialogic.start('moster_met_first')
@@ -268,6 +278,7 @@ func game_reset(_is_time = true):
 		yield(get_tree().create_timer(0.6),"timeout")
 	if is_need_reload:
 		newRoleJoin()
+	is_progress = true
 	ConstantsValue.game_layer.fight_ui.UIchange(false)
 	moster_clear()
 	get_tree().call_group("player_role","role_reset")

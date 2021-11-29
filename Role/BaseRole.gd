@@ -33,6 +33,8 @@ func _ready():
 
 #添加经验
 func addExp(_exp):
+	if hero_attr.exp_buff > 0:
+		_exp += (_exp * (hero_attr.exp_buff / 100.0)) as int
 	is_LvUp(_exp)
 	_show_damage_label("EXP+%d"%_exp,Utils.HurtType.EXP,true)
 

@@ -33,6 +33,7 @@ func get_attr_string(attr):
 		"hurt_buff":return "普攻加成比"
 		"crit_buff":return "暴伤加成比"
 		"shield":return "护盾值"
+		"exp_buff":return "经验加成比"
 
 func get_ys_color(ys):
 	match ys:

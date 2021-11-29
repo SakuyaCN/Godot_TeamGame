@@ -149,11 +149,11 @@ func _on_Button_pressed():
 		ConstantsValue.showMessage("至少需要一名冒险者达到%s级才可以制作"%choose_data.lv,2)
 		return
 	#print(StorageData.UseGoodsNum(choose_data.need))
-	var need = choose_data.need.duplicate()
+	var need = choose_data.need.duplicate(true)
 	if left_type == "材料":
 		for item in need:
 			item[1] *= build_num
-	if StorageData.UseGoodsNum(choose_data.need):
+	if StorageData.UseGoodsNum(need):
 		match left_type:
 			"基础装备", "神话装备":
 				EquUtils.createNewEqu(choose_data,choose_data.type)
@@ -165,8 +165,5 @@ func _on_Button_pressed():
 				StorageData.AddSkill(choose_data)
 
 #十倍打造
-func _on_bs_pressed():
-	if $NinePatchRect3/bs.pressed:
-		build_num = 10
-	else:
-		build_num = 1
+func _on_bs_pressed(args):
+	build_num = args

@@ -1,23 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "outputFile": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
             "map": [
                 {
-                    "source": "F:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\res\\values-en\\godot_project_name_string.xml",
+                    "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\values-en\\godot_project_name_string.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "1",
                         "startOffsets": "112",
-                        "endColumns": "56",
-                        "endOffsets": "167"
+                        "endColumns": "58",
+                        "endOffsets": "169"
                     },
                     "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endColumns": "59",
-                        "endOffsets": "110"
+                        "endColumns": "61",
+                        "endOffsets": "112"
                     }
                 }
             ]

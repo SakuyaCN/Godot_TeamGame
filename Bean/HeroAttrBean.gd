@@ -36,6 +36,7 @@ var true_hurt:int #真实伤害
 var hurt_buff:int #伤害加成比
 var crit_buff:int #暴伤加成比
 var shield:int #护盾
+var exp_buff:int #经验增幅
 
 #重载基础属性
 func resetAttr(role_data):
@@ -154,7 +155,8 @@ func toDict():
 		"true_hurt" : true_hurt,
 		"hurt_buff" : hurt_buff,
 		"crit_buff" : crit_buff,
-		"shield" : shield
+		"shield" : shield,
+		"exp_buff":exp_buff
 	}
 
 func updateNum(attr,num,is_emit = true,is_buff = false):
@@ -188,6 +190,7 @@ func updateNum(attr,num,is_emit = true,is_buff = false):
 		"hurt_buff" : hurt_buff += num
 		"crit_buff" : crit_buff += num
 		"shield" : shield += num
+		"exp_buff":exp_buff+=num
 	if dodge > 30:
 		dodge = 30
 	if is_buff && attr == "hp":

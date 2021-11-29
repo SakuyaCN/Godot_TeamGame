@@ -97,6 +97,8 @@ func _ready():
 
 func showCreate(_is_create = false):
 	is_create = _is_create
+	if _is_create:
+		$TextEdit.visible = false
 	visible = true
 
 func load_info():
@@ -152,17 +154,22 @@ func _on_right_pressed():
 
 func _on_Button_pressed():
 	if !is_create:
+		if $TextEdit.text == "":
+			ConstantsValue.showMessage("请输入小队名称",2)
+			return
 		var id = str(OS.get_system_time_msecs())
 		createNewRole(id)
 		StorageData.storage_data["player_state"] = {
 			"job":base_role[check_index].name,
 			"exp":0,
 			"lv":1,
+			"nickname":$TextEdit.text,
 			"gold":1000,
+			"save_id":id+ str(randi()%100000),
 			"map_index":0,
 			"map_index_max":0,
 			"map":{
-	            "0":{"max_map": 0,"now_map": 0},
+				"0":{"max_map": 0,"now_map": 0},
 				"1":{"max_map": 0,"now_map": 0},
 				"2":{"max_map": 0,"now_map": 0},
 				"3":{"max_map": 0,"now_map": 0},

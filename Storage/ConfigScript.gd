@@ -1,7 +1,7 @@
 extends Node
 
 var config = ConfigFile.new()
-var file_path = "user://settings_test2.cfg"
+var file_path = "user://settings.cfg"
 
 func _ready():
 	var err = config.load(file_path)

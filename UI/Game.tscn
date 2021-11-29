@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://Texture/3.png" type="Texture" id=1]
 [ext_resource path="res://UI/UILayer.gd" type="Script" id=2]
@@ -27,6 +27,9 @@
 [ext_resource path="res://UI/GameResult.gd" type="Script" id=25]
 [ext_resource path="res://Texture/hud/p_s_s.png" type="Texture" id=26]
 [ext_resource path="res://Music/LRPG2_DanceOfEnchantment_60s_Loop.wav" type="AudioStream" id=27]
+[ext_resource path="res://Http/ChatScript.gd" type="Script" id=28]
+[ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=29]
+[ext_resource path="res://UI/GameHangUp.gd" type="Script" id=30]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 9 )
@@ -338,6 +341,13 @@ outline_size = 2
 outline_color = Color( 0.603922, 0.6, 0.6, 1 )
 font_data = ExtResource( 14 )
 
+[sub_resource type="DynamicFont" id=55]
+size = 13
+outline_size = 1
+outline_color = Color( 0.47451, 0.466667, 0.466667, 1 )
+extra_spacing_top = 2
+font_data = ExtResource( 29 )
+
 [sub_resource type="DynamicFont" id=46]
 size = 25
 outline_size = 2
@@ -431,30 +441,30 @@ scale = Vector2( 5, 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 25.6, 0 )
 frames = SubResource( 14 )
-frame = 3
+frame = 5
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 54.4, 0 )
 frames = SubResource( 21 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 118.4, 0 )
 frames = SubResource( 28 )
-frame = 4
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 144, 0 )
 frames = SubResource( 35 )
+frame = 2
 playing = true
 
 [node name="pb1" type="ParallaxBackground" parent="PxBg"]
@@ -604,6 +614,9 @@ wait_time = 0.1
 
 [node name="BossTimer" type="Timer" parent="GameMain"]
 
+[node name="GameHangUp" type="Node" parent="GameMain"]
+script = ExtResource( 30 )
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 pause_mode = 2
 layer = 0
@@ -630,6 +643,25 @@ margin_bottom = 14.0
 
 [node name="Timer" type="Timer" parent="UILayer/ItemShow"]
 wait_time = 3.0
+
+[node name="chat" type="RichTextLabel" parent="UILayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -241.0
+margin_top = 104.0
+margin_right = -10.0
+margin_bottom = 194.0
+custom_fonts/normal_font = SubResource( 55 )
+bbcode_enabled = true
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="UILayer/chat"]
+wait_time = 2.0
+one_shot = true
 
 [node name="Control" parent="UILayer" instance=ExtResource( 8 )]
 
@@ -809,10 +841,20 @@ __meta__ = {
 stream = ExtResource( 27 )
 volume_db = -2.0
 
+[node name="Chat" type="Node" parent="."]
+script = ExtResource( 28 )
+
+[node name="Timer" type="Timer" parent="Chat"]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="pressed" from="GameLayer/FightUI/Fight_btn/startFight" to="GameLayer/FightUI" method="_on_startFight_pressed"]
 [connection signal="toggled" from="GameLayer/FightUI/Fight_btn/autoFight" to="GameLayer/FightUI" method="_on_autoFight_toggled"]
 [connection signal="timeout" from="GameMain/Timer" to="GameMain" method="_on_Timer_timeout"]
 [connection signal="timeout" from="GameMain/BossTimer" to="GameMain" method="_on_BossTimer_timeout"]
+[connection signal="gui_input" from="UILayer/chat" to="." method="_on_chat_gui_input"]
+[connection signal="timeout" from="UILayer/chat/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="UILayer/msg/Timer" to="UILayer" method="_on_Timer_timeout"]
 [connection signal="gui_input" from="UILayer/GameResult/ColorRect" to="UILayer" method="_on_ColorRect_gui_input"]
 [connection signal="timeout" from="UILayer/GameResult/Timer" to="UILayer/GameResult" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Chat/Timer" to="Chat" method="_on_Timer_timeout"]
