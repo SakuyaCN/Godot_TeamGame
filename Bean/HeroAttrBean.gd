@@ -94,7 +94,7 @@ func loadJobAttr(role_data):
 			atk_blood += 5
 		"不屈骑士":
 			hp += 35 * role_data.lv
-			hp += (hp * 0.08) as int
+			hp += (hp * 0.1) as int
 		"绝地武士":
 			speed += 25 * role_data.lv
 			crit += 25 * role_data.lv

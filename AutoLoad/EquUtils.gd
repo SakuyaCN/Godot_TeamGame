@@ -81,31 +81,45 @@ func createQuality():
 
 func getQualityBs(ys):
 	match ys:
-		"S++": return 1.07
+		"S++": return 1.12
 		"S级": return 1.05
-		"A级": return 1.03
-		"B级": return 1.01
+		"A级": return 0.9
+		"B级": return 0.8
+		"C级": return 0.7
+
+func getQualityBssTART(ys):
+	match ys:
+		"S++": return 1.2
+		"S级": return 1.15
+		"A级": return 1.08
+		"B级": return 1.02
 		"C级": return 1
 
 #生成一件新装备
-func createNewEqu(data,type,is_build = true):
+func createNewEqu(build_id,build_type,data,type,is_build = true):
+	if StorageData.get_player_equipment().size()>=100:
+		ConstantsValue.showMessage("武器库已满，请及时清理！",3)
+		return
 	var id = str(OS.get_system_time_msecs() + randi()%1000+1)
 	var qualityBs = createQuality()
 	if ConstantsValue.fight_array.has(qualityBs) and !is_build:
 		return
-	if ConstantsValue.array_num != 0 && ConstantsValue.array_num >= data.lv:
+	if ConstantsValue.array_num != 0 && ConstantsValue.array_num >= data.lv and !is_build:
 		return
 	var base_attr = []
 	var ys_attr = []
 	if data.keys().has("attr"):
 		for base in data.attr:
+			var attr = (rand_range(data.attr[base][0] * getQualityBssTART(qualityBs),data.attr[base][1]) * getQualityBs(qualityBs)) as int
+			if attr == 0:
+				attr = 1
 			base_attr.append({
-				base:(rand_range(data.attr[base][0],data.attr[base][1]) * getQualityBs(qualityBs)) as int
+				base:attr
 			})
 	if data.keys().has("ys_attr"):
 		for base in data.ys_attr:
 			ys_attr.append({
-				base:(rand_range(data.ys_attr[base][0],data.ys_attr[base][1]) * getQualityBs(qualityBs))as int 
+				base:(rand_range(data.ys_attr[base][0] * getQualityBssTART(qualityBs),data.ys_attr[base][1]) * getQualityBs(qualityBs))as int 
 			})
 	var equData = {
 		"id":id,
@@ -118,8 +132,10 @@ func createNewEqu(data,type,is_build = true):
 		"base_attr":base_attr,
 		"ys_attr":ys_attr,
 		"qh":0,
+		"build_id":str(build_id),
+		"build_type":build_type,
 		"seal":[]
 	}
-	ConstantsValue.ui_layer.getNewItem(equData.name,equData.image,equData.quality)
 	StorageData.addEqutoBag(equData)
+	ConstantsValue.ui_layer.getNewItem(equData.name,equData.image,equData.quality)
 	return equData

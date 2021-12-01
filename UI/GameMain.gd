@@ -50,8 +50,8 @@ func load_map():
 	var map_index = str(StorageData.storage_data["player_state"]["map_index"])
 	ConstantsValue.ui_layer.ui.main_ui.setTitle(StorageData.storage_data["player_state"]["map"][map_index]["now_map"]+1)
 	player_map = StorageData.storage_data["player_state"]["map"][map_index]["now_map"]
-	map_name = LocalData.map_data.keys()[player_map/10]
-	var map_info = LocalData.map_data[map_name]
+	map_name = (player_map/10) as int
+	var map_info = LocalData.map_data[Utils.getMapName(map_name)]
 	game_progress.max_value = map_info["max_progress"]
 	game_progress.value = 0
 	game_progress_tv.text = "当前地图探索进度：%s "%game_progress.value +" / 总进度：%s" %game_progress.max_value
@@ -155,7 +155,7 @@ func _on_Timer_timeout():
 
 #怪物进入
 func moster_join(_is_boss):
-	var map_info = LocalData.map_data[map_name]
+	var map_info = LocalData.map_data[Utils.getMapName(map_name)]
 	moster_name = map_info.moster
 	if _is_boss:
 		moster_name = map_info.boss
@@ -233,6 +233,8 @@ func isBossMapWin():
 			ConstantsValue.ui_layer.fight_win("已解锁地图难度【%s】"%Utils.getMapNameFormIndex(StorageData.storage_data["player_state"]["map_index_max"]))
 		elif StorageData.storage_data["player_state"]["map"][map_index]["now_map"] != 59 && StorageData.storage_data["player_state"]["map"][map_index]["now_map"] == StorageData.storage_data["player_state"]["map"][map_index]["max_map"]:
 			StorageData.storage_data["player_state"]["map"][map_index]["max_map"] += 1
+			StorageData.storage_data["player_state"]["map"][map_index]["now_map"] +=1
+			changeMap()
 			if StorageData.storage_data["player_state"]["map"][map_index]["max_map"] == 10 && !ConfigScript.getBoolSetting("store","first_new_hero"):#首次遇到敌人提示
 				var new_dialog = Dialogic.start('first_new_hero')
 				ConfigScript.setBoolSetting("store","first_new_hero",true)
@@ -267,7 +269,7 @@ func winGoods():
 			if randf() <= win_goods.more[str(map_index)].dl / 100.0:
 				var key_index = win_goods.more[str(map_index)].equ[randi()%win_goods.more[str(map_index)].equ.size()]
 				var choose_data = LocalData.build_data["build_data"][win_goods.more[str(map_index)]["type"]][str(key_index)]
-				EquUtils.createNewEqu(choose_data,choose_data.type,false)
+				EquUtils.createNewEqu(str(key_index),win_goods.more[str(map_index)]["type"],choose_data,choose_data.type,false)
 
 #监听切换地图
 func obsChangeMap():

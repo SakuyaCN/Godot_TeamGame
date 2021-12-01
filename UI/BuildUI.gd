@@ -6,6 +6,7 @@ onready var build_type_item = preload("res://UI/ItemUI/BuildGridTypeItem.tscn")
 onready var build_grid_item = preload("res://UI/ItemUI/BuildGridItem.tscn")
 onready var build_info_need = preload("res://UI/ItemUI/BuildInfoNeedItem.tscn")
 
+var choose_id #选中道具的ID
 var choose_data
 var choose_type #顶部二级选中类别
 var left_type #左侧选中类别
@@ -69,7 +70,7 @@ func loadBuildTypeData(type,array,top_type):
 			_:
 				data = LocalData.build_data["build_data"][type][str(id)]
 		item_ins.setData(data)
-		item_ins.connect("pressed",self,"build_item_click",[type,data])
+		item_ins.connect("pressed",self,"build_item_click",[type,data,id])
 		$NinePatchRect2/ScrollContainer/GridContainer.add_child(item_ins)
 	if array.size() > 0:
 		choose_type = top_type
@@ -81,7 +82,8 @@ func build_first_click(type):
 		$NinePatchRect3.visible = false
 
 #中间物品点击
-func build_item_click(type,data):
+func build_item_click(type,data,_id):
+	choose_id = _id
 	choose_data = data
 	if type =="材料":
 		$NinePatchRect3/bs.visible = true
@@ -156,7 +158,7 @@ func _on_Button_pressed():
 	if StorageData.UseGoodsNum(need):
 		match left_type:
 			"基础装备", "神话装备":
-				EquUtils.createNewEqu(choose_data,choose_data.type)
+				EquUtils.createNewEqu(choose_id,left_type,choose_data,choose_data.type)
 			"材料":
 				StorageData.AddGoodsNum([[choose_data.name,1 * build_num]])
 			"刻印":

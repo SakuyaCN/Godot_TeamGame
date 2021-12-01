@@ -14,8 +14,7 @@
 
 [sub_resource type="DynamicFont" id=6]
 size = 12
-outline_size = 1
-outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+outline_size = 2
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Button"]

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 7.0.3" type="configured_issues">
+    <config id="MissingTranslation" severity="ignore"/>
+    <config id="UnusedResources" severity="ignore"/>
+
+</incidents>

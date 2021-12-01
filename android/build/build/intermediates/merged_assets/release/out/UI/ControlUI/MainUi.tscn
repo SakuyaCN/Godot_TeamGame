@@ -1,0 +1,372 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Texture/pc1.png" type="Texture" id=1]
+[ext_resource path="res://UI/MainUi.gd" type="Script" id=2]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_09.png" type="Texture" id=3]
+[ext_resource path="res://Texture/hud/Chest3.png" type="Texture" id=4]
+[ext_resource path="res://Texture/hud/Assets-2(Scale-x2)-No.png" type="Texture" id=5]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03.png" type="Texture" id=6]
+[ext_resource path="res://Texture/hud/Icons_34.png" type="Texture" id=7]
+[ext_resource path="res://Texture/hud/GUI_06.png" type="Texture" id=8]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Texture/Data/boxs/Icon2.png" type="Texture" id=10]
+
+[sub_resource type="StreamTexture" id=12]
+load_path = "res://.import/Assets-2(Scale-x2)-No-BG_03_03.png-00203a1282831532b31a702f2e1582fd.stex"
+
+[sub_resource type="StreamTexture" id=13]
+load_path = "res://.import/Assets-2(Scale-x2)-No-BG_03_09.png-a1cea283819115634c8b31ae5f62cce9.stex"
+
+[sub_resource type="DynamicFont" id=14]
+size = 12
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=15]
+length = 0.4
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("map:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -107, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("chest:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -203, -0.25, 0, 0.25, 0, 126, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("party:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -291, -0.25, 0, 0.25, 0, 222, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("build:rect_position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -379, -0.25, 0, 0.25, 0, 306, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("setting:rect_position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1390, -0.25, 0, 0.25, 0, 1260, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("sign:rect_position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1486, -0.25, 0, 0.25, 0, 1180, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+
+[sub_resource type="DynamicFont" id=16]
+size = 22
+outline_size = 3
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 22
+outline_size = 3
+outline_color = Color( 0.635294, 0.607843, 0.607843, 1 )
+extra_spacing_char = 4
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=25]
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 9 )
+
+[node name="MainUi" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.68182
+margin_bottom = -1.68182
+mouse_filter = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_hp" type="TextureProgress" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -672.0
+margin_top = -16.0
+margin_right = 672.0
+margin_bottom = 8.0
+value = 5.0
+texture_under = SubResource( 12 )
+texture_progress = SubResource( 13 )
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_right = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="progress_hp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -3.0
+custom_fonts/font = SubResource( 14 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show = SubResource( 15 )
+
+[node name="map" type="TextureButton" parent="."]
+margin_left = 35.0
+margin_top = 32.0
+margin_right = 133.0
+margin_bottom = 105.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="map"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 16 )
+text = "密林地图"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chest" type="TextureButton" parent="."]
+margin_left = 126.0
+margin_top = 24.0
+margin_right = 224.0
+margin_bottom = 110.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="chest"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 16 )
+text = "储物宝箱"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="party" type="TextureButton" parent="."]
+margin_left = 222.0
+margin_top = 24.0
+margin_right = 303.0
+margin_bottom = 110.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="party"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 16 )
+text = "冒险小队"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="build" type="TextureButton" parent="."]
+margin_left = 306.0
+margin_top = 24.0
+margin_right = 387.0
+margin_bottom = 110.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="build"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 16 )
+text = "炼金台"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="setting" type="TextureButton" parent="."]
+margin_left = 1260.0
+margin_top = 25.0
+margin_right = 1341.0
+margin_bottom = 111.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="setting"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 26 )
+text = "设置"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sign" type="TextureButton" parent="."]
+margin_left = 1180.0
+margin_top = 25.0
+margin_right = 1261.0
+margin_bottom = 111.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_map" type="Label" parent="sign"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -23.0
+margin_right = 55.0
+custom_fonts/font = SubResource( 26 )
+text = "每日奖励"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -72.0
+margin_top = 32.0
+margin_right = 68.0
+margin_bottom = 72.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="NinePatchRect"]
+margin_left = 4.0
+margin_right = 134.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 25 )
+text = "普通模式"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -88.0
+margin_right = 88.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="title"]
+margin_left = 7.0
+margin_right = 171.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 25 )
+text = "当前关卡：5"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="map" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="chest" to="." method="_on_chest_pressed"]
+[connection signal="pressed" from="party" to="." method="_on_party_pressed"]
+[connection signal="pressed" from="build" to="." method="_on_build_pressed"]
+[connection signal="pressed" from="setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="sign" to="." method="_on_sign_pressed"]

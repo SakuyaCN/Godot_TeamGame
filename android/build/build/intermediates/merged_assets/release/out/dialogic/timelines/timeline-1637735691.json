@@ -1,0 +1,32 @@
+{
+	"events": [
+		{
+			"character": "character-1637632589.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "冒险者，欢迎来到冒险者试炼地，你的任务就是以最快速度通关密林大陆！\n密林大陆总共分为6块区域，每块区域拥有10块小目标，区域等级越高难度越高，获得的奖励也会越高！"
+		},
+		{
+			"choice": "开始冒险",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"emit_signal": "next_start",
+			"event_id": "dialogic_040"
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1637735691.json",
+		"name": "first"
+	}
+}

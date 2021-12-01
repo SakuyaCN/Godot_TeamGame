@@ -10,6 +10,9 @@ onready var chat_room = preload("res://UI/ControlUI/ChatRoom.tscn")
 
 onready var game_main = $GameMain
 
+func _init():
+	LocalData.do_load()
+
 func _ready():
 	$UILayer/chat.get_v_scroll().set("custom_styles/scroll",StyleBoxTexture.new())
 	isPlayMusic()
@@ -18,6 +21,7 @@ func _ready():
 	http.http_get("static")
 	http.connect("http_res",self,"http_res")
 	#isNewUser()
+	OS
 	randomize()
 
 func start_game():
@@ -29,7 +33,7 @@ func start_game():
 	UiCotrol.main_ui.showui()
 	game_main.go_position()
 	ConstantsValue.showMessage("点击人物可以展示属性面板",3)
-	#StorageData.AddGoodsNum([["红色陨铁",10000],["神秘之石",10000],["暗蓝星矿",10000],["青岚铁矿",10000],["秘银矿石",10000],["绿色陨铁",10000]])
+	#StorageData.AddGoodsNum([["招募令碎片",10],["神秘之石",10000],["暗蓝星矿",10000],["青岚铁矿",10000],["秘银矿石",10000],["绿色陨铁",10000]])
 
 func isPlayMusic():
 	if ConfigScript.getBoolSetting("setting","audio"):

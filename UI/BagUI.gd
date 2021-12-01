@@ -17,17 +17,17 @@ func _ready():
 		ins.connect("pressed",self,"grid_child_pressed",[ins])
 		grid.add_child(ins)
 	visible = false
-	bagInit()
 
 func bagInit():
-	var index = 0
-	for data in 40:
-		if StorageData.get_player_inventory().size() > index:
-			grid.get_children()[index].setData(StorageData.get_player_inventory().keys()[index]
-			,StorageData.get_player_inventory().values()[index])
-		else:
-			grid.get_children()[index].setData(null,0)
-		index+=1
+	if visible:
+		var index = 0
+		for data in 40:
+			if StorageData.get_player_inventory().size() > index:
+				grid.get_children()[index].setData(StorageData.get_player_inventory().keys()[index]
+				,StorageData.get_player_inventory().values()[index])
+			else:
+				grid.get_children()[index].setData(null,0)
+			index+=1
 
 func bagChange(change):
 	visible = change

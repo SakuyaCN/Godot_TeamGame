@@ -135,13 +135,13 @@ GoodsUtils="*res://AutoLoad/GoodsUtils.gd"
 
 [debug]
 
-settings/fps/force_fps=90
+settings/fps/force_fps=60
 
 [display]
 
 window/size/width=1344
 window/size/height=621
-window/stretch/mode="viewport"
+window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [editor_plugins]
@@ -177,13 +177,12 @@ pointing/emulate_touch_from_mouse=true
 
 [physics]
 
+common/physics_fps=30
 common/enable_pause_aware_picking=true
 
 [rendering]
 
 vram_compression/import_etc=true
-quality/filters/use_nearest_mipmap_filter=true
 quality/voxel_cone_tracing/high_quality=true
-quality/filters/use_fxaa=true
 quality/depth/hdr.mobile=true
 environment/default_environment="res://default_env.tres"

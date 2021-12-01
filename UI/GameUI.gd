@@ -14,3 +14,4 @@ onready var uiLayer = get_parent()
 
 func _ready():
 	tempSKillIcon.visible = false
+	#$LoginUI/Label2.text = str(StorageData.storage_data)

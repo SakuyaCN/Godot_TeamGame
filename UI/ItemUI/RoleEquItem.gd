@@ -8,6 +8,7 @@ var is_vis = true
 
 func _ready():
 	$Name.text = type
+	$Name.set('custom_colors/font_outline_modulate', "#706050")
 
 func setData(_local_data):
 	local_data = _local_data
@@ -21,10 +22,12 @@ func reLoad():
 		is_emp = false
 		$Image.texture = load(local_data["image"])
 		$Name.text = local_data["name"]
+		$Name.set('custom_colors/font_outline_modulate', EquUtils.get_quality_color(local_data["quality"]))
 	else:
 		is_emp = true
 		$Image.texture = load("res://Texture/Assets-2(Scale-x2)-No-BG_15.png")
 		$Name.text = type
+		$Name.set('custom_colors/font_outline_modulate', "#706050")
 	if !is_vis:
 		$Name.visible = false
 		

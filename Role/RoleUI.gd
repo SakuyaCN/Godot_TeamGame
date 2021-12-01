@@ -53,7 +53,7 @@ func _on_RoleUI_gui_input(event):
 			load_attr()
 			attr_paint.visible = true
 			ConstantsValue.const_choose_role_arrt = attr_paint
-	else:
+	elif event is InputEventMouseButton and not event.pressed:
 		attr_paint.visible = false
 		ConstantsValue.const_choose_role_arrt = null
 

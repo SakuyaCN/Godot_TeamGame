@@ -826,7 +826,6 @@ custom_constants/hseparation = 12
 columns = 4
 
 [node name="Equ_bg" type="NinePatchRect" parent="."]
-visible = false
 margin_left = 61.0
 margin_top = 103.0
 margin_right = 403.0
@@ -859,7 +858,7 @@ margin_right = 323.071
 margin_bottom = 47.0
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 custom_fonts/font = SubResource( 9 )
-text = "长按拖动到右侧替换装备"
+text = "（容量上限50）"
 valign = 1
 autowrap = true
 __meta__ = {
@@ -900,6 +899,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 19 )
 text = "批量丢弃"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="other_over" type="NinePatchRect" parent="Equ_bg"]
+margin_left = 128.0
+margin_top = -60.0
+margin_right = 242.0
+margin_bottom = -3.0
+mouse_filter = 0
+texture = ExtResource( 9 )
+patch_margin_left = 43
+patch_margin_top = 8
+patch_margin_right = 49
+patch_margin_bottom = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="position" type="Label" parent="Equ_bg/other_over"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 19 )
+text = "装备融合"
 align = 1
 valign = 1
 __meta__ = {
@@ -1107,6 +1132,7 @@ anims/show = SubResource( 18 )
 [connection signal="gui_input" from="skill" to="." method="_on_skill_gui_input"]
 [connection signal="gui_input" from="equ" to="." method="_on_equ_gui_input"]
 [connection signal="gui_input" from="Equ_bg/other_attr2" to="." method="_on_other_attr2_gui_input"]
+[connection signal="gui_input" from="Equ_bg/other_over" to="." method="_on_other_over_gui_input"]
 [connection signal="pressed" from="Equ_info/btn_down" to="." method="_on_btn_down_pressed"]
 [connection signal="pressed" from="Equ_info/btn_des" to="." method="_on_btn_des_pressed"]
 [connection signal="pressed" from="Equ_info/btn_seal" to="." method="_on_btn_seal_pressed"]

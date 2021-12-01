@@ -6,6 +6,7 @@ onready var _client :WebSocketClient = WebSocketClient.new()
 var is_chat_ok = true
 
 var is_connect = false
+var count = 0
 
 func _ready():
 	set_process(false)
@@ -58,8 +59,11 @@ func connet_server():
 		_client.get_peer(1).set_write_mode(WebSocketPeer.WRITE_MODE_TEXT)
 		set_process(true)
 	else:
+		if count == 10:
+			return
 		yield(get_tree().create_timer(5),"timeout")
 		connet_server()
+		count+=1
 
 func _process(delta):
 	_client.poll()

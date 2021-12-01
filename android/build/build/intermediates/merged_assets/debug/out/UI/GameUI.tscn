@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -59,6 +59,9 @@ size = 20
 outline_color = Color( 0.396078, 0.388235, 0.388235, 1 )
 extra_spacing_top = 4
 font_data = ExtResource( 30 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="DynamicFont" id=8]
 outline_size = 2
@@ -252,11 +255,26 @@ margin_right = 171.0
 margin_bottom = 145.0
 custom_colors/font_color = Color( 0.396078, 0.388235, 0.388235, 1 )
 custom_fonts/font = SubResource( 24 )
-text = "切勿外传此版本！
-此版本只用于测试BUG，测试基础数值是否平衡，并未正式发布。
-如果有任何BUG或者疑问请在群内讨论！
-点击次出闭弹窗！"
+text = "这是一个测试版的游戏，内容完成度只有50%左右，后续内容玩法会慢慢的更新，如果有疑问可以加群反馈。
+QQ群：705229764
+（点击这里关闭弹窗）"
 autowrap = true
+
+[node name="Label2" type="Label" parent="LoginUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0.396078, 0.388235, 0.388235, 1 )
+custom_fonts/font = SubResource( 24 )
+custom_styles/normal = SubResource( 27 )
+text = "正在开发中，敬请期待！
+玩家可以自行设计：
+地图关卡、怪物数据、装备数据、游戏道具、游戏技能，游戏情节对话等等功能！
+让游戏变成正真的模拟器！"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CreateUI" type="Control" parent="."]
 visible = false
@@ -288,7 +306,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 6
+frame = 5
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]

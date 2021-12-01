@@ -1,0 +1,32 @@
+{
+	"events": [
+		{
+			"character": "character-1637632589.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "恭喜你完成第一区域的战斗，后面的战斗愈发危险。\n送你一张令牌，可以给你召唤一名冒险者加入战斗！"
+		},
+		{
+			"choice": "谢谢",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.3
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1637828784.json",
+		"name": "first_new_hero"
+	}
+}

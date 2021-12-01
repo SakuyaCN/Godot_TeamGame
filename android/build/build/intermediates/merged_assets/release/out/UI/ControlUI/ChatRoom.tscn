@@ -1,0 +1,143 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
+[ext_resource path="res://UI/ControlUI/ChatRoom.gd" type="Script" id=2]
+[ext_resource path="res://Texture/bg_2.png" type="Texture" id=3]
+[ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=5]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=7]
+[ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=11]
+outline_color = Color( 0.498039, 0.498039, 0.490196, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 128, 128 )
+margin_left = 25.0
+margin_right = 19.0
+margin_top = 17.0
+margin_bottom = 24.0
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 2
+outline_color = Color( 0.368627, 0.364706, 0.364706, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 132, 133 )
+margin_left = 26.0
+margin_right = 30.0
+margin_top = 25.0
+margin_bottom = 37.0
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 133, 34 )
+margin_bottom = 2.45886
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+font_data = ExtResource( 6 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -687.035, -372.552 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.33484
+margin_bottom = -1.33484
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chat" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.5
+margin_top = -225.5
+margin_right = 350.5
+margin_bottom = 161.5
+custom_colors/default_color = Color( 0.541176, 0.537255, 0.537255, 1 )
+custom_constants/line_separation = 8
+custom_fonts/normal_font = SubResource( 11 )
+custom_styles/normal = SubResource( 1 )
+bbcode_enabled = true
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="LineEdit" parent="."]
+margin_left = 322.0
+margin_top = 475.0
+margin_right = 874.0
+margin_bottom = 554.0
+custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+max_length = 20
+placeholder_text = "请输入聊天内容"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 201.0
+margin_top = 164.5
+margin_right = 354.0
+margin_bottom = 243.5
+custom_fonts/font = SubResource( 5 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+text = "发送"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 40.0
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 10 )
+text = "冒险者大厅"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

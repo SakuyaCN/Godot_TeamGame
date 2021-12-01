@@ -1,0 +1,32 @@
+{
+	"events": [
+		{
+			"character": "character-1637632589.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "在炼金台你可以使用各种材料打造材你想要的东西，还可以将低等级的材料合成为高等级的材料！\n这些东西能够对你攻略地图提供非常多的帮助！"
+		},
+		{
+			"choice": "我明白了",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.3
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1637745425.json",
+		"name": "first_open_build"
+	}
+}

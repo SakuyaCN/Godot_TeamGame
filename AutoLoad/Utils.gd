@@ -216,6 +216,15 @@ func getMapNameFormIndex(_index):
 		2:return "地狱地图"
 		3:return "神话地图"
 
+func getMapName(_index):
+	match _index as int:
+		0:return "密林之森"
+		1:return "古老荒漠"
+		2:return "死寂之地"
+		3:return "荒凉戈壁"
+		4:return "自然边界"
+		5:return "风暴雪域"
+
 func get_gold_string(gold):
 	if gold < 10000:
 		return String(gold)

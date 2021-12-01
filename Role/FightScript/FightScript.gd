@@ -22,9 +22,9 @@ var atk_mode = Utils.HurtType.ATK #普攻攻击类型
 signal onAtkOver()#普攻结束信号
 
 func _ready():
-	set_process(false)
+	set_physics_process(false)
 
-func _process(_delta):
+func _physics_process(_delta):
 	if is_alive && is_in_atk:
 		if is_VERTIGO():
 			hero_sprite.play("Idle")
@@ -78,11 +78,11 @@ func do_atk():
 	#设定人物攻击频率
 	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 120.0))
 	is_in_atk = true
-	set_process(true)
+	set_physics_process(true)
 
 func do_stop():
 	load_script(is_moster)
-	set_process(false)
+	set_physics_process(false)
 
 #_atk_data攻击者信息 _atk_attr攻击者属性 atk_type 攻击伤害类型 fight_script 攻击者脚本
 func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):

@@ -15,7 +15,7 @@ var run_position = Vector2.ZERO
 var enemy_array # 敌人数组
 var myself_array #自己人数组
 
-var hero_attr:HeroAttrBean
+var hero_attr:HeroAttrBean = null
 var hero_skill = {}
 var is_shoot = false
 
@@ -51,13 +51,13 @@ func is_LvUp(_exp):
 		else:
 			role_data["exp"] += _exp
 		if last_lv != role_data["lv"] && !fight_script.is_in_atk:
-			hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+			hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
 			ui.load_attr()
 
 #初始化角色
 func set_role(_role_data):
 	role_data = _role_data
-	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+	hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
 	loadRoleSkill()
 	load_asset()
 	ui.initRole()
@@ -65,7 +65,7 @@ func set_role(_role_data):
 #重载角色属性
 func reloadRoleAttr(_rid):
 	if !fight_script.is_in_atk && role_data.rid == _rid:
-		hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+		hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
 		ui.load_attr()
 
 func setIndex(_index):
@@ -171,7 +171,7 @@ func role_reset():
 	shape_2d.set_deferred("disabled",false)
 	resetSkill()
 	ui.removeAll()
-	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+	hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
 	fight_script.do_stop()
 	ui.initRole()
 	reloadHpBar()

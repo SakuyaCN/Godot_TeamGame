@@ -1,12 +1,15 @@
 extends Node
 
 var save_path = "user://Storages.json"
+var save_path_copy = "user://Storages_copy.json"
 
 var storage_data :Dictionary
 var is_read_storage = false
 
 var team_data :Dictionary
 var player_state:Dictionary
+
+var is_encrypted = true
 
 var thread
 var semaphore
@@ -30,14 +33,37 @@ func _ready():
 func reloadData():
 	team_data = storage_data["team"]
 	player_state = storage_data["player_state"]
-	
-func _read_storage():
+
+func save_copy():
+	var dir = Directory.new()
+	dir.copy(save_path,save_path_copy)
+
+func copy_reload():
 	var storage_data_file = File.new()
-	var err = storage_data_file.open_encrypted_with_pass(save_path,File.READ,"sakuya")
+	var err
+	if is_encrypted:
+		err = storage_data_file.open_encrypted_with_pass(save_path_copy,File.READ,"sakuya")
+	else:
+		err = storage_data_file.open(save_path_copy,File.READ)
 	if err == OK:
 		if storage_data_file.get_as_text() != "":
 			storage_data = JSON.parse(storage_data_file.get_as_text()).result
+	storage_data_file.close()
+
+func _read_storage():
+	var storage_data_file = File.new()
+	var err
+	if is_encrypted:
+		err = storage_data_file.open_encrypted_with_pass(save_path,File.READ,"sakuya")
 	else:
+		err = storage_data_file.open(save_path,File.READ)
+	if err == OK:
+		if storage_data_file.get_as_text() != "":
+			storage_data = JSON.parse(storage_data_file.get_as_text()).result
+		else:
+			copy_reload()
+	else:
+		copy_reload()
 		_save_storage()
 	storage_data_file.close()
 	is_read_storage = true
@@ -50,10 +76,16 @@ func save_ansyc(_data):
 		semaphore.wait()
 		mutex.lock()
 		var storage_data_file = File.new()
-		var _err = storage_data_file.open_encrypted_with_pass(save_path,File.WRITE,"sakuya")
+		var err
+		if is_encrypted:
+			err = storage_data_file.open_encrypted_with_pass(save_path,File.WRITE,"sakuya")
+		else:
+			err = storage_data_file.open(save_path,File.WRITE)
+		#var _err = storage_data_file.open(save_path,File.WRITE)
 		storage_data_file.store_string(to_json(storage_data))
 		storage_data_file.close()
 		mutex.unlock()
+		save_copy()
 
 #读取人物刻印列表
 func get_player_seal():

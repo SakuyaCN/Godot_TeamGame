@@ -6,13 +6,15 @@ onready var skill_tips = preload("res://UI/TipsUi/SkillTips.tscn")
 onready var equ_item = preload("res://UI/ItemUI/RoleEquItem.tscn")
 onready var label_ui = preload("res://UI/ControlUI/LabelItemUI.tscn")
 onready var hero_item = preload("res://UI/ItemUI/HeroItem.tscn")
+onready var over_item = preload("res://UI/ControlUI/EquOver.tscn")#融合界面
 onready var srcoll = $ScrollContainer
 onready var click_timer = $ClickTimer
 onready var position_img = $TextureRect2
 onready var position_label = $TextureRect2/position
+var over_ins = null#融合界面是否展示
 var role_position = -1 #选中英雄的位置
 var role_data #当前选中英雄属性
-var hero_attr :HeroAttrBean #当前选择英雄战斗属性
+var hero_attr :HeroAttrBean = null#当前选择英雄战斗属性
 var check_equ_data #选择时的装备数据
 var skill_tips_ins = null#提示实例化
 var select_index = "" #当前选中的英雄下表
@@ -151,7 +153,7 @@ func all_hero_item_click(item_key):
 	
 #载入当前英雄属性
 func loadHeroData():
-	hero_attr = HeroAttrUtils.reloadHeroAttr(role_data)
+	hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
 	get_tree().call_group("player_role","reloadRoleAttr",role_data.rid,hero_attr)
 	$TextureRect/name.text = role_data.nickname
 	$attr/label_hp.text = str(hero_attr.hp)
@@ -178,13 +180,14 @@ func loadAllSkill():
 
 #载入人物所有装备
 func loadAllEqu():
-	free_item($Equ_bg/ScrollContainer/GridContainer.get_children())
-	for equ_data in StorageData.get_player_equipment(): 
-		if !StorageData.get_player_equipment()[equ_data].is_on:
-			var ins = equ_item.instance()
-			ins.setData(StorageData.get_player_equipment()[equ_data])
-			ins.connect("pressed",self,"equ_item_click",[ins.local_data])
-			$Equ_bg/ScrollContainer/GridContainer.add_child(ins)
+	if visible:
+		free_item($Equ_bg/ScrollContainer/GridContainer.get_children())
+		for equ_data in StorageData.get_player_equipment(): 
+			if !StorageData.get_player_equipment()[equ_data].is_on:
+				var ins = equ_item.instance()
+				ins.setData(StorageData.get_player_equipment()[equ_data])
+				ins.connect("pressed",self,"equ_item_click",[ins.local_data])
+				$Equ_bg/ScrollContainer/GridContainer.add_child(ins)
 
 #载入人物穿戴装备
 func loadHeroEqu():
@@ -277,10 +280,6 @@ func item_up_clear():
 	get_parent().tempSKillIcon.texture = null
 	get_parent().tempSKillIcon.visible = false
 
-#----------------------------
-#装备列表绑定点击
-func equ_item_click(equ_data):
-	loadEquInfo(equ_data)
 	#skill_tips_ins.showTips(skill_data["name"],skill_data["info"])
 
 #人物穿戴装备点击绑定
@@ -341,11 +340,27 @@ func loadEquInfo(equ_data):
 
 #装备按钮区域
 #=========================
+#装备列表绑定点击
+func equ_item_click(equ_data):
+	if over_ins != null && is_instance_valid(over_ins):
+		if equ_data.has("build_id"):		
+			over_ins.addEqu(equ_data)
+		else:
+			ConstantsValue.showMessage("由于数据设计问题，1.0.2后更新打造的装备才可以融合!",5)
+	else:
+		loadEquInfo(equ_data)
 
 #批量丢弃装备
 func _on_other_attr2_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		add_child(discard_ui.instance())
+
+#装备融合
+func _on_other_over_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		over_ins = over_item.instance()
+		add_child(over_ins)
+		$Equ_info.visible = false
 
 #卸下装备
 func _on_btn_down_pressed():
@@ -356,8 +371,8 @@ func _on_btn_down_pressed():
 		role_data["equ"].erase(check_equ_data["type"])
 		StorageData._save_storage()
 		$Equ_info.visible = false
-		check_equ_data = null
 		ConstantsValue.showMessage("已卸下%s"%check_equ_data.name,1)
+		check_equ_data = null
 	else:
 		if check_equ_data.lv > role_data["lv"]:
 			ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
@@ -478,4 +493,3 @@ func _on_other_attr_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if role_data != null:
 			ConstantsValue.showAttrBox(self,hero_attr)
-
