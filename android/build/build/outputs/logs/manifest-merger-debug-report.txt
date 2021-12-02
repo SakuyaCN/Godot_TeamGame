@@ -26,9 +26,9 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\34776\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\a014d411094aa2ba92d687f5c6fff184\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\34776\.gradle\caches\transforms-3\614d0f46931fd8cb0dfae9cbf1055ba0\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\780b23ac0107a53910baedbe87dfe02e\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-32:12
-INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-32:12
-INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-32:12
+INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-31:12
+INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-31:12
+INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:4:5-29
 		INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
@@ -66,7 +66,6 @@ REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:12:5-16:40
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:16:9-37
 uses-feature#0x00020000
 ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:19:5-21:35
-REJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:19:5-21:35
 	android:glEsVersion
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:20:9-41
 	android:required
@@ -96,7 +95,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\34
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:68-95
 		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:68-95
 	tools:replace
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:23:9-123
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:22:9-123
 	android:isGame
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:96-117
 		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:96-117
@@ -107,7 +106,7 @@ meta-data#xr_mode_metadata_name
 ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:42:9-44:54
 REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:42:9-44:54
 	tools:node
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:27:20-39
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:26:20-39
 	android:value
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:44:13-51
 	android:name
@@ -138,14 +137,14 @@ MERGED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:46:9-67:20
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:49:13-55
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:49:13-55
 	tools:replace
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:28:58-99
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:27:58-99
 	android:name
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:47:13-37
 meta-data#com.oculus.vr.focusaware
 ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:57:13-87
 REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:57:13-87
 	tools:node
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:29:24-43
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:28:24-43
 	android:value
 		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:57:64-84
 	android:name
@@ -210,29 +209,23 @@ INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
 		INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
-uses-feature#0x00030000
-ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:5-78
-	android:glEsVersion
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:19-51
-	android:required
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:52-75
 uses-permission#android.permission.INTERNET
-ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:11:5-67
+ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:5-67
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:11:22-64
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:22-64
 instrumentation
-ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:12:5-17:49
+ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:11:5-16:49
 REJECTED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:10:5-14:57
 	tools:node
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:13:9-29
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:12:9-29
 	android:label
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:16:9-58
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:15:9-58
 	android:icon
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:15:9-36
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:14:9-36
 	android:targetPackage
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:17:9-46
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:16:9-46
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:14:9-45
+		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:13:9-45
 meta-data#org.godotengine.library.version
 ADDED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
 	android:value

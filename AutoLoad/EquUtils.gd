@@ -34,6 +34,7 @@ func get_attr_string(attr):
 		"crit_buff":return "暴伤加成比"
 		"shield":return "护盾值"
 		"exp_buff":return "经验加成比"
+		"reflex":return "反射率"
 
 func get_ys_color(ys):
 	match ys:
@@ -83,9 +84,9 @@ func getQualityBs(ys):
 	match ys:
 		"S++": return 1.12
 		"S级": return 1.05
-		"A级": return 0.9
-		"B级": return 0.8
-		"C级": return 0.7
+		"A级": return 1
+		"B级": return 0.9
+		"C级": return 0.8
 
 func getQualityBssTART(ys):
 	match ys:

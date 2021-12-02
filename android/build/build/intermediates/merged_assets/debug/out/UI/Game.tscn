@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://Texture/3.png" type="Texture" id=1]
 [ext_resource path="res://UI/UILayer.gd" type="Script" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://icon.png" type="Texture" id=15]
 [ext_resource path="res://UI/GameMain.gd" type="Script" id=16]
-[ext_resource path="res://Shaders/RimLight.tres" type="Material" id=17]
 [ext_resource path="res://Texture/top_title.png" type="Texture" id=18]
 [ext_resource path="res://Texture/hud/Check element.png" type="Texture" id=19]
 [ext_resource path="res://Texture/hud/Check box.png" type="Texture" id=20]
@@ -358,45 +357,6 @@ font_data = ExtResource( 14 )
 [sub_resource type="StyleBoxFlat" id=54]
 bg_color = Color( 0.192157, 0.184314, 0.184314, 0.392157 )
 
-[sub_resource type="Shader" id=47]
-code = "shader_type canvas_item;
-
-uniform vec4 in_color:hint_color;
-uniform vec4 out_color:hint_color;
-
-uniform float in_out:hint_range(0.,1.)=0.;
-
-uniform float position:hint_range(-1.5,1.) = 0.856;
-uniform vec2 size = vec2(16., 16.);
-
-void fragment(){
-    vec2 a = (1./SCREEN_PIXEL_SIZE) / size;
-    
-    vec2 uv=UV;
-    uv *= a;
-    
-    vec2 i_uv = floor(uv);
-    vec2 f_uv = fract(uv);
-    
-    float wave = max(0.,i_uv.x/(a.x) - position);
-    
-    vec2 center = f_uv*2.-1.;
-    float circle = length(center);
-    circle = 1. - step(wave,circle);
-    
-    vec4 color = mix(in_color, out_color, step(0.5, in_out));
-    
-    COLOR=vec4(circle) * color;
-}"
-
-[sub_resource type="ShaderMaterial" id=48]
-shader = SubResource( 47 )
-shader_param/in_color = Color( 0.25098, 0.47451, 0.517647, 1 )
-shader_param/out_color = null
-shader_param/in_out = 0.0
-shader_param/position = 1.0
-shader_param/size = Vector2( 16, 16 )
-
 [sub_resource type="DynamicFont" id=49]
 size = 24
 outline_size = 2
@@ -509,6 +469,7 @@ scale = Vector2( 6.35, 6 )
 texture = ExtResource( 4 )
 
 [node name="Light" type="Sprite" parent="."]
+visible = false
 material = SubResource( 37 )
 position = Vector2( 618.052, 271.317 )
 scale = Vector2( 19.3063, 8.98063 )
@@ -691,19 +652,6 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="UILayer/msg"]
 wait_time = 2.0
 one_shot = true
-
-[node name="Trans" type="Sprite" parent="UILayer"]
-material = SubResource( 48 )
-position = Vector2( 672.125, 309.659 )
-scale = Vector2( 20.9961, 9.7294 )
-texture = ExtResource( 15 )
-
-[node name="Sprite" type="Sprite" parent="UILayer"]
-visible = false
-material = ExtResource( 17 )
-position = Vector2( 672.125, 311.659 )
-scale = Vector2( 20.9961, 9.7919 )
-texture = ExtResource( 15 )
 
 [node name="GameResult" type="Control" parent="UILayer"]
 visible = false

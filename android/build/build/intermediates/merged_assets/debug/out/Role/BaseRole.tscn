@@ -167,7 +167,6 @@ position = Vector2( -16, -62 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 1
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
@@ -272,14 +271,14 @@ margin_top = 4.0
 margin_right = 71.5
 margin_bottom = 32.0
 custom_fonts/font = SubResource( 10 )
-text = "MP"
+text = "护盾"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="progress_hp" type="TextureProgress" parent="RoleUI/mpbar"]
+[node name="progress_sd" type="TextureProgress" parent="RoleUI/mpbar"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -296,14 +295,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="label_hp" type="Label" parent="RoleUI/mpbar/progress_hp"]
+[node name="label_sd" type="Label" parent="RoleUI/mpbar/progress_sd"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -40.0
 margin_right = 44.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 10 )
-text = "100%"
+text = "0%"
 align = 1
 valign = 1
 __meta__ = {

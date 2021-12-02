@@ -9,7 +9,7 @@ var is_read_storage = false
 var team_data :Dictionary
 var player_state:Dictionary
 
-var is_encrypted = true
+var is_encrypted = true #是否加密
 
 var thread
 var semaphore
@@ -29,6 +29,10 @@ func _ready():
 	get_all_skill()
 	get_player_seal()
 	reloadData()
+	for key in storage_data["player_equipment"]:
+		if storage_data["player_equipment"][key] == null:
+			storage_data["player_equipment"].erase(key)
+	_save_storage()
 
 func reloadData():
 	team_data = storage_data["team"]

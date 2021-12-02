@@ -1,9 +1,5 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var is_first = false
 
 # Called when the node enters the scene tree for the first time.
@@ -50,6 +46,18 @@ func _on_SpinBox_value_changed(value):
 	ConfigScript.setValueSetting("fight","array_num",value)
 	ConstantsValue.array_num = value
 
-
 func _on_Button_pressed():
 	get_tree().quit(0)
+
+func _on_Button2_pressed():
+	var http = GodotHttp.new()
+	http.connect("http_res",self,"on_http")
+	var query = JSON.print({
+		"uuid":OS.get_unique_id(),
+		"save_id":StorageData.get_player_state()["save_id"],
+		"save_json":to_json(StorageData.storage_data)
+	})
+	http.http_post("storage",query)
+
+func on_http(url,data):
+	pass

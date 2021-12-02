@@ -11,6 +11,7 @@ var load_moster_size = 0
 var boss_time_out = 100#BOSS战倒计时
 var locao_boss_time = 0
 var is_join_over = false#是否加入完毕
+var is_game_reset = false#是否加入完毕
 
 var map_name #当前地图关卡名称
 var player_map #当前地图下标
@@ -59,7 +60,8 @@ func load_map():
 func changeRolePosition(_is_need_reload):
 	$Timer.stop()
 	if !is_flight:
-		newRoleJoin()
+		is_need_reload = true
+		game_reset(false)
 	else:
 		is_need_reload = _is_need_reload
 
@@ -136,19 +138,19 @@ func start_fight():
 
 func go_position():
 	ConstantsValue.game_layer.findTvShow(true)
-	player_array.clear()
 	hero_size = 0
 	load_hero_size = 0
-	for pos in StorageData.player_state["team_position"].size():
+	for pos in range(3):
 		if StorageData.player_state["team_position"][pos] != null:
-			hero_size += 1
-			var new_hero = role.instance()
-			player_array.append(new_hero)
-			new_hero.setIndex(pos)
-			role_position[pos].add_child(new_hero)
-			new_hero.set_role(StorageData.team_data.get(StorageData.player_state["team_position"][pos]))
-			new_hero.run2position(role_position[pos])
-			yield(get_tree().create_timer(0.7),"timeout")
+			if role_position[pos].get_child_count() == 0:
+				hero_size += 1
+				var new_hero = role.instance()
+				player_array.append(new_hero)
+				new_hero.setIndex(pos)
+				role_position[pos].add_child(new_hero)
+				new_hero.set_role(StorageData.team_data.get(StorageData.player_state["team_position"][pos]))
+				new_hero.run2position(role_position[pos])
+				yield(get_tree().create_timer(0.7),"timeout")
 
 func _on_Timer_timeout():
 	mapProgress()
@@ -255,14 +257,14 @@ func winGoods():
 	var win_goods = LocalData.moster_data[moster_name].win_data
 	var goods_array = []
 	for item in win_goods.goods:
-		if randf() <= item[3] / 100.0:
+		if randf() <= item[3] / 100.0 + (map_index / 100.0):
 			var gnum = item[1] as int+randi() % item[2] as int
 			gnum += gnum * (1 + map_index)
 			goods_array.append([item[0],gnum as int])
 	StorageData.AddGoodsNum(goods_array)
 	if win_goods.other.has("exp"):
 		for _role in player_array:
-			var _exp = (1 + (player_map / 10.0)) * win_goods.other.exp * (1 + map_index)
+			var _exp = (1 + (player_map / 10.0) + (map_index * 60)) * win_goods.other.exp + (60 *  (map_index * map_index) * 1.5)
 			_role.addExp(_exp as int)
 	if win_goods.has("more"):
 		if win_goods.more.has(str(map_index)):
@@ -276,11 +278,13 @@ func obsChangeMap():
 	changeMap()
 
 func game_reset(_is_time = true):
+	if is_game_reset:
+		return
+	is_game_reset = true
 	if _is_time:
 		yield(get_tree().create_timer(0.6),"timeout")
 	if is_need_reload:
 		newRoleJoin()
-	is_progress = true
 	ConstantsValue.game_layer.fight_ui.UIchange(false)
 	moster_clear()
 	get_tree().call_group("player_role","role_reset")
@@ -288,24 +292,26 @@ func game_reset(_is_time = true):
 	is_flight = false
 	load_moster_size = 0
 	ConstantsValue.game_layer.findTvShow(true)
+	is_progress = true
+	is_game_reset = false
 
 func newRoleJoin():
+	is_need_reload = false
+	is_progress = false
 	ConstantsValue.showMessage("新冒险者登场！",1)
 	player_clear()
+	yield(get_tree().create_timer(0.2),"timeout")
 	go_position()
-	is_need_reload = false
 
 #更换地图
 func changeMap():
-	$Timer.stop()
+	is_progress = false
 	isBossFIght()
 	var map_index = StorageData.storage_data["player_state"]["map_index"]
 	ConstantsValue.showMessage("切换至【%s】第%s关"%[Utils.getMapNameFormIndex(map_index),StorageData.storage_data["player_state"]["map"][str(map_index)]["now_map"]+1],2)
 	StorageData._save_storage()
 	load_map()
 	game_reset(false)
-	$Timer.start()
-	
 
 func moster_clear():
 	for ms in moster_array:
@@ -321,7 +327,7 @@ func moster_clear():
 		
 func player_clear():
 	for ms in player_array:
-		if ms != null && ms:
+		if ms != null:
 			ms.queue_free()
 	if $Position/PositionP1.get_children().size() > 0:
 		$Position/PositionP1.get_children().clear()

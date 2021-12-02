@@ -5,16 +5,16 @@ var build_info_need = preload("res://UI/ItemUI/BuildInfoNeedItem.tscn")
 func hangUp(_player_array,ts):
 	var map_index = StorageData.storage_data["player_state"]["map_index"]
 	var player_map = StorageData.storage_data["player_state"]["map"][str(map_index)]["now_map"]
-	var map_name = LocalData.map_data.keys()[player_map/10]
+	var map_name  = (player_map/10) as int	
 	var moster_name = LocalData.map_data[Utils.getMapName(map_name)].moster
 	var win_goods = LocalData.moster_data[moster_name].win_data
 	var goods_array = []
-	var _exp = (1 + (player_map / 10.0)) * win_goods.other.exp * (1 + map_index)
+	var _exp = (1 + (player_map / 10.0) + (map_index * 60)) * win_goods.other.exp + (60 *  (map_index * map_index) * 1.5)
 	_exp *= (ts / 20)
 	for item in win_goods.goods:
 		var gnum = (item[1] as int+randi() % item[2] as int) * 0.6
 		gnum += gnum * (1 + map_index)
-		gnum *= ((ts / 30) * (item[3] / 100.0))
+		gnum *= ((ts / 25) * (item[3] / 100.0))
 		if gnum as int > 0:
 			goods_array.append([item[0],gnum as int])
 	StorageData.AddGoodsNum(goods_array)

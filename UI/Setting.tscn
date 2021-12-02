@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://UI/Setting.gd" type="Script" id=2]
@@ -11,6 +11,10 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 18
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -45,6 +49,10 @@ texture = ExtResource( 7 )
 region_rect = Rect2( 0, 0, 133, 34 )
 margin_bottom = 2.45886
 
+[sub_resource type="DynamicFont" id=11]
+size = 20
+font_data = ExtResource( 4 )
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -70,6 +78,19 @@ margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
 text = "游戏设置"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 219.0
+margin_top = 507.0
+margin_right = -219.0
+margin_bottom = 525.0
+custom_fonts/font = SubResource( 12 )
+text = "存档编号："
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -264,6 +285,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button2" type="Button" parent="NinePatchRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -421.0
+margin_top = -10.0
+margin_right = -305.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "存档上传"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
 [connection signal="toggled" from="NinePatchRect/bgm" to="." method="_on_bgm_toggled"]
 [connection signal="toggled" from="NinePatchRect/auto_fight" to="." method="_on_auto_fight_toggled"]
@@ -274,3 +315,4 @@ __meta__ = {
 [connection signal="toggled" from="NinePatchRect/equ_s" to="." method="_on_equ_toggled" binds= [ "S级" ]]
 [connection signal="value_changed" from="NinePatchRect/SpinBox" to="." method="_on_SpinBox_value_changed"]
 [connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Button2" to="." method="_on_Button2_pressed"]

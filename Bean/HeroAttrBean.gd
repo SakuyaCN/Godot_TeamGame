@@ -35,8 +35,10 @@ var hp_buff:int #生命提升比例
 var true_hurt:int #真实伤害
 var hurt_buff:int #伤害加成比
 var crit_buff:int #暴伤加成比
-var shield:int #护盾
+var shield:int#护盾
 var exp_buff:int #经验增幅
+var reflex:int#反射率
+
 
 #重载基础属性
 func resetAttr(role_data):
@@ -66,17 +68,19 @@ func setEquAttrBean(role_data):
 	resetAttr(role_data)
 	#加载武器基础数据
 	for equ in role_data["equ"]:
-		var equ_data = StorageData.get_player_equipment()[str(role_data["equ"][equ])]
-		for base_attr_item in equ_data["base_attr"]:#基础属性
-			updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
-		for base_attr_item in equ_data["seal"]:#基础属性
-			updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
-		for base_attr_item in equ_data["ys_attr"]:#元素属性
-			match base_attr_item.keys()[0]:
-				"fire": fire += base_attr_item.values()[0]
-				"wind": wind += base_attr_item.values()[0]
-				"ice": ice += base_attr_item.values()[0]
-				"posion": posion += base_attr_item.values()[0]
+		if StorageData.get_player_equipment().has(str(role_data["equ"][equ])):
+			var equ_data = StorageData.get_player_equipment()[str(role_data["equ"][equ])]
+			if equ_data != null:
+				for base_attr_item in equ_data["base_attr"]:#基础属性
+					updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
+				for base_attr_item in equ_data["seal"]:#基础属性
+					updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
+				for base_attr_item in equ_data["ys_attr"]:#元素属性
+					match base_attr_item.keys()[0]:
+						"fire": fire += base_attr_item.values()[0]
+						"wind": wind += base_attr_item.values()[0]
+						"ice": ice += base_attr_item.values()[0]
+						"posion": posion += base_attr_item.values()[0]
 	loadJobAttr(role_data)
 	loadOhterAttr()
 	max_hp = hp
@@ -156,7 +160,8 @@ func toDict():
 		"hurt_buff" : hurt_buff,
 		"crit_buff" : crit_buff,
 		"shield" : shield,
-		"exp_buff":exp_buff
+		"exp_buff":exp_buff,
+		"reflex":reflex
 	}
 
 func updateNum(attr,num,is_emit = true,is_buff = false):
@@ -191,6 +196,7 @@ func updateNum(attr,num,is_emit = true,is_buff = false):
 		"crit_buff" : crit_buff += num
 		"shield" : shield += num
 		"exp_buff":exp_buff+=num
+		"reflex":reflex+=num
 	if dodge > 30:
 		dodge = 30
 	if is_buff && attr == "hp":

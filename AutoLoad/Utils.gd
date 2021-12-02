@@ -298,16 +298,14 @@ func removeSkillFormAll(_id):
 
 func removeEquWithQy(_qy):
 	var equ_data = StorageData.get_player_equipment()
-	var i = 0
-	var num = 0
 	var qh = 0
-	while i < equ_data.size():
-		if equ_data.values()[i].is_on == false && equ_data.values()[i].quality == _qy:
-			equ_data.erase(equ_data.keys()[i])
-			num +=1
-		else:
-			i += 1
-	if num > 0:
-		ConstantsValue.showMessage("已丢弃%d件%s装备"%[num,_qy],2)
+	var delete_array = []
+	for item in StorageData.get_player_equipment():
+		if StorageData.get_player_equipment()[item].is_on == false && StorageData.get_player_equipment()[item].quality == _qy:
+			delete_array.append(item)
+	var num = delete_array.size()
+	for key in delete_array:
+		StorageData.get_player_equipment().erase(key)
+	ConstantsValue.showMessage("已丢弃%d件%s装备"%[num,_qy],2)
 	return num
 	

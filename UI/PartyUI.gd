@@ -6,6 +6,7 @@ onready var skill_tips = preload("res://UI/TipsUi/SkillTips.tscn")
 onready var equ_item = preload("res://UI/ItemUI/RoleEquItem.tscn")
 onready var label_ui = preload("res://UI/ControlUI/LabelItemUI.tscn")
 onready var hero_item = preload("res://UI/ItemUI/HeroItem.tscn")
+onready var equ_info = preload("res://UI/ItemUI/Equ_info.tscn")
 onready var over_item = preload("res://UI/ControlUI/EquOver.tscn")#融合界面
 onready var srcoll = $ScrollContainer
 onready var click_timer = $ClickTimer
@@ -183,7 +184,7 @@ func loadAllEqu():
 	if visible:
 		free_item($Equ_bg/ScrollContainer/GridContainer.get_children())
 		for equ_data in StorageData.get_player_equipment(): 
-			if !StorageData.get_player_equipment()[equ_data].is_on:
+			if StorageData.get_player_equipment()[equ_data] != null && !StorageData.get_player_equipment()[equ_data].is_on:
 				var ins = equ_item.instance()
 				ins.setData(StorageData.get_player_equipment()[equ_data])
 				ins.connect("pressed",self,"equ_item_click",[ins.local_data])
@@ -275,6 +276,7 @@ func item_up(_type):
 					reloadPratySKill()
 					StorageData._save_storage()
 	item_up_clear()
+
 func item_up_clear():
 	check_temp_ins = null
 	get_parent().tempSKillIcon.texture = null
@@ -292,16 +294,6 @@ func _on_ClickTimer_timeout():
 		get_parent().tempSKillIcon.visible = true
 		if skill_tips_ins != null:
 			skill_tips_ins.close()
-
-#穿戴装备
-func setEqu2Role(type,equ_data):
-	$Equ_info.visible = false
-	equ_data.is_on = true
-	role_data["equ"][type] = equ_data["id"]
-	StorageData._save_storage()
-	loadAllEqu()
-	reLoadHeroEqu()
-	loadHeroData()
 
 #装备信息展示
 func loadEquInfo(equ_data):
@@ -334,12 +326,26 @@ func loadEquInfo(equ_data):
 	if equ_data["is_on"]:
 		$Equ_info/btn_down.text = "卸下"
 		$Equ_info/btn_des.visible = false
+		$Equ_info/btn_des2.visible = false
 	else:
 		$Equ_info/btn_down.text = "穿戴"
 		$Equ_info/btn_des.visible = true
+		$Equ_info/btn_des2.visible = true
 
 #装备按钮区域
 #=========================
+#穿戴装备
+func setEqu2Role(type,equ_data):
+	$Equ_info.visible = false
+	equ_data.is_on = true
+	role_data["equ"][type] = equ_data["id"]
+	StorageData._save_storage()
+	loadAllEqu()
+	reLoadHeroEqu()
+	loadHeroData()
+	if equ_info != null:
+		get_tree().call_group("equ_info","free")
+
 #装备列表绑定点击
 func equ_item_click(equ_data):
 	if over_ins != null && is_instance_valid(over_ins):
@@ -350,9 +356,23 @@ func equ_item_click(equ_data):
 	else:
 		loadEquInfo(equ_data)
 
+#装备对比按钮
+func _on_btn_des2_pressed():
+	if check_equ_data != null:
+		if !role_data.equ.has(check_equ_data.type):
+			ConstantsValue.showMessage("对比部位没有穿戴装备！",2)
+			return
+		if role_data.equ[check_equ_data.type] == null:
+			ConstantsValue.showMessage("对比部位没有穿戴装备！",2)
+			return
+		var ins = equ_info.instance()
+		add_child(ins)
+		ins.loadEquInfo(StorageData.get_player_equipment()[role_data.equ[check_equ_data.type]])
+
 #批量丢弃装备
 func _on_other_attr2_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
+		$Equ_info.visible = false
 		add_child(discard_ui.instance())
 
 #装备融合
@@ -378,9 +398,8 @@ func _on_btn_down_pressed():
 			ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
 		else:
 			var type = check_equ_data.type
-			for child in $equ_main/GridContainer.get_children():
-				if child.type == type && child.local_data != null:
-					child.local_data.is_on = false
+			if role_data.equ.has(type):
+				StorageData.get_player_equipment()[role_data.equ[type]].is_on = false
 			setEqu2Role(type,check_equ_data)
 			ConstantsValue.showMessage("已穿戴%s"%check_equ_data.name,1)
 	loadAllEqu()
@@ -390,6 +409,8 @@ func _on_btn_down_pressed():
 #丢弃装备
 func _on_btn_des_pressed():
 	if check_equ_data != null:
+		if equ_info != null:
+			get_tree().call_group("equ_info","free")
 		ConstantsValue.showMessage("已丢弃%s"%check_equ_data.name,1)
 		$Equ_info.visible = false
 		StorageData.get_player_equipment().erase(check_equ_data.id)
@@ -464,8 +485,12 @@ func _on_postion_2_gui_input(event):
 		var index = Utils.getPositionWithName($PostionBox/postion_2/position.text)
 		setRole2Position(index)
 
+var is_changeing = false#正在切换位置
 #切换冒险者位置
 func setRole2Position(_index):
+	if is_changeing:
+		return
+	is_changeing = true
 	if _index != -1:
 		if StorageData.get_player_state()["team_position"].has(role_data.rid):
 			 StorageData.get_player_state()["team_position"][role_position] = null
@@ -485,7 +510,8 @@ func setRole2Position(_index):
 			ConstantsValue.showMessage("至少需要一名冒险者在队伍中！",2)
 	StorageData._save_storage()
 	showPosition()
-	$PostionBox/AnimationPlayer.play_backwards("show")
+	$PostionBox.visible = false
+	is_changeing = false
 #=====================================================
 
 #其他属性面板

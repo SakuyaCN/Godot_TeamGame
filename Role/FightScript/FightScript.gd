@@ -27,9 +27,11 @@ func _ready():
 func _physics_process(_delta):
 	if is_alive && is_in_atk:
 		if is_VERTIGO():
-			hero_sprite.play("Idle")
+			if hero_sprite.animation != "Idle":
+				hero_sprite.animation = "Idle"
 		else:
-			hero_sprite.animation = "Atk"
+			if hero_sprite.animation != "Atk":
+				hero_sprite.animation = "Atk"
 		is_blinding = is_BLINDING()
 		is_weak = is_WEAK()
 		is_sj = is_SJ()
@@ -111,7 +113,8 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 		atk_type = Utils.HurtType.CRIT
 	if fight_script.is_weak:
 		hurt_num *= 0.6
-	hero_attr.updateNum("hp",-hurt_num)
+	reflex_hurt(hurt_num,fight_script)
+	updateHp(hurt_num)
 	if hero_attr.hp <= 0:
 		die()
 	get_parent()._show_damage_label(hurt_num,atk_type)
@@ -127,13 +130,30 @@ func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 		Utils.HurtType.MTK:
 			hurt_num = number * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
 		_:hurt_num = number
-	hero_attr.updateNum("hp",-hurt_num)
+	updateHp(hurt_num)
 	if hero_attr.hp <= 0:
 		die()
 	if is_COUTINUED:
 		get_parent()._show_damage_label(hurt_num,Utils.HurtType.COUTINUED)
 	else:
 		get_parent()._show_skill_label(hurt_num)
+
+func updateHp(_num):
+	if hero_attr.shield > 0:
+		if hero_attr.shield - _num < 0:
+			_num -= hero_attr.shield
+			hero_attr.shield = 0
+		else:
+			hero_attr.shield -= _num
+	if hero_attr.shield <= 0:
+		hero_attr.updateNum("hp",-_num)
+
+#反射触发
+func reflex_hurt(_hurt_num,fight_script:Node):
+	var num = _hurt_num
+	if hero_attr.reflex > 0:
+		num *= (hero_attr.reflex / 100.0)
+		fight_script.do_number_hurt(num,0,hero_attr,false)
 
 #格挡触发
 func hold_hurt(_atk_attr:HeroAttrBean,num):

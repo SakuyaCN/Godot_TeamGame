@@ -826,6 +826,7 @@ custom_constants/hseparation = 12
 columns = 4
 
 [node name="Equ_bg" type="NinePatchRect" parent="."]
+visible = false
 margin_left = 61.0
 margin_top = 103.0
 margin_right = 403.0
@@ -1025,6 +1026,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="btn_des2" type="Button" parent="Equ_info"]
+margin_left = 5.0
+margin_top = -43.0
+margin_right = 108.0
+margin_bottom = -2.0
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "对比"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="btn_seal" type="Button" parent="Equ_info"]
 margin_left = 36.0
 margin_top = 412.0
@@ -1075,7 +1091,8 @@ __meta__ = {
 }
 
 [node name="postion_1" type="NinePatchRect" parent="PostionBox"]
-margin_right = 100.0
+margin_left = 104.0
+margin_right = 204.0
 margin_bottom = 57.0
 rect_min_size = Vector2( 100, 57 )
 mouse_filter = 0
@@ -1098,7 +1115,8 @@ __meta__ = {
 }
 
 [node name="postion_2" type="NinePatchRect" parent="PostionBox"]
-margin_right = 100.0
+margin_left = 208.0
+margin_right = 308.0
 margin_bottom = 57.0
 rect_min_size = Vector2( 100, 57 )
 mouse_filter = 0
@@ -1135,6 +1153,7 @@ anims/show = SubResource( 18 )
 [connection signal="gui_input" from="Equ_bg/other_over" to="." method="_on_other_over_gui_input"]
 [connection signal="pressed" from="Equ_info/btn_down" to="." method="_on_btn_down_pressed"]
 [connection signal="pressed" from="Equ_info/btn_des" to="." method="_on_btn_des_pressed"]
+[connection signal="pressed" from="Equ_info/btn_des2" to="." method="_on_btn_des2_pressed"]
 [connection signal="pressed" from="Equ_info/btn_seal" to="." method="_on_btn_seal_pressed"]
 [connection signal="gui_input" from="PostionBox/postion_0" to="." method="_on_postion_0_gui_input"]
 [connection signal="gui_input" from="PostionBox/postion_1" to="." method="_on_postion_1_gui_input"]
