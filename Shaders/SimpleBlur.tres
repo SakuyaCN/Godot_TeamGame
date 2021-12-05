@@ -18,4 +18,4 @@ void fragment() {
 shader = SubResource( 1 )
 shader_param/blur_amount = 2.0
 shader_param/mix_amount = 0.2
-shader_param/color_over = Color( 0.196078, 0.215686, 0.211765, 1 )
+shader_param/color_over = Color( 0.203922, 0.207843, 0.207843, 1 )

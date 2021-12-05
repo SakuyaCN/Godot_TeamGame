@@ -182,8 +182,7 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
+quality/voxel_cone_tracing/high_quality=true
 quality/depth/hdr.mobile=true
 environment/default_environment="res://default_env.tres"
-quality/voxel_cone_tracing/high_quality=true

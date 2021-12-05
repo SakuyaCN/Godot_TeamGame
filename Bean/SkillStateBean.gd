@@ -10,6 +10,7 @@ var state_mold = 0#Utils.BuffModeEnum.BUFF#状态增益减益
 var state_img:String#状态图片
 var state_time :int#状态持续时间
 var state_over :bool#状态持续时间是否叠加
+var state_who_attr:String = ""#如果不为空 根据施加状态者的属性来计算
 var state_other = {}#状态其他信息
 
 func _create(dict:Dictionary):
@@ -34,3 +35,5 @@ func _create(dict:Dictionary):
 		state_other = dict["state_other"]
 	if dict.has("state_is_odd"):
 		state_is_odd = dict["state_is_odd"]
+	if dict.has("state_who_attr"):
+		state_who_attr = dict["state_who_attr"]

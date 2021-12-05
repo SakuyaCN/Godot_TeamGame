@@ -14,7 +14,7 @@ func on_login():
 	})
 	http.http_post("login",query)
 
-func on_http(url,data):
+func on_http(_url,data):
 	if data.success:
 		var ins = game_hangup.instance()
 		add_child(ins)

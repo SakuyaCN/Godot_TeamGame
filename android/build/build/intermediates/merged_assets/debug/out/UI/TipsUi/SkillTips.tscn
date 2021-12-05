@@ -125,7 +125,7 @@ custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-text = "丢弃"
+text = "分解"
 __meta__ = {
 "_edit_use_anchors_": false
 }

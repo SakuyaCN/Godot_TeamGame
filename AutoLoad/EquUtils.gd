@@ -35,6 +35,7 @@ func get_attr_string(attr):
 		"shield":return "护盾值"
 		"exp_buff":return "经验加成比"
 		"reflex":return "反射率"
+		"skill_crit":return "技能暴击"
 
 func get_ys_color(ys):
 	match ys:
@@ -65,17 +66,23 @@ func get_ys_string(attr):
 		"wind": return "风属性"
 		"posion": return "毒属性"
 
-func createQuality():
+func createQuality(is_over):
 	var rand = randf()
-	if rand >= 0.6:
-		 return "C级"
-	elif rand >= 0.35 && rand<0.6:
-		 return "B级"
-	elif rand >= 0.2 && rand<0.35:
+	if rand >= 0.7:
+		if is_over:
+			return "A级"
+		else:
+			return "C级"
+	elif rand >= 0.45 && rand<0.7:
+		if is_over:
+			return "A级"
+		else:
+			return "B级"
+	elif rand >= 0.3 && rand<0.45:
 		 return "A级"
-	elif rand >= 0.1 && rand<0.2:
+	elif rand >= 0.15 && rand<0.3:
 		 return "S级"
-	elif rand >= 0.01 && rand<0.1:
+	elif rand >= 0.01 && rand<0.15:
 		 return "S++"
 	else:
 		return "C级"
@@ -97,12 +104,12 @@ func getQualityBssTART(ys):
 		"C级": return 1
 
 #生成一件新装备
-func createNewEqu(build_id,build_type,data,type,is_build = true):
+func createNewEqu(build_id,build_type,data,type,is_build = true,is_over = false):
 	if StorageData.get_player_equipment().size()>=100:
 		ConstantsValue.showMessage("武器库已满，请及时清理！",3)
 		return
 	var id = str(OS.get_system_time_msecs() + randi()%1000+1)
-	var qualityBs = createQuality()
+	var qualityBs = createQuality(is_over)
 	if ConstantsValue.fight_array.has(qualityBs) and !is_build:
 		return
 	if ConstantsValue.array_num != 0 && ConstantsValue.array_num >= data.lv and !is_build:

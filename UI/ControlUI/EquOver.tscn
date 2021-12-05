@@ -92,7 +92,8 @@ custom_fonts/font = SubResource( 13 )
 text = "说明：
 可以放入任意品质的相同等级装备
 点击开始融合后会生成一件随机品质的同等级装备
-融合出的装备部位以第一件放入为准"
+融合出的装备部位以第一件放入为准
+融合不会出现A级以下的装备"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -107,6 +108,7 @@ margin_left = -149.0
 margin_top = -186.5
 margin_right = 150.0
 margin_bottom = 144.5
+mouse_filter = 0
 texture = ExtResource( 4 )
 patch_margin_left = 32
 patch_margin_top = 28

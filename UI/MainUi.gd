@@ -5,6 +5,7 @@ onready var progress_tv = $progress_hp/label_hp
 
 onready var setting_view = preload("res://UI/Setting.tscn")
 onready var day_gif = preload("res://UI/GoodsDialog/DayGif.tscn")
+onready var box_ui = preload("res://UI/ControlUI/BoxUI.tscn")
 
 func _ready():
 	visible = false
@@ -41,3 +42,7 @@ func _on_setting_pressed():
 #每日奖励
 func _on_sign_pressed():
 	get_parent().add_child(day_gif.instance())
+
+#百宝箱
+func _on_box_pressed():
+	get_parent().add_child(box_ui.instance())

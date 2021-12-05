@@ -2,13 +2,17 @@ extends Node
 
 var websocket_url = "ws://150.158.34.28:8001"
 onready var _client :WebSocketClient = WebSocketClient.new()
-
+var timer = Timer.new()
 var is_chat_ok = true
 
 var is_connect = false
 var count = 0
 
 func _ready():
+	timer.autostart = false
+	timer.one_shot = false
+	timer.connect("timeout",self,"_time_out")
+	add_child(timer)
 	set_process(false)
 	add_to_group("chat")
 	_client.verify_ssl = false
@@ -17,16 +21,23 @@ func _ready():
 	_client.connect("connection_established", self, "_connected")
 	_client.connect("data_received", self, "_on_data")
 
-func _closed(was_clean = false):
-	is_connect = false
-	connet_server()
-	
-func _error(was_clean = false):
-	is_connect = false
+func _time_out():
 	connet_server()
 
-func _connected(proto = ""):
-	print("_connected")
+func _closed(was_clean = false):
+	if timer.is_stopped():
+		timer.start()
+	is_connect = false
+	set_process(false)
+	
+func _error(was_clean = false):
+	if timer.is_stopped():
+		timer.start()
+	is_connect = false
+	set_process(false)
+
+func _connected(_proto = ""):
+	timer.stop()
 	on_connect_login()
 	is_connect = true
 
@@ -41,7 +52,7 @@ func _on_seedData(msg):
 		"msg":msg,
 		"save_id":StorageData.get_player_state()["save_id"]
 	}
-	var err = _client.get_peer(1).put_packet(to_json(entity).to_utf8())
+	_client.get_peer(1).put_packet(to_json(entity).to_utf8())
 	is_chat_ok = false
 	$Timer.start()
 
@@ -54,18 +65,13 @@ func _on_data():
 	ConstantsValue.emit_signal("on_chat_message",json)
 
 func connet_server():
+	set_process(false)
 	var err = _client.connect_to_url(websocket_url)
 	if err == OK:
 		_client.get_peer(1).set_write_mode(WebSocketPeer.WRITE_MODE_TEXT)
 		set_process(true)
-	else:
-		if count == 10:
-			return
-		yield(get_tree().create_timer(5),"timeout")
-		connet_server()
-		count+=1
 
-func _process(delta):
+func _process(_delta):
 	_client.poll()
 
 func _on_Timer_timeout():
@@ -78,4 +84,4 @@ func on_connect_login():
 		"uuid":OS.get_unique_id(),
 		"save_id":StorageData.get_player_state()["save_id"]
 	}
-	var err = _client.get_peer(1).put_packet(to_json(entity).to_utf8())
+	_client.get_peer(1).put_packet(to_json(entity).to_utf8())

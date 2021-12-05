@@ -193,8 +193,7 @@ func mosterAttr(attr):
 		if item == "def" || item == "mdef" || item == "other" || item == "skill":
 			new_attr[item] = attr[item]
 		else:
-			var num = player_map
-			new_attr[item] = (attr[item] / 10 + attr[item] * (1 + (pow(player_map - ((player_map / 10) as int) * 10,2) / 55.0)) )as int
+			new_attr[item] = (attr[item] / 10 + attr[item] * (1 + (pow(player_map - ((player_map / 10) as int) * 10,2) / 65.0)) )as int
 	return new_attr
 
 #检查胜利方
@@ -263,8 +262,8 @@ func winGoods():
 			goods_array.append([item[0],gnum as int])
 	StorageData.AddGoodsNum(goods_array)
 	if win_goods.other.has("exp"):
+		var _exp = (1 + (player_map / 10.0) + (map_index * 60)) * win_goods.other.exp + (60 *  (map_index * map_index) * 1.5)
 		for _role in player_array:
-			var _exp = (1 + (player_map / 10.0) + (map_index * 60)) * win_goods.other.exp + (60 *  (map_index * map_index) * 1.5)
 			_role.addExp(_exp as int)
 	if win_goods.has("more"):
 		if win_goods.more.has(str(map_index)):

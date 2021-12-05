@@ -14,6 +14,7 @@ var is_moster = false#是否为怪物
 var is_blinding = false #是否为致盲状态
 var is_weak = false #是否为虚弱状态
 var is_sj = false #是否为重伤
+var is_nohurt =false
 var atk_count #攻击数量
 var state_array = {} #状态列表
 
@@ -35,6 +36,7 @@ func _physics_process(_delta):
 		is_blinding = is_BLINDING()
 		is_weak = is_WEAK()
 		is_sj = is_SJ()
+		is_nohurt = is_NOHURT()
 
 #初始化战斗脚本
 func load_script(_is_moster):
@@ -124,29 +126,38 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 #直接数字伤害 number 伤害字 atk_type 攻击类型 _atk_attr 攻击者属性 is_COUTINUED是否连续
 func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 	var hurt_num = 0
-	match atk_type:
+	var _is_crit = false
+	match atk_type as int:
 		Utils.HurtType.ATK:
 			hurt_num = number * (1 - ((hero_attr.def - _atk_attr.atk_pass)/100.0))#物理伤害
 		Utils.HurtType.MTK:
 			hurt_num = number * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
 		_:hurt_num = number
+	if _atk_attr.skill_crit > 0 && randf() <  _atk_attr.skill_crit / 7000.0:
+		hurt_num *= 1.5 + (_atk_attr.crit_buff / 100.0)
+		_is_crit = true
 	updateHp(hurt_num)
 	if hero_attr.hp <= 0:
 		die()
 	if is_COUTINUED:
 		get_parent()._show_damage_label(hurt_num,Utils.HurtType.COUTINUED)
 	else:
-		get_parent()._show_skill_label(hurt_num)
+		get_parent()._show_skill_label(hurt_num,_is_crit)
 
+#刷血量
 func updateHp(_num):
+	if is_nohurt:
+		return
+	var hurt_num = _num
 	if hero_attr.shield > 0:
 		if hero_attr.shield - _num < 0:
-			_num -= hero_attr.shield
+			hurt_num -= hero_attr.shield
 			hero_attr.shield = 0
+			hero_attr.updateNum("shield",-hero_attr.shield)
 		else:
-			hero_attr.shield -= _num
+			hero_attr.updateNum("shield",-_num)
 	if hero_attr.shield <= 0:
-		hero_attr.updateNum("hp",-_num)
+		hero_attr.updateNum("hp",-hurt_num)
 
 #反射触发
 func reflex_hurt(_hurt_num,fight_script:Node):
@@ -242,6 +253,9 @@ func doAtk():
 		role.fight_script.do_hurt(role_data,hero_attr,atk_mode,self)
 	emit_signal("onAtkOver")
 
+func reloadSpeed():
+	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 120.0))
+
 func is_VERTIGO():
 	for item in state_array.values():
 		if item is SkillStateBean && item.state_mold == Utils.BuffModeEnum.STATE && item.state_type == Utils.BuffStateEnum.VERTIGO:
@@ -263,5 +277,11 @@ func is_WEAK():
 func is_SJ():
 	for item in state_array.values():
 		if item is SkillStateBean && item.state_mold == Utils.BuffModeEnum.STATE && item.state_type == Utils.BuffStateEnum.SJ:
+			return true
+	return false
+
+func is_NOHURT():
+	for item in state_array.values():
+		if item is SkillStateBean && item.state_mold == Utils.BuffModeEnum.STATE && item.state_type == Utils.BuffStateEnum.NOHURT:
 			return true
 	return false

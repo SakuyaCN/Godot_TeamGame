@@ -14,7 +14,7 @@ func showTips(_role_skill,_name,_info,_skill_lv,_role_data = null):
 	if role_data != null:
 		$Button.text = "卸下"
 	else:
-		$Button.text = "丢弃"
+		$Button.text = "分解"
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.is_pressed():

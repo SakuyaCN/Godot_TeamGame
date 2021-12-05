@@ -30,22 +30,33 @@ var is_first_load = false
 onready var temp_skill = get_parent()
 
 func _ready():
+	loadEquEmp()
 	add_to_group("PartyUI")
 	$Equ_info.visible = false
 	visible = false
 	set_process(false)
 	var line = StyleBoxTexture.new()
 	srcoll.get_h_scrollbar().set("custom_styles/scroll",line)
+	$Equ_bg/ScrollContainer.get_v_scrollbar().set("custom_styles/scroll",line)
 	is_first_load = loadFirst()
 
 func loadFirst():
 	if StorageData.get_all_team().keys().size() > 0:
-		select_index = StorageData.get_all_team().keys()[0]
-		checkHeroData()
-		loadHeroEqu()
-		loadHeroSkill(true)
 		loadAllHero()
+		loadAllSkill()
+		loadAllEqu()
+		loadHeroEqu()
+		checkHeroData()
 	return true
+
+func loadEquEmp():
+	for index in range(100):
+		var ins = equ_item.instance()
+		$Equ_bg/ScrollContainer/GridContainer.add_child(ins)
+		ins.setData(null)
+		ins.connect("pressed",self,"equ_item_click",[ins])
+	for item in $skill_main/GridContainer.get_children():
+		item.connect("pressed",self,"skill_role_click",[item])
 
 func showPosition():
 	if role_data != null:
@@ -62,14 +73,11 @@ func showPosition():
 
 #点击英雄刷新
 func checkHeroData():
-	if StorageData.get_all_team().has(str(select_index)):
-		role_data = StorageData.get_all_team()[select_index]
-		showPosition()
-		loadHeroData()
-		loadAllSkill()
-		loadAllEqu()
-		loadHeroSkill()
-		reLoadHeroEqu()
+	select_index = role_data.rid
+	showPosition()
+	loadHeroData()
+	loadHeroSkill()
+	reLoadHeroEqu()
 
 func _process(_delta):
 	if check_temp_ins != null && get_parent().tempSKillIcon.visible:
@@ -80,7 +88,7 @@ func partyChange(change):
 	if !change && skill_tips_ins != null:
 		skill_tips_ins.close()
 		set_process(false)
-	if visible && is_first_load:
+	if visible:
 		checkHeroData()
 	if visible && !ConfigScript.getBoolSetting("store","first_open_party"):#首次打开炼金台
 		var new_dialog = Dialogic.start('first_open_party')
@@ -134,27 +142,37 @@ func closeEquInfo():
 func loadAllHero():
 	for ins in $ScrollContainer/HSlider.get_children():
 		ins.queue_free()
+	var array = StorageData.get_all_team().values()
 	$ScrollContainer/HSlider.get_children().clear()
-	for item_key in StorageData.get_all_team():
+	array.sort_custom(self, "customComparison")
+	if select_index == "":
+		role_data = array[0]
+		select_index = role_data.rid
+	for item in array:
 		var ins = hero_item.instance()
-		ins.setData(item_key)
-		ins.connect("pressed",self,"all_hero_item_click",[item_key])
+		ins.setData(item)
+		ins.connect("pressed",self,"all_hero_item_click",[item])
 		$ScrollContainer/HSlider.add_child(ins)
 	get_tree().call_group("all_hero_list","reload",select_index)
 
+#小成员排序
+func customComparison(a,b):
+	if StorageData.get_player_state()["team_position"].find(a.rid) > StorageData.get_player_state()["team_position"].find(b.rid):
+		return a
+
 #小队成员点击
 func all_hero_item_click(item_key):
-	if $PostionBox.visible:
-		$PostionBox/AnimationPlayer.play_backwards("show")
-	select_index = item_key
-	checkHeroData()
-	#tab_select(0)
+	$PostionBox.visible = false
 	$Equ_info.visible = false
-	get_tree().call_group("all_hero_list","reload",item_key)
+	role_data = item_key
+	#tab_select(0)
+	get_tree().call_group("all_hero_list","reload",item_key.rid)
+	yield(get_tree(),"idle_frame")
+	checkHeroData()
 	
 #载入当前英雄属性
 func loadHeroData():
-	hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
+	hero_attr = HeroAttrUtils.reloadHeroAttr(null,role_data)
 	get_tree().call_group("player_role","reloadRoleAttr",role_data.rid,hero_attr)
 	$TextureRect/name.text = role_data.nickname
 	$attr/label_hp.text = str(hero_attr.hp)
@@ -181,25 +199,24 @@ func loadAllSkill():
 
 #载入人物所有装备
 func loadAllEqu():
-	if visible:
-		free_item($Equ_bg/ScrollContainer/GridContainer.get_children())
-		for equ_data in StorageData.get_player_equipment(): 
-			if StorageData.get_player_equipment()[equ_data] != null && !StorageData.get_player_equipment()[equ_data].is_on:
-				var ins = equ_item.instance()
-				ins.setData(StorageData.get_player_equipment()[equ_data])
-				ins.connect("pressed",self,"equ_item_click",[ins.local_data])
-				$Equ_bg/ScrollContainer/GridContainer.add_child(ins)
+	var index = 0
+	var equ_array = StorageData.get_player_equipment().values()
+	for item in $Equ_bg/ScrollContainer/GridContainer.get_children():
+		if equ_array.size() > index && equ_array[index] != null && !equ_array[index].is_on:
+			item.visible = true
+			item.setData(equ_array[index])
+			item.setName("Lv.%s" %equ_array[index].lv)
+		else:
+			item.setData(null)
+			item.visible = false
+		index += 1
+	equ_array.clear()
 
 #载入人物穿戴装备
 func loadHeroEqu():
 	if role_data != null:
 		for child in $equ_main/GridContainer.get_children():
 			child.connect("pressed",self,"hero_equ_click",[child])
-			if role_data["equ"].has(child.type):
-				if StorageData.get_player_equipment().has(str(role_data["equ"][child.type])):
-					child.setData(StorageData.get_player_equipment()[str(role_data["equ"][child.type])])
-			else:
-				child.setData(null)
 
 #刷新人物穿戴装备
 func reLoadHeroEqu():
@@ -211,11 +228,9 @@ func reLoadHeroEqu():
 			child.setData(null)
 
 #载入人物穿戴技能
-func loadHeroSkill(_is_reload = false):
+func loadHeroSkill():
 	if role_data != null:
 		for index in range($skill_main/GridContainer.get_child_count()):
-			if _is_reload:
-				$skill_main/GridContainer.get_child(index).connect("pressed",self,"skill_role_click",[$skill_main/GridContainer.get_child(index)])
 			if role_data["skill"].size() > index:
 				$skill_main/GridContainer.get_child(index).setSkill(Utils.findSkillFromAll(role_data["skill"][index].form),role_data["skill"][index])
 			else:
@@ -347,7 +362,8 @@ func setEqu2Role(type,equ_data):
 		get_tree().call_group("equ_info","free")
 
 #装备列表绑定点击
-func equ_item_click(equ_data):
+func equ_item_click(_ins):
+	var equ_data = _ins.local_data
 	if over_ins != null && is_instance_valid(over_ins):
 		if equ_data.has("build_id"):		
 			over_ins.addEqu(equ_data)
@@ -398,7 +414,7 @@ func _on_btn_down_pressed():
 			ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
 		else:
 			var type = check_equ_data.type
-			if role_data.equ.has(type):
+			if role_data.equ.has(type) && StorageData.get_player_equipment()[role_data.equ[type]] != null:
 				StorageData.get_player_equipment()[role_data.equ[type]].is_on = false
 			setEqu2Role(type,check_equ_data)
 			ConstantsValue.showMessage("已穿戴%s"%check_equ_data.name,1)
@@ -509,6 +525,7 @@ func setRole2Position(_index):
 		else:
 			ConstantsValue.showMessage("至少需要一名冒险者在队伍中！",2)
 	StorageData._save_storage()
+	loadAllHero()
 	showPosition()
 	$PostionBox.visible = false
 	is_changeing = false

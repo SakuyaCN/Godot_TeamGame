@@ -2,6 +2,8 @@ class_name HeroAttrBean
 
 signal onAttrChange(attr,num)
 
+var _parant_node:Node
+
 #基础属性
 var max_hp :int#生命
 var hp:int#生命
@@ -38,6 +40,7 @@ var crit_buff:int #暴伤加成比
 var shield:int#护盾
 var exp_buff:int #经验增幅
 var reflex:int#反射率
+var skill_crit:int#技能暴击
 
 
 #重载基础属性
@@ -102,8 +105,8 @@ func loadJobAttr(role_data):
 		"绝地武士":
 			speed += 25 * role_data.lv
 			crit += 25 * role_data.lv
-			crit_buff += 25
-			speed += (speed * 0.05) as int
+			crit_buff += 50
+			speed += (speed * 0.06) as int
 		"致命拳手":
 			hp += 25 * role_data.lv
 			atk += 10 * role_data.lv
@@ -161,7 +164,8 @@ func toDict():
 		"crit_buff" : crit_buff,
 		"shield" : shield,
 		"exp_buff":exp_buff,
-		"reflex":reflex
+		"reflex":reflex,
+		"skill_crit":skill_crit
 	}
 
 func updateNum(attr,num,is_emit = true,is_buff = false):
@@ -197,10 +201,18 @@ func updateNum(attr,num,is_emit = true,is_buff = false):
 		"shield" : shield += num
 		"exp_buff":exp_buff+=num
 		"reflex":reflex+=num
+		"skill_crit":skill_crit += num
 	if dodge > 30:
 		dodge = 30
 	if is_buff && attr == "hp":
 		max_hp += num
-		ConstantsValue.tree.call_group("player_role","reloadHpBar")
+		if _parant_node != null:
+			_parant_node.call_deferred("reloadHpBar")
+	if attr == "shield":
+		if _parant_node != null:
+			_parant_node.call_deferred("reloadHpBar")
+	if is_buff && attr == "speed":
+		if _parant_node != null:
+			_parant_node.call_deferred("reloadHpBar")
 	if is_emit:
 		emit_signal("onAttrChange",attr,num)

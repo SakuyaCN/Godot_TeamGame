@@ -83,14 +83,38 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-visible = false
 anchor_right = 1.0
 margin_left = 219.0
 margin_top = 507.0
 margin_right = -219.0
 margin_bottom = 525.0
 custom_fonts/font = SubResource( 12 )
+text = "设备编号："
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 219.0
+margin_top = 538.0
+margin_right = -219.0
+margin_bottom = 557.0
+custom_fonts/font = SubResource( 12 )
 text = "存档编号："
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 219.0
+margin_top = 570.0
+margin_right = -219.0
+margin_bottom = 589.0
+custom_fonts/font = SubResource( 12 )
+text = "存档每日最多上传+下载共4次"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -286,21 +310,66 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="NinePatchRect"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -421.0
-margin_top = -10.0
+margin_top = 110.0
 margin_right = -305.0
-margin_bottom = 38.0
+margin_bottom = 158.0
 custom_fonts/font = SubResource( 11 )
 custom_styles/hover = SubResource( 7 )
 custom_styles/pressed = SubResource( 8 )
 custom_styles/focus = SubResource( 9 )
 custom_styles/normal = SubResource( 10 )
 text = "存档上传"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="NinePatchRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -277.0
+margin_top = 110.0
+margin_right = -161.0
+margin_bottom = 158.0
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+text = "下载存档"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -16.5
+margin_right = 672.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 1 )
+text = "正在取回存档"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -316,3 +385,4 @@ __meta__ = {
 [connection signal="value_changed" from="NinePatchRect/SpinBox" to="." method="_on_SpinBox_value_changed"]
 [connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="NinePatchRect/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="NinePatchRect/Button3" to="." method="_on_Button3_pressed"]

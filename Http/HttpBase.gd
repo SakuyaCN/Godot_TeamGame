@@ -74,6 +74,7 @@ func file_update(file_path):
 			yield(Engine.get_main_loop(), "idle_frame")
 
 func _on_request_completed(result, response_code, headers, body):
+	print(body.get_string_from_utf8())
 	if body != null && response_code == 200:
 		var json = JSON.parse(body.get_string_from_utf8())
 		emit_signal("http_res",req_url,json.result)

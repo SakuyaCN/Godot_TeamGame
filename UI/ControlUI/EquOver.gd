@@ -78,12 +78,12 @@ func _on_Button_pressed():
 		for item in array:
 			StorageData.get_player_equipment().erase(item.id)
 		var build_data = LocalData.build_data["build_data"][any.build_type][any.build_id]
-		var equ = EquUtils.createNewEqu(any.build_id,any.build_type,build_data,build_data.type,true)
+		var equ = EquUtils.createNewEqu(any.build_id,any.build_type,build_data,build_data.type,true,true)
 		$NinePatchRect/Main.setData(equ)
 		_remove_all()
 		reload()
 		$NinePatchRect/Main/Name.text += "【%s】"%equ.quality
-		yield(get_tree().create_timer(1),"timeout")
+		yield(get_tree().create_timer(0.3),"timeout")
 		$ColorMax.visible = false
 	else:
 		ConstantsValue.showMessage("请放满4件装备!",2)

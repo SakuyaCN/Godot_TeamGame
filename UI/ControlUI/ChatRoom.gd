@@ -14,8 +14,9 @@ func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		queue_free()
 
-
 func _on_Button_pressed():
+	if $TextEdit.text.countn("["):
+		ConstantsValue.showMessage("无法输入特殊字符",1)
 	if $TextEdit.text == "":
 		ConstantsValue.showMessage("请输入内容！",1)
 		return

@@ -65,7 +65,7 @@ func _on_attr_visibility_changed():
 			get_parent().am_player.play("choose")
 
 func addBuffImage(state:SkillStateBean):
-	if array_item_skill.has(state.state_id):
+	if array_item_skill.has(state.state_id) && array_item_skill[state.state_id] != null && array_item_skill[state.state_id]:
 		array_item_skill[state.state_id].updateTime(state)
 	else:
 		var img = item_skill_img.instance()

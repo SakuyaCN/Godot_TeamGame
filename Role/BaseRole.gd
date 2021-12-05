@@ -33,6 +33,9 @@ func _ready():
 
 #添加经验
 func addExp(_exp):
+	if StorageData.get_player_state()["exp"] < 10000000:
+		StorageData.get_player_state()["exp"] += (_exp * 0.3)
+		get_tree().call_group("exp_box","reload")
 	if hero_attr.exp_buff > 0:
 		_exp += (_exp * (hero_attr.exp_buff / 100.0)) as int
 	is_LvUp(_exp)
@@ -51,13 +54,13 @@ func is_LvUp(_exp):
 		else:
 			role_data["exp"] += _exp
 		if last_lv != role_data["lv"] && !fight_script.is_in_atk:
-			hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
+			hero_attr = HeroAttrUtils.reloadHeroAttr(self,role_data)
 			ui.load_attr()
 
 #初始化角色
 func set_role(_role_data):
 	role_data = _role_data
-	hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
+	hero_attr = HeroAttrUtils.reloadHeroAttr(self,role_data)
 	loadRoleSkill()
 	load_asset()
 	ui.initRole()
@@ -65,7 +68,7 @@ func set_role(_role_data):
 #重载角色属性
 func reloadRoleAttr(_rid):
 	if !fight_script.is_in_atk && role_data.rid == _rid:
-		hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
+		hero_attr = HeroAttrUtils.reloadHeroAttr(self,role_data)
 		ui.load_attr()
 
 func setIndex(_index):
@@ -106,7 +109,7 @@ func load_asset():
 			animatedSprite.scale = Vector2(3,3)
 			$RoleUI/name.rect_position.y = -15
 		"战地女神":
-			animatedSprite.frames = load("res://Texture/Pre-made characters/Goddess.tres")
+			animatedSprite.frames = load("res://Texture/Pre-made characters/Goddess.tres").duplicate()
 			animatedSprite.position.y = -95
 			animatedSprite.scale = Vector2(3,3)
 			$RoleUI/name.rect_position.y = -15
@@ -171,7 +174,7 @@ func role_reset():
 	shape_2d.set_deferred("disabled",false)
 	resetSkill()
 	ui.removeAll()
-	hero_attr = HeroAttrUtils.reloadHeroAttr(hero_attr,role_data)
+	hero_attr = HeroAttrUtils.reloadHeroAttr(self,role_data)
 	fight_script.do_stop()
 	ui.initRole()
 	reloadHpBar()
@@ -318,11 +321,13 @@ func _show_damage_label(damage,type,is_max = false):
 	float_number_ins.set_number(text + "%s" %damage,color)
 
 #技能数值展示
-func _show_skill_label(damage):
+func _show_skill_label(damage,is_crit = false):
 	reloadHpBar()
 	if !ConstantsValue.is_fight_num:
 		return
 	var color = Color.steelblue#基础物理伤害颜色
+	if is_crit:
+		color = Color.rebeccapurple
 	var text = "-"
 	var float_number_ins = float_number.instance()
 	float_number_ins.setSkill(true)

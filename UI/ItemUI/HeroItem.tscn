@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/ItemUI/HeroItem.gd" type="Script" id=1]
 [ext_resource path="res://Texture/Pre-made characters/Boxer.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -30,6 +31,12 @@ shader_param/blur_amount = 4.338
 shader_param/mix_amount = 1.0
 shader_param/color_over = Color( 0.909804, 0.4, 0.4, 1 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 24
+outline_size = 2
+outline_color = Color( 0.776471, 0.776471, 0.776471, 1 )
+font_data = ExtResource( 3 )
+
 [node name="Node2D" type="Button"]
 margin_right = 150.0
 margin_bottom = 120.0
@@ -50,7 +57,7 @@ position = Vector2( 55, 16 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Idle"
-frame = 7
+frame = 5
 playing = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -60,6 +67,20 @@ margin_top = 108.0
 margin_right = 104.0
 margin_bottom = 117.0
 color = Color( 0.952941, 0.905882, 0.207843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 4.0
+margin_top = 98.0
+margin_right = 104.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 7 )
+text = "Lv.1"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

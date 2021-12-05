@@ -16,7 +16,10 @@ func setData(_local_data):
 
 func setNameVis(_is_vis):
 	self.is_vis = _is_vis
-	
+
+func setName(_tv):
+	$Name.text = _tv
+
 func reLoad():
 	if local_data != null && !local_data.empty():
 		is_emp = false

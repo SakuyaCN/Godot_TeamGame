@@ -1,4 +1,4 @@
-#Thu Dec 02 18:09:57 CST 2021
-base.0=D\:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Mon Dec 06 00:18:08 CST 2021
+base.0=F\:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

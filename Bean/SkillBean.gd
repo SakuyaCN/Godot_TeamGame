@@ -69,7 +69,7 @@ func skillStart():
 #战斗开始后可触发的技能
 func skillIng():
 	myself.fight_script.connect("onAtkOver",self,"_onAtkOver")
-	hero_attr.connect("onAttrChange",self,"on_attr_change")
+	#hero_attr.connect("onAttrChange",self,"on_attr_change")
 	timer.start(1.0)
 
 #死亡技能释放
@@ -110,14 +110,15 @@ func chooseRole(skill:SkillItemBean):
 
 #运行技能附带脚本
 func doSkillItemScript(role:Node,skill:SkillItemBean):
-	if skill.item_itme > 0:
-		var timer = Timer.new()
-		timer.one_shot = true
-		add_child(timer)
-		timer.start(skill.item_itme)
-		yield(timer, "timeout")
-	var script = load(skill.item_script).new()
-	script._create(role,myself,skill.scrpit_info)
+	if role.fight_script.is_alive:
+		if skill.item_itme > 0:
+			var timer = Timer.new()
+			timer.one_shot = true
+			add_child(timer)
+			timer.start(skill.item_itme)
+			yield(timer, "timeout")
+		var script = load(skill.item_script).new()
+		script._create(role,myself,skill.scrpit_info)
 #	if script is BaseState:
 #	elif script is HurtSkill:
 

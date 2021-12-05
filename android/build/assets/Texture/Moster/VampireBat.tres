@@ -89,7 +89,7 @@ animations = [ {
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 16 ), SubResource( 17 ), SubResource( 17 ), SubResource( 18 ), SubResource( 18 ) ],
 "loop": true,
 "name": "Atk",
 "speed": 5.0

@@ -80,11 +80,10 @@ func save_ansyc(_data):
 		semaphore.wait()
 		mutex.lock()
 		var storage_data_file = File.new()
-		var err
 		if is_encrypted:
-			err = storage_data_file.open_encrypted_with_pass(save_path,File.WRITE,"sakuya")
+			storage_data_file.open_encrypted_with_pass(save_path,File.WRITE,"sakuya")
 		else:
-			err = storage_data_file.open(save_path,File.WRITE)
+			storage_data_file.open(save_path,File.WRITE)
 		#var _err = storage_data_file.open(save_path,File.WRITE)
 		storage_data_file.store_string(to_json(storage_data))
 		storage_data_file.close()
@@ -207,3 +206,4 @@ func AddSkill(_data):
 		"role":null
 	})
 	ConstantsValue.ui_layer.getNewItem(_data.name,_data.img)
+	get_tree().call_group("PartyUI","reloadPratySKill")

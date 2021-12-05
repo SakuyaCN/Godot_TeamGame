@@ -120,7 +120,7 @@ func get_context_label(type,data):
 	$NinePatchRect3/context.clear()
 	match type:
 		"基础装备", "神话装备":
-			$NinePatchRect3/context.append_bbcode("炼制出的%s属性浮动：\n" %data.type)
+			$NinePatchRect3/context.append_bbcode("炼制出的%s属性浮动参考(实际可能会超出上限或低于下限根据品质决定)：\n" %data.type)
 			if data.keys().has("attr"):
 				for attr in data.attr:
 					$NinePatchRect3/context.append_bbcode(EquUtils.get_attr_string(attr))

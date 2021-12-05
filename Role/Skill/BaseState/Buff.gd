@@ -21,8 +21,14 @@ func updateAttr(_is_over = false):
 					item_num = 0 - item_num
 				hero_attr.updateNum(item,item_num,true,true)
 		else:
-			if state_bean.state_is_odd:
-				num = hero_attr.toDict()[state_bean.state_type] * (num / 100.0)
+			if state_bean.state_who_attr != "":
+				if state_bean.state_is_odd:
+					num = who.hero_attr.toDict()[state_bean.state_who_attr] * (num / 100.0)
+				else:
+					num = who.hero_attr.toDict()[state_bean.state_who_attr]
+			else:
+				if state_bean.state_is_odd:
+					num = hero_attr.toDict()[state_bean.state_type] * (num / 100.0)
 			if _is_over:
 				num = 0 - num
 			hero_attr.updateNum(state_bean.state_type,num,true,true)

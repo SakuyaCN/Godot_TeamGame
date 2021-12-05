@@ -205,9 +205,9 @@ __meta__ = {
 
 [node name="context2" type="Label" parent="NinePatchRect3"]
 margin_left = 21.0
-margin_top = 233.0
+margin_top = 251.0
 margin_right = 286.0
-margin_bottom = 248.0
+margin_bottom = 266.0
 custom_colors/font_color = Color( 0.45098, 0.443137, 0.443137, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "炼制需要以下材料："
@@ -217,7 +217,7 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect3"]
 margin_left = 21.0
-margin_top = 257.0
+margin_top = 274.0
 margin_right = 286.0
 margin_bottom = 337.0
 columns = 5

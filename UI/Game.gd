@@ -21,7 +21,6 @@ func _ready():
 	http.http_get("static")
 	http.connect("http_res",self,"http_res")
 	#isNewUser()
-	OS
 	randomize()
 
 func start_game():
@@ -62,3 +61,6 @@ func _on_chat_message(_data):
 	$UILayer/chat/Timer.stop()
 	$UILayer/chat/Timer.start()
 	$UILayer/chat.bbcode_text += "%s： %s\n" %[_data.nickname,_data.msg]
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://UI/Game2/Game2.tscn")

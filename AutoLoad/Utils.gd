@@ -26,6 +26,7 @@ enum BuffStateEnum{
 	COUTINUED = 2#持续类
 	WEAK = 3#虚弱
 	SJ = 4#重伤
+	NOHURT = 5#无敌
 }
 
 enum SkillHurtEnum{
@@ -294,6 +295,10 @@ func removeSkillFormAll(_id):
 	for skill in StorageData.get_all_skill():
 		if skill.id == _id:
 			StorageData.get_all_skill().erase(skill)
+			var info = LocalData.build_data["build_data"]["技能书"][skill.form]
+			var num = (info.need[0][1] / 2) as int
+			StorageData.AddGoodsNum([["技能手册",num]])
+			ConstantsValue.showMessage("返还技能手册%s本"%num,2)
 			return
 
 func removeEquWithQy(_qy):

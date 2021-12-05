@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/ControlUI/BoxItem/ExpBox.gd" type="Script" id=1]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/ScrollContainer.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_top = 4
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 299.0
+rect_pivot_offset = Vector2( -808, -275 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exp" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -672.0
+margin_right = 672.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 1 )
+text = "当前已累计经验(最多累1千万)："
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exp2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -672.0
+margin_top = 60.0
+margin_right = 672.0
+margin_bottom = 113.0
+custom_fonts/font = SubResource( 2 )
+text = "点击下面角色图标增加冒险者经验
+经验来源：任意角色获得经验均可增加容量（包括离线）"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -479.5
+margin_top = -161.0
+margin_right = 479.5
+margin_bottom = -29.0
+follow_focus = true
+scroll_vertical_enabled = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HBoxContainer" parent="ScrollContainer"]
+alignment = 1

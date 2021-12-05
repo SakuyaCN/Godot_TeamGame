@@ -182,9 +182,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 133.0
+margin_left = 165.0
 margin_top = -112.5
-margin_right = 370.0
+margin_right = 402.0
 margin_bottom = 36.5
 rect_pivot_offset = Vector2( -357.919, -71.9322 )
 mouse_filter = 0
@@ -263,9 +263,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -130.0
-margin_top = -159.0
-margin_right = 130.0
-margin_bottom = 159.0
+margin_top = -158.5
+margin_right = 165.0
+margin_bottom = 159.5
 mouse_filter = 0
 texture = ExtResource( 2 )
 patch_margin_left = 30
@@ -281,9 +281,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -116.5
+margin_left = -131.5
 margin_top = -147.0
-margin_right = 116.5
+margin_right = 131.5
 margin_bottom = 147.0
 scroll_horizontal_enabled = false
 __meta__ = {
@@ -291,7 +291,7 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer"]
-columns = 3
+columns = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/show = SubResource( 1 )

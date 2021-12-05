@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/ControlUI/BoxUI.gd" type="Script" id=3]
+[ext_resource path="res://Texture/Data/boxs/Icon45.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 2
+outline_color = Color( 0.388235, 0.196078, 0.854902, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 64.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "冒险队的百宝箱"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -171.5
+margin_right = 672.0
+margin_bottom = -71.5
+mouse_filter = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_left = 622.0
+margin_right = 722.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/focus = SubResource( 3 )
+icon = ExtResource( 4 )
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Button"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = -5.0
+margin_right = 56.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 2 )
+text = "经验收集杯"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
