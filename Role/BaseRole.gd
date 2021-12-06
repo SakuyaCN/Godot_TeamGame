@@ -65,6 +65,13 @@ func set_role(_role_data):
 	load_asset()
 	ui.initRole()
 
+func setOnlineData(_role_data,_hero_attr):
+	role_data = _role_data
+	hero_attr = HeroAttrBean.new()
+	hero_attr.toBean(_hero_attr)
+	load_asset()
+	ui.initRole()
+
 #重载角色属性
 func reloadRoleAttr(_rid):
 	if !fight_script.is_in_atk && role_data.rid == _rid:

@@ -168,6 +168,7 @@ func _on_Button_pressed():
 			"save_id":id+ str(randi()%100000),
 			"map_index":0,
 			"map_index_max":0,
+			"seal_return_lv":0,
 			"map":{
 				"0":{"max_map": 0,"now_map": 0},
 				"1":{"max_map": 0,"now_map": 0},

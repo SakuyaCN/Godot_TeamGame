@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://Texture/bg_2.png" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=5]
 [ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=6]
+[ext_resource path="res://Texture/hud/Check element.png" type="Texture" id=7]
+[ext_resource path="res://Texture/hud/Check box.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=8]
 size = 24
@@ -36,7 +38,15 @@ region_rect = Rect2( 0, 0, 133, 34 )
 margin_bottom = 2.45886
 
 [sub_resource type="DynamicFont" id=9]
+size = 18
 font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+outline_size = 2
+outline_color = Color( 0.447059, 0.419608, 0.419608, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "show"
@@ -184,7 +194,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 165.0
 margin_top = -112.5
-margin_right = 402.0
+margin_right = 431.0
 margin_bottom = 36.5
 rect_pivot_offset = Vector2( -357.919, -71.9322 )
 mouse_filter = 0
@@ -202,10 +212,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -99.0
-margin_top = -54.0
-margin_right = 99.0
-margin_bottom = 54.0
+margin_left = -109.0
+margin_top = -53.5
+margin_right = 81.0
+margin_bottom = 54.5
 custom_colors/default_color = Color( 0.278431, 0.505882, 0.509804, 1 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
@@ -246,13 +256,44 @@ __meta__ = {
 
 [node name="Label3" type="Label" parent="Item2"]
 anchor_right = 1.0
-margin_top = 232.0
+margin_top = 242.0
 margin_bottom = 272.0
 custom_fonts/font = SubResource( 9 )
-text = "双击擦除后会将装备
-所有刻印属性移除！"
+text = "双击擦除勾选中的刻印"
 align = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_c" type="CheckBox" parent="Item2"]
+margin_left = 220.0
+margin_top = 14.0
+margin_right = 244.0
+margin_bottom = 39.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 10 )
+custom_icons/checked = ExtResource( 7 )
+custom_icons/unchecked = ExtResource( 8 )
+custom_styles/focus = SubResource( 11 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_c2" type="CheckBox" parent="Item2"]
+margin_left = 220.0
+margin_top = 41.1305
+margin_right = 244.0
+margin_bottom = 66.1305
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 10 )
+custom_icons/checked = ExtResource( 7 )
+custom_icons/unchecked = ExtResource( 8 )
+custom_styles/focus = SubResource( 11 )
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -300,3 +341,5 @@ anims/show = SubResource( 1 )
 [connection signal="pressed" from="Item/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Item/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Item2/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Item2/equ_c" to="." method="_on_check_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="Item2/equ_c2" to="." method="_on_check_pressed" binds= [ 1 ]]

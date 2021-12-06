@@ -10,6 +10,7 @@ onready var ui = $Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	set_process(false)
 	ConstantsValue.ui_layer = self
 	$ItemShow.get_v_scrollbar().set("custom_styles/scroll",StyleBoxTexture.new())
 	msg.hide()
@@ -63,3 +64,30 @@ func getNewItem(_name,img,q = ""):
 	var ins = get_new_item.instance()
 	ins.setData(_name,img,q)
 	$ItemShow/VBoxContainer.add_child_below_node($ItemShow/VBoxContainer/Label,ins)
+
+#=================================
+
+var item_count = 0
+var new_count = 0
+var loader:ResourceInteractiveLoader
+
+func change_scene(res):
+	$GameProgress.visible = true
+	loader =  ResourceLoader.load_interactive(res)
+	item_count = loader.get_stage_count()
+	set_process(true)
+	#$GameProgress/pg.text = str(pg) +"%"
+
+func _process(time):
+	new_count = loader.get_stage()
+	loader.poll()
+	
+	$GameProgress/pg.text = str(new_count % item_count)
+	
+	if loader.get_resource():
+		set_process(false)
+		ConstantsValue.online_data = get_parent().gameMain.player_array[0].role_data
+		ConstantsValue.online_attr = HeroAttrUtils.reloadHeroAttr(null,get_parent().gameMain.player_array[0].role_data)
+		loader.get_resource()
+		$GameProgress.visible = false
+		get_tree().change_scene_to(loader.get_resource())

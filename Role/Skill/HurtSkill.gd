@@ -6,6 +6,11 @@ var skillbean:SkillHurtBean
 var role#技能接收者
 var who#技能施加者
 
+func _ready():
+	set_process(false)
+	set_physics_process(false)
+	pass
+
 func _create(_role,_who,_skillbean):
 	skillbean = _skillbean
 	role = _role

@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://UI/ControlUI/BoxItem/SealBox.gd" type="Script" id=1]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=3]
+[ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_top = 4
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 133, 34 )
+margin_bottom = 2.45886
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 299.0
+rect_pivot_offset = Vector2( -808, -275 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exp" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -672.0
+margin_right = 672.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 1 )
+text = "当前刻印收集杯返还率：10%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exp2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -672.0
+margin_top = 60.0
+margin_right = 672.0
+margin_bottom = 113.0
+custom_fonts/font = SubResource( 2 )
+text = "每当玩家在炼金台中使用刻印碎片兑换刻印时会返还刻印碎片到背包中"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gold" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -672.0
+margin_top = 260.0
+margin_right = 672.0
+margin_bottom = 313.0
+custom_fonts/font = SubResource( 2 )
+text = "需要金币*100"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -115.0
+margin_top = -174.0
+margin_right = 115.0
+margin_bottom = -72.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "升级刻印杯"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

@@ -3,6 +3,7 @@
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=1]
+size = 18
 extra_spacing_char = 2
 font_data = ExtResource( 1 )
 

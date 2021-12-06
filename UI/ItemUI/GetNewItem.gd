@@ -10,4 +10,4 @@ func setData(_name,image,q):
 func _on_Timer_timeout():
 	$AnimationPlayer.play_backwards("show")
 	yield($AnimationPlayer,"animation_finished")
-	queue_free()
+	get_tree().queue_delete(self)

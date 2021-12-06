@@ -7,6 +7,8 @@ onready var setting_view = preload("res://UI/Setting.tscn")
 onready var day_gif = preload("res://UI/GoodsDialog/DayGif.tscn")
 onready var box_ui = preload("res://UI/ControlUI/BoxUI.tscn")
 
+onready var build_ui = preload("res://UI/ControlUI/BuildUI.tscn")
+
 func _ready():
 	visible = false
 	#setTitle(StorageData.storage_data["player_state"]["now_map"]+1)
@@ -28,8 +30,7 @@ func _on_party_pressed():
 		get_parent().party_ui.partyChange(true)
 
 func _on_build_pressed():
-	if !get_parent().build_ui.visible:
-		get_parent().build_ui.buildChange(true)
+	get_parent().add_child(build_ui.instance())
 
 func setTitle(_lv):
 	$title/Label.text = "当前关卡：%s" %_lv
@@ -46,3 +47,7 @@ func _on_sign_pressed():
 #百宝箱
 func _on_box_pressed():
 	get_parent().add_child(box_ui.instance())
+
+#云端山脉
+func _on_map2_pressed():
+	ConstantsValue.ui_layer.change_scene("res://UI/Game2/GameLobby.tscn")

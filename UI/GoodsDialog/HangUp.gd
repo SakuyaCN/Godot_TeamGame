@@ -11,6 +11,8 @@ func hangUp(_player_array,ts):
 	var goods_array = []
 	var _exp = (1 + (player_map / 10.0) + (map_index * 60)) * win_goods.other.exp + (60 *  (map_index * map_index) * 1.5)
 	_exp *= (ts / 20)
+	var _gold = (ts / 15)
+	StorageData.get_player_state()["gold"] += _gold
 	for item in win_goods.goods:
 		var gnum = (item[1] as int+randi() % item[2] as int) * 0.6
 		gnum += gnum * (1 + map_index)
@@ -26,6 +28,7 @@ func hangUp(_player_array,ts):
 		for _role in _player_array:
 			_role.addExp(_exp as int)
 	$win/exp.text = "累计获得经验：%s\n（如有加成以实际为准）" %_exp as int
+	$win/exp.text += "\n累计获得金币：%s\n（如有加成以实际为准）" %_gold as int
 	$win/Label2.text = "累计离线时间：%s"%Utils.get_time_string(ts)
 	
 

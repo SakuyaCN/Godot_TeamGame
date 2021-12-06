@@ -14,6 +14,13 @@ var static_goods = {} #获取签到物品
 var chat_array = []
 signal on_chat_message(data)
 
+var _is_start = false
+
+#=========网络部分==========
+var online_data
+var online_attr
+#==========================
+
 onready var seal_box = preload("res://UI/ControlUI/SealBox.tscn")
 onready var attr_box = preload("res://UI/ControlUI/OhterAttr.tscn")
 

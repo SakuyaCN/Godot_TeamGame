@@ -1,0 +1,195 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://UI/Game2/GameLobby.gd" type="Script" id=1]
+[ext_resource path="res://Texture/background/sky_lightened.png" type="Texture" id=2]
+[ext_resource path="res://Texture/background/clouds_bg.png" type="Texture" id=3]
+[ext_resource path="res://Texture/background/glacial_mountains_lightened.png" type="Texture" id=4]
+[ext_resource path="res://Texture/background/clouds_mg_2.png" type="Texture" id=5]
+[ext_resource path="res://Texture/background/clouds_mg_3.png" type="Texture" id=6]
+[ext_resource path="res://Texture/background/cloud_lonely.png" type="Texture" id=7]
+[ext_resource path="res://Texture/background/clouds_mg_1_lightened.png" type="Texture" id=8]
+[ext_resource path="res://Texture/background/6.png" type="Texture" id=9]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=11]
+[ext_resource path="res://UI/Game2/CanvasLayer.gd" type="Script" id=12]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03.png" type="Texture" id=13]
+[ext_resource path="res://UI/Game2/Main/Main.gd" type="Script" id=14]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 678.586, 25.984 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 2
+outline_color = Color( 0.466667, 0.462745, 0.462745, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 10 )
+
+[node name="GameLobby" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="PxBg" type="Node2D" parent="."]
+
+[node name="pb1" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb1"]
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="PxBg/pb1/ParallaxLayer"]
+position = Vector2( 551.521, 308.586 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="pb2" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb2"]
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="PxBg/pb2/ParallaxLayer"]
+position = Vector2( 551.521, 308.586 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="pb3" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb3"]
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="PxBg/pb3/ParallaxLayer"]
+position = Vector2( 551.521, 308.586 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="pb4" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb4"]
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="PxBg/pb4/ParallaxLayer"]
+position = Vector2( 551.521, 308.586 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="pb5" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb5"]
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="PxBg/pb5/ParallaxLayer"]
+position = Vector2( 551.521, 308.586 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="pb6" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb6"]
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="PxBg/pb6/ParallaxLayer"]
+position = Vector2( 551.521, 308.586 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="pb7" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb7"]
+motion_mirroring = Vector2( 1152, 0 )
+
+[node name="Sprite" type="Sprite" parent="PxBg/pb7/ParallaxLayer"]
+position = Vector2( 551.521, 308.586 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+
+[node name="pb8" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb8"]
+motion_mirroring = Vector2( 960, 0 )
+
+[node name="Sprite" type="Sprite" parent="PxBg/pb8/ParallaxLayer"]
+position = Vector2( 479.521, 356.586 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="Main" type="Node2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Main"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Main/StaticBody2D"]
+position = Vector2( 674.309, 598.225 )
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="Main"]
+position = Vector2( 240, 208 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 12 )
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+margin_left = 20.3636
+margin_top = 16.5227
+margin_right = 102.364
+margin_bottom = 95.5227
+icon = ExtResource( 13 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Button"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -44.0
+margin_top = -32.0
+margin_right = 44.0
+margin_bottom = -8.0
+custom_fonts/font = SubResource( 3 )
+text = "返回密林"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameProgress" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = ExtResource( 11 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -234.3, 96.1154 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/GameProgress"]
+anchor_right = 1.0
+margin_top = 176.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 1 )
+text = "正在加载地图中..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pg" type="Label" parent="CanvasLayer/GameProgress"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -12.0
+margin_right = 672.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 1 )
+text = "0%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_Button_pressed"]

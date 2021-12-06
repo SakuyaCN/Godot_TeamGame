@@ -17,8 +17,8 @@ func _ready():
 	$ScrollContainer.get_h_scrollbar().set("custom_styles/scroll",StyleBoxTexture.new())
 	$NinePatchRect/ScrollContainer.get_v_scrollbar().set("custom_styles/scroll",StyleBoxTexture.new())
 	buildData = LocalData.build_data
-	visible = false
 	loadBuildData()
+	buildChange(true)
 
 #加载一级分类数据
 func loadBuildData():
@@ -113,7 +113,7 @@ func buildChange(change):
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		buildChange(false)
+		get_tree().queue_delete(self)
 
 func get_context_label(type,data):
 	left_type = type
@@ -150,7 +150,6 @@ func _on_Button_pressed():
 	if !Utils.is_lv_ok(choose_data.lv):
 		ConstantsValue.showMessage("至少需要一名冒险者达到%s级才可以制作"%choose_data.lv,2)
 		return
-	#print(StorageData.UseGoodsNum(choose_data.need))
 	var need = choose_data.need.duplicate(true)
 	if left_type == "材料":
 		for item in need:
@@ -162,6 +161,11 @@ func _on_Button_pressed():
 			"材料":
 				StorageData.AddGoodsNum([[choose_data.name,1 * build_num]])
 			"刻印":
+				if StorageData.get_player_state().has("seal_return_lv"):
+					var num = (StorageData.get_player_state()["seal_return_lv"] * 5) / 100.0
+					var seal_num = (need[0][1] * num) as int
+					if seal_num > 0:
+						StorageData.AddGoodsNum([[need[0][0],seal_num]])
 				StorageData.AddSeal(choose_data)
 			"技能书":
 				StorageData.AddSkill(choose_data)

@@ -3,7 +3,8 @@ extends Control
 onready var parent = get_parent()
 
 func _ready():
-	visible = true
+	if !ConstantsValue._is_start:
+		visible = true
 
 func _on_Button2_pressed():
 	get_tree().quit(0)

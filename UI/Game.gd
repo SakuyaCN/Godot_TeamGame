@@ -22,8 +22,11 @@ func _ready():
 	http.connect("http_res",self,"http_res")
 	#isNewUser()
 	randomize()
+	if ConstantsValue._is_start:
+		start_game()
 
 func start_game():
+	ConstantsValue._is_start = true
 	$UILayer/chat.visible = true
 	ConstantsValue.connect("on_chat_message",self,"_on_chat_message")
 	$Chat.connet_server()
@@ -32,6 +35,8 @@ func start_game():
 	UiCotrol.main_ui.showui()
 	game_main.go_position()
 	ConstantsValue.showMessage("点击人物可以展示属性面板",3)
+	if !StorageData.get_player_state().has("seal_return_lv"):
+		StorageData.get_player_state().seal_return_lv = 0
 	#StorageData.AddGoodsNum([["招募令碎片",10],["神秘之石",10000],["暗蓝星矿",10000],["青岚铁矿",10000],["秘银矿石",10000],["绿色陨铁",10000]])
 
 func isPlayMusic():
@@ -61,6 +66,3 @@ func _on_chat_message(_data):
 	$UILayer/chat/Timer.stop()
 	$UILayer/chat/Timer.start()
 	$UILayer/chat.bbcode_text += "%s： %s\n" %[_data.nickname,_data.msg]
-
-func _on_Button_pressed():
-	get_tree().change_scene("res://UI/Game2/Game2.tscn")

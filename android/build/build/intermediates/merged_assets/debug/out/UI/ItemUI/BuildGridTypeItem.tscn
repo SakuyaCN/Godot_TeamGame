@@ -4,6 +4,7 @@
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=5]
+size = 18
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxTexture" id=1]

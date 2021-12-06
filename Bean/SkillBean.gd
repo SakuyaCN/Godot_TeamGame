@@ -22,6 +22,9 @@ var enemy_array = [] #敌人队伍
 var timer = Timer.new()
 
 func _ready():
+	set_process(false)
+	set_physics_process(false)
+	pass
 	timer.one_shot = false
 	timer.connect("timeout",self,"_onTimeOut")
 	add_child(timer)

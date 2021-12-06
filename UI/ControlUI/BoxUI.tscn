@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://UI/ControlUI/BoxUI.gd" type="Script" id=3]
 [ext_resource path="res://Texture/Data/boxs/Icon45.png" type="Texture" id=4]
+[ext_resource path="res://Texture/Data/boxs/Icon44.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -55,14 +56,15 @@ margin_top = -171.5
 margin_right = 672.0
 margin_bottom = -71.5
 mouse_filter = 2
+custom_constants/separation = 32
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="HBoxContainer"]
-margin_left = 622.0
-margin_right = 722.0
+margin_left = 556.0
+margin_right = 656.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 custom_styles/focus = SubResource( 3 )
@@ -87,5 +89,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 688.0
+margin_right = 788.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+custom_styles/focus = SubResource( 3 )
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="HBoxContainer/Button2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -56.0
+margin_top = -5.0
+margin_right = 56.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 2 )
+text = "刻印收集杯"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChildUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]

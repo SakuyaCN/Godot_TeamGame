@@ -149,13 +149,16 @@ outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 16.5, 86.4365 )
+extents = Vector2( 36.1134, 59.7408 )
 
 [node name="BaseRole" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="FightScript" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="FightScript"]
+wait_time = 0.2
 
 [node name="SkillScript" type="Node" parent="."]
 
@@ -167,6 +170,7 @@ position = Vector2( -16, -62 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
+frame = 2
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
@@ -177,7 +181,7 @@ animation = "hit"
 playing = true
 
 [node name="ShotLine" type="Position2D" parent="."]
-position = Vector2( -48, -80 )
+position = Vector2( -48, -79 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/choose = SubResource( 8 )
@@ -569,13 +573,14 @@ __meta__ = {
 
 [node name="Test" type="Node" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="KinematicBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -0.5, -89.0357 )
+position = Vector2( 1.57166, -62.34 )
 shape = SubResource( 13 )
 
 [connection signal="tree_exited" from="." to="." method="_on_BaseRole_tree_exited"]
+[connection signal="timeout" from="FightScript/Timer" to="FightScript" method="_on_Timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_frame_changed"]
 [connection signal="animation_finished" from="Effects" to="." method="_on_Effects_animation_finished"]

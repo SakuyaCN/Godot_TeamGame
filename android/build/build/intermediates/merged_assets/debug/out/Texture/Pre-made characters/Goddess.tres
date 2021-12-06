@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=35 format=2]
+[gd_resource type="SpriteFrames" load_steps=42 format=2]
 
 [ext_resource path="res://Texture/Pre-made characters/wm/Adventurer-59x59px.png" type="Texture" id=1]
 
@@ -134,6 +134,34 @@ region = Rect2( 295, 59, 59, 59 )
 atlas = ExtResource( 1 )
 region = Rect2( 354, 59, 59, 59 )
 
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 354, 59, 59 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 1 )
+region = Rect2( 59, 354, 59, 59 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 1 )
+region = Rect2( 118, 354, 59, 59 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 1 )
+region = Rect2( 177, 354, 59, 59 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 1 )
+region = Rect2( 236, 354, 59, 59 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 1 )
+region = Rect2( 295, 354, 59, 59 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 1 )
+region = Rect2( 354, 354, 59, 59 )
+
 [resource]
 animations = [ {
 "frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
@@ -165,4 +193,9 @@ animations = [ {
 "loop": true,
 "name": "Run",
 "speed": 6.0
+}, {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
 } ]

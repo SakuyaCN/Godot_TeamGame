@@ -2,6 +2,9 @@ extends Node
 
 export var code = 1
 
+var crypto = Crypto.new()
+var key = CryptoKey.new()
+var cert = X509Certificate.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#check_update()

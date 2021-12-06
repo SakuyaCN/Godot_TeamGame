@@ -216,3 +216,37 @@ func updateNum(attr,num,is_emit = true,is_buff = false):
 			_parant_node.call_deferred("reloadHpBar")
 	if is_emit:
 		emit_signal("onAttrChange",attr,num)
+
+func toBean(dict):
+	max_hp = dict.max_hp
+	hp = dict.hp
+	atk = dict.atk
+	mtk = dict.mtk
+	def = dict.def
+	mdef = dict.mdef
+	speed = dict.speed
+	crit = dict.crit
+	fire = dict.fire
+	wind = dict.wind
+	ice = dict.ice
+	posion = dict.posion
+	uncrit = dict.uncrit
+	mp = dict.mp
+	hold = dict.hold
+	hole_num = dict.hole_num
+	dodge = dict.dodge
+	hole_pass = dict.hole_pass
+	mtk_pass = dict.mtk_pass
+	atk_pass = dict.atk_pass
+	atk_blood = dict.atk_blood
+	mtk_blood = dict.mtk_blood
+	atk_buff = dict.atk_buff
+	mtk_buff = dict.mtk_buff
+	hp_buff = dict.hp_buff
+	true_hurt = dict.true_hurt
+	hurt_buff = dict.hurt_buff
+	crit_buff = dict.crit_buff
+	shield = dict.shield
+	exp_buff= dict.exp_buff
+	reflex= dict.reflex
+	skill_crit= dict.skill_crit

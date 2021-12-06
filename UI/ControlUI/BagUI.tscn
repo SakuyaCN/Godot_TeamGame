@@ -9,11 +9,9 @@
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=19]
-size = 14
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=20]
-size = 14
 extra_spacing_bottom = 6
 extra_spacing_char = 2
 font_data = ExtResource( 2 )

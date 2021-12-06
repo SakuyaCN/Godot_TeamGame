@@ -18,7 +18,6 @@ extra_spacing_char = 2
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=9]
-size = 15
 extra_spacing_top = 2
 font_data = ExtResource( 4 )
 

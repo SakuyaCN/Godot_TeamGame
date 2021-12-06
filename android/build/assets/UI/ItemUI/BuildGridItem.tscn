@@ -13,7 +13,7 @@
 [sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="DynamicFont" id=5]
-size = 12
+size = 13
 outline_size = 2
 outline_color = Color( 0.431373, 0.427451, 0.427451, 1 )
 font_data = ExtResource( 2 )
@@ -48,11 +48,11 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -34.0
-margin_top = -28.0
+margin_top = -49.0
 margin_right = 34.0
 custom_fonts/font = SubResource( 5 )
 align = 1
-valign = 1
+valign = 2
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

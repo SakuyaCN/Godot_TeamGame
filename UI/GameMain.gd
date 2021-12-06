@@ -315,7 +315,7 @@ func changeMap():
 func moster_clear():
 	for ms in moster_array:
 		if ms != null && ms:
-			ms.queue_free()
+			get_tree().queue_delete(ms)
 	if $PositionMoster/PositionM1.get_children().size() > 0:
 		$PositionMoster/PositionM1.get_children().clear()
 	if $PositionMoster/PositionM2.get_children().size() > 0:
@@ -327,7 +327,7 @@ func moster_clear():
 func player_clear():
 	for ms in player_array:
 		if ms != null:
-			ms.queue_free()
+			get_tree().queue_delete(ms)
 	if $Position/PositionP1.get_children().size() > 0:
 		$Position/PositionP1.get_children().clear()
 	if $Position/PositionP2.get_children().size() > 0:

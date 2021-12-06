@@ -7,6 +7,7 @@ var equ_data
 var discard_count = 0
 var choose_id = null
 var choose_seal = null
+var check_array = []
 
 signal seal_choose()
 
@@ -28,6 +29,8 @@ func showBox(_equ_data = null):
 		$Label.text = "你还没有任何一个刻印"
 
 func loadEquSeal():
+	$Item2/equ_c.pressed = false
+	$Item2/equ_c2.pressed = false
 	$Item2/RichTextLabel.clear()
 	if equ_data != null && equ_data.keys().has("seal"):
 		for attr in equ_data.seal:
@@ -62,7 +65,7 @@ func item_pressed(_id,_data):
 
 func _on_ColorRect_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		queue_free()
+		get_tree().queue_delete(self)
 
 #丢弃刻印
 func _on_Button2_pressed():
@@ -102,10 +105,15 @@ func _on_Button_pressed():
 
 #移除刻印
 func _on_Button3_pressed():
+	if check_array.size() == 0:
+		ConstantsValue.showMessage("请至少选中一条刻印擦除！",2)
+		return
 	discard_count += 1
 	if discard_count == 2:
 		if equ_data != null:
-			equ_data.seal = []
+			for index in check_array:
+				if equ_data.seal.size() > index:
+					equ_data.seal.remove(index)
 			StorageData._save_storage()
 			ConstantsValue.showMessage("已将装备刻印属性擦除",1)
 			emit_signal("seal_choose")
@@ -114,3 +122,10 @@ func _on_Button3_pressed():
 		ConstantsValue.showMessage("再点一次确认擦除刻印",1)
 	yield(get_tree().create_timer(1),"timeout")
 	discard_count = 0
+
+
+func _on_check_pressed(extra_arg_0):
+	if check_array.has(extra_arg_0):
+		check_array.remove(extra_arg_0)
+	else:
+		check_array.append(extra_arg_0)

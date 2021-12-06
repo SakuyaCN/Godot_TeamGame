@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://UI/ControlUI/BagUI.tscn" type="PackedScene" id=18]
 [ext_resource path="res://UI/ControlUI/MapUi.tscn" type="PackedScene" id=19]
 [ext_resource path="res://UI/ControlUI/PartyUI.tscn" type="PackedScene" id=22]
-[ext_resource path="res://UI/ControlUI/BuildUI.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=30]
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=36]
 
@@ -306,7 +305,7 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 5
+frame = 4
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -638,9 +637,6 @@ visible = false
 visible = false
 
 [node name="PartyUI" parent="." instance=ExtResource( 22 )]
-visible = false
-
-[node name="BuildUI" parent="." instance=ExtResource( 29 )]
 visible = false
 
 [node name="temp_skill_icon" type="TextureRect" parent="."]

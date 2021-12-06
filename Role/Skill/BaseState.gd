@@ -10,6 +10,11 @@ var hero_attr:HeroAttrBean#获得状态角色的属性
 
 var last_time = 0#倒计时
 
+func _ready():
+	set_process(false)
+	set_physics_process(false)
+	pass
+
 func _create(_role,_who,_bean):
 	timer = Timer.new()
 	timer.wait_time = 1
