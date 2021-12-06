@@ -26,7 +26,8 @@ func hangUp(_player_array,ts):
 		$win/GridContainer.add_child(ins)
 	if win_goods.other.has("exp"):
 		for _role in _player_array:
-			_role.addExp(_exp as int)
+			if _role != null:
+				_role.addExp(_exp as int)
 	$win/exp.text = "累计获得经验：%s\n（如有加成以实际为准）" %_exp as int
 	$win/exp.text += "\n累计获得金币：%s\n（如有加成以实际为准）" %_gold as int
 	$win/Label2.text = "累计离线时间：%s"%Utils.get_time_string(ts)

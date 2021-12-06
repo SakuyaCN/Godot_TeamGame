@@ -5,10 +5,7 @@ var file_path = "user://settings.cfg"
 
 func _ready():
 	var err = config.load(file_path)
-	if err != OK:
-		firstLoad()
-	else:
-		firstLoad()
+	firstLoad()
 	ConstantsValue.configSet()
 
 func firstLoad():
@@ -22,6 +19,8 @@ func firstLoad():
 		config.set_value("setting", "audio", true)
 	if not config.has_section_key("fight", "array_num"):
 		config.set_value("fight", "array_num", 0)
+	if not config.has_section_key("system", "version"):
+		config.set_value("system", "version", 0)
 	config.save(file_path)
 
 func getNumberSetting(colum,value):

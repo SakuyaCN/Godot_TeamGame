@@ -1,248 +1,248 @@
 -- Merging decision tree log ---
 meta-data#org.godotengine.editor.version
-INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:34:9-36:53
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:34:9-36:53
 	android:value
-		INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml
 manifest
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:2:1-75:12
-INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:2:1-75:12
-INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:2:1-75:12
-INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:2:1-75:12
-MERGED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:2:1-75:12
-MERGED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:2:1-26:12
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\34776\.gradle\caches\transforms-3\3dc028d946a4c1298d1f908800236ba5\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\63a123ecf224c086186dfc863e6486b1\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\61463e4162b3beaa20edea3570462e8f\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.activity:activity:1.2.4] C:\Users\34776\.gradle\caches\transforms-3\e56c3dfd5a859714daa88d5dd65ddcd9\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\10b3cc0be23f83ffa39daccd67909caf\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\0d558c61306a2e7bbba84eee4f1d19f2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\8d945d86d358a801fb53b1bb24171eda\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\7f1ef727a0734c978b92bef0e889e9e9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\104e3803f61fce6c58c36478c51b179f\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\04ab4d83143c590e978e06b0b67157ec\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\34776\.gradle\caches\transforms-3\2a6920bd48306db8919ea5a3014b45e6\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\a014d411094aa2ba92d687f5c6fff184\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\34776\.gradle\caches\transforms-3\614d0f46931fd8cb0dfae9cbf1055ba0\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\780b23ac0107a53910baedbe87dfe02e\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-32:12
-INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-32:12
-INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:2:1-32:12
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:2:1-75:12
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:2:1-75:12
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:2:1-75:12
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:2:1-75:12
+MERGED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:2:1-75:12
+MERGED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:2:1-26:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Sakuya\.gradle\caches\transforms-3\3dc028d946a4c1298d1f908800236ba5\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\63a123ecf224c086186dfc863e6486b1\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\61463e4162b3beaa20edea3570462e8f\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\Sakuya\.gradle\caches\transforms-3\e56c3dfd5a859714daa88d5dd65ddcd9\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\10b3cc0be23f83ffa39daccd67909caf\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.2.0] C:\Users\Sakuya\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\0d558c61306a2e7bbba84eee4f1d19f2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\8d945d86d358a801fb53b1bb24171eda\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\7f1ef727a0734c978b92bef0e889e9e9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\104e3803f61fce6c58c36478c51b179f\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\04ab4d83143c590e978e06b0b67157ec\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\2a6920bd48306db8919ea5a3014b45e6\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\a014d411094aa2ba92d687f5c6fff184\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\614d0f46931fd8cb0dfae9cbf1055ba0\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\780b23ac0107a53910baedbe87dfe02e\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:2:1-32:12
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:2:1-32:12
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:2:1-32:12
 	package
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:4:5-29
-		INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:4:5-29
-		INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:4:5-29
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:4:5-29
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml
 	android:versionName
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:6:5-30
-		INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:6:5-30
-		INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:6:5-30
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:6:5-30
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:3:5-51
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:3:5-51
 	xmlns:android
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:2:11-69
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:5:5-28
-		INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:5:5-28
-		INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:5:5-28
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:5:5-28
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml
 	android:installLocation
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:7:5-35
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:7:5-35
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:7:5-35
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:7:5-35
 supports-screens
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:12:5-16:40
-REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:12:5-16:40
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:12:5-16:40
+REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:12:5-16:40
 	tools:node
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:5:9-29
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:5:9-29
 	android:largeScreens
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:15:9-36
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:15:9-36
 	android:smallScreens
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:13:9-36
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:13:9-36
 	android:normalScreens
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:14:9-37
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:14:9-37
 	android:xlargeScreens
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:16:9-37
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:16:9-37
 uses-feature#0x00020000
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:19:5-21:35
-REJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:19:5-21:35
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:19:5-21:35
+REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:19:5-21:35
 	android:glEsVersion
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:20:9-41
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:20:9-41
 	android:required
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:21:9-32
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:21:9-32
 application
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:5-73:19
-MERGED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:5-73:19
-MERGED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:5-73:19
-MERGED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:16:5-24:19
-MERGED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:16:5-24:19
-MERGED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:5-73:19
+MERGED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:5-73:19
+MERGED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:5-73:19
+MERGED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:16:5-24:19
+MERGED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:16:5-24:19
+MERGED from [androidx.core:core:1.2.0] C:\Users\Sakuya\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.2.0] C:\Users\Sakuya\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:requestLegacyExternalStorage
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:178-222
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:178-222
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:178-222
+		REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:178-222
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.2.0] C:\Users\Sakuya\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:43-92
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:43-92
 	tools:ignore
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:223-262
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:223-262
 	android:largeHeap
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:18-42
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:18-42
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:18-42
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:18-42
 	android:icon
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:263-290
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:263-290
 	android:allowBackup
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:93-120
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:93-120
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:93-120
+		REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:93-120
 	tools:replace
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:23:9-123
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:23:9-123
 	android:isGame
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:121-142
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:121-142
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:121-142
+		REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:121-142
 	android:hasFragileUserData
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:143-177
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:143-177
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:143-177
+		REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:31:143-177
 meta-data#xr_mode_metadata_name
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:42:9-44:54
-REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:42:9-44:54
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:42:9-44:54
+REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:42:9-44:54
 	tools:node
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:27:20-39
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:27:20-39
 	android:value
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:44:13-51
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:44:13-51
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:43:13-49
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:43:13-49
 activity#com.godot.game.GodotApp
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:46:9-67:20
-MERGED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:46:9-67:20
-MERGED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:46:9-67:20
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:46:9-67:20
+MERGED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:46:9-67:20
+MERGED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:46:9-67:20
 	android:screenOrientation
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:51:13-50
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:51:13-50
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:51:13-50
+		REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:51:13-50
 	android:label
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:48:13-62
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:48:13-62
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:48:13-62
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:48:13-62
 	android:launchMode
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:50:13-44
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:50:13-44
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:50:13-44
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:50:13-44
 	android:resizeableActivity
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:53:13-47
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:53:13-47
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:53:13-47
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:53:13-47
 	tools:ignore
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:54:13-43
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:54:13-43
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:54:13-43
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:54:13-43
 	android:configChanges
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:52:13-141
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:52:13-141
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:52:13-141
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:52:13-141
 	android:theme
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:49:13-55
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:49:13-55
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:49:13-55
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:49:13-55
 	tools:replace
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:28:58-99
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:28:58-99
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:47:13-37
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:47:13-37
 meta-data#com.oculus.vr.focusaware
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:57:13-87
-REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:57:13-87
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:57:13-87
+REJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:57:13-87
 	tools:node
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:29:24-43
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:29:24-43
 	android:value
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:57:64-84
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:57:64-84
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:57:24-63
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:57:24-63
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:com.oculus.intent.category.VR
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:59:13-66:29
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:59:13-66:29
 action#android.intent.action.MAIN
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:60:17-69
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:60:17-69
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:60:25-66
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:60:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:61:17-77
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:61:17-77
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:61:27-74
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:61:27-74
 category#com.oculus.intent.category.VR
-ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:65:17-74
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:65:17-74
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:65:27-71
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml:65:27-71
 uses-sdk
-INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
-INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
-MERGED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:6:5-8:41
-MERGED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:6:5-8:41
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\34776\.gradle\caches\transforms-3\3dc028d946a4c1298d1f908800236ba5\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\34776\.gradle\caches\transforms-3\3dc028d946a4c1298d1f908800236ba5\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\63a123ecf224c086186dfc863e6486b1\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\63a123ecf224c086186dfc863e6486b1\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\61463e4162b3beaa20edea3570462e8f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\61463e4162b3beaa20edea3570462e8f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.activity:activity:1.2.4] C:\Users\34776\.gradle\caches\transforms-3\e56c3dfd5a859714daa88d5dd65ddcd9\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.2.4] C:\Users\34776\.gradle\caches\transforms-3\e56c3dfd5a859714daa88d5dd65ddcd9\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\10b3cc0be23f83ffa39daccd67909caf\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.customview:customview:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\10b3cc0be23f83ffa39daccd67909caf\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\0d558c61306a2e7bbba84eee4f1d19f2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\0d558c61306a2e7bbba84eee4f1d19f2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\8d945d86d358a801fb53b1bb24171eda\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\8d945d86d358a801fb53b1bb24171eda\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\7f1ef727a0734c978b92bef0e889e9e9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\7f1ef727a0734c978b92bef0e889e9e9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\104e3803f61fce6c58c36478c51b179f\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\104e3803f61fce6c58c36478c51b179f\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\04ab4d83143c590e978e06b0b67157ec\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\04ab4d83143c590e978e06b0b67157ec\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\34776\.gradle\caches\transforms-3\2a6920bd48306db8919ea5a3014b45e6\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\34776\.gradle\caches\transforms-3\2a6920bd48306db8919ea5a3014b45e6\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\a014d411094aa2ba92d687f5c6fff184\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\34776\.gradle\caches\transforms-3\a014d411094aa2ba92d687f5c6fff184\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\34776\.gradle\caches\transforms-3\614d0f46931fd8cb0dfae9cbf1055ba0\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\34776\.gradle\caches\transforms-3\614d0f46931fd8cb0dfae9cbf1055ba0\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\780b23ac0107a53910baedbe87dfe02e\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\34776\.gradle\caches\transforms-3\780b23ac0107a53910baedbe87dfe02e\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
-INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
-INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml
+MERGED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:6:5-8:41
+MERGED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Sakuya\.gradle\caches\transforms-3\3dc028d946a4c1298d1f908800236ba5\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Sakuya\.gradle\caches\transforms-3\3dc028d946a4c1298d1f908800236ba5\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\63a123ecf224c086186dfc863e6486b1\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\63a123ecf224c086186dfc863e6486b1\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\61463e4162b3beaa20edea3570462e8f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\61463e4162b3beaa20edea3570462e8f\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\Sakuya\.gradle\caches\transforms-3\e56c3dfd5a859714daa88d5dd65ddcd9\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] C:\Users\Sakuya\.gradle\caches\transforms-3\e56c3dfd5a859714daa88d5dd65ddcd9\transformed\jetified-activity-1.2.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\10b3cc0be23f83ffa39daccd67909caf\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\10b3cc0be23f83ffa39daccd67909caf\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.2.0] C:\Users\Sakuya\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.2.0] C:\Users\Sakuya\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\0d558c61306a2e7bbba84eee4f1d19f2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\0d558c61306a2e7bbba84eee4f1d19f2\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\8d945d86d358a801fb53b1bb24171eda\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\8d945d86d358a801fb53b1bb24171eda\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\7f1ef727a0734c978b92bef0e889e9e9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\7f1ef727a0734c978b92bef0e889e9e9\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\104e3803f61fce6c58c36478c51b179f\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\104e3803f61fce6c58c36478c51b179f\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\04ab4d83143c590e978e06b0b67157ec\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\04ab4d83143c590e978e06b0b67157ec\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\2a6920bd48306db8919ea5a3014b45e6\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\2a6920bd48306db8919ea5a3014b45e6\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\a014d411094aa2ba92d687f5c6fff184\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\Sakuya\.gradle\caches\transforms-3\a014d411094aa2ba92d687f5c6fff184\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\614d0f46931fd8cb0dfae9cbf1055ba0\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\Sakuya\.gradle\caches\transforms-3\614d0f46931fd8cb0dfae9cbf1055ba0\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\780b23ac0107a53910baedbe87dfe02e\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Sakuya\.gradle\caches\transforms-3\780b23ac0107a53910baedbe87dfe02e\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml
+INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
-		INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml
-		INJECTED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\AndroidManifest.xml
+		INJECTED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml
 uses-feature#0x00030000
-ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:5-78
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:10:5-78
 	android:glEsVersion
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:19-51
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:10:19-51
 	android:required
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:10:52-75
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:10:52-75
 uses-permission#android.permission.INTERNET
-ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:11:5-67
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:11:22-64
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:11:22-64
 instrumentation
-ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:12:5-17:49
-REJECTED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:10:5-14:57
+ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:12:5-17:49
+REJECTED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:10:5-14:57
 	tools:node
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:13:9-29
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:13:9-29
 	android:label
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:16:9-58
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:16:9-58
 	android:icon
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:15:9-36
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:15:9-36
 	android:targetPackage
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:17:9-46
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:17:9-46
 	android:name
-		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:14:9-45
+		ADDED from F:\Godot33\wh\Godot_TeamGame\android\build\src\debug\AndroidManifest.xml:14:9-45
 meta-data#org.godotengine.library.version
-ADDED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
+ADDED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
 	android:value
-		ADDED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-41
+		ADDED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-41
 	android:name
-		ADDED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-59
+		ADDED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-59
 service#org.godotengine.godot.GodotDownloaderService
-ADDED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:9-80
+ADDED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:9-80
 	android:name
-		ADDED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:18-77
+		ADDED from [godot-lib.debug.aar] C:\Users\Sakuya\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:18-77

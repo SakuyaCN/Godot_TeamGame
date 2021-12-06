@@ -61,8 +61,9 @@ func checkFightRole():
 	hero_sprite.frames.set_animation_speed("Atk",speed_temp + (hero_attr.speed / 120.0))
 	do_atk_array.clear()
 	for fight_role in fight_role_array:
-		if do_atk_array.size() < atk_count && fight_role.fight_script.is_alive:
-			do_atk_array.append(fight_role)
+		if fight_role != null:
+			if do_atk_array.size() < atk_count && fight_role.fight_script.is_alive:
+				do_atk_array.append(fight_role)
 
 #设置战斗对象列表
 func setFightRole(f_r):
@@ -250,7 +251,8 @@ func doAtk():
 		get_parent()._show_damage_label("丢失目标",Utils.HurtType.OTHER)
 		return
 	for role in do_atk_array:
-		role.fight_script.do_hurt(role_data,hero_attr,atk_mode,self)
+		if role != null:
+			role.fight_script.do_hurt(role_data,hero_attr,atk_mode,self)
 	emit_signal("onAtkOver")
 
 func reloadSpeed():

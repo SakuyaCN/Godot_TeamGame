@@ -204,6 +204,10 @@ func updateNum(attr,num,is_emit = true,is_buff = false):
 		"skill_crit":skill_crit += num
 	if dodge > 30:
 		dodge = 30
+	if mdef > 120:
+		mdef = 120
+	if def > 120:
+		def = 120
 	if is_buff && attr == "hp":
 		max_hp += num
 		if _parant_node != null:

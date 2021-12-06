@@ -151,6 +151,8 @@ func go_position():
 				new_hero.set_role(StorageData.team_data.get(StorageData.player_state["team_position"][pos]))
 				new_hero.run2position(role_position[pos])
 				yield(get_tree().create_timer(0.7),"timeout")
+		else:
+			player_array.append(null)
 
 func _on_Timer_timeout():
 	mapProgress()
@@ -206,8 +208,9 @@ func checkWin():
 		if moster.fight_script.is_alive:
 			is_player_win = false
 	for player in player_array:
-		if player.fight_script.is_alive:
-			is_moster_win = false
+		if player != null:
+			if player.fight_script.is_alive:
+				is_moster_win = false
 	if is_player_win:
 		is_flight = false
 		isBossFIght()
@@ -264,7 +267,8 @@ func winGoods():
 	if win_goods.other.has("exp"):
 		var _exp = (1 + (player_map / 10.0) + (map_index * 60)) * win_goods.other.exp + (60 *  (map_index * map_index) * 1.5)
 		for _role in player_array:
-			_role.addExp(_exp as int)
+			if _role != null:
+				_role.addExp(_exp as int)
 	if win_goods.has("more"):
 		if win_goods.more.has(str(map_index)):
 			if randf() <= win_goods.more[str(map_index)].dl / 100.0:
