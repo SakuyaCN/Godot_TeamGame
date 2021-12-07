@@ -117,7 +117,8 @@ _global_script_class_icons={
 [application]
 
 config/name="wh"
-run/main_scene="res://UI/Game.tscn"
+run/main_scene="res://UI/CheckUpdate.tscn"
+config/use_custom_user_dir=true
 config/icon="res://logo.png"
 config/windows_native_icon="res://bitbug_favicon.ico"
 config/quit_on_go_back=false

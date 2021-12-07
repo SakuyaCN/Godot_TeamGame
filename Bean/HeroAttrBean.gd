@@ -27,8 +27,8 @@ var hold:int #格挡率
 var hole_num:int#格挡数值
 var dodge:int #闪避
 var hole_pass:int #格挡穿透
-var mtk_pass:int #魔力穿透
-var atk_pass:int #物理穿透
+var mtk_pass:int#魔力穿透
+var atk_pass:int#物理穿透
 var atk_blood:int #物理吸血
 var mtk_blood:int #魔力吸血
 var atk_buff:int #攻击力提升比例

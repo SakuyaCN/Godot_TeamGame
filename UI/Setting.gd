@@ -78,7 +78,6 @@ func _on_Button3_pressed():
 	})
 	http.http_post("storage/download",query)
 
-
 func on_http_json(url,data):
 	if data.data.is_save as bool:
 		$ColorRect2/Label.text = "回档成功，请重启游戏"

@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI/ControlUI/BoxItem/AchBox.gd" type="Script" id=1]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_top = 4
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+extra_spacing_top = 4
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 299.0
+rect_pivot_offset = Vector2( -808, -275 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exp2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -672.0
+margin_top = -12.0
+margin_right = 672.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 2 )
+text = "点击成就名称可以领取丰厚的奖励"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -589.0
+margin_top = -12.0
+margin_right = -255.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 3 )
+text = "当前已累计获胜："
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -592.0
+margin_top = -284.0
+margin_right = 593.0
+margin_bottom = -24.0
+texture = ExtResource( 3 )
+patch_margin_left = 31
+patch_margin_top = 25
+patch_margin_right = 28
+patch_margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -567.0
+margin_top = -263.0
+margin_right = 567.0
+margin_bottom = -48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+custom_constants/hseparation = 30
+columns = 5

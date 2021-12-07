@@ -1,0 +1,319 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://Texture/3.png" type="Texture" id=2]
+[ext_resource path="res://Texture/1.png" type="Texture" id=3]
+[ext_resource path="res://Texture/4.png" type="Texture" id=4]
+[ext_resource path="res://Texture/2.png" type="Texture" id=5]
+[ext_resource path="res://Texture/Pre-made characters/3.png" type="Texture" id=6]
+[ext_resource path="res://Texture/Pre-made characters/4.png" type="Texture" id=7]
+[ext_resource path="res://Texture/Pre-made characters/2.png" type="Texture" id=8]
+[ext_resource path="res://Texture/Pre-made characters/1.png" type="Texture" id=9]
+[ext_resource path="res://Texture/Pre-made characters/5.png" type="Texture" id=10]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://UI/Update.gd" type="Script" id=12]
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=13]
+[ext_resource path="res://UI/CheckUpdate.gd" type="Script" id=14]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 9 )
+region = Rect2( 36, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 9 )
+region = Rect2( 72, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 9 )
+region = Rect2( 108, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 9 )
+region = Rect2( 144, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 9 )
+region = Rect2( 180, 0, 36, 24 )
+
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 8 )
+region = Rect2( 36, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 8 )
+region = Rect2( 72, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 8 )
+region = Rect2( 108, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 8 )
+region = Rect2( 144, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 8 )
+region = Rect2( 180, 0, 36, 24 )
+
+[sub_resource type="SpriteFrames" id=36]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 6 )
+region = Rect2( 36, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 6 )
+region = Rect2( 72, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 6 )
+region = Rect2( 108, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 6 )
+region = Rect2( 144, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 180, 0, 36, 24 )
+
+[sub_resource type="SpriteFrames" id=37]
+animations = [ {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 7 )
+region = Rect2( 36, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 7 )
+region = Rect2( 72, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 7 )
+region = Rect2( 108, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 7 )
+region = Rect2( 144, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 7 )
+region = Rect2( 180, 0, 36, 24 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 10 )
+region = Rect2( 36, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 10 )
+region = Rect2( 72, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 10 )
+region = Rect2( 108, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 10 )
+region = Rect2( 144, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 10 )
+region = Rect2( 180, 0, 36, 24 )
+
+[sub_resource type="SpriteFrames" id=39]
+animations = [ {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="DynamicFont" id=40]
+size = 32
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=41]
+size = 24
+font_data = ExtResource( 11 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 14 )
+
+[node name="PxBg" type="Node2D" parent="."]
+
+[node name="pre" type="Node2D" parent="PxBg"]
+visible = false
+position = Vector2( 259, 432 )
+scale = Vector2( 5, 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
+frames = SubResource( 35 )
+frame = 5
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
+position = Vector2( 25.6, 0 )
+frames = SubResource( 36 )
+frame = 1
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
+position = Vector2( 54.4, 0 )
+frames = SubResource( 37 )
+frame = 3
+playing = true
+
+[node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
+position = Vector2( 118.4, 0 )
+frames = SubResource( 38 )
+frame = 2
+playing = true
+
+[node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
+position = Vector2( 144, 0 )
+frames = SubResource( 39 )
+frame = 4
+playing = true
+
+[node name="pb1" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb1"]
+motion_mirroring = Vector2( 1344, 0 )
+
+[node name="img" type="Sprite" parent="PxBg/pb1/ParallaxLayer"]
+position = Vector2( 671.614, 158.651 )
+scale = Vector2( 6.35, 6 )
+texture = ExtResource( 3 )
+
+[node name="pb2" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb2"]
+motion_mirroring = Vector2( 1344, 0 )
+
+[node name="img" type="Sprite" parent="PxBg/pb2/ParallaxLayer"]
+position = Vector2( 673.347, 166 )
+scale = Vector2( 6.35, 6 )
+texture = ExtResource( 5 )
+
+[node name="pb3" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb3"]
+motion_mirroring = Vector2( 1344, 0 )
+
+[node name="img" type="Sprite" parent="PxBg/pb3/ParallaxLayer"]
+position = Vector2( 673.349, 160.141 )
+scale = Vector2( 6.35, 6 )
+texture = ExtResource( 2 )
+
+[node name="pb4" type="ParallaxBackground" parent="PxBg"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="PxBg/pb4"]
+motion_mirroring = Vector2( 1344, 0 )
+
+[node name="img" type="Sprite" parent="PxBg/pb4/ParallaxLayer"]
+position = Vector2( 673.347, 166 )
+scale = Vector2( 6.35, 6 )
+texture = ExtResource( 4 )
+
+[node name="Update" type="Node" parent="."]
+script = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="Update"]
+wait_time = 5.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Update"]
+
+[node name="ColorRect" type="ColorRect" parent="Update/CanvasLayer"]
+material = ExtResource( 13 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.33484
+margin_bottom = -1.33484
+color = Color( 0, 0, 0, 0.403922 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Update/CanvasLayer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -164.0
+margin_right = 672.0
+margin_bottom = -140.0
+custom_fonts/font = SubResource( 40 )
+text = "正在检测版本中..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Update/CanvasLayer/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -12.0
+margin_right = 672.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 41 )
+text = "正在检测版本中..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="timeout" from="Update/Timer" to="Update" method="_on_Timer_timeout"]
+[connection signal="request_completed" from="HTTPRequest" to="Update" method="_on_HTTPRequest_request_completed"]

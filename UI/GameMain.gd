@@ -275,6 +275,9 @@ func winGoods():
 				var key_index = win_goods.more[str(map_index)].equ[randi()%win_goods.more[str(map_index)].equ.size()]
 				var choose_data = LocalData.build_data["build_data"][win_goods.more[str(map_index)]["type"]][str(key_index)]
 				EquUtils.createNewEqu(str(key_index),win_goods.more[str(map_index)]["type"],choose_data,choose_data.type,false)
+	if !StorageData.get_player_state().has("win_count"):
+		StorageData.get_player_state()["win_count"] = 0
+	StorageData.get_player_state()["win_count"] += 1
 
 #监听切换地图
 func obsChangeMap():

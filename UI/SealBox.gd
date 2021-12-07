@@ -29,6 +29,7 @@ func showBox(_equ_data = null):
 		$Label.text = "你还没有任何一个刻印"
 
 func loadEquSeal():
+	check_array.clear()
 	$Item2/equ_c.pressed = false
 	$Item2/equ_c2.pressed = false
 	$Item2/RichTextLabel.clear()

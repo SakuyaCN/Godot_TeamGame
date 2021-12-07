@@ -193,7 +193,7 @@ __meta__ = {
 margin_left = 21.0
 margin_top = 76.0
 margin_right = 286.0
-margin_bottom = 225.0
+margin_bottom = 253.0
 custom_colors/default_color = Color( 0.458824, 0.454902, 0.454902, 1 )
 custom_fonts/normal_font = SubResource( 9 )
 bbcode_enabled = true
@@ -204,9 +204,9 @@ __meta__ = {
 
 [node name="context2" type="Label" parent="NinePatchRect3"]
 margin_left = 21.0
-margin_top = 251.0
+margin_top = 259.0
 margin_right = 286.0
-margin_bottom = 266.0
+margin_bottom = 274.0
 custom_colors/font_color = Color( 0.45098, 0.443137, 0.443137, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "炼制需要以下材料："

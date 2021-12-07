@@ -98,7 +98,6 @@ func attrChange_dec(skill):
 
 #选择释放角色
 func chooseRole(skill:SkillItemBean):
-	print(myself_array)
 	if skill.item_count == 0:
 		return
 	for index in skill.item_role:

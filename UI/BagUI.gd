@@ -32,7 +32,7 @@ func bagInit():
 func bagChange(change):
 	visible = change
 	if visible:
-		glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] 
+		glod.text = "拥有金币：%s" %StorageData.get_player_state()["gold"] as int
 		bagInit()
 
 func grid_child_pressed(data):

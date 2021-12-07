@@ -2,7 +2,7 @@
 class_name GodotHttp
 extends Node
 
-var http_url = "http://150.158.34.28:8856/api/"
+var http_url = "http://150.158.34.28:8855/api/"
 var is_ssl = false
 var header = ["Content-Type:application/json"]
 

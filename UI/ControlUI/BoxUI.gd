@@ -3,10 +3,11 @@ extends Control
 
 onready var exp_box = preload("res://UI/ControlUI/BoxItem/ExpBox.tscn")
 onready var seal_box = preload("res://UI/ControlUI/BoxItem/SealBox.tscn")
+onready var ach_box = preload("res://UI/ControlUI/BoxItem/AchBox.tscn")
 
 var exp_box_ins = null
 var seal_box_ins = null
-
+var ach_box_ins = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,3 +36,10 @@ func _on_Button2_pressed():
 	if seal_box_ins == null:
 		seal_box_ins = seal_box.instance()
 	$ChildUI.add_child(seal_box_ins)
+
+
+func _on_Button3_pressed():
+	removeAll()
+	if ach_box_ins == null:
+		ach_box_ins = ach_box.instance()
+	$ChildUI.add_child(ach_box_ins)

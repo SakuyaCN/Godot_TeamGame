@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
+            "outputFile": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sakuya\\.gradle\\caches\\transforms-3\\c5eaa7d939abb2d757f863a6b5340cdd\\transformed\\core-1.2.0\\res\\values-fa\\values-fa.xml",
+                    "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\values-fa\\godot_project_name_string.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "1",
+                        "startOffsets": "112",
+                        "endColumns": "58",
+                        "endOffsets": "169"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "61",
+                        "endOffsets": "112"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\34776\\.gradle\\caches\\transforms-3\\c5eaa7d939abb2d757f863a6b5340cdd\\transformed\\core-1.2.0\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Sakuya\\.gradle\\caches\\transforms-3\\84a8dad7c05b9e27cf245ceed896b95a\\transformed\\jetified-godot-lib.debug\\res\\values-fa\\values-fa.xml",
+                    "source": "C:\\Users\\34776\\.gradle\\caches\\transforms-3\\84a8dad7c05b9e27cf245ceed896b95a\\transformed\\jetified-godot-lib.debug\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -35,23 +52,6 @@
                         "startOffsets": "218,272,346,404,464,533,603,781,954,1056,1135",
                         "endColumns": "53,73,57,59,68,69,177,172,101,78,70",
                         "endOffsets": "267,341,399,459,528,598,776,949,1051,1130,1201"
-                    }
-                },
-                {
-                    "source": "F:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\res\\values-fa\\godot_project_name_string.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "1",
-                        "startOffsets": "112",
-                        "endColumns": "58",
-                        "endOffsets": "169"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "61",
-                        "endOffsets": "112"
                     }
                 }
             ]

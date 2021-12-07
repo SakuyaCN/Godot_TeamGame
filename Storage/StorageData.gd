@@ -9,7 +9,7 @@ var is_read_storage = false
 var team_data :Dictionary
 var player_state:Dictionary
 
-var is_encrypted = false #是否加密
+var is_encrypted = true #是否加密
 
 var thread
 var semaphore
@@ -86,6 +86,7 @@ func save_ansyc(_data):
 			storage_data_file.open(save_path,File.WRITE)
 		#var _err = storage_data_file.open(save_path,File.WRITE)
 		storage_data_file.store_string(to_json(storage_data))
+		storage_data_file.flush()
 		storage_data_file.close()
 		mutex.unlock()
 		save_copy()

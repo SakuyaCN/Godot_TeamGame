@@ -158,7 +158,7 @@ script = ExtResource( 2 )
 script = ExtResource( 3 )
 
 [node name="Timer" type="Timer" parent="FightScript"]
-wait_time = 0.2
+wait_time = 0.1
 
 [node name="SkillScript" type="Node" parent="."]
 
@@ -170,7 +170,7 @@ position = Vector2( -16, -62 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
