@@ -16,8 +16,8 @@ var is_file = false
 
 func _ready():
 	code = ConfigScript.getNumberSetting("system","version")
-	dir_contents(download_path)
-	check_update()
+	#dir_contents(download_path)
+	#check_update()
 	
 func dir_contents(_path):
 	var dir = Directory.new()

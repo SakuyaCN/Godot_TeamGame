@@ -14,9 +14,9 @@ func hangUp(_player_array,ts):
 	var _gold = (ts / 15)
 	StorageData.get_player_state()["gold"] += _gold
 	for item in win_goods.goods:
-		var gnum = (item[1] as int+randi() % item[2] as int) * 0.6
+		var gnum = (item[1] as int+randi() % item[2] as int) * 0.75
 		gnum += gnum * (1 + map_index)
-		gnum *= ((ts / 25) * (item[3] / 100.0))
+		gnum *= ((ts / 20) * (item[3] / 100.0))
 		if gnum as int > 0:
 			goods_array.append([item[0],gnum as int])
 	StorageData.AddGoodsNum(goods_array)

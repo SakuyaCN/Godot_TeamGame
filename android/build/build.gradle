@@ -15,7 +15,7 @@ buildscript {
     }
     dependencies {
         classpath libraries.androidGradlePlugin
-        classpath libraries.kotlinGradlePlugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_BEGIN
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_END
     }

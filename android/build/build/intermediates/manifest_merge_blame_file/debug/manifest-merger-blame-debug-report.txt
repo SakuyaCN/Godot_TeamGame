@@ -2,8 +2,8 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.sakuya.mx"
 4    android:installLocation="auto"
-5    android:versionCode="13"
-6    android:versionName="1.0.7" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+5    android:versionCode="15"
+6    android:versionName="1.0.8.1" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
 7    <uses-sdk
 8        android:minSdkVersion="19"
 9        android:targetSdkVersion="30" />
@@ -46,7 +46,7 @@
 30        android:allowBackup="false"
 30-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:93-120
 31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-31-->[androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+31-->[androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\7eb7bd94312177054aeb53a2e27a9c36\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
 32        android:debuggable="true"
 33        android:hasFragileUserData="false"
 33-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:143-177
@@ -70,8 +70,8 @@
 42-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:48:13-62
 43            android:launchMode="singleTask"
 43-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:50:13-44
-44            android:resizeableActivity="false"
-44-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:53:13-47
+44            android:resizeableActivity="true"
+44-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:53:13-46
 45            android:screenOrientation="landscape"
 45-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:51:13-50
 46            android:theme="@style/GodotAppSplashTheme" >
@@ -100,15 +100,22 @@
 61            android:name="org.godotengine.editor.version"
 62            android:value="3.4.stable" /> <!-- Records the version of the Godot library -->
 63        <meta-data
-63-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
+63-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
 64            android:name="org.godotengine.library.version"
-64-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-59
+64-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-59
 65            android:value="3.4.0.stable" />
-65-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-41
+65-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-41
 66
 67        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-67-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:9-80
-67-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\84a8dad7c05b9e27cf245ceed896b95a\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:18-77
-68    </application>
-69
-70</manifest>
+67-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:9-80
+67-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:18-77
+68
+69        <meta-data
+69-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\965d6f9b842a03c77626b8773f367e5e\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:10:9-12:58
+70            android:name="org.godotengine.plugin.v1.GodotUtils"
+70-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\965d6f9b842a03c77626b8773f367e5e\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:11:13-64
+71            android:value="com.sakuya.godot.GodotMain" />
+71-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\965d6f9b842a03c77626b8773f367e5e\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:12:13-55
+72    </application>
+73
+74</manifest>

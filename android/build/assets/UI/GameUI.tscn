@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=2]
@@ -59,8 +59,16 @@ outline_color = Color( 0.396078, 0.388235, 0.388235, 1 )
 extra_spacing_top = 4
 font_data = ExtResource( 30 )
 
+[sub_resource type="DynamicFont" id=28]
+size = 20
+font_data = ExtResource( 1 )
+
 [sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 32
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=8]
 outline_size = 2
@@ -108,7 +116,6 @@ __meta__ = {
 }
 
 [node name="LoginUI" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -163,7 +170,7 @@ custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
-text = "创意关卡"
+text = "账号登录"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -193,10 +200,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -195.0
-margin_top = -110.5
-margin_right = 195.0
-margin_bottom = 247.5
+margin_left = -582.0
+margin_top = -94.5
+margin_right = -251.0
+margin_bottom = 153.5
 mouse_filter = 0
 texture = ExtResource( 13 )
 patch_margin_left = 31
@@ -207,22 +214,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="LoginUI/NinePatchRect"]
+[node name="clound" type="Label" parent="LoginUI/NinePatchRect"]
+anchor_left = 0.41
+anchor_top = 0.487
+anchor_right = 0.41
+anchor_bottom = 0.487
+margin_left = -118.71
+margin_top = -85.776
+margin_right = 177.29
+margin_bottom = 3.224
+custom_colors/font_color = Color( 0.396078, 0.388235, 0.388235, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "暂无存档"
+autowrap = true
+
+[node name="clound2" type="Label" parent="LoginUI/NinePatchRect"]
+anchor_left = 0.41
+anchor_top = 0.487
+anchor_right = 0.41
+anchor_bottom = 0.487
+margin_left = -118.21
+margin_top = 17.8081
+margin_right = 177.79
+margin_bottom = 48.8081
+custom_colors/font_color = Color( 0.396078, 0.388235, 0.388235, 1 )
+custom_fonts/font = SubResource( 24 )
+text = "每天仅可上传2次，下载1次"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="download" type="Button" parent="LoginUI/NinePatchRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -171.0
-margin_top = -145.0
-margin_right = 171.0
-margin_bottom = 145.0
-custom_colors/font_color = Color( 0.396078, 0.388235, 0.388235, 1 )
-custom_fonts/font = SubResource( 24 )
-text = "正在开发中，敬请期待！
-玩家可以自行设计：
-地图关卡、怪物数据、装备数据、游戏道具、游戏技能，游戏情节对话等等功能！
-让游戏变成正真的模拟器！"
-autowrap = true
+margin_left = 31.5
+margin_top = 57.0
+margin_right = 151.5
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 28 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "下载存档"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="download2" type="Button" parent="LoginUI/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -153.5
+margin_top = 57.0
+margin_right = -31.5
+margin_bottom = 108.0
+custom_fonts/font = SubResource( 28 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "上传存档"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="LoginUI"]
 anchor_left = 0.5
@@ -275,6 +334,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect2" type="ColorRect" parent="LoginUI"]
+visible = false
+material = ExtResource( 36 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LoginUI/ColorRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -16.5
+margin_right = 672.0
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 29 )
+text = "正在取回存档"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CreateUI" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -305,7 +390,6 @@ position = Vector2( 2.99997, -83 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 6 )
 animation = "Idle"
-frame = 4
 playing = true
 
 [node name="attr" type="Sprite" parent="CreateUI"]
@@ -649,7 +733,8 @@ expand = true
 [connection signal="pressed" from="LoginUI/Button" to="LoginUI" method="_on_Button_pressed"]
 [connection signal="pressed" from="LoginUI/Button3" to="LoginUI" method="_on_Button3_pressed"]
 [connection signal="pressed" from="LoginUI/Button2" to="LoginUI" method="_on_Button2_pressed"]
-[connection signal="gui_input" from="LoginUI/NinePatchRect" to="LoginUI" method="_on_NinePatchRect_gui_input"]
+[connection signal="pressed" from="LoginUI/NinePatchRect/download" to="LoginUI" method="_on_download_pressed"]
+[connection signal="pressed" from="LoginUI/NinePatchRect/download2" to="LoginUI" method="_on_download2_pressed"]
 [connection signal="gui_input" from="LoginUI/NinePatchRect2" to="LoginUI" method="_on_NinePatchRect2_gui_input"]
 [connection signal="pressed" from="CreateUI/left" to="CreateUI" method="_on_left_pressed"]
 [connection signal="pressed" from="CreateUI/right" to="CreateUI" method="_on_right_pressed"]

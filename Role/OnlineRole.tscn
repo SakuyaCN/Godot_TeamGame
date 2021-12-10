@@ -13,6 +13,7 @@ outline_size = 1
 font_data = ExtResource( 11 )
 
 [node name="Node2D" type="KinematicBody2D"]
+collision_mask = 0
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -21,6 +22,7 @@ position = Vector2( -16, -62 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 2 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

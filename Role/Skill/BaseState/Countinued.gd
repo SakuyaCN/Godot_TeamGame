@@ -14,9 +14,13 @@ func time_tick():
 			role.fight_script.do_number_hurt(state_bean.state_other["hurt_num"],state_bean.state_other["hurt_type"],who.hero_attr,true)
 		"pt_max":#最大生命值百分比掉血
 			var hurt_num = state_bean.state_other["hurt_num"] / 100.0 * hero_attr.max_hp
+			if role.hero_attr.unpt > 0 && state_bean.state_other["hurt_type"] != 2:#毒素抗性
+				hurt_num *= 1-(role.hero_attr.unpt / 100.0)
 			role.fight_script.do_number_hurt(hurt_num,state_bean.state_other["hurt_type"],who.hero_attr,true)
 		"pt_now":#当前生命值百分比掉血
 			var hurt_num = state_bean.state_other["hurt_num"] / 100.0 * hero_attr.hp
+			if role.hero_attr.unpt > 0 && state_bean.state_other["hurt_type"] != 2:
+				hurt_num *= 1-(role.hero_attr.unpt / 100.0)
 			role.fight_script.do_number_hurt(hurt_num,state_bean.state_other["hurt_type"],who.hero_attr,true)
 		"ys":#元素伤害掉血
 			var hurt_num = hero_attr.toDict()[state_bean.state_other["hurt_type"]]

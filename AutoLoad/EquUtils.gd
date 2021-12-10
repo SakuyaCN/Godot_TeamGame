@@ -36,7 +36,10 @@ func get_attr_string(attr):
 		"exp_buff":return "经验加成比"
 		"reflex":return "反射率"
 		"skill_crit":return "技能暴击"
-
+		"unpt":return "毒素抗性"
+		"atk_mtk":return "攻击附带魔力百分比"
+		"shield_buff":return "护盾免伤率"
+		
 func get_ys_color(ys):
 	match ys:
 		"fire": return Color("#ee7064")
@@ -90,10 +93,10 @@ func createQuality(is_over):
 func getQualityBs(ys):
 	match ys:
 		"S++": return 1.12
-		"S级": return 1.05
-		"A级": return 1
-		"B级": return 0.9
-		"C级": return 0.8
+		"S级": return 1.06
+		"A级": return 1.02
+		"B级": return 0.95
+		"C级": return 0.9
 
 func getQualityBssTART(ys):
 	match ys:

@@ -1,6 +1,6 @@
 extends Node2D
 
-var ui_layer = null #ui界面 与游戏主题内容无关
+var ui_layer #ui界面 与游戏主题内容无关
 var game_layer = null #ui界面 与游戏交互
 var const_choose_role_arrt = null #点击人物展示数据面板
 var tree = null
@@ -19,15 +19,35 @@ var _is_start = false
 #=========网络部分==========
 var online_data
 var online_attr
+
+var GodotNakama:GodotNakamaClient
+var session = null
+var user_info = {
+	"username":null,
+	"user_id":null,
+	"token":null
+}
 #==========================
 
 onready var seal_box = preload("res://UI/ControlUI/SealBox.tscn")
 onready var attr_box = preload("res://UI/ControlUI/OhterAttr.tscn")
 
+func _init():
+	GodotNakama = GodotNakamaClient.new()
+
 func configSet():
 	is_fight_num = ConfigScript.getBoolSetting("fight","fight_num")#战斗信息是否展示
 	fight_array = ConfigScript.getArraySetting("fight","fight_array")
 	array_num = ConfigScript.getNumberSetting("fight","array_num")
+	configUserReload()
+	
+func configUserReload():
+	user_info.username = ConfigScript.getNumberSetting("user","username")
+	user_info.user_id = ConfigScript.getNumberSetting("user","user_id")
+	user_info.token = ConfigScript.getNumberSetting("user","token")
+
+func createClient():
+	pass
 
 func reloadAllEqu():
 	tree.call_group("PartyUI","loadAllEqu")

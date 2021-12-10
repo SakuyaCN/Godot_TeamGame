@@ -1,6 +1,6 @@
 extends Control
 
-var array = [null,null,null,null]
+var array = [null,null,null]
 
 var is_connect =false
 
@@ -86,4 +86,4 @@ func _on_Button_pressed():
 		yield(get_tree().create_timer(0.3),"timeout")
 		$ColorMax.visible = false
 	else:
-		ConstantsValue.showMessage("请放满4件装备!",2)
+		ConstantsValue.showMessage("请放满3件装备!",2)

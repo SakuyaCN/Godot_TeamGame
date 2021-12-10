@@ -35,6 +35,7 @@ custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
+action_mode = 0
 text = "类型"
 __meta__ = {
 "_edit_use_anchors_": false

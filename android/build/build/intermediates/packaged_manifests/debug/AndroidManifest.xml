@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sakuya.mx"
     android:installLocation="auto"
-    android:versionCode="13"
-    android:versionName="1.0.7" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+    android:versionCode="15"
+    android:versionName="1.0.8.1" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="30" />
@@ -41,7 +41,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
             android:label="@string/godot_project_name_string"
             android:launchMode="singleTask"
-            android:resizeableActivity="false"
+            android:resizeableActivity="true"
             android:screenOrientation="landscape"
             android:theme="@style/GodotAppSplashTheme" >
             <intent-filter>
@@ -65,6 +65,10 @@
             android:value="3.4.0.stable" />
 
         <service android:name="org.godotengine.godot.GodotDownloaderService" />
+
+        <meta-data
+            android:name="org.godotengine.plugin.v1.GodotUtils"
+            android:value="com.sakuya.godot.GodotMain" />
     </application>
 
 </manifest>

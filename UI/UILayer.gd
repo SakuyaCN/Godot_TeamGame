@@ -8,10 +8,11 @@ onready var get_new_item = preload("res://UI/ItemUI/GetNewItem.tscn")
 onready var add_box = $addBox
 onready var ui = $Control
 
+func _init():
+	ConstantsValue.ui_layer = self
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_process(false)
-	ConstantsValue.ui_layer = self
 	$ItemShow.get_v_scrollbar().set("custom_styles/scroll",StyleBoxTexture.new())
 	msg.hide()
 
@@ -86,8 +87,8 @@ func _process(time):
 	
 	if loader.get_resource():
 		set_process(false)
-		ConstantsValue.online_data = get_parent().gameMain.player_array[0].role_data
-		ConstantsValue.online_attr = HeroAttrUtils.reloadHeroAttr(null,get_parent().gameMain.player_array[0].role_data)
+		#ConstantsValue.online_data = get_parent().gameMain.player_array[0].role_data
+		#ConstantsValue.online_attr = HeroAttrUtils.reloadHeroAttr(null,get_parent().gameMain.player_array[0].role_data)
 		loader.get_resource()
 		$GameProgress.visible = false
 		get_tree().change_scene_to(loader.get_resource())

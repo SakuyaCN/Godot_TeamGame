@@ -103,6 +103,8 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 		Utils.HurtType.MTK:
 			hurt_num = _atk_attr.mtk * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
 			fight_script.mtk_blood(hurt_num)
+	#攻击附带魔力
+	hurt_num += atkHasMtk(_atk_attr)
 	#伤害提升
 	if _atk_attr.hurt_buff > 0:
 		hurt_num += hurt_num * (_atk_attr.hurt_buff / 100.0)
@@ -117,10 +119,9 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 	if fight_script.is_weak:
 		hurt_num *= 0.6
 	reflex_hurt(hurt_num,fight_script)
-	updateHp(hurt_num)
+	updateHp(hurt_num,false,atk_type)
 	if hero_attr.hp <= 0:
 		die()
-	get_parent()._show_damage_label(hurt_num,atk_type)
 	effect_sprite.visible = true
 	effect_sprite.play("hit")
 
@@ -133,32 +134,47 @@ func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 			hurt_num = number * (1 - ((hero_attr.def - _atk_attr.atk_pass)/100.0))#物理伤害
 		Utils.HurtType.MTK:
 			hurt_num = number * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
-		_:hurt_num = number
-	if _atk_attr.skill_crit > 0 && randf() <  _atk_attr.skill_crit / 7000.0:
+		Utils.HurtType.TRUE:hurt_num = number
+	if  atk_type as int != Utils.HurtType.TRUE && _atk_attr.skill_crit > 0 && randf() <  _atk_attr.skill_crit / 7000.0:
 		hurt_num *= 1.5 + (_atk_attr.crit_buff / 100.0)
 		_is_crit = true
-	updateHp(hurt_num)
 	if hero_attr.hp <= 0:
 		die()
 	if is_COUTINUED:
-		get_parent()._show_damage_label(hurt_num,Utils.HurtType.COUTINUED)
+		updateHp(hurt_num,false,Utils.HurtType.COUTINUED)
 	else:
-		get_parent()._show_skill_label(hurt_num,_is_crit)
+		updateHp(hurt_num,true,_is_crit)
+
+#攻击附带魔力值
+func atkHasMtk(_atk_attr:HeroAttrBean):
+	var num = 0
+	if _atk_attr.atk_mtk > 0:
+		num += (_atk_attr.atk_mtk / 100.0) * _atk_attr.mtk
+		num = num * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))
+	return num
 
 #刷血量
-func updateHp(_num):
+func updateHp(_num,is_skill,type):
 	if is_nohurt:
+		get_parent()._show_skill_label("无敌")
 		return
 	var hurt_num = _num
 	if hero_attr.shield > 0:
-		if hero_attr.shield - _num < 0:
+		if hero_attr.shield_buff > 0:
+			#get_parent()._show_damage_label("护盾免伤-%s"%sh_buff,Utils.HurtType.OTHER)
+			hurt_num = hurt_num * (1 - hero_attr.shield_buff/ 100.0)
+		if hero_attr.shield - hurt_num < 0:
 			hurt_num -= hero_attr.shield
 			hero_attr.shield = 0
 			hero_attr.updateNum("shield",-hero_attr.shield)
 		else:
-			hero_attr.updateNum("shield",-_num)
+			hero_attr.updateNum("shield",-hurt_num)
 	if hero_attr.shield <= 0:
 		hero_attr.updateNum("hp",-hurt_num)
+	if !is_skill:
+		get_parent()._show_damage_label(hurt_num,type)
+	else:
+		get_parent()._show_skill_label(hurt_num,type)
 
 #反射触发
 func reflex_hurt(_hurt_num,fight_script:Node):
@@ -184,10 +200,13 @@ func hold_hurt(_atk_attr:HeroAttrBean,num):
 
 #暴击触发
 func crit_hurt(_atk_attr:HeroAttrBean):
-	if _atk_attr.crit > 0 && randf() <  _atk_attr.crit / 7000.0:
-		if hero_attr.uncrit > 0 && randf() <  hero_attr.uncrit / 7000.0:
-			return false
+	var crit = _atk_attr.crit
+	if hero_attr.uncrit > 0:
+		crit -= hero_attr.uncrit
+	if crit > 0 && randf() <  crit / 7000.0:
 		return true
+	else:
+		return false
 
 #人物死亡
 func die():

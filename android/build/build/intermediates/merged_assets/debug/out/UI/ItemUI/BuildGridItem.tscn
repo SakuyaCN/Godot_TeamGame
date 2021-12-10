@@ -26,6 +26,7 @@ custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
+action_mode = 0
 flat = true
 expand_icon = true
 script = ExtResource( 3 )

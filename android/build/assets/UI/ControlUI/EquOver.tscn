@@ -183,12 +183,14 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
-margin_left = 25.0
-margin_top = 45.0
-margin_right = 273.0
-margin_bottom = 119.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -111.0
+margin_top = 40.0
+margin_right = 111.0
+margin_bottom = 114.0
 custom_constants/vseparation = 16
-custom_constants/hseparation = 16
+custom_constants/hseparation = 36
 columns = 4
 __meta__ = {
 "_edit_use_anchors_": false
@@ -206,8 +208,8 @@ type = "无装备"
 [node name="Control2" parent="NinePatchRect/GridContainer" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 66.0
-margin_right = 116.0
+margin_left = 86.0
+margin_right = 136.0
 margin_bottom = 50.0
 custom_styles/focus = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
@@ -216,18 +218,8 @@ type = "无装备"
 [node name="Control3" parent="NinePatchRect/GridContainer" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 132.0
-margin_right = 182.0
-margin_bottom = 50.0
-custom_styles/focus = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
-type = "无装备"
-
-[node name="Control4" parent="NinePatchRect/GridContainer" instance=ExtResource( 5 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 198.0
-margin_right = 248.0
+margin_left = 172.0
+margin_right = 222.0
 margin_bottom = 50.0
 custom_styles/focus = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )

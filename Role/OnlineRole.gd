@@ -1,13 +1,18 @@
 extends KinematicBody2D
 
-export (int) var speed = 200
-export (int) var jump_speed = -450
-export (int) var gravity = 750
+const FLOOR_NORMAL := Vector2.UP
+const SNAP_DIRECTION := Vector2.DOWN
+const SNAP_LENGTH := 32.0
+const SLOPE_LIMIT := deg2rad(45.0)
 
-export (float, 0, 1.0) var friction = 0.1
-export (float, 0, 1.0) var acceleration = 0.15
+export(float) var speed := 300.0
+export(float) var gravity := 2000.0
+export(float) var jump_strength := 800.0
 
-var velocity = Vector2.ZERO
+var direction := Vector2.ZERO
+var velocity := Vector2.ZERO
+var snap_vector := SNAP_DIRECTION * SNAP_LENGTH
+
 
 var role_data
 var nick_name
@@ -26,7 +31,6 @@ onready var animatedSprite = $AnimatedSprite
 func setData(nick_name,_data):
 	role_data = _data
 	$RoleUI/name.text = nick_name
-	role_data.job = "无畏勇者"
 	load_asset()
 
 func load_asset():
@@ -72,38 +76,65 @@ func load_asset():
 			$RoleUI/name.set("custom_colors/font_outline_modulate",Color.palevioletred)
 	animatedSprite.animation = "Idle"
 
-func _physics_process(delta):
-	get_input()
-	velocity.y += gravity * delta
-	velocity = move_and_slide(velocity, Vector2.UP)
-	if Input.is_action_just_pressed("ui_up"):
-		if is_on_floor():
-			velocity.y = jump_speed
-	if !is_on_floor():
-		input_mode = InputMode.UP
-	match input_mode:
-		InputMode.IDLE:
-			$AnimatedSprite.play("Idle")
-		InputMode.LEFT:
-			$AnimatedSprite.play("Run")
-		InputMode.RIGHT:
-			$AnimatedSprite.play("Run")
-		InputMode.UP:
-			$AnimatedSprite.play("Jump")
-	
+func _physics_process(delta:float) -> void:
+	_move(delta)
+	_animate()
 
-func get_input():
-	var dir = 0
-	if Input.is_action_pressed("ui_right"):
-		$AnimatedSprite.flip_h = false
-		input_mode = InputMode.RIGHT
-		dir += 1
-	if Input.is_action_pressed("ui_left"):
-		$AnimatedSprite.flip_h = true
-		input_mode = InputMode.LEFT
-		dir -= 1
-	if dir != 0:
-		velocity.x = lerp(velocity.x, dir * speed, acceleration)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if is_network_master():
+		_handle_input(event)
+
+func _animate() -> void:
+	var animation := "Idle"
+	if not is_on_floor():
+		if velocity.y >= 0.0:
+			animation = "Idle"
+		elif velocity.y < 0.0:
+			animation = "Jump"
 	else:
-		velocity.x = lerp(velocity.x, 0, friction)
-		input_mode = InputMode.IDLE
+		if velocity.x != 0.0:
+			animation = "Run"
+		else:
+			animation = "Idle"
+	animatedSprite.play(animation)
+
+func _handle_input(event: InputEvent) -> void:
+	if event.is_action("left") or event.is_action("right"):
+		rpc_id(1,"_update_player_direction",Input.get_action_strength("right") - Input.get_action_strength("left") )
+	if event.is_action_pressed("jump"):
+		_jump()
+	elif event.is_action_released("jump"):
+		_cancel_jump()
+
+func _move(delta: float) -> void:
+	velocity.y += gravity * delta
+	velocity.y = move_and_slide_with_snap(velocity, snap_vector, FLOOR_NORMAL).y
+	if is_on_floor():
+		snap_vector = SNAP_DIRECTION * SNAP_LENGTH
+		#sprite.is_emitting = false
+
+func _jump() -> void:
+	if is_on_floor():
+		snap_vector = Vector2.ZERO
+		velocity.y = -jump_strength
+		#sprite.is_emitting = true
+
+func _cancel_jump() -> void:
+	if not is_on_floor() and velocity.y < 0.0:
+		velocity.y = 0.0
+
+func _update_direction(_strength = null) -> void:
+	if _strength == null:
+		direction.x = Input.get_action_strength("right") - Input.get_action_strength("left") 
+	else:
+		direction.x = _strength
+	velocity.x = direction.x * speed
+	if not velocity.x == 0:
+		animatedSprite.flip_h = velocity.x < 0
+
+remote func _update_player_direction(strength):
+	print("rpc %s"%strength)
+	var who = get_tree().get_rpc_sender_id()
+	if who == get_tree().get_network_unique_id():
+		_update_direction(strength)

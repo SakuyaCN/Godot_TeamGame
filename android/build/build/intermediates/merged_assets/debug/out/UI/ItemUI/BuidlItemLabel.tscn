@@ -28,6 +28,7 @@ custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
+action_mode = 0
 text = "测试文字"
 __meta__ = {
 "_edit_use_anchors_": false

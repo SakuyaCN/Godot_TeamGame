@@ -41,7 +41,9 @@ var shield:int#护盾
 var exp_buff:int #经验增幅
 var reflex:int#反射率
 var skill_crit:int#技能暴击
-
+var unpt:int #毒素抗性
+var atk_mtk:int #攻击附带魔力值
+var shield_buff:int #护盾免伤
 
 #重载基础属性
 func resetAttr(role_data):
@@ -165,7 +167,10 @@ func toDict():
 		"shield" : shield,
 		"exp_buff":exp_buff,
 		"reflex":reflex,
-		"skill_crit":skill_crit
+		"skill_crit":skill_crit,
+		"unpt":unpt,
+		"atk_mtk":atk_mtk,
+		"shield_buff":shield_buff
 	}
 
 func updateNum(attr,num,is_emit = true,is_buff = false):
@@ -199,9 +204,13 @@ func updateNum(attr,num,is_emit = true,is_buff = false):
 		"hurt_buff" : hurt_buff += num
 		"crit_buff" : crit_buff += num
 		"shield" : shield += num
-		"exp_buff":exp_buff+=num
-		"reflex":reflex+=num
+		"exp_buff":exp_buff += num
+		"reflex":reflex +=num
 		"skill_crit":skill_crit += num
+		"unpt":unpt += num
+		"atk_mtk": atk_mtk+=num
+		"shield_buff":shield_buff+=num
+
 	if dodge > 30:
 		dodge = 30
 	if mdef > 120:
@@ -254,3 +263,4 @@ func toBean(dict):
 	exp_buff= dict.exp_buff
 	reflex= dict.reflex
 	skill_crit= dict.skill_crit
+	unpt = dict.unpt

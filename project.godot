@@ -65,6 +65,11 @@ _global_script_classes=[ {
 "path": "res://Http/HttpBase.gd"
 }, {
 "base": "Reference",
+"class": "GodotNakamaClient",
+"language": "GDScript",
+"path": "res://Http/NakamaClient.gd"
+}, {
+"base": "Reference",
 "class": "HeroAttrBean",
 "language": "GDScript",
 "path": "res://Bean/HeroAttrBean.gd"
@@ -73,6 +78,76 @@ _global_script_classes=[ {
 "class": "HurtSkill",
 "language": "GDScript",
 "path": "res://Role/Skill/HurtSkill.gd"
+}, {
+"base": "Reference",
+"class": "NakamaAPI",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/api/NakamaAPI.gd"
+}, {
+"base": "Reference",
+"class": "NakamaAsyncResult",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/utils/NakamaAsyncResult.gd"
+}, {
+"base": "Reference",
+"class": "NakamaClient",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/client/NakamaClient.gd"
+}, {
+"base": "Reference",
+"class": "NakamaException",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/utils/NakamaException.gd"
+}, {
+"base": "Node",
+"class": "NakamaHTTPAdapter",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/client/NakamaHTTPAdapter.gd"
+}, {
+"base": "Reference",
+"class": "NakamaLogger",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/utils/NakamaLogger.gd"
+}, {
+"base": "NakamaAsyncResult",
+"class": "NakamaRTAPI",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/api/NakamaRTAPI.gd"
+}, {
+"base": "Reference",
+"class": "NakamaRTMessage",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/api/NakamaRTMessage.gd"
+}, {
+"base": "Reference",
+"class": "NakamaSerializer",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/utils/NakamaSerializer.gd"
+}, {
+"base": "NakamaAsyncResult",
+"class": "NakamaSession",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/api/NakamaSession.gd"
+}, {
+"base": "Reference",
+"class": "NakamaSocket",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/socket/NakamaSocket.gd"
+}, {
+"base": "Node",
+"class": "NakamaSocketAdapter",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/socket/NakamaSocketAdapter.gd"
+}, {
+"base": "Reference",
+"class": "NakamaStorageObjectId",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/api/NakamaStorageObjectId.gd"
+}, {
+"base": "Reference",
+"class": "NakamaWriteStorageObject",
+"language": "GDScript",
+"path": "res://addons/com.heroiclabs.nakama/api/NakamaWriteStorageObject.gd"
 }, {
 "base": "Node",
 "class": "SkillEntity",
@@ -106,8 +181,23 @@ _global_script_class_icons={
 "DialogicResources": "",
 "DialogicUtil": "",
 "GodotHttp": "",
+"GodotNakamaClient": "",
 "HeroAttrBean": "",
 "HurtSkill": "",
+"NakamaAPI": "",
+"NakamaAsyncResult": "",
+"NakamaClient": "",
+"NakamaException": "",
+"NakamaHTTPAdapter": "",
+"NakamaLogger": "",
+"NakamaRTAPI": "",
+"NakamaRTMessage": "",
+"NakamaSerializer": "",
+"NakamaSession": "",
+"NakamaSocket": "",
+"NakamaSocketAdapter": "",
+"NakamaStorageObjectId": "",
+"NakamaWriteStorageObject": "",
 "SkillEntity": "",
 "SkillHurtBean": "",
 "SkillItemBean": "",
@@ -118,13 +208,13 @@ _global_script_class_icons={
 
 config/name="wh"
 run/main_scene="res://UI/CheckUpdate.tscn"
-config/use_custom_user_dir=true
 config/icon="res://logo.png"
 config/windows_native_icon="res://bitbug_favicon.ico"
 config/quit_on_go_back=false
 
 [autoload]
 
+Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 ConfigScript="*res://Storage/ConfigScript.gd"
 ConstantsValue="*res://AutoLoad/ConstantsValue.gd"
 StorageData="*res://Storage/StorageData.gd"
@@ -142,6 +232,7 @@ settings/fps/force_fps=144
 
 window/size/width=1344
 window/size/height=621
+mouse_cursor/tooltip_position_offset=Vector2( 0, 0 )
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -169,6 +260,21 @@ quentincaffeino_console_history_up={
 quentincaffeino_console_history_down={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
 

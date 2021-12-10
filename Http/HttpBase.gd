@@ -50,6 +50,7 @@ func file_download(path,url):
 	ConstantsValue.ui_layer.add_child(self)
 
 func _on_request_completed(result, response_code, headers, body):
+	print(response_code)
 	if mode != "FILE":
 		if body != null && response_code == 200:
 			var json = JSON.parse(body.get_string_from_utf8())

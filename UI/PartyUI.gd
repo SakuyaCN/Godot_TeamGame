@@ -399,9 +399,11 @@ func _on_other_over_gui_input(event):
 		$Equ_info.visible = false
 
 #卸下装备
+var down_click = false
 func _on_btn_down_pressed():
-	if check_equ_data == null:
+	if check_equ_data == null || down_click:
 		return
+	down_click = true
 	if check_equ_data["is_on"]:
 		check_equ_data.is_on = false
 		role_data["equ"].erase(check_equ_data["type"])
@@ -421,6 +423,7 @@ func _on_btn_down_pressed():
 	loadAllEqu()
 	reLoadHeroEqu()
 	loadHeroData()
+	down_click = false
 
 #丢弃装备
 func _on_btn_des_pressed():

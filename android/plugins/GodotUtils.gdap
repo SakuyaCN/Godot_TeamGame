@@ -1,0 +1,7 @@
+[config]
+
+name="GodotUtils"
+binary_type="local"
+binary="GodotUtils.1.0.0.debug.aar"
+
+[dependencies]

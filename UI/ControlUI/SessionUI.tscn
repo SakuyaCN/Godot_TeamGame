@@ -1,0 +1,152 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
+[ext_resource path="res://UI/ControlUI/SessionUI.gd" type="Script" id=2]
+[ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=4]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=6]
+[ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0.368627, 0.364706, 0.364706, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 132, 133 )
+margin_left = 26.0
+margin_right = 30.0
+margin_top = 25.0
+margin_bottom = 37.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 133, 34 )
+margin_bottom = 2.45886
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+font_data = ExtResource( 5 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="email" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.5
+margin_top = -127.5
+margin_right = 176.5
+margin_bottom = -48.5
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+max_length = 30
+placeholder_text = "注册/登录邮箱"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pwd" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.5
+margin_top = -23.5
+margin_right = 176.5
+margin_bottom = 55.5
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+max_length = 20
+secret = true
+placeholder_text = "注册/登录密码"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = 88.5
+margin_right = 177.0
+margin_bottom = 184.5
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "登录账号"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 96.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 8 )
+text = "账号登录"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -672.0
+margin_top = -73.0
+margin_right = 672.0
+margin_bottom = -40.0
+custom_fonts/font = SubResource( 9 )
+text = "账号系统属于测试功能，不保证稳定性"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="." to="." method="_on_Control_gui_input"]
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
