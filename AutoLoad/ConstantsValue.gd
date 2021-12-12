@@ -4,7 +4,7 @@ var ui_layer #ui界面 与游戏主题内容无关
 var game_layer = null #ui界面 与游戏交互
 var const_choose_role_arrt = null #点击人物展示数据面板
 var tree = null
-
+var game = null
 var array_num = 0#拾取等级
 var is_fight_num#战斗信息是否展示
 var fight_array
@@ -13,8 +13,6 @@ var static_goods = {} #获取签到物品
 
 var chat_array = []
 signal on_chat_message(data)
-
-var _is_start = false
 
 #=========网络部分==========
 var online_data
@@ -28,7 +26,9 @@ var user_info = {
 	"token":null
 }
 #==========================
-
+var game_mode_change = 0 #是否从其他世界切换回来
+#==========================
+#==========================
 onready var seal_box = preload("res://UI/ControlUI/SealBox.tscn")
 onready var attr_box = preload("res://UI/ControlUI/OhterAttr.tscn")
 

@@ -89,6 +89,9 @@ func plus_size():
 			add_child(new_dialog)
 
 func hangup():
+	if ConstantsValue.game_mode_change:
+		ConstantsValue.game_mode_change = false
+		return
 	if !is_hangup:
 		return
 	$GameHangUp.on_login()

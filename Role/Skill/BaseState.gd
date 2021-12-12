@@ -27,7 +27,8 @@ func _create(_role,_who,_bean):
 	name = state_bean.state_id
 	last_time = state_bean.state_time
 	role.call_deferred("addState",state_bean,self)
-	role.ui.addBuffImage(state_bean)
+	if role.ui != null:
+		role.ui.addBuffImage(state_bean)
 	yield(timer,"tree_entered")
 	timer.start()
 	addBuff()

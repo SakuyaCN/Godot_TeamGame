@@ -6,6 +6,7 @@ onready var progress_tv = $progress_hp/label_hp
 onready var setting_view = preload("res://UI/Setting.tscn")
 onready var day_gif = preload("res://UI/GoodsDialog/DayGif.tscn")
 onready var box_ui = preload("res://UI/ControlUI/BoxUI.tscn")
+onready var level_1 = preload("res://UI/GameLevel/Leve_1.tscn")
 
 onready var build_ui = preload("res://UI/ControlUI/BuildUI.tscn")
 
@@ -50,4 +51,4 @@ func _on_box_pressed():
 
 #云端山脉
 func _on_map2_pressed():
-	ConstantsValue.ui_layer.change_scene("res://UI/Game2/GameLobby.tscn")
+	ConstantsValue.ui_layer.change_scene("res://UI/GameLevel/Leve_1.tscn")

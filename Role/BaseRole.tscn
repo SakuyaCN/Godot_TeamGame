@@ -149,7 +149,7 @@ outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 36.1134, 59.7408 )
+extents = Vector2( 36.1134, 72.7004 )
 
 [node name="BaseRole" type="Node2D"]
 script = ExtResource( 2 )
@@ -170,6 +170,7 @@ position = Vector2( -16, -62 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]
@@ -575,7 +576,7 @@ __meta__ = {
 [node name="StaticBody2D" type="KinematicBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 1.57166, -62.34 )
+position = Vector2( 1.57166, -75.2996 )
 shape = SubResource( 13 )
 
 [connection signal="tree_exited" from="." to="." method="_on_BaseRole_tree_exited"]

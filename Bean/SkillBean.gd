@@ -20,6 +20,7 @@ var myself_array = [] #自家队伍
 var enemy_array = [] #敌人队伍
 
 var timer = Timer.new()
+var auto_start = false
 
 func _ready():
 	set_process(false)
@@ -29,6 +30,32 @@ func _ready():
 	timer.connect("timeout",self,"_onTimeOut")
 	add_child(timer)
 
+func auto_start(skill_data):
+	if skill_data.has("skill_start"):
+		for data in skill_data["skill_start"]:
+			var item_bean = SkillItemBean.new()
+			item_bean._create(data)
+			auto_choose(item_bean)
+	if skill_data.has("skill_ing"):
+		for data in skill_data["skill_ing"]:
+			var item_bean = SkillItemBean.new()
+			item_bean._create(data)
+			auto_choose(item_bean)
+
+func auto_choose(skill):
+	for index in skill.item_role:
+		if index >= 0:
+			doSkillItemScript(myself_array[0],skill)
+			return
+		elif skill.item_role.size() == 3:
+			for enemy in enemy_array:
+				doSkillItemScript(enemy,skill)
+			return
+		elif index < 0:
+			if enemy_array.size() > (abs(index)-1):
+				doSkillItemScript(enemy_array[abs(index)-1],skill)
+	skill.item_count-=1
+
 #装载技能
 func loadSkill(skill_data):
 	skill_id = skill_data["skill_id"]
@@ -37,13 +64,14 @@ func loadSkill(skill_data):
 	skill_lv = skill_data["skill_lv"]
 	loadItemSkill(skill_data)
 
-func loadRoleArray(_enemy_array,_myself_array,_myself,_ss_array):
+func loadRoleArray(_enemy_array,_myself_array,_myself,_ss_array,_auto_start = false):
 	myself_array = _myself_array
 	enemy_array = _enemy_array
 	myself = _myself
 	ss_array = _ss_array
 	hero_attr = _myself.hero_attr
 	local_attr = hero_attr.toDict().duplicate()
+	auto_start = _auto_start
 
 #当属性发生变化是触发
 func on_attr_change(_attr,_num):

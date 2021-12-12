@@ -6,7 +6,7 @@ onready var effect_click = preload("res://Effect/ClickEffect.tscn")
 onready var get_new_item = preload("res://UI/ItemUI/GetNewItem.tscn")
 
 onready var add_box = $addBox
-onready var ui = $Control
+onready var ui = find_node("Control")
 
 func _init():
 	ConstantsValue.ui_layer = self
@@ -62,6 +62,7 @@ func closeTips():
 	
 #获取新物品时提示
 func getNewItem(_name,img,q = ""):
+	print("aaaaaaaaa")
 	var ins = get_new_item.instance()
 	ins.setData(_name,img,q)
 	$ItemShow/VBoxContainer.add_child_below_node($ItemShow/VBoxContainer/Label,ins)

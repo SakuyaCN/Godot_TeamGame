@@ -5,10 +5,10 @@ onready var parent = get_parent()
 var save_key = ""
 
 func _ready():
-	if !ConstantsValue._is_start:
+	if !ConstantsValue.game_mode_change:
 		visible = true
-	yield(get_tree().create_timer(0.2),"timeout")
-	auto_login()
+		yield(get_tree().create_timer(0.2),"timeout")
+		auto_login()
 	
 func auto_login():
 	var invalid_authtoken = ConstantsValue.user_info.token

@@ -5,7 +5,7 @@ onready var array_item_skill = {}
 
 onready var role_data #角色属性
 onready var hero_attr :HeroAttrBean
-onready var ui_name = $name
+onready var ui_name = find_node("name")
 onready var attr_paint = $attr
 
 func _ready():
@@ -17,7 +17,8 @@ func initRole():
 	loadData()
 
 func loadData():
-	ui_name.text = role_data["nickname"]
+	if ui_name != null:
+		ui_name.text = role_data["nickname"]
 	load_attr()
 
 func load_attr():
@@ -38,6 +39,7 @@ func load_attr():
 		$attr/ProgressBar.visible = false
 
 func _on_RoleUI_gui_input(event):
+
 	if event is InputEventMouseButton and event.pressed:
 		if get_parent().is_position:
 			return

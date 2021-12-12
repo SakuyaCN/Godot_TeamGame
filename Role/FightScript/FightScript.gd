@@ -21,6 +21,7 @@ var state_array = {} #状态列表
 var atk_mode = Utils.HurtType.ATK #普攻攻击类型
 
 signal onAtkOver()#普攻结束信号
+signal onDie(node)
 
 func _ready():
 	pass
@@ -211,6 +212,7 @@ func crit_hurt(_atk_attr:HeroAttrBean):
 #人物死亡
 func die():
 	if is_alive:
+		emit_signal("onDie",get_parent())
 		is_in_atk = false
 		is_alive = false
 		hero_sprite.play("Die")

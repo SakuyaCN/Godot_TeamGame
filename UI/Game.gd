@@ -14,6 +14,7 @@ func _init():
 	LocalData.do_load()
 
 func _ready():
+	ConstantsValue.game = self
 	$UILayer/chat.get_v_scroll().set("custom_styles/scroll",StyleBoxTexture.new())
 	isPlayMusic()
 	ConstantsValue.tree = get_tree()
@@ -22,11 +23,10 @@ func _ready():
 	http.connect("http_res",self,"http_res")
 	#isNewUser()
 	randomize()
-	if ConstantsValue._is_start:
+	if ConstantsValue.game_mode_change:
 		start_game()
 
 func start_game():
-	ConstantsValue._is_start = true
 	$UILayer/chat.visible = true
 	ConstantsValue.connect("on_chat_message",self,"_on_chat_message")
 	$Chat.connet_server()
