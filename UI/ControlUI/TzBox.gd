@@ -7,7 +7,7 @@ var equ_data
 var discard_count = 0
 var choose_id = null
 var choose_seal = null
-var check_array = []
+var choose_tz = null
 
 signal seal_choose()
 
@@ -29,24 +29,20 @@ func showBox(_equ_data = null):
 		$Label.text = "你还没有任何一个附魔印"
 
 func loadEquSeal():
-	check_array.clear()
 	$Item2/RichTextLabel.clear()
 	if equ_data != null && equ_data.keys().has("tz"):
-		for attr in equ_data.seal:
-			$Item2/RichTextLabel.append_bbcode(EquUtils.get_attr_string(attr.keys()[0]))
-			$Item2/RichTextLabel.append_bbcode(" %s" %[attr.values()[0]])
-			$Item2/RichTextLabel.append_bbcode("\n")
+		$Item2/RichTextLabel.append_bbcode(equ_data.tz.name)
 
 func loadBox():
 	for item in $NinePatchRect/ScrollContainer/GridContainer.get_children():
 		item.queue_free()
 	$NinePatchRect/ScrollContainer/GridContainer.get_children().clear()
 	for item in StorageData.get_player_tz():
-		var data = StorageData.get_player_tz()[item]
+		var data = LocalData.tz_data[StorageData.get_player_tz()[item].id]
 		if data != null:
 			var inv = invItem.instance()
 			inv.setSeal(data.img)
-			inv.connect("pressed",self,"item_pressed",[item,data])
+			inv.connect("pressed",self,"item_pressed",[item,data,])
 			$NinePatchRect/ScrollContainer/GridContainer.add_child(inv)
 
 func item_pressed(_id,_data):
@@ -56,6 +52,7 @@ func item_pressed(_id,_data):
 		$AnimationPlayer.play("show")
 	$Item/RichTextLabel.clear()
 	if _data.has("attr"):
+		$Item/RichTextLabel.append_bbcode("%s\n" %_data.name)
 		$Item/RichTextLabel.append_bbcode(EquUtils.getTzInfo(_data.attr))
 			
 
@@ -69,7 +66,7 @@ func _on_Button2_pressed():
 	if discard_count == 2:
 		if choose_id != null:
 			$Item.visible = false
-			StorageData.get_player_seal().erase(choose_id)
+			StorageData.get_player_tz().erase(choose_id)
 			StorageData._save_storage()
 			showBox(equ_data)
 	else:
@@ -79,42 +76,15 @@ func _on_Button2_pressed():
 
 #添加刻印
 func _on_Button_pressed():
-	if StorageData.get_player_seal().has(choose_id):
+	if StorageData.get_player_tz().has(choose_id):
 		if equ_data != null && choose_seal != null:
-			if equ_data.seal.size() == 2:
-				ConstantsValue.showMessage("装备最多添加2条刻印",2)
-				return
 			if equ_data.lv >= choose_seal.lv:
-				if choose_seal.keys().has("attr"):
+				if choose_seal.has("attr"):
 					$Item.visible = false
-					StorageData.get_player_seal().erase(choose_id)
-					var randnum = randi()%choose_seal.attr.size()
-					var base = choose_seal.attr.keys()[randnum]
-					equ_data.seal.append({
-							base:(rand_range(choose_seal.attr[base][0],choose_seal.attr[base][1])) as int
-						})
+					equ_data.tz = StorageData.get_player_tz()[choose_id]
+					StorageData.get_player_tz().erase(choose_id)
 					StorageData._save_storage()
 					showBox(equ_data)
 					emit_signal("seal_choose")
 			else:
-				ConstantsValue.showMessage("装备等级不足，无法安装刻印",1)
-
-#移除刻印
-func _on_Button3_pressed():
-	if check_array.size() == 0:
-		ConstantsValue.showMessage("请至少选中一条刻印擦除！",2)
-		return
-	discard_count += 1
-	if discard_count == 2:
-		if equ_data != null:
-			for index in check_array:
-				if equ_data.seal.size() > index:
-					equ_data.seal.remove(index)
-			StorageData._save_storage()
-			ConstantsValue.showMessage("已将装备刻印属性擦除",1)
-			emit_signal("seal_choose")
-			loadEquSeal()
-	else:
-		ConstantsValue.showMessage("再点一次确认擦除刻印",1)
-	yield(get_tree().create_timer(1),"timeout")
-	discard_count = 0
+				ConstantsValue.showMessage("装备等级不足，无法附魔套装",1)

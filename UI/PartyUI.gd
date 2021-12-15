@@ -338,6 +338,11 @@ func loadEquInfo(equ_data):
 		var label = label_ui.instance()
 		label.text = EquUtils.get_attr_string(attr_item.keys()[0]) + " + %s" %attr_item.values()[0]
 		$Equ_info/VBoxContainer.add_child(label)
+	if equ_data.has("tz"):
+		var label = label_ui.instance()
+		label.text = "套装：%s [%s/8]" %[equ_data.tz.name,Utils.findEquTzSize(role_data,equ_data.tz)]
+		label.set('custom_colors/font_outline_modulate', "#b766A5")
+		$Equ_info/VBoxContainer.add_child(label)
 	if equ_data["is_on"]:
 		$Equ_info/btn_down.text = "卸下"
 		$Equ_info/btn_des.visible = false

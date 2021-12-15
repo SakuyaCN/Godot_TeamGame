@@ -45,8 +45,10 @@ var unpt:int #毒素抗性
 var atk_mtk:int #攻击附带魔力值
 var shield_buff:int #护盾免伤
 
+var tz_array = []
 #重载基础属性
 func resetAttr(role_data):
+	tz_array.clear()
 	hp = role_data.attr.hp
 	atk = role_data.attr.atk
 	def = role_data.attr.def
@@ -76,6 +78,8 @@ func setEquAttrBean(role_data):
 		if StorageData.get_player_equipment().has(str(role_data["equ"][equ])):
 			var equ_data = StorageData.get_player_equipment()[str(role_data["equ"][equ])]
 			if equ_data != null:
+				if equ_data.has("tz"):
+					tz_array.append(equ_data.tz.id)
 				for base_attr_item in equ_data["base_attr"]:#基础属性
 					updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
 				for base_attr_item in equ_data["seal"]:#基础属性
@@ -86,6 +90,7 @@ func setEquAttrBean(role_data):
 						"wind": wind += base_attr_item.values()[0]
 						"ice": ice += base_attr_item.values()[0]
 						"posion": posion += base_attr_item.values()[0]
+	loadTzBuff()
 	loadJobAttr(role_data)
 	loadOhterAttr()
 	max_hp = hp
@@ -125,6 +130,22 @@ func loadJobAttr(role_data):
 			mtk += 5 * role_data.lv
 			speed += 5 * role_data.lv
 			crit += 5 * role_data.lv
+
+#装载套装效果
+func loadTzBuff():
+	var id_array = []
+	for tz_id in tz_array:
+		if !id_array.has(tz_id):
+			id_array.append(tz_id)
+	for _id in id_array:
+		var size = tz_array.count(_id)
+		if size > 1:
+			var _tz_data = LocalData.tz_data[_id]
+			if _tz_data.has("attr"):
+				for item in _tz_data.attr:
+					if size >= int(item):
+						for args in _tz_data.attr[item]:
+							updateNum(args[0],args[1],false)
 
 func loadOhterAttr():
 	if hp_buff>0:

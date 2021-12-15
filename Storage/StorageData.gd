@@ -208,9 +208,12 @@ func AddSeal(_data):
 	_save_storage()
 
 #添加一个套装
-func AddTz(_data):
+func AddTz(tz_id,_data):
 	var id = str(OS.get_system_time_msecs())
-	get_player_tz()[id] = _data
+	get_player_tz()[id] = {
+		"id":tz_id,
+		"name":_data.name
+	}
 	ConstantsValue.ui_layer.getNewItem(_data.name,_data.img)
 	_save_storage()
 

@@ -227,6 +227,15 @@ func getMapName(_index):
 		4:return "自然边界"
 		5:return "风暴雪域"
 
+func findEquTzSize(role_data,tz):
+	var size = 0
+	for item in role_data["equ"]:
+		if item != null:
+			var _equ_data = StorageData.get_player_equipment()[role_data["equ"][item]]
+			if _equ_data.has("tz") && _equ_data.tz.id == tz.id:
+				size += 1
+	return size
+
 func get_gold_string(gold):
 	if gold < 10000:
 		return String(gold)

@@ -69,7 +69,7 @@ func loadBuildTypeData(type,array,top_type):
 				data.need = LocalData.build_data["build_data"][type][str(id)].need
 			"套装附魔":
 				var temp = LocalData.tz_data[id].duplicate()
-				data.id = 0
+				data.id = id
 				data.name = temp.name
 				data.lv = temp.lv
 				data.img = temp.img
@@ -185,7 +185,7 @@ func _on_Button_pressed():
 			"技能书":
 				StorageData.AddSkill(choose_data)
 			"套装附魔":
-				StorageData.AddTz(choose_data.temp)
+				StorageData.AddTz(choose_data.id,choose_data.temp)
 
 #十倍打造
 func _on_bs_pressed(args):
