@@ -67,6 +67,15 @@ func loadBuildTypeData(type,array,top_type):
 				data.img = temp.image
 				data.info = temp.skill_info
 				data.need = LocalData.build_data["build_data"][type][str(id)].need
+			"套装附魔":
+				var temp = LocalData.tz_data[id].duplicate()
+				data.id = 0
+				data.name = temp.name
+				data.lv = temp.lv
+				data.img = temp.img
+				data.info = EquUtils.getTzInfo(temp.attr)
+				data.need = LocalData.build_data["build_data"][type][id].need
+				data.temp = temp
 			_:
 				data = LocalData.build_data["build_data"][type][str(id)]
 		item_ins.setData(data)
@@ -145,6 +154,9 @@ func get_context_label(type,data):
 		"技能书":
 			$NinePatchRect3/context.append_bbcode("技能说明：\n")
 			$NinePatchRect3/context.append_bbcode(data.info)
+		"套装附魔":
+			$NinePatchRect3/context.append_bbcode("套装属性介绍：\n")
+			$NinePatchRect3/context.append_bbcode(data.info)
 
 func _on_Button_pressed():
 	if !Utils.is_lv_ok(choose_data.lv):
@@ -172,6 +184,8 @@ func _on_Button_pressed():
 				StorageData.AddSeal(choose_data)
 			"技能书":
 				StorageData.AddSkill(choose_data)
+			"套装附魔":
+				StorageData.AddTz(choose_data.temp)
 
 #十倍打造
 func _on_bs_pressed(args):

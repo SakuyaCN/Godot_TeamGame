@@ -39,7 +39,15 @@ func get_attr_string(attr):
 		"unpt":return "毒素抗性"
 		"atk_mtk":return "攻击附带魔力百分比"
 		"shield_buff":return "护盾免伤率"
-		
+
+func getTzInfo(attr):
+	var info = ""
+	for item in attr:
+		info += "%s件套：\n" %item
+		for i2 in attr[item]:
+			info += "	%s +%s \n" %[get_attr_string(i2[0]),i2[1]]
+	return info
+
 func get_ys_color(ys):
 	match ys:
 		"fire": return Color("#ee7064")

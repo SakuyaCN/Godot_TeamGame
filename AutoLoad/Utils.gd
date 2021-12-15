@@ -216,6 +216,7 @@ func getMapNameFormIndex(_index):
 		1:return "困难地图"
 		2:return "地狱地图"
 		3:return "神话地图"
+		4:return "极限神话"
 
 func getMapName(_index):
 	match _index as int:

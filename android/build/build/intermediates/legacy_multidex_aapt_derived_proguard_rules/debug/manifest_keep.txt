@@ -1,0 +1,3 @@
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+-keep class androidx.multidex.MultiDexApplication { <init>(); }
+-keep class com.sakuya.mx.GodotInstrumentation { <init>(); }

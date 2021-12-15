@@ -100,6 +100,15 @@ func get_player_seal():
 		_save_storage()
 	return storage_data["player_seal"]
 
+#读取人物刻印列表
+func get_player_tz():
+	if not is_read_storage:
+		_read_storage()
+	if not storage_data.has("player_tz"):
+		storage_data["player_tz"] = {}
+		_save_storage()
+	return storage_data["player_tz"]
+
 #获取人物背包
 func get_player_inventory():
 	if not is_read_storage:
@@ -195,6 +204,13 @@ func UseGoodsNum(array):
 func AddSeal(_data):
 	var id = str(OS.get_system_time_msecs())
 	get_player_seal()[id] = _data
+	ConstantsValue.ui_layer.getNewItem(_data.name,_data.img)
+	_save_storage()
+
+#添加一个套装
+func AddTz(_data):
+	var id = str(OS.get_system_time_msecs())
+	get_player_tz()[id] = _data
 	ConstantsValue.ui_layer.getNewItem(_data.name,_data.img)
 	_save_storage()
 

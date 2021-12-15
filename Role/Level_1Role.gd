@@ -163,6 +163,11 @@ func role_reset():
 	hero_skill.clear()
 	animatedSprite.play("Idle")
 
+func reloadAttr(buffs = null):
+	if buffs != null:
+		for buff in buffs:
+			hero_attr.updateNum(buff[0],buff[1],false,true)
+
 #重置技能状态列表
 func resetSkill():
 	if !fight_script.is_alive:

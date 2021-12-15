@@ -46,6 +46,14 @@ dependencies {
     implementation libraries.kotlinStdLib
     implementation libraries.androidxFragment
 
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+    implementation 'com.google.code.gson:gson:2.8.8'
+    implementation 'androidx.legacy:legacy-support-core-ui:1.0.0'
+
+    debugImplementation fileTree(dir: 'libs/debug', include: ['*.jar', '*.aar'])
+
     if (rootProject.findProject(":lib")) {
         implementation project(":lib")
     } else if (rootProject.findProject(":godot:lib")) {
@@ -105,6 +113,7 @@ android {
         versionName getExportVersionName()
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
+        multiDexEnabled true
 //CHUNK_ANDROID_DEFAULTCONFIG_BEGIN
 //CHUNK_ANDROID_DEFAULTCONFIG_END
     }

@@ -1,0 +1,183 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Texture/Moster/Zombie.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Role/FightScript/FightScript.gd" type="Script" id=4]
+[ext_resource path="res://Texture/pc1.png" type="Texture" id=6]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_12.png" type="Texture" id=7]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_09.png" type="Texture" id=8]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_03.png" type="Texture" id=10]
+[ext_resource path="res://Shaders/OutLine.tres" type="Material" id=12]
+[ext_resource path="res://Role/Level_1Role.gd" type="Script" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36, 66.5 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "hit",
+"speed": 8.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 1 )
+
+[node name="LevelRole" type="KinematicBody2D"]
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2, -64.5 )
+shape = SubResource( 1 )
+
+[node name="FightScript" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="FightScript"]
+wait_time = 0.1
+
+[node name="SkillScript" type="Node" parent="."]
+
+[node name="SkillNode" type="Node" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = ExtResource( 12 )
+position = Vector2( -16, -62 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 3 )
+animation = "Idle"
+frame = 1
+playing = true
+
+[node name="Effects" type="AnimatedSprite" parent="."]
+position = Vector2( 24, -39 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "hit"
+playing = true
+
+[node name="ShotLine" type="Position2D" parent="."]
+position = Vector2( -48, -79 )
+
+[node name="hpbar" type="TextureRect" parent="."]
+margin_left = -86.0
+margin_top = -220.0
+margin_right = 83.0
+margin_bottom = -180.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp2" type="Label" parent="hpbar"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 37.5
+margin_top = 4.0
+margin_right = 71.5
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
+text = "HP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_hp" type="TextureProgress" parent="hpbar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -13.0
+margin_right = 37.0
+margin_bottom = 11.0
+value = 100.0
+texture_under = ExtResource( 10 )
+texture_progress = ExtResource( 8 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="hpbar/progress_hp"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_right = 44.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 3 )
+text = "100%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mpbar" type="TextureRect" parent="."]
+margin_left = -86.0
+margin_top = -172.0
+margin_right = 83.0
+margin_bottom = -132.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp2" type="Label" parent="mpbar"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 37.5
+margin_top = 4.0
+margin_right = 71.5
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 3 )
+text = "护盾"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_sd" type="TextureProgress" parent="mpbar"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -13.0
+margin_right = 37.0
+margin_bottom = 11.0
+value = 100.0
+texture_under = ExtResource( 10 )
+texture_progress = ExtResource( 7 )
+stretch_margin_left = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_sd" type="Label" parent="mpbar/progress_sd"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_right = 44.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 3 )
+text = "0%"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="FightScript/Timer" to="FightScript" method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite" to="FightScript" method="_on_AnimatedSprite_frame_changed"]

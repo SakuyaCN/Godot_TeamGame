@@ -153,16 +153,16 @@ func run2position(_position):
 func _process(delta):
 	if is_position:
 		if not is_moster:
-			global_position.x += delta * 250
+			global_position.x += delta * 350
 			if global_position.x >= run_position.position.x:
 				animatedSprite.speed_scale = 1.0
 				is_position = false
 				set_process(false)
 				get_tree().call_group("game_main","plus_size")
 		else:
-			global_position.x -= delta * 350
+			global_position.x -= delta * 400
 			if global_position.x <= run_position.position.x:
-				animatedSprite.speed_scale = 1.0
+				animatedSprite.speed_scale = 1
 				is_position = false
 				set_process(false)
 				animatedSprite.animation = "Idle"

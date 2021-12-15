@@ -416,7 +416,7 @@ func _on_btn_down_pressed():
 			ConstantsValue.showMessage("人物等级不足，无法穿戴！",2)
 		else:
 			var type = check_equ_data.type
-			if role_data.equ.has(type) && StorageData.get_player_equipment()[role_data.equ[type]] != null:
+			if role_data.equ.has(type) && StorageData.get_player_equipment().has(role_data.equ[type]) && StorageData.get_player_equipment()[role_data.equ[type]] != null:
 				StorageData.get_player_equipment()[role_data.equ[type]].is_on = false
 			setEqu2Role(type,check_equ_data)
 			ConstantsValue.showMessage("已穿戴%s"%check_equ_data.name,1)
@@ -435,6 +435,11 @@ func _on_btn_des_pressed():
 		StorageData.get_player_equipment().erase(check_equ_data.id)
 		loadAllEqu()
 #=====================================================
+#套装点击
+func _on_btn_tz_pressed():
+	var tz = preload("res://UI/ControlUI/TzBox.tscn").instance()
+	if check_equ_data != null:
+		ConstantsValue.showTzBox(check_equ_data,self)
 #刻印点击
 func _on_btn_seal_pressed():
 	if check_equ_data != null:

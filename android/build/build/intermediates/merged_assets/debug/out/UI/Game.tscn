@@ -581,6 +581,10 @@ wait_time = 0.1
 [node name="GameHangUp" type="Node" parent="GameMain"]
 script = ExtResource( 30 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+volume_db = -2.0
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 0
 script = ExtResource( 2 )
@@ -822,10 +826,6 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 27 )
-volume_db = -2.0
 
 [node name="Chat" type="Node" parent="."]
 script = ExtResource( 28 )

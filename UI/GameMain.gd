@@ -48,6 +48,9 @@ func _ready():
 
 #加载地图
 func load_map():
+	if !StorageData.storage_data["player_state"]["map"].has("4"):
+		StorageData.storage_data["player_state"]["map"]["4"] = {"max_map":0,"now_map":0}
+		StorageData._save_storage()
 	var map_index = str(StorageData.storage_data["player_state"]["map_index"])
 	ConstantsValue.ui_layer.ui.main_ui.setTitle(StorageData.storage_data["player_state"]["map"][map_index]["now_map"]+1)
 	player_map = StorageData.storage_data["player_state"]["map"][map_index]["now_map"]

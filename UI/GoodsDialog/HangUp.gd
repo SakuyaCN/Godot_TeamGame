@@ -7,18 +7,24 @@ func hangUp(_player_array,ts):
 	var player_map = StorageData.storage_data["player_state"]["map"][str(map_index)]["now_map"]
 	var map_name  = (player_map/10) as int	
 	var moster_name = LocalData.map_data[Utils.getMapName(map_name)].moster
-	var win_goods = LocalData.moster_data[moster_name].win_data
+	var win_goods = LocalData.moster_data[moster_name].win_data.duplicate(true)
 	var goods_array = []
 	var _exp = (1 + (player_map / 10.0) + (map_index * 60)) * win_goods.other.exp + (60 *  (map_index * map_index) * 1.5)
 	_exp *= (ts / 20)
 	var _gold = (ts / 15)
+	var hm_gold = (ts / 120) as int
+	if hm_gold > 0:
+		win_goods.goods.append(["荒漠铜币串",1,50])
 	StorageData.get_player_state()["gold"] += _gold
 	for item in win_goods.goods:
-		var gnum = (item[1] as int+randi() % item[2] as int) * 0.75
-		gnum += gnum * (1 + map_index)
-		gnum *= ((ts / 20) * (item[3] / 100.0))
-		if gnum as int > 0:
-			goods_array.append([item[0],gnum as int])
+		if item[0] == "荒漠铜币串":
+			goods_array.append([item[0],hm_gold])
+		else:
+			var gnum = (item[1] as int+randi() % item[2] as int) * 0.85
+			gnum += gnum * (1 + map_index)
+			gnum *= ((ts / 20) * (item[2] / 100.0))
+			if gnum as int > 0:
+				goods_array.append([item[0],gnum as int])
 	StorageData.AddGoodsNum(goods_array)
 	for item in goods_array:
 		var ins  = build_info_need.instance()

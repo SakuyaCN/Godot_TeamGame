@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Texture/hud/Assets-2(Scale-x2)_03.png" type="Texture" id=1]
-[ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://Font/123.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://UI/ItemUI/invItem.gd" type="Script" id=3]
 
 [node name="Node2D" type="Button"]
@@ -38,11 +38,14 @@ visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -14.0
-margin_bottom = 2.0
+margin_left = -7.0
+margin_top = -9.0
+margin_right = -18.0
+margin_bottom = 7.0
+rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/font = ExtResource( 2 )
-text = "9999"
-align = 2
+text = "100"
+align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false

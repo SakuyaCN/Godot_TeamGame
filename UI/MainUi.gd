@@ -12,6 +12,7 @@ onready var build_ui = preload("res://UI/ControlUI/BuildUI.tscn")
 
 func _ready():
 	visible = false
+	#StorageData.AddGoodsNum([["荒漠金币",100]])
 	#setTitle(StorageData.storage_data["player_state"]["now_map"]+1)
 
 func showui():
@@ -51,4 +52,28 @@ func _on_box_pressed():
 
 #云端山脉
 func _on_map2_pressed():
-	ConstantsValue.ui_layer.change_scene("res://UI/GameLevel/Leve_1.tscn")
+	if !Utils.is_lv_ok(30):
+		ConstantsValue.showMessage("请至少一名冒险者达到30级再来挑战",2)
+		return
+	if StorageData.UseGoodsNum([["荒漠金币",1]]):
+		ConstantsValue.ui_layer.change_scene("res://UI/GameLevel/Leve_1.tscn")
+	else:
+		ConstantsValue.showMessage("需要一枚【荒漠金币】,请前往炼金台中打造！",5)
+
+func _on_update_pressed():
+	if !StorageData.get_player_state().has("update_gif"):
+		StorageData.get_player_state()["update_gif"] = []
+	if StorageData.get_player_state()["update_gif"].has(ConstantsValue.version):
+		ConstantsValue.showMessage("已经领取更新奖励！",2)
+	else:
+		StorageData.get_player_state()["update_gif"].append(ConstantsValue.version)
+		StorageData.AddGoodsNum([
+			["荒漠金币",5],
+			["刻印碎片",200],
+			["青岚铁矿",50],
+			["秘银矿石",100]
+		])
+
+#广告奖励
+func _on_ad_pressed():
+	$AD.showAd()

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\xml_csj_file_paths.xml.flat",
+        "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\xml\\csj_file_paths.xml"
+    },
+    {
         "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi-v4_icon_foreground.png.flat",
         "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-xhdpi-v4\\icon_foreground.png"
     },
@@ -24,12 +28,12 @@
         "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-hdpi-v4\\icon_background.png"
     },
     {
-        "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi-v4_icon_background.png.flat",
-        "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-xxhdpi-v4\\icon_background.png"
-    },
-    {
         "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap_icon.png.flat",
         "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap\\icon.png"
+    },
+    {
+        "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi-v4_icon_background.png.flat",
+        "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-xxhdpi-v4\\icon_background.png"
     },
     {
         "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi-v4_icon_foreground.png.flat",
@@ -48,20 +52,20 @@
         "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\drawable-nodpi\\splash.png"
     },
     {
-        "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi-v4_icon.png.flat",
-        "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-hdpi-v4\\icon.png"
-    },
-    {
         "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi-v4_icon.png.flat",
         "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-mdpi-v4\\icon.png"
     },
     {
-        "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap_icon_background.png.flat",
-        "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap\\icon_background.png"
+        "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi-v4_icon.png.flat",
+        "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-hdpi-v4\\icon.png"
     },
     {
         "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi-v4_icon_foreground.png.flat",
         "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-hdpi-v4\\icon_foreground.png"
+    },
+    {
+        "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap_icon_background.png.flat",
+        "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap\\icon_background.png"
     },
     {
         "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi-v4_icon_background.png.flat",

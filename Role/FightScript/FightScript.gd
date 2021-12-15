@@ -99,10 +99,10 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 	var hurt_num = 0
 	match atk_type:
 		Utils.HurtType.ATK:
-			hurt_num = _atk_attr.atk * (1 - ((hero_attr.def - _atk_attr.atk_pass)/100.0))#物理伤害
+			hurt_num = _atk_attr.atk * getHurtPass(hero_attr.def,_atk_attr.atk_pass) 
 			fight_script.atk_blood(hurt_num)
 		Utils.HurtType.MTK:
-			hurt_num = _atk_attr.mtk * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
+			hurt_num = _atk_attr.mtk * getHurtPass(hero_attr.mdef,_atk_attr.mtk_pass) 
 			fight_script.mtk_blood(hurt_num)
 	#攻击附带魔力
 	hurt_num += atkHasMtk(_atk_attr)
@@ -132,9 +132,9 @@ func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 	var _is_crit = false
 	match atk_type as int:
 		Utils.HurtType.ATK:
-			hurt_num = number * (1 - ((hero_attr.def - _atk_attr.atk_pass)/100.0))#物理伤害
+			hurt_num = number * getHurtPass(hero_attr.def,_atk_attr.atk_pass) 
 		Utils.HurtType.MTK:
-			hurt_num = number * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))#魔力伤害
+			hurt_num = number * getHurtPass(hero_attr.mdef,_atk_attr.mtk_pass)
 		Utils.HurtType.TRUE:hurt_num = number
 	if  atk_type as int != Utils.HurtType.TRUE && _atk_attr.skill_crit > 0 && randf() <  _atk_attr.skill_crit / 7000.0:
 		hurt_num *= 1.5 + (_atk_attr.crit_buff / 100.0)
@@ -145,6 +145,11 @@ func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 		updateHp(hurt_num,false,Utils.HurtType.COUTINUED)
 	else:
 		updateHp(hurt_num,true,_is_crit)
+
+func getHurtPass(_my_def,_pass):
+	if 1 - ((_my_def - _pass)/100.0) <=0:
+		return 0.01
+	return 1 - ((_my_def - _pass)/100.0)
 
 #攻击附带魔力值
 func atkHasMtk(_atk_attr:HeroAttrBean):
@@ -163,7 +168,10 @@ func updateHp(_num,is_skill,type):
 	if hero_attr.shield > 0:
 		if hero_attr.shield_buff > 0:
 			#get_parent()._show_damage_label("护盾免伤-%s"%sh_buff,Utils.HurtType.OTHER)
-			hurt_num = hurt_num * (1 - hero_attr.shield_buff/ 100.0)
+			var hf = (1 - hero_attr.shield_buff/ 100.0)
+			if hf <= 0:
+				hf = 0.01
+			hurt_num = hurt_num * hf
 		if hero_attr.shield - hurt_num < 0:
 			hurt_num -= hero_attr.shield
 			hero_attr.shield = 0
