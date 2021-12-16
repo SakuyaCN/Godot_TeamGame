@@ -2,8 +2,8 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.sakuya.mx"
 4    android:installLocation="auto"
-5    android:versionCode="16"
-6    android:versionName="1.0.9" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+5    android:versionCode="17"
+6    android:versionName="1.1.0" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
 7    <uses-sdk
 8        android:minSdkVersion="19"
 9        android:targetSdkVersion="30" />

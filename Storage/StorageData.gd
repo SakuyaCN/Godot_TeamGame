@@ -9,7 +9,7 @@ var is_read_storage = false
 var team_data :Dictionary
 var player_state:Dictionary
 
-var is_encrypted = false #是否加密
+var is_encrypted = true #是否加密
 
 var thread
 var semaphore

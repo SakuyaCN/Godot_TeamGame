@@ -532,6 +532,93 @@ margin_left = 354.0
 margin_right = 454.0
 margin_bottom = 100.0
 
+[node name="skill" type="NinePatchRect" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -354.5
+margin_top = -109.5
+margin_right = 354.5
+margin_bottom = 109.5
+rect_pivot_offset = Vector2( -585, 242.5 )
+mouse_filter = 0
+texture = ExtResource( 8 )
+patch_margin_left = 31
+patch_margin_top = 43
+patch_margin_right = 35
+patch_margin_bottom = 33
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/skill"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -305.0
+margin_top = -100.0
+margin_right = 305.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 7 )
+text = "请选择一个技能"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BUFF" type="HBoxContainer" parent="CanvasLayer/skill"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -298.0
+margin_top = -19.0
+margin_right = 298.0
+margin_bottom = 83.0
+custom_constants/separation = 24
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" parent="CanvasLayer/skill/BUFF" instance=ExtResource( 19 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 100.0
+margin_bottom = 102.0
+
+[node name="Control2" parent="CanvasLayer/skill/BUFF" instance=ExtResource( 19 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 124.0
+margin_right = 224.0
+margin_bottom = 102.0
+
+[node name="Control3" parent="CanvasLayer/skill/BUFF" instance=ExtResource( 19 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 248.0
+margin_right = 348.0
+margin_bottom = 102.0
+
+[node name="Control4" parent="CanvasLayer/skill/BUFF" instance=ExtResource( 19 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 372.0
+margin_right = 472.0
+margin_bottom = 102.0
+
+[node name="Control5" parent="CanvasLayer/skill/BUFF" instance=ExtResource( 19 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 496.0
+margin_right = 596.0
+margin_bottom = 102.0
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
 
@@ -774,13 +861,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer2" type="Timer" parent="."]
+
 [connection signal="body_entered" from="StaticBody2D2" to="." method="_on_StaticBody2D2_body_entered"]
 [connection signal="gui_input" from="CanvasLayer/Control/attrs" to="." method="_on_attrs_gui_input"]
 [connection signal="gui_input" from="CanvasLayer/fail/ColorRect2" to="." method="_on_ColorRect2_gui_input"]
 [connection signal="pressed" from="CanvasLayer/win/BUFF/Control" to="." method="_on_Control_pressed" binds= [ 0 ]]
 [connection signal="pressed" from="CanvasLayer/win/BUFF/Control2" to="." method="_on_Control_pressed" binds= [ 1 ]]
 [connection signal="pressed" from="CanvasLayer/win/BUFF/Control3" to="." method="_on_Control_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="CanvasLayer/skill/BUFF/Control" to="." method="_on_Control_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="CanvasLayer/skill/BUFF/Control2" to="." method="_on_Control_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="CanvasLayer/skill/BUFF/Control3" to="." method="_on_Control_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="CanvasLayer/skill/BUFF/Control4" to="." method="_on_Control_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="CanvasLayer/skill/BUFF/Control5" to="." method="_on_Control_pressed" binds= [ 2 ]]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="UILayer/msg/Timer" to="UILayer" method="_on_Timer_timeout"]
 [connection signal="gui_input" from="UILayer/GameResult/ColorRect" to="UILayer" method="_on_ColorRect_gui_input"]
 [connection signal="timeout" from="UILayer/GameResult/Timer" to="UILayer/GameResult" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
