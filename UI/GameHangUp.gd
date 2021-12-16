@@ -16,7 +16,5 @@ func on_login():
 
 func on_http(_url,data):
 	if data.success:
-		var ins = game_hangup.instance()
-		add_child(ins)
-		ins.hangUp(get_parent().player_array,data["data"].ts)
+		ConstantsValue.showHangUp(get_parent().player_array,data["data"].ts)
 		get_parent().is_hangup = false

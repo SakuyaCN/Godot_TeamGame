@@ -26,7 +26,7 @@ func showBox(_equ_data = null):
 	loadBox()
 	if StorageData.get_player_tz().size() == 0:
 		$Label.visible = true
-		$Label.text = "你还没有任何一个附魔印"
+		$Label.text = "你还没有任何一个套装"
 
 func loadEquSeal():
 	$Item2/RichTextLabel.clear()
@@ -70,7 +70,7 @@ func _on_Button2_pressed():
 			StorageData._save_storage()
 			showBox(equ_data)
 	else:
-		ConstantsValue.showMessage("再点一次确认丢弃刻印",1)
+		ConstantsValue.showMessage("再点一次确认丢弃套装",1)
 	yield(get_tree().create_timer(1),"timeout")
 	discard_count = 0
 

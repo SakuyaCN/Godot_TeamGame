@@ -59,7 +59,7 @@ margin_top = 3.0
 margin_right = 390.0
 margin_bottom = 66.0
 custom_fonts/font = SubResource( 1 )
-text = "离线奖励"
+text = "挂机奖励"
 align = 1
 valign = 1
 __meta__ = {
@@ -71,7 +71,7 @@ margin_top = 309.0
 margin_right = 390.0
 margin_bottom = 338.0
 custom_fonts/font = SubResource( 8 )
-text = "累计离线时间："
+text = "累计挂机时间："
 align = 1
 valign = 1
 __meta__ = {
@@ -84,7 +84,7 @@ margin_top = 195.0
 margin_right = 341.0
 margin_bottom = 294.0
 custom_fonts/font = SubResource( 8 )
-text = "累计离线时间："
+text = "累计挂机时间："
 __meta__ = {
 "_edit_use_anchors_": false
 }

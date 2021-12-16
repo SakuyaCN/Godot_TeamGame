@@ -6,6 +6,7 @@ var game_layer = null #ui界面 与游戏交互
 var const_choose_role_arrt = null #点击人物展示数据面板
 var tree = null
 var game = null
+var game_main = null
 var array_num = 0#拾取等级
 var is_fight_num#战斗信息是否展示
 var fight_array
@@ -16,6 +17,7 @@ var chat_array = []
 signal on_chat_message(data)
 
 #=========网络部分==========
+var ad_time = 0
 var online_data
 var online_attr
 
@@ -33,6 +35,7 @@ var game_mode_change = 0 #是否从其他世界切换回来
 onready var seal_box = preload("res://UI/ControlUI/SealBox.tscn")
 onready var tz_box = preload("res://UI/ControlUI/TzBox.tscn")
 onready var attr_box = preload("res://UI/ControlUI/OhterAttr.tscn")
+onready var hang_up = preload("res://UI/GoodsDialog/HangUp.tscn")
 
 func _init():
 	GodotNakama = GodotNakamaClient.new()
@@ -74,6 +77,11 @@ func showTzBox(_data,node = null):
 func showAttrBox(node,_data):
 	var ins = attr_box.instance()
 	ins.showAttr(node,_data)
+
+func showHangUp(p_array,time):
+	var ins = hang_up.instance()
+	ui_layer.add_child(ins)
+	ins.hangUp(p_array,time)
 
 func updateFightNum():
 	is_fight_num = ConfigScript.getBoolSetting("fight","fight_num")

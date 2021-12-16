@@ -20,9 +20,9 @@ func hangUp(_player_array,ts):
 		if item[0] == "荒漠铜币串":
 			goods_array.append([item[0],hm_gold])
 		else:
-			var gnum = (item[1] as int+randi() % item[2] as int) * 0.85
+			var gnum = (item[1] as int+randi() % item[2] as int)
 			gnum += gnum * (1 + map_index)
-			gnum *= ((ts / 20) * (item[2] / 100.0))
+			gnum *= (ts / 20) * rand_range(0.2,0.3)
 			if gnum as int > 0:
 				goods_array.append([item[0],gnum as int])
 	StorageData.AddGoodsNum(goods_array)
@@ -36,7 +36,7 @@ func hangUp(_player_array,ts):
 				_role.addExp(_exp as int)
 	$win/exp.text = "累计获得经验：%s\n（如有加成以实际为准）" %_exp as int
 	$win/exp.text += "\n累计获得金币：%s\n（如有加成以实际为准）" %_gold as int
-	$win/Label2.text = "累计离线时间：%s"%Utils.get_time_string(ts)
+	$win/Label2.text = "累计挂机时间：%s"%Utils.get_time_string(ts)
 	
 
 

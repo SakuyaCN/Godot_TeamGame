@@ -76,4 +76,5 @@ func _on_update_pressed():
 
 #广告奖励
 func _on_ad_pressed():
-	$AD.showAd()
+	var ad = preload("res://UI/GoodsDialog/AdGif.tscn").instance()
+	add_child(ad)

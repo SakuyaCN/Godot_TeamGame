@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Texture/pc1.png" type="Texture" id=1]
 [ext_resource path="res://UI/MainUi.gd" type="Script" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Texture/Icons_05.png" type="Texture" id=12]
 [ext_resource path="res://Texture/Data/boxs/Icon6.png" type="Texture" id=13]
 [ext_resource path="res://Texture/Data/boxs/Icon8.png" type="Texture" id=14]
-[ext_resource path="res://AutoLoad/Ad.gd" type="Script" id=15]
 
 [sub_resource type="StreamTexture" id=12]
 load_path = "res://.import/Assets-2(Scale-x2)-No-BG_03_03.png-00203a1282831532b31a702f2e1582fd.stex"
@@ -521,9 +520,6 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AD" type="Node" parent="."]
-script = ExtResource( 15 )
 
 [connection signal="pressed" from="map" to="." method="_on_map_pressed"]
 [connection signal="pressed" from="map2" to="." method="_on_map2_pressed"]

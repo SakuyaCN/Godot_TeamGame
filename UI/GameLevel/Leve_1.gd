@@ -10,6 +10,7 @@ var moster_all_count = 20
 var moster_alive_count = 20
 var moster_data
 
+var player_skill = []
 var player_array = [null,null,null]
 var moster_array = []
 var player_buff = []
@@ -77,7 +78,7 @@ func getHpCount():
 	elif 20 <= moster_count && moster_count < 30:
 		return 2000 * moster_count * 1.8
 	else:
-		return 5000 * moster_count * 2.5
+		return 3000 * moster_count * 2.5
 
 func getdefCount():
 	if moster_count < 5:
@@ -89,7 +90,7 @@ func getdefCount():
 	elif 20 <= moster_count && moster_count < 30:
 		return 2.1 * moster_count
 	else:
-		return 3.5 * moster_count
+		return 3 * moster_count
 
 func getPassCount():
 	if moster_count < 5:
@@ -113,8 +114,7 @@ func getAtkCount():
 	elif 20 <= moster_count && moster_count < 30:
 		return 150 * moster_count * 1.15
 	else:
-		return 350 * moster_count * 1.2
-
+		return 300 * moster_count * 1.2
 
 func game_start():
 	reloadCount()
@@ -122,11 +122,10 @@ func game_start():
 	player_array[0].fight_script.connect("onDie",self,"player_die")
 	player_array[0].setRoleScript(moster_array,player_array)
 
+
+
 func _on_Timer_timeout():
 	if moster_all_count != 0:
-		if $CanvasLayer/Control/HBoxContainer.get_child_count() < 5 && randi()%20 == 5:
-			if StorageData.get_all_skill().size() > 0:
-				addSkill(LocalData.skill_data[StorageData.get_all_skill()[randi()%StorageData.get_all_skill().size()].form])
 		moster_all_count -= 1
 		var moster_ins = moster.instance()
 		$Position2D2.add_child(moster_ins)
@@ -171,6 +170,7 @@ func count_over():
 	$CanvasLayer/Control/HBoxContainer.get_children().clear()
 	$CanvasLayer/win.visible = true
 	$Timer.stop()
+	$Timer2.stop()
 	moster_count += 1
 	for item in player_array:
 		if item != null:
@@ -188,6 +188,7 @@ func nextRound():
 		if item != null:
 			item.reloadAttr(player_buff)
 	$Timer.start()
+	$Timer2.start()
 
 func _on_StaticBody2D2_body_entered(body):
 	body.start_fight()
@@ -198,6 +199,7 @@ func showWinBox():
 	StorageData.get_player_state()["gold"] += 50
 	var goods = getWinGoods()
 	goods.append(["刻印碎片",10])
+	goods.append(["火焰之石",2])
 	StorageData.AddGoodsNum(goods)
 	for item in $CanvasLayer/win/GridContainer.get_children():
 		item.queue_free()
@@ -298,3 +300,8 @@ func _on_attrs_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if player_array[0] != null:
 			ConstantsValue.showAttrBox($CanvasLayer,player_array[0].hero_attr)
+
+func _on_Timer2_timeout():
+	if $CanvasLayer/Control/HBoxContainer.get_child_count() < 5 && randi()%20 == 5:
+		if StorageData.get_all_skill().size() > 0:
+			addSkill(LocalData.skill_data[StorageData.get_all_skill()[randi()%StorageData.get_all_skill().size()].form])

@@ -7,3 +7,6 @@ func useGoods(_node:Node,_name,_num):
 			ConstantsValue.ui_layer.ui.create_ui.showCreate(true)
 		"刻印收纳箱":
 			ConstantsValue.showSealBox(null)
+		"半小时挂机卡":
+			if StorageData.UseGoodsNum([["半小时挂机卡",1]]):
+				ConstantsValue.showHangUp(ConstantsValue.game_main.player_array,1800)

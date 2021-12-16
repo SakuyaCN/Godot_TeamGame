@@ -41,6 +41,7 @@ var is_flight = false#是否可以准备战斗
 var is_progress = true#进度条是否走动
 
 func _ready():
+	ConstantsValue.game_main = self
 	locao_boss_time = boss_time_out
 	game_progress = get_parent().find_node("UILayer").find_node("Control").find_node("MainUi").find_node("progress_hp")
 	game_progress_tv =  get_parent().find_node("UILayer").find_node("Control").find_node("MainUi").find_node("progress_hp").find_node("label_hp")

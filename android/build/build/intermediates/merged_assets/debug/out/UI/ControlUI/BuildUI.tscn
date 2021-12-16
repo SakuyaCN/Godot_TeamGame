@@ -193,20 +193,19 @@ __meta__ = {
 margin_left = 21.0
 margin_top = 76.0
 margin_right = 286.0
-margin_bottom = 253.0
+margin_bottom = 281.0
 custom_colors/default_color = Color( 0.458824, 0.454902, 0.454902, 1 )
 custom_fonts/normal_font = SubResource( 9 )
 bbcode_enabled = true
-scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="context2" type="Label" parent="NinePatchRect3"]
 margin_left = 21.0
-margin_top = 259.0
+margin_top = 291.0
 margin_right = 286.0
-margin_bottom = 274.0
+margin_bottom = 306.0
 custom_colors/font_color = Color( 0.45098, 0.443137, 0.443137, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "炼制需要以下材料："
@@ -216,9 +215,9 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect3"]
 margin_left = 21.0
-margin_top = 274.0
+margin_top = 313.0
 margin_right = 286.0
-margin_bottom = 337.0
+margin_bottom = 361.0
 columns = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -229,10 +228,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -70.0
-margin_top = -72.0
-margin_right = 70.0
-margin_bottom = -19.0
+margin_left = -63.5
+margin_top = -58.0
+margin_right = 63.5
+margin_bottom = -13.0
 custom_fonts/font = SubResource( 7 )
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 4 )
@@ -244,8 +243,9 @@ __meta__ = {
 }
 
 [node name="bs" type="Control" parent="NinePatchRect3"]
+margin_top = 21.0
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = 61.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
