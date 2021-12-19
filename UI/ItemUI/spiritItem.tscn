@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Texture/hud/Assets-2(Scale-x2)_03.png" type="Texture" id=1]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/ItemUI/spiritItem.gd" type="Script" id=3]
+[ext_resource path="res://Role/Spirit/sp1.tres" type="SpriteFrames" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Button"]
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 60 )
+mouse_filter = 1
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="NinePatchRect" parent="."]
+margin_right = 60.0
+margin_bottom = 60.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="AnimatedSprite" parent="Sprite"]
+position = Vector2( 29, 14 )
+scale = Vector2( 2, 2 )
+frames = ExtResource( 4 )
+animation = "Idle"
+playing = true
+
+[node name="Label" type="Label" parent="Sprite"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = 15.5
+margin_right = 19.0
+margin_bottom = 32.5
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = SubResource( 1 )
+text = "选择助战"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -230,7 +230,7 @@ func getMapName(_index):
 func findEquTzSize(role_data,tz):
 	var size = 0
 	for item in role_data["equ"]:
-		if item != null:
+		if item != null && StorageData.get_player_equipment().has(role_data["equ"][item]):
 			var _equ_data = StorageData.get_player_equipment()[role_data["equ"][item]]
 			if _equ_data.has("tz") && _equ_data.tz.id == tz.id:
 				size += 1

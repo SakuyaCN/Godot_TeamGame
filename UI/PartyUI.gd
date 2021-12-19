@@ -549,3 +549,7 @@ func _on_other_attr_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if role_data != null:
 			ConstantsValue.showAttrBox(self,hero_attr)
+
+#助战
+func _on_spirit_pressed():
+	pass # Replace with function body.

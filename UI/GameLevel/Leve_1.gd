@@ -30,7 +30,7 @@ func _ready():
 
 func reloadCount():
 	if moster_count % 5 == 0:
-		$Timer.wait_time -= 0.03
+		$Timer.wait_time -= 0.04
 	$CanvasLayer/Control/ColorRect2/all_count.text = "当前回合总敌人数量：%s" %moster_all_count
 	$CanvasLayer/Control/ColorRect2/count.text = "当前战斗波数：%s"%moster_count
 	loadMoster()
@@ -78,7 +78,7 @@ func getHpCount():
 	elif 20 <= moster_count && moster_count < 30:
 		return 2000 * moster_count * 1.8
 	else:
-		return 3000 * moster_count * 2.5
+		return 4000 * moster_count * 2.7
 
 func getdefCount():
 	if moster_count < 5:
@@ -90,7 +90,7 @@ func getdefCount():
 	elif 20 <= moster_count && moster_count < 30:
 		return 2.1 * moster_count
 	else:
-		return 3 * moster_count
+		return 3.3 * moster_count
 
 func getPassCount():
 	if moster_count < 5:
@@ -114,7 +114,7 @@ func getAtkCount():
 	elif 20 <= moster_count && moster_count < 30:
 		return 150 * moster_count * 1.15
 	else:
-		return 300 * moster_count * 1.2
+		return 300 * moster_count * 1.3
 
 func game_start():
 	reloadCount()
@@ -180,7 +180,7 @@ func count_over():
 
 func nextRound():
 	$CanvasLayer/win.visible = false
-	moster_all_count = 20 + (moster_count * 5)
+	moster_all_count = 20 + (moster_count * 2)
 	moster_alive_count = moster_all_count
 	moster_max_count = moster_all_count
 	reloadCount()
@@ -302,6 +302,6 @@ func _on_attrs_gui_input(event):
 			ConstantsValue.showAttrBox($CanvasLayer,player_array[0].hero_attr)
 
 func _on_Timer2_timeout():
-	if $CanvasLayer/Control/HBoxContainer.get_child_count() < 5 && randi()%20 == 5:
+	if $CanvasLayer/Control/HBoxContainer.get_child_count() < 5 && randi()%15 == 5:
 		if StorageData.get_all_skill().size() > 0:
 			addSkill(LocalData.skill_data[StorageData.get_all_skill()[randi()%StorageData.get_all_skill().size()].form])

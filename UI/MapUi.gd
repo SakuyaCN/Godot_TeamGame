@@ -19,7 +19,6 @@ func close_map():
 func _on_TextureButton_pressed():
 	close_map()
 
-
 func _on_left_pressed():
 	if map_index == 0:
 		return 
@@ -29,7 +28,7 @@ func _on_left_pressed():
 		reload()
 
 func _on_right_pressed():
-	if map_index == 3:
+	if map_index == 4:
 		return 
 	else:
 		if map_index < StorageData.storage_data["player_state"]["map_index_max"]:

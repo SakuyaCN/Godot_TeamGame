@@ -240,7 +240,6 @@ func setRoleScript(_enemy_array,_myself_array):
 	if max_shield == 0:
 		$RoleUI/mpbar/progress_sd.value = 0
 
-
 #展示血条 双方全部进场
 func show_bar():
 	if am_player.is_playing():
@@ -275,11 +274,10 @@ func reloadHpBar():
 	$RoleUI/hpbar/progress_hp.max_value = hero_attr.max_hp as int
 	$RoleUI/hpbar/progress_hp.value = hero_attr.hp as int
 	$RoleUI/hpbar/progress_hp/label_hp.text = str((hero_attr.hp as float/ hero_attr.max_hp as float * 100 )as int) + "%"
-	
+		
 	$RoleUI/mpbar/progress_sd.max_value = max_shield
 	$RoleUI/mpbar/progress_sd.value = hero_attr.shield as int
 	$RoleUI/mpbar/progress_sd/label_sd.text = "%s点"%hero_attr.shield
-	
 
 #战斗数字显示
 func _show_damage_label(damage,type,is_max = false):

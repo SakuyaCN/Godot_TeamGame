@@ -78,3 +78,7 @@ func _on_update_pressed():
 func _on_ad_pressed():
 	var ad = preload("res://UI/GoodsDialog/AdGif.tscn").instance()
 	add_child(ad)
+
+
+func _on_spirit_pressed():
+	ConstantsValue.showSpirit(null)

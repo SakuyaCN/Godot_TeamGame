@@ -169,23 +169,32 @@ func _on_Button_pressed():
 	if left_type == "材料":
 		for item in need:
 			item[1] *= build_num
-	if StorageData.UseGoodsNum(need):
-		match left_type:
-			"基础装备", "神话装备":
-				EquUtils.createNewEqu(choose_id,left_type,choose_data,choose_data.type)
-			"材料":
-				StorageData.AddGoodsNum([[choose_data.name,1 * build_num]])
-			"刻印":
-				if StorageData.get_player_state().has("seal_return_lv"):
-					var num = (StorageData.get_player_state()["seal_return_lv"] * 5) / 100.0
-					var seal_num = (need[0][1] * num) as int
-					if seal_num > 0:
-						StorageData.AddGoodsNum([[need[0][0],seal_num]])
-				StorageData.AddSeal(choose_data)
-			"技能书":
-				StorageData.AddSkill(choose_data)
-			"套装附魔":
-				StorageData.AddTz(choose_data.id,choose_data.temp)
+	if need[0][0] == "金币":
+		if StorageData.useGold(need[0][1]):
+			get_goods(need)
+		else:
+			ConstantsValue.showMessage("金币不足！",2)
+	else:
+		if StorageData.UseGoodsNum(need):
+			get_goods(need)
+
+func get_goods(need):
+	match left_type:
+		"基础装备", "神话装备":
+			EquUtils.createNewEqu(choose_id,left_type,choose_data,choose_data.type)
+		"材料":
+			StorageData.AddGoodsNum([[choose_data.name,1 * build_num]])
+		"刻印":
+			if StorageData.get_player_state().has("seal_return_lv"):
+				var num = (StorageData.get_player_state()["seal_return_lv"] * 5) / 100.0
+				var seal_num = (need[0][1] * num) as int
+				if seal_num > 0:
+					StorageData.AddGoodsNum([[need[0][0],seal_num]])
+			StorageData.AddSeal(choose_data)
+		"技能书":
+			StorageData.AddSkill(choose_data)
+		"套装附魔":
+			StorageData.AddTz(choose_data.id,choose_data.temp)
 
 #十倍打造
 func _on_bs_pressed(args):

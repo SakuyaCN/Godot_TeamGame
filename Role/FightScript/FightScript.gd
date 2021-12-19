@@ -148,7 +148,7 @@ func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 
 func getHurtPass(_my_def,_pass):
 	if 1 - ((_my_def - _pass)/100.0) <=0:
-		return 0.01
+		return 0.0001
 	return 1 - ((_my_def - _pass)/100.0)
 
 #攻击附带魔力值
@@ -280,7 +280,7 @@ func doAtk():
 		get_parent()._show_damage_label("丢失目标",Utils.HurtType.OTHER)
 		return
 	for role in do_atk_array:
-		if role != null:
+		if role != null && is_instance_valid(role) && role.fight_script.is_alive:
 			role.fight_script.do_hurt(role_data,hero_attr,atk_mode,self)
 	emit_signal("onAtkOver")
 

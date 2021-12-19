@@ -6,6 +6,7 @@ var map_data#地图数据
 var build_data#炼金台数据
 var skill_data#技能数据
 var tz_data#套装数据
+var spirit_data#助战数据
 
 var all_data:Dictionary#所以物品存放的字典
 
@@ -24,6 +25,7 @@ func do_load():
 	load_build()
 	load_skill()
 	load_tz()
+	load_spirit()
 
 func load_map():
 	var item_data_file = File.new()
@@ -53,4 +55,10 @@ func load_tz():
 	var item_data_file = File.new()
 	item_data_file.open_encrypted_with_pass("res://Storage/TzData.json",File.READ,"sakuya")
 	tz_data = JSON.parse(item_data_file.get_as_text()).result
+	item_data_file.close()
+
+func load_spirit():
+	var item_data_file = File.new()
+	item_data_file.open_encrypted_with_pass("res://Storage/Spirit.json",File.READ,"sakuya")
+	spirit_data = JSON.parse(item_data_file.get_as_text()).result
 	item_data_file.close()

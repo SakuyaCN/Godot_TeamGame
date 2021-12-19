@@ -9,7 +9,7 @@ var is_read_storage = false
 var team_data :Dictionary
 var player_state:Dictionary
 
-var is_encrypted = true #是否加密
+var is_encrypted = false #是否加密
 
 var thread
 var semaphore
@@ -28,6 +28,7 @@ func _ready():
 	get_all_team()
 	get_all_skill()
 	get_player_seal()
+	get_player_tz()
 	reloadData()
 	for key in storage_data["player_equipment"]:
 		if storage_data["player_equipment"][key] == null:
@@ -154,6 +155,15 @@ func get_all_skill():
 		_save_storage()
 	return storage_data["skill"]
 
+#获取助战列表
+func get_all_spirit():
+	if not is_read_storage:
+		_read_storage()
+	if not storage_data.has("spirit"):
+		storage_data["spirit"] = {}
+		_save_storage()
+	return storage_data["spirit"]
+
 #刷新人物装备背包
 func reloadEquUI():
 	get_tree().call_group("PartyUI","loadAllEqu")
@@ -227,3 +237,20 @@ func AddSkill(_data):
 	})
 	ConstantsValue.ui_layer.getNewItem(_data.name,_data.img)
 	get_tree().call_group("PartyUI","reloadPratySKill")
+
+func useGold(gold):
+	if get_player_state()["gold"] >= gold:
+		get_player_state()["gold"] -= gold
+		return true
+	else:
+		return false
+
+func addSpirit(_id):
+	var a = {}
+	a.duplicate()
+	var id = str(OS.get_system_time_msecs()+randi()%1000)
+	var data = LocalData.spirit_data[_id].duplicate()
+	data.lv = 1
+	data.quality = EquUtils.createQuality(false)
+	data.gems = []
+	get_all_spirit()[id] = data

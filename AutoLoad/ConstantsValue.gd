@@ -36,6 +36,7 @@ onready var seal_box = preload("res://UI/ControlUI/SealBox.tscn")
 onready var tz_box = preload("res://UI/ControlUI/TzBox.tscn")
 onready var attr_box = preload("res://UI/ControlUI/OhterAttr.tscn")
 onready var hang_up = preload("res://UI/GoodsDialog/HangUp.tscn")
+onready var spirit_box = preload("res://UI/ControlUI/SpiritBox.tscn")
 
 func _init():
 	GodotNakama = GodotNakamaClient.new()
@@ -82,6 +83,11 @@ func showHangUp(p_array,time):
 	var ins = hang_up.instance()
 	ui_layer.add_child(ins)
 	ins.hangUp(p_array,time)
+
+func showSpirit(_data):
+	var ins = spirit_box.instance()
+	ui_layer.add_child(ins)
+	ins.set_role(_data)
 
 func updateFightNum():
 	is_fight_num = ConfigScript.getBoolSetting("fight","fight_num")

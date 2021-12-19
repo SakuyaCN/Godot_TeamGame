@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Texture/Moster/Zombie.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Role/BaseRole.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=11]
 [ext_resource path="res://Shaders/OutLine.tres" type="Material" id=12]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_06.png" type="Texture" id=13]
+[ext_resource path="res://Role/Spirit/sp8.tres" type="SpriteFrames" id=14]
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -170,6 +171,16 @@ position = Vector2( -16, -62 )
 scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
+frame = 3
+playing = true
+
+[node name="spirit" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -64, -32 )
+scale = Vector2( 2, 2 )
+frames = ExtResource( 14 )
+animation = "Atk"
+frame = 8
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]

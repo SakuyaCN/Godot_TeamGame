@@ -194,31 +194,30 @@ scale = Vector2( 5, 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
 frames = SubResource( 35 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 25.6, 0 )
 frames = SubResource( 36 )
-frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 54.4, 0 )
 frames = SubResource( 37 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 118.4, 0 )
 frames = SubResource( 38 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 144, 0 )
 frames = SubResource( 39 )
-frame = 4
+frame = 3
 playing = true
 
 [node name="pb1" type="ParallaxBackground" parent="PxBg"]
