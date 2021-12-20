@@ -84,10 +84,10 @@ func showHangUp(p_array,time):
 	ui_layer.add_child(ins)
 	ins.hangUp(p_array,time)
 
-func showSpirit(_data):
+func showSpirit(_data,_choose_id = null):
 	var ins = spirit_box.instance()
-	ui_layer.add_child(ins)
-	ins.set_role(_data)
+	ui_layer.ui.add_child(ins)
+	ins.set_role(_data,_choose_id)
 
 func updateFightNum():
 	is_fight_num = ConfigScript.getBoolSetting("fight","fight_num")

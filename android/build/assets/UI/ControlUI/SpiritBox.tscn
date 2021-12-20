@@ -1,0 +1,338 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
+[ext_resource path="res://Texture/bg_2.png" type="Texture" id=2]
+[ext_resource path="res://UI/ControlUI/SpiritBox.gd" type="Script" id=3]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=5]
+[ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=6]
+[ext_resource path="res://Texture/hud/Check element.png" type="Texture" id=7]
+[ext_resource path="res://Texture/hud/Check box.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 18
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+extra_spacing_top = 2
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 133, 34 )
+margin_bottom = 2.45886
+
+[sub_resource type="DynamicFont" id=10]
+outline_size = 2
+outline_color = Color( 0.447059, 0.419608, 0.419608, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[node name="SealBox" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 88.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 8 )
+text = "助战精灵"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 861.0
+margin_top = 264.13
+margin_right = -13.0
+margin_bottom = 380.13
+custom_fonts/font = SubResource( 9 )
+text = "助战说明
+转化率：冒险者设置助战精灵后会按照转化率提供属性给冒险者
+等级：等级越高则成长属性越高，升级需要一定数量金币和进阶石"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="NinePatchRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -462.0
+margin_top = -222.5
+margin_right = -135.001
+margin_bottom = 159.5
+rect_pivot_offset = Vector2( -357.919, -71.9322 )
+mouse_filter = 0
+texture = ExtResource( 2 )
+patch_margin_left = 30
+patch_margin_top = 29
+patch_margin_right = 24
+patch_margin_bottom = 26
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Item"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.5
+margin_top = -171.0
+margin_right = 135.5
+margin_bottom = 167.0
+custom_colors/default_color = Color( 0.333333, 0.494118, 0.498039, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Item"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 33.5
+margin_top = 196.0
+margin_right = 160.5
+margin_bottom = 264.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "升级"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Item"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.5
+margin_top = 196.0
+margin_right = -37.5
+margin_bottom = 264.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "丢弃"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gold" type="Label" parent="Item"]
+anchor_right = 1.0
+margin_left = 329.0
+margin_top = 382.0
+margin_right = 297.0
+margin_bottom = 455.0
+custom_fonts/font = SubResource( 9 )
+text = "升级需要金币：10000"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item2" type="NinePatchRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 165.0
+margin_top = -112.5
+margin_right = 431.0
+margin_bottom = 36.5
+rect_pivot_offset = Vector2( -357.919, -71.9322 )
+mouse_filter = 0
+texture = ExtResource( 2 )
+patch_margin_left = 30
+patch_margin_top = 29
+patch_margin_right = 24
+patch_margin_bottom = 26
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Item2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = -53.5
+margin_right = 81.0
+margin_bottom = 54.5
+custom_colors/default_color = Color( 0.278431, 0.505882, 0.509804, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Item2"]
+anchor_right = 1.0
+margin_top = -40.0
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 8 )
+text = "当前装备刻印："
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Item2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.5
+margin_top = 7.0
+margin_right = 63.5
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "擦除"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Item2"]
+anchor_right = 1.0
+margin_top = 242.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 9 )
+text = "双击擦除勾选中的刻印"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_c" type="CheckBox" parent="Item2"]
+margin_left = 220.0
+margin_top = 14.0
+margin_right = 244.0
+margin_bottom = 39.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 10 )
+custom_icons/checked = ExtResource( 7 )
+custom_icons/unchecked = ExtResource( 8 )
+custom_styles/focus = SubResource( 11 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="equ_c2" type="CheckBox" parent="Item2"]
+margin_left = 220.0
+margin_top = 41.1305
+margin_right = 244.0
+margin_bottom = 66.1305
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 10 )
+custom_icons/checked = ExtResource( 7 )
+custom_icons/unchecked = ExtResource( 8 )
+custom_styles/focus = SubResource( 11 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -130.0
+margin_top = -158.5
+margin_right = 165.0
+margin_bottom = 159.5
+mouse_filter = 0
+texture = ExtResource( 2 )
+patch_margin_left = 30
+patch_margin_top = 29
+patch_margin_right = 24
+patch_margin_bottom = 26
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -131.5
+margin_top = -147.0
+margin_right = 131.5
+margin_bottom = 147.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer"]
+columns = 4
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="pressed" from="Item/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Item/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Item2/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Item2/equ_c" to="." method="_on_check_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="Item2/equ_c2" to="." method="_on_check_pressed" binds= [ 1 ]]

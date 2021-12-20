@@ -271,6 +271,8 @@ func winGoods():
 			gnum += gnum * (1 + map_index)
 			goods_array.append([item[0],gnum as int])
 	StorageData.AddGoodsNum(goods_array)
+	if randi()%100 < 10:
+		stroneDl()
 	if win_goods.other.has("exp"):
 		var _exp = (1 + (player_map / 10.0) + (map_index * 60)) * win_goods.other.exp + (60 *  (map_index * map_index) * 1.5)
 		for _role in player_array:
@@ -285,6 +287,35 @@ func winGoods():
 	if !StorageData.get_player_state().has("win_count"):
 		StorageData.get_player_state()["win_count"] = 0
 	StorageData.get_player_state()["win_count"] += 1
+
+#进阶石掉落
+func stroneDl():
+	var arr = []
+	var map_index = StorageData.storage_data["player_state"]["map_index"] as int
+	match map_index:
+		0:
+			arr.append(["初级助战进阶石",rand_range(5,10) as int,40])
+		1:
+			arr.append(["初级助战进阶石",rand_range(5,10) as int,40])
+			arr.append(["中级助战进阶石",rand_range(2,4) as int,30])
+		2:
+			arr.append(["中级助战进阶石",rand_range(2,4) as int,40])
+			arr.append(["高级助战进阶石",rand_range(1,2) as int,30])
+		3:
+			arr.append(["初级助战进阶石",rand_range(5,10) as int,45])
+			arr.append(["中级助战进阶石",rand_range(2,4) as int,30])
+			arr.append(["高级助战进阶石",rand_range(1,2) as int,20])
+		4:
+			arr.append(["初级助战进阶石",rand_range(5,11) as int,50])
+			arr.append(["中级助战进阶石",rand_range(2,5) as int,30])
+			arr.append(["高级助战进阶石",rand_range(1,3) as int,20])
+	var goods_array = []
+	for item in arr:
+		if randf() <= item[2] / 100.0:
+			var gnum = item[1]
+			gnum += gnum * (1 + map_index)
+			goods_array.append([item[0],gnum as int])
+	StorageData.AddGoodsNum(goods_array)
 
 #监听切换地图
 func obsChangeMap():

@@ -13,19 +13,24 @@ func useGoods(_node:Node,_name,_num):
 			if StorageData.UseGoodsNum([["半小时挂机卡",1]]):
 				ConstantsValue.showHangUp(ConstantsValue.game_main.player_array,1800)
 		"助战宝箱":
-			if StorageData.UseGoodsNum([["助战宝箱钥匙",1]]):
-				var arr = box_array.duplicate()
-				var arr_g = []
-				arr.shuffle()
-				for index in range(3):
-					arr_g.append([arr[index][0],rand_range(arr[index][1],arr[index][2]) as int ])
-				var ins = box.instance()
-				ConstantsValue.ui_layer.add_child(ins)
-				ins.setGoods(arr_g)
-				if randi()%100 < 10:
-					var key = spirit_array[randi()%spirit_array.size()]
-					ins.add_spirit(LocalData.spirit_data[key])
-					StorageData.addSpirit(key)
+			if StorageData.checkGoodsNum([["助战宝箱",1]]):
+				if StorageData.UseGoodsNum([["助战宝箱钥匙",1]]):
+					StorageData.UseGoodsNum([["助战宝箱",1]])
+					var arr = box_array.duplicate()
+					var arr_g = []
+					arr.shuffle()
+					for index in range(3):
+						arr_g.append([arr[index][0],rand_range(arr[index][1],arr[index][2]) as int ])
+					var ins = box.instance()
+					ConstantsValue.ui_layer.add_child(ins)
+					ins.setGoods(arr_g)
+					StorageData.AddGoodsNum(arr_g)
+					if randi()%100 < 10:
+						var key = spirit_array[randi()%spirit_array.size()]
+						ins.add_spirit(LocalData.spirit_data[key])
+						StorageData.addSpirit(key)
+			else:
+				ConstantsValue.showMessage("找不到宝箱！",2)
 
 
 var box_array = [

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_07.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Font/123_max.fnt" type="BitmapFont" id=11]
 [ext_resource path="res://UI/ScrollContainer.gd" type="Script" id=12]
 [ext_resource path="res://UI/PartyUI.gd" type="Script" id=13]
+[ext_resource path="res://UI/ItemUI/spiritItem.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -485,7 +486,6 @@ __meta__ = {
 }
 
 [node name="equ_main" type="TextureRect" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -605,6 +605,12 @@ margin_bottom = 116.0
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 type = "护手"
+
+[node name="spirit" parent="equ_main" instance=ExtResource( 14 )]
+margin_left = 320.5
+margin_top = 76.5
+margin_right = 380.5
+margin_bottom = 136.5
 
 [node name="skill_main" type="TextureRect" parent="."]
 visible = false
@@ -1161,6 +1167,7 @@ anims/show = SubResource( 18 )
 [connection signal="gui_input" from="ScrollContainer" to="ScrollContainer" method="_on_ScrollContainer_gui_input"]
 [connection signal="gui_input" from="TextureRect2" to="." method="_on_TextureRect2_gui_input"]
 [connection signal="gui_input" from="other_attr" to="." method="_on_other_attr_gui_input"]
+[connection signal="pressed" from="equ_main/spirit" to="." method="_on_spirit_pressed"]
 [connection signal="gui_input" from="status" to="." method="_on_status_gui_input"]
 [connection signal="gui_input" from="skill" to="." method="_on_skill_gui_input"]
 [connection signal="gui_input" from="equ" to="." method="_on_equ_gui_input"]

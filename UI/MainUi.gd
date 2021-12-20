@@ -55,7 +55,7 @@ func _on_map2_pressed():
 	if !Utils.is_lv_ok(30):
 		ConstantsValue.showMessage("请至少一名冒险者达到30级再来挑战",2)
 		return
-	if StorageData.UseGoodsNum([["荒漠金币",1]]):
+	if StorageData.checkGoodsNum([["荒漠金币",1]]):
 		ConstantsValue.ui_layer.change_scene("res://UI/GameLevel/Leve_1.tscn")
 	else:
 		ConstantsValue.showMessage("需要一枚【荒漠金币】,请前往炼金台中打造！",5)

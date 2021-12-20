@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sakuya\\.gradle\\caches\\transforms-3\\bfd99ca6463824d8dc51327b2f71dc33\\transformed\\appcompat-1.0.2\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\34776\\.gradle\\caches\\transforms-3\\bfd99ca6463824d8dc51327b2f71dc33\\transformed\\appcompat-1.0.2\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

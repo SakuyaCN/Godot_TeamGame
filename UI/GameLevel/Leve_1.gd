@@ -123,7 +123,6 @@ func game_start():
 	player_array[0].setRoleScript(moster_array,player_array)
 
 
-
 func _on_Timer_timeout():
 	if moster_all_count != 0:
 		moster_all_count -= 1
@@ -200,6 +199,8 @@ func showWinBox():
 	var goods = getWinGoods()
 	goods.append(["刻印碎片",10])
 	goods.append(["火焰之石",2])
+	if randi()%100 < 5:
+		goods.append(["助战宝箱",1])
 	StorageData.AddGoodsNum(goods)
 	for item in $CanvasLayer/win/GridContainer.get_children():
 		item.queue_free()
@@ -305,3 +306,8 @@ func _on_Timer2_timeout():
 	if $CanvasLayer/Control/HBoxContainer.get_child_count() < 5 && randi()%15 == 5:
 		if StorageData.get_all_skill().size() > 0:
 			addSkill(LocalData.skill_data[StorageData.get_all_skill()[randi()%StorageData.get_all_skill().size()].form])
+
+func _on_attrs2_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		ConstantsValue.game_mode_change = true
+		$UILayer.change_scene("res://UI/Game.tscn")

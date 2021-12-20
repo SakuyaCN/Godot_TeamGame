@@ -78,6 +78,13 @@ func checkHeroData():
 	loadHeroData()
 	loadHeroSkill()
 	reLoadHeroEqu()
+	loadSpirit()
+
+func loadSpirit():
+	if role_data != null && role_data.has("spirit") && role_data.spirit!=null:
+		$equ_main/spirit.setSeal(StorageData.get_all_spirit()[role_data.spirit])
+	else:
+		$equ_main/spirit.setSeal(null)
 
 func _process(_delta):
 	if check_temp_ins != null && get_parent().tempSKillIcon.visible:
@@ -552,4 +559,7 @@ func _on_other_attr_gui_input(event):
 
 #助战
 func _on_spirit_pressed():
-	pass # Replace with function body.
+	if role_data.has("spirit") && role_data.spirit != null:
+		ConstantsValue.showSpirit(role_data,role_data.spirit)
+	else:
+		ConstantsValue.showSpirit(role_data)

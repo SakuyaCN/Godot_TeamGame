@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Sakuya\\.gradle\\caches\\transforms-3\\bfd99ca6463824d8dc51327b2f71dc33\\transformed\\appcompat-1.0.2\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\34776\\.gradle\\caches\\transforms-3\\bfd99ca6463824d8dc51327b2f71dc33\\transformed\\appcompat-1.0.2\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

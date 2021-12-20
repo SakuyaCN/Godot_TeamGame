@@ -63,6 +63,7 @@ func set_role(_role_data):
 	hero_attr = HeroAttrUtils.reloadHeroAttr(self,role_data)
 	loadRoleSkill()
 	load_asset()
+	loadSpirit()
 	ui.initRole()
 
 func setOnlineData(_role_data,_hero_attr):
@@ -83,6 +84,8 @@ func setIndex(_index):
 
 func changeAnim(anim):
 	animatedSprite.animation = anim
+	if $spirit.visible:
+		$spirit.animation = anim
 
 #资源载入
 func load_asset():
@@ -140,8 +143,18 @@ func load_asset():
 		add_to_group("player_role")
 	fight_script.load_script(is_moster)
 
+func loadSpirit():
+	if role_data.has("spirit") && role_data.spirit != null:
+		$spirit.visible = true
+		$spirit.animation = "Idle"
+		$spirit.frames = load(StorageData.get_all_spirit()[role_data.spirit].res)
+	else:
+		$spirit.visible = false
+
 func run2position(_position):
 	animatedSprite.animation = "Run"
+	if $spirit.visible:
+		$spirit.animation = "Run"
 	if not is_moster:
 		global_position = Vector2(-100,_position.position.y)
 	else:
@@ -166,6 +179,8 @@ func _process(delta):
 				is_position = false
 				set_process(false)
 				animatedSprite.animation = "Idle"
+				if $spirit.visible:
+					$spirit.animation = "Idle"
 				get_tree().call_group("game_main","moster_plus_size")
 
 #初始化装载技能
@@ -178,6 +193,7 @@ func loadRoleSkill():
 
 #玩家状态重置
 func role_reset():
+	loadSpirit()
 	shape_2d.set_deferred("disabled",false)
 	resetSkill()
 	ui.removeAll()
@@ -188,6 +204,8 @@ func role_reset():
 	loadRoleSkill()
 	am_player.play_backwards("show_bar")
 	animatedSprite.play("Run")
+	if $spirit.visible:
+		$spirit.animation = "Run"
 
 #重置技能状态列表
 func resetSkill():
@@ -265,6 +283,8 @@ func start_fight():
 func fight_over():
 	fight_script.is_in_atk = false
 	animatedSprite.play("Idle")
+	if $spirit.visible:
+		$spirit.animation = "Idle"
 	#role_reset()
 
 var max_shield = 0

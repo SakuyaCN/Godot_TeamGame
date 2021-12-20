@@ -375,6 +375,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="attrs2" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 1177.49
+margin_top = 30.564
+margin_right = 1322.49
+margin_bottom = 94.564
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/attrs2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -31.0
+margin_right = 54.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 19 )
+text = "退出副本"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="fail" type="Control" parent="CanvasLayer"]
 visible = false
 anchor_right = 1.0
@@ -625,6 +653,34 @@ wait_time = 0.7
 [node name="UILayer" type="CanvasLayer" parent="."]
 script = ExtResource( 17 )
 
+[node name="attrs3" type="TextureRect" parent="UILayer"]
+margin_left = 1177.49
+margin_top = 30.564
+margin_right = 1322.49
+margin_bottom = 94.564
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UILayer/attrs3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -31.0
+margin_right = 54.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 19 )
+text = "退出副本"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ItemShow" type="ScrollContainer" parent="UILayer"]
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -865,6 +921,7 @@ __meta__ = {
 
 [connection signal="body_entered" from="StaticBody2D2" to="." method="_on_StaticBody2D2_body_entered"]
 [connection signal="gui_input" from="CanvasLayer/Control/attrs" to="." method="_on_attrs_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/Control/attrs2" to="." method="_on_attrs2_gui_input"]
 [connection signal="gui_input" from="CanvasLayer/fail/ColorRect2" to="." method="_on_ColorRect2_gui_input"]
 [connection signal="pressed" from="CanvasLayer/win/BUFF/Control" to="." method="_on_Control_pressed" binds= [ 0 ]]
 [connection signal="pressed" from="CanvasLayer/win/BUFF/Control2" to="." method="_on_Control_pressed" binds= [ 1 ]]
@@ -875,6 +932,7 @@ __meta__ = {
 [connection signal="pressed" from="CanvasLayer/skill/BUFF/Control4" to="." method="_on_Control_pressed" binds= [ 2 ]]
 [connection signal="pressed" from="CanvasLayer/skill/BUFF/Control5" to="." method="_on_Control_pressed" binds= [ 2 ]]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="gui_input" from="UILayer/attrs3" to="." method="_on_attrs2_gui_input"]
 [connection signal="timeout" from="UILayer/msg/Timer" to="UILayer" method="_on_Timer_timeout"]
 [connection signal="gui_input" from="UILayer/GameResult/ColorRect" to="UILayer" method="_on_ColorRect_gui_input"]
 [connection signal="timeout" from="UILayer/GameResult/Timer" to="UILayer/GameResult" method="_on_Timer_timeout"]

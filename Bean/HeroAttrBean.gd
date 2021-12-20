@@ -90,10 +90,18 @@ func setEquAttrBean(role_data):
 						"wind": wind += base_attr_item.values()[0]
 						"ice": ice += base_attr_item.values()[0]
 						"posion": posion += base_attr_item.values()[0]
+	loadSpirit(role_data)
 	loadTzBuff()
 	loadJobAttr(role_data)
 	loadOhterAttr()
 	max_hp = hp
+
+#装载助战
+func loadSpirit(role_data):
+	if role_data.has("spirit") && role_data["spirit"] != null:
+		var data = StorageData.get_all_spirit()[role_data["spirit"]]
+		for attr in data.base_attr:
+			updateNum(attr,data.base_attr[attr] * data.lv * EquUtils.getQualityAttr(data.quality))
 
 #装载职业特性
 func loadJobAttr(role_data):

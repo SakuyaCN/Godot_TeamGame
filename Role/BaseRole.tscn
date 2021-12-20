@@ -165,6 +165,15 @@ wait_time = 0.1
 
 [node name="SkillNode" type="Node" parent="."]
 
+[node name="spirit" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -69, -32 )
+scale = Vector2( 2, 2 )
+frames = ExtResource( 14 )
+animation = "Atk"
+frame = 9
+playing = true
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = ExtResource( 12 )
 position = Vector2( -16, -62 )
@@ -172,15 +181,6 @@ scale = Vector2( 3, 3 )
 frames = ExtResource( 1 )
 animation = "Idle"
 frame = 3
-playing = true
-
-[node name="spirit" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -64, -32 )
-scale = Vector2( 2, 2 )
-frames = ExtResource( 14 )
-animation = "Atk"
-frame = 8
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]

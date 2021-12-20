@@ -21,10 +21,13 @@ func loadAllHero():
 		$ScrollContainer/HSlider.add_child(ins)
 
 func _select(_item,_ins):
-	var ins = role.instance()
-	get_parent().get_parent().player_array[0] = ins
-	get_parent().get_parent().find_node("Position2D").add_child(ins)
-	ins.set_role(_item)
-	visible = false
-	get_parent().get_parent().game_start()
+	if StorageData.UseGoodsNum([["荒漠金币",1]]):
+		var ins = role.instance()
+		get_parent().get_parent().player_array[0] = ins
+		get_parent().get_parent().find_node("Position2D").add_child(ins)
+		ins.set_role(_item)
+		visible = false
+		get_parent().get_parent().game_start()
+	else:
+		ConstantsValue.showMessage("荒漠金币不足！",2)
 	

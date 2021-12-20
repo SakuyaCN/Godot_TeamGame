@@ -1,7 +1,7 @@
-#Thu Dec 16 23:13:12 CST 2021
-base.1=F\:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
+#Mon Dec 20 19:52:50 CST 2021
+base.1=D\:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.1=classes2.dex
-base.0=F\:\\Godot33\\wh\\Godot_TeamGame\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+base.0=D\:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
 path.0=classes.dex

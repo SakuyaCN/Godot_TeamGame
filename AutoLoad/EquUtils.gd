@@ -106,6 +106,14 @@ func getQualityBs(ys):
 		"B级": return 0.95
 		"C级": return 0.9
 
+func getQualityAttr(ys):
+	match ys:
+		"S++": return 0.70
+		"S级": return 0.65
+		"A级": return 0.60
+		"B级": return 0.58
+		"C级": return 0.56
+
 func getQualityBssTART(ys):
 	match ys:
 		"S++": return 1.2

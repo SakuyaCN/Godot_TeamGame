@@ -10,8 +10,6 @@ func reload():
 	else:
 		$exp.text = "当前刻印收集杯返还率：0%"
 
-
-
 func _on_Button_pressed():
 	if StorageData.get_player_state().seal_return_lv >= 10:
 		ConstantsValue.showMessage("刻印杯最高返还率为50%",2)

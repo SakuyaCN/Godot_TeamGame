@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=1]
 [ext_resource path="res://Texture/bg_2.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 
 [sub_resource type="DynamicFont" id=8]
 size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 18
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -36,52 +40,12 @@ texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 133, 34 )
 margin_bottom = 2.45886
 
-[sub_resource type="DynamicFont" id=9]
-size = 18
-font_data = ExtResource( 4 )
-
 [sub_resource type="DynamicFont" id=10]
 outline_size = 2
 outline_color = Color( 0.447059, 0.419608, 0.419608, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxEmpty" id=11]
-
-[sub_resource type="Animation" id=1]
-resource_name = "show"
-length = 0.3
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("Item:rect_position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 541.659, -0.25, 0, 0.25, 0, 280, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Item:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, true ]
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("Item:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 0.5, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.3 )
-}
 
 [node name="SealBox" type="Control"]
 anchor_right = 1.0
@@ -111,14 +75,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label4" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 861.0
+margin_top = 239.0
+margin_right = -13.0
+margin_bottom = 393.0
+custom_fonts/font = SubResource( 9 )
+text = "助战说明
+助战角色可通过助战宝箱开出
+点击冒险小队->装备 选择助战可以上场
+转化率：冒险者设置助战精灵后会按照转化率提供属性给冒险者
+等级：等级越高则成长属性越高，升级需要一定数量金币和进阶石"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Item" type="NinePatchRect" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -459.0
+margin_left = -462.0
 margin_top = -222.5
-margin_right = -132.0
+margin_right = -135.001
 margin_bottom = 159.5
 rect_pivot_offset = Vector2( -357.919, -71.9322 )
 mouse_filter = 0
@@ -153,16 +136,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 25.5
-margin_top = 212.0
-margin_right = 152.5
-margin_bottom = 280.0
+margin_left = 33.5
+margin_top = 196.0
+margin_right = 160.5
+margin_bottom = 264.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
 custom_styles/focus = SubResource( 6 )
 custom_styles/normal = SubResource( 7 )
-text = "使用"
+text = "升级"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -172,10 +155,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -140.5
-margin_top = 212.0
-margin_right = -13.5
-margin_bottom = 280.0
+margin_left = -164.5
+margin_top = 196.0
+margin_right = -37.5
+margin_bottom = 264.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 4 )
 custom_styles/pressed = SubResource( 5 )
@@ -186,7 +169,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="gold" type="Label" parent="Item"]
+anchor_right = 1.0
+margin_left = 329.0
+margin_top = 382.0
+margin_right = 297.0
+margin_bottom = 455.0
+custom_fonts/font = SubResource( 9 )
+text = "升级需要金币：10000"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Item2" type="NinePatchRect" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -332,9 +331,6 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect/ScrollContainer"]
 columns = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/show = SubResource( 1 )
 
 [connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
 [connection signal="pressed" from="Item/Button" to="." method="_on_Button_pressed"]
