@@ -1,0 +1,772 @@
+[gd_scene load_steps=44 format=2]
+
+[ext_resource path="res://Texture/background/b3/1.png" type="Texture" id=1]
+[ext_resource path="res://Texture/background/b3/2.png" type="Texture" id=2]
+[ext_resource path="res://Texture/background/b3/8.png" type="Texture" id=3]
+[ext_resource path="res://Texture/background/b3/3.png" type="Texture" id=4]
+[ext_resource path="res://Texture/background/b3/7.png" type="Texture" id=5]
+[ext_resource path="res://Texture/background/b3/4.png" type="Texture" id=6]
+[ext_resource path="res://Texture/background/b3/6.png" type="Texture" id=7]
+[ext_resource path="res://Texture/background/b3/5.png" type="Texture" id=8]
+[ext_resource path="res://Map/GameLevel2/Level2.gd" type="Script" id=9]
+[ext_resource path="res://Texture/bg_2.png" type="Texture" id=10]
+[ext_resource path="res://Texture/hud/p_s_n.png" type="Texture" id=11]
+[ext_resource path="res://UI/UILayer.gd" type="Script" id=12]
+[ext_resource path="res://UI/GameResult.gd" type="Script" id=13]
+[ext_resource path="res://Texture/hud/p_s_s.png" type="Texture" id=14]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_15.png" type="Texture" id=16]
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=17]
+[ext_resource path="res://Font/SC-Medium.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://Texture/Pre-made characters/firt_knight/fire_knight.png" type="Texture" id=19]
+[ext_resource path="res://Texture/Pre-made characters/firt_knight/fire_elemental.png" type="Texture" id=20]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_09.png" type="Texture" id=21]
+[ext_resource path="res://Texture/Assets-2(Scale-x2)-No-BG_03_03.png" type="Texture" id=22]
+[ext_resource path="res://Texture/hud/Check element.png" type="Texture" id=23]
+[ext_resource path="res://Texture/hud/Check box.png" type="Texture" id=24]
+
+[sub_resource type="DynamicFont" id=13]
+size = 24
+outline_size = 4
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 15
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=16]
+extra_spacing_top = 2
+extra_spacing_char = 2
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=17]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=18]
+outline_size = 2
+outline_color = Color( 0.447059, 0.419608, 0.419608, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="ButtonGroup" id=20]
+
+[sub_resource type="DynamicFont" id=2]
+size = 13
+outline_size = 1
+outline_color = Color( 0.47451, 0.466667, 0.466667, 1 )
+extra_spacing_top = 2
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+extra_spacing_top = 2
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.235294, 0.231373, 0.231373, 0.392157 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+outline_size = 2
+outline_color = Color( 0.603922, 0.6, 0.6, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=6]
+outline_size = 2
+outline_color = Color( 0.603922, 0.6, 0.6, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=7]
+outline_color = Color( 0.603922, 0.6, 0.6, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 13
+outline_size = 2
+outline_color = Color( 0.411765, 0.4, 0.4, 1 )
+extra_spacing_top = 1
+extra_spacing_char = 1
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 144, 64 )
+margin_left = 13.0
+margin_right = 16.0
+margin_top = 12.0
+margin_bottom = 28.0
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+font_data = ExtResource( 15 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 662.252, 248.719 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 1 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 662.252, 248.719 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 2 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 662.252, 248.719 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 662.252, 248.719 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 662.252, 248.719 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2( 662.252, 248.719 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 7 )
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1440, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2( 662.252, 248.719 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8"]
+position = Vector2( 662.252, 216.719 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+
+[node name="GameMain" type="Node2D" parent="."]
+position = Vector2( 0, 51 )
+z_index = -1
+
+[node name="Position" type="Node2D" parent="GameMain"]
+
+[node name="PositionP1" type="Position2D" parent="GameMain/Position"]
+position = Vector2( 550, 498 )
+
+[node name="PositionP2" type="Position2D" parent="GameMain/Position"]
+position = Vector2( 369, 498 )
+
+[node name="PositionP3" type="Position2D" parent="GameMain/Position"]
+position = Vector2( 188, 498 )
+
+[node name="PositionMoster" type="Node2D" parent="GameMain"]
+position = Vector2( 208, 0 )
+
+[node name="PositionM1" type="Position2D" parent="GameMain/PositionMoster"]
+position = Vector2( 793, 498 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HpUI" type="Control" parent="CanvasLayer"]
+visible = false
+margin_right = 1344.0
+margin_bottom = 104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp2" type="Label" parent="CanvasLayer/HpUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -250.178
+margin_top = 52.1838
+margin_right = -216.178
+margin_bottom = 80.1838
+custom_fonts/font = SubResource( 13 )
+text = "HP"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress_hp" type="TextureProgress" parent="CanvasLayer/HpUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.0
+margin_top = -2.0
+margin_right = 210.0
+margin_bottom = 35.0
+value = 100.0
+texture_under = ExtResource( 22 )
+texture_progress = ExtResource( 21 )
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 2
+stretch_margin_right = 8
+stretch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_hp" type="Label" parent="CanvasLayer/HpUI/progress_hp"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -210.0
+margin_top = -12.5
+margin_right = 210.0
+margin_bottom = 8.5
+custom_fonts/font = SubResource( 12 )
+text = "999999999999"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChooseUI" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/ChooseUI"]
+material = ExtResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.403922 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lablel" type="Label" parent="CanvasLayer/ChooseUI/ColorRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -231.936
+margin_right = 672.0
+margin_bottom = -198.936
+custom_fonts/font = SubResource( 14 )
+text = "火焰之地挑战模式"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/ChooseUI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -405.0
+margin_top = -164.5
+margin_right = 406.0
+margin_bottom = 227.5
+texture = ExtResource( 10 )
+patch_margin_left = 19
+patch_margin_top = 22
+patch_margin_right = 22
+patch_margin_bottom = 27
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="count" type="Label" parent="CanvasLayer/ChooseUI/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -405.5
+margin_top = -175.0
+margin_right = 405.5
+margin_bottom = -142.0
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "可挑战次数：1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="count3" type="Label" parent="CanvasLayer/ChooseUI/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -405.5
+margin_top = -55.0
+margin_right = 405.5
+margin_bottom = -22.0
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "领主列表"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="count2" type="Label" parent="CanvasLayer/ChooseUI/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -372.5
+margin_top = -143.0
+margin_right = 379.5
+margin_bottom = -50.0
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "模式说明：
+你需要在30秒内尽可能的对领主造成伤害，领主拥有上百上千亿的血量和当前挑战的冒险小队持平的战斗属性，战斗结束后对领主造成的伤害越多则奖励越高，如果你很强大击杀了领主，你将获得挑战下一场领主的权利！"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="attrs4" type="TextureRect" parent="CanvasLayer/ChooseUI/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.5
+margin_top = -72.0
+margin_right = 72.5
+margin_bottom = -8.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/ChooseUI/NinePatchRect/attrs4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -31.0
+margin_right = 54.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+text = "开始挑战"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ChooseUI/NinePatchRect"]
+margin_left = 33.0
+margin_top = 172.0
+margin_right = 785.0
+margin_bottom = 242.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer"]
+margin_left = 275.0
+margin_right = 351.0
+margin_bottom = 70.0
+icon = ExtResource( 19 )
+flat = true
+
+[node name="count4" type="Label" parent="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer/Button"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+margin_right = 4.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "火焰领主"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="check" type="CheckBox" parent="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer/Button"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = 59.0
+margin_right = -27.0
+margin_bottom = 84.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 18 )
+custom_icons/radio_checked = ExtResource( 23 )
+custom_icons/checked = ExtResource( 23 )
+custom_icons/radio_unchecked = ExtResource( 24 )
+custom_icons/unchecked = ExtResource( 24 )
+custom_styles/focus = SubResource( 19 )
+group = SubResource( 20 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer"]
+margin_left = 401.0
+margin_right = 477.0
+margin_bottom = 70.0
+icon = ExtResource( 20 )
+flat = true
+
+[node name="count4" type="Label" parent="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer/Button2"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 3.0
+margin_right = 4.0
+margin_bottom = 24.0
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "火焰之王"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="check" type="CheckBox" parent="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer/Button2"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = 59.0
+margin_right = -27.0
+margin_bottom = 84.0
+custom_constants/check_vadjust = 2
+custom_constants/hseparation = 0
+custom_fonts/font = SubResource( 18 )
+custom_icons/radio_checked = ExtResource( 23 )
+custom_icons/checked = ExtResource( 23 )
+custom_icons/radio_unchecked = ExtResource( 24 )
+custom_icons/unchecked = ExtResource( 24 )
+custom_styles/focus = SubResource( 19 )
+group = SubResource( 20 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+script = ExtResource( 12 )
+
+[node name="attrs3" type="TextureRect" parent="UILayer"]
+margin_left = 1177.49
+margin_top = 30.564
+margin_right = 1322.49
+margin_bottom = 94.564
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UILayer/attrs3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -31.0
+margin_right = 54.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+text = "退出副本"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemShow" type="ScrollContainer" parent="UILayer"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -200.5
+margin_right = 300.0
+margin_bottom = 276.5
+mouse_filter = 2
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/ItemShow"]
+margin_bottom = 14.0
+alignment = 2
+
+[node name="Label" type="Label" parent="UILayer/ItemShow/VBoxContainer"]
+margin_bottom = 14.0
+
+[node name="Timer" type="Timer" parent="UILayer/ItemShow"]
+wait_time = 3.0
+
+[node name="chat" type="RichTextLabel" parent="UILayer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -241.0
+margin_top = 104.0
+margin_right = -10.0
+margin_bottom = 194.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="UILayer/chat"]
+wait_time = 2.0
+one_shot = true
+
+[node name="msg" type="Label" parent="UILayer"]
+visible = false
+anchor_right = 1.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="UILayer/msg"]
+wait_time = 2.0
+one_shot = true
+
+[node name="GameResult" type="Control" parent="UILayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UILayer/GameResult"]
+material = ExtResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.33484
+margin_bottom = -1.33484
+color = Color( 0, 0, 0, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fail" type="NinePatchRect" parent="UILayer/GameResult"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -197.0
+margin_top = -38.0
+margin_right = 197.0
+margin_bottom = 38.0
+mouse_filter = 0
+texture = ExtResource( 16 )
+patch_margin_left = 31
+patch_margin_top = 43
+patch_margin_right = 35
+patch_margin_bottom = 33
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UILayer/GameResult/fail"]
+margin_right = 390.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 5 )
+text = "战斗失败！"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win" type="NinePatchRect" parent="UILayer/GameResult"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -197.0
+margin_top = -72.0
+margin_right = 197.0
+margin_bottom = 72.0
+mouse_filter = 0
+texture = ExtResource( 16 )
+patch_margin_left = 31
+patch_margin_top = 43
+patch_margin_right = 35
+patch_margin_bottom = 33
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UILayer/GameResult/win"]
+margin_right = 390.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 5 )
+text = "战斗胜利！"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UILayer/GameResult/win"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = -2.0
+margin_right = 195.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 6 )
+text = "解锁新的关卡"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UILayer/GameResult"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -195.0
+margin_top = 229.0
+margin_right = 195.0
+margin_bottom = 265.0
+custom_fonts/font = SubResource( 7 )
+text = "点击任意空白处关闭"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="UILayer/GameResult"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Tips" type="Label" parent="UILayer"]
+visible = false
+margin_left = 711.0
+margin_top = 433.0
+margin_right = 902.0
+margin_bottom = 493.0
+custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+text = "打算大阿松大是"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameProgress" type="ColorRect" parent="UILayer"]
+visible = false
+material = ExtResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -234.3, 96.1154 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UILayer/GameProgress"]
+anchor_right = 1.0
+margin_top = 176.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 10 )
+text = "正在加载地图中..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pg" type="Label" parent="UILayer/GameProgress"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -12.0
+margin_right = 672.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 10 )
+text = "0%"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="CanvasLayer/ChooseUI/NinePatchRect/attrs4" to="." method="_on_attrs4_gui_input"]
+[connection signal="gui_input" from="UILayer/attrs3" to="." method="_on_attrs3_gui_input"]
+[connection signal="timeout" from="UILayer/msg/Timer" to="UILayer" method="_on_Timer_timeout"]
+[connection signal="gui_input" from="UILayer/GameResult/ColorRect" to="UILayer" method="_on_ColorRect_gui_input"]
+[connection signal="timeout" from="UILayer/GameResult/Timer" to="UILayer/GameResult" method="_on_Timer_timeout"]

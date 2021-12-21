@@ -17,6 +17,7 @@ var is_sj = false #是否为重伤
 var is_nohurt =false
 var atk_count #攻击数量
 var state_array = {} #状态列表
+var atk_frame = []
 
 var atk_mode = Utils.HurtType.ATK #普攻攻击类型
 
@@ -190,7 +191,7 @@ func reflex_hurt(_hurt_num,fight_script:Node):
 	var num = _hurt_num
 	if hero_attr.reflex > 0:
 		num *= (hero_attr.reflex / 100.0)
-		fight_script.do_number_hurt(num,0,hero_attr,false)
+		fight_script.do_number_hurt(num,2,hero_attr,false)
 
 #格挡触发
 func hold_hurt(_atk_attr:HeroAttrBean,num):
@@ -269,11 +270,18 @@ func _on_AnimatedSprite_animation_finished():
 
 #战斗时每帧
 func _on_AnimatedSprite_frame_changed():
-	if is_in_atk && hero_sprite.animation == "Atk" && hero_sprite.frame == (hero_sprite.frames.get_frame_count("Atk") * 0.7) as int:
-		if get_parent().is_shoot:
-			get_parent().shotFireBall()
-		else:
-			doAtk()
+	if is_in_atk && hero_sprite.animation == "Atk":
+		if atk_frame.size() == 0 && hero_sprite.frame == (hero_sprite.frames.get_frame_count("Atk") * 0.7) as int:
+			if get_parent().is_shoot:
+				get_parent().shotFireBall()
+			else:
+				doAtk()
+		elif atk_frame.has(hero_sprite.frame):
+			if get_parent().is_shoot:
+				get_parent().shotFireBall()
+			else:
+				doAtk()
+			
 
 func doAtk():
 	if is_blinding && randf() <= 0.5:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Texture/Moster/Zombie.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Texture/Pre-made characters/firt_knight/fire_king.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Role/BaseRole.gd" type="Script" id=2]
 [ext_resource path="res://Role/FightScript/FightScript.gd" type="Script" id=3]
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=4]
@@ -171,16 +171,16 @@ position = Vector2( -69, -32 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 14 )
 animation = "Atk"
-frame = 9
+frame = 6
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 material = ExtResource( 12 )
-position = Vector2( -16, -62 )
-scale = Vector2( 3, 3 )
+position = Vector2( 0, -254 )
+scale = Vector2( 4, 4 )
 frames = ExtResource( 1 )
-animation = "Idle"
-frame = 3
+animation = "Atk"
+frame = 14
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]

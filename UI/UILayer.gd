@@ -5,7 +5,7 @@ onready var msgTimer = $msg/Timer
 onready var effect_click = preload("res://Effect/ClickEffect.tscn")
 onready var get_new_item = preload("res://UI/ItemUI/GetNewItem.tscn")
 
-onready var add_box = $addBox
+onready var add_box = find_node("addBox")
 onready var ui = find_node("Control")
 
 func _init():
