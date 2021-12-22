@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Texture/background/b3/1.png" type="Texture" id=1]
 [ext_resource path="res://Texture/background/b3/2.png" type="Texture" id=2]
@@ -32,11 +32,23 @@ outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 2
 font_data = ExtResource( 15 )
 
+[sub_resource type="DynamicFont" id=23]
+size = 18
+outline_size = 4
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+extra_spacing_char = 2
+font_data = ExtResource( 15 )
+
 [sub_resource type="DynamicFont" id=12]
 size = 15
 outline_size = 2
 outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 extra_spacing_char = 2
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFont" id=14]
@@ -52,10 +64,7 @@ extra_spacing_top = 2
 extra_spacing_char = 2
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=1]
-outline_size = 2
-outline_color = Color( 0.439216, 0.376471, 0.313726, 1 )
-font_data = ExtResource( 15 )
+[sub_resource type="StyleBoxEmpty" id=21]
 
 [sub_resource type="DynamicFont" id=17]
 font_data = ExtResource( 18 )
@@ -68,6 +77,8 @@ font_data = ExtResource( 15 )
 [sub_resource type="StyleBoxEmpty" id=19]
 
 [sub_resource type="ButtonGroup" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=22]
 
 [sub_resource type="DynamicFont" id=2]
 size = 13
@@ -187,28 +198,8 @@ position = Vector2( 662.252, 216.719 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
 
-[node name="GameMain" type="Node2D" parent="."]
-position = Vector2( 0, 51 )
-z_index = -1
-
-[node name="Position" type="Node2D" parent="GameMain"]
-
-[node name="PositionP1" type="Position2D" parent="GameMain/Position"]
-position = Vector2( 550, 498 )
-
-[node name="PositionP2" type="Position2D" parent="GameMain/Position"]
-position = Vector2( 369, 498 )
-
-[node name="PositionP3" type="Position2D" parent="GameMain/Position"]
-position = Vector2( 188, 498 )
-
-[node name="PositionMoster" type="Node2D" parent="GameMain"]
-position = Vector2( 208, 0 )
-
-[node name="PositionM1" type="Position2D" parent="GameMain/PositionMoster"]
-position = Vector2( 793, 498 )
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="HpUI" type="Control" parent="CanvasLayer"]
 visible = false
@@ -218,15 +209,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="label_hp2" type="Label" parent="CanvasLayer/HpUI"]
+[node name="lv" type="Label" parent="CanvasLayer/HpUI"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -250.178
-margin_top = 52.1838
-margin_right = -216.178
-margin_bottom = 80.1838
+margin_left = -201.0
+margin_top = 49.0
+margin_right = 197.0
+margin_bottom = 77.0
 custom_fonts/font = SubResource( 13 )
-text = "HP"
+text = "领主等级：50级"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="CanvasLayer/HpUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -201.0
+margin_top = 145.0
+margin_right = 197.0
+margin_bottom = 173.0
+custom_fonts/font = SubResource( 23 )
+text = "倒计时：30秒"
 align = 1
 valign = 1
 __meta__ = {
@@ -239,9 +245,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -210.0
-margin_top = -2.0
+margin_top = 38.0
 margin_right = 210.0
-margin_bottom = 35.0
+margin_bottom = 75.0
 value = 100.0
 texture_under = ExtResource( 22 )
 texture_progress = ExtResource( 21 )
@@ -267,6 +273,39 @@ custom_fonts/font = SubResource( 12 )
 text = "999999999999"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="start_fight" type="TextureRect" parent="CanvasLayer/HpUI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.5
+margin_top = 88.0
+margin_right = 72.5
+margin_bottom = 152.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/HpUI/start_fight"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.0
+margin_top = -31.0
+margin_right = 54.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+text = "开始战斗"
+align = 1
+valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -333,6 +372,23 @@ margin_bottom = -142.0
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 custom_fonts/font = SubResource( 15 )
 text = "可挑战次数：1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="count4" type="Label" parent="CanvasLayer/ChooseUI/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 169.99
+margin_top = 104.857
+margin_right = 337.99
+margin_bottom = 137.857
+custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "选择挑战等级"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -420,6 +476,7 @@ __meta__ = {
 margin_left = 275.0
 margin_right = 351.0
 margin_bottom = 70.0
+custom_styles/focus = SubResource( 21 )
 icon = ExtResource( 19 )
 flat = true
 
@@ -465,6 +522,7 @@ __meta__ = {
 margin_left = 401.0
 margin_right = 477.0
 margin_bottom = 70.0
+custom_styles/focus = SubResource( 22 )
 icon = ExtResource( 20 )
 flat = true
 
@@ -505,6 +563,34 @@ align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LineEdit" type="OptionButton" parent="CanvasLayer/ChooseUI/NinePatchRect"]
+margin_left = 594.533
+margin_top = 326.159
+margin_right = 733.533
+margin_bottom = 370.159
+align = 1
+
+[node name="GameMain" type="Node2D" parent="."]
+position = Vector2( 0, 51 )
+z_index = -1
+
+[node name="Position" type="Node2D" parent="GameMain"]
+
+[node name="PositionP1" type="Position2D" parent="GameMain/Position"]
+position = Vector2( 550, 498 )
+
+[node name="PositionP2" type="Position2D" parent="GameMain/Position"]
+position = Vector2( 369, 498 )
+
+[node name="PositionP3" type="Position2D" parent="GameMain/Position"]
+position = Vector2( 188, 498 )
+
+[node name="PositionMoster" type="Node2D" parent="GameMain"]
+position = Vector2( 208, 0 )
+
+[node name="PositionM1" type="Position2D" parent="GameMain/PositionMoster"]
+position = Vector2( 793, 498 )
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 script = ExtResource( 12 )
@@ -765,8 +851,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="gui_input" from="CanvasLayer/HpUI/start_fight" to="." method="_on_start_fight_gui_input"]
 [connection signal="gui_input" from="CanvasLayer/ChooseUI/NinePatchRect/attrs4" to="." method="_on_attrs4_gui_input"]
+[connection signal="pressed" from="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="toggled" from="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer/Button/check" to="." method="_on_check_toggled" binds= [ "火焰领主" ]]
+[connection signal="pressed" from="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="toggled" from="CanvasLayer/ChooseUI/NinePatchRect/HBoxContainer/Button2/check" to="." method="_on_check_toggled" binds= [ "火焰之王" ]]
+[connection signal="item_selected" from="CanvasLayer/ChooseUI/NinePatchRect/LineEdit" to="." method="_on_LineEdit_item_selected"]
 [connection signal="gui_input" from="UILayer/attrs3" to="." method="_on_attrs3_gui_input"]
 [connection signal="timeout" from="UILayer/msg/Timer" to="UILayer" method="_on_Timer_timeout"]
 [connection signal="gui_input" from="UILayer/GameResult/ColorRect" to="UILayer" method="_on_ColorRect_gui_input"]
 [connection signal="timeout" from="UILayer/GameResult/Timer" to="UILayer/GameResult" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
