@@ -61,9 +61,9 @@ func needGoods(lv):
 	if choose_data.lv >=40 && choose_data.lv < 60:
 		return ["初级助战进阶石", (10 * (choose_data.lv * choose_data.lv * 0.06)) as int]
 	elif choose_data.lv >=60 && choose_data.lv < 80:
-		return ["中级助战进阶石",(6 * (choose_data.lv * choose_data.lv * 0.06)) as int]
+		return ["中级助战进阶石",(7 * (choose_data.lv * choose_data.lv * 0.07)) as int]
 	elif choose_data.lv >=80 && choose_data.lv < 100:
-		return ["高级助战进阶石",(3 * (choose_data.lv * choose_data.lv * 0.06)) as int]
+		return ["高级助战进阶石",(6 * (choose_data.lv * choose_data.lv * 0.1)) as int]
 	return null
 
 func needInfo():

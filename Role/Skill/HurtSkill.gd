@@ -31,10 +31,10 @@ func _create(_role,_who,_skillbean):
 #设置伤害
 func call_hurt(hurt):
 	if skillbean.hurt_count <= 1:
-		role.fight_script.do_number_hurt(hurt,skillbean.hurt_type,who.hero_attr,false)
+		role.fight_script.do_number_hurt(who.role_data,hurt,skillbean.hurt_type,who.hero_attr,false)
 	else:
-		for count in range(skillbean.hurt_count):
-			role.fight_script.do_number_hurt(hurt,skillbean.hurt_type,who.hero_attr,false)
+		for _count in range(skillbean.hurt_count):
+			role.fight_script.do_number_hurt(who.role_data,hurt,skillbean.hurt_type,who.hero_attr,false)
 			yield(get_tree().create_timer(skillbean.hurt_count_time),"timeout")
 	queue_free()
 

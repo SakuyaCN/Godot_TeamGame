@@ -83,6 +83,9 @@ func changeAnim(anim):
 #资源载入
 func load_asset():
 	is_moster = true
+	if role_data["node"].has("atk_frame"):
+		for index in role_data["node"].atk_frame:
+			fight_script.atk_frame.append(index as int)
 	effect_anim.flip_h = role_data["node"].flip_h
 	animatedSprite.frames = load(role_data["node"].frames).duplicate()
 	animatedSprite.flip_h = role_data["node"].flip_h
@@ -237,6 +240,7 @@ func skillStart():
 	
 #开始战斗
 func start_fight():
+	$Timer.start()
 	skillStart()
 	fight_script.do_atk()
 	for skill in hero_skill:
@@ -333,3 +337,7 @@ func _on_Effects_animation_finished():
 
 func _on_BaseRole_tree_exited():
 	ConstantsValue.const_choose_role_arrt = null
+
+func _on_Timer_timeout():
+	fight_script.is_in_skill = true
+	animatedSprite.play("Skill")

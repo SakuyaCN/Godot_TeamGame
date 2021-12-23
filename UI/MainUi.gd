@@ -79,6 +79,8 @@ func _on_ad_pressed():
 	var ad = preload("res://UI/GoodsDialog/AdGif.tscn").instance()
 	add_child(ad)
 
-
 func _on_spirit_pressed():
 	ConstantsValue.showSpirit(null)
+
+func _on_fire_fb_pressed():
+	ConstantsValue.ui_layer.change_scene("res://Map/GameLevel2/Level2.tscn")

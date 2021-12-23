@@ -13,7 +13,7 @@ func _ready():
 	reload()
 
 func reload():
-	$exp.text = "当前已累计经验(最多累1千万)：%s" %StorageData.get_player_state()["exp"] as int
+	$exp.text = "当前已累计经验(最多累1亿)：%s" %StorageData.get_player_state()["exp"] as int
 
 #载入小队成员
 func loadAllHero():

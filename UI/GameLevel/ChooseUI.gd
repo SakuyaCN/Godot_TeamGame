@@ -21,7 +21,7 @@ func loadAllHero():
 		$ScrollContainer/HSlider.add_child(ins)
 
 func _select(_item,_ins):
-	if StorageData.UseGoodsNum([["荒漠金币",1]]):
+	if StorageData.UseGoodsNum([["荒漠金币",1 * get_parent().get_parent().gold]]):
 		var ins = role.instance()
 		get_parent().get_parent().player_array[0] = ins
 		get_parent().get_parent().find_node("Position2D").add_child(ins)

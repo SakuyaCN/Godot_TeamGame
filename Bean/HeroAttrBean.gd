@@ -118,6 +118,7 @@ func loadJobAttr(role_data):
 			hp += 35 * role_data.lv
 			hp += (hp * 0.1) as int
 		"绝地武士":
+			atk += 6 * role_data.lv
 			speed += 25 * role_data.lv
 			crit += 25 * role_data.lv
 			crit_buff += 50

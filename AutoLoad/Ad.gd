@@ -12,10 +12,8 @@ func _ready():
 func onAdResult(result):
 	match result:
 		"Show":
-			pass
 			get_tree().paused = true
 		"Closed":
-			showSuccess()
 			is_showing = false
 			get_tree().paused = false
 		"Failed":
@@ -23,6 +21,10 @@ func onAdResult(result):
 			is_showing = false
 		"Success":
 			pass
+		"onReward":
+			showSuccess()
+			is_showing = false
+			get_tree().paused = false
 
 func showAd():
 	if OS.get_system_time_secs() - ConstantsValue.ad_time <= 10:

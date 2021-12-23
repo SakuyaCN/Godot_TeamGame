@@ -7,7 +7,7 @@ onready var effect_sprite:AnimatedSprite
 onready var role_data#当前人物数据
 onready var hero_attr:HeroAttrBean#当前人物属性
 onready var is_in_atk = false #是否处于攻击动作
-
+var skill_bs = 0.7#技能伤害倍数
 var speed_temp = 0
 var is_alive = true#是否存活
 var is_moster = false#是否为怪物
@@ -19,10 +19,13 @@ var atk_count #攻击数量
 var state_array = {} #状态列表
 var atk_frame = []
 
+var is_in_skill = false
+
 var atk_mode = Utils.HurtType.ATK #普攻攻击类型
 
 signal onAtkOver()#普攻结束信号
 signal onDie(node)
+signal onHurt(_atk_data,number)
 
 func _ready():
 	pass
@@ -33,7 +36,7 @@ func _on_Timer_timeout():
 			if hero_sprite.animation != "Idle":
 				hero_sprite.animation = "Idle"
 		else:
-			if hero_sprite.animation != "Atk":
+			if hero_sprite.animation != "Atk" && !is_in_skill:
 				hero_sprite.animation = "Atk"
 		is_blinding = is_BLINDING()
 		is_weak = is_WEAK()
@@ -122,13 +125,14 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 		hurt_num *= 0.6
 	reflex_hurt(hurt_num,fight_script)
 	updateHp(hurt_num,false,atk_type)
+	emit_signal("onHurt",_atk_data,hurt_num)
 	if hero_attr.hp <= 0:
 		die()
 	effect_sprite.visible = true
 	effect_sprite.play("hit")
 
-#直接数字伤害 number 伤害字 atk_type 攻击类型 _atk_attr 攻击者属性 is_COUTINUED是否连续
-func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
+#直接数字伤害 _atk_data 攻击者信息 number 伤害字 atk_type 攻击类型 _atk_attr 攻击者属性 is_COUTINUED是否连续
+func do_number_hurt(_atk_data,number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 	var hurt_num = 0
 	var _is_crit = false
 	match atk_type as int:
@@ -146,6 +150,7 @@ func do_number_hurt(number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUED):
 		updateHp(hurt_num,false,Utils.HurtType.COUTINUED)
 	else:
 		updateHp(hurt_num,true,_is_crit)
+	emit_signal("onHurt",_atk_data,hurt_num)
 
 func getHurtPass(_my_def,_pass):
 	if 1 - ((_my_def - _pass)/100.0) <=0:
@@ -191,7 +196,7 @@ func reflex_hurt(_hurt_num,fight_script:Node):
 	var num = _hurt_num
 	if hero_attr.reflex > 0:
 		num *= (hero_attr.reflex / 100.0)
-		fight_script.do_number_hurt(num,2,hero_attr,false)
+		fight_script.do_number_hurt(role_data,num,2,hero_attr,false)
 
 #格挡触发
 func hold_hurt(_atk_attr:HeroAttrBean,num):
@@ -221,10 +226,10 @@ func crit_hurt(_atk_attr:HeroAttrBean):
 #人物死亡
 func die():
 	if is_alive:
-		emit_signal("onDie",get_parent())
 		is_in_atk = false
 		is_alive = false
 		hero_sprite.play("Die")
+		emit_signal("onDie",get_parent())
 		get_parent().shape_2d.set_deferred("disabled",true)
 		get_parent().resetSkill()
 		get_tree().call_group("game_main","checkWin")
@@ -265,23 +270,28 @@ func mtk_blood(num):
 
 #战斗信号
 func _on_AnimatedSprite_animation_finished():
+	if is_in_skill:
+		skill_bs *= skill_bs
+		for role in do_atk_array:
+			if role != null && is_instance_valid(role) && role.fight_script.is_alive:
+				role.fight_script.do_number_hurt(role_data,(hero_attr.mtk + hero_attr.atk) * skill_bs,atk_mode,hero_attr,false)
+		is_in_skill = false
 	if is_in_atk:
 		checkFightRole()
 
 #战斗时每帧
 func _on_AnimatedSprite_frame_changed():
-	if is_in_atk && hero_sprite.animation == "Atk":
+	if is_in_atk && hero_sprite.animation == "Atk" && !is_in_skill:
 		if atk_frame.size() == 0 && hero_sprite.frame == (hero_sprite.frames.get_frame_count("Atk") * 0.7) as int:
 			if get_parent().is_shoot:
 				get_parent().shotFireBall()
 			else:
 				doAtk()
-		elif atk_frame.has(hero_sprite.frame):
+		elif is_moster && atk_frame.has(hero_sprite.frame):
 			if get_parent().is_shoot:
 				get_parent().shotFireBall()
 			else:
 				doAtk()
-			
 
 func doAtk():
 	if is_blinding && randf() <= 0.5:

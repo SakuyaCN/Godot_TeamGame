@@ -11,8 +11,8 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 19,
-      "versionName": "1.1.2",
+      "versionCode": 20,
+      "versionName": "1.1.3",
       "outputFile": "android_debug.apk"
     }
   ],

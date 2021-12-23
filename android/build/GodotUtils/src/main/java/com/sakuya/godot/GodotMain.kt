@@ -47,7 +47,9 @@ class GodotMain(godot: Godot) :GodotPlugin(godot) {
                 emitSignal("onAdResult","Show")
             }
             override fun onADExposure() {}
-            override fun onReward() {}
+            override fun onReward() {
+                emitSignal("onAdResult","onReward")
+            }
             override fun onADClicked() {}
             override fun onVideoComplete() {
                 emitSignal("onAdResult","Success")

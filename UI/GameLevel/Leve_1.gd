@@ -10,6 +10,8 @@ var moster_all_count = 20
 var moster_alive_count = 20
 var moster_data
 
+var gold = 1
+
 var player_skill = []
 var player_array = [null,null,null]
 var moster_array = []
@@ -192,15 +194,14 @@ func nextRound():
 func _on_StaticBody2D2_body_entered(body):
 	body.start_fight()
 
-
 func showWinBox():
 	chooseBuff()
-	StorageData.get_player_state()["gold"] += 50
+	StorageData.get_player_state()["gold"] += 50 * gold
 	var goods = getWinGoods()
-	goods.append(["刻印碎片",10])
-	goods.append(["火焰之石",2])
+	goods.append(["刻印碎片",10 * gold])
+	goods.append(["火焰之石",2 * gold])
 	if randi()%100 < 5:
-		goods.append(["助战宝箱",1])
+		goods.append(["助战宝箱",1 * gold])
 	StorageData.AddGoodsNum(goods)
 	for item in $CanvasLayer/win/GridContainer.get_children():
 		item.queue_free()
@@ -211,32 +212,33 @@ func showWinBox():
 			ins.need_tips = false
 			ins.setData(item[0],item[1])
 	$CanvasLayer/win.visible = true
+	$CanvasLayer/win/Label.text = "回合胜利奖励+%s金币" %str(50 * gold) 
 
 func getWinGoods():
 	if moster_count < 5:
 		return [
-			["红色陨铁",10 * moster_count],
-			["绿色陨铁",5 * moster_count],
+			["红色陨铁",10 * moster_count * gold],
+			["绿色陨铁",5 * moster_count * gold],
 		]
 	elif 5 <= moster_count && moster_count < 10:
 		return [
-			["红色陨铁",12 * moster_count],
-			["绿色陨铁",7 * moster_count],
+			["红色陨铁",12 * moster_count * gold],
+			["绿色陨铁",7 * moster_count * gold],
 		]
 	elif 10 <= moster_count && moster_count < 20:
 		return [
-			["秘银矿石",2 * moster_count],
-			["绿色陨铁",10 * moster_count],
+			["秘银矿石",2 * moster_count * gold],
+			["绿色陨铁",10 * moster_count * gold],
 		]
 	elif 20 <= moster_count && moster_count < 30:
 		return [
-			["青岚铁矿",(moster_count / 5.0) as int],
-			["暗蓝星矿",(moster_count / 10.0) as int],
+			["青岚铁矿",(moster_count / 5.0) as int * gold],
+			["暗蓝星矿",(moster_count / 10.0) as int * gold],
 		]
 	else:
 		return [
-			["青岚铁矿",(moster_count / 3.0) as int],
-			["暗蓝星矿",(moster_count / 7.0) as int],
+			["青岚铁矿",(moster_count / 3.0) as int * gold],
+			["暗蓝星矿",(moster_count / 7.0) as int * gold],
 		]
 
 #游戏结束返回
@@ -311,3 +313,7 @@ func _on_attrs2_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		ConstantsValue.game_mode_change = true
 		$UILayer.change_scene("res://UI/Game.tscn")
+
+
+func _on_SpinBox_value_changed(value):
+	gold = value as int

@@ -33,7 +33,7 @@ func _ready():
 
 #添加经验
 func addExp(_exp):
-	if StorageData.get_player_state()["exp"] < 10000000:
+	if StorageData.get_player_state()["exp"] < 100000000:
 		StorageData.get_player_state()["exp"] += (_exp * 0.4)
 		get_tree().call_group("exp_box","reload")
 	if hero_attr.exp_buff > 0:

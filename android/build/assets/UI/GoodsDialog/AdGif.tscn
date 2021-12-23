@@ -17,6 +17,7 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=8]
 outline_size = 2
 outline_color = Color( 0.603922, 0.6, 0.6, 1 )
+extra_spacing_top = 6
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -63,9 +64,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -197.0
-margin_top = -136.0
+margin_top = -169.5
 margin_right = 197.0
-margin_bottom = 136.0
+margin_bottom = 174.5
 mouse_filter = 0
 texture = ExtResource( 3 )
 patch_margin_left = 31
@@ -89,11 +90,12 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="win"]
-margin_top = 173.0
+margin_top = 197.0
 margin_right = 390.0
-margin_bottom = 202.0
+margin_bottom = 226.0
 custom_fonts/font = SubResource( 8 )
-text = "每天最多20次奖励"
+text = "每天最多20次奖励
+累计观看10次自动重置火焰之地挑战次数"
 align = 1
 valign = 1
 __meta__ = {
@@ -106,9 +108,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -175.0
-margin_top = -76.0
+margin_top = -102.0
 margin_right = 167.0
-margin_bottom = 25.0
+margin_bottom = 11.0
 custom_constants/vseparation = 12
 custom_constants/hseparation = 12
 columns = 6

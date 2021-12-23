@@ -78,11 +78,13 @@ __meta__ = {
 [node name="Label4" type="Label" parent="."]
 anchor_right = 1.0
 margin_left = 861.0
-margin_top = 264.13
+margin_top = 239.0
 margin_right = -13.0
-margin_bottom = 380.13
+margin_bottom = 393.0
 custom_fonts/font = SubResource( 9 )
 text = "助战说明
+助战角色可通过助战宝箱开出
+点击冒险小队->装备 选择助战可以上场
 转化率：冒险者设置助战精灵后会按照转化率提供属性给冒险者
 等级：等级越高则成长属性越高，升级需要一定数量金币和进阶石"
 align = 1

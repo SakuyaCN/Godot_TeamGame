@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Texture/background/b2/Hills Layer 05.png" type="Texture" id=1]
 [ext_resource path="res://Texture/background/b2/Hills Layer 03.png" type="Texture" id=2]
@@ -27,6 +27,9 @@ extents = Vector2( 810, 14 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=20]
 font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=18]
@@ -200,6 +203,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label5" type="Label" parent="CanvasLayer/ChooseUI/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -624.0
+margin_top = -219.5
+margin_right = -408.0
+margin_bottom = -195.5
+custom_fonts/font = SubResource( 2 )
+text = "投币"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="CanvasLayer/ChooseUI/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -664.0
+margin_top = -155.5
+margin_right = -346.0
+margin_bottom = -131.5
+custom_fonts/font = SubResource( 20 )
+text = "每多投一个比增加一倍奖励"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label3" type="Label" parent="CanvasLayer/ChooseUI/ColorRect"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -253,6 +288,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SpinBox" type="SpinBox" parent="CanvasLayer/ChooseUI/ColorRect"]
+margin_left = 128.0
+margin_top = 120.0
+margin_right = 202.0
+margin_bottom = 144.0
+min_value = 1.0
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ChooseUI"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -273,6 +319,7 @@ __meta__ = {
 alignment = 1
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -920,6 +967,7 @@ __meta__ = {
 [node name="Timer2" type="Timer" parent="."]
 
 [connection signal="body_entered" from="StaticBody2D2" to="." method="_on_StaticBody2D2_body_entered"]
+[connection signal="value_changed" from="CanvasLayer/ChooseUI/ColorRect/SpinBox" to="." method="_on_SpinBox_value_changed"]
 [connection signal="gui_input" from="CanvasLayer/Control/attrs" to="." method="_on_attrs_gui_input"]
 [connection signal="gui_input" from="CanvasLayer/Control/attrs2" to="." method="_on_attrs2_gui_input"]
 [connection signal="gui_input" from="CanvasLayer/fail/ColorRect2" to="." method="_on_ColorRect2_gui_input"]

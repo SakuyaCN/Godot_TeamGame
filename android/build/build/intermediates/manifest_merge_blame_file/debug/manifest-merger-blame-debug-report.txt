@@ -2,8 +2,8 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.sakuya.mx"
 4    android:installLocation="auto"
-5    android:versionCode="19"
-6    android:versionName="1.1.2" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+5    android:versionCode="20"
+6    android:versionName="1.1.3" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
 7    <uses-sdk
 8        android:minSdkVersion="19"
 9        android:targetSdkVersion="30" />
@@ -958,11 +958,11 @@
 527        </provider>
 528
 529        <meta-data
-529-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\3d5a3e31985a45126a8d9878c5bd2815\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:10:9-12:58
+529-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\56b48105ae59dc3e36f6fc8f656bf37a\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:10:9-12:58
 530            android:name="org.godotengine.plugin.v1.GodotUtils"
-530-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\3d5a3e31985a45126a8d9878c5bd2815\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:11:13-64
+530-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\56b48105ae59dc3e36f6fc8f656bf37a\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:11:13-64
 531            android:value="com.sakuya.godot.GodotMain" />
-531-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\3d5a3e31985a45126a8d9878c5bd2815\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:12:13-55
+531-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\56b48105ae59dc3e36f6fc8f656bf37a\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:12:13-55
 532    </application>
 533
 534</manifest>

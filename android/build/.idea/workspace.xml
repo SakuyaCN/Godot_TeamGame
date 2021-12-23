@@ -14,117 +14,108 @@
   <component name="ChangeListManager">
     <list default="true" id="5f0a41d0-6fc4-4da6-8df9-829ee34b29f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../AutoLoad/Ad.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../AutoLoad/Ad.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AutoLoad/ConstantsValue.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../AutoLoad/ConstantsValue.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../AutoLoad/GoodsUtils.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../AutoLoad/GoodsUtils.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Map/GameLevel2/BaseFireMoster.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../Map/GameLevel2/BaseFireMoster.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Map/GameLevel2/BaseFireMoster.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../Map/GameLevel2/BaseFireMoster.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Map/GameLevel2/Level2.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../Map/GameLevel2/Level2.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Map/GameLevel2/Level2.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../Map/GameLevel2/Level2.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Role/BaseRole.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../Role/BaseRole.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Storage/AchData.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Storage/AchData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Storage/BuildData.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Storage/BuildData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Storage/Data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Storage/Data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Storage/Map.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Storage/Map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Storage/Moster.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Storage/Moster.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Storage/SkillData.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Storage/SkillData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Storage/TzData.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Storage/TzData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/ControlUI/MainUi.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/ControlUI/MainUi.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/ControlUI/TzBox.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/ControlUI/TzBox.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/GameHangUp.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GameHangUp.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Role/FightScript/FightScript.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../Role/FightScript/FightScript.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Role/Skill/BaseState/Countinued.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../Role/Skill/BaseState/Countinued.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Role/Skill/HurtSkill.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../Role/Skill/HurtSkill.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Texture/Pre-made characters/firt_knight/fire_king.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../../Texture/Pre-made characters/firt_knight/fire_king.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Texture/Pre-made characters/firt_knight/fire_knight.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../../Texture/Pre-made characters/firt_knight/fire_knight.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/CheckUpdate.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/CheckUpdate.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/ControlUI/BoxItem/ExpBox.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/ControlUI/BoxItem/ExpBox.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/ControlUI/SpiritBox.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/ControlUI/SpiritBox.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/GameLevel/ChooseUI.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GameLevel/ChooseUI.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UI/GameLevel/Leve_1.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GameLevel/Leve_1.gd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UI/GameLevel/Leve_1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GameLevel/Leve_1.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/GameMain.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GameMain.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/GoodsDialog/HangUp.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GoodsDialog/HangUp.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/GoodsDialog/HangUp.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GoodsDialog/HangUp.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../UI/MainUi.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/MainUi.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/GoodsDialog/AdGif.gd" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GoodsDialog/AdGif.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UI/GoodsDialog/AdGif.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../../UI/GoodsDialog/AdGif.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GodotUtils/src/main/java/com/sakuya/godot/GodotMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GodotUtils/src/main/java/com/sakuya/godot/GodotMain.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/AutoLoad/Ad.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/AutoLoad/Ad.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/AutoLoad/ConstantsValue.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/AutoLoad/ConstantsValue.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/AutoLoad/EquUtils.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/AutoLoad/EquUtils.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/AutoLoad/Utils.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/AutoLoad/Utils.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Bean/HeroAttrBean.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Bean/HeroAttrBean.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/Role/BaseRole.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Role/BaseRole.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/Role/BaseRole.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Role/BaseRole.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/Role/FightScript/FightScript.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Role/FightScript/FightScript.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Storage/AchData.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Storage/AchData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Storage/BuildData.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Storage/BuildData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Storage/Data.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Storage/Data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Role/Skill/BaseState/Countinued.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Role/Skill/BaseState/Countinued.gdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Role/Skill/HurtSkill.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Role/Skill/HurtSkill.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/Storage/Map.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Storage/Map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/Storage/Moster.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Storage/Moster.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Storage/SkillData.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Storage/SkillData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/Storage/StorageData.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Storage/StorageData.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Storage/TzData.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Storage/TzData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/UI/BuildUI.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/BuildUI.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/UI/CheckUpdate.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/CheckUpdate.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/UI/ControlUI/BuildUI.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/ControlUI/BuildUI.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/ControlUI/BoxItem/ExpBox.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/ControlUI/BoxItem/ExpBox.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/UI/ControlUI/MainUi.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/ControlUI/MainUi.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/UI/ControlUI/PartyUI.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/ControlUI/PartyUI.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/UI/ControlUI/TzBox.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/ControlUI/TzBox.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/UI/ControlUI/TzBox.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/ControlUI/TzBox.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/ControlUI/SpiritBox.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/ControlUI/SpiritBox.gdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/ControlUI/SpiritBox.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/ControlUI/SpiritBox.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/Game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/Game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/GameLevel/ChooseUI.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/GameLevel/ChooseUI.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/UI/GameLevel/Leve_1.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/GameLevel/Leve_1.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/UI/GameMain.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/GameMain.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/UI/MainUi.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/MainUi.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/UI/PartyUI.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/PartyUI.gdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/GameLevel/Leve_1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/GameLevel/Leve_1.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/GameUI.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/GameUI.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/GoodsDialog/AdGif.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/GoodsDialog/AdGif.gdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/GoodsDialog/AdGif.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/GoodsDialog/AdGif.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/UI/UILayer.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/assets/UI/UILayer.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/AutoLoad/Ad.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/AutoLoad/Ad.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/AutoLoad/ConstantsValue.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/AutoLoad/ConstantsValue.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/AutoLoad/EquUtils.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/AutoLoad/EquUtils.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/AutoLoad/Utils.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/AutoLoad/Utils.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Bean/HeroAttrBean.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Bean/HeroAttrBean.gdc.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/BaseRole.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/BaseRole.gdc.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/BaseRole.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/BaseRole.tscn.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/FightScript/FightScript.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/FightScript/FightScript.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/AchData.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/AchData.json.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/BuildData.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/BuildData.json.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/Data.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/Data.json.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/Skill/BaseState/Countinued.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/Skill/BaseState/Countinued.gdc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/Skill/HurtSkill.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Role/Skill/HurtSkill.gdc.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/Map.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/Map.json.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/Moster.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/Moster.json.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/SkillData.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/SkillData.json.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/StorageData.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/StorageData.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/TzData.json.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/Storage/TzData.json.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/BuildUI.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/BuildUI.gdc.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/CheckUpdate.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/CheckUpdate.tscn.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/BuildUI.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/BuildUI.tscn.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/BoxItem/ExpBox.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/BoxItem/ExpBox.gdc.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/MainUi.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/MainUi.tscn.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/PartyUI.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/PartyUI.tscn.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/TzBox.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/TzBox.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/TzBox.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/TzBox.tscn.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/SpiritBox.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/SpiritBox.gdc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/SpiritBox.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/ControlUI/SpiritBox.tscn.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/Game.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/Game.tscn.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameLevel/ChooseUI.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameLevel/ChooseUI.gdc.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameLevel/Leve_1.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameLevel/Leve_1.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameMain.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameMain.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/MainUi.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/MainUi.gdc.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/PartyUI.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/PartyUI.gdc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameLevel/Leve_1.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameLevel/Leve_1.tscn.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameUI.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GameUI.tscn.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GoodsDialog/AdGif.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GoodsDialog/AdGif.gdc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GoodsDialog/AdGif.tscn.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/GoodsDialog/AdGif.tscn.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/UILayer.gdc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/compressed_assets/debug/out/assets/UI/UILayer.gdc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/mergeDexDebug/classes2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/dex/debug/mergeDexDebug/classes2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/external_file_lib_dex_archives/debug/5_classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/external_file_lib_dex_archives/debug/5_classes.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/4Kyp9VGXXXQWaRZzMVH_ykS1oo0=" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/AutoLoad/Ad.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/AutoLoad/Ad.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/AutoLoad/ConstantsValue.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/AutoLoad/ConstantsValue.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/AutoLoad/EquUtils.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/AutoLoad/EquUtils.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/AutoLoad/Utils.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/AutoLoad/Utils.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Bean/HeroAttrBean.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Bean/HeroAttrBean.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Role/BaseRole.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Role/BaseRole.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Role/BaseRole.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Role/BaseRole.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Role/FightScript/FightScript.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Role/FightScript/FightScript.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/AchData.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/AchData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/BuildData.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/BuildData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/Data.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/Data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Role/Skill/HurtSkill.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Role/Skill/HurtSkill.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/Map.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/Map.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/Moster.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/Moster.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/SkillData.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/SkillData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/StorageData.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/StorageData.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/TzData.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/Storage/TzData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/BuildUI.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/BuildUI.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/CheckUpdate.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/CheckUpdate.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/BuildUI.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/BuildUI.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/BoxItem/ExpBox.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/BoxItem/ExpBox.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/MainUi.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/MainUi.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/PartyUI.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/PartyUI.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/TzBox.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/TzBox.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/TzBox.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/TzBox.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/SpiritBox.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/ControlUI/SpiritBox.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/Game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/Game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GameLevel/ChooseUI.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GameLevel/ChooseUI.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GameLevel/Leve_1.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GameLevel/Leve_1.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GameMain.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GameMain.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/MainUi.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/MainUi.gdc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/PartyUI.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/PartyUI.gdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GameLevel/Leve_1.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GameLevel/Leve_1.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GoodsDialog/AdGif.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GoodsDialog/AdGif.gdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GoodsDialog/AdGif.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/GoodsDialog/AdGif.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/UILayer.gdc" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/merged_assets/debug/out/UI/UILayer.gdc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/outputs/apk/debug/android_debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/outputs/apk/debug/android_debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../plugins/GodotUtils.1.0.0.debug.aar" beforeDir="false" afterPath="$PROJECT_DIR$/../plugins/GodotUtils.1.0.0.debug.aar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +125,7 @@
   <component name="DockDockBuild.Settings">
     <option name="codePath" value="$PROJECT_DIR$" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\34776\.android\avd\Pixel_3a_API_30_x86.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[f279dc1]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
