@@ -124,7 +124,7 @@ func getQualityBssTART(ys):
 
 #生成一件新装备
 func createNewEqu(build_id,build_type,data,type,is_build = true,is_over = false):
-	if StorageData.get_player_equipment().size()>=100:
+	if StorageData.get_player_equipment().size()>=200:
 		ConstantsValue.showMessage("武器库已满，请及时清理！",3)
 		return
 	var id = str(OS.get_system_time_msecs() + randi()%1000+1)

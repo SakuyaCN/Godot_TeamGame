@@ -37,6 +37,7 @@ func start_game():
 	ConstantsValue.showMessage("点击人物可以展示属性面板",3)
 	if !StorageData.get_player_state().has("seal_return_lv"):
 		StorageData.get_player_state().seal_return_lv = 0
+	$Testing.http()
 	#StorageData.AddGoodsNum([["招募令碎片",10],["神秘之石",10000],["暗蓝星矿",10000],["青岚铁矿",10000],["秘银矿石",10000],["绿色陨铁",10000]])
 
 func isPlayMusic():

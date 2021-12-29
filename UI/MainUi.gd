@@ -66,6 +66,9 @@ func _on_update_pressed():
 	if StorageData.get_player_state()["update_gif"].has(ConstantsValue.version):
 		ConstantsValue.showMessage("已经领取更新奖励！",2)
 	else:
+		if ConstantsValue.version == "115":
+			StorageData.get_player_state()["gold"] += 5000000
+			ConstantsValue.showMessage("500万金币已发放至背包！",2)
 		StorageData.get_player_state()["update_gif"].append(ConstantsValue.version)
 		StorageData.AddGoodsNum([
 			["荒漠金币",5],

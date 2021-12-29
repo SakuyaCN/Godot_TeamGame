@@ -137,6 +137,8 @@ func over(is_win):
 		local_bs += 1.4
 	else:
 		local_bs += 1.3
+	if all_hurt > 10000000000:
+		all_hurt = 10000000000 + all_hurt/50000
 	if is_win:
 		gold = 1000 + all_hurt / 6000 * local_bs * ((choose_lv * choose_lv + 1)/6 + 1)
 		$CanvasLayer/fail/ColorRect2/count.text = "挑战胜利！"
@@ -165,19 +167,30 @@ func mosterAttr():
 				bean.updateNum(atr,(dict[atr] / 5) * bs * ((choose_lv * choose_lv)/5.0 + 1))
 	bean.updateNum("max_hp",boss_hp[choose_lv] * (1+choose_lv) * bs)
 	bean.updateNum("hp",boss_hp[choose_lv] * (1+choose_lv) * bs)
-	bean.updateNum("unpt",100)
+	bean.updateNum("unpt",999999)
+	var ps = bs * ((choose_lv * choose_lv)/5.0 + 1)
+	bean.updateNum("mtk_pass",ps * 5)
+	print(ps)
 	return bean
 
 #退出副本
+var tap_one = 0
 func _on_attrs3_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		ConstantsValue.game_mode_change = true
-		$UILayer.change_scene("res://UI/Game.tscn")
+		tap_one += 1
+		if tap_one == 2:
+			ConstantsValue.game_mode_change = true
+			$UILayer.change_scene("res://UI/Game.tscn")
+		else:
+			ConstantsValue.showMessage("双击退出副本",2)
+		yield(get_tree().create_timer(0.5),"timeout")
+		tap_one = 0
 
 #开始战斗
 func _on_attrs4_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		start_check()
+		#start_fight()
 
 func start_fight():
 	if choose_hero == null:
@@ -229,7 +242,8 @@ func start_check():
 	var http = GodotHttp.new()
 	http.connect("http_res",self,"on_http")
 	var query = JSON.print({
-		"save_id":StorageData.get_player_state()["save_id"]
+		"save_id":StorageData.get_player_state()["save_id"],
+		"version":"115"
 	})
 	http.http_post("sign/boss_count",query)
 

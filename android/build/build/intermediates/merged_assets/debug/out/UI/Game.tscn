@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Texture/3.png" type="Texture" id=1]
 [ext_resource path="res://UI/UILayer.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://icon.png" type="Texture" id=15]
 [ext_resource path="res://UI/GameMain.gd" type="Script" id=16]
+[ext_resource path="res://AutoLoad/Testing.gd" type="Script" id=17]
 [ext_resource path="res://Texture/top_title.png" type="Texture" id=18]
 [ext_resource path="res://Texture/hud/Check element.png" type="Texture" id=19]
 [ext_resource path="res://Texture/hud/Check box.png" type="Texture" id=20]
@@ -403,30 +404,30 @@ scale = Vector2( 5, 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PxBg/pre"]
 frames = SubResource( 7 )
-frame = 3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 25.6, 0 )
 frames = SubResource( 14 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 54.4, 0 )
 frames = SubResource( 21 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 118.4, 0 )
 frames = SubResource( 28 )
+frame = 3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="PxBg/pre"]
 position = Vector2( 144, 0 )
 frames = SubResource( 35 )
-frame = 2
+frame = 5
 playing = true
 
 [node name="pb1" type="ParallaxBackground" parent="PxBg"]
@@ -833,6 +834,9 @@ script = ExtResource( 28 )
 [node name="Timer" type="Timer" parent="Chat"]
 wait_time = 10.0
 one_shot = true
+
+[node name="Testing" type="Node" parent="."]
+script = ExtResource( 17 )
 
 [connection signal="pressed" from="GameLayer/FightUI/Fight_btn/startFight" to="GameLayer/FightUI" method="_on_startFight_pressed"]
 [connection signal="toggled" from="GameLayer/FightUI/Fight_btn/autoFight" to="GameLayer/FightUI" method="_on_autoFight_toggled"]

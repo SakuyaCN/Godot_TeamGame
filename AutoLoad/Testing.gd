@@ -4,13 +4,12 @@ var time:Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	http()
 	time = Timer.new()
 	time.connect("timeout",self,"http")
 	time.autostart = true
 	time.one_shot = false
 	add_child(time)
-	time.start(180)
+	time.start(240)
 
 func http():
 	if StorageData.storage_data != null:

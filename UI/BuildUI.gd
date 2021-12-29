@@ -162,7 +162,7 @@ func _on_Button_pressed():
 	if !Utils.is_lv_ok(choose_data.lv):
 		ConstantsValue.showMessage("至少需要一名冒险者达到%s级才可以制作"%choose_data.lv,2)
 		return
-	if StorageData.get_player_equipment().size()>=100 && (left_type == "基础装备" || left_type == "神话装备"):
+	if StorageData.get_player_equipment().size()>=200 && (left_type == "基础装备" || left_type == "神话装备"):
 		ConstantsValue.showMessage("武器库已满，请及时清理！",3)
 		return
 	var need = choose_data.need.duplicate(true)

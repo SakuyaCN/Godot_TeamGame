@@ -7,7 +7,7 @@ onready var effect_sprite:AnimatedSprite
 onready var role_data#当前人物数据
 onready var hero_attr:HeroAttrBean#当前人物属性
 onready var is_in_atk = false #是否处于攻击动作
-var skill_bs = 0.7#技能伤害倍数
+var skill_bs = 0.8#技能伤害倍数
 var speed_temp = 0
 var is_alive = true#是否存活
 var is_moster = false#是否为怪物
@@ -183,6 +183,8 @@ func updateHp(_num,is_skill,type):
 			hero_attr.shield = 0
 			hero_attr.updateNum("shield",-hero_attr.shield)
 		else:
+			if hurt_num < 0:
+				hurt_num = 0
 			hero_attr.updateNum("shield",-hurt_num)
 	if hero_attr.shield <= 0:
 		hero_attr.updateNum("hp",-hurt_num)

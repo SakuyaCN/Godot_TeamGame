@@ -309,11 +309,18 @@ func _on_Timer2_timeout():
 		if StorageData.get_all_skill().size() > 0:
 			addSkill(LocalData.skill_data[StorageData.get_all_skill()[randi()%StorageData.get_all_skill().size()].form])
 
+#退出副本
+var tap_one = 0
 func _on_attrs2_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
-		ConstantsValue.game_mode_change = true
-		$UILayer.change_scene("res://UI/Game.tscn")
-
+		tap_one += 1
+		if tap_one == 2:
+			ConstantsValue.game_mode_change = true
+			$UILayer.change_scene("res://UI/Game.tscn")
+		else:
+			ConstantsValue.showMessage("双击退出副本",2)
+		yield(get_tree().create_timer(0.5),"timeout")
+		tap_one = 0
 
 func _on_SpinBox_value_changed(value):
 	gold = value as int
