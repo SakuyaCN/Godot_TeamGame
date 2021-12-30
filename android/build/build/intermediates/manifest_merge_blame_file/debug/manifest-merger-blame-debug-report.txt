@@ -85,152 +85,152 @@
 66    <!-- android:theme="@style/tt_full_screen" -->
 67    <!-- android:windowSoftInputMode="stateHidden" /> -->
 68    <uses-permission android:name="com.sakuya.mx.openadsdk.permission.TT_PANGOLIN" />
-68-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:59:5-89
-68-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:59:22-86
+68-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:59:5-89
+68-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:59:22-86
 69    <uses-permission android:name="com.asus.msa.SupplementaryDID.ACCESS" />
-69-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:60:5-76
-69-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:60:22-73
+69-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:60:5-76
+69-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:60:22-73
 70
 71    <permission
-71-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:62:5-64:47
+71-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:62:5-64:47
 72        android:name="com.sakuya.mx.openadsdk.permission.TT_PANGOLIN"
-72-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:63:9-73
+72-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:63:9-73
 73        android:protectionLevel="signature" />
-73-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:64:9-44
+73-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:64:9-44
 74
 75    <queries>
-75-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:66:5-74:15
+75-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:66:5-74:15
 76        <intent>
-76-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:67:9-73:18
+76-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:67:9-73:18
 77            <action android:name="android.intent.action.VIEW" />
-77-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:68:13-65
-77-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:68:21-62
+77-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:68:13-65
+77-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:68:21-62
 78
 79            <category android:name="android.intent.category.BROWSABLE" />
-79-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:70:13-74
-79-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:70:23-71
+79-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:70:13-74
+79-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:70:23-71
 80
 81            <data android:scheme="https" />
-81-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:72:13-44
-81-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:72:19-41
+81-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:72:13-44
+81-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:72:19-41
 82        </intent>
 83    </queries>
 84
 85    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-85-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:76:5-79
-85-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:76:22-76
+85-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:76:5-79
+85-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:76:22-76
 86    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-86-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:77:5-75
-86-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:77:22-72
+86-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:77:5-75
+86-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:77:22-72
 87    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-87-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:78:5-81
-87-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:78:22-78
+87-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:78:5-81
+87-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:78:22-78
 88    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 89    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-89-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:13:5-76
-89-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:13:22-73
+89-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:13:5-76
+89-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:13:22-73
 90    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-90-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:14:5-83
-90-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:14:22-80
+90-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:14:5-83
+90-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:14:22-80
 91    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-91-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:15:5-79
-91-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:15:22-76
+91-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:15:5-79
+91-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:15:22-76
 92    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-92-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:16:5-77
-92-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:16:22-74
+92-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:16:5-77
+92-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:16:22-74
 93    <uses-permission android:name="android.permission.REORDER_TASKS" />
-93-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:17:5-72
-93-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:17:22-69
+93-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:17:5-72
+93-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:17:22-69
 94    <uses-permission android:name="android.permission.VIBRATE" />
-94-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:18:5-66
-94-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:18:22-63
+94-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:18:5-66
+94-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:18:22-63
 95    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-95-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:19:5-81
-95-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:19:22-78
+95-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:19:5-81
+95-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:19:22-78
 96
 97    <application
-97-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:5-108:19
+97-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:5-116:19
 98        android:name="androidx.multidex.MultiDexApplication"
 99        android:allowBackup="false"
-99-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:93-120
+99-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:68-95
 100        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-100-->[androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\7eb7bd94312177054aeb53a2e27a9c36\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+100-->[androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
 101        android:debuggable="true"
 102        android:hasFragileUserData="false"
-102-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:143-177
+102-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:118-152
 103        android:icon="@mipmap/icon"
-103-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:263-290
+103-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:238-265
 104        android:isGame="true"
-104-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:121-142
+104-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:96-117
 105        android:label="@string/godot_project_name_string"
-105-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:43-92
-106        android:largeHeap="true"
-106-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:18-42
-107        android:requestLegacyExternalStorage="false"
-107-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:178-222
-108        android:usesCleartextTraffic="true" >
-108-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:21:18-53
-109        <activity
-109-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:46:9-67:20
-110            android:name="com.godot.game.GodotApp"
-110-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:47:13-37
-111            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-111-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:52:13-141
+105-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:18-67
+106        android:requestLegacyExternalStorage="false"
+106-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:153-197
+107        android:usesCleartextTraffic="true" >
+107-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:21:18-53
+108        <activity
+108-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:53:9-75:20
+109            android:name="com.godot.game.GodotApp"
+109-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:54:13-37
+110            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+110-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:60:13-141
+111            android:excludeFromRecents="false"
+111-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:58:13-47
 112            android:label="@string/godot_project_name_string"
-112-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:48:13-62
+112-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:55:13-62
 113            android:launchMode="singleTask"
-113-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:50:13-44
+113-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:57:13-44
 114            android:resizeableActivity="true"
-114-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:53:13-46
+114-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:61:13-46
 115            android:screenOrientation="landscape"
-115-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:51:13-50
+115-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:59:13-50
 116            android:theme="@style/GodotAppSplashTheme" >
-116-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:49:13-55
+116-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:56:13-55
 117            <intent-filter>
-117-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:59:13-66:29
+117-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:67:13-74:29
 118                <action android:name="android.intent.action.MAIN" />
-118-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:60:17-69
-118-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:60:25-66
+118-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:68:17-69
+118-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:68:25-66
 119
 120                <category android:name="android.intent.category.LAUNCHER" />
-120-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:61:17-77
-120-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:61:27-74
+120-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:69:17-77
+120-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:69:27-74
 121
 122                <!--
 123                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
 124                platforms.
 125                -->
 126                <category android:name="com.oculus.intent.category.VR" />
-126-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:65:17-74
-126-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:65:27-71
+126-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:73:17-74
+126-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:73:27-71
 127            </intent-filter>
 128        </activity>
 129        <!-- Records the version of the Godot editor used for building -->
 130        <meta-data
 131            android:name="org.godotengine.editor.version"
-132            android:value="3.4.stable" /> <!-- Custom application XML added by add-ons. -->
+132            android:value="3.4.2.stable" /> <!-- Custom application XML added by add-ons. -->
 133        <!-- CHUNK_APPLICATION_BEGIN -->
 134        <!-- CHUNK_APPLICATION_END -->
 135        <activity
-135-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:72:9-76:56
+135-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:80:9-84:56
 136            android:name="com.qq.e.ads.PortraitADActivity"
-136-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:73:13-59
+136-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:81:13-59
 137            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-137-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:75:13-83
+137-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:83:13-83
 138            android:multiprocess="true"
-138-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:36:13-40
+138-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:36:13-40
 139            android:screenOrientation="portrait" />
-139-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:74:13-49
+139-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:82:13-49
 140        <activity
-140-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:77:9-81:56
+140-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:85:9-89:56
 141            android:name="com.qq.e.ads.LandscapeADActivity"
-141-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:78:13-60
+141-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:86:13-60
 142            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-142-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:80:13-83
+142-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:88:13-83
 143            android:multiprocess="true"
-143-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:41:13-40
+143-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:41:13-40
 144            android:screenOrientation="landscape" />
-144-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:79:13-50
+144-->D:\Godot\330\Wh\android\build\AndroidManifest.xml:87:13-50
 145
 146        <provider
 147            android:name="com.qq.e.comm.GDTFileProvider"
@@ -238,11 +238,11 @@
 149            android:exported="false"
 150            android:grantUriPermissions="true" >
 151            <meta-data
-151-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:219:13-221:59
+151-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:219:13-221:59
 152                android:name="android.support.FILE_PROVIDER_PATHS"
-152-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:220:17-67
+152-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:220:17-67
 153                android:resource="@xml/gdt_file_path" />
-153-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:221:17-56
+153-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:221:17-56
 154        </provider>
 155        <provider
 156            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
@@ -250,11 +250,11 @@
 158            android:exported="false"
 159            android:grantUriPermissions="true" >
 160            <meta-data
-160-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:219:13-221:59
+160-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:219:13-221:59
 161                android:name="android.support.FILE_PROVIDER_PATHS"
-161-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:220:17-67
+161-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:220:17-67
 162                android:resource="@xml/csj_file_paths" />
-162-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:221:17-56
+162-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:221:17-56
 163        </provider>
 164        <provider
 165            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
@@ -262,159 +262,159 @@
 167            android:exported="false" />
 168
 169        <meta-data
-169-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:81:9-83:168
+169-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:81:9-83:168
 170            android:name="ZEUS_PLUGIN_PANGLE"
-170-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:82:13-46
+170-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:82:13-46
 171            android:value="{                 apiVersionCode:4019,                 packageName:com.byted.pangle,                 minPluginVersion:4019             }" />
-171-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:83:13-165
+171-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:83:13-165
 172
 173        <activity
-173-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:85:9-90:70
+173-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:85:9-90:70
 174            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity"
-174-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:86:13-92
+174-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:86:13-92
 175            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-175-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:87:13-85
+175-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:87:13-85
 176            android:exported="false"
-176-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:88:13-37
+176-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:88:13-37
 177            android:launchMode="standard"
-177-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:89:13-42
+177-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:89:13-42
 178            android:windowSoftInputMode="adjustResize|stateHidden" />
-178-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:90:13-67
+178-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:90:13-67
 179        <activity
-179-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:91:9-97:70
+179-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:91:9-97:70
 180            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity"
-180-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:92:13-101
+180-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:92:13-101
 181            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-181-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:93:13-85
+181-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:93:13-85
 182            android:exported="false"
-182-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:94:13-37
+182-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:94:13-37
 183            android:launchMode="standard"
-183-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:95:13-42
+183-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:95:13-42
 184            android:screenOrientation="portrait"
-184-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:96:13-49
+184-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:96:13-49
 185            android:windowSoftInputMode="adjustResize|stateHidden" />
-185-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:97:13-67
+185-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:97:13-67
 186        <activity
-186-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:98:9-104:70
+186-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:98:9-104:70
 187            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T"
-187-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:99:13-94
+187-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:99:13-94
 188            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-188-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:100:13-85
+188-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:100:13-85
 189            android:exported="false"
-189-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:101:13-37
+189-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:101:13-37
 190            android:launchMode="standard"
-190-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:102:13-42
+190-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:102:13-42
 191            android:theme="@android:style/Theme.Translucent"
-191-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:103:13-61
+191-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:103:13-61
 192            android:windowSoftInputMode="adjustResize|stateHidden" />
-192-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:104:13-67
+192-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:104:13-67
 193        <activity
-193-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:105:9-111:70
+193-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:105:9-111:70
 194            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activity"
-194-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:106:13-102
+194-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:106:13-102
 195            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-195-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:107:13-85
+195-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:107:13-85
 196            android:exported="false"
-196-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:108:13-37
+196-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:108:13-37
 197            android:launchMode="standard"
-197-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:109:13-42
+197-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:109:13-42
 198            android:screenOrientation="landscape"
-198-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:110:13-50
+198-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:110:13-50
 199            android:windowSoftInputMode="adjustResize|stateHidden" />
-199-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:111:13-67
+199-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:111:13-67
 200        <activity
-200-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:112:9-116:70
+200-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:112:9-116:70
 201            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Activity"
-201-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:113:13-83
+201-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:113:13-83
 202            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-202-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:114:13-85
+202-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:114:13-85
 203            android:exported="false"
-203-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:115:13-37
+203-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:115:13-37
 204            android:windowSoftInputMode="adjustResize|stateHidden" />
-204-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:116:13-67
+204-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:116:13-67
 205        <activity
-205-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:117:9-123:70
+205-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:117:9-123:70
 206            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_SingleTask_Activity_T"
-206-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:118:13-96
+206-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:118:13-96
 207            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-207-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:119:13-85
+207-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:119:13-85
 208            android:exported="false"
-208-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:120:13-37
+208-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:120:13-37
 209            android:launchMode="singleTask"
-209-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:121:13-44
+209-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:121:13-44
 210            android:theme="@android:style/Theme.Translucent"
-210-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:122:13-61
+210-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:122:13-61
 211            android:windowSoftInputMode="adjustResize|stateHidden" />
-211-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:123:13-67
+211-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:123:13-67
 212        <activity
-212-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:124:9-129:70
+212-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:124:9-129:70
 213            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_SingleTask_Activity"
-213-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:125:13-94
+213-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:125:13-94
 214            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-214-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:126:13-85
+214-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:126:13-85
 215            android:exported="false"
-215-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:127:13-37
+215-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:127:13-37
 216            android:launchMode="singleTask"
-216-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:128:13-44
+216-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:128:13-44
 217            android:windowSoftInputMode="adjustResize|stateHidden" />
-217-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:129:13-67
+217-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:129:13-67
 218
 219        <provider
-219-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:131:9-135:45
+219-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:131:9-135:45
 220            android:name="com.bytedance.sdk.openadsdk.stub.server.DownloaderServerManager"
-220-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:132:13-91
+220-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:132:13-91
 221            android:authorities="com.sakuya.mx.pangle.servermanager.downloader.com.bytedance.sdk.openadsdk.adhost"
-221-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:133:13-118
+221-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:133:13-118
 222            android:exported="false"
-222-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:134:13-37
+222-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:134:13-37
 223            android:process=":downloader" />
-223-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:135:13-42
+223-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:135:13-42
 224        <provider
-224-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:136:9-139:40
+224-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:136:9-139:40
 225            android:name="com.bytedance.pangle.servermanager.MainServerManager"
-225-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:137:13-80
+225-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:137:13-80
 226            android:authorities="com.sakuya.mx.pangle.servermanager.main"
-226-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:138:13-77
+226-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:138:13-77
 227            android:exported="false" />
-227-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:139:13-37
+227-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:139:13-37
 228        <provider
-228-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:140:9-143:40
+228-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:140:9-143:40
 229            android:name="com.bytedance.pangle.provider.MainProcessProviderProxy"
-229-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:141:13-82
+229-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:141:13-82
 230            android:authorities="com.sakuya.mx.pangle.provider.proxy.main"
-230-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:142:13-78
+230-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:142:13-78
 231            android:exported="false" />
-231-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:143:13-37
+231-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:143:13-37
 232
 233        <activity android:name="com.ss.android.downloadlib.addownload.compliance.AppPrivacyPolicyActivity" />
-233-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:145:9-110
-233-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:145:19-107
+233-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:145:9-110
+233-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:145:19-107
 234        <activity android:name="com.ss.android.downloadlib.addownload.compliance.AppDetailInfoActivity" />
-234-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:146:9-107
-234-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:146:19-104
+234-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:146:9-107
+234-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:146:19-104
 235        <activity
-235-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:147:9-150:75
+235-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:147:9-150:75
 236            android:name="com.ss.android.downloadlib.activity.TTDelegateActivity"
-236-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:148:13-82
+236-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:148:13-82
 237            android:launchMode="singleTask"
-237-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:149:13-44
+237-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:149:13-44
 238            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-238-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:150:13-72
+238-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:150:13-72
 239        <activity
-239-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:151:9-154:75
+239-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:151:9-154:75
 240            android:name="com.ss.android.downloadlib.activity.JumpKllkActivity"
-240-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:152:13-80
+240-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:152:13-80
 241            android:launchMode="singleTask"
-241-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:153:13-44
+241-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:153:13-44
 242            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-242-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:154:13-72
+242-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:154:13-72
 243
 244        <receiver android:name="com.ss.android.downloadlib.core.download.DownloadReceiver" /> <!-- APP DOWNLOADER START -->
-244-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:156:9-94
-244-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:156:19-91
+244-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:156:9-94
+244-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:156:19-91
 245        <service android:name="com.ss.android.socialbase.appdownloader.DownloadHandlerService" /> <!-- <receiver android:name="com.ss.android.socialbase.appdownloader.DownloadReceiver"> -->
-245-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:157:9-98
-245-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:157:18-95
+245-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:157:9-98
+245-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:157:18-95
 246        <!-- <intent-filter> -->
 247        <!-- <action android:name="android.intent.action.BOOT_COMPLETED"/> -->
 248        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/> -->
@@ -431,538 +431,538 @@
 259        <!-- </intent-filter> -->
 260        <!-- </receiver> -->
 261        <activity
-261-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:173:9-176:59
+261-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:173:9-176:59
 262            android:name="com.ss.android.socialbase.appdownloader.view.DownloadTaskDeleteActivity"
-262-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:174:13-99
+262-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:174:13-99
 263            android:launchMode="singleTask"
-263-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:175:13-44
+263-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:175:13-44
 264            android:theme="@android:style/Theme.Dialog" />
-264-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:176:13-56
+264-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:176:13-56
 265        <activity
-265-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:177:9-180:59
+265-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:177:9-180:59
 266            android:name="com.ss.android.socialbase.appdownloader.view.JumpUnknownSourceActivity"
-266-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:178:13-98
+266-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:178:13-98
 267            android:launchMode="singleTask"
-267-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:179:13-44
+267-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:179:13-44
 268            android:theme="@android:style/Theme.Dialog" />
-268-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:180:13-56
+268-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:180:13-56
 269
 270        <service
-270-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:182:9-186:72
+270-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:182:9-186:72
 271            android:name="com.ss.android.socialbase.appdownloader.RetryJobSchedulerService"
-271-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:183:13-92
+271-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:183:13-92
 272            android:enabled="true"
-272-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:184:13-35
+272-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:184:13-35
 273            android:exported="false"
-273-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:185:13-37
+273-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:185:13-37
 274            android:permission="android.permission.BIND_JOB_SERVICE" />
-274-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:186:13-69
+274-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:186:13-69
 275        <service
-275-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:187:9-194:19
+275-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:187:9-194:19
 276            android:name="com.ss.android.socialbase.downloader.downloader.IndependentProcessDownloadService"
-276-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:188:13-109
+276-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:188:13-109
 277            android:exported="false"
-277-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:189:13-37
+277-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:189:13-37
 278            android:process=":downloader" >
-278-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:190:13-42
+278-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:190:13-42
 279            <intent-filter>
-279-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:191:13-193:29
+279-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:191:13-193:29
 280                <action android:name="com.ss.android.socialbase.downloader.remote" />
-280-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:192:17-86
-280-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:192:25-83
+280-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:192:17-86
+280-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:192:25-83
 281            </intent-filter>
 282        </service>
 283        <service android:name="com.ss.android.socialbase.downloader.notification.DownloadNotificationService" />
-283-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:195:9-113
-283-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:195:18-110
+283-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:195:9-113
+283-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:195:18-110
 284        <service android:name="com.ss.android.socialbase.downloader.downloader.DownloadService" />
-284-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:196:9-99
-284-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:196:18-96
+284-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:196:9-99
+284-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:196:18-96
 285        <service android:name="com.ss.android.socialbase.downloader.impls.DownloadHandleService" /> <!-- <receiver android:name="com.ss.android.socialbase.downloader.downloader.DownloadReceiver"> -->
-285-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:197:9-100
-285-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:197:18-97
+285-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:197:9-100
+285-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:197:18-97
 286        <!-- <intent-filter> -->
 287        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/> -->
 288        <!-- </intent-filter> -->
 289        <!-- </receiver> -->
 290        <!-- 数据库更新service -->
 291        <service android:name="com.ss.android.socialbase.downloader.downloader.SqlDownloadCacheService" /> <!-- 声明SDK所需要的组件 -->
-291-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:203:9-107
-291-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\d4feb49b5797016b5fe421ff6147ab1e\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:203:18-104
+291-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:203:9-107
+291-->[csj_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\f52f5c1d40da21061cfd878c88134ac6\transformed\jetified-csj_ad_sdk_211014\AndroidManifest.xml:203:18-104
 292        <service
-292-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:24:9-27:43
+292-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:24:9-27:43
 293            android:name="com.qq.e.comm.DownloadService"
-293-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:25:13-57
+293-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:25:13-57
 294            android:exported="false"
-294-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:26:13-37
+294-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:26:13-37
 295            android:multiprocess="true" /> <!-- 请开发者注意字母的大小写，ADActivity，而不是AdActivity -->
-295-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:27:13-40
+295-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:27:13-40
 296        <activity
-296-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:29:9-32:43
+296-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:29:9-32:43
 297            android:name="com.qq.e.ads.ADActivity"
-297-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:30:13-51
+297-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:30:13-51
 298            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-298-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:31:13-83
+298-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:31:13-83
 299            android:multiprocess="true" /> <!-- 用于激励视频可选广告的竖屏透明背景activity -->
-299-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:32:13-40
+299-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:32:13-40
 300        <activity
-300-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:44:9-52:20
+300-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:44:9-52:20
 301            android:name="com.qq.e.ads.RewardvideoPortraitADActivity"
-301-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:45:13-70
+301-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:45:13-70
 302            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-302-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:46:13-83
+302-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:46:13-83
 303            android:multiprocess="true"
-303-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:47:13-40
+303-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:47:13-40
 304            android:theme="@android:style/Theme.Light.NoTitleBar" >
-304-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:48:13-66
+304-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:48:13-66
 305            <meta-data
-305-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:49:13-51:40
+305-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:49:13-51:40
 306                android:name="android.notch_support"
-306-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:50:17-53
+306-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:50:17-53
 307                android:value="true" />
-307-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:51:17-37
+307-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:51:17-37
 308        </activity> <!-- 用于激励视频可选广告的横屏透明背景activity -->
 309        <activity
-309-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:54:9-63:20
+309-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:54:9-63:20
 310            android:name="com.qq.e.ads.RewardvideoLandscapeADActivity"
-310-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:55:13-71
+310-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:55:13-71
 311            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-311-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:56:13-83
+311-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:56:13-83
 312            android:multiprocess="true"
-312-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:57:13-40
+312-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:57:13-40
 313            android:screenOrientation="landscape"
-313-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:58:13-50
+313-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:58:13-50
 314            android:theme="@android:style/Theme.Light.NoTitleBar" >
-314-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:59:13-66
+314-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:59:13-66
 315            <meta-data
-315-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:49:13-51:40
+315-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:49:13-51:40
 316                android:name="android.notch_support"
-316-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:50:17-53
+316-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:50:17-53
 317                android:value="true" />
-317-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:51:17-37
+317-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:51:17-37
 318        </activity>
 319        <activity
-319-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:64:9-67:86
+319-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:64:9-67:86
 320            android:name="com.qq.e.ads.DialogActivity"
-320-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:65:13-55
+320-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:65:13-55
 321            android:multiprocess="true"
-321-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:66:13-40
+321-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:66:13-40
 322            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" /> <!-- Records the version of the Godot library -->
-322-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\5bf97d981358ce616baf9276ed122ac0\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:67:13-83
+322-->[gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:67:13-83
 323        <meta-data
-323-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
+323-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\7d496d812684c77fc04000caf95fd2e1\transformed\jetified-godot-lib.debug\AndroidManifest.xml:19:9-21:44
 324            android:name="org.godotengine.library.version"
-324-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-59
-325            android:value="3.4.0.stable" />
-325-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-41
+324-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\7d496d812684c77fc04000caf95fd2e1\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:13-59
+325            android:value="3.4.2.stable" />
+325-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\7d496d812684c77fc04000caf95fd2e1\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-41
 326
 327        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-327-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:9-80
-327-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\68bb53a28e41898d74bdff841e971f2d\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:18-77
+327-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\7d496d812684c77fc04000caf95fd2e1\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:9-80
+327-->[godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\7d496d812684c77fc04000caf95fd2e1\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:18-77
 328
 329        <activity
-329-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:24:9-28:69
+329-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:24:9-28:69
 330            android:name="com.kwad.sdk.api.proxy.app.AdWebViewActivity"
-330-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:25:13-72
+330-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:25:13-72
 331            android:configChanges="keyboardHidden|orientation|screenSize"
-331-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:26:13-74
+331-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:26:13-74
 332            android:screenOrientation="portrait"
-332-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:27:13-49
+332-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:27:13-49
 333            android:theme="@android:style/Theme.Light.NoTitleBar" />
-333-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:28:13-66
+333-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:28:13-66
 334        <activity
-334-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:29:9-33:80
+334-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:29:9-33:80
 335            android:name="com.kwad.sdk.api.proxy.app.KsFullScreenVideoActivity"
-335-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:30:13-80
+335-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:30:13-80
 336            android:configChanges="keyboardHidden|orientation|screenSize"
-336-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:31:13-74
+336-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:31:13-74
 337            android:screenOrientation="behind"
-337-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:32:13-47
+337-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:32:13-47
 338            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-338-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:33:13-77
+338-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:33:13-77
 339        <activity
-339-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:34:9-38:80
+339-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:34:9-38:80
 340            android:name="com.kwad.sdk.api.proxy.app.KsFullScreenLandScapeVideoActivity"
-340-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:35:13-89
+340-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:35:13-89
 341            android:configChanges="keyboardHidden|orientation|screenSize"
-341-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:36:13-74
+341-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:36:13-74
 342            android:screenOrientation="landscape"
-342-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:37:13-50
+342-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:37:13-50
 343            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-343-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:38:13-77
+343-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:38:13-77
 344        <activity
-344-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:39:9-43:80
+344-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:39:9-43:80
 345            android:name="com.kwad.sdk.api.proxy.app.KsRewardVideoActivity"
-345-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:40:13-76
+345-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:40:13-76
 346            android:configChanges="keyboardHidden|orientation|screenSize"
-346-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:41:13-74
+346-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:41:13-74
 347            android:screenOrientation="portrait"
-347-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:42:13-49
+347-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:42:13-49
 348            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-348-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:43:13-77
+348-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:43:13-77
 349        <activity
-349-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:44:9-48:80
+349-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:44:9-48:80
 350            android:name="com.kwad.sdk.api.proxy.app.KSRewardLandScapeVideoActivity"
-350-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:45:13-85
+350-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:45:13-85
 351            android:configChanges="keyboardHidden|orientation|screenSize"
-351-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:46:13-74
+351-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:46:13-74
 352            android:screenOrientation="landscape"
-352-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:47:13-50
+352-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:47:13-50
 353            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-353-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:48:13-77
+353-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:48:13-77
 354        <activity
-354-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:49:9-53:80
+354-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:49:9-53:80
 355            android:name="com.kwad.sdk.api.proxy.app.FeedDownloadActivity"
-355-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:50:13-75
+355-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:50:13-75
 356            android:configChanges="keyboardHidden|orientation|screenSize"
-356-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:51:13-74
+356-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:51:13-74
 357            android:screenOrientation="portrait"
-357-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:52:13-49
+357-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:52:13-49
 358            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-358-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:53:13-77
+358-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:53:13-77
 359        <activity
-359-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:54:9-58:69
+359-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:54:9-58:69
 360            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$KsTrendsActivity"
-360-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:55:13-92
+360-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:55:13-92
 361            android:configChanges="keyboardHidden|orientation|screenSize"
-361-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:56:13-74
+361-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:56:13-74
 362            android:screenOrientation="portrait"
-362-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:57:13-49
+362-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:57:13-49
 363            android:theme="@android:style/Theme.Light.NoTitleBar" />
-363-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:58:13-66
+363-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:58:13-66
 364        <activity
-364-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:59:9-62:52
+364-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:59:9-62:52
 365            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$ProfileHomeActivity"
-365-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:60:13-95
+365-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:60:13-95
 366            android:configChanges="keyboardHidden|orientation|screenSize"
-366-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:61:13-74
+366-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:61:13-74
 367            android:screenOrientation="portrait" />
-367-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:62:13-49
+367-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:62:13-49
 368        <activity
-368-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:63:9-66:52
+368-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:63:9-66:52
 369            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$ProfileVideoDetailActivity"
-369-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:64:13-102
+369-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:64:13-102
 370            android:configChanges="keyboardHidden|orientation|screenSize"
-370-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:65:13-74
+370-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:65:13-74
 371            android:screenOrientation="portrait" />
-371-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:66:13-49
+371-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:66:13-49
 372        <activity
-372-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:67:9-70:52
+372-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:67:9-70:52
 373            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$TubeProfileActivity"
-373-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:68:13-95
+373-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:68:13-95
 374            android:configChanges="keyboardHidden|orientation|screenSize"
-374-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:69:13-74
+374-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:69:13-74
 375            android:screenOrientation="portrait" />
-375-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:70:13-49
+375-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:70:13-49
 376        <activity
-376-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:71:9-74:52
+376-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:71:9-74:52
 377            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$TubeDetailActivity"
-377-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:72:13-94
+377-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:72:13-94
 378            android:configChanges="keyboardHidden|orientation|screenSize"
-378-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:73:13-74
+378-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:73:13-74
 379            android:screenOrientation="portrait" />
-379-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:74:13-49
+379-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:74:13-49
 380        <activity
-380-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:75:9-78:52
+380-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:75:9-78:52
 381            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$EpisodeDetailActivity"
-381-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:76:13-97
+381-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:76:13-97
 382            android:configChanges="keyboardHidden|orientation|screenSize"
-382-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:77:13-74
+382-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:77:13-74
 383            android:screenOrientation="portrait" />
-383-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:78:13-49
+383-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:78:13-49
 384        <activity
-384-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:79:9-88:20
+384-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:79:9-88:20
 385            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$RequestInstallPermissionActivity"
-385-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:80:13-108
+385-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:80:13-108
 386            android:configChanges="keyboardHidden|orientation|screenSize"
-386-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:81:13-74
+386-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:81:13-74
 387            android:theme="@style/TransparentDialogActivity" >
-387-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:82:13-61
+387-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:82:13-61
 388            <intent-filter>
-388-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:83:13-87:29
+388-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:83:13-87:29
 389                <action android:name="intent.action.requestInstallPermission" />
-389-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:84:17-81
-389-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:84:25-78
+389-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:84:17-81
+389-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:84:25-78
 390
 391                <category android:name="android.intent.category.DEFAULT" />
-391-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:86:17-76
-391-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:86:27-73
+391-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:86:17-76
+391-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:86:27-73
 392            </intent-filter>
 393        </activity>
 394        <activity
-394-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:89:9-93:80
+394-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:89:9-93:80
 395            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity1"
-395-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:90:13-93
+395-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:90:13-93
 396            android:configChanges="keyboardHidden|orientation|screenSize"
-396-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:91:13-74
+396-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:91:13-74
 397            android:screenOrientation="portrait"
-397-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:92:13-49
+397-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:92:13-49
 398            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-398-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:93:13-77
+398-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:93:13-77
 399        <activity
-399-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:94:9-97:52
+399-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:94:9-97:52
 400            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$GoodsPlayBackActivity"
-400-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:95:13-97
+400-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:95:13-97
 401            android:configChanges="keyboardHidden|orientation|screenSize"
-401-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:96:13-74
+401-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:96:13-74
 402            android:screenOrientation="portrait" />
-402-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:97:13-49
+402-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:97:13-49
 403        <activity
-403-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:98:9-102:80
+403-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:98:9-102:80
 404            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity2"
-404-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:99:13-93
+404-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:99:13-93
 405            android:configChanges="keyboardHidden|orientation|screenSize"
-405-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:100:13-74
+405-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:100:13-74
 406            android:screenOrientation="portrait"
-406-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:101:13-49
+406-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:101:13-49
 407            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-407-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:102:13-77
+407-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:102:13-77
 408        <activity
-408-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:103:9-107:80
+408-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:103:9-107:80
 409            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity3"
-409-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:104:13-93
+409-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:104:13-93
 410            android:configChanges="keyboardHidden|orientation|screenSize"
-410-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:105:13-74
+410-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:105:13-74
 411            android:screenOrientation="portrait"
-411-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:106:13-49
+411-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:106:13-49
 412            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-412-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:107:13-77
+412-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:107:13-77
 413        <activity
-413-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:108:9-111:52
+413-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:108:9-111:52
 414            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity4"
-414-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:109:13-93
+414-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:109:13-93
 415            android:configChanges="keyboardHidden|orientation|screenSize"
-415-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:110:13-74
+415-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:110:13-74
 416            android:screenOrientation="portrait" />
-416-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:111:13-49
+416-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:111:13-49
 417        <activity
-417-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:112:9-115:52
+417-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:112:9-115:52
 418            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity5"
-418-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:113:13-93
+418-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:113:13-93
 419            android:configChanges="keyboardHidden|orientation|screenSize"
-419-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:114:13-74
+419-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:114:13-74
 420            android:screenOrientation="portrait" />
-420-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:115:13-49
+420-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:115:13-49
 421        <activity
-421-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:116:9-119:52
+421-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:116:9-119:52
 422            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity6"
-422-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:117:13-93
+422-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:117:13-93
 423            android:configChanges="keyboardHidden|orientation|screenSize"
-423-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:118:13-74
+423-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:118:13-74
 424            android:screenOrientation="portrait" />
-424-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:119:13-49
+424-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:119:13-49
 425        <activity
-425-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:120:9-123:52
+425-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:120:9-123:52
 426            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity7"
-426-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:121:13-93
+426-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:121:13-93
 427            android:configChanges="keyboardHidden|orientation|screenSize"
-427-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:122:13-74
+427-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:122:13-74
 428            android:screenOrientation="portrait" />
-428-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:123:13-49
+428-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:123:13-49
 429        <activity
-429-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:124:9-127:52
+429-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:124:9-127:52
 430            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity8"
-430-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:125:13-93
+430-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:125:13-93
 431            android:configChanges="keyboardHidden|orientation|screenSize"
-431-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:126:13-74
+431-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:126:13-74
 432            android:screenOrientation="portrait" />
-432-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:127:13-49
+432-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:127:13-49
 433        <activity
-433-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:128:9-131:52
+433-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:128:9-131:52
 434            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity9"
-434-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:129:13-93
+434-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:129:13-93
 435            android:configChanges="keyboardHidden|orientation|screenSize"
-435-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:130:13-74
+435-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:130:13-74
 436            android:screenOrientation="portrait" />
-436-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:131:13-49
+436-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:131:13-49
 437        <activity
-437-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:132:9-135:52
+437-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:132:9-135:52
 438            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivity10"
-438-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:133:13-94
+438-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:133:13-94
 439            android:configChanges="keyboardHidden|orientation|screenSize"
-439-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:134:13-74
+439-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:134:13-74
 440            android:screenOrientation="portrait" />
-440-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:135:13-49
+440-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:135:13-49
 441        <activity
-441-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:136:9-140:52
+441-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:136:9-140:52
 442            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivitySingleTop1"
-442-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:137:13-102
+442-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:137:13-102
 443            android:configChanges="keyboardHidden|orientation|screenSize"
-443-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:138:13-74
+443-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:138:13-74
 444            android:launchMode="singleTop"
-444-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:139:13-43
+444-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:139:13-43
 445            android:screenOrientation="portrait" />
-445-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:140:13-49
+445-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:140:13-49
 446        <activity
-446-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:141:9-145:52
+446-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:141:9-145:52
 447            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivitySingleTop2"
-447-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:142:13-102
+447-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:142:13-102
 448            android:configChanges="keyboardHidden|orientation|screenSize"
-448-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:143:13-74
+448-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:143:13-74
 449            android:launchMode="singleTop"
-449-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:144:13-43
+449-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:144:13-43
 450            android:screenOrientation="portrait" />
-450-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:145:13-49
+450-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:145:13-49
 451        <activity
-451-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:146:9-150:52
+451-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:146:9-150:52
 452            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivitySingleInstance1"
-452-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:147:13-107
+452-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:147:13-107
 453            android:configChanges="keyboardHidden|orientation|screenSize"
-453-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:148:13-74
+453-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:148:13-74
 454            android:launchMode="singleInstance"
-454-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:149:13-48
+454-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:149:13-48
 455            android:screenOrientation="portrait" />
-455-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:150:13-49
+455-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:150:13-49
 456        <activity
-456-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:151:9-155:52
+456-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:151:9-155:52
 457            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$FragmentActivitySingleInstance2"
-457-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:152:13-107
+457-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:152:13-107
 458            android:configChanges="keyboardHidden|orientation|screenSize"
-458-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:153:13-74
+458-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:153:13-74
 459            android:launchMode="singleInstance"
-459-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:154:13-48
+459-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:154:13-48
 460            android:screenOrientation="portrait" />
-460-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:155:13-49
+460-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:155:13-49
 461        <activity
-461-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:156:9-161:80
+461-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:156:9-161:80
 462            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$DeveloperConfigActivity"
-462-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:157:13-99
+462-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:157:13-99
 463            android:configChanges="keyboardHidden|orientation|screenSize"
-463-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:158:13-74
+463-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:158:13-74
 464            android:launchMode="singleInstance"
-464-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:159:13-48
+464-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:159:13-48
 465            android:screenOrientation="portrait"
-465-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:160:13-49
+465-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:160:13-49
 466            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
-466-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:161:13-77
+466-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:161:13-77
 467        <activity
-467-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:162:9-166:66
+467-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:162:9-166:66
 468            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$LandscapeFragmentActivity"
-468-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:163:13-101
+468-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:163:13-101
 469            android:configChanges="keyboardHidden|orientation|screenSize"
-469-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:164:13-74
+469-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:164:13-74
 470            android:screenOrientation="landscape"
-470-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:165:13-50
+470-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:165:13-50
 471            android:theme="@style/Theme.AppCompat.NoActionBar" />
-471-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:166:13-63
+471-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:166:13-63
 472        <activity
-472-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:167:9-172:66
+472-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:167:9-172:66
 473            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$LandscapeFragmentActivitySingleTop1"
-473-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:168:13-111
+473-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:168:13-111
 474            android:configChanges="keyboardHidden|orientation|screenSize"
-474-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:169:13-74
+474-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:169:13-74
 475            android:launchMode="singleTop"
-475-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:170:13-43
+475-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:170:13-43
 476            android:screenOrientation="landscape"
-476-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:171:13-50
+476-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:171:13-50
 477            android:theme="@style/Theme.AppCompat.NoActionBar" />
-477-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:172:13-63
+477-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:172:13-63
 478        <activity
-478-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:173:9-178:66
+478-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:173:9-178:66
 479            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$LandscapeFragmentActivitySingleTop2"
-479-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:174:13-111
+479-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:174:13-111
 480            android:configChanges="keyboardHidden|orientation|screenSize"
-480-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:175:13-74
+480-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:175:13-74
 481            android:launchMode="singleTop"
-481-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:176:13-43
+481-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:176:13-43
 482            android:screenOrientation="landscape"
-482-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:177:13-50
+482-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:177:13-50
 483            android:theme="@style/Theme.AppCompat.NoActionBar" />
-483-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:178:13-63
+483-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:178:13-63
 484        <activity
-484-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:179:9-184:66
+484-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:179:9-184:66
 485            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$LandscapeFragmentActivitySingleTask1"
-485-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:180:13-112
+485-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:180:13-112
 486            android:configChanges="keyboardHidden|orientation|screenSize"
-486-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:181:13-74
+486-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:181:13-74
 487            android:launchMode="singleTask"
-487-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:182:13-44
+487-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:182:13-44
 488            android:screenOrientation="landscape"
-488-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:183:13-50
+488-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:183:13-50
 489            android:theme="@style/Theme.AppCompat.NoActionBar" />
-489-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:184:13-63
+489-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:184:13-63
 490        <activity
-490-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:185:9-190:66
+490-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:185:9-190:66
 491            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$LandscapeFragmentActivitySingleTask2"
-491-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:186:13-112
+491-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:186:13-112
 492            android:configChanges="keyboardHidden|orientation|screenSize"
-492-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:187:13-74
+492-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:187:13-74
 493            android:launchMode="singleTask"
-493-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:188:13-44
+493-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:188:13-44
 494            android:screenOrientation="landscape"
-494-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:189:13-50
+494-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:189:13-50
 495            android:theme="@style/Theme.AppCompat.NoActionBar" />
-495-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:190:13-63
+495-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:190:13-63
 496        <activity
-496-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:191:9-196:66
+496-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:191:9-196:66
 497            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$LandscapeFragmentActivitySingleInstance1"
-497-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:192:13-116
+497-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:192:13-116
 498            android:configChanges="keyboardHidden|orientation|screenSize"
-498-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:193:13-74
+498-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:193:13-74
 499            android:launchMode="singleInstance"
-499-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:194:13-48
+499-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:194:13-48
 500            android:screenOrientation="landscape"
-500-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:195:13-50
+500-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:195:13-50
 501            android:theme="@style/Theme.AppCompat.NoActionBar" />
-501-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:196:13-63
+501-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:196:13-63
 502        <activity
-502-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:197:9-202:66
+502-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:197:9-202:66
 503            android:name="com.kwad.sdk.api.proxy.app.BaseFragmentActivity$LandscapeFragmentActivitySingleInstance2"
-503-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:198:13-116
+503-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:198:13-116
 504            android:configChanges="keyboardHidden|orientation|screenSize"
-504-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:199:13-74
+504-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:199:13-74
 505            android:launchMode="singleInstance"
-505-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:200:13-48
+505-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:200:13-48
 506            android:screenOrientation="landscape"
-506-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:201:13-50
+506-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:201:13-50
 507            android:theme="@style/Theme.AppCompat.NoActionBar" />
-507-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:202:13-63
+507-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:202:13-63
 508
 509        <service android:name="com.kwad.sdk.api.proxy.app.FileDownloadService$SharedMainProcessService" />
-509-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:204:9-107
-509-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:204:18-104
+509-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:204:9-107
+509-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:204:18-104
 510        <service android:name="com.kwad.sdk.api.proxy.app.FileDownloadService$SeparateProcessService" />
-510-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:205:9-105
-510-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:205:18-102
+510-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:205:9-105
+510-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:205:18-102
 511        <service
-511-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:206:9-208:40
+511-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:206:9-208:40
 512            android:name="com.kwad.sdk.api.proxy.app.DownloadService"
-512-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:207:13-70
+512-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:207:13-70
 513            android:exported="false" />
-513-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:208:13-37
+513-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:208:13-37
 514        <service
-514-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:209:9-212:47
+514-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:209:9-212:47
 515            android:name="com.kwad.sdk.api.proxy.app.ServiceProxyRemote"
-515-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:210:13-73
+515-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:210:13-73
 516            android:exported="false"
-516-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:211:13-37
+516-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:211:13-37
 517            android:process=":kssdk_remote" />
-517-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:212:13-44
+517-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:212:13-44
 518
 519        <provider
-519-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:214:9-222:20
+519-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:214:9-222:20
 520            android:name="com.kwad.sdk.api.proxy.app.AdSdkFileProvider"
-520-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:215:13-72
+520-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:215:13-72
 521            android:authorities="com.sakuya.mx.adFileProvider"
-521-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:216:13-66
+521-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:216:13-66
 522            android:exported="false"
-522-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:217:13-37
+522-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:217:13-37
 523            android:grantUriPermissions="true" >
-523-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:218:13-47
+523-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:218:13-47
 524            <meta-data
-524-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:219:13-221:59
+524-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:219:13-221:59
 525                android:name="android.support.FILE_PROVIDER_PATHS"
-525-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:220:17-67
+525-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:220:17-67
 526                android:resource="@xml/ksad_file_paths" />
-526-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\3a04a7e3d79766a74e16dee282c8c9bb\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:221:17-56
+526-->[ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:221:17-56
 527        </provider>
 528
 529        <meta-data
-529-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\56b48105ae59dc3e36f6fc8f656bf37a\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:10:9-12:58
+529-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:10:9-12:58
 530            android:name="org.godotengine.plugin.v1.GodotUtils"
-530-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\56b48105ae59dc3e36f6fc8f656bf37a\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:11:13-64
+530-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:11:13-64
 531            android:value="com.sakuya.godot.GodotMain" />
-531-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\56b48105ae59dc3e36f6fc8f656bf37a\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:12:13-55
+531-->[GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:12:13-55
 532    </application>
 533
 534</manifest>

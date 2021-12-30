@@ -103,12 +103,12 @@
         android:icon="@mipmap/icon"
         android:isGame="true"
         android:label="@string/godot_project_name_string"
-        android:largeHeap="true"
         android:requestLegacyExternalStorage="false"
         android:usesCleartextTraffic="true" >
         <activity
             android:name="com.godot.game.GodotApp"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+            android:excludeFromRecents="false"
             android:label="@string/godot_project_name_string"
             android:launchMode="singleTask"
             android:resizeableActivity="true"
@@ -129,7 +129,7 @@
         <!-- Records the version of the Godot editor used for building -->
         <meta-data
             android:name="org.godotengine.editor.version"
-            android:value="3.4.stable" /> <!-- Custom application XML added by add-ons. -->
+            android:value="3.4.2.stable" /> <!-- Custom application XML added by add-ons. -->
         <!-- CHUNK_APPLICATION_BEGIN -->
         <!-- CHUNK_APPLICATION_END -->
         <activity
@@ -322,7 +322,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" /> <!-- Records the version of the Godot library -->
         <meta-data
             android:name="org.godotengine.library.version"
-            android:value="3.4.0.stable" />
+            android:value="3.4.2.stable" />
 
         <service android:name="org.godotengine.godot.GodotDownloaderService" />
 

@@ -4,7 +4,7 @@
             "outputFile": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\34776\\.gradle\\caches\\transforms-3\\bfd99ca6463824d8dc51327b2f71dc33\\transformed\\appcompat-1.0.2\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\34776\\.gradle\\caches\\transforms-3\\84736618186103d8ae0b125acf4ac54b\\transformed\\appcompat-1.0.2\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\34776\\.gradle\\caches\\transforms-3\\7eb7bd94312177054aeb53a2e27a9c36\\transformed\\core-1.2.0\\res\\values-gu\\values-gu.xml",
+                    "source": "C:\\Users\\34776\\.gradle\\caches\\transforms-3\\c5eaa7d939abb2d757f863a6b5340cdd\\transformed\\core-1.2.0\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

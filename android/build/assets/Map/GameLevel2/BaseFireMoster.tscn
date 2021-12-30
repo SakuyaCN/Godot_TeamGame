@@ -171,7 +171,7 @@ position = Vector2( -69, -32 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 14 )
 animation = "Atk"
-frame = 5
+frame = 2
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -180,7 +180,7 @@ position = Vector2( 0, -254 )
 scale = Vector2( 4, 4 )
 frames = ExtResource( 1 )
 animation = "Start"
-frame = 1
+frame = 14
 playing = true
 
 [node name="Effects" type="AnimatedSprite" parent="."]

@@ -15,7 +15,7 @@ buildscript {
     }
     dependencies {
         classpath libraries.androidGradlePlugin
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
+        classpath libraries.kotlinGradlePlugin
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_BEGIN
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_END
     }
@@ -111,8 +111,8 @@ android {
         applicationId getExportPackageName()
         versionCode getExportVersionCode()
         versionName getExportVersionName()
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
+        minSdkVersion getExportMinSdkVersion()
+        targetSdkVersion getExportTargetSdkVersion()
         multiDexEnabled true
 //CHUNK_ANDROID_DEFAULTCONFIG_BEGIN
 //CHUNK_ANDROID_DEFAULTCONFIG_END
