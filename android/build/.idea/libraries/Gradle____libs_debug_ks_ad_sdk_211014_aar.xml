@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: ./libs/debug/ks_ad_sdk_211014.aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/e1e98e110cbd34900276fcc92b885762/transformed/jetified-ks_ad_sdk_211014/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/e1e98e110cbd34900276fcc92b885762/transformed/jetified-ks_ad_sdk_211014/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e1e98e110cbd34900276fcc92b885762/transformed/jetified-ks_ad_sdk_211014/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e1e98e110cbd34900276fcc92b885762/transformed/jetified-ks_ad_sdk_211014/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

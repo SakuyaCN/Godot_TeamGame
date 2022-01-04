@@ -2735,3 +2735,4 @@ xml csj_file_paths
 xml gdt_file_path
 xml ksad_file_paths
 xml ksad_wallpaper
+xml network_config

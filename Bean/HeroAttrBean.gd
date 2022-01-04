@@ -99,9 +99,12 @@ func setEquAttrBean(role_data):
 #装载助战
 func loadSpirit(role_data):
 	if role_data.has("spirit") && role_data["spirit"] != null:
-		var data = StorageData.get_all_spirit()[role_data["spirit"]]
-		for attr in data.base_attr:
-			updateNum(attr,data.base_attr[attr] * data.lv * EquUtils.getQualityAttr(data.quality))
+		if StorageData.get_all_spirit().has(role_data["spirit"]):
+			var data = StorageData.get_all_spirit()[role_data["spirit"]]
+			for attr in data.base_attr:
+				updateNum(attr,data.base_attr[attr] * data.lv * EquUtils.getQualityAttr(data.quality))
+		else:
+			role_data["spirit"] = null
 
 #装载职业特性
 func loadJobAttr(role_data):

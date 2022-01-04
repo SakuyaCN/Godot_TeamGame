@@ -145,7 +145,12 @@ func over(is_win):
 	else:
 		gold = 1000 + all_hurt / 9000 * local_bs * ((choose_lv * choose_lv + 1)/6 + 1)
 		$CanvasLayer/fail/ColorRect2/count.text = "挑战失败！"
-	$CanvasLayer/fail/ColorRect2/count2.text = "根据伤害获得金币+%s" %gold as int
+	var sp = 30
+	var sp2 = all_hurt / 100000000
+	sp += (sp2 * local_bs * ((choose_lv * choose_lv + 1)/6 + 1))  as int
+	$CanvasLayer/fail/ColorRect2/count2.text = "根据伤害获得金币+%s \n" %gold as int
+	$CanvasLayer/fail/ColorRect2/count2.text += "根据伤害获得神话刻印碎片+%s" %sp as int
+	StorageData.AddGoodsNum([["神话刻印碎片",sp]])
 	StorageData.get_player_state()["gold"] += gold as int
  
 func hp_change(hp):
@@ -170,7 +175,6 @@ func mosterAttr():
 	bean.updateNum("unpt",999999)
 	var ps = bs * ((choose_lv * choose_lv)/5.0 + 1)
 	bean.updateNum("mtk_pass",ps * 5)
-	print(ps)
 	return bean
 
 #退出副本

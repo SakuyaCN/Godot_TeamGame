@@ -59,6 +59,7 @@ class GodotMain(godot: Godot) :GodotPlugin(godot) {
             }
             override fun onSuccess() {}
             override fun onFailed(error: ADError) {
+                Log.e("GodotUtils", error.toString())
                 emitSignal("onAdResult","Failed")
             }
             override fun onSkippedVideo() {}

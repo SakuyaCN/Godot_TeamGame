@@ -100,6 +100,7 @@ func createQuality(is_over):
 
 func getQualityBs(ys):
 	match ys:
+		"神话": return 1.15
 		"S++": return 1.12
 		"S级": return 1.06
 		"A级": return 1.02
@@ -108,6 +109,9 @@ func getQualityBs(ys):
 
 func getQualityAttr(ys):
 	match ys:
+		"神话": return 1.0
+		"传说": return 0.90
+		"史诗": return 0.80
 		"S++": return 0.70
 		"S级": return 0.65
 		"A级": return 0.60
@@ -116,6 +120,7 @@ func getQualityAttr(ys):
 
 func getQualityBssTART(ys):
 	match ys:
+		"神话": return 1.25
 		"S++": return 1.2
 		"S级": return 1.15
 		"A级": return 1.08

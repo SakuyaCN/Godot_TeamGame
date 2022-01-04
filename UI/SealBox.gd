@@ -44,12 +44,13 @@ func loadBox():
 		item.queue_free()
 	$NinePatchRect/ScrollContainer/GridContainer.get_children().clear()
 	for item in StorageData.get_player_seal():
-		var data = StorageData.get_player_seal()[item]
-		if data != null:
-			var inv = invItem.instance()
-			inv.setSeal(data.img)
-			inv.connect("pressed",self,"item_pressed",[item,data])
-			$NinePatchRect/ScrollContainer/GridContainer.add_child(inv)
+		if StorageData.get_player_seal().has(item):
+			var data = StorageData.get_player_seal()[item]
+			if data != null:
+				var inv = invItem.instance()
+				inv.setSeal(data.img)
+				inv.connect("pressed",self,"item_pressed",[item,data])
+				$NinePatchRect/ScrollContainer/GridContainer.add_child(inv)
 
 func item_pressed(_id,_data):
 	choose_id = _id

@@ -59,19 +59,26 @@ func _on_NinePatchRect2_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		$NinePatchRect2.visible = false
 
+var click_count = 0
 #下载存档
 func _on_download_pressed():
-	if save_key != "":
-		var http = GodotHttp.new()
-		http.connect("http_res",self,"_download_result")
-		var query = JSON.print({
-			"uuid":ConstantsValue.user_info.user_id,
-			"save_id": save_key,
-			"type":"download"
-		})
-		http.http_post("/storage/count",query)
+	click_count += 1
+	if click_count == 2:
+		if save_key != "":
+			var http = GodotHttp.new()
+			http.connect("http_res",self,"_download_result")
+			var query = JSON.print({
+				"uuid":ConstantsValue.user_info.user_id,
+				"save_id": save_key,
+				"type":"download"
+			})
+			http.http_post("/storage/count",query)
+		else:
+			ConstantsValue.showMessage("没有找到云存档！",2)
 	else:
-		ConstantsValue.showMessage("没有找到云存档！",2)
+		ConstantsValue.showMessage("双击下载云存档",2)
+	yield(get_tree().create_timer(0.5),"timeout")
+	click_count = 0
 
 #存档上传 
 func _on_download2_pressed():

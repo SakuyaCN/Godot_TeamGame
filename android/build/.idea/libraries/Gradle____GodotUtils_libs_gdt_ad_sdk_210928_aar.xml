@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ./GodotUtils/libs/gdt_ad_sdk_210928.aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/05453dc7ffb1c11961a3de9201221cd7/transformed/jetified-gdt_ad_sdk_210928/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/05453dc7ffb1c11961a3de9201221cd7/transformed/jetified-gdt_ad_sdk_210928/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/05453dc7ffb1c11961a3de9201221cd7/transformed/jetified-gdt_ad_sdk_210928/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -26,7 +26,7 @@ MERGED from [gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\0
 MERGED from [godot-lib.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\7d496d812684c77fc04000caf95fd2e1\transformed\jetified-godot-lib.debug\AndroidManifest.xml:2:1-26:12
 MERGED from [ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:2:1-225:12
 MERGED from [pocket_ad_sdk_2.0.2.aar] C:\Users\34776\.gradle\caches\transforms-3\bd48ef28d1b490b397b41fc8f9b7b329\transformed\jetified-pocket_ad_sdk_2.0.2\AndroidManifest.xml:2:1-23:12
-MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:2:1-15:12
+MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\1ed62545f4c29d58d2ab7c43b40dc6ab\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:2:1-15:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\34776\.gradle\caches\transforms-3\f3a5d643cb7a07d4d63d6c88c3cbe466\transformed\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\34776\.gradle\caches\transforms-3\84736618186103d8ae0b125acf4ac54b\transformed\appcompat-1.0.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\34776\.gradle\caches\transforms-3\3dc028d946a4c1298d1f908800236ba5\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
@@ -118,36 +118,42 @@ MERGED from [ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1
 MERGED from [ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:23:5-223:19
 MERGED from [pocket_ad_sdk_2.0.2.aar] C:\Users\34776\.gradle\caches\transforms-3\bd48ef28d1b490b397b41fc8f9b7b329\transformed\jetified-pocket_ad_sdk_2.0.2\AndroidManifest.xml:10:5-21:19
 MERGED from [pocket_ad_sdk_2.0.2.aar] C:\Users\34776\.gradle\caches\transforms-3\bd48ef28d1b490b397b41fc8f9b7b329\transformed\jetified-pocket_ad_sdk_2.0.2\AndroidManifest.xml:10:5-21:19
-MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:9:5-13:19
-MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:9:5-13:19
+MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\1ed62545f4c29d58d2ab7c43b40dc6ab\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:9:5-13:19
+MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\1ed62545f4c29d58d2ab7c43b40dc6ab\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:9:5-13:19
 MERGED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\34776\.gradle\caches\transforms-3\3109e79485d3f70770237db1d4bf1d70\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:requestLegacyExternalStorage
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:153-197
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:153-197
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:230-274
+		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:230-274
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.2.0] C:\Users\34776\.gradle\caches\transforms-3\c5eaa7d939abb2d757f863a6b5340cdd\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:18-67
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:95-144
 	tools:ignore
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:198-237
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:275-314
+	android:largeHeap
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:18-42
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:18-42
 	android:icon
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:238-265
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:315-342
 	android:allowBackup
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:68-95
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:68-95
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:145-172
+		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:145-172
+	android:networkSecurityConfig
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:43-94
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:43-94
 	tools:replace
 		ADDED from D:\Godot\330\Wh\android\build\src\debug\AndroidManifest.xml:25:9-123
 	android:isGame
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:96-117
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:96-117
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:173-194
+		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:173-194
 	android:usesCleartextTraffic
 		ADDED from [gdt_ad_sdk_210928.aar] C:\Users\34776\.gradle\caches\transforms-3\05453dc7ffb1c11961a3de9201221cd7\transformed\jetified-gdt_ad_sdk_210928\AndroidManifest.xml:21:18-53
 	android:hasFragileUserData
-		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:118-152
-		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:118-152
+		ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:195-229
+		REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:31:195-229
 meta-data#xr_mode_metadata_name
 ADDED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:42:9-44:54
 REJECTED from D:\Godot\330\Wh\android\build\AndroidManifest.xml:42:9-44:54
@@ -271,8 +277,8 @@ MERGED from [ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1
 MERGED from [ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:8:5-11:62
 MERGED from [pocket_ad_sdk_2.0.2.aar] C:\Users\34776\.gradle\caches\transforms-3\bd48ef28d1b490b397b41fc8f9b7b329\transformed\jetified-pocket_ad_sdk_2.0.2\AndroidManifest.xml:6:5-8:41
 MERGED from [pocket_ad_sdk_2.0.2.aar] C:\Users\34776\.gradle\caches\transforms-3\bd48ef28d1b490b397b41fc8f9b7b329\transformed\jetified-pocket_ad_sdk_2.0.2\AndroidManifest.xml:6:5-8:41
-MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:5:5-7:41
-MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:5:5-7:41
+MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\1ed62545f4c29d58d2ab7c43b40dc6ab\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:5:5-7:41
+MERGED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\1ed62545f4c29d58d2ab7c43b40dc6ab\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\34776\.gradle\caches\transforms-3\f3a5d643cb7a07d4d63d6c88c3cbe466\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\34776\.gradle\caches\transforms-3\f3a5d643cb7a07d4d63d6c88c3cbe466\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\34776\.gradle\caches\transforms-3\84736618186103d8ae0b125acf4ac54b\transformed\appcompat-1.0.2\AndroidManifest.xml:20:5-44
@@ -1143,8 +1149,8 @@ ADDED from [ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e
 	android:name
 		ADDED from [ks_ad_sdk_211014.aar] C:\Users\34776\.gradle\caches\transforms-3\e1e98e110cbd34900276fcc92b885762\transformed\jetified-ks_ad_sdk_211014\AndroidManifest.xml:220:17-67
 meta-data#org.godotengine.plugin.v1.GodotUtils
-ADDED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:10:9-12:58
+ADDED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\1ed62545f4c29d58d2ab7c43b40dc6ab\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:10:9-12:58
 	android:value
-		ADDED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:12:13-55
+		ADDED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\1ed62545f4c29d58d2ab7c43b40dc6ab\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:12:13-55
 	android:name
-		ADDED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\a847cf3f6a0cc4512351762e48ca720c\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:11:13-64
+		ADDED from [GodotUtils.1.0.0.debug.aar] C:\Users\34776\.gradle\caches\transforms-3\1ed62545f4c29d58d2ab7c43b40dc6ab\transformed\jetified-GodotUtils.1.0.0.debug\AndroidManifest.xml:11:13-64

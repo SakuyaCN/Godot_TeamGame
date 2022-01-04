@@ -1,6 +1,7 @@
 extends Button
 
 onready var _label = $Sprite/Label
+var _id = null
 
 func setSeal(_data):
 	if _data != null:
@@ -13,3 +14,6 @@ func setSeal(_data):
 
 func setLabel(lab):
 	$Sprite/Label.text = lab
+
+func getLabel():
+	return $Sprite/Label.text

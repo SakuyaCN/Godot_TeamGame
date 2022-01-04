@@ -80,6 +80,10 @@
         "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-xxxhdpi-v4\\icon_foreground.png"
     },
     {
+        "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\xml_network_config.xml.flat",
+        "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\xml\\network_config.xml"
+    },
+    {
         "merged": "D:\\Godot\\330\\Wh\\android\\build\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi-v4_icon.png.flat",
         "source": "D:\\Godot\\330\\Wh\\android\\build\\res\\mipmap-xxxhdpi-v4\\icon.png"
     },

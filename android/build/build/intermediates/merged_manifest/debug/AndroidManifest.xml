@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sakuya.mx"
     android:installLocation="auto"
-    android:versionCode="22"
-    android:versionName="1.1.5" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
+    android:versionCode="23"
+    android:versionName="1.1.6" > <!-- glEsVersion is modified by the exporter, changing this value here has no effect. -->
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="30" />
@@ -103,6 +103,8 @@
         android:icon="@mipmap/icon"
         android:isGame="true"
         android:label="@string/godot_project_name_string"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_config"
         android:requestLegacyExternalStorage="false"
         android:usesCleartextTraffic="true" >
         <activity

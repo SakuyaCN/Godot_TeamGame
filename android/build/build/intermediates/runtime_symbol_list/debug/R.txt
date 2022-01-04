@@ -3309,3 +3309,4 @@ int xml csj_file_paths 0x7f100000
 int xml gdt_file_path 0x7f100001
 int xml ksad_file_paths 0x7f100002
 int xml ksad_wallpaper 0x7f100003
+int xml network_config 0x7f100004
