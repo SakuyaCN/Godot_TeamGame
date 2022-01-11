@@ -15,6 +15,8 @@ func hangUp(_player_array,ts):
 	var hm_gold = (ts / 120) as int
 	if hm_gold > 0:
 		win_goods.goods.append(["荒漠铜币串",1,50])
+	if map_index == 5:
+		StorageData.AddGoodsNum([["传说之石",1,1+player_map/10.0]])
 	for item in stroneDl():
 		win_goods.goods.append(item)
 	StorageData.get_player_state()["gold"] += _gold
@@ -60,6 +62,10 @@ func stroneDl():
 			arr.append(["初级助战进阶石",rand_range(5,11) as int,4])
 			arr.append(["中级助战进阶石",rand_range(2,5) as int,2])
 			arr.append(["高级助战进阶石",rand_range(1,3) as int,1])
+		5:
+			arr.append(["初级助战进阶石",rand_range(6,11) as int,5])
+			arr.append(["中级助战进阶石",rand_range(3,5) as int,3])
+			arr.append(["高级助战进阶石",rand_range(2,3) as int,2])
 	return arr
 
 func _on_ColorRect_gui_input(event):

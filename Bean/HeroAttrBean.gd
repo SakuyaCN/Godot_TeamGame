@@ -44,6 +44,10 @@ var skill_crit:int#技能暴击
 var unpt:int #毒素抗性
 var atk_mtk:int #攻击附带魔力值
 var shield_buff:int #护盾免伤
+var skill_buff:int #技能增伤
+var atk_hurt_buff:int #攻击系伤害
+var mtk_hurt_buff:int #魔力系技能增强
+var hurt_pass:int #最终免伤
 
 var tz_array = []
 #重载基础属性
@@ -84,6 +88,8 @@ func setEquAttrBean(role_data):
 					updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
 				for base_attr_item in equ_data["seal"]:#基础属性
 					updateNum(base_attr_item.keys()[0],base_attr_item.values()[0],false)
+				for super_item in equ_data["super_attr"]:#基础属性
+					updateNum(super_item.keys()[0],super_item.values()[0],false)
 				for base_attr_item in equ_data["ys_attr"]:#元素属性
 					match base_attr_item.keys()[0]:
 						"fire": fire += base_attr_item.values()[0]
@@ -203,7 +209,10 @@ func toDict():
 		"skill_crit":skill_crit,
 		"unpt":unpt,
 		"atk_mtk":atk_mtk,
-		"shield_buff":shield_buff
+		"shield_buff":shield_buff,
+		"skill_buff":skill_buff,
+		"atk_hurt_buff":atk_hurt_buff,
+		"mtk_hurt_buff":mtk_hurt_buff
 	}
 
 func updateNum(attr,num,is_emit = true,is_buff = false):
@@ -243,6 +252,9 @@ func updateNum(attr,num,is_emit = true,is_buff = false):
 		"unpt":unpt += num
 		"atk_mtk": atk_mtk+=num
 		"shield_buff":shield_buff+=num
+		"skill_buff":skill_buff+= num
+		"atk_hurt_buff":atk_hurt_buff += num
+		"mtk_hurt_buff":mtk_hurt_buff += num
 
 	if dodge > 30:
 		dodge = 30
@@ -293,3 +305,6 @@ func toBean(dict):
 	reflex= dict.reflex
 	skill_crit= dict.skill_crit
 	unpt = dict.unpt
+	skill_buff = dict.skill_buff
+	atk_hurt_buff = dict.atk_hurt_buff
+	mtk_hurt_buff = dict.mtk_hurt_buff

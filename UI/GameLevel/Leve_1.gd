@@ -119,6 +119,8 @@ func getAtkCount():
 		return 300 * moster_count * 1.3
 
 func game_start():
+	if $CanvasLayer/ChooseUI/ColorRect/skip.pressed && StorageData.UseGoodsNum([["荒漠跳关卡",1]]):
+		moster_count = 30
 	reloadCount()
 	$CanvasLayer/Control.visible = true
 	player_array[0].fight_script.connect("onDie",self,"player_die")
@@ -324,3 +326,11 @@ func _on_attrs2_gui_input(event):
 
 func _on_SpinBox_value_changed(value):
 	gold = value as int
+
+#
+func _on_skip_pressed():
+	if StorageData.checkGoodsNum([["荒漠跳关卡",1]]):
+		$CanvasLayer/ChooseUI/ColorRect/skip.pressed = true
+	else:
+		$CanvasLayer/ChooseUI/ColorRect/skip.pressed = false
+		ConstantsValue.showMessage("需要荒漠跳关卡 * 1",2)

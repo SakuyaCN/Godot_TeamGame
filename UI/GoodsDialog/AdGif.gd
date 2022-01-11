@@ -3,7 +3,7 @@ extends Control
 onready var build_info_need = preload("res://UI/ItemUI/BuildInfoNeedItem.tscn")
 
 var goods = [
-	["荒漠金币",1],["神秘之石",1],["暗蓝星矿",2],["刻印碎片",10],["火焰之石",10],["半小时挂机卡",1],["助战宝箱",1]
+	["荒漠金币",1],["神秘之石",2],["暗蓝星矿",2],["刻印碎片",10],["火焰之石",10],["半小时挂机卡",1],["助战宝箱",1],["能量水晶",1]
 ]
 
 func _ready():

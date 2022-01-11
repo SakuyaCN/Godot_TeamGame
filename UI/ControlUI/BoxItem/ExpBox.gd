@@ -53,7 +53,7 @@ func addExp(item,_exp):
 #人物升级
 func is_LvUp(_exp,role_data):
 	var last_lv = role_data["lv"]
-	if role_data.lv < 120:
+	if role_data.lv < 150:
 		var minExp = (role_data["exp"] + _exp) - Utils.get_up_lv_exp(role_data["lv"])
 		if minExp >= 0:
 			role_data["lv"] += 1

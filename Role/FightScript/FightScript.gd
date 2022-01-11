@@ -103,10 +103,12 @@ func do_hurt(_atk_data,_atk_attr:HeroAttrBean,atk_type,fight_script:Node):
 	var hurt_num = 0
 	match atk_type:
 		Utils.HurtType.ATK:
-			hurt_num = _atk_attr.atk * getHurtPass(hero_attr.def,_atk_attr.atk_pass) 
+			hurt_num = _atk_attr.atk * getHurtPass(hero_attr.def,_atk_attr.atk_pass)
+			hurt_num *= 1 + (hero_attr.atk_hurt_buff / 100.0)
 			fight_script.atk_blood(hurt_num)
 		Utils.HurtType.MTK:
 			hurt_num = _atk_attr.mtk * getHurtPass(hero_attr.mdef,_atk_attr.mtk_pass) 
+			hurt_num *= 1 + (hero_attr.mtk_hurt_buff / 100.0)
 			fight_script.mtk_blood(hurt_num)
 	#攻击附带魔力
 	hurt_num += atkHasMtk(_atk_attr)
@@ -138,18 +140,22 @@ func do_number_hurt(_atk_data,number,atk_type,_atk_attr:HeroAttrBean,is_COUTINUE
 	match atk_type as int:
 		Utils.HurtType.ATK:
 			hurt_num = number * getHurtPass(hero_attr.def,_atk_attr.atk_pass) 
+			hurt_num *= 1 + (hero_attr.atk_hurt_buff / 100.0)
 		Utils.HurtType.MTK:
 			hurt_num = number * getHurtPass(hero_attr.mdef,_atk_attr.mtk_pass)
+			hurt_num *= 1 + (hero_attr.mtk_hurt_buff / 100.0)
 		Utils.HurtType.TRUE:hurt_num = number
+	if _atk_attr.skill_buff > 0:
+		hurt_num *=  1 + (_atk_attr.skill_buff / 100.0)
 	if  atk_type as int != Utils.HurtType.TRUE && _atk_attr.skill_crit > 0 && randf() <  _atk_attr.skill_crit / 7000.0:
 		hurt_num *= 1.5 + (_atk_attr.crit_buff / 100.0)
 		_is_crit = true
-	if hero_attr.hp <= 0:
-		die()
 	if is_COUTINUED:
 		updateHp(hurt_num,false,Utils.HurtType.COUTINUED)
 	else:
 		updateHp(hurt_num,true,_is_crit)
+	if hero_attr.hp <= 0:
+		die()
 	emit_signal("onHurt",_atk_data,hurt_num)
 
 func getHurtPass(_my_def,_pass):
@@ -163,6 +169,7 @@ func atkHasMtk(_atk_attr:HeroAttrBean):
 	if _atk_attr.atk_mtk > 0:
 		num += (_atk_attr.atk_mtk / 100.0) * _atk_attr.mtk
 		num = num * (1 - ((hero_attr.mdef - _atk_attr.mtk_pass)/100.0))
+		num *= 1 + (hero_attr.mtk_hurt_buff / 100.0)
 	return num
 
 #刷血量
@@ -170,7 +177,7 @@ func updateHp(_num,is_skill,type):
 	if is_nohurt:
 		get_parent()._show_skill_label("无敌")
 		return
-	var hurt_num = _num
+	var hurt_num = _num * (1 - hero_attr.hurt_pass / 100.0)
 	if hero_attr.shield > 0:
 		if hero_attr.shield_buff > 0:
 			#get_parent()._show_damage_label("护盾免伤-%s"%sh_buff,Utils.HurtType.OTHER)

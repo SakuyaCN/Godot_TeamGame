@@ -62,7 +62,6 @@ func closeTips():
 	
 #获取新物品时提示
 func getNewItem(_name,img,q = ""):
-	print("aaaaaaaaa")
 	var ins = get_new_item.instance()
 	ins.setData(_name,img,q)
 	$ItemShow/VBoxContainer.add_child_below_node($ItemShow/VBoxContainer/Label,ins)

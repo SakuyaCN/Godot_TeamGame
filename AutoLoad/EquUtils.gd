@@ -39,6 +39,10 @@ func get_attr_string(attr):
 		"unpt":return "毒素抗性"
 		"atk_mtk":return "攻击附带魔力百分比"
 		"shield_buff":return "护盾免伤率"
+		"skill_buff":return"技能伤害增伤率"
+		"atk_hurt_buff":return"物理伤害增伤率"
+		"mtk_hurt_buff":return"魔力伤害增伤率"
+		"hurt_pass":return "最终免伤率"
 
 func getTzInfo(attr):
 	var info = ""

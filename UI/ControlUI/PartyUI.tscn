@@ -939,11 +939,10 @@ __meta__ = {
 }
 
 [node name="Equ_info" type="NinePatchRect" parent="."]
-visible = false
 margin_left = 973.0
-margin_top = 79.0
+margin_top = 58.0
 margin_right = 1315.0
-margin_bottom = 601.0
+margin_bottom = 608.0
 rect_pivot_offset = Vector2( -99.2693, 132.973 )
 mouse_filter = 0
 texture = ExtResource( 7 )
@@ -968,9 +967,9 @@ __meta__ = {
 
 [node name="equ_lv" type="Label" parent="Equ_info"]
 margin_left = 40.0
-margin_top = 386.0
+margin_top = 410.0
 margin_right = 155.0
-margin_bottom = 407.0
+margin_bottom = 431.0
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "等级：1"
@@ -982,9 +981,9 @@ __meta__ = {
 
 [node name="equ_type" type="Label" parent="Equ_info"]
 margin_left = 155.0
-margin_top = 386.0
+margin_top = 410.0
 margin_right = 304.0
-margin_bottom = 407.0
+margin_bottom = 431.0
 custom_colors/font_color = Color( 0.439216, 0.376471, 0.313726, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "类型：护手"
@@ -997,16 +996,16 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Equ_info"]
 margin_left = 30.0
-margin_top = 78.0
+margin_top = 73.0
 margin_right = 304.0
-margin_bottom = 356.0
+margin_bottom = 405.0
 custom_constants/separation = 6
 
 [node name="btn_down" type="Button" parent="Equ_info"]
 margin_left = 208.0
-margin_top = 460.0
+margin_top = 484.0
 margin_right = 311.0
-margin_bottom = 501.0
+margin_bottom = 525.0
 custom_fonts/font = SubResource( 16 )
 custom_styles/hover = SubResource( 12 )
 custom_styles/pressed = SubResource( 13 )
@@ -1049,9 +1048,9 @@ __meta__ = {
 
 [node name="btn_seal" type="Button" parent="Equ_info"]
 margin_left = 36.0
-margin_top = 412.0
+margin_top = 436.0
 margin_right = 139.0
-margin_bottom = 453.0
+margin_bottom = 477.0
 custom_fonts/font = SubResource( 16 )
 custom_styles/hover = SubResource( 12 )
 custom_styles/pressed = SubResource( 13 )
@@ -1062,11 +1061,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="btn_super" type="Button" parent="Equ_info"]
+margin_left = 208.0
+margin_top = 436.0
+margin_right = 311.0
+margin_bottom = 477.0
+custom_fonts/font = SubResource( 16 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "特殊词条"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="btn_tz" type="Button" parent="Equ_info"]
 margin_left = 36.0
-margin_top = 460.0
+margin_top = 484.0
 margin_right = 139.0
-margin_bottom = 501.0
+margin_bottom = 525.0
 custom_fonts/font = SubResource( 16 )
 custom_styles/hover = SubResource( 12 )
 custom_styles/pressed = SubResource( 13 )
@@ -1177,6 +1191,7 @@ anims/show = SubResource( 18 )
 [connection signal="pressed" from="Equ_info/btn_des" to="." method="_on_btn_des_pressed"]
 [connection signal="pressed" from="Equ_info/btn_des2" to="." method="_on_btn_des2_pressed"]
 [connection signal="pressed" from="Equ_info/btn_seal" to="." method="_on_btn_seal_pressed"]
+[connection signal="pressed" from="Equ_info/btn_super" to="." method="_on_btn_super_pressed"]
 [connection signal="pressed" from="Equ_info/btn_tz" to="." method="_on_btn_tz_pressed"]
 [connection signal="gui_input" from="PostionBox/postion_0" to="." method="_on_postion_0_gui_input"]
 [connection signal="gui_input" from="PostionBox/postion_1" to="." method="_on_postion_1_gui_input"]

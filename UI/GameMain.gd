@@ -52,6 +52,9 @@ func load_map():
 	if !StorageData.storage_data["player_state"]["map"].has("4"):
 		StorageData.storage_data["player_state"]["map"]["4"] = {"max_map":0,"now_map":0}
 		StorageData._save_storage()
+	if !StorageData.storage_data["player_state"]["map"].has("5"):
+		StorageData.storage_data["player_state"]["map"]["5"] = {"max_map":0,"now_map":0}
+		StorageData._save_storage()
 	var map_index = str(StorageData.storage_data["player_state"]["map_index"])
 	ConstantsValue.ui_layer.ui.main_ui.setTitle(StorageData.storage_data["player_state"]["map"][map_index]["now_map"]+1)
 	player_map = StorageData.storage_data["player_state"]["map"][map_index]["now_map"]
@@ -284,6 +287,10 @@ func winGoods():
 				var key_index = win_goods.more[str(map_index)].equ[randi()%win_goods.more[str(map_index)].equ.size()]
 				var choose_data = LocalData.build_data["build_data"][win_goods.more[str(map_index)]["type"]][str(key_index)]
 				EquUtils.createNewEqu(str(key_index),win_goods.more[str(map_index)]["type"],choose_data,choose_data.type,false)
+	if map_index == 5:
+		var player_map = StorageData.storage_data["player_state"]["map"][str(map_index)]["now_map"]
+		if randi()%200 < 1 + (player_map / 10.0):
+			StorageData.AddGoodsNum([["传说之石",1]])
 	if !StorageData.get_player_state().has("win_count"):
 		StorageData.get_player_state()["win_count"] = 0
 	StorageData.get_player_state()["win_count"] += 1
@@ -309,6 +316,10 @@ func stroneDl():
 			arr.append(["初级助战进阶石",rand_range(5,11) as int,50])
 			arr.append(["中级助战进阶石",rand_range(2,5) as int,30])
 			arr.append(["高级助战进阶石",rand_range(1,3) as int,20])
+		5:
+			arr.append(["初级助战进阶石",rand_range(4,11) as int,55])
+			arr.append(["中级助战进阶石",rand_range(3,5) as int,35])
+			arr.append(["高级助战进阶石",rand_range(2,3) as int,25])
 	var goods_array = []
 	for item in arr:
 		if randf() <= item[2] / 100.0:

@@ -217,6 +217,7 @@ func getMapNameFormIndex(_index):
 		2:return "地狱地图"
 		3:return "神话地图"
 		4:return "极限神话"
+		5:return "传说之下"
 
 func getMapName(_index):
 	match _index as int:
@@ -258,6 +259,8 @@ func get_time_string(s):
 		return str(stepify(s as float/3600, 0.1)) +"小时"
 
 func get_up_lv_exp(role_lv:int):
+	if role_lv > 135:
+		return ((role_lv * role_lv * (role_lv * 1.5)) * (1+ role_lv / 5.0) + 5) as int
 	return ((role_lv * role_lv * (role_lv * 1.2)) * (0.2+ role_lv / 5.0) + 5) as int
 
 #是否有队员达到等级要求

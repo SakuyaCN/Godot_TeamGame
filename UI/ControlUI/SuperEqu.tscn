@@ -1,0 +1,224 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://UI/ControlUI/SuperEqu.gd" type="Script" id=1]
+[ext_resource path="res://Shaders/SimpleBlur.tres" type="Material" id=2]
+[ext_resource path="res://Font/mplus_hzk_12.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Texture/bg_2.png" type="Texture" id=4]
+[ext_resource path="res://Texture/Buttons_12.png" type="Texture" id=8]
+[ext_resource path="res://Texture/Buttons_14.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 18
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 18
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 133, 34 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 133, 34 )
+margin_bottom = 2.45886
+
+[sub_resource type="DynamicFont" id=14]
+size = 17
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=15]
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 72.0
+margin_bottom = 96.0
+custom_fonts/font = SubResource( 1 )
+text = "特殊词条刷新器"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -476.605
+margin_top = -67.5
+margin_right = -93.6055
+margin_bottom = 17.5
+custom_fonts/font = SubResource( 13 )
+text = "说明：
+使用一枚能量水晶可以添加一组随机属性
+
+如果已经有随机属性则会刷新当前随机属性
+
+如果不满意当前随机属性可以使用两枚水晶重置当前随机属性"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = -186.5
+margin_right = 150.0
+margin_bottom = 255.5
+mouse_filter = 0
+texture = ExtResource( 4 )
+patch_margin_left = 32
+patch_margin_top = 28
+patch_margin_right = 29
+patch_margin_bottom = 36
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 3.46533
+margin_top = -65.0
+margin_right = 128.465
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 12 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "刷新属性"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -132.437
+margin_top = -65.0
+margin_right = -7.43701
+margin_bottom = -16.0
+custom_fonts/font = SubResource( 12 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+text = "重置词条"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -124.0
+margin_top = -194.0
+margin_right = 124.0
+margin_bottom = 114.0
+custom_colors/font_color = Color( 0.960784, 0.415686, 0.0901961, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "当前还没有特殊词条属性"
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -549.0
+margin_top = -186.5
+margin_right = -250.0
+margin_bottom = 255.5
+mouse_filter = 0
+texture = ExtResource( 4 )
+patch_margin_left = 32
+patch_margin_top = 28
+patch_margin_right = 29
+patch_margin_bottom = 36
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="NinePatchRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.5
+margin_top = -194.0
+margin_right = 124.5
+margin_bottom = 205.0
+custom_colors/default_color = Color( 0.960784, 0.415686, 0.0901961, 1 )
+custom_fonts/normal_font = SubResource( 15 )
+text = "刷新器最大值参考"
+
+[node name="ColorMax" type="ColorRect" parent="."]
+visible = false
+material = ExtResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorMax"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -672.0
+margin_top = -52.0
+margin_right = 672.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 1 )
+text = "融合中..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Button2" to="." method="_on_Button2_pressed"]

@@ -7,6 +7,7 @@ onready var equ_item = preload("res://UI/ItemUI/RoleEquItem.tscn")
 onready var label_ui = preload("res://UI/ControlUI/LabelItemUI.tscn")
 onready var hero_item = preload("res://UI/ItemUI/HeroItem.tscn")
 onready var equ_info = preload("res://UI/ItemUI/Equ_info.tscn")
+onready var equ_super = preload("res://UI/ControlUI/SuperEqu.tscn")
 onready var over_item = preload("res://UI/ControlUI/EquOver.tscn")#融合界面
 onready var srcoll = $ScrollContainer
 onready var click_timer = $ClickTimer
@@ -350,6 +351,12 @@ func loadEquInfo(equ_data):
 		label.text = "套装：%s [%s/8]" %[equ_data.tz.name,Utils.findEquTzSize(role_data,equ_data.tz)]
 		label.set('custom_colors/font_outline_modulate', "#b766A5")
 		$Equ_info/VBoxContainer.add_child(label)
+	if equ_data.has("super_attr"):
+		for item in equ_data["super_attr"]:
+			var label = label_ui.instance()
+			label.text = "%s + %s" %[EquUtils.get_attr_string(item.keys()[0]),item.values()[0]]
+			label.set('custom_colors/font_outline_modulate', "#FF8247")
+			$Equ_info/VBoxContainer.add_child(label)
 	if equ_data["is_on"]:
 		$Equ_info/btn_down.text = "卸下"
 		$Equ_info/btn_des.visible = false
@@ -462,6 +469,16 @@ func seal_choose():
 	loadEquInfo(check_equ_data)
 	loadHeroData()
 	get_tree().call_group("player_role","reloadRoleAttr",role_data.rid)
+	
+#特殊词条
+func _on_btn_super_pressed():
+	if check_equ_data != null:
+		if check_equ_data["lv"] < 0:
+			ConstantsValue.showMessage("150级装备开启此功能",2)
+			return
+		var ins = equ_super.instance()
+		ins.local_equ = check_equ_data
+		add_child(ins)
 #=========================
 
 #公共方法

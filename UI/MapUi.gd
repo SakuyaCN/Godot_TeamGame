@@ -28,7 +28,7 @@ func _on_left_pressed():
 		reload()
 
 func _on_right_pressed():
-	if map_index == 4:
+	if map_index == 5:
 		return 
 	else:
 		if map_index < StorageData.storage_data["player_state"]["map_index_max"]:
